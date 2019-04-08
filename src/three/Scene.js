@@ -47,7 +47,7 @@ export default class Scene {
     }
 
     initLoadingManager() {
-        this.manager = new LoadingManager();
+        this.manager = new THREE.LoadingManager();
         this.manager.onStart = (url, itemsLoaded, itemsTotal) => {
             //console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
         };
