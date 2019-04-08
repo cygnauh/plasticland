@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Introduction from './pages/introduction'
+import Introduction from './pages/Introduction'
 
 export default {
   name: 'app',
