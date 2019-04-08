@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    hello
+    <Introduction></Introduction>
   </div>
 </template>
 
 <script>
-import Scene from './three/Scene'
+import Introduction from './pages/introduction'
 
 export default {
   name: 'app',
+    components: {Introduction},
   methods: {
 
   }
