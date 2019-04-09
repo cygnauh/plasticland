@@ -11,10 +11,6 @@ export default new Router({
     routes: [
         {
             path: '/',
-            redirect: '/introduction'
-        },
-        {
-            path: '/introduction',
             component: Introduction
         },
         {
