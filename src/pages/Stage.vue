@@ -5,17 +5,22 @@
 </template>
 
 <script>
+    import Vue from 'vue'
     import Scene from '../three/Scene'
     export default {
         name: 'Stage',
+        data() {
+            return{
+                data: ''
+            }
+        },
         mounted(){
             this.initScene()
         },
         methods: {
             initScene(){
-                let scene = new Scene()
-                return scene
-            }
+                Vue.prototype.$scene = new Scene()
+            },
         }
     }
 </script>
