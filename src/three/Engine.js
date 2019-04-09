@@ -5,6 +5,7 @@ export default class Engine {
     constructor(canvas) {
         this.initCanvas(canvas)
         this.initScene()
+        this.addGeometry()
         this.initLoadingManager()
         this.addEventListeners()
         this.animate()
@@ -45,21 +46,27 @@ export default class Engine {
         // gltf lighting
         this.renderer.gammaOutput = true
         this.renderer.gammaFactor = 2.2
+        this.renderer.gammaOutput = true
+        this.renderer.gammaFactor = 2.2
+    }
+
+    addGeometry() {
+
     }
 
     initLoadingManager() {
-        this.manager = new THREE.LoadingManager();
+        this.manager = new THREE.LoadingManager()
         this.manager.onStart = (url, itemsLoaded, itemsTotal) => {
-            //console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
+            console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
         };
         this.manager.onLoad = () => {
-            //console.log( 'Loading complete!')
+            console.log( 'Loading complete!')
         };
         this.manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-            //console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
+            console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' )
         };
         this.manager.onError = (url) => {
-            //console.log( 'There was an error loading ' + url )
+            console.log( 'There was an error loading ' + url )
         };
     }
 
@@ -70,10 +77,10 @@ export default class Engine {
     resize() {
         this.setSize();
 
-        this.camera.aspect = this.width / this.height;
-        this.camera.updateProjectionMatrix();
+        this.camera.aspect = this.width / this.height
+        this.camera.updateProjectionMatrix()
 
-        this.renderer.setSize(this.width, this.height);
+        this.renderer.setSize(this.width, this.height)
     }
 
     animate() {
@@ -81,14 +88,14 @@ export default class Engine {
         this.helpers.stats ? this.helpers.stats.begin() : null
         this.helpers.controls ? this.helpers.controls.update() : null
 
-
         // update
-        this.timeDelta = this.clock.getDelta();
+        this.timeDelta = this.clock.getDelta()
         this.timeElapsed = this.clock.getElapsedTime()
 
         this.render()
 
-        this.helpers.stats.end();
+        this.helpers.stats ? this.helpers.stats.end() : null
+
         requestAnimationFrame(() => this.animate())
     }
 
