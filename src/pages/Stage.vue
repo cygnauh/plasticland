@@ -6,7 +6,7 @@
 
 <script>
     import Vue from 'vue'
-    import Scene from '../three/Scene'
+    import Engine from '../three/Engine'
     export default {
         name: 'Stage',
         data() {
@@ -19,7 +19,7 @@
         },
         methods: {
             initScene(){
-                Vue.prototype.$scene = new Scene()
+                Vue.prototype.$scene = new Engine()
             },
         }
     }

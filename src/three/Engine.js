@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import Helpers from './components/Helpers.js'
 
-export default class Scene {
+export default class Engine {
     constructor() {
         this.initCanvas();
         this.initScene();
