@@ -7,6 +7,7 @@
 
 <script>
 import Loader from '../components/Loader'
+
 export default {
     name: 'Introduction',
     components : { Loader }

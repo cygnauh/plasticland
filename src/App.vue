@@ -3,7 +3,6 @@
     <Introduction></Introduction>
   </div>
 </template>
-
 <script>
 import Introduction from './pages/Introduction'
 
@@ -11,7 +10,6 @@ export default {
   name: 'app',
     components: {Introduction},
   methods: {
-
   }
 }
 </script>
