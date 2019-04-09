@@ -26,7 +26,7 @@ export default class Engine {
 
         // camera
         this.camera = new THREE.PerspectiveCamera( 65, window.innerWidth / window.innerHeight, 0.1, 10000 );
-        this.camera.position.set(0, 0, 0);
+        this.camera.position.set(10, 10, 10);
 
         // clock
         this.clock = new THREE.Clock();
@@ -78,8 +78,8 @@ export default class Engine {
 
     animate() {
         // helpers
-        //this.helpers.stats.begin();
-        //this.helpers.controls.update();
+        this.helpers.stats.begin();
+        this.helpers.controls.update();
 
         // update
         this.timeDelta = this.clock.getDelta();
@@ -87,7 +87,7 @@ export default class Engine {
 
         this.render();
 
-        //this.helpers.stats.end();
+        this.helpers.stats.end();
         requestAnimationFrame(() => this.animate());
     }
 
