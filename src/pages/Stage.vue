@@ -9,7 +9,7 @@
 
 <script>
     import Vue from 'vue'
-    import Scene from '../three/Scene'
+    import Engine from '../three/Engine'
     export default {
         name: 'Stage',
         data() {
@@ -22,7 +22,7 @@
         },
         methods: {
             initScene(){
-                Vue.prototype.$scene = new Scene(this.$refs.canvas)
+                Vue.prototype.$engine = new Engine(this.$refs.canvas)
             },
         }
     }
