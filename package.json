@@ -22,6 +22,7 @@
     "stats-js": "^1.0.0",
     "three": "^0.103.0",
     "three-orbitcontrols": "^2.102.1",
+    "vue-router": "^3.0.3",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
