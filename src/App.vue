@@ -1,16 +1,12 @@
 <template>
   <div id="app">
     <router-view />
-    <router-link to="/plasticland">Aller à Foo</router-link>
-    <!--<Introduction></Introduction>-->
   </div>
 </template>
 <script>
-import Introduction from './pages/Introduction'
 
 export default {
   name: 'app',
-    // components: {Introduction},
   methods: {
   }
 }

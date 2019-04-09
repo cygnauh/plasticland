@@ -1,6 +1,5 @@
 <template>
     <div class="Stage">
-        Stage
         <canvas id="canvas"></canvas>
     </div>
 </template>
