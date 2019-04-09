@@ -8,7 +8,7 @@
 <script>
     import { Scene } from '../three/Scene'
 
-    new Scene();
+    let scene = Scene
 
     export default {
         name: 'Stage'

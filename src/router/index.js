@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Introduction from '../views/Introduction.vue'
-import Stage from '../views/Stage.vue'
-import Inventaire from '../views/Inventaire.vue'
+import Introduction from '../pages/Introduction.vue'
+import Stage from '../pages/Stage.vue'
+import Inventaire from '../pages/Inventaire.vue'
 
 Vue.use(Router)
 
