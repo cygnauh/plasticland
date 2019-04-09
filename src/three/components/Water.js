@@ -8,9 +8,9 @@ export default class Water {
         `;
 
         this.fragmentShader = `
-        `
+        `;
 
-        this.initPlane(20, 20, 10, 10)
+        this.initPlane(50, 50, 20, 20)
     }
 
     initPlane(width, height, widthSegments, heightSegments) {
