@@ -1,4 +1,5 @@
-import * as THREE from 'three'
+import * as THREE from 'three';
+import Helpers from './components/Helpers.js'
 
 export default class Scene {
     constructor() {
@@ -33,7 +34,7 @@ export default class Scene {
         this.timeElapsed = 0;
 
         // helpers
-        //this.helpers = new Helpers(this.scene, this.camera);
+        this.helpers = new Helpers(this.scene, this.camera);
 
         // renderer
         this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, antialias: true, alpha: true});
