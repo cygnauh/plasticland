@@ -1,5 +1,6 @@
-import * as THREE from 'three';
-import Helpers from './components/Helpers.js'
+import * as THREE from 'three'
+import Helpers from './components/Helpers'
+import Water from './components/Water'
 
 export default class Engine {
     constructor(canvas) {
@@ -51,7 +52,7 @@ export default class Engine {
     }
 
     addGeometry() {
-
+        this.water = new Water(this.scene);
     }
 
     initLoadingManager() {
@@ -91,6 +92,9 @@ export default class Engine {
         // update
         this.timeDelta = this.clock.getDelta()
         this.timeElapsed = this.clock.getElapsedTime()
+
+        // update water
+        this.water.update(this.timeElapsed)
 
         this.render()
 
