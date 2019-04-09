@@ -2,16 +2,16 @@ import * as THREE from 'three';
 import Helpers from './components/Helpers.js'
 
 export default class Scene {
-    constructor() {
-        this.initCanvas();
+    constructor(canvas) {
+        this.initCanvas(canvas);
         this.initScene();
         this.initLoadingManager();
         this.addEventListeners();
         this.animate();
     }
 
-    initCanvas() {
-        this.canvas = document.querySelector('canvas');
+    initCanvas(canvas) {
+        this.canvas = canvas;
         this.setSize();
     }
 

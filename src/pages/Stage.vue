@@ -1,6 +1,9 @@
 <template>
     <div class="Stage">
-        <canvas id="canvas"></canvas>
+        <canvas
+            ref='canvas'
+            id="canvas">
+        </canvas>
     </div>
 </template>
 
@@ -19,7 +22,7 @@
         },
         methods: {
             initScene(){
-                Vue.prototype.$scene = new Scene()
+                Vue.prototype.$scene = new Scene(this.$refs.canvas)
             },
         }
     }
