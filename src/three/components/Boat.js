@@ -9,7 +9,7 @@ export default class Boat {
     }
 
     initBoat() {
-        this.object = new GltfLoaderTest('boat', './boat.gltf', this.scene)
+        this.object = new GltfLoaderTest('boat', '/models/boat.gltf', this.scene, this.manager)
         // this.object.position.y = 1
         // this.scene.add(this.object)
     }
