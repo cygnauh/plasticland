@@ -16,7 +16,7 @@ export default class Water {
 
         this.plane = new THREE.Mesh(this.geometry,this.material)
         this.plane.position.y = 1;
-        this.scene.add(this.plane)
+        // this.scene.add(this.plane)
     }
 
     initShader() {

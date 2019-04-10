@@ -1,10 +1,11 @@
+import * as THREE from 'three'
 import GLTFLoader from 'three-gltf-loader';
 
-export default class GltfLoader {
-    constructor(name, path, scene, manager) {
+export default class GltfLoaderTest {
+    constructor(name, path, scene) {
         this.scene = scene;
         this.name = name;
-        this.loader = new GLTFLoader(manager);
+        this.loader = new GLTFLoader();
 
         // draco loader
         // see gltf-pipeline
@@ -12,10 +13,10 @@ export default class GltfLoader {
         this.loader.load(
             path,
             (gltf) => {
-                gltf.scene.name = this.name;
-                this.scene.add(gltf.scene);
+                gltf.scene.name = this.name
+                this.scene.add(gltf.scene)
 
-                //console.log(gltf.scene)
+                console.log(gltf.scene)
 
                 gltf.scene.traverse( (child) => {
                         //console.log(child.material)
@@ -33,11 +34,6 @@ export default class GltfLoader {
                 console.log( 'An error happened' + error );
             }
         );
-    }
-
-    destroy() {
-        let gltf = this.scene.getObjectByName(this.name);
-        this.scene.remove(gltf);
     }
 
 }

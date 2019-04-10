@@ -7,8 +7,8 @@ export default class Engine {
     constructor(canvas) {
         this.initCanvas(canvas)
         this.initScene()
-        this.addGeometry()
         this.initLoadingManager()
+        this.addGeometry()
         this.addEventListeners()
         this.animate()
     }
@@ -52,7 +52,7 @@ export default class Engine {
 
     addGeometry() {
         this.water = new Water(this.scene);
-        this.boat = new Boat(this.scene);
+        this.boat = new Boat(this.scene, this.manager);
     }
 
     initLoadingManager() {
@@ -95,7 +95,7 @@ export default class Engine {
 
         // update water
         this.water.update(this.timeElapsed)
-        this.boat.update(this.timeElapsed)
+        // this.boat.update(this.timeElapsed)
 
         this.render()
 
