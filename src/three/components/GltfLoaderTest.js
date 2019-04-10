@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoaderTest {
-    constructor(name, path, scene, manager) {
+    constructor(name, path, scene, manager, posX, posY, posZ, rotateX) {
         this.scene = scene
         this.name = name
         this.loader = new GLTFLoader(manager)
@@ -17,6 +17,13 @@ export default class GltfLoaderTest {
                 this.scene.add(gltf.scene)
 
                 console.log(gltf.scene)
+                gltf.scene.position.x = posX
+                gltf.scene.position.y = posY
+                gltf.scene.position.z = posZ
+                gltf.scene.rotateY(rotateX)
+
+
+                console.log('rest')
 
                 gltf.scene.traverse( (child) => {
                         //console.log(child.material)
@@ -25,7 +32,7 @@ export default class GltfLoaderTest {
                             child.material.side = 2
                         }
                     }
-                );
+                )
             },
             (xhr) => {
                 console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' )
@@ -33,7 +40,6 @@ export default class GltfLoaderTest {
             (error) => {
                 console.log( 'An error happened' + error )
             }
-        );
+        )
     }
-
 }
