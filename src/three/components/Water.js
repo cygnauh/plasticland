@@ -24,6 +24,7 @@ export default class Water {
             #define SCALE 10.0
             varying vec2 vUv;
             uniform float uTime;
+            uniform vec2 uKeyboard;
             
             float calculateSurface(float x, float z) {
                 float y = 0.0;
@@ -91,21 +92,25 @@ export default class Water {
                 case 'ArrowRight':
                     //console.log("turned right")
                     this.plane.material.uniforms.uKeyboard.value.x += 0.1
+                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
                     break
                 case 'ArrowLeft':
                     //console.log("turned left")
                     this.plane.material.uniforms.uKeyboard.value.x -= 0.1
+                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
                     break
                 case 'ArrowDown':
                     //console.log("go down")
                     this.plane.material.uniforms.uKeyboard.value.y -= 0.1
+                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
                     break
                 case 'ArrowUp':
                     //console.log("go up")
                     this.plane.material.uniforms.uKeyboard.value.y += 0.1
+                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
                     break
                 default:
-                    console.log(this.plane.material.uniforms.uKeyboard)
+                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
                     break
             }
         }, false)
