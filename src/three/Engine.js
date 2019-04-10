@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
 import Water from './components/Water'
+import Boat from './components/Boat'
 
 export default class Engine {
     constructor(canvas) {
@@ -27,8 +28,8 @@ export default class Engine {
         this.scene = new THREE.Scene()
 
         // camera
-        this.camera = new THREE.PerspectiveCamera( 65, window.innerWidth / window.innerHeight, 0.1, 10000 )
-        this.camera.position.set(10, 10, 10)
+        this.camera = new THREE.PerspectiveCamera( 65, this.width / this.height, 0.1, 10000 )
+        this.camera.position.set(0, 4, 20)
 
         // clock
         this.clock = new THREE.Clock()
@@ -53,6 +54,7 @@ export default class Engine {
 
     addGeometry() {
         this.water = new Water(this.scene);
+        this.boat = new Boat(this.scene);
     }
 
     initLoadingManager() {
@@ -95,6 +97,7 @@ export default class Engine {
 
         // update water
         this.water.update(this.timeElapsed)
+        this.boat.update(this.timeElapsed)
 
         this.render()
 

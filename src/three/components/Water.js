@@ -74,7 +74,7 @@ export default class Water {
                     texture.wrapS = texture.wrapT = THREE.REPEAT_WRAPPING;
                 })},
                 uTime: {value: 0},
-                uColor: {value: new THREE.Color('#0051da')},
+                uColor: {value: new THREE.Color('#FF5733')},
             },
             vertexShader: this.vertexShader,
             fragmentShader: this.fragmentShader,
