@@ -28,7 +28,7 @@ export default class Engine {
 
         // camera
         this.camera = new THREE.PerspectiveCamera( 65, window.innerWidth / window.innerHeight, 0.1, 10000 )
-        this.camera.position.set(10, 10, 10)
+        this.camera.position.set(0, 5, 10)
 
         // clock
         this.clock = new THREE.Clock()
