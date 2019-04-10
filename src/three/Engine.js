@@ -48,8 +48,6 @@ export default class Engine {
         // gltf lighting
         this.renderer.gammaOutput = true
         this.renderer.gammaFactor = 2.2
-        this.renderer.gammaOutput = true
-        this.renderer.gammaFactor = 2.2
     }
 
     addGeometry() {
