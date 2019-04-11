@@ -25,6 +25,7 @@ export default class Engine {
     initScene(){
         // scene
         this.scene = new THREE.Scene()
+        window.THREE = THREE // three.js inspector for chrome
 
         // camera
         this.camera = new THREE.PerspectiveCamera( 65, window.innerWidth / window.innerHeight, 0.1, 10000 )
