@@ -10,9 +10,13 @@ export default class GltfLoaderTest {
         // draco loader
         // see gltf-pipeline
 
+        this.root = null;
+
         this.loader.load(
             path,
             (gltf) => {
+                this.root = gltf.scene;
+
                 gltf.scene.name = this.name
                 this.scene.add(gltf.scene)
 
