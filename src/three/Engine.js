@@ -26,6 +26,9 @@ export default class Engine {
     initScene(){
         // scene
         this.scene = new THREE.Scene()
+        this.scene.name = "scene1"
+        window.scene1 = this.scene
+        //window.THREE = THREE
 
         // camera
         this.camera = new THREE.PerspectiveCamera( 65, this.width / this.height, 0.1, 10000 )
