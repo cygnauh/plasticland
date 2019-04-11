@@ -6,7 +6,7 @@ export default class GltfLoaderTest {
         this.scene = scene
         this.name = name
         this.loader = new GLTFLoader(manager)
-
+        this.gltf = null
         // draco loader
         // see gltf-pipeline
 
@@ -15,21 +15,21 @@ export default class GltfLoaderTest {
         this.loader.load(
             path,
             (gltf) => {
-                this.root = gltf.scene;
+                this.gltf = gltf.scene;
+                this.gltf.name = this.name
+                this.scene.add(this.gltf)
 
-                gltf.scene.name = this.name
-                this.scene.add(gltf.scene)
-
-                console.log(gltf.scene)
-                gltf.scene.position.x = posX
-                gltf.scene.position.y = posY
-                gltf.scene.position.z = posZ
-                gltf.scene.rotateY(rotateX)
+                console.log(this.gltf)
+                this.gltf.position.x = posX
+                this.gltf.position.y = posY
+                this.gltf.position.z = posZ
+                this.gltf.rotateY(rotateX)
+                this.gltf.scale(0.05)
 
 
                 console.log('rest')
 
-                gltf.scene.traverse( (child) => {
+                this.gltf.traverse( (child) => {
                         //console.log(child.material)
                         if (child.isMesh) {
                             // show the count of vertices here
@@ -45,5 +45,6 @@ export default class GltfLoaderTest {
                 console.log( 'An error happened' + error )
             }
         )
+        console.log(this.loader)
     }
 }

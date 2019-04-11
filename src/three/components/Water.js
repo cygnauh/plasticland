@@ -15,7 +15,7 @@ export default class Water {
         this.initShader();
 
         this.plane = new THREE.Mesh(this.geometry,this.material)
-        this.plane.position.y = 1;
+        this.plane.position.y = 0;
         this.scene.add(this.plane)
     }
 
@@ -39,7 +39,7 @@ export default class Water {
                 
                 float strength = 1.0;
                 pos.y += strength * calculateSurface(pos.x, pos.z);
-                pos.y -= strength * calculateSurface(0.0, 0.0); // ? 
+                //pos.y -= strength * calculateSurface(0.0, 0.0); // calcul position to be back on (0,0)
             
                 gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
             }  
@@ -81,7 +81,8 @@ export default class Water {
             vertexShader: this.vertexShader,
             fragmentShader: this.fragmentShader,
             side: THREE.DoubleSide,
-            vertexColors: true
+            vertexColors: true,
+            wireframe: false
         });
     }
 
