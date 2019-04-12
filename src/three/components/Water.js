@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import MagicShader from 'magicshader'
 
 export default class Water {
     constructor(scene) {
@@ -21,6 +22,13 @@ export default class Water {
 
     initShader() {
         this.vertexShader = `
+            precision highp float;
+            
+            attribute vec3 position;
+            attribute vec2 uv;
+            uniform mat4 modelViewMatrix;
+            uniform mat4 projectionMatrix;
+            
             #define SCALE 10.0
             varying vec2 vUv;
             uniform float uTime;
@@ -46,10 +54,12 @@ export default class Water {
         `;
 
         this.fragmentShader = `
+            precision highp float;
+        
             varying vec2 vUv;
             uniform sampler2D uMap;
             uniform float uTime;
-            uniform vec3 uColor;
+            uniform vec3 uColor; // ms({ value: '#ff0000' })
             uniform vec2 uKeyboard;
             
             void main() {
@@ -63,13 +73,13 @@ export default class Water {
                 vec4 tex1 = texture2D(uMap, uv * 1.0 + vec2(key.x, key.y));
                 vec4 tex2 = texture2D(uMap, uv * 1.0 + vec2(key.x + 0.3, key.y + 0.3));
             
-                vec3 blue = uColor;
+                vec3 blue = uColor; 
             
                 gl_FragColor = vec4(blue + vec3(tex1.a * 0.02 - tex2.a * 0.02), 1.0);
             }
         `;
 
-        this.material = new THREE.ShaderMaterial( {
+        this.material = new MagicShader({
             uniforms: {
                 uMap: {value: new THREE.TextureLoader().load("https://cinemont.com/tutorials/zelda/water.png", (texture) => {
                     texture.wrapS = texture.wrapT = THREE.REPEAT_WRAPPING;

@@ -19,6 +19,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "gsap": "^2.1.2",
+    "magicshader": "^0.1.1",
     "stats-js": "^1.0.0",
     "three": "^0.103.0",
     "three-gltf-loader": "^1.103.0",

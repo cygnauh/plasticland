@@ -22,7 +22,9 @@
         },
         methods: {
             initScene(){
+                console.log('before mont')
                 Vue.prototype.$engine = new Engine(this.$refs.canvas)
+                console.log('after mont')
             },
         }
     }
