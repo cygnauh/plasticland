@@ -1,11 +1,11 @@
 <template>
-    <div class="loader">
-        Loading...
-    </div>
+  <div class="loader">
+    Loading...
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Loader',
+  name: 'Loader'
 }
 </script>

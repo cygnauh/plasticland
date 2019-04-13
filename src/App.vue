@@ -4,22 +4,19 @@
   </div>
 </template>
 <script>
-
 export default {
-  name: 'app',
-  methods: {
-  }
-}
+  name: "app",
+  methods: {}
+};
 </script>
 
 <style>
-
-body{
+body {
   margin: 0;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

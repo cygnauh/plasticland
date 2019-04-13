@@ -1,26 +1,31 @@
 import * as THREE from 'three'
 
 export default class Water {
-    constructor(scene) {
-        this.scene = scene
+  constructor (scene) {
+    this.scene = scene
 
-        this.initPlane(40, 40, 20, 20)
-        this.addEventListeners()
-    }
+    this.initPlane(40, 40, 20, 20)
+    this.addEventListeners()
+  }
 
-    initPlane(width, height, widthSegments, heightSegments) {
-        this.geometry = new THREE.PlaneBufferGeometry(width, height, widthSegments, heightSegments)
-        this.geometry.rotateX(-Math.PI / 2);
+  initPlane (width, height, widthSegments, heightSegments) {
+    this.geometry = new THREE.PlaneBufferGeometry(
+      width,
+      height,
+      widthSegments,
+      heightSegments
+    )
+    this.geometry.rotateX(-Math.PI / 2)
 
-        this.initShader();
+    this.initShader()
 
-        this.plane = new THREE.Mesh(this.geometry,this.material)
-        this.plane.position.y = 0;
-        this.scene.add(this.plane)
-    }
+    this.plane = new THREE.Mesh(this.geometry, this.material)
+    this.plane.position.y = 0
+    this.scene.add(this.plane)
+  }
 
-    initShader() {
-        this.vertexShader = `
+  initShader () {
+    this.vertexShader = `
             #define SCALE 10.0
             varying vec2 vUv;
             uniform float uTime;
@@ -43,9 +48,9 @@ export default class Water {
             
                 gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
             }  
-        `;
+        `
 
-        this.fragmentShader = `
+    this.fragmentShader = `
             varying vec2 vUv;
             uniform sampler2D uMap;
             uniform float uTime;
@@ -67,57 +72,81 @@ export default class Water {
             
                 gl_FragColor = vec4(blue + vec3(tex1.a * 0.02 - tex2.a * 0.02), 1.0);
             }
-        `;
+        `
 
-        this.material = new THREE.ShaderMaterial( {
-            uniforms: {
-                uMap: {value: new THREE.TextureLoader().load("https://cinemont.com/tutorials/zelda/water.png", (texture) => {
-                    texture.wrapS = texture.wrapT = THREE.REPEAT_WRAPPING;
-                })},
-                uTime: {type: 'f', value: 0},
-                uColor: {type: 'f', value: new THREE.Color('#0051da')},
-                uKeyboard: {type: 'v2', value: new THREE.Vector2(0,0)}
-            },
-            vertexShader: this.vertexShader,
-            fragmentShader: this.fragmentShader,
-            side: THREE.DoubleSide,
-            vertexColors: true,
-            wireframe: false
-        });
-    }
-
-    addEventListeners() {
-        document.addEventListener('keydown', (e) => {
-            const nomTouche = e.key;
-            switch (e.key) {
-                case 'ArrowRight':
-                    //console.log("turned right")
-                    this.plane.material.uniforms.uKeyboard.value.x += 0.1
-                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
-                    break
-                case 'ArrowLeft':
-                    //console.log("turned left")
-                    this.plane.material.uniforms.uKeyboard.value.x -= 0.1
-                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
-                    break
-                case 'ArrowDown':
-                    //console.log("go down")
-                    this.plane.material.uniforms.uKeyboard.value.y -= 0.1
-                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
-                    break
-                case 'ArrowUp':
-                    //console.log("go up")
-                    this.plane.material.uniforms.uKeyboard.value.y += 0.1
-                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
-                    break
-                default:
-                    console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
-                    break
+    this.material = new THREE.ShaderMaterial({
+      uniforms: {
+        uMap: {
+          value: new THREE.TextureLoader().load(
+            'https://cinemont.com/tutorials/zelda/water.png',
+            texture => {
+              texture.wrapS = texture.wrapT = THREE.REPEAT_WRAPPING
             }
-        }, false)
-    }
+          )
+        },
+        uTime: { type: 'f', value: 0 },
+        uColor: { type: 'f', value: new THREE.Color('#0051da') },
+        uKeyboard: { type: 'v2', value: new THREE.Vector2(0, 0) }
+      },
+      vertexShader: this.vertexShader,
+      fragmentShader: this.fragmentShader,
+      side: THREE.DoubleSide,
+      vertexColors: true,
+      wireframe: false
+    })
+  }
 
-    update(time) {
-        this.plane.material.uniforms.uTime.value = time
-    }
+  addEventListeners () {
+    document.addEventListener(
+      'keydown',
+      e => {
+        // const nomTouche = e.key // define but never use
+        switch (e.key) {
+          case 'ArrowRight':
+            // console.log("turned right")
+            this.plane.material.uniforms.uKeyboard.value.x += 0.1
+            console.log(
+              this.plane.material.uniforms.uKeyboard.value.x,
+              this.plane.material.uniforms.uKeyboard.value.y
+            )
+            break
+          case 'ArrowLeft':
+            // console.log("turned left")
+            this.plane.material.uniforms.uKeyboard.value.x -= 0.1
+            console.log(
+              this.plane.material.uniforms.uKeyboard.value.x,
+              this.plane.material.uniforms.uKeyboard.value.y
+            )
+            break
+          case 'ArrowDown':
+            // console.log("go down")
+            this.plane.material.uniforms.uKeyboard.value.y -= 0.1
+            console.log(
+              this.plane.material.uniforms.uKeyboard.value.x,
+              this.plane.material.uniforms.uKeyboard.value.y
+            )
+            break
+          case 'ArrowUp':
+            // console.log("go up")
+            this.plane.material.uniforms.uKeyboard.value.y += 0.1
+            console.log(
+              this.plane.material.uniforms.uKeyboard.value.x,
+              this.plane.material.uniforms.uKeyboard.value.y
+            )
+            break
+          default:
+            console.log(
+              this.plane.material.uniforms.uKeyboard.value.x,
+              this.plane.material.uniforms.uKeyboard.value.y
+            )
+            break
+        }
+      },
+      false
+    )
+  }
+
+  update (time) {
+    this.plane.material.uniforms.uTime.value = time
+  }
 }

@@ -8,28 +8,28 @@ import Inventaire from '../pages/Inventaire.vue'
 Vue.use(Router)
 
 export default new Router({
-    routes: [
+  routes: [
+    {
+      path: '/',
+      component: Introduction
+    },
+    {
+      path: '/plasticland',
+      component: Stage,
+      children: [
         {
-            path: '/',
-            component: Introduction
+          path: '/plasticland/:location',
+          children: [
+            {
+              path: '/map/:location/:objet'
+            }
+          ]
         },
         {
-            path: '/plasticland',
-            component: Stage,
-            children: [
-                {
-                    path: '/plasticland/:location',
-                    children: [
-                        {
-                            path: '/map/:location/:objet'
-                        }
-                    ]
-                },
-                {
-                    path: '/plasticland/inventaire',
-                    component: Inventaire
-                }
-            ]
+          path: '/plasticland/inventaire',
+          component: Inventaire
         }
-    ]
+      ]
+    }
+  ]
 })
