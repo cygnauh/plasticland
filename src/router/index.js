@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 import Introduction from '../pages/Introduction.vue'
 import Stage from '../pages/Stage.vue'
-import Inventaire from '../pages/Inventaire.vue'
+import Inventory from '../pages/Inventory.vue'
 
 Vue.use(Router)
 
@@ -17,17 +17,18 @@ export default new Router({
       path: '/plasticland',
       component: Stage,
       children: [
+        // {
+        //   path: '/plasticland/:location',
+        //   children: [
+        //     {
+        //       path: '/map/:location/:objet'
+        //     }
+        //   ]
+        // },
         {
-          path: '/plasticland/:location',
-          children: [
-            {
-              path: '/map/:location/:objet'
-            }
-          ]
-        },
-        {
-          path: '/plasticland/inventaire',
-          component: Inventaire
+          path: 'inventory',
+          component: Inventory,
+          props: { inventory: true }
         }
       ]
     }
