@@ -1,4 +1,4 @@
-// import * as THREE from 'three'
+import * as THREE from 'three'
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoaderTest {
@@ -18,16 +18,10 @@ export default class GltfLoaderTest {
         this.gltf = gltf.scene
         this.gltf.name = this.name
         this.scene.add(this.gltf)
-
-        console.log(this.gltf)
         this.gltf.position.x = posX
         this.gltf.position.y = posY
         this.gltf.position.z = posZ
         this.gltf.rotateY(rotateX)
-        this.gltf.scale(0.05)
-
-        console.log('rest')
-
         this.gltf.traverse(child => {
           // console.log(child.material)
           if (child.isMesh) {

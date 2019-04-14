@@ -35,12 +35,9 @@ export default class Boat {
       }
       points[i].y = points[i].x && points[i].z ? this.calculateSurface(points[i].x, points[i].z, time) * 10 : null
       points[i] = points[i].x && points[i].z ? new THREE.Vector3(points[i].x, points[i].y, points[i].z) : null
-      console.log(points)
     }
-
     let cb = new THREE.Vector3()
     let ab = new THREE.Vector3()
-
     // var normal = null
     for (let i = 0; i < points.length; i++) {
       if (points[2] && points[1]) cb.subVectors(points[2], points[1])
@@ -48,15 +45,16 @@ export default class Boat {
       cb.cross(ab) // cross product (produit vectoriel)
       cb.normalize()
 
-      if (this.object.up) this.object.up.copy(cb) // up vector
-      this.object.matrixNeedsUpdate = true
-
-      let lookAtVector = new THREE.Vector3(0, 0, -1) // camera default lookAt position
-      lookAtVector.applyQuaternion(this.camera.quaternion)
-      lookAtVector.y = 0
-      lookAtVector.add(this.object.position)
-
-      this.object.lookAt(lookAtVector)
+      if (this.object.gltf) {
+        let obj = this.object.gltf
+        // obj.up.copy(cb) // up vector, when it's uncomment boat become distorted TODO test
+        obj.matrixNeedsUpdate = true
+        let lookAtVector = new THREE.Vector3(0, 0, -1) // camera default lookAt position
+        lookAtVector.applyQuaternion(this.camera.quaternion)
+        lookAtVector.y = 0
+        lookAtVector.add(obj.position)
+        obj.lookAt(lookAtVector) // boat and camera look at the same direction
+      }
     }
   }
 
@@ -80,7 +78,7 @@ export default class Boat {
     if (this.object && this.object.gltf) {
       let pos = this.object.gltf.position
       let y = this.calculateSurface(pos.x, pos.z, time)
-      pos.y = y + 1.1
+      pos.y = y + 1.2
     }
     this.inclinaisonBoat(time)
   }
