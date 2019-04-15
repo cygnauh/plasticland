@@ -16,6 +16,7 @@ export default new Router({
     {
       path: '/plasticland',
       component: Stage,
+      props: { inventory: false },
       children: [
         // {
         //   path: '/plasticland/:location',

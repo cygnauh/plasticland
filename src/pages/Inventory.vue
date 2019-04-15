@@ -18,11 +18,33 @@
 import objects from '../assets/data/inventory'
 export default {
   name: 'Inventory',
+  props: {
+    inventory: {
+      type: Boolean
+    }
+  },
+  mounted () {
+    if (this.inventory) {
+      this.sendInventoryState(this.inventory)
+    }
+  },
+  watch: {
+    inventory (value) {
+      this.sendInventoryState(value)
+    }
+  },
   computed: {
     objects () {
       return objects.objects.map((item) => {
         return item.name
       })
+    }
+  },
+  methods: {
+    sendInventoryState (value) {
+      if (value) {
+        this.$emit('open-inventory', value)
+      }
     }
   }
 }

@@ -8,10 +8,12 @@ export default class Engine {
   constructor (canvas) {
     this.initCanvas(canvas)
     this.initScene()
+    this.initInventoryScene()
     this.initLoadingManager()
     this.addGeometry()
     this.addEventListeners()
     this.animate()
+    this.displayInventory = false
   }
 
   initCanvas (canvas) {
@@ -62,7 +64,26 @@ export default class Engine {
     this.renderer.gammaOutput = true
     this.renderer.gammaFactor = 2.2
   }
+  initInventoryScene () {
+    this.inventoryScene = new THREE.Scene()
+    this.inventoryScene.name = 'scene2'
+    // camera
+    this.inventoryCamera = new THREE.PerspectiveCamera(
+      65,
+      this.width / this.height,
+      0.1,
+      10000
+    )
+    this.inventoryCamera.position.set(0, 4, 20)
 
+    // clock
+    this.inventoryClock = new THREE.Clock()
+    this.inventoryTimeDelta = 0
+    this.inventoryTimeElapsed = 0
+
+    // helpers
+    this.inventoryHelpers = new Helpers(this.inventoryScene, this.inventoryCamera)
+  }
   addGeometry () {
     this.water = new Water(this.scene)
     this.cube = new CubeTest(this.scene)
@@ -114,6 +135,10 @@ export default class Engine {
     this.renderer.setSize(this.width, this.height)
   }
 
+  setDisplayInventory (value) {
+    console.log('scene switch')
+    this.displayInventory = value
+  }
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
@@ -136,6 +161,10 @@ export default class Engine {
   }
 
   render () {
-    this.renderer.render(this.scene, this.camera)
+    if (!this.displayInventory) {
+      this.renderer.render(this.scene, this.camera)
+    } else {
+      this.renderer.render(this.inventoryScene, this.camera)
+    }
   }
 }
