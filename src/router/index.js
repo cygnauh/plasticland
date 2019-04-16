@@ -16,7 +16,6 @@ export default new Router({
     {
       path: '/plasticland',
       component: Stage,
-      props: { inventory: false },
       children: [
         // {
         //   path: '/plasticland/:location',
@@ -28,8 +27,7 @@ export default new Router({
         // },
         {
           path: 'inventory',
-          component: Inventory,
-          props: { inventory: true }
+          component: Inventory
         }
       ]
     }
