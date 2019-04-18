@@ -3,42 +3,42 @@
     {
       "id": 1,
       "name":"bottle of coke",
-      "model":"",
+      "model":"'/models/boat.gltf'",
       "state":false,
       "description":"text"
     },
     {
       "id": 2,
       "name":"bottle of starb",
-      "model":"",
+      "model":"'/models/boat.gltf'",
       "state":false,
       "description":"text"
     },
     {
       "id": 3,
       "name":"bottle of bk",
-      "model":"",
+      "model":"'/models/boat.gltf'",
       "state":false,
       "description":"text"
     },
     {
       "id": 4,
       "name":"bottle of danone",
-      "model":"",
+      "model":"'/models/boat.gltf'",
       "state":false,
       "description":"text"
     },
     {
       "id": 5,
       "name":"bottle of crystal",
-      "model":"",
+      "model":"'/models/boat.gltf'",
       "state":false,
       "description":"text"
     },
     {
       "id": 6,
       "name":"bottle of coke",
-      "model":"",
+      "model":"'/models/boat.gltf'",
       "state":true,
       "description":"text"
     }

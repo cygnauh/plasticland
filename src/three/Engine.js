@@ -3,6 +3,7 @@ import Helpers from './components/Helpers'
 import Water from './components/Water'
 import Boat from './components/Boat'
 import CubeTest from './components/CubeTest'
+import Collectable from './components/Collectable'
 
 export default class Engine {
   constructor (canvas) {
@@ -13,7 +14,7 @@ export default class Engine {
     this.addGeometry()
     this.addEventListeners()
     this.animate()
-    this.displayInventory = false
+    this.displayInventory = true
   }
 
   initCanvas (canvas) {
@@ -75,16 +76,10 @@ export default class Engine {
       10000
     )
     this.inventoryCamera.position.set(0, 4, 20)
-
-    // clock
-    this.inventoryClock = new THREE.Clock()
-    this.inventoryTimeDelta = 0
-    this.inventoryTimeElapsed = 0
-
-    // helpers
-    this.inventoryHelpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
+
   addGeometry () {
+    this.collectable = new Collectable(this.inventoryScene)
     this.water = new Water(this.scene)
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
@@ -128,15 +123,13 @@ export default class Engine {
 
   resize () {
     this.setSize()
-
     this.camera.aspect = this.width / this.height
     this.camera.updateProjectionMatrix()
-
     this.renderer.setSize(this.width, this.height)
   }
 
   setDisplayInventory (value) {
-    console.log('scene switch')
+    console.log(value, 'from ENGINE')
     this.displayInventory = value
   }
   animate () {

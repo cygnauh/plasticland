@@ -22,13 +22,12 @@ export default {
   name: 'Stage',
   data () {
     return {
-      data: '',
+      data: ''
     }
   },
   mounted () {
     this.initScene()
-    if (this.inventory) Vue.prototype.$engine.setDisplayInventory(this.inventory)
-    this.setInventory(this.inventory)
+    if (this.inventory) this.setInventory(this.inventory)
   },
   watch: {
     $route (to, from) {

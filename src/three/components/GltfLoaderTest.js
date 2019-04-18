@@ -31,12 +31,12 @@ export default class GltfLoaderTest {
         })
       },
       xhr => {
-        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+        // console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
       },
       error => {
         console.log('An error happened' + error)
       }
     )
-    console.log(this.loader)
+    // console.log(this.loader)
   }
 }
