@@ -14,7 +14,7 @@ export default class Engine {
     this.addGeometry()
     this.addEventListeners()
     this.animate()
-    this.displayInventory = true
+    this.displayInventory = false
   }
 
   initCanvas (canvas) {

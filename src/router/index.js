@@ -28,6 +28,14 @@ export default new Router({
         {
           path: 'inventory',
           component: Inventory
+        },
+        {
+          path: 'about',
+          component: Inventory
+        },
+        {
+          path: 'credit',
+          component: Inventory
         }
       ]
     }

@@ -10,7 +10,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import 'assets/scss/index';
 body {
   margin: 0;
   padding: 0;
