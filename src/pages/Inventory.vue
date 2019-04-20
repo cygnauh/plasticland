@@ -33,11 +33,12 @@ export default {
 </script>
 
 <style lang="scss">
+  @import '../assets/scss/index';
   .inventory{
     position: absolute;
     z-index: 0;
     top: 0;
-    background: rgba(blue, 0.1);
+    background: $dark_blue;
     width: 100%;
     height: 100%;
     .box{
