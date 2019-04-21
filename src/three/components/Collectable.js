@@ -3,10 +3,12 @@ import GltfLoaderTest from './GltfLoaderTest'
 import config from '../../assets/data/inventory'
 
 export default class Collectable {
-  constructor (scene, manager, camera) {
+  constructor (scene, manager, camera, width, height) {
     this.scene = scene
     this.manager = manager
     this.camera = camera
+    this.width = width
+    this.height = height
     this.objects = []
     this.initCollectables()
     console.log(config.objects)
@@ -21,7 +23,7 @@ export default class Collectable {
         '/models/boat.gltf',
         this.scene,
         this.manager,
-        -2 * value.id,
+        this.width/3,
         5 * (value.id % 2 ? -1 : 1),
         0,
         0

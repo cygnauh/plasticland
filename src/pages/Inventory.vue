@@ -39,7 +39,7 @@ export default {
   .inventory{
     position: absolute;
     /*overflow: scroll;*/
-    z-index: 0;
+    z-index: -1;
     top: 0;
     background: $dark_blue;
     width: 100%;

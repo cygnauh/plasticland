@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Introduction from '../pages/Introduction.vue'
-import Stage from '../pages/Stage.vue'
-import Inventory from '../pages/Inventory.vue'
+import Introduction from '../pages/Introduction'
+import Stage from '../pages/Stage'
+import Inventory from '../pages/Inventory'
+import Credits from '../pages/Credits'
+import About from '../pages/About'
 
 Vue.use(Router)
 
@@ -31,11 +33,11 @@ export default new Router({
         },
         {
           path: 'about',
-          component: Inventory
+          component: About
         },
         {
-          path: 'credit',
-          component: Inventory
+          path: 'credits',
+          component: Credits
         }
       ]
     }

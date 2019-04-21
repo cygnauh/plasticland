@@ -21,6 +21,7 @@
       id="canvas"> </canvas>
     <router-view/>
     <router-link
+      v-if="$route.path !== '/plasticland/inventory'"
       to="/plasticland/inventory">
       <div
         class="interface inventory-btn">

@@ -59,7 +59,7 @@ export default class Engine {
     })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0xffffff)
+    this.renderer.setClearColor(0xffffff, 0)
 
     // gltf lighting
     this.renderer.gammaOutput = true
@@ -67,6 +67,7 @@ export default class Engine {
   }
   initInventoryScene () {
     this.inventoryScene = new THREE.Scene()
+    // this.inventoryScene.background = new THREE.Color(0xff0000)
     this.inventoryScene.name = 'scene2'
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
@@ -76,10 +77,12 @@ export default class Engine {
       10000
     )
     this.inventoryCamera.position.set(0, 4, 20)
+    // helpers
+    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   addGeometry () {
-    this.collectable = new Collectable(this.inventoryScene)
+    this.collectable = new Collectable(this.inventoryScene,this.manager, this.camera, this.width, this.height)
     this.water = new Water(this.scene)
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
@@ -129,7 +132,6 @@ export default class Engine {
   }
 
   setDisplayInventory (value) {
-    console.log(value, 'from ENGINE')
     this.displayInventory = value
   }
   animate () {
