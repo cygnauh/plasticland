@@ -1,6 +1,8 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
+
 import Water from './components/Water'
+import Instances from './components/Instances'
 
 export default class Engine {
     constructor(canvas) {
@@ -25,18 +27,22 @@ export default class Engine {
     initScene(){
         // scene
         this.scene = new THREE.Scene()
+        /* three.js inspector for chrome */
         this.scene.name = "scene"
-        window.scene = this.scene;
-        window.THREE = THREE; // three.js inspector for chrome
+        window.scene = this.scene
+        window.THREE = THREE
 
         // camera
         this.camera = new THREE.PerspectiveCamera( 65, window.innerWidth / window.innerHeight, 0.1, 10000 )
-        this.camera.position.set(0, 5, 10)
+        this.camera.position.set(0, 4, 20)
 
         // clock
         this.clock = new THREE.Clock()
         this.timeDelta = 0
         this.timeElapsed = 0
+
+        // mouse
+        this.mouse = new THREE.Vector2(0, 0)
 
         // helpers
         this.helpers = new Helpers(this.scene, this.camera);
@@ -54,6 +60,7 @@ export default class Engine {
 
     addGeometry() {
         this.water = new Water(this.scene);
+        this.instances = new Instances(this.scene, this.manager)
     }
 
     initLoadingManager() {
@@ -74,6 +81,7 @@ export default class Engine {
 
     addEventListeners() {
         window.addEventListener('resize', () => this.resize())
+        window.addEventListener('mousemove', (e) => this.onMouseMove(e))
     }
 
     resize() {
@@ -83,6 +91,11 @@ export default class Engine {
         this.camera.updateProjectionMatrix()
 
         this.renderer.setSize(this.width, this.height)
+    }
+
+    onMouseMove(e) {
+        this.mouse.x = ( e.clientX / this.renderer.domElement.clientWidth ) * 2 - 1;
+        this.mouse.y = - ( e.clientY / this.renderer.domElement.clientHeight ) * 2 + 1;
     }
 
     animate() {
@@ -95,7 +108,7 @@ export default class Engine {
         this.timeElapsed = this.clock.getElapsedTime()
 
         // update water
-        this.water.update(this.timeElapsed)
+        this.water.update(this.timeElapsed, this.mouse)
 
         this.render()
 
