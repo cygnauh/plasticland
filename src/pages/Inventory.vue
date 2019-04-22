@@ -58,25 +58,40 @@ export default {
           width: 33.2%;
           transform: translateY(159px);
           .obj-container{
+            will-change: opacity;
             padding: 20px;
             height: 35vh;
             display: flex;
-            &:hover{
-              &:after{
-                content:'';
-                position: absolute;
-                top:0;
-                left: 0;
-                border: solid 1px $sand_yellow;
-                transform: translate(5%, 5%);
-                width: 90%;
-                height: 90%;
-              }
-            }
             .obj-title{
+              will-change: opacity;
+              opacity: 0;
               height: auto;
               width: 100%;
               align-self: flex-end;
+              font-size: 18px;
+              color: $sand_yellow;
+              text-transform: uppercase;
+              padding-bottom: 10px;
+            }
+            &:after{
+              content:'';
+              position: absolute;
+              top:0;
+              left: 0;
+              border: solid 1px $sand_yellow;
+              transform: translate(5%, 5%);
+              width: 90%;
+              height: 90%;
+              will-change: opacity;
+              opacity: 0;
+            }
+            &:hover{
+              &:after{
+                opacity: 1;
+              }
+              .obj-title{
+                opacity: 1;
+              }
             }
           }
           .border-right{
