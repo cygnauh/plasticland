@@ -1,16 +1,30 @@
 <template>
-  <div class="Stage">
+  <div
+    :class="{ 'blue-bg' : ($route.path !== '/plasticland') }"
+    class="Stage">
     <div class="Stage-border">
       <div class="title">
         {{ title }}
       </div>
+      <router-link
+        to="/plasticland"
+        v-if="$route.path !== '/plasticland'"
+      >
+        <div class="close-btn">
+          Fermer
+        </div>
+      </router-link>
       <div class="menu">
-        <span>
-          à propos
-        </span>
-        <span>
-          crédits
-        </span>
+        <router-link to="/plasticland/about">
+          <span>
+            à propos
+          </span>
+        </router-link>
+        <router-link to="/plasticland/credits">
+          <span>
+            crédits
+          </span>
+        </router-link>
         <span>
           son
         </span>
@@ -54,7 +68,6 @@ export default {
       } else {
         if (to.path === '/plasticland') this.setInventory(false)
       }
-      // console.log(to.path, from)
     }
   },
   methods: {
@@ -73,11 +86,13 @@ export default {
 <style lang="scss">
 @import '../assets/scss/index';
 .Stage{
-  background: orange;
   position: relative;
   border: 0;
   margin: 0;
   padding: 0;
+  &.blue-bg{
+    background: $dark_blue;
+  }
   &-border {
     position: absolute;
     z-index: 2;
@@ -90,6 +105,20 @@ export default {
     text-transform: uppercase;
     .title{
       font-size: 18px;
+    }
+    .router-link-active{
+      top: 0;
+      position: relative;
+      text-decoration: none;
+      .close-btn{
+        color: $sand_yellow;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-underline: transparent;
+        &:hover{
+          cursor: pointer;
+        }
+      }
     }
     .menu{
       display: flex;

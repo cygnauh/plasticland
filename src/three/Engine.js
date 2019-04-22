@@ -69,6 +69,7 @@ export default class Engine {
     this.inventoryScene = new THREE.Scene()
     // this.inventoryScene.background = new THREE.Color(0xff0000)
     this.inventoryScene.name = 'scene2'
+    this.inventoryScene.position.y = -5
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
       65,
@@ -78,11 +79,11 @@ export default class Engine {
     )
     this.inventoryCamera.position.set(0, 4, 20)
     // helpers
-    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
+    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   addGeometry () {
-    this.collectable = new Collectable(this.inventoryScene,this.manager, this.camera, this.width, this.height)
+    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
     this.water = new Water(this.scene)
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
@@ -157,8 +158,10 @@ export default class Engine {
 
   render () {
     if (!this.displayInventory) {
+      window.scene = this.scene
       this.renderer.render(this.scene, this.camera)
     } else {
+      window.scene = this.inventoryScene
       this.renderer.render(this.inventoryScene, this.camera)
     }
   }
