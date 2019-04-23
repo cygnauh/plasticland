@@ -60,7 +60,7 @@ export default class Engine {
 
     addGeometry() {
         this.water = new Water(this.scene);
-        this.instances = new Instances(this.scene, this.manager)
+        //this.instances = new Instances(this.scene, this.manager,'./models/instance_montange_null_01.glb')
     }
 
     initLoadingManager() {
