@@ -28,7 +28,7 @@ export default class Collectable {
         x, // x
         y, // y
         0, // z
-        0 // rotation
+        -Math.PI / 2 // rotation
       )
       this.objects.push(obj)
     })

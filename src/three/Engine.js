@@ -72,12 +72,13 @@ export default class Engine {
     this.inventoryScene.position.y = -5
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
-      65,
+      20,
       this.width / this.height,
-      0.1,
+      1,
       10000
     )
     this.inventoryCamera.position.set(0, 4, 20)
+    this.inventoryCamera.position.z = 1800
     // helpers
     // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
