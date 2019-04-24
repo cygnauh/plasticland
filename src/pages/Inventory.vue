@@ -69,6 +69,7 @@ export default {
               width: 100%;
               align-self: flex-end;
               font-size: 18px;
+              font-family: Arkhip, sans-serif;
               color: $sand_yellow;
               text-transform: uppercase;
               padding-bottom: 10px;

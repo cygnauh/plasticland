@@ -8,10 +8,10 @@
       </div>
       <router-link
         to="/plasticland"
-        v-if="$route.path !== '/plasticland'"
-      >
+        v-if="$route.path !== '/plasticland'">
         <div class="close-btn">
-          Fermer
+          <img alt="Vue logo" src="../assets/img/close.png">
+          <span>Fermer</span>
         </div>
       </router-link>
       <div class="menu">
@@ -39,7 +39,9 @@
       to="/plasticland/inventory">
       <div
         class="interface inventory-btn">
-        Inventory
+        {{ objectFound }}
+        /
+        {{ totalObject }}
       </div>
     </router-link>
   </div>
@@ -54,7 +56,9 @@ export default {
   data () {
     return {
       data: '',
-      title: 'Marécage de plastique'
+      title: 'Marécage de plastique',
+      objectFound: 0,
+      totalObject: 6
     }
   },
   mounted () {
@@ -105,32 +109,57 @@ export default {
     text-transform: uppercase;
     .title{
       font-size: 18px;
+      font-family: Arkhip, sans-serif;
     }
     .router-link-active{
       top: 0;
       position: relative;
       text-decoration: none;
       .close-btn{
-        color: $sand_yellow;
         cursor: pointer;
-        text-transform: uppercase;
-        text-underline: transparent;
+        display: flex;
+        flex-direction: column;
+        img{
+          width: 51px;
+          height: 51px;
+        }
+        span{
+          margin-top: 13px;
+          color: $sand_yellow;
+          text-transform: uppercase;
+          text-underline: transparent;
+          font-family: ApercuPro, sans-serif;
+          font-size: 14px;
+        }
         &:hover{
           cursor: pointer;
         }
       }
     }
     .menu{
+      text-decoration: none;
       display: flex;
-      font-size: 14px;
+      a{
+        padding: 0 10px;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: ApercuPro, sans-serif;
+        font-weight: 400;
+        color: $sand_yellow;
+      }
     }
   }
     .inventory-btn{
       bottom: 28px;
       width: 100px;
       height: 100px;
-      background: green;
+      border-radius: 50%;
+      border-left: solid 10px rgba(254, 248, 239, 0.11);
+      border-top: solid 10px rgba(254, 248, 239, 0.11);
       position: absolute;
+      font-family: Arkhip, sans-serif;
+      font-size: 46px;
+      color: white;
     }
 }
 </style>
