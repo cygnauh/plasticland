@@ -6,18 +6,18 @@ export default class Water extends Object3D {
         super()
         this.scene = scene
 
-        this.initPlane(40, 40 , 20, 20)
+        this.initPlane(40, 40, 20, 20)
         this.addEventListeners()
     }
 
     initPlane(width, height, widthSegments, heightSegments) {
         this.geometry = new PlaneBufferGeometry(width, height, widthSegments, heightSegments)
-        this.geometry.rotateX(-Math.PI / 2);
+        this.geometry.rotateX(-Math.PI / 2)
 
         this.initShader();
 
         this.plane = new Mesh(this.geometry,this.material)
-        this.plane.position.y = 1;
+        this.plane.position.y = 1
         this.scene.add(this.plane)
     }
 
@@ -65,7 +65,9 @@ export default class Water extends Object3D {
             uniform vec3 uColor; // ms({ value: '#ff0000' })
             
             void main() {
-                vec2 uv = vUv * 10.0 + vec2(uTime * (0.05 * uMouse * 0.05));
+                vec2 mouse = uMouse;
+                vec2 mouseFactor = vec2(mouse * 0.05);
+                vec2 uv = vUv * 10.0 + vec2(uTime * (0.05 * mouseFactor));
             
                 uv.y += 0.01 * (sin(uv.x * 3.5 + uTime * 0.35) + sin(uv.x * 4.8 + uTime * 1.05) + sin(uv.x * 7.3 + uTime * 0.45)) / 3.0;
                 uv.x += 0.12 * (sin(uv.y * 4.0 + uTime * 0.5) + sin(uv.y * 6.8 + uTime * 0.75) + sin(uv.y * 11.3 + uTime * 0.2 )) / 3.0 ;
@@ -84,7 +86,7 @@ export default class Water extends Object3D {
         this.material = new MagicShader({
             uniforms: {
                 uMap: {value: new TextureLoader().load("https://cinemont.com/tutorials/zelda/water.png", (texture) => {
-                    texture.wrapS = texture.wrapT = RepeatWrapping;
+                    texture.wrapS = texture.wrapT = RepeatWrapping
                 })},
                 uTime: {type: 'f', value: 0.0},
                 uColor: {type: 'f', value: new Color('#d1d3e1')},
@@ -126,16 +128,12 @@ export default class Water extends Object3D {
             }
         }, false)
         document.addEventListener('mousemove', (e) => {
-            this.plane.material.uniforms.uMouse.value.x = e.clientX / 100;
-            this.plane.material.uniforms.uMouse.value.y = e.clientY / 100;
-
-            //console.log(this.plane.material.uniforms.uMouse.value)
+            this.plane.material.uniforms.uMouse.value.x = e.clientX / 100
+            this.plane.material.uniforms.uMouse.value.y = e.clientY / 100
         }, false)
     }
 
-    update(time, mouse) {
+    update(time) {
         this.plane.material.uniforms.uTime.value = time
-        //this.plane.material.uniforms.uMouse.x = mouse.x * 100
-        //this.plane.material.uniforms.uMouse.y = mouse.y
     }
 }
