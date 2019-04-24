@@ -64,14 +64,11 @@ export default {
   mounted () {
     this.initScene()
     if (this.inventory) this.setInventory(this.inventory)
+    this.checkRoute(this.$route.path)
   },
   watch: {
-    $route (to, from) {
-      if (to.path === '/plasticland/inventory') {
-        this.setInventory(true)
-      } else {
-        if (to.path === '/plasticland') this.setInventory(false)
-      }
+    $route (to) {
+      this.checkRoute(to.path)
     }
   },
   methods: {
@@ -83,6 +80,15 @@ export default {
     },
     setInventory (value) {
       Vue.prototype.$engine.setDisplayInventory(value)
+    },
+    checkRoute (route) {
+      if (route === '/plasticland/inventory') {
+        this.title = 'Explorez votre collection'
+        this.setInventory(true)
+      } else {
+        if (route === '/plasticland') this.setInventory(false)
+        this.title = 'Marécage de plastique' // to be set incording to Place
+      }
     }
   }
 }
