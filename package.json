@@ -21,6 +21,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "gsap": "^2.1.2",
     "magicshader": "^0.1.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "stats-js": "^1.0.0",
     "three": "^0.103.0",
     "three-gltf-loader": "^1.103.0",

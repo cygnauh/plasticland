@@ -1,5 +1,5 @@
 <template id="timer">
-    <div>
+    <div class="timer">
         <span class="hour"> {{ hours }} </span>
         <span> : </span>
         <span class="minutes"> {{ minutes }} </span>
@@ -45,8 +45,12 @@
             setInterval(() => this.startTimer(), 1 * 1000)
         },
         mounted() {
-        this.initTime()
+            this.initTime()
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    @import "./timer.scss";
+</style>
 
