@@ -108,7 +108,7 @@ export default class Engine {
         this.timeElapsed = this.clock.getElapsedTime()
 
         // update water
-        this.water.update(this.timeElapsed, this.mouse)
+        this.water.update(this.timeElapsed)
 
         this.render()
 
