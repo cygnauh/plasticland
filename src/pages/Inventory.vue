@@ -6,6 +6,8 @@
           :key="name.id"
           v-for="(name, i) in objects"
           class="object">
+          <router-link
+            :to="`/plasticland/inventory/${name}`">
           <div
             :class=" (i+1) % 3 ? 'border-right': null"
             class="obj-container">
@@ -13,6 +15,7 @@
               {{ name }}
             </div>
           </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -38,7 +41,7 @@ export default {
   .inventory{
     position: absolute;
     /*overflow: scroll;*/
-    z-index: 0;
+    z-index: 1;
     top: 0;
     width: 100%;
     height: 100%;
@@ -57,12 +60,16 @@ export default {
           border-top: 1px solid $medium_grey;
           width: 33.2%;
           transform: translateY(159px);
+          a{
+            text-decoration: none;
+          }
           .obj-container{
             will-change: opacity;
             padding: 20px;
             height: 35vh;
             display: flex;
             .obj-title{
+              text-decoration: none;
               will-change: opacity;
               opacity: 0;
               height: auto;
@@ -100,6 +107,10 @@ export default {
           }
         }
       }
+    }
+    .test{
+      position: absolute;
+      z-index: 3;
     }
   }
 </style>

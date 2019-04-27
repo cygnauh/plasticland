@@ -3,12 +3,25 @@
     :class="{ 'blue-bg' : ($route.path !== '/plasticland') }"
     class="Stage">
     <div class="Stage-border">
-      <div class="title">
+      <div
+        v-if="!displayReturn"
+        class="title">
         {{ title }}
       </div>
       <router-link
+        v-else
+        to="/plasticland/inventory"
+        >
+        <div
+          class="back">
+          <img src="../assets/img/back.png" alt="back">
+          <span>Retour à votre collection</span>
+        </div>
+      </router-link>
+      <router-link
         to="/plasticland"
-        v-if="$route.path !== '/plasticland'">
+        v-if="$route.path !== '/plasticland'"
+        class="close-link">
         <div class="close-btn">
           <img alt="Vue logo" src="../assets/img/close.png">
           <span>Fermer</span>
@@ -25,9 +38,10 @@
             crédits
           </span>
         </router-link>
-        <span>
-          son
-        </span>
+        <img
+          class="volume"
+          src="../assets/img/volume.png"
+          alt="volume">
       </div>
     </div>
     <canvas
@@ -35,7 +49,7 @@
       id="canvas"> </canvas>
     <router-view/>
     <router-link
-      v-if="$route.path !== '/plasticland/inventory'"
+      v-if="$route.path === '/plasticland'"
       to="/plasticland/inventory">
       <div
         class="interface inventory-btn">
@@ -58,7 +72,8 @@ export default {
       data: '',
       title: 'Marécage de plastique',
       objectFound: 0,
-      totalObject: 6
+      totalObject: 6,
+      displayReturn: false
     }
   },
   mounted () {
@@ -85,9 +100,13 @@ export default {
       if (route === '/plasticland/inventory') {
         this.title = 'Explorez votre collection'
         this.setInventory(true)
-      } else {
-        if (route === '/plasticland') this.setInventory(false)
+        this.displayReturn = false
+      } else if (route === '/plasticland') {
+        this.setInventory(false)
+        this.displayReturn = false
         this.title = 'Marécage de plastique' // to be set incording to Place
+      } else {
+        this.displayReturn = true
       }
     }
   }
@@ -117,10 +136,27 @@ export default {
       font-size: 18px;
       font-family: Arkhip, sans-serif;
     }
+    .back{
+      display: flex;
+      img{
+        width: 17px;
+        height: 19px;
+      }
+      span{
+        padding-left: 10px;
+      }
+      font-size: 14px;
+      font-family: ApercuPro, sans-serif;
+      color: $sand_yellow;
+    }
     .router-link-active{
       top: 0;
-      position: relative;
       text-decoration: none;
+      &.close-link{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
       .close-btn{
         cursor: pointer;
         display: flex;
@@ -146,12 +182,19 @@ export default {
       text-decoration: none;
       display: flex;
       a{
+        /*height: 0;*/
         padding: 0 10px;
         text-decoration: none;
         font-size: 14px;
         font-family: ApercuPro, sans-serif;
         font-weight: 400;
         color: $sand_yellow;
+      }
+      .volume{
+        align-self: end;
+        padding: 0 10px;
+        width: 20px;
+        height: 17px;
       }
     }
   }

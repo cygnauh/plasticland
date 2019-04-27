@@ -18,7 +18,7 @@ export default class Collectable {
     const test = config.objects
     let obj = null
     test.forEach((value, i) => {
-      let x = i % 3 === 0 ? 0 : i % 3 === 1 ? -10 : 10
+      let x = i % 3 === 0 ? 0 : i % 3 === 1 ? -13 : 13
       let y = i % 2 === 0 ? 0 : 10
       obj = new GltfLoaderTest(
         value.name,
