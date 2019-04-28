@@ -3,16 +3,17 @@
     <div class='inventory-container'>
       <div class="box">
         <div
-          :key="name.id"
-          v-for="(name, i) in objects"
-          class="object">
+          :key="object.id"
+          v-for="(object, i) in objects"
+          class="object"
+          @click.capture="(e) => onObjectClicked(e, object)">
           <router-link
-            :to="`/plasticland/inventory/${name}`">
+            :to="`/plasticland/inventory/${object.id}`">
           <div
             :class=" (i+1) % 3 ? 'border-right': null"
             class="obj-container">
             <div class="obj-title">
-              {{ name }}
+              {{ object.name }}
             </div>
           </div>
           </router-link>
@@ -24,13 +25,28 @@
 
 <script>
 import objects from '../assets/data/inventory'
+import InventoryDetail from './InventoryDetail'
 export default {
   name: 'Inventory',
   computed: {
     objects () {
       return objects.objects.map((item) => {
-        return item.name
+        return item
       })
+    }
+  },
+  mounted () {
+    console.log(this.$router.options.routes[1].children)
+  },
+  methods: {
+    onObjectClicked (e, obj) {
+      if (!obj.state) e.preventDefault()
+      console.log(obj) // this.$router
+      // this.$router.push({
+      //   path: `/inventory/${obj.id}`,
+      //   component: InventoryDetail
+      // })
+      console.log(this.$router)
     }
   }
 }

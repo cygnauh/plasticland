@@ -14,7 +14,7 @@
         >
         <div
           class="back">
-          <img src="../assets/img/back.png" alt="back">
+          <img src="../assets/img/arrow.png" alt="back">
           <span>Retour à votre collection</span>
         </div>
       </router-link>
@@ -52,7 +52,8 @@
       v-if="$route.path === '/plasticland'"
       to="/plasticland/inventory">
       <div
-        class="interface inventory-btn">
+        class="interface inventory-btn"
+        @click="testRoute">
         {{ objectFound }}
         /
         {{ totalObject }}
@@ -64,6 +65,7 @@
 <script>
 import Vue from 'vue'
 import Engine from '../three/Engine'
+import Inventory from './Inventory'
 
 export default {
   name: 'Stage',
@@ -108,6 +110,9 @@ export default {
       } else {
         this.displayReturn = true
       }
+    },
+    testRoute () {
+      this.$router.push('inventory')
     }
   }
 }
@@ -137,6 +142,7 @@ export default {
       font-family: Arkhip, sans-serif;
     }
     .back{
+      /*transform: translateY(30px);*/
       display: flex;
       img{
         width: 17px;
