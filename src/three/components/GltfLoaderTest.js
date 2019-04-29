@@ -1,4 +1,4 @@
-import * as THREE from 'three'
+// import * as THREE from 'three'
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoaderTest {

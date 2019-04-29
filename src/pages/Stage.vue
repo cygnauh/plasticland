@@ -70,7 +70,6 @@
 <script>
 import Vue from 'vue'
 import Engine from '../three/Engine'
-import Inventory from './Inventory'
 import Timer from '../components/Timer/Timer'
 
 export default {

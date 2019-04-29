@@ -1,4 +1,4 @@
-import * as THREE from 'three'
+// import * as THREE from 'three'
 import GltfLoaderTest from './GltfLoaderTest'
 import config from '../../assets/data/inventory'
 

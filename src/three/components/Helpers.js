@@ -1,7 +1,7 @@
 
-import * as THREE from 'three';
-import * as Stats from 'stats-js';
-import OrbitControls from 'three-orbitcontrols';
+import * as THREE from 'three'
+import * as Stats from 'stats-js'
+import OrbitControls from 'three-orbitcontrols'
 
 export default class Helpers {
   constructor (scene, camera) {
