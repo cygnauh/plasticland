@@ -37,7 +37,7 @@ export default class Engine {
     window.THREE = THREE
 
     // camera
-    this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.1, 10000)
+    this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 4, 20)
 
     // clock
