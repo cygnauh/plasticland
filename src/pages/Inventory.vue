@@ -1,8 +1,11 @@
 <template>
-  <div class='inventory'>
+  <div
+    :class="{'show': isMounted}"
+    class='inventory'>
     <div class='inventory-container'>
       <div class="box">
         <div
+          :class="{'canHover' : object.found}"
           :key="object.id"
           v-for="(object, i) in objects"
           class="object"
@@ -28,6 +31,11 @@ import objects from '../assets/data/inventory'
 import InventoryDetail from './InventoryDetail'
 export default {
   name: 'Inventory',
+  data () {
+    return {
+      isMounted: false
+    }
+  },
   computed: {
     objects () {
       return objects.objects.map((item) => {
@@ -35,9 +43,11 @@ export default {
       })
     }
   },
+  mounted () {
+    this.isMounted = true
+  },
   methods: {
     onObjectClicked (e, obj) {
-      // const InventoryDetail = InventoryDetail
       if (!obj.found) {
         e.preventDefault()
       } else {
@@ -54,12 +64,19 @@ export default {
 <style lang="scss">
   @import '../assets/scss/index';
   .inventory{
+    /*background: aquamarine;*/
     position: absolute;
     /*overflow: scroll;*/
     z-index: 1;
     top: 0;
     width: 100%;
     height: 100%;
+    will-change: transform;
+    /*transform: translateY(100%);*/
+    &.show{
+      /*transform: translateY(0);*/
+      transition: transform 1s ease-in-out;
+    }
     &-container{
       /*margin: 18px;*/
       /*width: calc(100% - 18px);*/
@@ -71,10 +88,23 @@ export default {
         flex-wrap: wrap;
         align-items: flex-start;
         flex-direction: row;
+        transform: translateY(159px);
         .object{
-          border-top: 1px solid $medium_grey;
+          transform: translateZ(0);
           width: 33.2%;
-          transform: translateY(159px);
+          &:before{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 100%;
+            top: 0;
+            background-color: $medium_grey;
+            height: 1px;
+            transition-property: right;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+          }
           a{
             text-decoration: none;
           }
@@ -108,7 +138,9 @@ export default {
               will-change: opacity;
               opacity: 0;
             }
-            &:hover{
+          }
+          &.canHover{
+            .obj-container:hover{
               &:after{
                 opacity: 1;
               }
@@ -118,7 +150,39 @@ export default {
             }
           }
           .border-right{
-            border-right: 1px solid $medium_grey;
+            transform: translateZ(0);
+            /*width: 33.2%;*/
+            &:before{
+              content: '';
+              position: absolute;
+              z-index: -1;
+              right: 0;
+              top: 0;
+              background-color: $medium_grey;
+              height: 0;
+              width: 1px;
+              transition: height 0.3s ease-out;
+              transition-delay: 0.6s;
+            }
+            &:hover:before{
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    &.show{
+      /*transform: translateY(0);*/
+      transition: transform 1s linear;
+      .object{
+        will-change: width;
+        box-shadow: 0;
+        &:before {
+          right: 0;
+        }
+        .border-right{
+          &:before{
+            height: 100%;
           }
         }
       }

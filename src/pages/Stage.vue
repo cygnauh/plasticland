@@ -31,23 +31,27 @@
           <span>Fermer</span>
         </div>
       </router-link>
-      <div class="menu">
-        <router-link to="/plasticland/about">
+      <div class="right-side-content">
+        <div class="menu">
+          <router-link to="/plasticland/about">
           <span>
             à propos
           </span>
-        </router-link>
-        <router-link to="/plasticland/credits">
+          </router-link>
+          <router-link to="/plasticland/credits">
           <span>
             crédits
           </span>
-        </router-link>
-        <img
-          :src="require('../assets/img/svg/volume.svg')"
-          class="volume"
-          alt="volume">
+          </router-link>
+          <img
+            :src="require('../assets/img/svg/volume.svg')"
+            class="volume"
+            alt="volume">
+        </div>
+        <div class="timer">
+          <Timer></Timer>
+        </div>
       </div>
-      <Timer></Timer>
     </div>
     <canvas
       ref="canvas"
@@ -148,7 +152,6 @@ export default {
       font-family: Arkhip, sans-serif;
     }
     .back{
-      /*transform: translateY(30px);*/
       display: flex;
       img{
         width: 17px;
@@ -190,23 +193,30 @@ export default {
         }
       }
     }
-    .menu{
-      text-decoration: none;
+    .right-side-content{
       display: flex;
-      a{
-        /*height: 0;*/
-        padding: 0 10px;
+      flex-direction: column;
+      align-items: flex-end;
+      .menu{
         text-decoration: none;
-        font-size: 14px;
-        font-family: ApercuPro, sans-serif;
-        font-weight: 400;
-        color: $sand_yellow;
+        display: flex;
+        a{
+          padding: 0 10px;
+          text-decoration: none;
+          font-size: 14px;
+          font-family: ApercuPro, sans-serif;
+          font-weight: 400;
+          color: $sand_yellow;
+        }
+        .volume{
+          align-self: end;
+          padding: 0 10px;
+          width: 20px;
+          height: 17px;
+        }
       }
-      .volume{
-        align-self: end;
-        padding: 0 10px;
-        width: 20px;
-        height: 17px;
+      .timer{
+        padding: 10px 5px;
       }
     }
   }
