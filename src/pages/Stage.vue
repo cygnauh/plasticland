@@ -47,6 +47,7 @@
           class="volume"
           alt="volume">
       </div>
+      <Timer></Timer>
     </div>
     <canvas
       ref="canvas"
@@ -70,9 +71,11 @@
 import Vue from 'vue'
 import Engine from '../three/Engine'
 import Inventory from './Inventory'
+import Timer from '../components/Timer/Timer'
 
 export default {
   name: 'Stage',
+  components: { Timer },
   data () {
     return {
       data: '',
