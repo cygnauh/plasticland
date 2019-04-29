@@ -11,6 +11,7 @@ import About from '../pages/About'
 Vue.use(Router)
 
 export default new Router({
+  // mode: 'abstract', // TODO : uncomment in production mode, to hide url in bar of navigation
   routes: [
     {
       path: '/',

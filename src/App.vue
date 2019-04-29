@@ -6,6 +6,9 @@
 <script>
 export default {
   name: 'app',
+  mounted () {
+    // this.$router.replace('/') // TODO : added this in production mode, on reload goes to main page
+  },
   methods: {}
 }
 </script>

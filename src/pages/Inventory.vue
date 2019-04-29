@@ -7,8 +7,8 @@
           v-for="(object, i) in objects"
           class="object"
           @click.capture="(e) => onObjectClicked(e, object)">
-          <router-link
-            :to="`/plasticland/inventory/${object.id}`">
+          <!--<router-link-->
+            <!--:to="`/plasticland/inventory/${object.id}`">-->
           <div
             :class=" (i+1) % 3 ? 'border-right': null"
             class="obj-container">
@@ -16,7 +16,7 @@
               {{ object.name }}
             </div>
           </div>
-          </router-link>
+          <!--</router-link>-->
         </div>
       </div>
     </div>
@@ -35,18 +35,17 @@ export default {
       })
     }
   },
-  mounted () {
-    console.log(this.$router.options.routes[1].children)
-  },
   methods: {
     onObjectClicked (e, obj) {
-      if (!obj.state) e.preventDefault()
-      console.log(obj) // this.$router
-      // this.$router.push({
-      //   path: `/inventory/${obj.id}`,
-      //   component: InventoryDetail
-      // })
-      console.log(this.$router)
+      // const InventoryDetail = InventoryDetail
+      if (!obj.found) {
+        e.preventDefault()
+      } else {
+        this.$router.push({ // TODO : test which way is more interesting for routing
+          path: `/plasticland/inventory/${obj.id}`,
+          component: InventoryDetail
+        })
+      }
     }
   }
 }
