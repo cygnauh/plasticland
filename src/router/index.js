@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Introduction from '../pages/Introduction.vue'
-import Stage from '../pages/Stage.vue'
-import Inventaire from '../pages/Inventaire.vue'
+import Introduction from '../pages/Introduction'
+import Stage from '../pages/Stage'
+import Inventory from '../pages/Inventory'
+import InventoryDetail from '../pages/InventoryDetail'
+import Credits from '../pages/Credits'
+import About from '../pages/About'
 
 Vue.use(Router)
 
 export default new Router({
+  // mode: 'abstract', // TODO : uncomment in production mode, to hide url in bar of navigation
   routes: [
     {
       path: '/',
@@ -17,17 +21,29 @@ export default new Router({
       path: '/plasticland',
       component: Stage,
       children: [
+        // {
+        //   path: '/plasticland/:location',
+        //   children: [
+        //     {
+        //       path: '/map/:location/:objet'
+        //     }
+        //   ]
+        // },
         {
-          path: '/plasticland/:location',
-          children: [
-            {
-              path: '/map/:location/:objet'
-            }
-          ]
+          path: 'inventory',
+          component: Inventory
         },
         {
-          path: '/plasticland/inventaire',
-          component: Inventaire
+          path: 'inventory/:id',
+          component: InventoryDetail
+        },
+        {
+          path: 'about',
+          component: About
+        },
+        {
+          path: 'credits',
+          component: Credits
         }
       ]
     }

@@ -13,7 +13,7 @@ export default class Boat {
   initBoat () {
     this.object = new GltfLoaderTest(
       'boat',
-      '/models/boat.gltf',
+      process.env.BASE_URL + 'models/boat.gltf',
       this.scene,
       this.manager,
       0,

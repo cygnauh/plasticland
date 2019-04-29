@@ -5,14 +5,21 @@
 </template>
 <script>
 export default {
-  name: "app",
+  name: 'app',
+  mounted () {
+    // this.$router.replace('/') // TODO : added this in production mode, on reload goes to main page
+  },
   methods: {}
-};
+}
 </script>
 
-<style>
+<style lang="scss">
+@import 'assets/scss/index';
 body {
   margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
 }
 
 #app {
@@ -21,6 +28,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 </style>
