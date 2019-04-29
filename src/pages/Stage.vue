@@ -14,7 +14,9 @@
         >
         <div
           class="back">
-          <img src="../assets/img/arrow.png" alt="back">
+          <img
+            :src="require('../assets/img/svg/arrow.svg')"
+            alt="back">
           <span>Retour à votre collection</span>
         </div>
       </router-link>
@@ -23,7 +25,9 @@
         v-if="$route.path !== '/plasticland'"
         class="close-link">
         <div class="close-btn">
-          <img alt="Vue logo" src="../assets/img/close.png">
+          <img
+            :src="require('../assets/img/svg/close.svg')"
+            alt="Vue logo">
           <span>Fermer</span>
         </div>
       </router-link>
@@ -39,8 +43,8 @@
           </span>
         </router-link>
         <img
+          :src="require('../assets/img/svg/volume.svg')"
           class="volume"
-          src="../assets/img/volume.png"
           alt="volume">
       </div>
     </div>
