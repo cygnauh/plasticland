@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
 
-import Water from './components/Water'
+//import Water from './components/Water'
 import Instances from './components/Instances'
+import GltfLoader from "./components/GltfLoader";
 
 export default class Engine {
     constructor(canvas) {
@@ -41,6 +42,10 @@ export default class Engine {
         this.timeDelta = 0
         this.timeElapsed = 0
 
+        // light
+        this.light = new THREE.AmbientLight( 0x404040 );
+        this.scene.add(this.light);
+
         // mouse
         this.mouse = new THREE.Vector2(0, 0)
 
@@ -59,8 +64,9 @@ export default class Engine {
     }
 
     addGeometry() {
-        this.water = new Water(this.scene);
-        //this.instances = new Instances(this.scene, this.manager,'./models/instance_montange_null_01.glb')
+        //this.water = new Water(this.scene);
+        this.instances = new Instances(this.scene, this.manager,'./models/instance_montange_null_01.glb')
+        this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager )
     }
 
     initLoadingManager() {
@@ -108,7 +114,7 @@ export default class Engine {
         this.timeElapsed = this.clock.getElapsedTime()
 
         // update water
-        this.water.update(this.timeElapsed)
+        //this.water.update(this.timeElapsed)
 
         this.render()
 
