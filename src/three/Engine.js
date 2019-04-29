@@ -106,6 +106,7 @@ export default class Engine {
 
     animate() {
         // helpers
+
         this.helpers.stats ? this.helpers.stats.begin() : null
         this.helpers.controls ? this.helpers.controls.update() : null
 
@@ -120,7 +121,8 @@ export default class Engine {
 
         this.helpers.stats ? this.helpers.stats.end() : null
 
-        requestAnimationFrame(() => this.animate())
+        requestAnimationFrame(() => this.animate());
+
     }
 
     render() {
