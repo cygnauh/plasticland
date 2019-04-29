@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import objects from '../assets/data/inventory'
 import InventoryDetail from './InventoryDetail'
 export default {
@@ -51,6 +52,7 @@ export default {
       if (!obj.found) {
         e.preventDefault()
       } else {
+        Vue.prototype.$engine.collectable.selectedItem(obj.name)
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
           component: InventoryDetail

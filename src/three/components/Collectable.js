@@ -15,9 +15,8 @@ export default class Collectable {
   }
 
   initCollectables () {
-    const test = config.objects
     let obj = null
-    test.forEach((value, i) => {
+    config.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? 0 : i % 3 === 1 ? -13 : 13
       let y = i % 2 === 0 ? 0 : 10
       obj = new GltfLoaderTest(
@@ -32,8 +31,19 @@ export default class Collectable {
       )
       this.objects.push(obj)
     })
-    // console.log(this.objects)
   }
   update (time) {
+  }
+  selectedItem (name) {
+    console.log(this.objects)
+    console.log(this.objects.filter(item => item.name === name))
+    const selectedItem = this.objects.filter(item => item.name === name)[0].gltf
+    selectedItem.position.x = -4
+    selectedItem.position.y = 6
+    selectedItem.scale.x = 1.5
+    selectedItem.scale.y = 1.5
+    selectedItem.scale.z = 1.5
+    // TODO take chosen item to the left
+    // TODO scale to 0 the others then render false
   }
 }
