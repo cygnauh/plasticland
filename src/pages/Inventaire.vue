@@ -1,10 +1,9 @@
 <template>
-    <div class="inventaire">
-    </div>
+  <div class='inventaire'></div>
 </template>
 
 <script>
-    export default {
-        name: 'Inventaire'
-    }
+export default {
+  name: 'Inventaire'
+}
 </script>
