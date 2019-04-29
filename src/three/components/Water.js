@@ -67,7 +67,7 @@ export default class Water extends Object3D {
             void main() {
                 vec2 mouse = uMouse;
                 vec2 mouseFactor = vec2(mouse * 0.05);
-                vec2 uv = vUv * 10.0 + vec2(uTime * (0.05 * mouseFactor));
+                vec2 uv = vUv * 10.0 + vec2(uTime * 0.05); // (0.05 * mouseFactor));
             
                 uv.y += 0.01 * (sin(uv.x * 3.5 + uTime * 0.35) + sin(uv.x * 4.8 + uTime * 1.05) + sin(uv.x * 7.3 + uTime * 0.45)) / 3.0;
                 uv.x += 0.12 * (sin(uv.y * 4.0 + uTime * 0.5) + sin(uv.y * 6.8 + uTime * 0.75) + sin(uv.y * 11.3 + uTime * 0.2 )) / 3.0 ;
