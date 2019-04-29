@@ -1,19 +1,19 @@
-import Engine from './Engine';
-import Water from "./components/Water";
+import Engine from './Engine'
+import Water from './components/Water'
 
 export default class App extends Engine {
-    constructor(props) {
-        super(props)
+  constructor (props) {
+    super(props)
 
-        this.addGeometry()
-    }
+    this.addGeometry()
+  }
 
-    addGeometry() {
-        this.water = new Water(this.scene);
-    }
+  addGeometry () {
+    this.water = new Water(this.scene)
+  }
 
-    animate() {
-        // update water
-        //this.water.update(this.timeElapsed, this.mouse)
-    }
+  animate () {
+    // update water
+    // this.water.update(this.timeElapsed, this.mouse)
+  }
 }

@@ -1,20 +1,20 @@
 export default {
-  "asset": {
-    "version": "2.0",
-    "generator": "THREE.GLTFExporter"
+  'asset': {
+    'version': '2.0',
+    'generator': 'THREE.GLTFExporter'
   },
-  "scenes": [
+  'scenes': [
     {
-      "nodes": [
+      'nodes': [
         454
       ],
-      "name": "Scene"
+      'name': 'Scene'
     }
   ],
-  "scene": 0,
-  "nodes": [
+  'scene': 0,
+  'nodes': [
     {
-      "matrix": [
+      'matrix': [
         0.797794165279571,
         -0.3255531324683856,
         0.5074836231701411,
@@ -32,27 +32,27 @@ export default {
         -118.24247143481807,
         1
       ],
-      "name": "Editeur_Cinema_4D",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Editeur_Cinema_4D',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -550.0655307188663,
             158.35654593701523,
             -118.24247143481807
           ],
-          "rotation": [
+          'rotation': [
             2.7424562303079645,
             -15.650635943804382,
             -10.068698216950908
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -73,10 +73,10 @@ export default {
           }
         }
       },
-      "camera": 0
+      'camera': 0
     },
     {
-      "matrix": [
+      'matrix': [
         0.9712417485534788,
         0.1468485319374025,
         0.18741658020199464,
@@ -94,27 +94,27 @@ export default {
         7.548508638406345,
         1
       ],
-      "name": "bag_98_3",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_3',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -37.843002116092954,
             146.79329762428804,
             7.548508638406345
           ],
-          "rotation": [
+          'rotation': [
             67.68975676085836,
             -2.519403264752585,
             7.92125071675903
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -137,7 +137,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5520660320328832,
         -0.8321554606453175,
         -0.05234869237763665,
@@ -155,27 +155,27 @@ export default {
         49.140685429618415,
         1
       ],
-      "name": "bouteille_97_4",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_4',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -88.2416633506109,
             86.96521028257334,
             49.140685429618415
           ],
-          "rotation": [
+          'rotation': [
             142.55322358263183,
             -65.33175448917919,
             -35.219923486818765
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000007,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -198,7 +198,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.38191295307622125,
         -0.6387303923560058,
         -0.6679565720564048,
@@ -216,27 +216,27 @@ export default {
         -90.9475078330859,
         1
       ],
-      "name": "bag_98_6",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_6',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -1.734641636386704,
             97.73427129593642,
             -90.9475078330859
           ],
-          "rotation": [
+          'rotation': [
             -66.01070640558589,
             -25.78524588160658,
             127.04418510574641
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -259,7 +259,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5356663044828421,
         0.8443605538247799,
         -0.010810429519987898,
@@ -277,27 +277,27 @@ export default {
         76.18642677739166,
         1
       ],
-      "name": "bouteille_97_7",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_7',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -119.94476783752225,
             58.431453611026356,
             76.18642677739166
           ],
-          "rotation": [
+          'rotation': [
             -19.427401512326274,
             83.797841395147,
             -145.2671946673928
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -320,7 +320,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8938827809568206,
         0.4339879913797069,
         0.11237436205429298,
@@ -338,27 +338,27 @@ export default {
         -34.4257465757078,
         1
       ],
-      "name": "Bidon_96_8",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_8',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -40.71162454700853,
             105.7358496852752,
             -34.4257465757078
           ],
-          "rotation": [
+          'rotation': [
             -31.504507727300368,
             19.613244200715584,
             -171.402117895231
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000007,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -381,7 +381,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9863207884773163,
         0.11918437195797535,
         -0.11387004741576484,
@@ -399,27 +399,27 @@ export default {
         90.86937564281645,
         1
       ],
-      "name": "bag_98_9",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_9',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -147.5594483114048,
             19.312391483534096,
             90.86937564281645
           ],
-          "rotation": [
+          'rotation': [
             142.36211484417316,
             13.623606356249141,
             -6.752314209718399
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000009,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -442,7 +442,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.4023580508314645,
         -0.07590523998728387,
         0.912330199803546,
@@ -460,27 +460,27 @@ export default {
         66.12698719039577,
         1
       ],
-      "name": "bouteille_97_10",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_10',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -167.21388713324328,
             25.980152284959704,
             66.12698719039577
           ],
-          "rotation": [
+          'rotation': [
             -155.30375264019088,
             54.76428644690453,
             -153.78029914732025
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -503,7 +503,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.662957170578578,
         -0.6491368802326842,
         -0.37297332438154934,
@@ -521,27 +521,27 @@ export default {
         -75.56952454062298,
         1
       ],
-      "name": "Bidon_96_11",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_11',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -154.49566625117774,
             13.240339503097374,
             -75.56952454062298
           ],
-          "rotation": [
+          'rotation': [
             -27.251172568245018,
             34.39217962249597,
             -60.45440471377077
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -564,7 +564,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7887181846851774,
         0.3246053029517082,
         0.5220680247271888,
@@ -582,27 +582,27 @@ export default {
         125.85428780162205,
         1
       ],
-      "name": "bag_98_12",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_12',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -26.5966156197781,
             41.60496527043517,
             125.85428780162205
           ],
-          "rotation": [
+          'rotation': [
             -134.3501074831907,
             31.524936340224734,
             157.28589200140144
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -625,7 +625,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.19554932396682517,
         -0.40818672057142513,
         -0.8917085078910392,
@@ -643,27 +643,27 @@ export default {
         34.825373731901564,
         1
       ],
-      "name": "bouteille_97_13",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_13',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -11.95979724778165,
             118.54244767713149,
             34.825373731901564
           ],
-          "rotation": [
+          'rotation': [
             136.00776516450546,
             -30.670289794959267,
             -98.98647356883814
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -686,7 +686,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6703674220630219,
         -0.6406299324648633,
         -0.3744339849247691,
@@ -704,27 +704,27 @@ export default {
         -33.87784130017989,
         1
       ],
-      "name": "Bidon_96_14",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_14',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -151.41771768620288,
             46.97003910619921,
             -33.87784130017989
           ],
-          "rotation": [
+          'rotation': [
             -65.60902903950313,
             -27.723103530552454,
             168.62238347426828
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -747,7 +747,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.30680281792238173,
         0.32089378460483436,
         0.8960464329022638,
@@ -765,27 +765,27 @@ export default {
         -72.16921575966134,
         1
       ],
-      "name": "bag_98_15",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_15',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.24293040432998,
             105.59476386398569,
             -72.16921575966134
           ],
-          "rotation": [
+          'rotation': [
             -92.45108223269958,
             27.774981500097336,
             -124.32746694002111
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000004,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -808,7 +808,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6926452370570472,
         -0.7151152494144158,
         -0.09408908351740035,
@@ -826,27 +826,27 @@ export default {
         57.73762825665096,
         1
       ],
-      "name": "bouteille_97_16",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_16',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -71.58884532022107,
             87.41029928730097,
             57.73762825665096
           ],
-          "rotation": [
+          'rotation': [
             129.72199583531938,
             -42.029527053534466,
             -29.512914534056787
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -869,7 +869,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.736130121409048,
         -0.467972155040561,
         -0.4889933603444873,
@@ -887,27 +887,27 @@ export default {
         113.04187704048203,
         1
       ],
-      "name": "Bidon_96_17",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_17',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -31.866081915054558,
             52.111540405859614,
             113.04187704048203
           ],
-          "rotation": [
+          'rotation': [
             -166.69170995641457,
             -46.45529552726887,
             -102.68263673123064
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -930,7 +930,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.655298418996117,
         0.22845331180728928,
         -0.7199951849738098,
@@ -948,27 +948,27 @@ export default {
         -163.0534367839115,
         1
       ],
-      "name": "bag_98_18",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_18',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -22.079382789901175,
             16.162158552565028,
             -163.0534367839115
           ],
-          "rotation": [
+          'rotation': [
             51.309256273121605,
             26.99328639235081,
             -6.016928118834941
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -991,7 +991,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.985058331449604,
         0.08260571388255418,
         0.15111710583410531,
@@ -1009,27 +1009,27 @@ export default {
         -75.01135830719328,
         1
       ],
-      "name": "bouteille_97_19",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_19',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -87.7440532059666,
             44.26602171115569,
             -75.01135830719328
           ],
-          "rotation": [
+          'rotation': [
             -124.11172262840178,
             -14.579336595530513,
             -141.8287288970061
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1052,7 +1052,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5060264148471642,
         0.6201287159159588,
         0.5994811449690053,
@@ -1070,27 +1070,27 @@ export default {
         113.51811982405114,
         1
       ],
-      "name": "Bidon_96_20",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_20',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -76.33977340132758,
             43.8424125594,
             113.51811982405114
           ],
-          "rotation": [
+          'rotation': [
             -149.35544480954425,
             52.850485437870574,
             132.16868625331992
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999994,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1113,7 +1113,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.7700180135468464,
         0.36737203383418027,
         0.5216416850385966,
@@ -1131,27 +1131,27 @@ export default {
         -8.683980402671796,
         1
       ],
-      "name": "bag_98_21",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_21',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -81.23875567774176,
             105.73612469193155,
             -8.683980402671796
           ],
-          "rotation": [
+          'rotation': [
             -72.76805481982547,
             44.07598659268016,
             -117.94979719231215
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1174,7 +1174,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4129721946574093,
         0.8537649245361375,
         -0.31707951695378533,
@@ -1192,27 +1192,27 @@ export default {
         -13.415060828926098,
         1
       ],
-      "name": "bouteille_97_22",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_22',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             2.4620127399869256,
             54.65912490027409,
             -13.415060828926098
           ],
-          "rotation": [
+          'rotation': [
             27.705633783094818,
             55.225082544978754,
             -119.33801514443348
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1235,7 +1235,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9367039672556947,
         -0.2588757725295146,
         -0.2357308043610146,
@@ -1253,27 +1253,27 @@ export default {
         46.32855116288799,
         1
       ],
-      "name": "Bidon_96_23",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_23',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -153.54384096904505,
             58.949220168621196,
             46.32855116288799
           ],
-          "rotation": [
+          'rotation': [
             -99.16915079974169,
             -34.14115050585442,
             -156.8835683113559
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1296,7 +1296,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.17929959810753587,
         0.8488670211462412,
         0.4972689760368952,
@@ -1314,27 +1314,27 @@ export default {
         37.82276230492249,
         1
       ],
-      "name": "bag_98_24",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_24',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -140.51898763119257,
             59.53670619408718,
             37.82276230492249
           ],
-          "rotation": [
+          'rotation': [
             -94.73777712093185,
             57.84293739066875,
             -178.02536905725051
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1357,7 +1357,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6634189036313203,
         0.17706886953628917,
         0.7269951676220109,
@@ -1375,27 +1375,27 @@ export default {
         43.77034970943582,
         1
       ],
-      "name": "bouteille_97_25",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_25',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -167.52564932275453,
             55.15398178045219,
             43.77034970943582
           ],
-          "rotation": [
+          'rotation': [
             96.28516407220694,
             -11.97279578309867,
             38.337986157921605
           ],
-          "scale": [
+          'scale': [
             0.9999999999999991,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1418,7 +1418,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.3682486052104539,
         -0.725543541994647,
         0.5813600720985381,
@@ -1436,27 +1436,27 @@ export default {
         -83.71660104156213,
         1
       ],
-      "name": "Bidon_96_26",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_26',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -139.92782580590102,
             23.442897063551335,
             -83.71660104156213
           ],
-          "rotation": [
+          'rotation': [
             20.367492734923953,
             -40.1036075521421,
             99.50599726315981
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1479,7 +1479,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6796969342770127,
         0.6977560665511648,
         0.2261604499586001,
@@ -1497,27 +1497,27 @@ export default {
         2.715416006465116,
         1
       ],
-      "name": "bag_98_27",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_27',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -171.48160253874715,
             52.609376508470156,
             2.715416006465116
           ],
-          "rotation": [
+          'rotation': [
             -71.36374670076745,
             66.96170620831602,
             -129.5592575824379
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1540,7 +1540,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8105809810184609,
         -0.03518370916638019,
         0.584568712659551,
@@ -1558,27 +1558,27 @@ export default {
         91.50598694111127,
         1
       ],
-      "name": "Bidon_96_29",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_29',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -146.7746989571943,
             -0.6508517775425646,
             91.50598694111127
           ],
-          "rotation": [
+          'rotation': [
             133.1189472927435,
             -11.147072185894977,
             63.804390589885294
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1601,7 +1601,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6282745877594362,
         -0.7464217624868408,
         -0.21937546549636883,
@@ -1619,27 +1619,27 @@ export default {
         -112.04544583229135,
         1
       ],
-      "name": "bag_98_30",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_30',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             3.181638261409861,
             70.19150499841525,
             -112.04544583229135
           ],
-          "rotation": [
+          'rotation': [
             36.68684533076326,
             -1.7244554797061251,
             -26.92757622843123
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1662,7 +1662,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.24038537922083747,
         0.08560498157244394,
         0.9668953700307161,
@@ -1680,27 +1680,27 @@ export default {
         -40.047130453092066,
         1
       ],
-      "name": "bouteille_97_31",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_31',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -110.30795563408977,
             51.02722261139893,
             -40.047130453092066
           ],
-          "rotation": [
+          'rotation': [
             56.569623747685064,
             -28.600900049006714,
             39.96735924013025
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1723,7 +1723,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3748778222428358,
         0.8192138190391994,
         0.4339992362731523,
@@ -1741,27 +1741,27 @@ export default {
         -28.421299337489742,
         1
       ],
-      "name": "Bidon_96_32",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_32',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -99.17109707856892,
             75.15273864662815,
             -28.421299337489742
           ],
-          "rotation": [
+          'rotation': [
             59.29371799750298,
             4.831032481627025,
             39.38628843408794
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1784,7 +1784,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4207989552052664,
         0.44283191526202836,
         0.7917247843307165,
@@ -1802,27 +1802,27 @@ export default {
         145.69120154716236,
         1
       ],
-      "name": "bag_98_33",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_33',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -84.33065494305714,
             -0.5896069715173353,
             145.69120154716236
           ],
-          "rotation": [
+          'rotation': [
             -169.3362617207428,
             42.54478201650381,
             137.88260355176104
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1845,7 +1845,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9783071520544577,
         0.14316712447567526,
         0.14972738797047672,
@@ -1863,27 +1863,27 @@ export default {
         94.33883670063916,
         1
       ],
-      "name": "bouteille_97_34",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_34',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -9.77869855529534,
             69.55155745187518,
             94.33883670063916
           ],
-          "rotation": [
+          'rotation': [
             125.76169908955603,
             3.8031824386962625,
             12.55744461091807
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1906,7 +1906,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9898897361601378,
         0.0820821641263147,
         0.11567553145395079,
@@ -1924,27 +1924,27 @@ export default {
         35.00143741143329,
         1
       ],
-      "name": "Bidon_96_35",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_35',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -84.69945318787651,
             93.80713394128098,
             35.00143741143329
           ],
-          "rotation": [
+          'rotation': [
             -111.39425429423511,
             -16.494666005541045,
             -148.51100355262923
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -1967,7 +1967,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.031836088090981166,
         0.6938550926355221,
         0.7194105739553841,
@@ -1985,27 +1985,27 @@ export default {
         -8.582317122485975,
         1
       ],
-      "name": "bag_98_36",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_36',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -121.03979067668723,
             65.85003730367838,
             -8.582317122485975
           ],
-          "rotation": [
+          'rotation': [
             -71.72093879368242,
             18.87130402643651,
             -135.32501917931927
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2028,7 +2028,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6421861339696833,
         0.34646172675595116,
         0.6837844991152962,
@@ -2046,27 +2046,27 @@ export default {
         150.6414301051748,
         1
       ],
-      "name": "bouteille_97_37",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_37',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.25617432185621,
             24.192284964720976,
             150.6414301051748
           ],
-          "rotation": [
+          'rotation': [
             -162.5320902278842,
             36.030552774877904,
             138.97646875372837
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2089,7 +2089,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.09171592194249253,
         -0.3261847937393269,
         0.9408462520494361,
@@ -2107,27 +2107,27 @@ export default {
         -91.81457187166504,
         1
       ],
-      "name": "Bidon_96_38",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_38',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -66.62911170633852,
             50.99360077416433,
             -91.81457187166504
           ],
-          "rotation": [
+          'rotation': [
             61.10590142345958,
             -40.164530612572385,
             54.38697096329445
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2150,7 +2150,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.7364066811808113,
         0.3240310816120531,
         0.5938931369039263,
@@ -2168,27 +2168,27 @@ export default {
         -27.78702887422193,
         1
       ],
-      "name": "bag_98_39",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_39',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -15.38194500446815,
             92.42556164745625,
             -27.78702887422193
           ],
-          "rotation": [
+          'rotation': [
             -29.50171741202947,
             -57.233668902736746,
             47.937206513924636
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2211,7 +2211,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.24271090249367117,
         0.8020402827346154,
         -0.5457314382383396,
@@ -2229,27 +2229,27 @@ export default {
         -24.18803118999832,
         1
       ],
-      "name": "bouteille_97_40",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_40',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -142.0163736531561,
             50.08379570530951,
             -24.18803118999832
           ],
-          "rotation": [
+          'rotation': [
             42.279836968820014,
             69.63117690353782,
             -39.2243244560433
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2272,7 +2272,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7115266604247216,
         -0.5899426427455391,
         -0.38170340550649084,
@@ -2290,27 +2290,27 @@ export default {
         96.2902095036111,
         1
       ],
-      "name": "Bidon_96_41",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_41',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -93.2055932651947,
             53.158025452775526,
             96.2902095036111
           ],
-          "rotation": [
+          'rotation': [
             -174.63029801771557,
             -55.377123288430596,
             -83.3937851118035
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999996,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2333,7 +2333,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5097432185381742,
         -0.7521940246948274,
         0.41757155119541023,
@@ -2351,27 +2351,27 @@ export default {
         -69.29867616747401,
         1
       ],
-      "name": "bag_98_42",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_42',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -49.457624715583464,
             79.80881464783673,
             -69.29867616747401
           ],
-          "rotation": [
+          'rotation': [
             55.40750074421472,
             -58.54819519613949,
             97.4081560247286
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999996,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2394,7 +2394,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3556690297616687,
         0.047932552417671664,
         0.9333820288001691,
@@ -2412,27 +2412,27 @@ export default {
         -77.0397882230413,
         1
       ],
-      "name": "bouteille_97_43",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_43',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -88.48253712881322,
             41.90373371247796,
             -77.0397882230413
           ],
-          "rotation": [
+          'rotation': [
             69.3248777105927,
             -25.868709668634708,
             41.279001694727484
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2455,7 +2455,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6376292605888505,
         0.08719401667621796,
         0.7653927942545471,
@@ -2473,27 +2473,27 @@ export default {
         2.054215862043072,
         1
       ],
-      "name": "Bidon_96_44",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_44',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             0.4392076062177211,
             114.32767994931204,
             2.054215862043072
           ],
-          "rotation": [
+          'rotation': [
             -7.2825039160098095,
             -54.32616866819838,
             46.40062791281799
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2516,7 +2516,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9422717949981753,
         -0.2837421909537112,
         -0.17780391847117577,
@@ -2534,27 +2534,27 @@ export default {
         21.170521249396657,
         1
       ],
-      "name": "bag_98_45",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_45',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -120.78996828406443,
             69.33823028028635,
             21.170521249396657
           ],
-          "rotation": [
+          'rotation': [
             -101.09341469801886,
             -53.932351754547916,
             -134.03275302467662
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2577,7 +2577,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.940694038573805,
         -0.2325315345980642,
         0.2470299803853257,
@@ -2595,27 +2595,27 @@ export default {
         6.3147605076834825,
         1
       ],
-      "name": "bouteille_97_46",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_46',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -7.923232485957299,
             126.43752149742403,
             6.3147605076834825
           ],
-          "rotation": [
+          'rotation': [
             -37.74548624998558,
             -62.80105857604794,
             82.59568935734077
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2638,7 +2638,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7575026983998148,
         -0.5403068117528038,
         -0.3664126240872708,
@@ -2656,27 +2656,27 @@ export default {
         62.58546647585449,
         1
       ],
-      "name": "Bidon_96_47",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_47',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -72.86738516679748,
             83.46782323421981,
             62.58546647585449
           ],
-          "rotation": [
+          'rotation': [
             -171.9849474371399,
             -54.191444511263796,
             -83.21699605766457
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2699,7 +2699,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8679095350177541,
         -0.20257533401664718,
         -0.45353751010617654,
@@ -2717,27 +2717,27 @@ export default {
         51.0980651789855,
         1
       ],
-      "name": "bag_98_48",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_48',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -26.303598659355785,
             101.03014970969596,
             51.0980651789855
           ],
-          "rotation": [
+          'rotation': [
             -142.38615018584937,
             -22.740093981251068,
             -161.28998390755862
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2760,7 +2760,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9109845306131249,
         0.19700223947436385,
         0.3623496965993907,
@@ -2778,27 +2778,27 @@ export default {
         65.71649442930587,
         1
       ],
-      "name": "bouteille_97_49",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_49',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -55.15208163578943,
             84.90623577262923,
             65.71649442930587
           ],
-          "rotation": [
+          'rotation': [
             -128.18382597990063,
             18.48151313892768,
             170.24406287746592
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999996,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2821,7 +2821,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.93221108093918,
         0.15849647899761424,
         0.32536343789609373,
@@ -2839,27 +2839,27 @@ export default {
         105.82419767468858,
         1
       ],
-      "name": "Bidon_96_50",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_50',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -81.12187304721772,
             48.61416626474424,
             105.82419767468858
           ],
-          "rotation": [
+          'rotation': [
             -128.26912487902138,
             10.585686025463144,
             -177.49826144453107
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2882,7 +2882,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.21072743787731482,
         -0.15355683587971317,
         0.9654088486647888,
@@ -2900,27 +2900,27 @@ export default {
         102.77277510854442,
         1
       ],
-      "name": "bouteille_97_52",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_52',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -137.62381122483941,
             23.6867802892742,
             102.77277510854442
           ],
-          "rotation": [
+          'rotation': [
             -150.64915583308314,
             33.8648098029458,
             -132.6715393800553
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999994,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -2943,7 +2943,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.0369936781352831,
         -0.15185238136039667,
         0.9877106469271252,
@@ -2961,27 +2961,27 @@ export default {
         97.3111354716546,
         1
       ],
-      "name": "Bidon_96_53",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_53',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -141.04863233546104,
             6.380705476722137,
             97.3111354716546
           ],
-          "rotation": [
+          'rotation': [
             -146.91817131793124,
             38.32261651318924,
             -134.24326231015837
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3004,7 +3004,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5865955128199879,
         -0.6722607253146744,
         -0.4516317322098205,
@@ -3022,27 +3022,27 @@ export default {
         -15.213251696708056,
         1
       ],
-      "name": "bouteille_97_55",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_55',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -4.788156376434174,
             79.00307891904937,
             -15.213251696708056
           ],
-          "rotation": [
+          'rotation': [
             -56.54120266125185,
             38.3179408982873,
             121.52330822864471
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3065,7 +3065,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5799815587421752,
         0.6093861909254785,
         0.5406198866378596,
@@ -3083,27 +3083,27 @@ export default {
         71.79451993670236,
         1
       ],
-      "name": "Bidon_96_56",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_56',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.0570023089506,
             83.52041943220289,
             71.79451993670236
           ],
-          "rotation": [
+          'rotation': [
             -164.9219337169844,
             52.96533223247396,
             110.07212328729118
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3126,7 +3126,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6666801296711117,
         -0.06295501221905055,
         0.7426804636842205,
@@ -3144,27 +3144,27 @@ export default {
         -1.305167847392362,
         1
       ],
-      "name": "bag_98_57",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_57',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -104.37919842939405,
             82.51590348877632,
             -1.305167847392362
           ],
-          "rotation": [
+          'rotation': [
             85.24521463711324,
             -23.6125106959562,
             27.53820900805096
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3187,7 +3187,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7969090045558376,
         -0.4260719593751676,
         0.42825077220249,
@@ -3205,27 +3205,27 @@ export default {
         10.634538869994143,
         1
       ],
-      "name": "bouteille_97_58",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_58',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -67.04409095203728,
             140.7591607464073,
             10.634538869994143
           ],
-          "rotation": [
+          'rotation': [
             86.79157610672061,
             -33.6402999581419,
             117.37674995642475
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3248,7 +3248,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.27329961743580233,
         0.20721850728425006,
         -0.9393443507832104,
@@ -3266,27 +3266,27 @@ export default {
         -48.27367474656218,
         1
       ],
-      "name": "Bidon_96_59",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_59',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -37.98513426273083,
             90.45388230401727,
             -48.27367474656218
           ],
-          "rotation": [
+          'rotation': [
             32.9416912077948,
             44.72611537186201,
             -53.08831828582375
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3309,7 +3309,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9136981812070042,
         0.25072696025637986,
         0.31983061932780776,
@@ -3327,27 +3327,27 @@ export default {
         15.483218060249467,
         1
       ],
-      "name": "bag_98_60",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_60',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -187.07903635782196,
             34.1174147507556,
             15.483218060249467
           ],
-          "rotation": [
+          'rotation': [
             -130.7029255194577,
             78.19228107568075,
             -149.90081329530366
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3370,7 +3370,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.35521433924307194,
         0.9330334024847942,
         0.05719652999750745,
@@ -3388,27 +3388,27 @@ export default {
         -34.62249357104666,
         1
       ],
-      "name": "bouteille_97_61",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_61',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -92.43943182714057,
             76.59824011546334,
             -34.62249357104666
           ],
-          "rotation": [
+          'rotation': [
             52.8845206443748,
             15.787305634191293,
             35.46392881050474
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3431,7 +3431,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9422717949981753,
         -0.2837421909537112,
         -0.17780391847117577,
@@ -3449,27 +3449,27 @@ export default {
         22.840317913696317,
         1
       ],
-      "name": "Bidon_96_62",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_62',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -123.43191034257617,
             67.11191905913775,
             22.840317913696317
           ],
-          "rotation": [
+          'rotation': [
             -101.09341469801886,
             -53.932351754547916,
             -134.03275302467662
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3492,7 +3492,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7714535655130131,
         -0.5796183868125501,
         0.2624917559202136,
@@ -3510,27 +3510,27 @@ export default {
         80.08193028094637,
         1
       ],
-      "name": "bag_98_63",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_63',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -121.88644491813739,
             56.05827955955646,
             80.08193028094637
           ],
-          "rotation": [
+          'rotation': [
             110.72725107647419,
             -35.64650336157669,
             -3.9334003697313586
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3553,7 +3553,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9585931421966197,
         0.219583831835165,
         0.18133430047897217,
@@ -3571,27 +3571,27 @@ export default {
         57.723651460143344,
         1
       ],
-      "name": "bouteille_97_64",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_64',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -28.97024736508928,
             93.93409126500768,
             57.723651460143344
           ],
-          "rotation": [
+          'rotation': [
             153.25496205280768,
             18.81669820671519,
             26.73167472896398
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3614,7 +3614,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.45350178249619394,
         0.7043544188067287,
         0.5460961325446364,
@@ -3632,27 +3632,27 @@ export default {
         -120.19182628371395,
         1
       ],
-      "name": "Bidon_96_65",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_65',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -29.13414634988696,
             51.789798005013665,
             -120.19182628371395
           ],
-          "rotation": [
+          'rotation': [
             33.72982215740609,
             -8.906827032227726,
             32.29855421167903
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3675,7 +3675,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.39612791876863845,
         0.6537047538876545,
         0.64478893191238,
@@ -3693,27 +3693,27 @@ export default {
         141.70901611404983,
         1
       ],
-      "name": "bag_98_66",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_66',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.71367967936982,
             2.8643824074744706,
             141.70901611404983
           ],
-          "rotation": [
+          'rotation': [
             147.96491822796247,
             40.60811586595309,
             81.13290546275189
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3736,7 +3736,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.22684075526864003,
         -0.5052676564729344,
         -0.8326150773745941,
@@ -3754,27 +3754,27 @@ export default {
         -56.15128947579888,
         1
       ],
-      "name": "bouteille_97_67",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_67',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -8.44389954187417,
             89.4229926814297,
             -56.15128947579888
           ],
-          "rotation": [
+          'rotation': [
             -118.1501058151838,
             -36.71355660394633,
             165.40736209861632
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3797,7 +3797,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8648895483580173,
         0.11256432119776304,
         0.4891782320732911,
@@ -3815,27 +3815,27 @@ export default {
         -41.72730253783272,
         1
       ],
-      "name": "bouteille_97_70",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_70',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.904790052583664,
             96.77156157172782,
             -41.72730253783272
           ],
-          "rotation": [
+          'rotation': [
             36.94076389270846,
             -13.381827585667445,
             8.767192525546614
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3858,7 +3858,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8100995553743793,
         -0.36937130536599744,
         -0.4553059950785312,
@@ -3876,27 +3876,27 @@ export default {
         102.5941571278889,
         1
       ],
-      "name": "Bidon_96_71",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_71',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -47.5697223597067,
             59.16159781991763,
             102.5941571278889
           ],
-          "rotation": [
+          'rotation': [
             -147.44419651773998,
             -42.15251083016528,
             -124.2907430366657
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3919,7 +3919,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9344513653562599,
         -0.30548221256320374,
         -0.1829788610504261,
@@ -3937,27 +3937,27 @@ export default {
         38.269362459942286,
         1
       ],
-      "name": "bag_98_72",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_72',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -62.58578631910472,
             106.16818904533469,
             38.269362459942286
           ],
-          "rotation": [
+          'rotation': [
             -174.10111117797268,
             -50.09023224042448,
             -56.55286131016708
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999997,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -3980,7 +3980,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9594472440132488,
         -0.1641928655087912,
         -0.22913247013767796,
@@ -3998,27 +3998,27 @@ export default {
         55.942426094915206,
         1
       ],
-      "name": "bouteille_97_73",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_73',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -79.49697241459272,
             86.19222180572946,
             55.942426094915206
           ],
-          "rotation": [
+          'rotation': [
             -130.51938040254217,
             -32.263800344897284,
             -135.08379971861572
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4041,7 +4041,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8646131507503402,
         0.15344271207309848,
         0.4784343566898404,
@@ -4059,27 +4059,27 @@ export default {
         28.239102501733928,
         1
       ],
-      "name": "Bidon_96_74",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_74',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -57.90559463444615,
             132.81953086574214,
             28.239102501733928
           ],
-          "rotation": [
+          'rotation': [
             -131.49510153352287,
             -12.689347426641342,
             -106.81192955621513
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4102,7 +4102,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6202519845171625,
         0.36912237666884423,
         0.6921243723095326,
@@ -4120,27 +4120,27 @@ export default {
         29.2326981459768,
         1
       ],
-      "name": "bag_98_75",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_75',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -51.94336408402375,
             138.42373029699343,
             29.2326981459768
           ],
-          "rotation": [
+          'rotation': [
             173.43967570381983,
             34.43971167538622,
             109.47556414295747
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4163,7 +4163,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.47564681284483545,
         0.28728932114165145,
         0.8313993958312214,
@@ -4181,27 +4181,27 @@ export default {
         129.1928732109082,
         1
       ],
-      "name": "bouteille_97_76",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_76',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -92.72569813911926,
             34.545940109895156,
             129.1928732109082
           ],
-          "rotation": [
+          'rotation': [
             -109.44334051331475,
             1.467442548983747,
             -120.75942953732202
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4224,7 +4224,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.5777080900039316,
         -0.47763347969006265,
         -0.6619060521125121,
@@ -4242,27 +4242,27 @@ export default {
         -115.36756164838911,
         1
       ],
-      "name": "bag_98_78",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_78',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -10.842000243801559,
             68.6548376884056,
             -115.36756164838911
           ],
-          "rotation": [
+          'rotation': [
             10.920537944172851,
             23.227368205150928,
             -63.2337579587781
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4285,7 +4285,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9966517089776029,
         -0.06481035795676152,
         -0.04984965891096483,
@@ -4303,27 +4303,27 @@ export default {
         63.000569809783656,
         1
       ],
-      "name": "bouteille_97_79",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_79',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             0.5135582458310852,
             86.42677284661116,
             63.000569809783656
           ],
-          "rotation": [
+          'rotation': [
             125.06702935163382,
             -2.146801495085567,
             -4.607475719299324
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4346,7 +4346,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.45625843815649425,
         -0.8833468578230502,
         0.10736184790297218,
@@ -4364,27 +4364,27 @@ export default {
         -53.0918707463082,
         1
       ],
-      "name": "bag_98_81",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_81',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -165.55486393283272,
             35.24512140285435,
             -53.0918707463082
           ],
-          "rotation": [
+          'rotation': [
             -0.7080229994813156,
             -53.8327825948959,
             140.24595838807284
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4407,7 +4407,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.8924648834823322,
         0.39068937050843094,
         0.22553990228470153,
@@ -4425,27 +4425,27 @@ export default {
         -7.958245628542499,
         1
       ],
-      "name": "bouteille_97_82",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_82',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.1572765412299,
             101.5930884323666,
             -7.958245628542499
           ],
-          "rotation": [
+          'rotation': [
             -65.48263910735054,
             57.58793165966099,
             -112.25748784293387
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4468,7 +4468,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6854172217751888,
         -0.5090519091914701,
         -0.5206432423862815,
@@ -4486,27 +4486,27 @@ export default {
         -58.43656626067835,
         1
       ],
-      "name": "Bidon_96_83",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_83',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -11.038045233420496,
             93.16880922475421,
             -58.43656626067835
           ],
-          "rotation": [
+          'rotation': [
             136.18493098920072,
             -23.687338996438267,
             -54.15371105782443
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4529,7 +4529,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6132718434563199,
         0.6400995973790106,
         0.4627852109336633,
@@ -4547,27 +4547,27 @@ export default {
         -2.1406669447627378,
         1
       ],
-      "name": "bag_98_84",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_84',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -116.07605860368892,
             71.78866516963141,
             -2.1406669447627378
           ],
-          "rotation": [
+          'rotation': [
             81.09996904388622,
             5.40273451210046,
             34.49422600599632
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4590,7 +4590,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5585709250110306,
         0.4308365179963036,
         -0.7087865803562753,
@@ -4608,27 +4608,27 @@ export default {
         -98.08433098574608,
         1
       ],
-      "name": "bouteille_97_85",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_85',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -106.52924910051325,
             29.372748424387026,
             -98.08433098574608
           ],
-          "rotation": [
+          'rotation': [
             60.68325977274608,
             33.037931420485855,
             -2.6614861538596246
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4651,7 +4651,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9986942450615972,
         0.042163694903016226,
         0.028844890586942843,
@@ -4669,27 +4669,27 @@ export default {
         3.236913385366888,
         1
       ],
-      "name": "Bidon_96_86",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_86',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -96.70592741187676,
             90.86762332832404,
             3.236913385366888
           ],
-          "rotation": [
+          'rotation': [
             -83.19711167539661,
             -42.15663046235708,
             -139.97724803205875
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4712,7 +4712,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5309328618412483,
         -0.8053158280441665,
         -0.26377398150424197,
@@ -4730,27 +4730,27 @@ export default {
         143.58171718497482,
         1
       ],
-      "name": "bag_98_87",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_87',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -8.419490384809222,
             33.94414659775114,
             143.58171718497482
           ],
-          "rotation": [
+          'rotation': [
             158.69051470816305,
             -61.125850524500265,
             -61.10015345164278
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4773,7 +4773,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.40019687277303717,
         0.18985609585720672,
         0.8965473361114518,
@@ -4791,27 +4791,27 @@ export default {
         -57.321513081931386,
         1
       ],
-      "name": "bouteille_97_88",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_88',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -97.54944221518261,
             47.48390292779601,
             -57.321513081931386
           ],
-          "rotation": [
+          'rotation': [
             63.65561972051501,
             -22.11326132569579,
             37.05295945174182
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999998,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4834,7 +4834,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5836476871320834,
         0.07879999255739349,
         0.8081744480483927,
@@ -4852,27 +4852,27 @@ export default {
         62.179927385317384,
         1
       ],
-      "name": "Bidon_96_89",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_89',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -168.69341943203005,
             38.329270026923965,
             62.179927385317384
           ],
-          "rotation": [
+          'rotation': [
             -121.8208114731376,
             -3.4852276764387997,
             -94.04681194014151
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             0.9999999999999994
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4895,7 +4895,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9620505126130425,
         -0.2723956288137581,
         0.016106911067580134,
@@ -4913,27 +4913,27 @@ export default {
         131.76660125328735,
         1
       ],
-      "name": "bag_98_90",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_90',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -105.281012234055,
             -0.07680336452152045,
             131.76660125328735
           ],
-          "rotation": [
+          'rotation': [
             158.18199893876147,
             -41.88910185032427,
             -4.92028210268038
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000007,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -4956,7 +4956,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.2080316636346639,
         -0.01754235408203047,
         0.9779647707042697,
@@ -4974,27 +4974,27 @@ export default {
         25.82533918048829,
         1
       ],
-      "name": "Bidon_96_92",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_92',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -188.41636300757858,
             10.492729259614823,
             25.82533918048829
           ],
-          "rotation": [
+          'rotation': [
             104.52689194517222,
             24.923505338771488,
             112.92710310922631
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5017,7 +5017,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.28617209667795246,
         0.6389112610784456,
         0.7140713770696143,
@@ -5035,27 +5035,27 @@ export default {
         -16.135639675198636,
         1
       ],
-      "name": "bag_98_93",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_93',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -176.10730768436895,
             46.72419062609916,
             -16.135639675198636
           ],
-          "rotation": [
+          'rotation': [
             -82.43224302669336,
             16.525651660077436,
             -144.60697076108943
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5078,7 +5078,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6596968483478086,
         -0.0014467924299493284,
         0.7515304219202528,
@@ -5096,27 +5096,27 @@ export default {
         -8.267314758118804,
         1
       ],
-      "name": "bouteille_97_94",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_94',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             3.097864125329902,
             64.33087901702967,
             -8.267314758118804
           ],
-          "rotation": [
+          'rotation': [
             11.018341856551803,
             -24.339543100728957,
             2.8521087714283113
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5139,7 +5139,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.1233742085380085,
         0.06198651372757485,
         0.9904223729215333,
@@ -5157,27 +5157,27 @@ export default {
         66.14525480537047,
         1
       ],
-      "name": "Bidon_96_95",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_95',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -165.4802156037722,
             5.021776983846812,
             66.14525480537047
           ],
-          "rotation": [
+          'rotation': [
             149.0318505880418,
             44.31574930657747,
             146.10570789849584
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5200,7 +5200,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9886544194627409,
         0.12295900900194043,
         0.08627584240128303,
@@ -5218,27 +5218,27 @@ export default {
         80.5325945714271,
         1
       ],
-      "name": "bag_98_96",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_96',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -156.57554403909566,
             27.85311089087496,
             80.5325945714271
           ],
-          "rotation": [
+          'rotation': [
             -154.5597741565739,
             -43.39028277046453,
             -36.06611371605795
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5261,7 +5261,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9522492550222593,
         0.14545604845463306,
         0.26844719085420804,
@@ -5279,27 +5279,27 @@ export default {
         32.647996549211406,
         1
       ],
-      "name": "bouteille_97_97",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_97',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -59.52708748043371,
             121.66496119613466,
             32.647996549211406
           ],
-          "rotation": [
+          'rotation': [
             -134.28053908178123,
             -28.64839854897613,
             -88.49962046403648
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5322,7 +5322,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.40877295358334853,
         0.7928197506263732,
         0.4520414974706197,
@@ -5340,27 +5340,27 @@ export default {
         13.857448902628065,
         1
       ],
-      "name": "bouteille_97_100",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_100',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -130.98761070818648,
             63.01113639133319,
             13.857448902628065
           ],
-          "rotation": [
+          'rotation': [
             140.3350933304932,
             45.670876883489385,
             64.61109862045824
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5383,7 +5383,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3505658401006576,
         -0.6038083491566126,
         -0.7159043715771582,
@@ -5401,27 +5401,27 @@ export default {
         46.85921000997878,
         1
       ],
-      "name": "Bidon_96_101",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_101',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             1.7952206285926116,
             99.64058902641787,
             46.85921000997878
           ],
-          "rotation": [
+          'rotation': [
             -89.06980160449238,
             -19.679629964784624,
             149.697515699183
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5444,7 +5444,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9890863761178827,
         -0.06509652351570591,
         -0.13217633375216215,
@@ -5462,27 +5462,27 @@ export default {
         -85.51554668999427,
         1
       ],
-      "name": "bag_98_102",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_102',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -16.82362005505216,
             106.99671825984024,
             -85.51554668999427
           ],
-          "rotation": [
+          'rotation': [
             -132.41830520964007,
             18.690480008747397,
             127.83843970614751
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5505,7 +5505,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8803652014391109,
         -0.02477303737621464,
         -0.47364903537770403,
@@ -5523,27 +5523,27 @@ export default {
         93.82665218581965,
         1
       ],
-      "name": "bouteille_97_103",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_103',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -145.98124505332447,
             2.6967064455999985,
             93.82665218581965
           ],
-          "rotation": [
+          'rotation': [
             -157.4228430048945,
             -6.619681101966958,
             128.43755292190235
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5566,7 +5566,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8279511027071887,
         0.4446537235278369,
         0.34173094340252647,
@@ -5584,27 +5584,27 @@ export default {
         63.50054593720734,
         1
       ],
-      "name": "Bidon_96_104",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_104',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -87.92987731921323,
             77.96507777893103,
             63.50054593720734
           ],
-          "rotation": [
+          'rotation': [
             122.14895220032692,
             14.535450657150223,
             31.862795264233796
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5627,7 +5627,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6412017564827733,
         0.1351367360503146,
         0.7553796198290457,
@@ -5645,27 +5645,27 @@ export default {
         -63.345077606964495,
         1
       ],
-      "name": "bag_98_105",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_105',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -37.522070895423695,
             96.06563079608947,
             -63.345077606964495
           ],
-          "rotation": [
+          'rotation': [
             113.13090239366765,
             -7.731051157183408,
             53.848095042997855
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000004,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5688,7 +5688,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8860500980734493,
         -0.11120713466769444,
         -0.4500535489283833,
@@ -5706,27 +5706,27 @@ export default {
         39.26783251669915,
         1
       ],
-      "name": "bouteille_97_106",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_106',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -36.137618315950704,
             124.59351491383575,
             39.26783251669915
           ],
-          "rotation": [
+          'rotation': [
             -159.9767427480678,
             -17.522831497528035,
             -162.51440234562295
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5749,7 +5749,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9212016908289177,
         -0.36269897154050673,
         0.14084353324665563,
@@ -5767,27 +5767,27 @@ export default {
         -11.827863918982112,
         1
       ],
-      "name": "Bidon_96_107",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_107',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -191.08492724486766,
             15.244512098831395,
             -11.827863918982112
           ],
-          "rotation": [
+          'rotation': [
             70.63737496094917,
             -65.62187825034329,
             110.87780835768311
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5810,7 +5810,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.10403371437354395,
         -0.3934442837386312,
         -0.9134432559645072,
@@ -5828,27 +5828,27 @@ export default {
         88.48475986243103,
         1
       ],
-      "name": "bouteille_97_109",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_109',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             6.1147896197672,
             71.69365297357926,
             88.48475986243103
           ],
-          "rotation": [
+          'rotation': [
             -72.84873954347886,
             4.359485833590517,
             106.20835149691452
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5871,7 +5871,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5520660320328832,
         -0.8321554606453175,
         -0.05234869237763665,
@@ -5889,27 +5889,27 @@ export default {
         52.537924800237704,
         1
       ],
-      "name": "Bidon_96_110",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_110',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -86.87022027342962,
             86.09068779266227,
             52.537924800237704
           ],
-          "rotation": [
+          'rotation': [
             142.55322358263183,
             -65.33175448917919,
             -35.219923486818765
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000007,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5932,7 +5932,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6469248784337333,
         0.6488035464024862,
         0.4006771266731561,
@@ -5950,27 +5950,27 @@ export default {
         -26.382652288339685,
         1
       ],
-      "name": "bag_98_111",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_111',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -65.8479504643814,
             107.5073801718409,
             -26.382652288339685
           ],
-          "rotation": [
+          'rotation': [
             -41.11611238854067,
             21.88678863622795,
             -116.71923341681557
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -5993,7 +5993,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.168271001075704,
         0.9552105562198006,
         0.2434289700985471,
@@ -6011,27 +6011,27 @@ export default {
         40.606405837545516,
         1
       ],
-      "name": "bouteille_97_112",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_112',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -88.78247035076623,
             90.04632015831004,
             40.606405837545516
           ],
-          "rotation": [
+          'rotation': [
             125.23664649854163,
             54.461394773618494,
             56.655613147325425
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6054,7 +6054,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9745935859864854,
         0.13790081601114143,
         0.17649562911716812,
@@ -6072,27 +6072,27 @@ export default {
         155.99594393413514,
         1
       ],
-      "name": "Bidon_96_113",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_113',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -45.12350592421332,
             -0.30726929464832864,
             155.99594393413514
           ],
-          "rotation": [
+          'rotation': [
             160.99716053507527,
             15.387807329368316,
             30.706998596260682
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6115,7 +6115,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.26328662498610433,
         -0.7071767843270438,
         -0.6561868246256464,
@@ -6133,27 +6133,27 @@ export default {
         -28.743353656534758,
         1
       ],
-      "name": "bag_98_114",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_114',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -19.61950879502855,
             99.07828259245278,
             -28.743353656534758
           ],
-          "rotation": [
+          'rotation': [
             -49.11412931241195,
             -0.5951466321871283,
             119.5094776210946
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6176,7 +6176,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6358325912454191,
         0.6436054814544022,
         -0.4260151407543905,
@@ -6194,27 +6194,27 @@ export default {
         -104.58392498780972,
         1
       ],
-      "name": "bouteille_97_115",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_115',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -48.39809396843946,
             56.23909872271693,
             -104.58392498780972
           ],
-          "rotation": [
+          'rotation': [
             44.92317649833331,
             22.448131111483583,
             15.732824265109631
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6237,7 +6237,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6741357918726214,
         -0.6079523055482261,
         -0.4194459778027075,
@@ -6255,27 +6255,27 @@ export default {
         144.63588495261814,
         1
       ],
-      "name": "Bidon_96_116",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_116',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -21.44529558308532,
             32.25542267303243,
             144.63588495261814
           ],
-          "rotation": [
+          'rotation': [
             -166.72921984688995,
             -56.542288583550494,
             -95.14625452629707
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999994,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6298,7 +6298,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.984187169847984,
         0.015253471402607022,
         0.17647364198878046,
@@ -6316,27 +6316,27 @@ export default {
         160.958706201193,
         1
       ],
-      "name": "bag_98_117",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_117',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -11.245502582584967,
             11.223133275557718,
             160.958706201193
           ],
-          "rotation": [
+          'rotation': [
             -177.13281644695277,
             7.096738558532572,
             136.02646605814599
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6359,7 +6359,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8008501959309245,
         -0.34087901301911633,
         -0.4923824348618781,
@@ -6377,27 +6377,27 @@ export default {
         68.97411658626248,
         1
       ],
-      "name": "bouteille_97_118",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_118',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -20.904004139347975,
             85.13616559026896,
             68.97411658626248
           ],
-          "rotation": [
+          'rotation': [
             -120.39965574799344,
             -27.28513482162617,
             -170.2547808367767
           ],
-          "scale": [
+          'scale': [
             0.9999999999999993,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6420,7 +6420,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3026012536996248,
         0.04569735137365948,
         -0.9520211307197164,
@@ -6438,27 +6438,27 @@ export default {
         -30.036546822206752,
         1
       ],
-      "name": "Bidon_96_119",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_119',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -3.7933235397749527,
             67.0069256345802,
             -30.036546822206752
           ],
-          "rotation": [
+          'rotation': [
             91.54778040625642,
             16.03919058390919,
             -70.69438637879377
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000004,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6481,7 +6481,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8475228332491882,
         0.48353100235695756,
         0.21886712151655763,
@@ -6499,27 +6499,27 @@ export default {
         116.2470384537833,
         1
       ],
-      "name": "bag_98_120",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_120',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -101.13785378031874,
             43.147391635844954,
             116.2470384537833
           ],
-          "rotation": [
+          'rotation': [
             104.27110833153796,
             12.42518605649923,
             22.959957265625082
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6542,7 +6542,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5216113785749341,
         0.05098087164258154,
         0.8516586877779858,
@@ -6560,27 +6560,27 @@ export default {
         130.02874433603353,
         1
       ],
-      "name": "bouteille_97_121",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_121',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -101.20051477250118,
             14.670513983128323,
             130.02874433603353
           ],
-          "rotation": [
+          'rotation': [
             174.2451121177095,
             29.07151394475452,
             163.70277695152004
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6603,7 +6603,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9986380846790591,
         -0.04920770879950385,
         -0.017337163067911596,
@@ -6621,27 +6621,27 @@ export default {
         25.11165469335322,
         1
       ],
-      "name": "Bidon_96_122",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_122',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -188.47002389525872,
             14.251796957348912,
             25.11165469335322
           ],
-          "rotation": [
+          'rotation': [
             -148.57546023676346,
             -65.34520966787277,
             -51.69857496704395
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999994
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6664,7 +6664,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6325100528865863,
         0.5641939730582185,
         -0.5306752243719238,
@@ -6682,27 +6682,27 @@ export default {
         -67.72470848021258,
         1
       ],
-      "name": "bag_98_123",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_123',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -159.3603103545688,
             23.933558439843146,
             -67.72470848021258
           ],
-          "rotation": [
+          'rotation': [
             2.937764465778696,
             49.0113242264993,
             -88.3588907916706
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6725,7 +6725,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8100995553743793,
         -0.36937130536599744,
         -0.4553059950785312,
@@ -6743,27 +6743,27 @@ export default {
         101.86041729979848,
         1
       ],
-      "name": "bouteille_97_124",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_124',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -46.24642980482878,
             59.972878099588115,
             101.86041729979848
           ],
-          "rotation": [
+          'rotation': [
             -147.44419651773998,
             -42.15251083016528,
             -124.2907430366657
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6786,7 +6786,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8827180725319922,
         -0.4232607927997449,
         0.20410562389100342,
@@ -6804,27 +6804,27 @@ export default {
         57.106337522520185,
         1
       ],
-      "name": "Bidon_96_125",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_125',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -90.39581821553483,
             80.98942815560687,
             57.106337522520185
           ],
-          "rotation": [
+          'rotation': [
             127.13394090412339,
             -33.34477599282899,
             2.317417136399416
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6847,7 +6847,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9487016572828226,
         0.014727590040587546,
         0.315829484944681,
@@ -6865,27 +6865,27 @@ export default {
         159.20412704624215,
         1
       ],
-      "name": "bouteille_97_127",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_127',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -31.68455147481333,
             -3.428118760514675,
             159.20412704624215
           ],
-          "rotation": [
+          'rotation': [
             -164.69124341355948,
             4.264134815742713,
             -132.2007714870876
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6908,7 +6908,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.10275147329284848,
         -0.7198952710014443,
         0.6864349448606955,
@@ -6926,27 +6926,27 @@ export default {
         -6.091929111894485,
         1
       ],
-      "name": "Bidon_96_128",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_128',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -0.3839609290257826,
             95.0734064031856,
             -6.091929111894485
           ],
-          "rotation": [
+          'rotation': [
             22.14917039000088,
             -35.741407823692576,
             -34.831136008363494
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -6969,7 +6969,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3272083075161471,
         0.8361164476825164,
         -0.4402771961017165,
@@ -6987,27 +6987,27 @@ export default {
         -10.171856487144852,
         1
       ],
-      "name": "bouteille_97_130",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_130',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -2.267879017595767,
             83.59818508435764,
             -10.171856487144852
           ],
-          "rotation": [
+          'rotation': [
             36.239763498854785,
             36.80125975280629,
             -123.30391378233286
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7030,7 +7030,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5289503549941916,
         -0.6394252311001692,
         -0.5579846734311023,
@@ -7048,27 +7048,27 @@ export default {
         155.90289568946915,
         1
       ],
-      "name": "Bidon_96_131",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_131',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -50.69247970877205,
             -2.2605515798564704,
             155.90289568946915
           ],
-          "rotation": [
+          'rotation': [
             -154.8570529936326,
             -54.83791339816545,
             -122.2173725980873
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999996,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7091,7 +7091,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.999445974826226,
         -0.02154485214588559,
         -0.02536853857965101,
@@ -7109,27 +7109,27 @@ export default {
         119.292682212955,
         1
       ],
-      "name": "bouteille_97_133",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_133',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -13.239145979376417,
             46.86671580721428,
             119.292682212955
           ],
-          "rotation": [
+          'rotation': [
             129.5334433390919,
             -0.5833172975929931,
             -2.159689572842554
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7152,7 +7152,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9444118791165599,
         0.1675529167252526,
         0.2828643184998568,
@@ -7170,27 +7170,27 @@ export default {
         77.40464108038881,
         1
       ],
-      "name": "Bidon_96_134",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_134',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -66.8769316245024,
             75.63572737739607,
             77.40464108038881
           ],
-          "rotation": [
+          'rotation': [
             -120.21595346388207,
             12.161596012180363,
             178.15320077482906
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7213,7 +7213,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.923894818557897,
         0.2593811746006533,
         -0.2813179171411882,
@@ -7231,27 +7231,27 @@ export default {
         -9.04397463776683,
         1
       ],
-      "name": "bag_98_135",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_135',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -186.9090734195815,
             33.88030666090083,
             -9.04397463776683
           ],
-          "rotation": [
+          'rotation': [
             -13.206242511451624,
             80.74944703042613,
             -34.83787142174869
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7274,7 +7274,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6745853482086265,
         -0.2402194834388035,
         -0.6980180569001346,
@@ -7292,27 +7292,27 @@ export default {
         -52.95605613979844,
         1
       ],
-      "name": "Bidon_96_137",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_137',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             3.124832621351631,
             70.09721973239405,
             -52.95605613979844
           ],
-          "rotation": [
+          'rotation': [
             -121.64805537675183,
             -3.360756172355831,
             132.2509903280301
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             0.9999999999999997,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7335,7 +7335,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7025606270341328,
         -0.6828804163252722,
         -0.20020714857574154,
@@ -7353,27 +7353,27 @@ export default {
         -141.74788316066773,
         1
       ],
-      "name": "bouteille_97_139",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_139',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -24.223282308040112,
             29.46653813594581,
             -141.74788316066773
           ],
-          "rotation": [
+          'rotation': [
             -38.041588021104,
             -28.017615013749506,
             164.68658338653628
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7396,7 +7396,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9312951366234469,
         0.18278662905156515,
         0.31508477707036386,
@@ -7414,27 +7414,27 @@ export default {
         111.12049865593521,
         1
       ],
-      "name": "Bidon_96_140",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_140',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -118.90131291382052,
             45.424885092835424,
             111.12049865593521
           ],
-          "rotation": [
+          'rotation': [
             -131.29077523880196,
             23.821892015076553,
             155.16914439949588
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7457,7 +7457,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.47874875217974266,
         0.49665962185558044,
         0.7239674387046783,
@@ -7475,27 +7475,27 @@ export default {
         79.87295115151713,
         1
       ],
-      "name": "bag_98_141",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_141',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -70.1540401780267,
             72.95900478846698,
             79.87295115151713
           ],
-          "rotation": [
+          'rotation': [
             -155.47491776945998,
             44.6768481922381,
             142.52752199580735
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999997,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7518,7 +7518,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.47836871423256183,
         0.6586270754931247,
         0.580838831924019,
@@ -7536,27 +7536,27 @@ export default {
         64.45867311547372,
         1
       ],
-      "name": "bouteille_97_142",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_142',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -160.7354705531813,
             50.67048749087524,
             64.45867311547372
           ],
-          "rotation": [
+          'rotation': [
             113.34606219228395,
             19.928601748912275,
             52.895105208203226
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000004,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7579,7 +7579,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3026994368001499,
         0.4760032653988129,
         -0.8257081459514247,
@@ -7597,22 +7597,22 @@ export default {
         -79.45242069051221,
         1
       ],
-      "name": "Bidon_96_143",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_143',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -146.40562648587525,
             21.592759460249525,
             -79.45242069051221
           ],
-          "rotation": [
+          'rotation': [
             31.264920623811754,
             36.480243868898306,
             9.364858718683548
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7635,7 +7635,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.4596140313907655,
         0.4747302961004728,
         0.750590492954105,
@@ -7653,27 +7653,27 @@ export default {
         -26.149398364580165,
         1
       ],
-      "name": "bag_98_144",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_144',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -58.36000391137793,
             115.34188093532578,
             -26.149398364580165
           ],
-          "rotation": [
+          'rotation': [
             22.063095876768518,
             -20.519980322595536,
             61.43674162216426
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999996,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7696,7 +7696,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.24131396098353447,
         0.46734607918882953,
         0.8505029185730442,
@@ -7714,27 +7714,27 @@ export default {
         77.22280834268676,
         1
       ],
-      "name": "bouteille_97_145",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_145',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -154.87095550405127,
             48.72385449955465,
             77.22280834268676
           ],
-          "rotation": [
+          'rotation': [
             -170.28797982828402,
             57.322499523147854,
             157.89936083714667
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7757,7 +7757,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9557928334099121,
         -0.28657869395822166,
         -0.0658233375897331,
@@ -7775,27 +7775,27 @@ export default {
         -105.82216231791097,
         1
       ],
-      "name": "Bidon_96_146",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_146',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -125.47124066791312,
             15.898697377443899,
             -105.82216231791097
           ],
-          "rotation": [
+          'rotation': [
             -35.65313006135251,
             -47.1857476309216,
             -174.58637222100836
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999996,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7818,7 +7818,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.19634634941385581,
         -0.9636076284730932,
         -0.18140686155797112,
@@ -7836,27 +7836,27 @@ export default {
         -146.5515341268751,
         1
       ],
-      "name": "bag_98_147",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_147',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -59.536128779948164,
             16.329318567846496,
             -146.5515341268751
           ],
-          "rotation": [
+          'rotation': [
             -36.54492163362847,
             -44.773615514007254,
             148.41856265222626
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000009,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7879,7 +7879,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8982721081536704,
         0.2812289567985595,
         -0.3376647650720394,
@@ -7897,27 +7897,27 @@ export default {
         26.050420029730873,
         1
       ],
-      "name": "bouteille_97_148",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_148',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             3.138083026635625,
             117.3649328114904,
             26.050420029730873
           ],
-          "rotation": [
+          'rotation': [
             122.03904964188774,
             26.183203114040257,
             -13.835641247594447
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7940,7 +7940,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.008268480837511525,
         0.588613449848958,
         0.808372339260534,
@@ -7958,22 +7958,22 @@ export default {
         -14.431368565636147,
         1
       ],
-      "name": "Bidon_96_149",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_149',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -61.06696735923188,
             126.67998066608564,
             -14.431368565636147
           ],
-          "rotation": [
+          'rotation': [
             42.25486415120453,
             -14.12921296408679,
             49.147159441730096
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -7996,7 +7996,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9892842326900975,
         -0.10392944487275865,
         -0.1025445144276612,
@@ -8014,27 +8014,27 @@ export default {
         22.21268089681708,
         1
       ],
-      "name": "bag_98_150",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_150',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -82.3312679605319,
             100.679913734548,
             22.21268089681708
           ],
-          "rotation": [
+          'rotation': [
             -127.02426320629456,
             -44.50950355808601,
             -111.13200699046996
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8057,7 +8057,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.748340381052692,
         0.5878590189955852,
         0.3072595773470053,
@@ -8075,27 +8075,27 @@ export default {
         -39.67522771562051,
         1
       ],
-      "name": "bouteille_97_151",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_151',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -94.44583320594656,
             68.18102043010087,
             -39.67522771562051
           ],
-          "rotation": [
+          'rotation': [
             -48.84625677571734,
             -20.489286771273026,
             -146.48101729579108
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8118,7 +8118,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9482560136264814,
         0.2329832328588279,
         0.21570661980538405,
@@ -8136,27 +8136,27 @@ export default {
         70.56377180208023,
         1
       ],
-      "name": "Bidon_96_152",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_152',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -113.42032549757542,
             61.863877118487736,
             70.56377180208023
           ],
-          "rotation": [
+          'rotation': [
             -84.88351496153328,
             4.579772693283537,
             -171.63001583027892
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8179,7 +8179,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.852697293708644,
         -0.34089393605224855,
         -0.39585180265442843,
@@ -8197,27 +8197,27 @@ export default {
         64.7972205543335,
         1
       ],
-      "name": "bag_98_153",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_153',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -61.878012644754094,
             83.92648799665493,
             64.7972205543335
           ],
-          "rotation": [
+          'rotation': [
             -131.65955566541413,
             -40.70741112981996,
             -136.8626427249408
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8240,7 +8240,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6449262906792552,
         0.7008155353165698,
         0.30484039274618263,
@@ -8258,27 +8258,27 @@ export default {
         -124.13113584364262,
         1
       ],
-      "name": "bouteille_97_154",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_154',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -108.60130264737563,
             10.120635322097753,
             -124.13113584364262
           ],
-          "rotation": [
+          'rotation': [
             60.615946818285536,
             4.651251949688586,
             28.678460344276804
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8301,7 +8301,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.36989263786317944,
         -0.7028592709351634,
         0.6075922001763275,
@@ -8319,27 +8319,27 @@ export default {
         -166.31365089246444,
         1
       ],
-      "name": "Bidon_96_155",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_155',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -41.231352710612235,
             6.544652469075242,
             -166.31365089246444
           ],
-          "rotation": [
+          'rotation': [
             18.90444247897825,
             -50.3150565521787,
             88.76422643049861
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8362,7 +8362,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5719715050348292,
         0.3796742993686253,
         0.7271148628842187,
@@ -8380,27 +8380,27 @@ export default {
         -132.30107213245273,
         1
       ],
-      "name": "bag_98_156",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_156',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -51.51426001390234,
             29.00410561673656,
             -132.30107213245273
           ],
-          "rotation": [
+          'rotation': [
             55.85742623101177,
             -14.641468912699896,
             29.035153349074807
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8423,7 +8423,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.08424674511410668,
         -0.44602850217040513,
         -0.8910449265829997,
@@ -8441,27 +8441,27 @@ export default {
         -56.539179467144834,
         1
       ],
-      "name": "bouteille_97_157",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_157',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             1.7000198865368823,
             76.0035458267511,
             -56.539179467144834
           ],
-          "rotation": [
+          'rotation': [
             -176.99592073462577,
             -52.52383528914946,
             -150.08638640134527
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8484,7 +8484,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.24052798864948616,
         -0.39393791595487915,
         0.8871072116995549,
@@ -8502,27 +8502,27 @@ export default {
         -55.504986711870295,
         1
       ],
-      "name": "Bidon_96_158",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_158',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -131.3805361026125,
             42.48674756936013,
             -55.504986711870295
           ],
-          "rotation": [
+          'rotation': [
             62.41237522620684,
             -43.962695666936156,
             27.64986366884439
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8545,7 +8545,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9906030219387918,
         0.025765047426415576,
         0.1343198245116806,
@@ -8563,27 +8563,27 @@ export default {
         161.57277784648267,
         1
       ],
-      "name": "bag_98_159",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_159',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -2.4317690331079014,
             6.955593134399026,
             161.57277784648267
           ],
-          "rotation": [
+          'rotation': [
             -170.9595444857875,
             11.514963449435916,
             113.85924155743415
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8606,7 +8606,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9994312401573231,
         -0.027477660796483457,
         -0.019549280159370026,
@@ -8624,27 +8624,27 @@ export default {
         17.448963449202697,
         1
       ],
-      "name": "bag_98_162",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_162',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -111.93196219773748,
             77.77573594768084,
             17.448963449202697
           ],
-          "rotation": [
+          'rotation': [
             -89.60726911314417,
             -43.968275108976066,
             -137.86031869251565
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8667,7 +8667,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3049008724029241,
         0.2112490486824086,
         0.9286599471489627,
@@ -8685,27 +8685,27 @@ export default {
         112.34150974492667,
         1
       ],
-      "name": "bouteille_97_163",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_163',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -127.84595286979379,
             0.33704003911517627,
             112.34150974492667
           ],
-          "rotation": [
+          'rotation': [
             -145.50801117239354,
             33.22810191756851,
             -163.76912250520127
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8728,7 +8728,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5128613787756017,
         -0.8222389809848153,
         0.24677168457795556,
@@ -8746,27 +8746,27 @@ export default {
         0.17842680097836783,
         1
       ],
-      "name": "Bidon_96_164",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_164',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -112.99249561264425,
             75.3582162455318,
             0.17842680097836783
           ],
-          "rotation": [
+          'rotation': [
             107.95708046631455,
             -69.2772419419855,
             12.395086248143729
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8789,7 +8789,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9384792303369592,
         -0.2519880186025753,
         -0.23613295557142552,
@@ -8807,27 +8807,27 @@ export default {
         41.60603652584467,
         1
       ],
-      "name": "bag_98_165",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_165',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -147.82487053257591,
             58.715444535664226,
             41.60603652584467
           ],
-          "rotation": [
+          'rotation': [
             -91.46300038161898,
             -21.786336995783337,
             -172.38250846501185
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8850,7 +8850,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9841367632238511,
         -0.1732730562291974,
         0.03809565928390642,
@@ -8868,27 +8868,27 @@ export default {
         109.82046022240988,
         1
       ],
-      "name": "bouteille_97_166",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_166',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -89.547706806696,
             45.23953938315655,
             109.82046022240988
           ],
-          "rotation": [
+          'rotation': [
             120.03823655475452,
             -9.757169462120023,
             -3.0732043716403337
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999997,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8911,7 +8911,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8607112789547954,
         -0.24136140601038641,
         -0.4482418610177884,
@@ -8929,27 +8929,27 @@ export default {
         99.46646143350705,
         1
       ],
-      "name": "Bidon_96_167",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_167',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -8.84734948795713,
             64.27633385215347,
             99.46646143350705
           ],
-          "rotation": [
+          'rotation': [
             -137.04225114196143,
             -26.176162513022682,
             -157.74253549651775
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -8972,7 +8972,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6612907984890234,
         -0.6906470404988351,
         -0.2927475794672787,
@@ -8990,27 +8990,27 @@ export default {
         -100.4209727590813,
         1
       ],
-      "name": "bag_98_168",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_168',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -10.44785708889661,
             94.7988119968428,
             -100.4209727590813
           ],
-          "rotation": [
+          'rotation': [
             -42.518248859894804,
             -3.4862421166591826,
             155.2041280569114
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9033,7 +9033,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.539795231886003,
         -0.5391316567671847,
         0.6464968401350519,
@@ -9051,27 +9051,27 @@ export default {
         -110.12163961370776,
         1
       ],
-      "name": "bouteille_97_169",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_169',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -28.657338888599995,
             68.43032052170244,
             -110.12163961370776
           ],
-          "rotation": [
+          'rotation': [
             22.68544832181919,
             -30.92740179968617,
             95.56242099731458
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9094,7 +9094,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.024247208952509976,
         -0.6535421563853242,
         -0.7565016342911849,
@@ -9112,27 +9112,27 @@ export default {
         -39.61602571969325,
         1
       ],
-      "name": "Bidon_96_170",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_170',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -40.89438932577302,
             99.20624661932162,
             -39.61602571969325
           ],
-          "rotation": [
+          'rotation': [
             29.459021209047087,
             16.871166964219274,
             -44.92093125516042
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9155,7 +9155,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.8136303988282207,
         0.4350256713375253,
         -0.38569189695917133,
@@ -9173,27 +9173,27 @@ export default {
         -136.01392863010048,
         1
       ],
-      "name": "bag_98_171",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_171',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.693041682136375,
             29.425933510185857,
             -136.01392863010048
           ],
-          "rotation": [
+          'rotation': [
             -13.988459455798035,
             50.19011745037825,
             -89.12219332229935
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             0.9999999999999993,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9216,7 +9216,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.30063685802964,
         0.06294457972386178,
         0.9516593190199168,
@@ -9234,27 +9234,27 @@ export default {
         -37.22776149136729,
         1
       ],
-      "name": "bouteille_97_172",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_172',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -67.36729896397743,
             95.31870197506173,
             -37.22776149136729
           ],
-          "rotation": [
+          'rotation': [
             36.06731392569343,
             -31.50588229337552,
             60.61660362841553
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9277,7 +9277,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.005065274457858759,
         -0.7210290393899769,
         0.6928863307578191,
@@ -9295,27 +9295,27 @@ export default {
         -86.13877903409143,
         1
       ],
-      "name": "Bidon_96_173",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_173',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -30.03673937709999,
             108.14587586637633,
             -86.13877903409143
           ],
-          "rotation": [
+          'rotation': [
             48.77636804187129,
             -57.11228482999289,
             65.23035932565436
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999996,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9338,7 +9338,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.0945617498205783,
         0.4012025490322937,
         -0.9110952695085517,
@@ -9356,27 +9356,27 @@ export default {
         -76.64426544056008,
         1
       ],
-      "name": "bag_98_174",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_174',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -58.922344156474026,
             63.4209753106216,
             -76.64426544056008
           ],
-          "rotation": [
+          'rotation': [
             31.0001005600985,
             43.99555090990457,
             3.444483424166127
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9399,7 +9399,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4950377749449183,
         -0.3680108134538391,
         -0.7870868075114896,
@@ -9417,27 +9417,27 @@ export default {
         -61.83017421719724,
         1
       ],
-      "name": "bouteille_97_175",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_175',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             7.588177353857147,
             72.74735496313978,
             -61.83017421719724
           ],
-          "rotation": [
+          'rotation': [
             123.58156479432387,
             -11.960810287547261,
             -69.39282339295005
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9460,7 +9460,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6854172217751888,
         -0.5090519091914701,
         -0.5206432423862815,
@@ -9478,27 +9478,27 @@ export default {
         -60.3665862491939,
         1
       ],
-      "name": "Bidon_96_176",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_176',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -11.824362438631601,
             95.64080931990195,
             -60.3665862491939
           ],
-          "rotation": [
+          'rotation': [
             136.18493098920072,
             -23.687338996438267,
             -54.15371105782443
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9521,7 +9521,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9977225878333114,
         0.056685352900643915,
         0.03655692128351311,
@@ -9539,27 +9539,27 @@ export default {
         152.16669150402146,
         1
       ],
-      "name": "bag_98_177",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_177',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -2.0906509956700705,
             28.543805243064515,
             152.16669150402146
           ],
-          "rotation": [
+          'rotation': [
             137.47146674962048,
             3.1225113666357203,
             4.3152228878784875
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9582,7 +9582,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6077443450533508,
         -0.3285038719399643,
         -0.7230020865641571,
@@ -9600,27 +9600,27 @@ export default {
         27.50060302380411,
         1
       ],
-      "name": "bouteille_97_178",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_178',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -0.42313396621534377,
             118.36077728337199,
             27.50060302380411
           ],
-          "rotation": [
+          'rotation': [
             -132.31680071195248,
             -26.18611083484373,
             173.96489260777943
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9643,7 +9643,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.09296605032406566,
         -0.9794395557427052,
         -0.17904041480535893,
@@ -9661,27 +9661,27 @@ export default {
         -84.60162354196999,
         1
       ],
-      "name": "Bidon_96_179",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_179',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -109.88210947489185,
             36.04072633915663,
             -84.60162354196999
           ],
-          "rotation": [
+          'rotation': [
             -40.06861656320633,
             -50.24014020907989,
             146.4749285962067
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9704,7 +9704,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3493923143480435,
         0.8878236316949317,
         -0.29948991582111795,
@@ -9722,27 +9722,27 @@ export default {
         -24.50973104346099,
         1
       ],
-      "name": "bag_98_180",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_180',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -104.50849335981322,
             72.98486542989393,
             -24.50973104346099
           ],
-          "rotation": [
+          'rotation': [
             59.80895179114676,
             29.69263984182826,
             27.30875975766182
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9765,7 +9765,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9968690170434382,
         -0.042135843258311344,
         -0.06690839687035947,
@@ -9783,27 +9783,27 @@ export default {
         125.08897782123611,
         1
       ],
-      "name": "bouteille_97_181",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_181',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -11.715078569322715,
             42.647415209369015,
             125.08897782123611
           ],
-          "rotation": [
+          'rotation': [
             -115.64969456937439,
             -2.633074620414743,
             179.9265937840432
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000004,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9826,7 +9826,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.20326630896589698,
         0.9682343015594965,
         0.14561986445184386,
@@ -9844,27 +9844,27 @@ export default {
         -35.135200620608046,
         1
       ],
-      "name": "Bidon_96_182",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_182',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -125.43683506000792,
             49.63571851906269,
             -35.135200620608046
           ],
-          "rotation": [
+          'rotation': [
             -52.08399078710764,
             65.58226156621495,
             -140.80914233241208
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9887,7 +9887,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6925820170756418,
         -0.4878456004495493,
         -0.5313537613920264,
@@ -9905,27 +9905,27 @@ export default {
         -106.87501558027861,
         1
       ],
-      "name": "bag_98_183",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_183',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -24.10169634848675,
             79.54579477476798,
             -106.87501558027861
           ],
-          "rotation": [
+          'rotation': [
             -8.458831986426734,
             30.664625252556167,
             -63.61855538392415
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -9948,7 +9948,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.1993694009238944,
         -0.40119235817109733,
         -0.8940338549072743,
@@ -9966,27 +9966,27 @@ export default {
         -128.73924538816965,
         1
       ],
-      "name": "bouteille_97_184",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_184',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -6.690617113352754,
             42.21055375313887,
             -128.73924538816965
           ],
-          "rotation": [
+          'rotation': [
             29.70998494319714,
             25.412334077676594,
             -51.8801496415525
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10009,7 +10009,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.042630388996294004,
         -0.9480822224603593,
         0.3151551195659852,
@@ -10027,27 +10027,27 @@ export default {
         -121.18454378463962,
         1
       ],
-      "name": "Bidon_96_185",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_185',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -64.42781721400631,
             32.00688762446253,
             -121.18454378463962
           ],
-          "rotation": [
+          'rotation': [
             7.2816484850575,
             -59.43372256970802,
             110.03033654815209
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000007,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10070,7 +10070,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.30783308404784315,
         -0.08744300620547786,
         -0.9474135913271149,
@@ -10088,27 +10088,27 @@ export default {
         -19.178223610530118,
         1
       ],
-      "name": "bag_98_186",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_186',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -49.5967288041811,
             127.00305149660365,
             -19.178223610530118
           ],
-          "rotation": [
+          'rotation': [
             31.79549915519429,
             32.95004784113707,
             -21.134011224828516
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10131,7 +10131,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5203508330405878,
         0.6426548760094187,
         0.5623430633477081,
@@ -10149,27 +10149,27 @@ export default {
         92.91129882222364,
         1
       ],
-      "name": "bouteille_97_187",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_187',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -39.78890118479572,
             68.1052189302686,
             92.91129882222364
           ],
-          "rotation": [
+          'rotation': [
             -170.30206969926644,
             53.477763147786156,
             107.9834709320484
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999996,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10192,7 +10192,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.960508446239336,
         0.22593944185406392,
         0.1624034892407508,
@@ -10210,27 +10210,27 @@ export default {
         82.34051679344445,
         1
       ],
-      "name": "Bidon_96_188",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_188',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -90.91414646516095,
             64.29334039206694,
             82.34051679344445
           ],
-          "rotation": [
+          'rotation': [
             -83.48922654857375,
             -43.45546317044832,
             -127.95079389981272
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10253,7 +10253,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6552766520009105,
         -0.6692526701723581,
         -0.35030468568040257,
@@ -10271,27 +10271,27 @@ export default {
         77.20744055451995,
         1
       ],
-      "name": "bag_98_189",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_189',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -43.65712945390772,
             78.82981476284955,
             77.20744055451995
           ],
-          "rotation": [
+          'rotation': [
             163.01300934742272,
             -52.173570309957945,
             -64.07380306014362
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10314,7 +10314,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.033499694098335406,
         0.5699605595158413,
         0.8209888739146877,
@@ -10332,27 +10332,27 @@ export default {
         -28.038856027298007,
         1
       ],
-      "name": "bouteille_97_190",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_190',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -45.30885037743478,
             115.01415096488871,
             -28.038856027298007
           ],
-          "rotation": [
+          'rotation': [
             24.36647400213007,
             -22.496222859411727,
             44.381014095329256
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10375,7 +10375,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4215359863302167,
         -0.5841248797624996,
         -0.6936177168088031,
@@ -10393,27 +10393,27 @@ export default {
         27.245135694330642,
         1
       ],
-      "name": "Bidon_96_191",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_191',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -27.51347469269237,
             137.45708451132742,
             27.245135694330642
           ],
-          "rotation": [
+          'rotation': [
             132.245674347824,
             -28.076340704147995,
             -71.46871904108824
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10436,7 +10436,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.7191242460883702,
         0.40816876684256054,
         -0.5623687193132778,
@@ -10454,27 +10454,27 @@ export default {
         -23.280530707041095,
         1
       ],
-      "name": "bag_98_192",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_192',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -184.72664058590334,
             32.26447271014716,
             -23.280530707041095
           ],
-          "rotation": [
+          'rotation': [
             29.289603156906196,
             71.16954952236314,
             7.687392476009671
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10497,7 +10497,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.2006347267173227,
         -0.963114955169925,
         0.17931896041160714,
@@ -10515,27 +10515,27 @@ export default {
         -109.207027355405,
         1
       ],
-      "name": "bouteille_97_193",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_193',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -123.20722671218584,
             12.0809826351686,
             -109.207027355405
           ],
-          "rotation": [
+          'rotation': [
             0.2524451184522611,
             -56.930311882390434,
             127.59737475535653
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10558,7 +10558,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3709245082103559,
         0.8772257027973145,
         -0.3047787321331065,
@@ -10576,27 +10576,27 @@ export default {
         -51.15629463831785,
         1
       ],
-      "name": "bag_98_195",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_195',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.47047505574311,
             64.05042160837634,
             -51.15629463831785
           ],
-          "rotation": [
+          'rotation': [
             45.69180038305996,
             24.100405846958164,
             28.389238529667832
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10619,7 +10619,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.7612789491884308,
         0.41299324673155935,
         -0.49989092777993516,
@@ -10637,27 +10637,27 @@ export default {
         -68.73874340107201,
         1
       ],
-      "name": "bouteille_97_196",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_196',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.40009982509046,
             49.28986435581294,
             -68.73874340107201
           ],
-          "rotation": [
+          'rotation': [
             -2.9150331019761544,
             71.51559829123151,
             -47.44511705401727
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10680,7 +10680,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8982721081536704,
         0.2812289567985595,
         -0.3376647650720394,
@@ -10698,27 +10698,27 @@ export default {
         27.821617735603585,
         1
       ],
-      "name": "Bidon_96_197",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_197',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             4.4751445495803,
             115.51627110780157,
             27.821617735603585
           ],
-          "rotation": [
+          'rotation': [
             122.03904964188774,
             26.183203114040257,
             -13.835641247594447
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10741,7 +10741,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8248535403241697,
         -0.48043760140672165,
         -0.29798716108121176,
@@ -10759,27 +10759,27 @@ export default {
         65.42285324330443,
         1
       ],
-      "name": "bag_98_198",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_198',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -96.41564164878794,
             73.86264613161828,
             65.42285324330443
           ],
-          "rotation": [
+          'rotation': [
             -179.89756855231266,
             -51.550504273781755,
             -67.24518196922419
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10802,7 +10802,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9144804552662169,
         0.1625173894849087,
         0.37055849072866215,
@@ -10820,27 +10820,27 @@ export default {
         130.19460466420188,
         1
       ],
-      "name": "bouteille_97_199",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_199',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -96.36091042046077,
             29.568040246886962,
             130.19460466420188
           ],
-          "rotation": [
+          'rotation': [
             161.7912894512379,
             15.121997976734933,
             60.79758733337084
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10863,7 +10863,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5216113785749341,
         0.05098087164258154,
         0.8516586877779858,
@@ -10881,27 +10881,27 @@ export default {
         128.16771635887565,
         1
       ],
-      "name": "Bidon_96_200",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_200',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -104.44162237078842,
             15.25918588597768,
             128.16771635887565
           ],
-          "rotation": [
+          'rotation': [
             174.2451121177095,
             29.07151394475452,
             163.70277695152004
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10924,7 +10924,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9969181175895571,
         -0.07118981104141107,
         -0.03295872609162251,
@@ -10942,27 +10942,27 @@ export default {
         -81.42889885714507,
         1
       ],
-      "name": "bag_98_201",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_201',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -122.20086931767631,
             34.42597706548143,
             -81.42889885714507
           ],
-          "rotation": [
+          'rotation': [
             -52.44708470022467,
             -22.93172754560606,
             -171.1941071548705
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -10985,7 +10985,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.31927887754772744,
         0.9063458180049048,
         0.27676390034988907,
@@ -11003,27 +11003,27 @@ export default {
         -62.51213167582531,
         1
       ],
-      "name": "bouteille_97_202",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_202',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -161.57845711108195,
             29.552525335774682,
             -62.51213167582531
           ],
-          "rotation": [
+          'rotation': [
             68.85811723315994,
             15.565503060004538,
             40.808702412286806
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11046,7 +11046,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8524001764813307,
         -0.2470440882669117,
         0.4608504720481118,
@@ -11064,27 +11064,27 @@ export default {
         63.72897642080831,
         1
       ],
-      "name": "Bidon_96_203",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_203',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -103.68299222296268,
             69.04035551773858,
             63.72897642080831
           ],
-          "rotation": [
+          'rotation': [
             118.68643714945468,
             -27.129558628713518,
             24.280502868457546
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999997,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11107,7 +11107,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.941574689264724,
         -0.3368015916318662,
         -0.0013388092770015639,
@@ -11125,27 +11125,27 @@ export default {
         -13.411773194230413,
         1
       ],
-      "name": "bag_98_204",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_204',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -189.3129702238688,
             26.06408595374436,
             -13.411773194230413
           ],
-          "rotation": [
+          'rotation': [
             -9.491453148683043,
             -78.89543291118932,
             171.30216472584019
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000007,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11168,7 +11168,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.09463741654736205,
         0.5160047020696162,
         -0.8513418272534766,
@@ -11186,27 +11186,27 @@ export default {
         -4.540533819773573,
         1
       ],
-      "name": "bouteille_97_205",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_205',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -163.13565798740495,
             54.21334403521904,
             -4.540533819773573
           ],
-          "rotation": [
+          'rotation': [
             22.86589065647347,
             44.17369589231036,
             21.644153286006926
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11229,7 +11229,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6358325912454191,
         0.6436054814544022,
         -0.4260151407543905,
@@ -11247,27 +11247,27 @@ export default {
         -105.11063725479417,
         1
       ],
-      "name": "Bidon_96_206",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_206',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -49.007865560516315,
             55.21645211273382,
             -105.11063725479417
           ],
-          "rotation": [
+          'rotation': [
             44.92317649833331,
             22.448131111483583,
             15.732824265109631
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11290,7 +11290,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9747473638865444,
         0.026911480163565087,
         0.2216829917509167,
@@ -11308,27 +11308,27 @@ export default {
         52.218012643999614,
         1
       ],
-      "name": "bag_98_207",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_207',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.74303940995112,
             99.9326124407726,
             52.218012643999614
           ],
-          "rotation": [
+          'rotation': [
             148.54528955699826,
             -2.9936474667210007,
             24.869402403468392
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999996,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11351,7 +11351,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9582340950542758,
         -0.27466737872088337,
         0.07965707841813427,
@@ -11369,27 +11369,27 @@ export default {
         153.3737783410167,
         1
       ],
-      "name": "bouteille_97_208",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_208',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -20.530399849136323,
             25.23193436452243,
             153.3737783410167
           ],
-          "rotation": [
+          'rotation': [
             126.88901280701772,
             -18.424809864082768,
             -3.1651408382322415
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11412,7 +11412,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9975264822497293,
         -0.05963753356832838,
         -0.03720593770311393,
@@ -11430,27 +11430,27 @@ export default {
         11.790913324856499,
         1
       ],
-      "name": "Bidon_96_209",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_209',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -39.952734405795425,
             151.20104587955714,
             11.790913324856499
           ],
-          "rotation": [
+          'rotation': [
             -63.94462760637253,
             5.9820281413216545,
             173.879906551431
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11473,7 +11473,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8494164520119216,
         -0.4410395811219044,
         0.289785746604788,
@@ -11491,27 +11491,27 @@ export default {
         7.846387573637212,
         1
       ],
-      "name": "bag_98_210",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_210',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -191.37155476532152,
             17.304644880932056,
             7.846387573637212
           ],
-          "rotation": [
+          'rotation': [
             96.17683271938354,
             -57.56257421289645,
             83.07935511950855
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11534,7 +11534,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9264441196302725,
         -0.17992127634475683,
         -0.3306503100270192,
@@ -11552,27 +11552,27 @@ export default {
         148.25413435876,
         1
       ],
-      "name": "bouteille_97_211",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_211',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -51.915826533874956,
             18.047353986828554,
             148.25413435876
           ],
-          "rotation": [
+          'rotation': [
             -173.9107228281321,
             -28.458834639977987,
             -89.46072031162228
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11595,7 +11595,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.0035653924272618393,
         -0.24325875338615985,
         0.9699548787844989,
@@ -11613,27 +11613,27 @@ export default {
         82.05544648851719,
         1
       ],
-      "name": "Bidon_96_212",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_212',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -154.42132589997567,
             13.83186447304177,
             82.05544648851719
           ],
-          "rotation": [
+          'rotation': [
             -156.44086864999719,
             42.83910388724238,
             -137.5495335791181
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11656,7 +11656,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.18108285901375165,
         -0.03720954057342202,
         -0.9827636787456691,
@@ -11674,27 +11674,27 @@ export default {
         -171.79085326045845,
         1
       ],
-      "name": "bag_98_213",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_213',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -10.96021357801974,
             11.587687745515922,
             -171.79085326045845
           ],
-          "rotation": [
+          'rotation': [
             33.602594939423746,
             36.4250157747554,
             -25.1875493967915
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11717,7 +11717,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.465060490714731,
         0.4691253527728423,
         0.7507597108009535,
@@ -11735,27 +11735,27 @@ export default {
         -31.24407631126167,
         1
       ],
-      "name": "Bidon_96_215",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_215',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -54.00644051359744,
             108.70203937777242,
             -31.24407631126167
           ],
-          "rotation": [
+          'rotation': [
             18.684903473490678,
             -22.749333749113568,
             60.43589118820617
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11778,7 +11778,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.07237916866990267,
         -0.9313001831638066,
         0.3569891101724449,
@@ -11796,27 +11796,27 @@ export default {
         -26.937470728717614,
         1
       ],
-      "name": "bag_98_216",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_216',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -123.66136180857563,
             53.209406115620624,
             -26.937470728717614
           ],
-          "rotation": [
+          'rotation': [
             16.745077491397268,
             -59.25465874241478,
             107.94674223800419
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11839,7 +11839,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.26800285596186796,
         0.9383697387441436,
         0.2182583391431589,
@@ -11857,27 +11857,27 @@ export default {
         97.21052623394223,
         1
       ],
-      "name": "bouteille_97_217",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_217',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -131.62771654285785,
             50.107299572824594,
             97.21052623394223
           ],
-          "rotation": [
+          'rotation': [
             149.10746103553657,
             67.158905955827,
             63.76771239330166
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11900,7 +11900,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7544622456416863,
         -0.26529302261221127,
         -0.6003385145520653,
@@ -11918,27 +11918,27 @@ export default {
         24.67078796587161,
         1
       ],
-      "name": "Bidon_96_218",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_218',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -21.750860828698492,
             134.22917282317587,
             24.67078796587161
           ],
-          "rotation": [
+          'rotation': [
             128.69547618249763,
             -4.82061469424663,
             -50.83666499787154
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -11961,7 +11961,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.07166912793320668,
         -0.9928354539338545,
         -0.09561013290049852,
@@ -11979,27 +11979,27 @@ export default {
         -30.671530960082205,
         1
       ],
-      "name": "bag_98_219",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_219',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -147.76725607042226,
             47.69539684619603,
             -30.671530960082205
           ],
-          "rotation": [
+          'rotation': [
             -45.90294582741694,
             -67.771003534063,
             142.028237325453
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12022,7 +12022,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9109845306131249,
         0.19700223947436385,
         0.3623496965993907,
@@ -12040,27 +12040,27 @@ export default {
         68.99404200836616,
         1
       ],
-      "name": "bouteille_97_220",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_220',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -58.354692457668904,
             82.28998586162015,
             68.99404200836616
           ],
-          "rotation": [
+          'rotation': [
             -128.18382597990063,
             18.48151313892768,
             170.24406287746592
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999996,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12083,7 +12083,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9733555063862799,
         -0.12113843456555369,
         -0.19469087769722462,
@@ -12101,27 +12101,27 @@ export default {
         28.068484613219105,
         1
       ],
-      "name": "Bidon_96_221",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_221',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -39.64156730680216,
             142.09249312607187,
             28.068484613219105
           ],
-          "rotation": [
+          'rotation': [
             138.90313265434983,
             -3.8827892554519554,
             -18.520326862712015
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12144,7 +12144,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6796969342770127,
         0.6977560665511648,
         0.2261604499586001,
@@ -12162,27 +12162,27 @@ export default {
         0.27035988039637937,
         1
       ],
-      "name": "bag_98_222",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_222',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -177.41817714039996,
             48.356381411341744,
             0.27035988039637937
           ],
-          "rotation": [
+          'rotation': [
             -71.36374670076745,
             66.96170620831602,
             -129.5592575824379
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12205,7 +12205,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6171111439046476,
         0.6706265129378947,
         0.41162351270725295,
@@ -12223,27 +12223,27 @@ export default {
         -114.5990815960733,
         1
       ],
-      "name": "bouteille_97_223",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_223',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -109.40061462365983,
             18.79605387159006,
             -114.5990815960733
           ],
-          "rotation": [
+          'rotation': [
             -59.07835325653788,
             9.593237299326224,
             -155.44495750225397
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             0.9999999999999992
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12266,7 +12266,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8570436679346505,
         -0.47649176512517666,
         -0.19604017195721543,
@@ -12284,27 +12284,27 @@ export default {
         62.24450917641163,
         1
       ],
-      "name": "Bidon_96_224",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_224',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -16.69787745921674,
             89.35634485960318,
             62.24450917641163
           ],
-          "rotation": [
+          'rotation': [
             123.26286598763316,
             -20.10232885522934,
             -24.99276818276489
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12327,7 +12327,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5777435270851442,
         0.4388076861988152,
         -0.6882297809918282,
@@ -12345,27 +12345,27 @@ export default {
         -117.3312442288408,
         1
       ],
-      "name": "bag_98_225",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_225',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -97.2406014688271,
             21.51845320214759,
             -117.3312442288408
           ],
-          "rotation": [
+          'rotation': [
             51.32535956547874,
             30.495131224760538,
             2.172374974800677
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12388,7 +12388,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9956682780529466,
         -0.0907664193037301,
         -0.020152846098227886,
@@ -12406,27 +12406,27 @@ export default {
         83.44362117847237,
         1
       ],
-      "name": "Bidon_96_227",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_227',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -152.58672309949307,
             0.32558130427757515,
             83.44362117847237
           ],
-          "rotation": [
+          'rotation': [
             -175.92239845651088,
             -53.9051588747069,
             -20.441751413019293
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12449,7 +12449,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7214895555864349,
         0.629343967731431,
         0.28875420596027435,
@@ -12467,27 +12467,27 @@ export default {
         79.01975081636286,
         1
       ],
-      "name": "bag_98_228",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_228',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -73.99389311127645,
             72.45198145321187,
             79.01975081636286
           ],
-          "rotation": [
+          'rotation': [
             132.08022737893205,
             31.93926268976319,
             39.033860432524456
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12510,7 +12510,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6552766520009105,
         -0.6692526701723581,
         -0.35030468568040257,
@@ -12528,27 +12528,27 @@ export default {
         76.0135647153528,
         1
       ],
-      "name": "bouteille_97_229",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_229',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -38.888213499609115,
             80.09634783649685,
             76.0135647153528
           ],
-          "rotation": [
+          'rotation': [
             163.01300934742272,
             -52.173570309957945,
             -64.07380306014362
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12571,7 +12571,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9220796441047011,
         0.2784718976840512,
         0.26874250152886076,
@@ -12589,27 +12589,27 @@ export default {
         -16.091113540245377,
         1
       ],
-      "name": "Bidon_96_230",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_230',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -181.993129227304,
             40.003506759239905,
             -16.091113540245377
           ],
-          "rotation": [
+          'rotation': [
             -74.68782639444159,
             60.28949045071949,
             -112.27734315733784
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12632,7 +12632,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6142759451815556,
         0.7890158209018364,
         0.010913181841623433,
@@ -12650,27 +12650,27 @@ export default {
         -108.12573359876184,
         1
       ],
-      "name": "bouteille_97_232",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_232',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -65.09015591061453,
             40.81951810558441,
             -108.12573359876184
           ],
-          "rotation": [
+          'rotation': [
             52.62104302343797,
             12.71946206831078,
             26.213199128582698
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12693,7 +12693,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9128231710889579,
         0.4071051443341448,
         0.03192584814492847,
@@ -12711,27 +12711,27 @@ export default {
         -128.95434579243664,
         1
       ],
-      "name": "Bidon_96_233",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_233',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -22.908072335627196,
             42.092977423263,
             -128.95434579243664
           ],
-          "rotation": [
+          'rotation': [
             46.44639739904992,
             4.2466946777722585,
             12.41293426371596
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12754,7 +12754,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6517597258603111,
         0.7133744271807118,
         0.2574998764875108,
@@ -12772,27 +12772,27 @@ export default {
         74.53557926601808,
         1
       ],
-      "name": "bag_98_234",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_234',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -25.732130925962174,
             81.97411485621556,
             74.53557926601808
           ],
-          "rotation": [
+          'rotation': [
             145.44477289349948,
             47.55129391059822,
             46.79047914014878
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12815,7 +12815,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7314044667391192,
         -0.49533093263541617,
         -0.4687160901959667,
@@ -12833,27 +12833,27 @@ export default {
         6.446711486728215,
         1
       ],
-      "name": "bouteille_97_235",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_235',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -35.127449748874675,
             146.90798827162058,
             6.446711486728215
           ],
-          "rotation": [
+          'rotation': [
             145.7567679408629,
             -28.903126425485443,
             -55.80836133054527
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12876,7 +12876,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9973452146612107,
         0.07148353890692306,
         0.013878993397398377,
@@ -12894,27 +12894,27 @@ export default {
         -17.11600927906316,
         1
       ],
-      "name": "Bidon_96_236",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_236',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -13.343118679194802,
             107.89673980568796,
             -17.11600927906316
           ],
-          "rotation": [
+          'rotation': [
             -27.55483848868919,
             45.201925737139796,
             170.859088493837
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999996,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12937,7 +12937,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.3702019177148819,
         -0.353909752842534,
         0.8588937227405734,
@@ -12955,27 +12955,27 @@ export default {
         -37.31056964318158,
         1
       ],
-      "name": "bag_98_237",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_237',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -104.84801726259225,
             58.93096589238476,
             -37.31056964318158
           ],
-          "rotation": [
+          'rotation': [
             38.94644610564281,
             -32.14189962023692,
             82.06580216325325
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -12998,7 +12998,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6265681779587698,
         0.6442343274109187,
         0.4386051182496939,
@@ -13016,27 +13016,27 @@ export default {
         -75.70621395639515,
         1
       ],
-      "name": "Bidon_96_239",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_239',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -54.88209804251695,
             68.24628478452522,
             -75.70621395639515
           ],
-          "rotation": [
+          'rotation': [
             -52.58438899594935,
             32.8097343530816,
             -120.90836932086023
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13059,7 +13059,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.36257560168907105,
         -0.6831493613704147,
         0.6339131510853863,
@@ -13077,27 +13077,27 @@ export default {
         45.30654991642491,
         1
       ],
-      "name": "bag_98_240",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_240',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -155.38091320621055,
             58.32332617130938,
             45.30654991642491
           ],
-          "rotation": [
+          'rotation': [
             81.17721591785609,
             -49.704432937744684,
             10.12595599483288
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13120,7 +13120,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9295856588032823,
         -0.052279992018662964,
         -0.3648798506108497,
@@ -13138,27 +13138,27 @@ export default {
         30.32451509164773,
         1
       ],
-      "name": "bouteille_97_241",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_241',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -32.78672187369374,
             137.93295959531136,
             30.32451509164773
           ],
-          "rotation": [
+          'rotation': [
             154.07291667027116,
             -0.5711726842982766,
             -55.78464413508206
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13181,7 +13181,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9823364008428553,
         -0.05963513755684872,
         -0.17736641719243573,
@@ -13199,27 +13199,27 @@ export default {
         -63.0057623916385,
         1
       ],
-      "name": "Bidon_96_242",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_242',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -22.07579440738103,
             102.5590213225121,
             -63.0057623916385
           ],
-          "rotation": [
+          'rotation': [
             -141.63451913601497,
             -1.5441341006405425,
             167.90987044154886
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13242,7 +13242,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7479300542268813,
         -0.6550627414511812,
         -0.1072074565813301,
@@ -13260,27 +13260,27 @@ export default {
         -93.84948305036336,
         1
       ],
-      "name": "bag_98_243",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_243',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -81.32124824249144,
             39.0820297143617,
             -93.84948305036336
           ],
-          "rotation": [
+          'rotation': [
             -35.394491877732634,
             -55.734308855838194,
             171.9089225138549
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13303,7 +13303,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.917420912341484,
         0.06090321700296325,
         0.3932297900175018,
@@ -13321,27 +13321,27 @@ export default {
         157.76679793423216,
         1
       ],
-      "name": "Bidon_96_245",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_245',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -20.604898079001142,
             17.131400664727053,
             157.76679793423216
           ],
-          "rotation": [
+          'rotation': [
             -169.37869400176993,
             14.062696473339395,
             159.85850947995976
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13364,7 +13364,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.3257430283773396,
         0.12620871078617774,
         -0.9369967133268132,
@@ -13382,27 +13382,27 @@ export default {
         -99.44011069849115,
         1
       ],
-      "name": "bag_98_246",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_246',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -130.82400596122937,
             14.306635415543129,
             -99.44011069849115
           ],
-          "rotation": [
+          'rotation': [
             17.101183121896774,
             52.54870402720079,
             -28.72278786416124
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999998,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13425,7 +13425,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7003195473434637,
         -0.18069172496642175,
         0.6905816621785615,
@@ -13443,27 +13443,27 @@ export default {
         -33.97226730480102,
         1
       ],
-      "name": "bouteille_97_247",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_247',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -28.224253678694982,
             101.81480637134456,
             -33.97226730480102
           ],
-          "rotation": [
+          'rotation': [
             31.546156806798564,
             -23.706958792953493,
             1.1492238863644861
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13486,7 +13486,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.4730936970069032,
         -0.2658875351363291,
         0.8399322428097808,
@@ -13504,27 +13504,27 @@ export default {
         86.7084607834289,
         1
       ],
-      "name": "Bidon_96_248",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_248',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -51.19765873796738,
             73.06859342492032,
             86.7084607834289
           ],
-          "rotation": [
+          'rotation': [
             118.17944667268661,
             50.38279525707876,
             142.90795352811932
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999999,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13547,7 +13547,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5097432185381742,
         -0.7521940246948274,
         0.41757155119541023,
@@ -13565,27 +13565,27 @@ export default {
         -76.07157437878206,
         1
       ],
-      "name": "bag_98_249",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_249',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -47.68038281397564,
             78.62062946124524,
             -76.07157437878206
           ],
-          "rotation": [
+          'rotation': [
             55.40750074421472,
             -58.54819519613949,
             97.4081560247286
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999996,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13608,7 +13608,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.21468099640853477,
         0.9039270474941259,
         0.36990263933850387,
@@ -13626,27 +13626,27 @@ export default {
         56.27177717594527,
         1
       ],
-      "name": "bouteille_97_250",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_250',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -108.17956334823563,
             69.42682346058635,
             56.27177717594527
           ],
-          "rotation": [
+          'rotation': [
             131.6209703629197,
             62.166394140644705,
             80.90631734515759
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13669,7 +13669,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.8493568203806178,
         0.5101197351199973,
         -0.1355390995765859,
@@ -13687,27 +13687,27 @@ export default {
         -115.8103969028632,
         1
       ],
-      "name": "Bidon_96_251",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_251',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -52.17291905392854,
             42.23973824206297,
             -115.8103969028632
           ],
-          "rotation": [
+          'rotation': [
             -29.291646438122257,
             49.38513658263676,
             -100.69500061966961
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13730,7 +13730,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9999743433263664,
         -0.0006936529195007802,
         -0.007129623736860966,
@@ -13748,27 +13748,27 @@ export default {
         161.15965809335358,
         1
       ],
-      "name": "bag_98_252",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_252',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -1.5717261953781765,
             9.312200481882924,
             161.15965809335358
           ],
-          "rotation": [
+          'rotation': [
             -178.4715608662828,
             2.338005987375069,
             22.676193908303958
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13791,7 +13791,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.26328662498610433,
         -0.7071767843270438,
         -0.6561868246256464,
@@ -13809,27 +13809,27 @@ export default {
         -30.283928297704783,
         1
       ],
-      "name": "bouteille_97_253",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_253',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -22.65706684829756,
             101.6688457129498,
             -30.283928297704783
           ],
-          "rotation": [
+          'rotation': [
             -49.11412931241195,
             -0.5951466321871283,
             119.5094776210946
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13852,7 +13852,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8537840354299194,
         0.2944297843355722,
         0.42937620211314753,
@@ -13870,27 +13870,27 @@ export default {
         144.99210750744874,
         1
       ],
-      "name": "Bidon_96_254",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_254',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -78.31321445087583,
             5.165476534380189,
             144.99210750744874
           ],
-          "rotation": [
+          'rotation': [
             143.30308345423484,
             14.420009764568785,
             46.03330452088924
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999999,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13913,7 +13913,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3297017509768879,
         0.7261920106806753,
         0.6032759891014489,
@@ -13931,27 +13931,27 @@ export default {
         -104.90902758562079,
         1
       ],
-      "name": "bag_98_255",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_255',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -127.34800138543274,
             14.5492063900818,
             -104.90902758562079
           ],
-          "rotation": [
+          'rotation': [
             -61.36382981160954,
             -3.8505677459728527,
             -134.93724651527407
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -13974,7 +13974,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.45350178249619394,
         0.7043544188067287,
         0.5460961325446364,
@@ -13992,27 +13992,27 @@ export default {
         -122.99329841303967,
         1
       ],
-      "name": "bouteille_97_256",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_256',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -30.116267292400142,
             47.16985659157306,
             -122.99329841303967
           ],
-          "rotation": [
+          'rotation': [
             33.72982215740609,
             -8.906827032227726,
             32.29855421167903
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14035,7 +14035,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7887832830263367,
         -0.34474436907256556,
         0.5088931640442363,
@@ -14053,27 +14053,27 @@ export default {
         41.67962398569668,
         1
       ],
-      "name": "Bidon_96_257",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_257',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -33.39093560150488,
             122.08866376655986,
             41.67962398569668
           ],
-          "rotation": [
+          'rotation': [
             137.0654041325951,
             35.33559248382256,
             -148.32125453296877
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14096,7 +14096,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9483033973638288,
         0.08186389803004512,
         0.3066251273909984,
@@ -14114,27 +14114,27 @@ export default {
         -176.91340966856396,
         1
       ],
-      "name": "bag_98_258",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_258',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             13.53122299449558,
             7.957734507433118,
             -176.91340966856396
           ],
-          "rotation": [
+          'rotation': [
             43.83657115038361,
             -7.926613398690272,
             6.107762959259969
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14157,7 +14157,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5086954619051192,
         0.7702207424226166,
         -0.3846932998884836,
@@ -14175,27 +14175,27 @@ export default {
         102.72890805536642,
         1
       ],
-      "name": "bouteille_97_259",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_259',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -137.50078499239407,
             3.1959687840221696,
             102.72890805536642
           ],
-          "rotation": [
+          'rotation': [
             103.52142747319144,
             55.83535625040642,
             -5.8148722264482045
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14218,7 +14218,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.35155430006693017,
         0.9260706368349685,
         0.13712311875291697,
@@ -14236,27 +14236,27 @@ export default {
         -63.534824403220995,
         1
       ],
-      "name": "Bidon_96_260",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_260',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -74.26927503167765,
             61.67958152615164,
             -63.534824403220995
           ],
-          "rotation": [
+          'rotation': [
             51.07909354850567,
             12.576792750818553,
             36.55079725169413
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14279,7 +14279,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.18234064397216534,
         0.9782379668461113,
         -0.09900691782195128,
@@ -14297,27 +14297,27 @@ export default {
         30.2181389794281,
         1
       ],
-      "name": "bag_98_261",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_261',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -163.02840705920718,
             57.29371083170417,
             30.2181389794281
           ],
-          "rotation": [
+          'rotation': [
             29.414430417479632,
             86.20651843268595,
             -52.93803319053218
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14340,7 +14340,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9991037059996608,
         0.01917336043999928,
         0.037738135979155964,
@@ -14358,27 +14358,27 @@ export default {
         71.05975976622096,
         1
       ],
-      "name": "bouteille_97_262",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_262',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -96.4453647868812,
             68.98796827775406,
             71.05975976622096
           ],
-          "rotation": [
+          'rotation': [
             -130.27626437007518,
             -15.45159041444576,
             -144.40389130224025
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14401,7 +14401,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6913461465528334,
         -0.6907653440391199,
         -0.21185784177382672,
@@ -14419,27 +14419,27 @@ export default {
         -115.40408386174556,
         1
       ],
-      "name": "Bidon_96_263",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_263',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             0.5499093311653689,
             65.92743104875227,
             -115.40408386174556
           ],
-          "rotation": [
+          'rotation': [
             -25.942688216971167,
             -18.521116145560942,
             114.44204254564718
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999994,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14462,7 +14462,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6046307586809068,
         0.40648170622025886,
         0.6849775676365012,
@@ -14480,27 +14480,27 @@ export default {
         101.80215390031958,
         1
       ],
-      "name": "bag_98_264",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_264',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -71.53327518883921,
             54.350139195832696,
             101.80215390031958
           ],
-          "rotation": [
+          'rotation': [
             -156.04916820290055,
             39.35912552744044,
             141.98606042646364
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14523,7 +14523,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6567143563764591,
         0.32081558260214443,
         -0.6824980703919239,
@@ -14541,27 +14541,27 @@ export default {
         -38.65960864518062,
         1
       ],
-      "name": "bouteille_97_265",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_265',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -178.8999768066323,
             31.10675998291146,
             -38.65960864518062
           ],
-          "rotation": [
+          'rotation': [
             19.773602199837484,
             67.70370991807769,
             -1.4720675964291285
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14584,7 +14584,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9612180531883501,
         -0.2714565286570548,
         -0.048695043631353345,
@@ -14602,27 +14602,27 @@ export default {
         -72.28604712106785,
         1
       ],
-      "name": "Bidon_96_266",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_266',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -150.6264618734487,
             27.53131620406723,
             -72.28604712106785
           ],
-          "rotation": [
+          'rotation': [
             -27.131853898937155,
             -43.06520375960389,
             -178.5767075243617
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14645,7 +14645,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8047612070280252,
         0.28253801602558853,
         0.522045658121126,
@@ -14663,27 +14663,27 @@ export default {
         10.9810071550133,
         1
       ],
-      "name": "bag_98_267",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_267',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -84.06183744625937,
             103.42068509104402,
             10.9810071550133
           ],
-          "rotation": [
+          'rotation': [
             -111.39928752083584,
             -16.70168726873202,
             -118.21940964007872
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14706,7 +14706,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9220796441047011,
         0.2784718976840512,
         0.26874250152886076,
@@ -14724,27 +14724,27 @@ export default {
         -13.355330590490007,
         1
       ],
-      "name": "bouteille_97_268",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_268',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -183.63912651996995,
             38.328600271632396,
             -13.355330590490007
           ],
-          "rotation": [
+          'rotation': [
             -74.68782639444159,
             60.28949045071949,
             -112.27734315733784
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14767,7 +14767,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9822215384731781,
         0.17694771661061873,
         0.06269254298296148,
@@ -14785,27 +14785,27 @@ export default {
         28.550907042689936,
         1
       ],
-      "name": "Bidon_96_269",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_269',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -186.30293254760886,
             3.22928237931303,
             28.550907042689936
           ],
-          "rotation": [
+          'rotation': [
             -133.86161155317723,
             -67.09873704483533,
             -50.82556751865199
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14828,7 +14828,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5329175010093484,
         0.8336905653885025,
         0.14477215996230205,
@@ -14846,27 +14846,27 @@ export default {
         -125.32178854984116,
         1
       ],
-      "name": "bag_98_270",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_270',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -4.777603263633367,
             47.51922572327133,
             -125.32178854984116
           ],
-          "rotation": [
+          'rotation': [
             -24.775028852923466,
             25.20984540268566,
             -154.82971130986192
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14889,7 +14889,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5381634502883769,
         0.35817063271894334,
         0.7629507838854497,
@@ -14907,27 +14907,27 @@ export default {
         53.60066041875462,
         1
       ],
-      "name": "bouteille_97_271",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_271',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -163.55126129951893,
             54.38794946652644,
             53.60066041875462
           ],
-          "rotation": [
+          'rotation': [
             104.10685331791571,
             -0.47912474353397694,
             51.57966567375609
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -14950,7 +14950,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8629130787029355,
         0.3721330332377523,
         0.34190353051217726,
@@ -14968,27 +14968,27 @@ export default {
         20.001065363017883,
         1
       ],
-      "name": "Bidon_96_272",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_272',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -140.48071878080168,
             60.07036903071311,
             20.001065363017883
           ],
-          "rotation": [
+          'rotation': [
             -82.77235125750262,
             5.638491065237176,
             -164.6599087752023
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999994,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15011,7 +15011,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8648253767477994,
         -0.3109516666097137,
         0.3941904726977405,
@@ -15029,27 +15029,27 @@ export default {
         26.684623356299483,
         1
       ],
-      "name": "bag_98_273",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_273',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -186.98384664430665,
             5.860256714619697,
             26.684623356299483
           ],
-          "rotation": [
+          'rotation': [
             111.57093349387772,
             -38.25510012261516,
             90.05929417661407
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999996,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15072,7 +15072,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7540986257028192,
         0.4340717918434153,
         0.49286604898183617,
@@ -15090,27 +15090,27 @@ export default {
         131.25761472447863,
         1
       ],
-      "name": "bouteille_97_274",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_274',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             3.7437584838108604,
             39.97680020579551,
             131.25761472447863
           ],
-          "rotation": [
+          'rotation': [
             -110.23426318570417,
             32.592806986228766,
             170.3605429728226
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15133,7 +15133,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.999800384189399,
         0.007818673671060943,
         0.01838641119840691,
@@ -15151,27 +15151,27 @@ export default {
         140.85455947954398,
         1
       ],
-      "name": "Bidon_96_275",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_275',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.06372544382396,
             4.914822333339827,
             140.85455947954398
           ],
-          "rotation": [
+          'rotation': [
             -161.86154945239915,
             -22.379257548116925,
             -73.9922032799656
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000007,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15194,7 +15194,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.03431215633248574,
         0.8210007954193291,
         0.569895051609192,
@@ -15212,27 +15212,27 @@ export default {
         -35.88647747133751,
         1
       ],
-      "name": "bag_98_276",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_276',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -83.22883492669125,
             84.73852393322454,
             -35.88647747133751
           ],
-          "rotation": [
+          'rotation': [
             -52.76965110429992,
             11.69893428710225,
             -133.56830046392466
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15255,7 +15255,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.08079419049447578,
         -0.9927148922173716,
         -0.08938367609465744,
@@ -15273,27 +15273,27 @@ export default {
         -129.61039321916533,
         1
       ],
-      "name": "bouteille_97_277",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_277',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -18.827426193214237,
             42.039275950760945,
             -129.61039321916533
           ],
-          "rotation": [
+          'rotation': [
             -22.852965307917984,
             -33.96089825733268,
             134.91871520120176
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15316,7 +15316,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7929602638833019,
         0.48313642911284693,
         0.3712050791223264,
@@ -15334,27 +15334,27 @@ export default {
         -32.7046521139419,
         1
       ],
-      "name": "Bidon_96_278",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_278',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -143.49040271391286,
             47.64910953439229,
             -32.7046521139419
           ],
-          "rotation": [
+          'rotation': [
             -75.79012952341277,
             16.95563092886259,
             -169.23714266737196
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999996,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15377,7 +15377,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.915179075375154,
         0.2598788409260673,
         -0.3080750688296622,
@@ -15395,27 +15395,27 @@ export default {
         33.650947653401744,
         1
       ],
-      "name": "bag_98_279",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_279',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             0.9438489844626851,
             111.96511117958741,
             33.650947653401744
           ],
-          "rotation": [
+          'rotation': [
             130.23579601763564,
             27.405053723953827,
             -17.676246215411183
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15438,7 +15438,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8872423756959208,
         -0.2232401215075764,
         -0.40368900767638005,
@@ -15456,27 +15456,27 @@ export default {
         32.4875609688152,
         1
       ],
-      "name": "bouteille_97_280",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_280',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -12.370628592477663,
             119.40201214370005,
             32.4875609688152
           ],
-          "rotation": [
+          'rotation': [
             133.55651920115668,
             -5.2295589969976195,
             -35.29381672277183
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15499,7 +15499,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.17703126799325852,
         -0.03426838198080925,
         0.9836084628291473,
@@ -15517,27 +15517,27 @@ export default {
         73.2837306906143,
         1
       ],
-      "name": "Bidon_96_281",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_281',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -161.69391740904695,
             11.875267303268181,
             73.2837306906143
           ],
-          "rotation": [
+          'rotation': [
             128.9547520152093,
             25.378383246837174,
             126.88934470951912
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15560,7 +15560,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9861917260033521,
         0.14978866687145356,
         0.07063451592105191,
@@ -15578,27 +15578,27 @@ export default {
         -116.61182522138553,
         1
       ],
-      "name": "bag_98_282",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_282',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -116.86900240322454,
             11.879553046302181,
             -116.61182522138553
           ],
-          "rotation": [
+          'rotation': [
             -54.759727009874624,
             -35.17645767238609,
             -155.40623509698526
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15621,7 +15621,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4773047331599559,
         0.5062747747530356,
         0.7182381528099623,
@@ -15639,27 +15639,27 @@ export default {
         28.421985126757747,
         1
       ],
-      "name": "bouteille_97_283",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_283',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -55.453037843994224,
             136.3164611883716,
             28.421985126757747
           ],
-          "rotation": [
+          'rotation': [
             149.85663303676648,
             33.35294748726798,
             86.4299801777211
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15682,7 +15682,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6032429026303691,
         0.33855815207464934,
         -0.7221332135346538,
@@ -15700,27 +15700,27 @@ export default {
         -74.8190616735415,
         1
       ],
-      "name": "Bidon_96_284",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_284',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -147.42535826200253,
             27.49140514222078,
             -74.8190616735415
           ],
-          "rotation": [
+          'rotation': [
             40.55729289082773,
             28.283644169147905,
             1.3677570214842387
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15743,7 +15743,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.004029245820125872,
         -0.030022268619258073,
         0.9995411089920588,
@@ -15761,27 +15761,27 @@ export default {
         77.93789644296243,
         1
       ],
-      "name": "bag_98_285",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_285',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -157.76614110147165,
             11.991704399578152,
             77.93789644296243
           ],
-          "rotation": [
+          'rotation': [
             153.94176950614312,
             42.002875797976145,
             156.32357091503096
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15804,7 +15804,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9218108256675462,
         0.009252657291543983,
         -0.3875295988891203,
@@ -15822,27 +15822,27 @@ export default {
         -55.448277832623816,
         1
       ],
-      "name": "bouteille_97_286",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_286',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -6.902275747671487,
             86.68629853292613,
             -55.448277832623816
           ],
-          "rotation": [
+          'rotation': [
             -169.0428253517572,
             -8.808206480796747,
             132.9524230652294
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15865,7 +15865,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.09171592194249253,
         -0.3261847937393269,
         0.9408462520494361,
@@ -15883,27 +15883,27 @@ export default {
         -92.55986388303754,
         1
       ],
-      "name": "Bidon_96_287",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_287',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -70.7408927980899,
             47.77597825716803,
             -92.55986388303754
           ],
-          "rotation": [
+          'rotation': [
             61.10590142345958,
             -40.164530612572385,
             54.38697096329445
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15926,7 +15926,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9471136671549992,
         0.15276171047360615,
         0.2822048215417073,
@@ -15944,27 +15944,27 @@ export default {
         63.63697228850654,
         1
       ],
-      "name": "bouteille_97_289",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_289',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -21.461170947732157,
             88.6466714087641,
             63.63697228850654
           ],
-          "rotation": [
+          'rotation': [
             -131.40333742239997,
             20.154388641525767,
             159.2508360656308
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -15987,7 +15987,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9136446000524381,
         0.24513931381263365,
         0.32428422967898435,
@@ -16005,27 +16005,27 @@ export default {
         -29.834229050557983,
         1
       ],
-      "name": "Bidon_96_290",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_290',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -23.999874484557786,
             104.16181622293263,
             -29.834229050557983
           ],
-          "rotation": [
+          'rotation': [
             -26.356516330787827,
             -40.25082897200358,
             74.51922202149923
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16048,7 +16048,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.957456687485517,
         0.05500644067718499,
         -0.283286044614429,
@@ -16066,27 +16066,27 @@ export default {
         -68.65418038573115,
         1
       ],
-      "name": "bag_98_291",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_291',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -15.655743010447337,
             106.5889285654252,
             -68.65418038573115
           ],
-          "rotation": [
+          'rotation': [
             131.7562663340782,
             11.540359044703381,
             -18.565856559869136
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16109,7 +16109,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.09171592194249253,
         -0.3261847937393269,
         0.9408462520494361,
@@ -16127,27 +16127,27 @@ export default {
         -93.0309537695996,
         1
       ],
-      "name": "bouteille_97_292",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_292',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -75.76955020350105,
             44.05394285342661,
             -93.0309537695996
           ],
-          "rotation": [
+          'rotation': [
             61.10590142345958,
             -40.164530612572385,
             54.38697096329445
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16170,7 +16170,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3039815956390119,
         0.3501596848795282,
         -0.8859928806699467,
@@ -16188,27 +16188,27 @@ export default {
         -118.47450615749193,
         1
       ],
-      "name": "Bidon_96_293",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_293',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -90.97523451257585,
             23.54399764704414,
             -118.47450615749193
           ],
-          "rotation": [
+          'rotation': [
             47.662944740655824,
             39.96128208089359,
             -9.046072557956233
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16231,7 +16231,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8107288664374326,
         0.39564956905357307,
         0.43148594836077586,
@@ -16249,27 +16249,27 @@ export default {
         11.403631201069519,
         1
       ],
-      "name": "bag_98_294",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_294',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -129.61482721309758,
             63.54843525353033,
             11.403631201069519
           ],
-          "rotation": [
+          'rotation': [
             -87.57899329929893,
             -10.392359295608696,
             -144.03990107574367
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16292,7 +16292,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.07264811141510455,
         0.8104322459603813,
         0.5813104391075664,
@@ -16310,27 +16310,27 @@ export default {
         -61.484369253890314,
         1
       ],
-      "name": "bouteille_97_295",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_295',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -70.96596127734283,
             67.93520183413746,
             -61.484369253890314
           ],
-          "rotation": [
+          'rotation': [
             51.019745364566916,
             0.22045243457623234,
             48.95316462171484
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16353,7 +16353,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9484566259308643,
         0.30644025477900527,
         0.08077375179363516,
@@ -16371,27 +16371,27 @@ export default {
         107.22142810256817,
         1
       ],
-      "name": "Bidon_96_296",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_296',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -17.220209809428646,
             58.00490070518087,
             107.22142810256817
           ],
-          "rotation": [
+          'rotation': [
             135.72893308167858,
             19.026046987987236,
             14.6904302971593
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16414,7 +16414,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7298300628674257,
         -0.6667554689507613,
         -0.1509477524151263,
@@ -16432,27 +16432,27 @@ export default {
         -95.70987981767144,
         1
       ],
-      "name": "bag_98_297",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_297',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -71.38401796588357,
             45.67274058149056,
             -95.70987981767144
           ],
-          "rotation": [
+          'rotation': [
             -41.77506304478373,
             -51.482461000157535,
             173.22684827248244
           ],
-          "scale": [
+          'scale': [
             0.9999999999999993,
             0.9999999999999996,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16475,7 +16475,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6127850380356052,
         0.4331714355042593,
         0.6609515902264562,
@@ -16493,27 +16493,27 @@ export default {
         71.14088302526665,
         1
       ],
-      "name": "bouteille_97_298",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_298',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -74.12011126034325,
             77.35874368618404,
             71.14088302526665
           ],
-          "rotation": [
+          'rotation': [
             -130.11264515455838,
             35.28581663592714,
             168.18001223267305
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16536,7 +16536,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.26104719997769865,
         -0.8091862476425965,
         0.5263762684714224,
@@ -16554,27 +16554,27 @@ export default {
         -20.45655281230462,
         1
       ],
-      "name": "Bidon_96_299",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_299',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -99.32588754570364,
             80.12457897720222,
             -20.45655281230462
           ],
-          "rotation": [
+          'rotation': [
             49.410351216122606,
             -58.07649614421313,
             87.15336998973143
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16597,7 +16597,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9937539744888333,
         0.06961748546778873,
         0.08721492936870695,
@@ -16615,27 +16615,27 @@ export default {
         38.72826328734431,
         1
       ],
-      "name": "bag_98_300",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_300',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.2259938400353,
             92.2126018075767,
             38.72826328734431
           ],
-          "rotation": [
+          'rotation': [
             -105.09486905226842,
             -16.79743665312056,
             -152.7462169519363
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1.0000000000000002,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16658,7 +16658,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.7468909618535052,
         0.6453975498753644,
         -0.1600496601571561,
@@ -16676,27 +16676,27 @@ export default {
         -20.692746259274895,
         1
       ],
-      "name": "bouteille_97_301",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_301',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -48.44342579942421,
             126.04006291479914,
             -20.692746259274895
           ],
-          "rotation": [
+          'rotation': [
             -13.260477238960156,
             33.41980990434257,
             -107.02596371764851
           ],
-          "scale": [
+          'scale': [
             0.9999999999999993,
             0.9999999999999997,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16719,7 +16719,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4760714933037631,
         -0.629075077770276,
         0.6145083236147793,
@@ -16737,27 +16737,27 @@ export default {
         22.157553868438086,
         1
       ],
-      "name": "Bidon_96_302",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_302',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -189.8783473093446,
             7.515963037349015,
             22.157553868438086
           ],
-          "rotation": [
+          'rotation': [
             72.18475299730568,
             -4.77235039484586,
             136.61776717230845
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16780,7 +16780,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9220796441047011,
         0.2784718976840512,
         0.26874250152886076,
@@ -16798,27 +16798,27 @@ export default {
         -10.238872172542303,
         1
       ],
-      "name": "bag_98_303",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_303',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -181.7003682953716,
             41.73707783047858,
             -10.238872172542303
           ],
-          "rotation": [
+          'rotation': [
             -74.68782639444159,
             60.28949045071949,
             -112.27734315733784
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16841,7 +16841,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9862446552491192,
         -0.13998589283723042,
         -0.08789442416393552,
@@ -16859,27 +16859,27 @@ export default {
         30.507740365258076,
         1
       ],
-      "name": "bouteille_97_304",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_304',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -62.29615058080641,
             119.74074282560142,
             30.507740365258076
           ],
-          "rotation": [
+          'rotation': [
             -161.48913098595725,
             -51.0668065308363,
             -56.280685692438944
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16902,7 +16902,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5799815587421752,
         0.6093861909254785,
         0.5406198866378596,
@@ -16920,27 +16920,27 @@ export default {
         73.64708151283274,
         1
       ],
-      "name": "Bidon_96_305",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_305',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -35.1237442848943,
             82.1691383577966,
             73.64708151283274
           ],
-          "rotation": [
+          'rotation': [
             -164.9219337169844,
             52.96533223247396,
             110.07212328729118
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -16963,7 +16963,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.011069841036359662,
         0.895538076848801,
         0.4448471777289149,
@@ -16981,27 +16981,27 @@ export default {
         45.95345440540073,
         1
       ],
-      "name": "bouteille_97_307",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_307',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -133.824466036447,
             59.938967207903005,
             45.95345440540073
           ],
-          "rotation": [
+          'rotation': [
             -111.20589157214734,
             68.42950103626649,
             172.04734246780882
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17024,7 +17024,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5719715050348292,
         0.3796742993686253,
         0.7271148628842187,
@@ -17042,27 +17042,27 @@ export default {
         -133.86875574559122,
         1
       ],
-      "name": "Bidon_96_308",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_308',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -56.46604369540183,
             26.194975815782122,
             -133.86875574559122
           ],
-          "rotation": [
+          'rotation': [
             55.85742623101177,
             -14.641468912699896,
             29.035153349074807
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17085,7 +17085,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6565100071654513,
         0.6961997177169816,
         -0.29034559328912735,
@@ -17103,27 +17103,27 @@ export default {
         -17.213343855838637,
         1
       ],
-      "name": "bag_98_309",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_309',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -4.542410716435985,
             71.77521028597009,
             -17.213343855838637
           ],
-          "rotation": [
+          'rotation': [
             42.38411148432592,
             54.46106793667421,
             -122.16680697771439
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17146,7 +17146,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.11788043392032477,
         -0.5252569460511917,
         0.8427391909266662,
@@ -17164,27 +17164,27 @@ export default {
         -10.741713381247875,
         1
       ],
-      "name": "bouteille_97_310",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_310',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -130.3918934596148,
             57.932368843971076,
             -10.741713381247875
           ],
-          "rotation": [
+          'rotation': [
             61.856223111818906,
             -48.73817424894752,
             51.443611906957244
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000007,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17207,7 +17207,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5146179323064675,
         0.5693247639417077,
         0.6411222168286913,
@@ -17225,27 +17225,27 @@ export default {
         108.61378412082358,
         1
       ],
-      "name": "bag_98_312",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_312',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -45.62639850316281,
             54.54643773576208,
             108.61378412082358
           ],
-          "rotation": [
+          'rotation': [
             -161.2965027084827,
             49.282475490207716,
             125.11828949020126
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17268,7 +17268,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5673203265346697,
         -0.49554729302666806,
         -0.6577085429538971,
@@ -17286,27 +17286,27 @@ export default {
         151.5934367969279,
         1
       ],
-      "name": "bouteille_97_313",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_313',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -44.02675232201351,
             16.66138844248814,
             151.5934367969279
           ],
-          "rotation": [
+          'rotation': [
             -95.30753905203967,
             -11.366736716869278,
             150.4692302614946
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17329,7 +17329,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9258925249849852,
         0.36758466041714877,
         0.0872040687292644,
@@ -17347,27 +17347,27 @@ export default {
         -72.93978925502411,
         1
       ],
-      "name": "Bidon_96_314",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_314',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -39.91085098937817,
             96.21534629867034,
             -72.93978925502411
           ],
-          "rotation": [
+          'rotation': [
             -86.23566361223352,
             80.28512323111417,
             -115.86364579936894
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17390,7 +17390,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.1699388454773194,
         0.8935443933367977,
         -0.4155709397133171,
@@ -17408,27 +17408,27 @@ export default {
         49.1963541523009,
         1
       ],
-      "name": "bag_98_315",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_315',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -59.767666502748014,
             96.32401111054958,
             49.1963541523009
           ],
-          "rotation": [
+          'rotation': [
             12.377073286896094,
             50.071084183141146,
             -107.66020790388977
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000007,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17451,7 +17451,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8395232017422073,
         0.2085823742262323,
         0.5016913263139609,
@@ -17469,27 +17469,27 @@ export default {
         37.55174080421737,
         1
       ],
-      "name": "bouteille_97_316",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_316',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -69.9486206300978,
             99.98905239809977,
             37.55174080421737
           ],
-          "rotation": [
+          'rotation': [
             128.93145201565721,
             1.555889946039955,
             40.54165525445435
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999993,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17512,7 +17512,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.44336221191907627,
         -0.35010455671714574,
         0.8251404416268261,
@@ -17530,27 +17530,27 @@ export default {
         81.7589137307645,
         1
       ],
-      "name": "Bidon_96_317",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_317',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -154.56402739144474,
             8.26506965511001,
             81.7589137307645
           ],
-          "rotation": [
+          'rotation': [
             90.5537825827524,
             -31.473169674850975,
             71.98154918971981
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17573,7 +17573,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9995588456706285,
         0.02764620574157297,
         0.010853633018275584,
@@ -17591,27 +17591,27 @@ export default {
         61.69379476729857,
         1
       ],
-      "name": "bag_98_318",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_318',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -168.7089787139579,
             40.24037836378104,
             61.69379476729857
           ],
-          "rotation": [
+          'rotation': [
             -154.08865226787717,
             -59.512229571782036,
             -40.900728212688264
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17634,7 +17634,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6536684970565622,
         -0.7203044090179765,
         -0.23211862119416135,
@@ -17652,27 +17652,27 @@ export default {
         -113.32541795145923,
         1
       ],
-      "name": "bouteille_97_319",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_319',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -109.26919730792035,
             19.66719014389002,
             -113.32541795145923
           ],
-          "rotation": [
+          'rotation': [
             -46.83666193586466,
             -39.84494895101018,
             168.34695482042957
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17695,7 +17695,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9290996452557038,
         0.1373583115662584,
         0.34337522250359204,
@@ -17713,27 +17713,27 @@ export default {
         51.64795401064506,
         1
       ],
-      "name": "Bidon_96_320",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_320',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -47.85926933667672,
             98.62588286897389,
             51.64795401064506
           ],
-          "rotation": [
+          'rotation': [
             -134.04844007529647,
             6.745944253075426,
             -167.93232946734756
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17756,7 +17756,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.748340381052692,
         0.5878590189955852,
         0.3072595773470053,
@@ -17774,27 +17774,27 @@ export default {
         -38.39219290473788,
         1
       ],
-      "name": "bag_98_321",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_321',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -98.60602183761456,
             64.70918641230578,
             -38.39219290473788
           ],
-          "rotation": [
+          'rotation': [
             -48.84625677571734,
             -20.489286771273026,
             -146.48101729579108
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17817,7 +17817,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8169045389646696,
         -0.4704864221947732,
         -0.33363078507428334,
@@ -17835,27 +17835,27 @@ export default {
         -35.79197919459973,
         1
       ],
-      "name": "bouteille_97_322",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_322',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -143.0166478101775,
             46.99761486754166,
             -35.79197919459973
           ],
-          "rotation": [
+          'rotation': [
             -77.12995647463467,
             -27.48379961936372,
             178.84291360688067
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17878,7 +17878,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.44120849683374486,
         0.04933328562576398,
         0.8960475931841306,
@@ -17896,27 +17896,27 @@ export default {
         45.47513240913571,
         1
       ],
-      "name": "Bidon_96_323",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_323',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -178.33575874477148,
             29.950617053584885,
             45.47513240913571
           ],
-          "rotation": [
+          'rotation': [
             114.69971298860605,
             -1.0984431802468448,
             83.19961616059025
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -17939,7 +17939,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4259474484334184,
         0.7728124845228491,
         0.4704568364246405,
@@ -17957,27 +17957,27 @@ export default {
         -70.71834974636101,
         1
       ],
-      "name": "Bidon_96_326",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_326',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -77.42273697619588,
             52.94109205225418,
             -70.71834974636101
           ],
-          "rotation": [
+          'rotation': [
             -51.09241623661215,
             -3.122198304197475,
             -141.86720287632735
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18000,7 +18000,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.1765367485743737,
         -0.9576236736744606,
         -0.22757784606815173,
@@ -18018,27 +18018,27 @@ export default {
         -133.56251469030536,
         1
       ],
-      "name": "bag_98_327",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_327',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             9.142956129605954,
             33.90297660861843,
             -133.56251469030536
           ],
-          "rotation": [
+          'rotation': [
             -47.192311152198464,
             -51.15502928304731,
             139.8794389510394
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18061,7 +18061,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5088520905748315,
         0.7533720944919189,
         0.4165333565976229,
@@ -18079,27 +18079,27 @@ export default {
         -154.4207713759394,
         1
       ],
-      "name": "bouteille_97_328",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_328',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -44.45494826558382,
             15.924889148503722,
             -154.4207713759394
           ],
-          "rotation": [
+          'rotation': [
             -50.262038358198744,
             1.837979881830454,
             -147.74995601196696
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999994,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18122,7 +18122,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.15236265730379236,
         -0.9800269757370518,
         -0.12779963805510094,
@@ -18140,27 +18140,27 @@ export default {
         -75.74149796323516,
         1
       ],
-      "name": "bag_98_330",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_330',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -113.313474260806,
             41.52239153571761,
             -75.74149796323516
           ],
-          "rotation": [
+          'rotation': [
             -48.87494765740543,
             -68.24277220219591,
             153.4507582147094
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18183,7 +18183,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.37760438109137845,
         0.8304241620078848,
         0.4096469730561915,
@@ -18201,27 +18201,27 @@ export default {
         -146.9088863730338,
         1
       ],
-      "name": "bouteille_97_331",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_331',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -53.659444148847115,
             18.833978036188874,
             -146.9088863730338
           ],
-          "rotation": [
+          'rotation': [
             -59.73780237678761,
             44.79649194339818,
             -135.728961609817
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18244,7 +18244,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.01067563110124947,
         -0.7719212947176509,
         -0.6356284651130844,
@@ -18262,27 +18262,27 @@ export default {
         -120.63785874232255,
         1
       ],
-      "name": "Bidon_96_332",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_332',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -5.559517563655419,
             57.518488231389284,
             -120.63785874232255
           ],
-          "rotation": [
+          'rotation': [
             20.849305758050445,
             14.605810058015942,
             -44.451711289200404
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18305,7 +18305,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.8920297148533713,
         0.17228659901909757,
         -0.4178520259817426,
@@ -18323,27 +18323,27 @@ export default {
         -77.89021138301712,
         1
       ],
-      "name": "bag_98_333",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_333',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.85936358625174,
             88.76837546893944,
             -77.89021138301712
           ],
-          "rotation": [
+          'rotation': [
             -15.349663301421312,
             75.45324297457236,
             -37.252945739332844
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18366,7 +18366,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7128037877556043,
         0.3707660188255241,
         0.5953514251646123,
@@ -18384,27 +18384,27 @@ export default {
         -109.28171461466009,
         1
       ],
-      "name": "bouteille_97_334",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_334',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -96.82681348559564,
             26.512745093537518,
             -109.28171461466009
           ],
-          "rotation": [
+          'rotation': [
             60.11527694638604,
             -10.407056131264694,
             24.278995887779246
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18427,7 +18427,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.168271001075704,
         0.9552105562198006,
         0.2434289700985471,
@@ -18445,27 +18445,27 @@ export default {
         41.221571755376594,
         1
       ],
-      "name": "Bidon_96_335",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_335',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -90.36131907907834,
             89.00472615135074,
             41.221571755376594
           ],
-          "rotation": [
+          'rotation': [
             125.23664649854163,
             54.461394773618494,
             56.655613147325425
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18488,7 +18488,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6176250577245993,
         0.7642755542082389,
         0.18553211395975364,
@@ -18506,27 +18506,27 @@ export default {
         145.6518483308631,
         1
       ],
-      "name": "bag_98_336",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_336',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -18.642505917739214,
             32.13826585400679,
             145.6518483308631
           ],
-          "rotation": [
+          'rotation': [
             133.68698326681775,
             45.00595405181259,
             39.12069183721989
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18549,7 +18549,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.32041267633142445,
         -0.6203467315321858,
         0.7158949989512905,
@@ -18567,27 +18567,27 @@ export default {
         -81.47408654044408,
         1
       ],
-      "name": "bouteille_97_337",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_337',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -44.51439873309462,
             82.35125669430212,
             -81.47408654044408
           ],
-          "rotation": [
+          'rotation': [
             68.63713201806584,
             -43.962859800060436,
             83.76965705751634
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18610,7 +18610,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6171752760286584,
         -0.6819245282199292,
         -0.3925221222695314,
@@ -18628,27 +18628,27 @@ export default {
         23.50375710192452,
         1
       ],
-      "name": "Bidon_96_338",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_338',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -145.84568745230322,
             59.390465643386115,
             23.50375710192452
           ],
-          "rotation": [
+          'rotation': [
             -81.2672109970668,
             -47.328287973218444,
             -176.32089370141483
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18671,7 +18671,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9984835117315652,
         0.0217954695339471,
         0.05055328187166347,
@@ -18689,27 +18689,27 @@ export default {
         36.248831097556206,
         1
       ],
-      "name": "bag_98_339",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_339',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -28.469778718944276,
             125.24480638908346,
             36.248831097556206
           ],
-          "rotation": [
+          'rotation': [
             -149.52640970922695,
             21.965901340007164,
             115.03241158728599
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18732,7 +18732,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9258925249849852,
         0.36758466041714877,
         0.0872040687292644,
@@ -18750,27 +18750,27 @@ export default {
         -76.91666574510785,
         1
       ],
-      "name": "bouteille_97_340",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_340',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -37.723048343764766,
             99.9813503994958,
             -76.91666574510785
           ],
-          "rotation": [
+          'rotation': [
             -86.23566361223352,
             80.28512323111417,
             -115.86364579936894
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18793,7 +18793,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8084634418488154,
         -0.557781085399101,
         -0.18779543116105651,
@@ -18811,27 +18811,27 @@ export default {
         -24.78027323673238,
         1
       ],
-      "name": "Bidon_96_341",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_341',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -32.104868528928954,
             117.55664768883942,
             -24.78027323673238
           ],
-          "rotation": [
+          'rotation': [
             -34.266186246324494,
             7.179084208567856,
             158.74932602703964
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18854,7 +18854,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8323189448264945,
         0.4062346684327437,
         0.3771187720682329,
@@ -18872,27 +18872,27 @@ export default {
         -9.623242553779804,
         1
       ],
-      "name": "bag_98_342",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_342',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -169.72207303226605,
             51.618579203742804,
             -9.623242553779804
           ],
-          "rotation": [
+          'rotation': [
             -81.24496232142266,
             -0.1055359456725845,
             -157.48012456274088
           ],
-          "scale": [
+          'scale': [
             1.0000000000000009,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18915,7 +18915,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.007249670947275357,
         -0.18805690959720872,
         -0.9821313766619537,
@@ -18933,27 +18933,27 @@ export default {
         -10.942402444272734,
         1
       ],
-      "name": "bouteille_97_343",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_343',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -163.42779490307797,
             53.555853495973366,
             -10.942402444272734
           ],
-          "rotation": [
+          'rotation': [
             -145.4708222984106,
             -42.17049350476884,
             160.82748653301928
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -18976,7 +18976,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9422717949981753,
         -0.2837421909537112,
         -0.17780391847117577,
@@ -18994,27 +18994,27 @@ export default {
         16.92843338019445,
         1
       ],
-      "name": "Bidon_96_344",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_344',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -118.52453261044298,
             71.64825433250684,
             16.92843338019445
           ],
-          "rotation": [
+          'rotation': [
             -101.09341469801886,
             -53.932351754547916,
             -134.03275302467662
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19037,7 +19037,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.06777687606202863,
         -0.4324927291642786,
         -0.899086388669802,
@@ -19055,27 +19055,27 @@ export default {
         84.66292182237359,
         1
       ],
-      "name": "bag_98_345",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_345',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -133.46686630008588,
             53.74230424548229,
             84.66292182237359
           ],
-          "rotation": [
+          'rotation': [
             -131.8789934319166,
             -42.77032031207991,
             168.91699445473282
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19098,7 +19098,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9201523338222357,
         0.33984044906953953,
         0.19449460593473297,
@@ -19116,27 +19116,27 @@ export default {
         -143.21139629171708,
         1
       ],
-      "name": "bouteille_97_346",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_346',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -45.008199991689644,
             23.457965524814114,
             -143.21139629171708
           ],
-          "rotation": [
+          'rotation': [
             -58.05692625159248,
             -1.777811828939859,
             -165.78696265239427
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19159,7 +19159,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9645437929674753,
         -0.2585491264261148,
         -0.052986985875870016,
@@ -19177,27 +19177,27 @@ export default {
         27.842951777010544,
         1
       ],
-      "name": "Bidon_96_347",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_347',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -176.5749273602027,
             49.319028326584444,
             27.842951777010544
           ],
-          "rotation": [
+          'rotation': [
             -69.63397193679113,
             -75.31600688254537,
             -137.01966067956303
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19220,7 +19220,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8662499091673126,
         0.48429124811516777,
         0.12277248008684907,
@@ -19238,27 +19238,27 @@ export default {
         -68.47978797475159,
         1
       ],
-      "name": "bouteille_97_349",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_349',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -18.04006602316306,
             107.59608521222559,
             -68.47978797475159
           ],
-          "rotation": [
+          'rotation': [
             139.72846472134205,
             32.61634694363635,
             24.435421578103547
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19281,7 +19281,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5137825452368214,
         0.8546624792495113,
         0.07469633707921888,
@@ -19299,27 +19299,27 @@ export default {
         31.03708386690097,
         1
       ],
-      "name": "Bidon_96_350",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_350',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -169.10203121221875,
             55.17740177718725,
             31.03708386690097
           ],
-          "rotation": [
+          'rotation': [
             94.70308192761918,
             29.39117199430603,
             32.08793280469232
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19342,7 +19342,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.23947571165024445,
         -0.24982978730415148,
         0.9382091775852397,
@@ -19360,27 +19360,27 @@ export default {
         -45.26717276791031,
         1
       ],
-      "name": "bag_98_351",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_351',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -102.13418198518711,
             52.377659845997385,
             -45.26717276791031
           ],
-          "rotation": [
+          'rotation': [
             45.926910368302394,
             -33.82778602528104,
             71.57709443993224
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19403,7 +19403,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5167722283637701,
         0.7194048368422835,
         0.4641154433111131,
@@ -19421,27 +19421,27 @@ export default {
         106.55664654672204,
         1
       ],
-      "name": "bouteille_97_352",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_352',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -60.55810712491682,
             52.997556373899705,
             106.55664654672204
           ],
-          "rotation": [
+          'rotation': [
             154.92421665526416,
             48.32177807120261,
             70.86941544563322
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19464,7 +19464,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.19962575791741294,
         0.4002944837585911,
         0.8943790488648213,
@@ -19482,27 +19482,27 @@ export default {
         101.94379327719878,
         1
       ],
-      "name": "Bidon_96_353",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_353',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -138.50818689592046,
             -3.5407289055835447,
             101.94379327719878
           ],
-          "rotation": [
+          'rotation': [
             139.22936495860185,
             32.09621043240207,
             102.24660828377202
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19525,7 +19525,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9719541023132734,
         0.039517699895738764,
         0.23182660414919745,
@@ -19543,27 +19543,27 @@ export default {
         158.41496258302774,
         1
       ],
-      "name": "bag_98_354",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_354',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -26.755660531817103,
             10.866271364158798,
             158.41496258302774
           ],
-          "rotation": [
+          'rotation': [
             -158.2419644711142,
             3.880204180142665,
             -163.57068324850917
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19586,7 +19586,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.21167141211939905,
         0.23024188860855233,
         -0.9498336096503146,
@@ -19604,27 +19604,27 @@ export default {
         -65.2939819768482,
         1
       ],
-      "name": "bouteille_97_355",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_355',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -60.63910088696981,
             72.03782228678638,
             -65.2939819768482
           ],
-          "rotation": [
+          'rotation': [
             34.36836345931892,
             40.65939026592535,
             -9.677929892912235
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19647,7 +19647,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8717613966866475,
         0.3377682305013899,
         0.3548868688905025,
@@ -19665,27 +19665,27 @@ export default {
         102.31231984972857,
         1
       ],
-      "name": "Bidon_96_356",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_356',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -69.67669295183904,
             54.43867600918777,
             102.31231984972857
           ],
-          "rotation": [
+          'rotation': [
             156.3557416563006,
             26.38262592067778,
             49.94877068686261
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19708,7 +19708,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.24038537922083747,
         0.08560498157244394,
         0.9668953700307161,
@@ -19726,27 +19726,27 @@ export default {
         -39.307254041451614,
         1
       ],
-      "name": "bag_98_357",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_357',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -111.77862004927665,
             50.862509915272504,
             -39.307254041451614
           ],
-          "rotation": [
+          'rotation': [
             56.569623747685064,
             -28.600900049006714,
             39.96735924013025
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19769,7 +19769,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4728699152715893,
         -0.8456761069049664,
         0.2474388115092303,
@@ -19787,27 +19787,27 @@ export default {
         -5.1489393375001065,
         1
       ],
-      "name": "bouteille_97_358",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_358',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -82.60193539019042,
             105.24675656825866,
             -5.1489393375001065
           ],
-          "rotation": [
+          'rotation': [
             40.96546457962488,
             -72.83734252275464,
             94.5500408674189
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19830,7 +19830,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.23316058498953476,
         -0.8102904005512216,
         0.5376482199188223,
@@ -19848,27 +19848,27 @@ export default {
         -95.77915018667271,
         1
       ],
-      "name": "Bidon_96_359",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_359',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.45172589818729,
             71.48951420135866,
             -95.77915018667271
           ],
-          "rotation": [
+          'rotation': [
             43.16986171721567,
             -49.6888666565982,
             101.96415005318505
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19891,7 +19891,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6573853193192467,
         0.27309561192823595,
         0.7023270809879655,
@@ -19909,27 +19909,27 @@ export default {
         -8.905113223627389,
         1
       ],
-      "name": "bag_98_360",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_360',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -70.42679257148959,
             120.8898495204262,
             -8.905113223627389
           ],
-          "rotation": [
+          'rotation': [
             -66.60702753547359,
             23.740025588702448,
             -109.95322369196313
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -19952,7 +19952,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.17516574972379462,
         -0.9652040878235155,
         -0.19415980266902558,
@@ -19970,27 +19970,27 @@ export default {
         3.9935166522333145,
         1
       ],
-      "name": "bouteille_97_361",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_361',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -142.60278894835812,
             57.833286608258746,
             3.9935166522333145
           ],
-          "rotation": [
+          'rotation': [
             -57.67602345548833,
             -66.4867502068968,
             160.06184789200194
           ],
-          "scale": [
+          'scale': [
             0.9999999999999993,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20013,7 +20013,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9826577857655442,
         0.0070380595753478355,
         -0.18529474302249688,
@@ -20031,27 +20031,27 @@ export default {
         161.11334039219486,
         1
       ],
-      "name": "Bidon_96_362",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_362',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             1.6916970169347665,
             -0.9154726168057948,
             161.11334039219486
           ],
-          "rotation": [
+          'rotation': [
             174.6225585661195,
             -5.012962315456979,
             -172.3653276591021
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999997,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20074,7 +20074,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.3671035237043286,
         0.7832656203309498,
         0.5017269884024963,
@@ -20092,27 +20092,27 @@ export default {
         -108.97591434288528,
         1
       ],
-      "name": "bag_98_363",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_363',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.37711156078733,
             64.41452826733799,
             -108.97591434288528
           ],
-          "rotation": [
+          'rotation': [
             -39.45895926978257,
             6.9645910427580855,
             -122.0393770914497
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20135,7 +20135,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8466342336037698,
         0.3157664463285969,
         0.42837136442947044,
@@ -20153,27 +20153,27 @@ export default {
         47.36431567491698,
         1
       ],
-      "name": "bouteille_97_364",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_364',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -53.6941193280385,
             101.41192409486747,
             47.36431567491698
           ],
-          "rotation": [
+          'rotation': [
             141.54720431934092,
             14.929417395861918,
             44.893246382251526
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20196,7 +20196,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.03257766841942843,
         0.9157838786639205,
         0.4003480774271541,
@@ -20214,27 +20214,27 @@ export default {
         56.42989974073932,
         1
       ],
-      "name": "Bidon_96_365",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_365',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -87.21654637029779,
             82.9168797064324,
             56.42989974073932
           ],
-          "rotation": [
+          'rotation': [
             163.17339092609726,
             67.74704016390257,
             93.83494052933816
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20257,7 +20257,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.6568475567731746,
         0.23126105846061232,
         0.717683502667289,
@@ -20275,27 +20275,27 @@ export default {
         14.892109325914262,
         1
       ],
-      "name": "bag_98_366",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_366',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -71.2672498541992,
             121.79563064887301,
             14.892109325914262
           ],
-          "rotation": [
+          'rotation': [
             -162.70219913433084,
             66.44562520230565,
             -177.71019347024654
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20318,7 +20318,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.984187169847984,
         0.015253471402607022,
         0.17647364198878046,
@@ -20336,27 +20336,27 @@ export default {
         161.9630056119919,
         1
       ],
-      "name": "bouteille_97_367",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_367',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -8.061411651470037,
             4.457363151242286,
             161.9630056119919
           ],
-          "rotation": [
+          'rotation': [
             -177.13281644695277,
             7.096738558532572,
             136.02646605814599
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20379,7 +20379,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9421779331098522,
         -0.09630743560635681,
         -0.3209760430433621,
@@ -20397,27 +20397,27 @@ export default {
         155.94804307776474,
         1
       ],
-      "name": "Bidon_96_368",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_368',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             1.1394846375107959,
             23.724998189324126,
             155.94804307776474
           ],
-          "rotation": [
+          'rotation': [
             -163.81748526975014,
             -18.89340828742628,
             -133.03899421541706
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20440,7 +20440,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.17615404561285541,
         0.2876841330189634,
         -0.9413859951281152,
@@ -20458,27 +20458,27 @@ export default {
         -124.92186159217908,
         1
       ],
-      "name": "bag_98_369",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_369',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -48.39667788140038,
             35.7583307446911,
             -124.92186159217908
           ],
-          "rotation": [
+          'rotation': [
             40.438042660597006,
             42.62591952320278,
             -12.417440039613357
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20501,7 +20501,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7929602638833019,
         0.48313642911284693,
         0.3712050791223264,
@@ -20519,27 +20519,27 @@ export default {
         -37.45272353565025,
         1
       ],
-      "name": "bouteille_97_370",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_370',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -137.13735140465317,
             47.22293000279327,
             -37.45272353565025
           ],
-          "rotation": [
+          'rotation': [
             -75.79012952341277,
             16.95563092886259,
             -169.23714266737196
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             0.9999999999999996,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20562,7 +20562,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9793512897403935,
         0.20198939044016737,
         -0.008446149030056199,
@@ -20580,27 +20580,27 @@ export default {
         -74.23735566374322,
         1
       ],
-      "name": "bag_98_372",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_372',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -22.66503879583869,
             110.93137056552558,
             -74.23735566374322
           ],
-          "rotation": [
+          'rotation': [
             165.66245750696828,
             74.75486902204977,
             -2.9425389612421076
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20623,7 +20623,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.0844910439590325,
         0.5924654269181008,
         -0.8011529076259197,
@@ -20641,27 +20641,27 @@ export default {
         -14.883140699981903,
         1
       ],
-      "name": "bouteille_97_373",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_373',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -30.986588902800186,
             131.87134776949404,
             -14.883140699981903
           ],
-          "rotation": [
+          'rotation': [
             46.37808438317321,
             47.022944375430434,
             -74.55902774707421
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20684,7 +20684,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.3694786309924683,
         -0.6283279626366033,
         0.6846090217115659,
@@ -20702,27 +20702,27 @@ export default {
         -15.651563822007326,
         1
       ],
-      "name": "Bidon_96_374",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_374',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -54.44551827011106,
             128.84278422186105,
             -15.651563822007326
           ],
-          "rotation": [
+          'rotation': [
             23.68428028644857,
             -49.453674511562554,
             82.56475276480124
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20745,7 +20745,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.655298418996117,
         0.22845331180728928,
         -0.7199951849738098,
@@ -20763,27 +20763,27 @@ export default {
         -164.62139910268039,
         1
       ],
-      "name": "bag_98_375",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_375',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -18.84722698952027,
             15.881984090983188,
             -164.62139910268039
           ],
-          "rotation": [
+          'rotation': [
             51.309256273121605,
             26.99328639235081,
             -6.016928118834941
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20806,7 +20806,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6358325912454191,
         0.6436054814544022,
         -0.4260151407543905,
@@ -20824,27 +20824,27 @@ export default {
         -109.45833054810213,
         1
       ],
-      "name": "bouteille_97_376",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_376',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -53.372356955369305,
             47.27332844200502,
             -109.45833054810213
           ],
-          "rotation": [
+          'rotation': [
             44.92317649833331,
             22.448131111483583,
             15.732824265109631
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20867,7 +20867,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.09581631410018862,
         -0.579786544436827,
         0.8091148230271503,
@@ -20885,27 +20885,27 @@ export default {
         -101.32563975488326,
         1
       ],
-      "name": "Bidon_96_377",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_377',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.894787037607486,
             65.01468570826539,
             -101.32563975488326
           ],
-          "rotation": [
+          'rotation': [
             46.809311112310404,
             -42.63563244531715,
             80.94933498946169
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20928,7 +20928,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8236213019325376,
         0.4688507990048758,
         0.31910324234554843,
@@ -20946,27 +20946,27 @@ export default {
         -142.7754251923851,
         1
       ],
-      "name": "bag_98_378",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_378',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -13.1103427380311,
             30.150402163435302,
             -142.7754251923851
           ],
-          "rotation": [
+          'rotation': [
             -66.162858644656,
             5.505657414032167,
             -162.90429297362007
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -20989,7 +20989,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8083645921442565,
         -0.55935386692854,
         -0.18349369940011345,
@@ -21007,27 +21007,27 @@ export default {
         -165.5529391012785,
         1
       ],
-      "name": "bouteille_97_379",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_379',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.10481913555483,
             10.158316746924749,
             -165.5529391012785
           ],
-          "rotation": [
+          'rotation': [
             -43.667717475770054,
             -33.26964408220804,
             172.8371174473838
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21050,7 +21050,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3272083075161471,
         0.8361164476825164,
         -0.4402771961017165,
@@ -21068,27 +21068,27 @@ export default {
         -6.809863248028384,
         1
       ],
-      "name": "Bidon_96_380",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_380',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             0.04089516322318598,
             88.87558113655132,
             -6.809863248028384
           ],
-          "rotation": [
+          'rotation': [
             36.239763498854785,
             36.80125975280629,
             -123.30391378233286
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21111,7 +21111,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.30680281792238173,
         0.32089378460483436,
         0.8960464329022638,
@@ -21129,27 +21129,27 @@ export default {
         -72.19518160780393,
         1
       ],
-      "name": "bag_98_381",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_381',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.988641545517666,
             104.45633043626603,
             -72.19518160780393
           ],
-          "rotation": [
+          'rotation': [
             -92.45108223269958,
             27.774981500097336,
             -124.32746694002111
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000004,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21172,7 +21172,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.20157091972366997,
         0.6649583478810998,
         0.7191658778786663,
@@ -21190,27 +21190,27 @@ export default {
         27.72166713376052,
         1
       ],
-      "name": "bouteille_97_382",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_382',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -66.26093595546217,
             115.70496319759192,
             27.72166713376052
           ],
-          "rotation": [
+          'rotation': [
             122.78000290767578,
             30.811347878540154,
             74.5907019088294
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21233,7 +21233,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4618780594394857,
         -0.04965188186935411,
         0.8855525669519831,
@@ -21251,27 +21251,27 @@ export default {
         120.90927220756048,
         1
       ],
-      "name": "bag_98_384",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_384',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -115.34966986968388,
             23.097004214580043,
             120.90927220756048
           ],
-          "rotation": [
+          'rotation': [
             -162.2487845981121,
             28.865155233290594,
             -149.32323414303832
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21294,7 +21294,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9313553907072146,
         0.14229773662263998,
         0.3351544276190989,
@@ -21312,27 +21312,27 @@ export default {
         112.8741277755254,
         1
       ],
-      "name": "bouteille_97_385",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_385',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -57.07048315340371,
             48.31318435358782,
             112.8741277755254
           ],
-          "rotation": [
+          'rotation': [
             -134.7551658456278,
             11.471034346589715,
             -179.74535556623744
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21355,7 +21355,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.2528214521370062,
         0.05027365616577061,
         -0.9662059163734515,
@@ -21373,27 +21373,27 @@ export default {
         -133.5906262872549,
         1
       ],
-      "name": "Bidon_96_386",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_386',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -49.64264634186877,
             29.572062405616727,
             -133.5906262872549
           ],
-          "rotation": [
+          'rotation': [
             18.10497729360336,
             48.78577593570718,
             -30.6781649665762
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21416,7 +21416,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4429419447236126,
         0.4758804514348455,
         0.7598290791662503,
@@ -21434,27 +21434,27 @@ export default {
         -21.431887893412103,
         1
       ],
-      "name": "bouteille_97_388",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_388',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -123.73652054806695,
             56.852071577572204,
             -21.431887893412103
           ],
-          "rotation": [
+          'rotation': [
             65.25440761702741,
             -10.285440553176498,
             38.645810313100654
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21477,7 +21477,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6413559178511652,
         -0.6668211994877822,
         -0.3794892285045312,
@@ -21495,27 +21495,27 @@ export default {
         127.86425874098467,
         1
       ],
-      "name": "Bidon_96_389",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_389',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -14.281287375255882,
             41.197508042629465,
             127.86425874098467
           ],
-          "rotation": [
+          'rotation': [
             157.67862696779804,
             -48.34190022429618,
             -62.56251391134871
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21538,7 +21538,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8969404711087088,
         -0.19971658373830636,
         -0.3944756994634615,
@@ -21556,27 +21556,27 @@ export default {
         154.5024200316293,
         1
       ],
-      "name": "bag_98_390",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_390',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -50.83033021748177,
             -0.7124260709022698,
             154.5024200316293
           ],
-          "rotation": [
+          'rotation': [
             -157.68987260628964,
             -29.522045148918064,
             -123.59172608627433
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21599,7 +21599,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8047612070280252,
         0.28253801602558853,
         0.522045658121126,
@@ -21617,27 +21617,27 @@ export default {
         14.320581548642295,
         1
       ],
-      "name": "bouteille_97_391",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_391',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -77.96396146494246,
             110.05406706918228,
             14.320581548642295
           ],
-          "rotation": [
+          'rotation': [
             -111.39928752083584,
             -16.70168726873202,
             -118.21940964007872
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21660,7 +21660,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9069803491163941,
         -0.2295363422023694,
         -0.35312846660253994,
@@ -21678,27 +21678,27 @@ export default {
         120.40826037797893,
         1
       ],
-      "name": "Bidon_96_392",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_392',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -39.15134208643954,
             44.72810657473011,
             120.40826037797893
           ],
-          "rotation": [
+          'rotation': [
             -148.25256219443864,
             -34.542948850758314,
             -123.09600340731363
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21721,7 +21721,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.08079419049447578,
         -0.9927148922173716,
         -0.08938367609465744,
@@ -21739,27 +21739,27 @@ export default {
         -130.4345047787455,
         1
       ],
-      "name": "bag_98_393",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_393',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -18.386152654438867,
             41.114282356216194,
             -130.4345047787455
           ],
-          "rotation": [
+          'rotation': [
             -22.852965307917984,
             -33.96089825733268,
             134.91871520120176
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21782,7 +21782,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.09171592194249253,
         -0.3261847937393269,
         0.9408462520494361,
@@ -21800,27 +21800,27 @@ export default {
         -87.69271500799961,
         1
       ],
-      "name": "bouteille_97_394",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_394',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -75.74856234451566,
             46.65134755623522,
             -87.69271500799961
           ],
-          "rotation": [
+          'rotation': [
             61.10590142345958,
             -40.164530612572385,
             54.38697096329445
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21843,7 +21843,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.471223827098165,
         -0.7389427320722425,
         -0.4815721581368355,
@@ -21861,27 +21861,27 @@ export default {
         103.06173726396854,
         1
       ],
-      "name": "Bidon_96_395",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_395',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -102.58037962365572,
             47.836469374988354,
             103.06173726396854
           ],
-          "rotation": [
+          'rotation': [
             -150.87520690424722,
             -61.99054896777202,
             -120.70050737513701
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21904,7 +21904,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6517597258603111,
         0.7133744271807118,
         0.2574998764875108,
@@ -21922,27 +21922,27 @@ export default {
         74.56270497379913,
         1
       ],
-      "name": "bag_98_396",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_396',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -21.080529472797323,
             81.9410394335546,
             74.56270497379913
           ],
-          "rotation": [
+          'rotation': [
             145.44477289349948,
             47.55129391059822,
             46.79047914014878
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -21965,7 +21965,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9859949973961376,
         -0.16412095006432142,
         0.02963408273889319,
@@ -21983,27 +21983,27 @@ export default {
         145.08673577372812,
         1
       ],
-      "name": "Bidon_96_398",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_398',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -57.2995191005539,
             21.025423680015447,
             145.08673577372812
           ],
-          "rotation": [
+          'rotation': [
             149.65999850385614,
             -18.45169522145099,
             -1.4360107756301492
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22026,7 +22026,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.842247921035522,
         0.46295648375638787,
         0.27620596238905165,
@@ -22044,27 +22044,27 @@ export default {
         34.55489923455542,
         1
       ],
-      "name": "bag_98_399",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_399',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             8.60938206813248,
             107.75050152248184,
             34.55489923455542
           ],
-          "rotation": [
+          'rotation': [
             177.62427293460908,
             50.57944823573251,
             62.21028475114432
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22087,7 +22087,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9903292164542562,
         0.12272191419939481,
         0.06470992823620815,
@@ -22105,27 +22105,27 @@ export default {
         -125.7539450961747,
         1
       ],
-      "name": "bouteille_97_400",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_400',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -53.135345849034465,
             32.92069702314892,
             -125.7539450961747
           ],
-          "rotation": [
+          'rotation': [
             -55.72394738274649,
             -12.849722926725901,
             -168.60754532441905
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22148,7 +22148,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6565100071654513,
         0.6961997177169816,
         -0.29034559328912735,
@@ -22166,27 +22166,27 @@ export default {
         -16.354876700314794,
         1
       ],
-      "name": "Bidon_96_401",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_401',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -3.4823693162500935,
             67.93611123266064,
             -16.354876700314794
           ],
-          "rotation": [
+          'rotation': [
             42.38411148432592,
             54.46106793667421,
             -122.16680697771439
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22209,7 +22209,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9831320364931443,
         0.08795509224139554,
         0.1603599094837945,
@@ -22227,27 +22227,27 @@ export default {
         112.18339865713884,
         1
       ],
-      "name": "bag_98_402",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_402',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -127.66014079491691,
             31.928122384883686,
             112.18339865713884
           ],
-          "rotation": [
+          'rotation': [
             -156.0992512736547,
             -24.383763408200057,
             -43.398919847277305
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22270,7 +22270,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6041507666194877,
         -0.745766389903255,
         -0.2807745410177912,
@@ -22288,27 +22288,27 @@ export default {
         -116.45364492047287,
         1
       ],
-      "name": "bouteille_97_403",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_403',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -86.32248890350031,
             26.51955749173769,
             -116.45364492047287
           ],
-          "rotation": [
+          'rotation': [
             -55.34933554990983,
             -43.436237537521755,
             170.39403835424528
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22331,7 +22331,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.7405447649780569,
         0.30693619781106796,
         -0.5978157086735671,
@@ -22349,27 +22349,27 @@ export default {
         -29.966338118731098,
         1
       ],
-      "name": "Bidon_96_404",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_404',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -34.65272157684759,
             110.12172996906617,
             -29.966338118731098
           ],
-          "rotation": [
+          'rotation': [
             12.82331514908542,
             29.96124409296867,
             -88.75736527965617
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22392,7 +22392,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.955400935808994,
         0.024781978226620476,
         -0.29427012320395945,
@@ -22410,27 +22410,27 @@ export default {
         -109.42398836158237,
         1
       ],
-      "name": "bag_98_405",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_405',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -45.29180592684473,
             53.90857222260772,
             -109.42398836158237
           ],
-          "rotation": [
+          'rotation': [
             -29.34085137491371,
             48.069259922162715,
             -81.08183633594734
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22453,7 +22453,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.3272083075161471,
         0.8361164476825164,
         -0.4402771961017165,
@@ -22471,27 +22471,27 @@ export default {
         -4.060762642175417,
         1
       ],
-      "name": "bouteille_97_406",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_406',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             2.2563257514867003,
             90.05081250390104,
             -4.060762642175417
           ],
-          "rotation": [
+          'rotation': [
             36.239763498854785,
             36.80125975280629,
             -123.30391378233286
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22514,7 +22514,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9065405260715704,
         -0.4195374709159024,
         0.046610997493827654,
@@ -22532,27 +22532,27 @@ export default {
         15.706097771715708,
         1
       ],
-      "name": "Bidon_96_407",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_407',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -59.68265964223308,
             145.28817482001185,
             15.706097771715708
           ],
-          "rotation": [
+          'rotation': [
             151.9751142094591,
             -58.61748020266885,
             -2.3181394284006864
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22575,7 +22575,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.05219597303637726,
         -0.7259583076064741,
         0.6857551429015539,
@@ -22593,27 +22593,27 @@ export default {
         -50.05362699246615,
         1
       ],
-      "name": "bouteille_97_409",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_409',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -176.99779748232476,
             13.306164388781442,
             -50.05362699246615
           ],
-          "rotation": [
+          'rotation': [
             43.75031494762472,
             -29.41048494157597,
             107.00171800742923
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22636,7 +22636,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7531411930411429,
         -0.34149898595662675,
         -0.5622782104396004,
@@ -22654,27 +22654,27 @@ export default {
         100.93671961023131,
         1
       ],
-      "name": "Bidon_96_410",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_410',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -17.026196367867637,
             63.717479400428516,
             100.93671961023131
           ],
-          "rotation": [
+          'rotation': [
             -143.10913569929545,
             -34.63453043136099,
             -148.6845241653084
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22697,7 +22697,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.13900129794417457,
         0.6291724919298702,
         0.7647356501227021,
@@ -22715,27 +22715,27 @@ export default {
         -12.722864847448786,
         1
       ],
-      "name": "bag_98_411",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_411',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -112.775049628815,
             70.86106408865467,
             -12.722864847448786
           ],
-          "rotation": [
+          'rotation': [
             -74.39076223862726,
             20.000801103864816,
             -131.26777312181838
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22758,7 +22758,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.3705262991922478,
         0.9003753139497319,
         0.22811084068237253,
@@ -22776,27 +22776,27 @@ export default {
         -52.49594295454746,
         1
       ],
-      "name": "Bidon_96_413",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_413',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -87.68518800920107,
             60.164338155279125,
             -52.49594295454746
           ],
-          "rotation": [
+          'rotation': [
             34.40101438475923,
             10.2348427639461,
             58.13608092985879
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22819,7 +22819,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.44152364021327634,
         0.49375360212488506,
         0.7491757173864615,
@@ -22837,27 +22837,27 @@ export default {
         78.2225848232224,
         1
       ],
-      "name": "bag_98_414",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_414',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -85.05566868128929,
             69.68615613408258,
             78.2225848232224
           ],
-          "rotation": [
+          'rotation': [
             -131.53985334854,
             39.77306912700512,
             171.7434878226558
           ],
-          "scale": [
+          'scale': [
             1.0000000000000007,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22880,7 +22880,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9636079613139584,
         -0.2593987355171276,
         0.06459096612121891,
@@ -22898,27 +22898,27 @@ export default {
         73.54305679013757,
         1
       ],
-      "name": "bouteille_97_415",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_415',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -58.488367921278495,
             79.15569431456964,
             73.54305679013757
           ],
-          "rotation": [
+          'rotation': [
             124.97908296596249,
             -16.39094579090146,
             -3.826668948328957
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999993,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -22941,7 +22941,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5729473855061047,
         0.6442255896590435,
         -0.5066603231655078,
@@ -22959,27 +22959,27 @@ export default {
         -48.905214277731645,
         1
       ],
-      "name": "Bidon_96_416",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_416',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -80.21875988748207,
             73.44661266493682,
             -48.905214277731645
           ],
-          "rotation": [
+          'rotation': [
             41.31228746059238,
             24.91619797471273,
             15.811658027049763
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999997,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23002,7 +23002,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.40316989506334155,
         -0.171105170791025,
         -0.898986683017712,
@@ -23020,27 +23020,27 @@ export default {
         -13.223046431379528,
         1
       ],
-      "name": "bag_98_417",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_417',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -44.28806741891866,
             132.3498587124688,
             -13.223046431379528
           ],
-          "rotation": [
+          'rotation': [
             -116.05371010369119,
             -6.651501913142349,
             115.71810992304184
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23063,7 +23063,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.27737843660523853,
         -0.9550178128943903,
         -0.1048912768577462,
@@ -23081,27 +23081,27 @@ export default {
         -49.46477917677737,
         1
       ],
-      "name": "bouteille_97_418",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_418',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -104.66297379621732,
             48.12055332453577,
             -49.46477917677737
           ],
-          "rotation": [
+          'rotation': [
             -36.3475568159287,
             -59.492495889679276,
             151.43514886584398
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23124,7 +23124,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.08357159237607045,
         -0.318840368553441,
         -0.9441168404008231,
@@ -23142,27 +23142,27 @@ export default {
         91.83880781535927,
         1
       ],
-      "name": "Bidon_96_419",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_419',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -83.44159843393999,
             60.2115035366785,
             91.83880781535927
           ],
-          "rotation": [
+          'rotation': [
             144.57557594114516,
             -42.54861383577249,
             -123.70982959263868
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23185,7 +23185,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9674790806532362,
         -0.1257609672750085,
         -0.2194730225071492,
@@ -23203,27 +23203,27 @@ export default {
         64.57084285952658,
         1
       ],
-      "name": "bag_98_420",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_420',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -46.48774172001562,
             87.08576177363841,
             64.57084285952658
           ],
-          "rotation": [
+          'rotation': [
             -129.88381490002544,
             -21.353855764456412,
             -153.15525225305436
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000007,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23246,7 +23246,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9964901970153053,
         -0.02731625716349736,
         -0.07912717198899488,
@@ -23264,27 +23264,27 @@ export default {
         -92.65356641306086,
         1
       ],
-      "name": "bouteille_97_421",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_421',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -139.76621481236165,
             11.325778859117158,
             -92.65356641306086
           ],
-          "rotation": [
+          'rotation': [
             -38.52179118303022,
             42.709462382631905,
             -87.11970944825771
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23307,7 +23307,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9933588377417639,
         -0.08930874425411321,
         0.07254080010645844,
@@ -23325,27 +23325,27 @@ export default {
         83.31281788739422,
         1
       ],
-      "name": "Bidon_96_422",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_422',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -153.53689308126883,
             15.554133561155952,
             83.31281788739422
           ],
-          "rotation": [
+          'rotation': [
             154.81109845711595,
             -42.23052623263615,
             43.07638792580165
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23368,7 +23368,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9207697698576341,
         -0.11447437021261289,
         -0.3729324998987694,
@@ -23386,27 +23386,27 @@ export default {
         41.56676662769777,
         1
       ],
-      "name": "bag_98_423",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_423',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -16.678390606023328,
             110.54196586885787,
             41.56676662769777
           ],
-          "rotation": [
+          'rotation': [
             -141.75558567712284,
             -6.004466865433645,
             161.6772956107742
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23429,7 +23429,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.04491267214285499,
         0.5737499488889006,
         0.8177981707187736,
@@ -23447,27 +23447,27 @@ export default {
         124.46356134897056,
         1
       ],
-      "name": "bouteille_97_424",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_424',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -110.19917769973429,
             15.429487802560613,
             124.46356134897056
           ],
-          "rotation": [
+          'rotation': [
             143.42820767833655,
             45.677275037232334,
             105.85282685618274
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999996,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23490,7 +23490,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8734399089127738,
         -0.4857139455132113,
         -0.03441930639095872,
@@ -23508,27 +23508,27 @@ export default {
         -8.03486253188662,
         1
       ],
-      "name": "Bidon_96_425",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_425',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -185.63320367005318,
             36.40687518985201,
             -8.03486253188662
           ],
-          "rotation": [
+          'rotation': [
             -46.27406140819968,
             -82.02216363376179,
             -165.30993223458896
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23551,7 +23551,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.0797642268179104,
         -0.39987547744777907,
         0.9130921479544394,
@@ -23569,27 +23569,27 @@ export default {
         -26.809211136053587,
         1
       ],
-      "name": "bouteille_97_427",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_427',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -111.28148040478523,
             64.9201126850026,
             -26.809211136053587
           ],
-          "rotation": [
+          'rotation': [
             52.993083460949194,
             -38.71690785832035,
             70.84927551224249
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23612,7 +23612,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6235216085404427,
         0.6522190034553105,
         0.43108140207494544,
@@ -23630,27 +23630,27 @@ export default {
         -71.47291593495746,
         1
       ],
-      "name": "Bidon_96_428",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_428',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -130.22033329076118,
             36.91505069582334,
             -71.47291593495746
           ],
-          "rotation": [
+          'rotation': [
             -68.3411645418964,
             22.545471286263083,
             -163.75254441867548
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999994,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23673,7 +23673,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.13059479600179727,
         0.47247852965340154,
         0.8716128947381454,
@@ -23691,27 +23691,27 @@ export default {
         19.274617233021683,
         1
       ],
-      "name": "bag_98_429",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_429',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -55.084415754860856,
             147.28656707556303,
             19.274617233021683
           ],
-          "rotation": [
+          'rotation': [
             -149.87004810503282,
             53.396238803861905,
             174.05236238066627
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23734,7 +23734,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6745853482086265,
         -0.2402194834388035,
         -0.6980180569001346,
@@ -23752,27 +23752,27 @@ export default {
         -53.82405873094099,
         1
       ],
-      "name": "bouteille_97_430",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_430',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             1.6126749623389902,
             72.7150024349905,
             -53.82405873094099
           ],
-          "rotation": [
+          'rotation': [
             -121.64805537675183,
             -3.360756172355831,
             132.2509903280301
           ],
-          "scale": [
+          'scale': [
             0.9999999999999994,
             0.9999999999999997,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23795,7 +23795,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.2359764701030215,
         0.9485218726632488,
         0.21123769227370587,
@@ -23813,27 +23813,27 @@ export default {
         -37.15401942960145,
         1
       ],
-      "name": "Bidon_96_431",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_431',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -46.01143130405054,
             102.60249609044952,
             -37.15401942960145
           ],
-          "rotation": [
+          'rotation': [
             -31.657416325487873,
             30.33462611232684,
             -132.05415834341912
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23856,7 +23856,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.43013690646662883,
         0.7959111331574718,
         0.4260372164627261,
@@ -23874,27 +23874,27 @@ export default {
         -42.064301844223294,
         1
       ],
-      "name": "bag_98_432",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_432',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -74.91267132644032,
             85.42232762268789,
             -42.064301844223294
           ],
-          "rotation": [
+          'rotation': [
             54.53949901384781,
             2.4737188250628086,
             36.679582765278134
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23917,7 +23917,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7935775268672469,
         -0.40959172262066407,
         -0.44996592050054207,
@@ -23935,27 +23935,27 @@ export default {
         55.16843616810803,
         1
       ],
-      "name": "Bidon_96_434",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_434',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -67.89637748673914,
             88.41892995056205,
             55.16843616810803
           ],
-          "rotation": [
+          'rotation': [
             -133.83545229541403,
             -43.80859518437274,
             -136.51718319302944
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -23978,7 +23978,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9790436642458392,
         0.10192817875415523,
         0.17630697625431957,
@@ -23996,27 +23996,27 @@ export default {
         40.42187998687169,
         1
       ],
-      "name": "bag_98_435",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_435',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -31.407687136167066,
             119.8434570776544,
             40.42187998687169
           ],
-          "rotation": [
+          'rotation': [
             -154.57637560184486,
             30.54888683398674,
             102.16307017609083
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24039,7 +24039,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8915622255595856,
         -0.44617400396454626,
         -0.07775317447849532,
@@ -24057,27 +24057,27 @@ export default {
         105.52779220380609,
         1
       ],
-      "name": "bouteille_97_436",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_436',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -46.681244243473955,
             56.90097180262371,
             105.52779220380609
           ],
-          "rotation": [
+          'rotation': [
             137.97590506375562,
             -30.328852500269342,
             -19.345715461761536
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24100,7 +24100,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9583878676506176,
         0.057121398321627895,
         0.2796959795811966,
@@ -24118,27 +24118,27 @@ export default {
         134.4785834446965,
         1
       ],
-      "name": "Bidon_96_437",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_437',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -23.777055904885756,
             37.3552778937326,
             134.4785834446965
           ],
-          "rotation": [
+          'rotation': [
             -152.84728622188538,
             -14.099794947552882,
             -60.158401978331625
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24161,7 +24161,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.4596140313907655,
         0.4747302961004728,
         0.750590492954105,
@@ -24179,27 +24179,27 @@ export default {
         -27.819242325245582,
         1
       ],
-      "name": "bag_98_438",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_438',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -57.55275077633182,
             112.5275744764805,
             -27.819242325245582
           ],
-          "rotation": [
+          'rotation': [
             22.063095876768518,
             -20.519980322595536,
             61.43674162216426
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999996,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24222,7 +24222,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.39596530260890217,
         -0.8060846359233322,
         0.4398170515773451,
@@ -24240,27 +24240,27 @@ export default {
         -124.36377915406854,
         1
       ],
-      "name": "bouteille_97_439",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_439',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -58.27983633075706,
             32.093393858774924,
             -124.36377915406854
           ],
-          "rotation": [
+          'rotation': [
             5.437823528420405,
             -53.722245368057756,
             98.18133727364022
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24283,7 +24283,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8827180725319922,
         -0.4232607927997449,
         0.20410562389100342,
@@ -24301,27 +24301,27 @@ export default {
         59.38816781209552,
         1
       ],
-      "name": "Bidon_96_440",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_440',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -89.6044800958752,
             79.88767373776798,
             59.38816781209552
           ],
-          "rotation": [
+          'rotation': [
             127.13394090412339,
             -33.34477599282899,
             2.317417136399416
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000007
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24344,7 +24344,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.32617084482816466,
         -0.3979053111531633,
         0.8574869931026277,
@@ -24362,27 +24362,27 @@ export default {
         -84.6954244784061,
         1
       ],
-      "name": "bag_98_441",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_441',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -145.90266514748055,
             12.385155437285622,
             -84.6954244784061
           ],
-          "rotation": [
+          'rotation': [
             42.30211308622347,
             -30.594144314431492,
             85.22147184023996
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24405,7 +24405,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.975200767697675,
         -0.17871051328657472,
         -0.13056038879657952,
@@ -24423,27 +24423,27 @@ export default {
         -41.760084046388414,
         1
       ],
-      "name": "bouteille_97_442",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_442',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -131.26582573237187,
             46.967526529269904,
             -41.760084046388414
           ],
-          "rotation": [
+          'rotation': [
             -76.34142175864753,
             -21.18292792272121,
             -171.61438535879952
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000004,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24466,7 +24466,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.39913420837816904,
         0.49779745814115306,
         0.769993230080979,
@@ -24484,27 +24484,27 @@ export default {
         -94.53630123886711,
         1
       ],
-      "name": "Bidon_96_443",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_443',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -77.85054636771258,
             41.64894466316101,
             -94.53630123886711
           ],
-          "rotation": [
+          'rotation': [
             69.42594162112772,
             -8.1753717597713,
             42.20915728661327
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24527,7 +24527,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8679305589650576,
         0.30811934627691834,
         0.3895625922293969,
@@ -24545,27 +24545,27 @@ export default {
         65.02024082905871,
         1
       ],
-      "name": "bag_98_444",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_444',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -123.09861135451743,
             59.71998648356472,
             65.02024082905871
           ],
-          "rotation": [
+          'rotation': [
             -100.86511109380771,
             8.010536370599338,
             -166.21076167424727
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24588,7 +24588,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8984927108377425,
         -0.18797457148456093,
         -0.3967069561359373,
@@ -24606,27 +24606,27 @@ export default {
         -52.09811398758498,
         1
       ],
-      "name": "Bidon_96_446",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_446',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             6.5999019382478386,
             59.91107463227158,
             -52.09811398758498
           ],
-          "rotation": [
+          'rotation': [
             -127.00259294520215,
             23.581560483085294,
             97.4780578563797
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24649,7 +24649,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.2902380356472585,
         0.9100877174740153,
         0.2958077571101832,
@@ -24667,27 +24667,27 @@ export default {
         -117.96795879807404,
         1
       ],
-      "name": "bag_98_447",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_447',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -15.253820610512179,
             62.19367800252851,
             -117.96795879807404
           ],
-          "rotation": [
+          'rotation': [
             -29.96084436130961,
             3.448366614484324,
             -142.93486729631667
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24710,7 +24710,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.748340381052692,
         0.5878590189955852,
         0.3072595773470053,
@@ -24728,27 +24728,27 @@ export default {
         -38.48732585460299,
         1
       ],
-      "name": "bouteille_97_448",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_448',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -96.92294364311516,
             66.63590115452963,
             -38.48732585460299
           ],
-          "rotation": [
+          'rotation': [
             -48.84625677571734,
             -20.489286771273026,
             -146.48101729579108
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24771,7 +24771,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9792648998556244,
         -0.19352072638187656,
         -0.05991647829591533,
@@ -24789,27 +24789,27 @@ export default {
         133.96000573837307,
         1
       ],
-      "name": "Bidon_96_449",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_449',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -79.32873601465357,
             30.06887160328656,
             133.96000573837307
           ],
-          "rotation": [
+          'rotation': [
             153.21795206365354,
             -20.44319279150279,
             -12.70509049891592
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24832,7 +24832,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9542778084209637,
         0.016347788936016874,
         -0.2984738081510431,
@@ -24850,27 +24850,27 @@ export default {
         -49.72049866832751,
         1
       ],
-      "name": "bag_98_450",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_450',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -43.15706122673061,
             90.02532018980376,
             -49.72049866832751
           ],
-          "rotation": [
+          'rotation': [
             47.93273329271592,
             8.8797342856663,
             -3.4859334415669623
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24893,7 +24893,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.07787768842051791,
         0.9426576137523506,
         0.32454843842021713,
@@ -24911,27 +24911,27 @@ export default {
         -9.758890576183145,
         1
       ],
-      "name": "bouteille_97_451",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_451',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -36.044888257826,
             136.09233076244118,
             -9.758890576183145
           ],
-          "rotation": [
+          'rotation': [
             -43.393290542542395,
             33.62301781348865,
             -139.83984020390278
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000004,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -24954,7 +24954,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.08124742212932201,
         -0.8938617916931619,
         0.4409194413364309,
@@ -24972,27 +24972,27 @@ export default {
         4.321117427138685,
         1
       ],
-      "name": "Bidon_96_452",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_452',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             6.012254708239498,
             107.77148917294406,
             4.321117427138685
           ],
-          "rotation": [
+          'rotation': [
             44.19515849909941,
             -32.825566028081894,
             -32.96640058923095
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25015,7 +25015,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.48468620729788964,
         0.772506240118855,
         0.4102601484821752,
@@ -25033,27 +25033,27 @@ export default {
         57.65761278786256,
         1
       ],
-      "name": "bag_98_453",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_453',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -94.8223861945986,
             78.03056023293932,
             57.65761278786256
           ],
-          "rotation": [
+          'rotation': [
             124.93552670793527,
             34.83276715340322,
             51.61065068254551
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999998,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25076,7 +25076,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.32617084482816466,
         -0.3979053111531633,
         0.8574869931026277,
@@ -25094,27 +25094,27 @@ export default {
         -82.26642759259303,
         1
       ],
-      "name": "bouteille_97_454",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_454',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -146.51216855885787,
             15.067853242274358,
             -82.26642759259303
           ],
-          "rotation": [
+          'rotation': [
             42.30211308622347,
             -30.594144314431492,
             85.22147184023996
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25137,7 +25137,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.888380932677543,
         -0.07310686370683983,
         0.4532490539801795,
@@ -25155,27 +25155,27 @@ export default {
         67.1944456388011,
         1
       ],
-      "name": "bag_98_456",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_456',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -97.59578815767905,
             71.14873859402225,
             67.1944456388011
           ],
-          "rotation": [
+          'rotation': [
             120.85903965587794,
             -16.288964073722955,
             26.257428532233448
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999996,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25198,7 +25198,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.24038537922083747,
         0.08560498157244394,
         0.9668953700307161,
@@ -25216,27 +25216,27 @@ export default {
         -40.59541811457801,
         1
       ],
-      "name": "bouteille_97_457",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_457',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -111.77332474695052,
             50.09452757194818,
             -40.59541811457801
           ],
-          "rotation": [
+          'rotation': [
             56.569623747685064,
             -28.600900049006714,
             39.96735924013025
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25259,7 +25259,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7144092437463947,
         0.37418091421789856,
         0.5912766491962642,
@@ -25277,27 +25277,27 @@ export default {
         83.83058325271901,
         1
       ],
-      "name": "Bidon_96_458",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_458',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -81.37037413182709,
             67.12042377323559,
             83.83058325271901
           ],
-          "rotation": [
+          'rotation': [
             -138.2379127861698,
             35.152280275634645,
             155.15856712221225
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25320,7 +25320,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8756839265417465,
         0.48122601749094956,
         0.03998975976710022,
@@ -25338,27 +25338,27 @@ export default {
         -135.78563670754735,
         1
       ],
-      "name": "bag_98_459",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_459',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -63.30189002930311,
             22.489787331943322,
             -135.78563670754735
           ],
-          "rotation": [
+          'rotation': [
             57.728991218716544,
             6.797786325181476,
             15.034189466616086
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25381,7 +25381,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.07626020274245038,
         0.49242969163374595,
         0.8670048329018554,
@@ -25399,27 +25399,27 @@ export default {
         4.908878281978756,
         1
       ],
-      "name": "bouteille_97_460",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_460',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -69.39149039044958,
             134.4877408198978,
             4.908878281978756
           ],
-          "rotation": [
+          'rotation': [
             -76.2314324094926,
             -5.258385686196005,
             -113.68955767918142
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25442,7 +25442,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.15010220282507092,
         0.2430181032658682,
         -0.9583378997995022,
@@ -25460,27 +25460,27 @@ export default {
         -138.8071919522559,
         1
       ],
-      "name": "Bidon_96_461",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_461',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -72.62250000104302,
             17.442808366627183,
             -138.8071919522559
           ],
-          "rotation": [
+          'rotation': [
             33.479751094457704,
             49.03293272811255,
             -32.0566948409177
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25503,7 +25503,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7851523151207155,
         0.31265111893112896,
         -0.5345887390243967,
@@ -25521,27 +25521,27 @@ export default {
         147.18104991842057,
         1
       ],
-      "name": "bag_98_462",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_462',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -52.8248693351038,
             20.745597086391342,
             147.18104991842057
           ],
-          "rotation": [
+          'rotation': [
             111.72159853239368,
             30.756607933614184,
             -88.51044800811886
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25564,7 +25564,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.40697357789843214,
         0.7428728061514835,
         0.5315190502448334,
@@ -25582,27 +25582,27 @@ export default {
         7.63443612975877,
         1
       ],
-      "name": "bouteille_97_463",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_463',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -130.39461797176727,
             63.16401993668458,
             7.63443612975877
           ],
-          "rotation": [
+          'rotation': [
             -76.11167615406472,
             48.790539150501246,
             -140.25891217976866
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25625,7 +25625,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.9015564055433845,
         -0.41536963696442536,
         0.1210954677588505,
@@ -25643,27 +25643,27 @@ export default {
         -75.4823295976455,
         1
       ],
-      "name": "Bidon_96_464",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_464',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -156.16077008577355,
             9.515999573786946,
             -75.4823295976455
           ],
-          "rotation": [
+          'rotation': [
             -40.58524229658999,
             27.321757588446403,
             -79.51994412395325
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25686,7 +25686,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.07264811141510455,
         0.8104322459603813,
         0.5813104391075664,
@@ -25704,27 +25704,27 @@ export default {
         -55.89209956869301,
         1
       ],
-      "name": "bag_98_465",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_465',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -76.81426869381488,
             68.09217813890956,
             -55.89209956869301
           ],
-          "rotation": [
+          'rotation': [
             51.019745364566916,
             0.22045243457623234,
             48.95316462171484
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25747,7 +25747,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.5874361649764996,
         -0.79617333586536,
         0.14500610792214036,
@@ -25765,27 +25765,27 @@ export default {
         -129.71515194008725,
         1
       ],
-      "name": "bouteille_97_466",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_466',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -42.24302666990705,
             35.197170360086766,
             -129.71515194008725
           ],
-          "rotation": [
+          'rotation': [
             22.63447323483415,
             15.951898339863446,
             155.25683168548235
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999993,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25808,7 +25808,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9542778084209637,
         0.016347788936016874,
         -0.2984738081510431,
@@ -25826,27 +25826,27 @@ export default {
         -44.805983684938994,
         1
       ],
-      "name": "Bidon_96_467",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_467',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -45.471229808790284,
             94.19894022503891,
             -44.805983684938994
           ],
-          "rotation": [
+          'rotation': [
             47.93273329271592,
             8.8797342856663,
             -3.4859334415669623
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999999,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25869,7 +25869,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.6442457396165946,
         -0.6701861562403824,
         -0.36850772443682894,
@@ -25887,27 +25887,27 @@ export default {
         39.71261230290192,
         1
       ],
-      "name": "bag_98_468",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_468',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -82.0309624114844,
             93.13674916813791,
             39.71261230290192
           ],
-          "rotation": [
+          'rotation': [
             -148.409129574131,
             -63.80613832236629,
             -108.81449720567247
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25930,7 +25930,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.13467069313021227,
         0.41611226640417553,
         0.8992854864612283,
@@ -25948,27 +25948,27 @@ export default {
         51.00300780715733,
         1
       ],
-      "name": "bouteille_97_469",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_469',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -176.8847684303504,
             -1.2605953370864378,
             51.00300780715733
           ],
-          "rotation": [
+          'rotation': [
             128.79117408244167,
             28.748951198002,
             95.2359362237361
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -25991,7 +25991,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.39403363525395474,
         -0.49300795821344034,
         -0.7756807638627947,
@@ -26009,27 +26009,27 @@ export default {
         55.90878205797523,
         1
       ],
-      "name": "Bidon_96_470",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_470',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -87.62792768359597,
             83.04459695224212,
             55.90878205797523
           ],
-          "rotation": [
+          'rotation': [
             142.5407774314425,
             -55.09634107788132,
             -119.27697359014012
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26052,7 +26052,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.86028894016012,
         -0.15223250474105168,
         -0.48654722683254814,
@@ -26070,27 +26070,27 @@ export default {
         39.52103065567974,
         1
       ],
-      "name": "bouteille_97_472",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_472',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -19.972599005611414,
             114.95089352386934,
             39.52103065567974
           ],
-          "rotation": [
+          'rotation': [
             -143.30752930385904,
             -13.46885793329669,
             171.78659025959954
           ],
-          "scale": [
+          'scale': [
             1,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26113,7 +26113,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.4357134750699905,
         0.14601529483735717,
         0.8881628799471373,
@@ -26131,27 +26131,27 @@ export default {
         54.97627246207415,
         1
       ],
-      "name": "Bidon_96_473",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_473',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -173.7436836364531,
             10.62730786031204,
             54.97627246207415
           ],
-          "rotation": [
+          'rotation': [
             158.01878060730238,
             56.44019181362493,
             152.2769666677951
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26174,7 +26174,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9823374620164755,
         -0.10211795098169671,
         -0.15679615686083692,
@@ -26192,27 +26192,27 @@ export default {
         158.245553353631,
         1
       ],
-      "name": "bag_98_474",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_474',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             0.32389235898196184,
             18.701104180011594,
             158.245553353631
           ],
-          "rotation": [
+          'rotation': [
             158.9481605884176,
             -10.285748498823372,
             -25.749057855745363
           ],
-          "scale": [
+          'scale': [
             0.9999999999999996,
             0.9999999999999999,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26235,7 +26235,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.909543586831175,
         0.17719086793205974,
         0.375943958557341,
@@ -26253,27 +26253,27 @@ export default {
         89.46855088830907,
         1
       ],
-      "name": "bouteille_97_475",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_475',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -77.96018262024432,
             63.62816945383282,
             89.46855088830907
           ],
-          "rotation": [
+          'rotation': [
             -127.59382209172303,
             8.72199214861645,
             -169.8078815819229
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26296,7 +26296,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.347445241967666,
         0.8106481913552486,
         0.4713080878645034,
@@ -26314,27 +26314,27 @@ export default {
         -90.96019501136219,
         1
       ],
-      "name": "Bidon_96_476",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_476',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -131.15720198640136,
             22.839858371470804,
             -90.96019501136219
           ],
-          "rotation": [
+          'rotation': [
             -51.90573333594395,
             8.30065133193044,
             -144.9552510500741
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26357,7 +26357,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7121367825340968,
         0.5039765053605432,
         0.4887421457236511,
@@ -26375,27 +26375,27 @@ export default {
         114.22551072221731,
         1
       ],
-      "name": "bag_98_477",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_477',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -4.459753513223531,
             51.37223050499593,
             114.22551072221731
           ],
-          "rotation": [
+          'rotation': [
             171.54824557059737,
             42.5890300482943,
             80.45244139876208
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26418,7 +26418,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9966517089776029,
         -0.06481035795676152,
         -0.04984965891096483,
@@ -26436,27 +26436,27 @@ export default {
         62.73125205812107,
         1
       ],
-      "name": "bouteille_97_478",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_478',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             1.878937652364768,
             86.54192457459477,
             62.73125205812107
           ],
-          "rotation": [
+          'rotation': [
             125.06702935163382,
             -2.146801495085567,
             -4.607475719299324
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26479,7 +26479,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.04111476677617253,
         0.7806109698312063,
         -0.6236634426773181,
@@ -26497,27 +26497,27 @@ export default {
         -75.34943551564764,
         1
       ],
-      "name": "Bidon_96_479",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_479',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -118.54296698939609,
             39.09020567165861,
             -75.34943551564764
           ],
-          "rotation": [
+          'rotation': [
             -7.90097464592109,
             19.229318468533773,
             40.718272804427706
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26540,7 +26540,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.999935647929865,
         0.010877077840310079,
         0.0032232245866680455,
@@ -26558,27 +26558,27 @@ export default {
         -174.22206424788408,
         1
       ],
-      "name": "bag_98_480",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_480',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -4.115360673829385,
             10.397184250857098,
             -174.22206424788408
           ],
-          "rotation": [
+          'rotation': [
             -33.017597608947284,
             1.016086934234905,
             -179.96215146315248
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             0.9999999999999996
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26601,7 +26601,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.99504446594934,
         0.08172146219631574,
         0.05664021009926513,
@@ -26619,27 +26619,27 @@ export default {
         -31.590193392004473,
         1
       ],
-      "name": "bouteille_97_481",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_481',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -171.98218278758074,
             44.00316866135958,
             -31.590193392004473
           ],
-          "rotation": [
+          'rotation': [
             -72.24765720129021,
             -23.39736004722615,
             -159.11199946022708
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999998,
             0.9999999999999999
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26662,7 +26662,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.676729149751684,
         -0.7320937875090412,
         -0.07795090869919208,
@@ -26680,27 +26680,27 @@ export default {
         -75.08780126342899,
         1
       ],
-      "name": "bag_98_483",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_483',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -55.2830099019014,
             68.39840957684841,
             -75.08780126342899
           ],
-          "rotation": [
+          'rotation': [
             -27.876400035402423,
             -55.26800975999282,
             164.2519787737087
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             1.0000000000000002,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26723,7 +26723,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.4943203201806247,
         -0.7876109084043541,
         -0.36785388134284014,
@@ -26741,27 +26741,27 @@ export default {
         14.29222585128051,
         1
       ],
-      "name": "bouteille_97_484",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_484',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -69.41143114003658,
             128.5950114480889,
             14.29222585128051
           ],
-          "rotation": [
+          'rotation': [
             -38.8578570605635,
             21.818753080044246,
             -23.649346120955204
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26784,7 +26784,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8159835611783302,
         -0.2706661409831941,
         0.5107941542461069,
@@ -26802,27 +26802,27 @@ export default {
         19.058166052498557,
         1
       ],
-      "name": "Bidon_96_485",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_485',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -72.45227699360436,
             114.2678988818345,
             19.058166052498557
           ],
-          "rotation": [
+          'rotation': [
             121.76801142172673,
             -32.1067366386804,
             44.097572576365984
           ],
-          "scale": [
+          'scale': [
             0.9999999999999998,
             0.9999999999999999,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26845,7 +26845,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.44716649215011606,
         0.853935224812747,
         0.2661517614485463,
@@ -26863,27 +26863,27 @@ export default {
         33.67630787440596,
         1
       ],
-      "name": "bouteille_97_487",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_487',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -119.18173200502578,
             68.55623604194932,
             33.67630787440596
           ],
-          "rotation": [
+          'rotation': [
             115.34868834267147,
             63.216918735939146,
             77.7443296911629
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             1.0000000000000004
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26906,7 +26906,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9627446022452327,
         0.2616139490367431,
         0.06841763308583794,
@@ -26924,27 +26924,27 @@ export default {
         29.187116350233815,
         1
       ],
-      "name": "Bidon_96_488",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_488',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -137.1266727232158,
             60.571844674235145,
             29.187116350233815
           ],
-          "rotation": [
+          'rotation': [
             93.77630810807085,
             6.137960173750693,
             9.700257735411641
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -26967,7 +26967,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.48483016406502477,
         0.4678964290345016,
         0.7389266835819666,
@@ -26985,27 +26985,27 @@ export default {
         45.92033551021022,
         1
       ],
-      "name": "bag_98_489",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_489',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -61.27829256676824,
             98.7930292067916,
             45.92033551021022
           ],
-          "rotation": [
+          'rotation': [
             -148.08950177890472,
             42.17855630516098,
             153.59181261372765
           ],
-          "scale": [
+          'scale': [
             1.0000000000000004,
             1.0000000000000002,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27028,7 +27028,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.7261932260399523,
         0.20718421259785055,
         -0.6555288708393362,
@@ -27046,27 +27046,27 @@ export default {
         -47.562906665228056,
         1
       ],
-      "name": "bouteille_97_490",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_490',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -129.12914783889602,
             45.27150982941193,
             -47.562906665228056
           ],
-          "rotation": [
+          'rotation': [
             67.1188414236481,
             24.969505872480187,
             -9.86458556162282
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27089,7 +27089,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8261576991505611,
         -0.4435279383353274,
         -0.3474858616552109,
@@ -27107,27 +27107,27 @@ export default {
         63.35411341177993,
         1
       ],
-      "name": "Bidon_96_491",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_491',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -153.3919459001016,
             55.87889960180572,
             63.35411341177993
           ],
-          "rotation": [
+          'rotation': [
             -112.22230580951643,
             -49.361056513931466,
             -143.20529914376107
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             1,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27150,7 +27150,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.09130889712766345,
         0.7526442340546045,
         -0.652065443226129,
@@ -27168,27 +27168,27 @@ export default {
         -18.956960996659156,
         1
       ],
-      "name": "bag_98_492",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_492',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -10.595304064599567,
             94.42263776574043,
             -18.956960996659156
           ],
-          "rotation": [
+          'rotation': [
             46.233729474964875,
             33.95577848250693,
             -107.78641176426049
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999997,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27211,7 +27211,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9880647808567466,
         -0.1386487837931739,
         0.06711559865771059,
@@ -27229,27 +27229,27 @@ export default {
         146.7020598472812,
         1
       ],
-      "name": "bouteille_97_493",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_493',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -14.7899092598505,
             31.87998209785695,
             146.7020598472812
           ],
-          "rotation": [
+          'rotation': [
             117.64907107097639,
             -8.54109594586197,
             -0.7663583706560153
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             1
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27272,7 +27272,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8041528889094514,
         0.48056137138192956,
         0.34985554103672906,
@@ -27290,27 +27290,27 @@ export default {
         -103.38388488332035,
         1
       ],
-      "name": "Bidon_96_494",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_494',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -65.53760159556515,
             44.83887256797354,
             -103.38388488332035
           ],
-          "rotation": [
+          'rotation': [
             -66.55368940212455,
             -10.295976951845473,
             -150.79255634566098
           ],
-          "scale": [
+          'scale': [
             1,
             1.0000000000000004,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27333,7 +27333,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.8778261112809547,
         -0.2410498401249619,
         0.41390372422712984,
@@ -27351,27 +27351,27 @@ export default {
         61.82096995505316,
         1
       ],
-      "name": "bag_98_495",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_495',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -169.69296143147577,
             11.887070402223591,
             61.82096995505316
           ],
-          "rotation": [
+          'rotation': [
             127.03807106354861,
             -33.019974619786495,
             68.62626271504169
           ],
-          "scale": [
+          'scale': [
             1.0000000000000002,
             0.9999999999999999,
             1.0000000000000002
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27394,7 +27394,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.9154806475908953,
         0.10087744149944296,
         -0.3895111367895423,
@@ -27412,27 +27412,27 @@ export default {
         38.10721630749397,
         1
       ],
-      "name": "bouteille_97_496",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_496',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -22.367372060341534,
             121.9459750884296,
             38.10721630749397
           ],
-          "rotation": [
+          'rotation': [
             167.48108254512155,
             -18.47396060778399,
             138.5376541866593
           ],
-          "scale": [
+          'scale': [
             1,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27455,7 +27455,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         0.98989571167474,
         -0.09318903698579555,
         0.10687508312801226,
@@ -27473,27 +27473,27 @@ export default {
         136.6242045122414,
         1
       ],
-      "name": "Bidon_96_497",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'Bidon_96_497',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -86.6253534595123,
             17.569495115616657,
             136.6242045122414
           ],
-          "rotation": [
+          'rotation': [
             159.1773750425531,
             -20.986067682129697,
             19.74703536550039
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             0.9999999999999997,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27516,7 +27516,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.02806788239350987,
         -0.9827718221991544,
         0.18267933509102036,
@@ -27534,27 +27534,27 @@ export default {
         -50.0108876583135,
         1
       ],
-      "name": "bag_98_498",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bag_98_498',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -68.81705392028816,
             81.92445179413748,
             -50.0108876583135
           ],
-          "rotation": [
+          'rotation': [
             -5.179939275543388,
             -52.490612114690535,
             124.07662078177874
           ],
-          "scale": [
+          'scale': [
             0.9999999999999999,
             1,
             0.9999999999999998
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27577,7 +27577,7 @@ export default {
       }
     },
     {
-      "matrix": [
+      'matrix': [
         -0.008997028931897907,
         0.9996517918691589,
         0.0248062186392392,
@@ -27595,27 +27595,27 @@ export default {
         30.48950481809987,
         1
       ],
-      "name": "bouteille_97_499",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "translation": [
+      'name': 'bouteille_97_499',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'translation': [
             -95.48929915308852,
             89.35334326302413,
             30.48950481809987
           ],
-          "rotation": [
+          'rotation': [
             101.86127414763456,
             53.134917881069796,
             46.60114334285152
           ],
-          "scale": [
+          'scale': [
             0.9999999999999997,
             0.9999999999999998,
             0.9999999999999997
           ],
-          "parentMatrixWorld": {
-            "elements": [
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27638,12 +27638,12 @@ export default {
       }
     },
     {
-      "name": "objet_nul",
-      "extras": {
-        "transformData": {
-          "eulerOrder": "ZYX",
-          "parentMatrixWorld": {
-            "elements": [
+      'name': 'objet_nul',
+      'extras': {
+        'transformData': {
+          'eulerOrder': 'ZYX',
+          'parentMatrixWorld': {
+            'elements': [
               1,
               0,
               0,
@@ -27664,7 +27664,7 @@ export default {
           }
         }
       },
-      "children": [
+      'children': [
         1,
         2,
         3,
@@ -28120,22 +28120,22 @@ export default {
       ]
     },
     {
-      "children": [
+      'children': [
         0,
         453
       ]
     }
   ],
-  "cameras": [
+  'cameras': [
     {
-      "type": "perspective",
-      "perspective": {
-        "aspectRatio": 1.7777777777777777,
-        "yfov": 0.5338259751748009,
-        "zfar": 10,
-        "znear": 0.000001
+      'type': 'perspective',
+      'perspective': {
+        'aspectRatio': 1.7777777777777777,
+        'yfov': 0.5338259751748009,
+        'zfar': 10,
+        'znear': 0.000001
       },
-      "name": "PerspectiveCamera"
+      'name': 'PerspectiveCamera'
     }
   ]
 }

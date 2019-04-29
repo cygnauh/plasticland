@@ -90,19 +90,19 @@ export default class Water extends Object3D {
             texture.wrapS = texture.wrapT = RepeatWrapping
           })
         },
-        uTime: {type: 'f', value: 0.0},
-        uColor: {type: 'f', value: new Color('#d1d3e1')},
-        uKeyboard: {type: 'v2', value: new Vector2(0, 0)},
-        uMouse: {type: 'v2', value: new Vector2(0, 0)}
+        uTime: { type: 'f', value: 0.0 },
+        uColor: { type: 'f', value: new Color('#d1d3e1') },
+        uKeyboard: { type: 'v2', value: new Vector2(0, 0) },
+        uMouse: { type: 'v2', value: new Vector2(0, 0) }
       },
       vertexShader: this.vertexShader,
       fragmentShader: this.fragmentShader,
       side: DoubleSide,
       vertexColors: true
-    });
+    })
   }
 
-  addEventListeners() {
+  addEventListeners () {
     document.addEventListener('keydown', (e) => {
       switch (e.key) {
         case 'ArrowRight':
