@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "three-instanced-mesh": "^0.96.2",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -19,8 +20,12 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "gsap": "^2.1.2",
+    "magicshader": "^0.1.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "stats-js": "^1.0.0",
     "three": "^0.103.0",
+    "three-gltf-loader": "^1.103.0",
     "three-orbitcontrols": "^2.102.1",
     "vue-router": "^3.0.3",
     "vue-template-compiler": "^2.5.21"
