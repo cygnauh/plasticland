@@ -28,7 +28,7 @@
 
 <script>
 import Vue from 'vue'
-import objects from '../assets/data/inventory'
+import objects from '../data/inventory'
 import InventoryDetail from './InventoryDetail'
 export default {
   name: 'Inventory',

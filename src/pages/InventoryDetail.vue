@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import objects from '../assets/data/inventory'
+import objects from '../data/inventory'
 export default {
   name: 'InventoryDetail',
   computed: {

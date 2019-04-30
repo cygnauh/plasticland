@@ -37,7 +37,7 @@ export default class Engine {
     window.THREE = THREE
 
     // camera
-    this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.1, 10000)
+    this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 4, 20)
 
     // clock
@@ -83,6 +83,7 @@ export default class Engine {
     )
     this.inventoryCamera.position.set(0, 4, 20)
     this.inventoryCamera.position.z = 1800
+    this.inventoryScene.add(this.light)
     // helpers
     // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
@@ -147,6 +148,7 @@ export default class Engine {
     this.water.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed)
+    this.collectable.update(this.timeElapsed)
 
     this.render()
 
