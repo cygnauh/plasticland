@@ -1,7 +1,7 @@
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoader {
-  constructor (name, path, scene, manager) {
+  constructor (name, path, scene, manager, { scale = 1 }) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
@@ -10,7 +10,8 @@ export default class GltfLoader {
     // see gltf-pipeline
 
     let geometries = []
-    console.log(path)
+    let scaleFactor = scale
+    console.log(scaleFactor)
     let promise = new Promise((resolve, reject) => {
       this.loader.load(path, (gltf) => {
         gltf.scene.name = this.name
@@ -24,6 +25,7 @@ export default class GltfLoader {
           if (child.isMesh) {
             // show the count of vertices here
             child.material.side = 2
+            child.scale.set(scaleFactor, scaleFactor, scaleFactor)
             let geometry = child.geometry
             geometries.push(geometry)
             // console.log(geometries)
@@ -32,10 +34,10 @@ export default class GltfLoader {
         resolve(geometries)
       },
       (xhr) => {
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+        //console.log((xhr.loaded / xhr.total * 100) + '% loaded')
       },
       (error) => {
-        console.log('An error happened' + error)
+        //console.log('An error happened' + error)
         reject(new Error('there is an error'))
       })
     })

@@ -2,9 +2,9 @@ import * as THREE from 'three'
 import Helpers from './components/Helpers'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
-import Water from './components/Water'
-import Boat from './components/Boat'
-import CubeTest from './components/CubeTest'
+//import Water from './components/Water'
+//import Boat from './components/Boat'
+//import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
 
 export default class Engine {
@@ -89,11 +89,11 @@ export default class Engine {
 
   addGeometry () {
     this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
-    this.water = new Water(this.scene)
-    this.cube = new CubeTest(this.scene)
-    this.boat = new Boat(this.scene, this.manager, this.camera)
+    //this.water = new Water(this.scene)
+    //this.cube = new CubeTest(this.scene)
+    //this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
+    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { scale : 0.1})
   }
 
   initLoadingManager () {
@@ -144,9 +144,9 @@ export default class Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // update water
-    this.water.update(this.timeElapsed)
-    this.cube.update(this.timeElapsed)
-    this.boat.update(this.timeElapsed)
+    //this.water.update(this.timeElapsed)
+    //this.cube.update(this.timeElapsed)
+    //this.boat.update(this.timeElapsed)
 
     this.render()
 

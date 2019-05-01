@@ -17,7 +17,7 @@ export default class Instances {
     let material = new THREE.MeshPhongMaterial()
 
     // dechets Glb
-    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager)
+    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { scale: 1 })
     dechetsPromise.then(geometries => {
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
 
