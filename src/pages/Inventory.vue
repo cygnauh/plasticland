@@ -10,8 +10,6 @@
           v-for="(object, i) in objects"
           class="object"
           @click.capture="(e) => onObjectClicked(e, object)">
-          <!--<router-link-->
-            <!--:to="`/plasticland/inventory/${object.id}`">-->
           <div
             :class=" (i+1) % 3 ? 'border-right': null"
             class="obj-container">
@@ -19,7 +17,6 @@
               {{ object.name }}
             </div>
           </div>
-          <!--</router-link>-->
         </div>
       </div>
     </div>
@@ -28,8 +25,8 @@
 
 <script>
 import Vue from 'vue'
-import objects from '../data/inventory'
 import InventoryDetail from './InventoryDetail'
+import { store } from '../store/index'
 export default {
   name: 'Inventory',
   data () {
@@ -39,7 +36,7 @@ export default {
   },
   computed: {
     objects () {
-      return objects.objects.map((item) => {
+      return store.state.objects.map((item) => {
         return item
       })
     }
@@ -51,9 +48,8 @@ export default {
     onObjectClicked (e, obj) {
       if (!obj.found) {
         e.preventDefault()
-        console.log('not found')
       } else {
-        console.log('found')
+        store.objectFound(obj.id)
         Vue.prototype.$engine.collectable.selectedItem(obj.name, true)
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
@@ -68,7 +64,6 @@ export default {
 <style lang="scss">
   @import '../assets/scss/index';
   .inventory{
-    /*background: aquamarine;*/
     position: absolute;
     /*overflow: scroll;*/
     z-index: 1;
@@ -76,15 +71,10 @@ export default {
     width: 100%;
     height: 100%;
     will-change: transform;
-    /*transform: translateY(100%);*/
     &.show{
-      /*transform: translateY(0);*/
       transition: transform 1s ease-in-out;
     }
     &-container{
-      /*margin: 18px;*/
-      /*width: calc(100% - 18px);*/
-      /*height: calc(100% - 43px);*/
       .box{
         position: relative;
         bottom: 0;
@@ -155,7 +145,6 @@ export default {
           }
           .border-right{
             transform: translateZ(0);
-            /*width: 33.2%;*/
             &:before{
               content: '';
               position: absolute;
@@ -176,7 +165,6 @@ export default {
       }
     }
     &.show{
-      /*transform: translateY(0);*/
       transition: transform 1s linear;
       .object{
         will-change: width;

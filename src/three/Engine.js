@@ -100,16 +100,16 @@ export default class Engine {
   initLoadingManager () {
     this.manager = new THREE.LoadingManager()
     this.manager.onStart = (url, itemsLoaded, itemsTotal) => {
-      console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
+      // console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
     this.manager.onLoad = () => {
-      console.log('Loading complete!')
+      // console.log('Loading complete!')
     }
     this.manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-      console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
+      // console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
     this.manager.onError = (url) => {
-      console.log('There was an error loading ' + url)
+      // console.log('There was an error loading ' + url)
     }
   }
 
@@ -148,7 +148,7 @@ export default class Engine {
     this.water.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed)
-    this.collectable.update(this.timeElapsed)
+    this.collectable.update()
 
     this.render()
 

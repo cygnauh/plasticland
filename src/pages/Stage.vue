@@ -8,9 +8,6 @@
         class="title">
         {{ title }}
       </div>
-      <!--<router-link-->
-        <!--to="/plasticland/inventory"-->
-        <!--&gt;-->
       <div
         v-else
         class="back"
@@ -20,7 +17,6 @@
           alt="back">
         <span>Retour à votre collection</span>
       </div>
-      <!--</router-link>-->
       <router-link
         to="/plasticland"
         v-if="$route.path !== '/plasticland'"

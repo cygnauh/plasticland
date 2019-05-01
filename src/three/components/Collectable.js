@@ -1,9 +1,8 @@
 // import * as THREE from 'three'
 import GltfLoaderTest from './GltfLoaderTest'
-import config from '../../data/inventory'
+import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
-// import GltfLoader from './GltfLoader'
 
 export default class Collectable {
   constructor (scene, manager, camera, width, height) {
@@ -21,20 +20,22 @@ export default class Collectable {
 
   initCollectables () {
     let obj = null
-    config.objects.forEach((value, i) => {
+    store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? -13 : i % 3 === 1 ? 0 : 13
       let y = i < 3 ? 10 : 0
-      obj = new GltfLoaderTest(
-        value.name,
-        value.model,
-        this.scene,
-        this.manager,
-        x, // x
-        y, // y
-        0, // z
-        0.0001, // scale
-        -Math.PI / 2 // rotation
-      )
+      if (value) {
+        obj = new GltfLoaderTest(
+          value.name,
+          value.model,
+          this.scene,
+          this.manager,
+          x, // x
+          y, // y
+          0, // z
+          0.0001, // scale
+          -Math.PI / 2 // rotation
+        )
+      }
       this.objects.push(obj)
     })
     setTimeout(() => {
@@ -57,11 +58,9 @@ export default class Collectable {
     })
   }
   backToList () {
-    let itemIndex = config.objects.filter(item => item.name === this.item.name)[0].id - 1
+    let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     let x = itemIndex % 3 === 0 ? -13 : itemIndex % 3 === 1 ? 0 : 13
     let y = itemIndex < 3 ? 10 : 0
-    console.log('back to list')
-    console.log(itemIndex)
     let animation = !this.canAnimated
     this.scaleItems(this.otherItems, animation, 1)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
@@ -79,7 +78,7 @@ export default class Collectable {
         easing: TWEEN.Easing.Quadratic.InOut,
         callback: () => {
           animation = false
-          console.log('Completed')
+          // console.log('Completed')
         }
       })
     })
@@ -105,7 +104,7 @@ export default class Collectable {
     // return the tween in case we want to manipulate it later on
     return tweenVector3
   }
-  update (time) {
+  update () {
     if (this.canAnimated) TWEEN.update()
   }
 }
