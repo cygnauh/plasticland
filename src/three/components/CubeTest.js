@@ -19,13 +19,11 @@ export default class CubeTest {
   }
 
   initShader () {
-    this.material = new THREE.ShaderMaterial({
-      uniforms: {
-        uTime: { value: 0 },
-        uColor: { value: new THREE.Color('#545454') }
-      },
-      side: THREE.DoubleSide,
-      vertexColors: true
+    this.material = new THREE.MeshPhongMaterial({
+      color: 0x0B2641,
+      shininess: 15,
+      emissive: 0x0B2641,
+      emissiveIntensity: 0.8
     })
   }
   calculateSurface (x, z, uTime) {

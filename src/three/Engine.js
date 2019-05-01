@@ -1,10 +1,10 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
-import Instances from './components/Instances'
-import GltfLoader from './components/GltfLoader'
-//import Water from './components/Water'
+//import Instances from './components/Instances'
+//import GltfLoader from './components/GltfLoader'
+import Water from './components/Water'
 //import Boat from './components/Boat'
-//import CubeTest from './components/CubeTest'
+import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
 
 export default class Engine {
@@ -46,8 +46,16 @@ export default class Engine {
     this.timeElapsed = 0
 
     // light
-    this.light = new THREE.AmbientLight(0x404040)
-    this.scene.add(this.light)
+    this.pointLight = new THREE.PointLight(0xffffff, 2, 15)
+    this.pointLight.position.set(0, 6, 0)
+    this.scene.add(this.pointLight)
+
+    let sphereSize = 1
+    let pointLightHelper = new THREE.PointLightHelper(this.pointLight, sphereSize)
+    this.scene.add(pointLightHelper)
+
+    // fog
+    this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
 
     // mouse
     this.mouse = new THREE.Vector2(0, 0)
@@ -63,12 +71,13 @@ export default class Engine {
     })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0xffffff, 0)
+    this.renderer.setClearColor(0x0B2641, 1)
 
     // gltf lighting
     this.renderer.gammaOutput = true
     this.renderer.gammaFactor = 2.2
   }
+
   initInventoryScene () {
     this.inventoryScene = new THREE.Scene()
     // this.inventoryScene.background = new THREE.Color(0xff0000)
@@ -89,11 +98,11 @@ export default class Engine {
 
   addGeometry () {
     this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
-    //this.water = new Water(this.scene)
-    //this.cube = new CubeTest(this.scene)
+    this.water = new Water(this.scene)
+    this.cube = new CubeTest(this.scene)
     //this.boat = new Boat(this.scene, this.manager, this.camera)
-    this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { scale : 0.1})
+    //this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
+    //this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { scale : 0.1})
   }
 
   initLoadingManager () {
@@ -144,8 +153,8 @@ export default class Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // update water
-    //this.water.update(this.timeElapsed)
-    //this.cube.update(this.timeElapsed)
+    this.water.update(this.timeElapsed)
+    this.cube.update(this.timeElapsed)
     //this.boat.update(this.timeElapsed)
 
     this.render()

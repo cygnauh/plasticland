@@ -1,5 +1,4 @@
-import { Object3D, PlaneBufferGeometry, Mesh, Vector2, Color, TextureLoader, RepeatWrapping, DoubleSide } from 'three'
-import MagicShader from 'magicshader'
+import { Object3D, PlaneBufferGeometry, Mesh, Points, Vector2, Color, TextureLoader, ShaderMaterial, RepeatWrapping, DoubleSide } from 'three'
 
 export default class Water extends Object3D {
   constructor (scene) {
@@ -19,71 +18,63 @@ export default class Water extends Object3D {
     this.plane = new Mesh(this.geometry, this.material)
     this.plane.position.y = 0
     this.scene.add(this.plane)
+
   }
 
   initShader () {
     this.vertexShader = `
+      varying vec2 vUv;
+      uniform float uTime;
       
-            precision highp float;
-            attribute vec3 position;
-            attribute vec2 uv;
-            uniform mat4 modelViewMatrix;
-            uniform mat4 projectionMatrix;
-            
-            varying vec2 vUv;
-            uniform float uTime;
-            
-            const float SCALE = 10.0; 
+      const float SCALE = 10.0; 
+
+      float calculateSurface(float x, float z) {
+        float y = 0.0;
+        y += (sin(x * 1.0 / SCALE + uTime * 1.0) + sin(x * 2.3 / SCALE + uTime * 1.5) + sin(x * 3.3 / SCALE + uTime * 0.4)) / 4.0;
+        y += (sin(z * 0.2 / SCALE + uTime * 1.8) + sin(z * 1.8 / SCALE + uTime * 1.8) + sin(z * 2.8 / SCALE + uTime * 0.8)) / 2.0;
+        return y;
+      }
       
-            float calculateSurface(float x, float z) {
-                float y = 0.0;
-                y += (sin(x * 1.0 / SCALE + uTime * 1.0) + sin(x * 2.3 / SCALE + uTime * 1.5) + sin(x * 3.3 / SCALE + uTime * 0.4)) / 4.0;
-                y += (sin(z * 0.2 / SCALE + uTime * 1.8) + sin(z * 1.8 / SCALE + uTime * 1.8) + sin(z * 2.8 / SCALE + uTime * 0.8)) / 2.0;
-                return y;
-            }
-            
-            void main() {
-                vUv = uv;
-                vec3 pos = position;
-                
-                float strength = 1.0;
-                pos.y += strength * calculateSurface(pos.x, pos.z);
-                //pos.y -= strength * calculateSurface(0.0, 0.0); // calcul position to be back on (0,0)
-            
-                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-            }  
-        `
+      void main() {
+        vUv = uv;
+        vec3 pos = position;
+        
+        float strength = 1.0;
+        pos.y += strength * calculateSurface(pos.x, pos.z);
+        //pos.y -= strength * calculateSurface(0.0, 0.0); // calcul position to be back on (0,0)
+    
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+      }  
+    `
 
     this.fragmentShader = `
-            precision highp float;
+      varying vec2 vUv; 
+      uniform sampler2D uMap;
+      uniform float uTime;
+      uniform vec2 uKeyboard; 
+      uniform vec2 uMouse;  
+      uniform vec3 uColor; 
+      
+      void main() {
+        vec2 mouse = uMouse;
+        vec2 mouseFactor = vec2(mouse * 0.05);
+        vec2 uv = vUv * 10.0 + vec2(uTime * 0.05); // (0.05 * mouseFactor));
+    
+        uv.y += 0.01 * (sin(uv.x * 3.5 + uTime * 0.35) + sin(uv.x * 4.8 + uTime * 1.05) + sin(uv.x * 7.3 + uTime * 0.45)) / 3.0;
+        uv.x += 0.12 * (sin(uv.y * 4.0 + uTime * 0.5) + sin(uv.y * 6.8 + uTime * 0.75) + sin(uv.y * 11.3 + uTime * 0.2 )) / 3.0 ;
+        uv.y += 0.12 * (sin(uv.x * 4.2 + uTime * 0.64) + sin(uv.x * 6.3 + uTime * 1.65) + sin(uv.x * 8.2 + uTime * 0.45)) / 3.0;
         
-            varying vec2 vUv; 
-            uniform sampler2D uMap;
-            uniform float uTime;
-            uniform vec2 uKeyboard; 
-            uniform vec2 uMouse;  
-            uniform vec3 uColor; // ms({ value: '#ff0000' })
-            
-            void main() {
-                vec2 mouse = uMouse;
-                vec2 mouseFactor = vec2(mouse * 0.05);
-                vec2 uv = vUv * 10.0 + vec2(uTime * 0.05); // (0.05 * mouseFactor));
-            
-                uv.y += 0.01 * (sin(uv.x * 3.5 + uTime * 0.35) + sin(uv.x * 4.8 + uTime * 1.05) + sin(uv.x * 7.3 + uTime * 0.45)) / 3.0;
-                uv.x += 0.12 * (sin(uv.y * 4.0 + uTime * 0.5) + sin(uv.y * 6.8 + uTime * 0.75) + sin(uv.y * 11.3 + uTime * 0.2 )) / 3.0 ;
-                uv.y += 0.12 * (sin(uv.x * 4.2 + uTime * 0.64) + sin(uv.x * 6.3 + uTime * 1.65) + sin(uv.x * 8.2 + uTime * 0.45)) / 3.0;
-                
-                vec2 key = uKeyboard;
-                
-                vec4 tex1 = texture2D(uMap, uv + vec2(key.x, key.y)); 
-                vec4 tex2 = texture2D(uMap, uv + vec2(key.x + 0.3, key.y + 0.3));
-                vec3 blue = uColor; 
-                float alpha = 0.02;
-                gl_FragColor = vec4(blue + vec3(tex1.a * alpha - tex2.a * alpha), 1.0);
-            }
-        `
+        vec2 key = uKeyboard;
+        
+        vec4 tex1 = texture2D(uMap, uv + vec2(key.x, key.y)); 
+        vec4 tex2 = texture2D(uMap, uv + vec2(key.x + 0.3, key.y + 0.3));
+        vec3 blue = uColor; 
+        float alpha = 0.02;
+        gl_FragColor = vec4(blue + vec3(tex1.a * alpha - tex2.a * alpha), 1.0);
+      }
+    `
 
-    this.material = new MagicShader({
+    this.material = new ShaderMaterial({
       uniforms: {
         uMap: {
           value: new TextureLoader().load('https://cinemont.com/tutorials/zelda/water.png', (texture) => {
@@ -91,14 +82,15 @@ export default class Water extends Object3D {
           })
         },
         uTime: { type: 'f', value: 0.0 },
-        uColor: { type: 'f', value: new Color('#d1d3e1') },
+        uColor: { type: 'f', value: new Color('#133D59') },
         uKeyboard: { type: 'v2', value: new Vector2(0, 0) },
         uMouse: { type: 'v2', value: new Vector2(0, 0) }
       },
       vertexShader: this.vertexShader,
       fragmentShader: this.fragmentShader,
+      precision: 'highp',
       side: DoubleSide,
-      vertexColors: true
+      emissive: '0x032f50'
     })
   }
 
