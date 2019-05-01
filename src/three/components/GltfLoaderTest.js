@@ -2,7 +2,7 @@
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoaderTest {
-  constructor (name, path, scene, manager, posX, posY, posZ, rotateX) {
+  constructor (name, path, scene, manager, posX, posY, posZ, scale, rotateX) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
@@ -21,6 +21,9 @@ export default class GltfLoaderTest {
         this.gltf.position.x = posX
         this.gltf.position.y = posY
         this.gltf.position.z = posZ
+        this.gltf.scale.x = scale
+        this.gltf.scale.y = scale
+        this.gltf.scale.z = scale
         this.gltf.rotateY(rotateX)
         this.gltf.traverse(child => {
           // console.log(child.material)

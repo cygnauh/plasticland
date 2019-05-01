@@ -3,7 +3,7 @@ import GltfLoaderTest from './GltfLoaderTest'
 import config from '../../data/inventory'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
-import GltfLoader from './GltfLoader'
+// import GltfLoader from './GltfLoader'
 
 export default class Collectable {
   constructor (scene, manager, camera, width, height) {
@@ -15,40 +15,65 @@ export default class Collectable {
     this.objects = []
     this.initCollectables()
     this.canAnimated = false
-    // console.log(config.objects)
+    this.item = null
+    this.otherItems = []
   }
 
   initCollectables () {
     let obj = null
     config.objects.forEach((value, i) => {
-      let x = i % 3 === 0 ? 0 : i % 3 === 1 ? -13 : 13
-      let y = i % 2 === 0 ? 10 : 0
-      console.log(i, x, y)
+      let x = i % 3 === 0 ? -13 : i % 3 === 1 ? 0 : 13
+      let y = i < 3 ? 10 : 0
       obj = new GltfLoaderTest(
         value.name,
-        './models/starbucks_cup.glb',
+        value.model,
         this.scene,
         this.manager,
         x, // x
         y, // y
         0, // z
+        0.0001, // scale
         -Math.PI / 2 // rotation
       )
       this.objects.push(obj)
     })
-  }
-  update (time) {
-    if (this.canAnimated) TWEEN.update()
+    setTimeout(() => {
+      let animation = !this.canAnimated
+      this.scaleItems(this.objects, animation, 1)
+    }, 700)
   }
   selectedItem (name) {
     let animation = !this.canAnimated
-    console.log(this.objects)
-    console.log(this.objects.filter(item => item.name === name))
-    const selectedItem = this.objects.filter(item => item.name === name)[0].gltf
-    const otherItems = this.objects.filter(item => item.name !== name)
-    otherItems.forEach((element) => {
-      console.log(element.gltf)
-      let scale = 0.00001
+    this.item = this.objects.filter(item => item.name === name)[0].gltf
+    this.otherItems = this.objects.filter(item => item.name !== name)
+    this.scaleItems(this.otherItems, animation, 0.00001)
+
+    this.animateVector3(this.item.position, new THREE.Vector3(-5, 8, 8), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      callback: () => {
+        // console.log('Completed')
+      }
+    })
+  }
+  backToList () {
+    let itemIndex = config.objects.filter(item => item.name === this.item.name)[0].id - 1
+    let x = itemIndex % 3 === 0 ? -13 : itemIndex % 3 === 1 ? 0 : 13
+    let y = itemIndex < 3 ? 10 : 0
+    console.log('back to list')
+    console.log(itemIndex)
+    let animation = !this.canAnimated
+    this.scaleItems(this.otherItems, animation, 1)
+    this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      callback: () => {
+        // console.log('Completed')
+      }
+    })
+  }
+  scaleItems (array, animation, scale) {
+    array.forEach((element) => {
       this.animateVector3(element.gltf.scale, new THREE.Vector3(scale, scale, scale), {
         duration: 500,
         easing: TWEEN.Easing.Quadratic.InOut,
@@ -59,27 +84,19 @@ export default class Collectable {
       })
     })
     this.canAnimated = animation
-    console.log('this.canAnimated Completed', this.canAnimated)
-    this.animateVector3(selectedItem.position, new THREE.Vector3(-5, 8, 8), {
-      duration: 800,
-      easing: TWEEN.Easing.Quadratic.InOut,
-      callback: () => {
-        console.log('Completed')
-      }
-    })
-    // TODO take chosen item to the left
-    // TODO scale to 0 the others then render false
   }
-
   animateVector3 (vectorToAnimate, target, options) { // anim can be position or scale
     options = options || {}
     // get targets from options or set to defaults
-    let to = target || THREE.Vector3(),
-      easing = options.easing || TWEEN.Easing.Quadratic.In,
-      duration = options.duration || 2000
+    let to, easing, duration, delay
+    to = target || THREE.Vector3()
+    easing = options.easing || TWEEN.Easing.Quadratic.In
+    duration = options.duration || 2000
+    delay = options.delay || 0
     // create the tween
     let tweenVector3 = new TWEEN.Tween(vectorToAnimate)
       .to({ x: to.x, y: to.y, z: to.z }, duration)
+      .delay(delay)
       .easing(easing)
       .onComplete(function () {
         if (options.callback) options.callback()
@@ -88,6 +105,7 @@ export default class Collectable {
     // return the tween in case we want to manipulate it later on
     return tweenVector3
   }
-
-  /* How to use */
+  update (time) {
+    if (this.canAnimated) TWEEN.update()
+  }
 }

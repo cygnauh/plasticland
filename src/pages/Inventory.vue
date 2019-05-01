@@ -51,8 +51,10 @@ export default {
     onObjectClicked (e, obj) {
       if (!obj.found) {
         e.preventDefault()
+        console.log('not found')
       } else {
-        Vue.prototype.$engine.collectable.selectedItem(obj.name)
+        console.log('found')
+        Vue.prototype.$engine.collectable.selectedItem(obj.name, true)
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
           component: InventoryDetail

@@ -8,18 +8,19 @@
         class="title">
         {{ title }}
       </div>
-      <router-link
+      <!--<router-link-->
+        <!--to="/plasticland/inventory"-->
+        <!--&gt;-->
+      <div
         v-else
-        to="/plasticland/inventory"
-        >
-        <div
-          class="back">
-          <img
-            :src="require('../assets/img/svg/arrow.svg')"
-            alt="back">
-          <span>Retour à votre collection</span>
-        </div>
-      </router-link>
+        class="back"
+        @click="backToInventoryList">
+        <img
+          :src="require('../assets/img/svg/arrow.svg')"
+          alt="back">
+        <span>Retour à votre collection</span>
+      </div>
+      <!--</router-link>-->
       <router-link
         to="/plasticland"
         v-if="$route.path !== '/plasticland'"
@@ -75,6 +76,7 @@
 import Vue from 'vue'
 import Engine from '../three/Engine'
 import Timer from '../components/Timer/Timer'
+import Inventory from './Inventory'
 
 export default {
   name: 'Stage',
@@ -123,6 +125,13 @@ export default {
     },
     testRoute () {
       this.$router.push('inventory')
+    },
+    backToInventoryList () {
+      Vue.prototype.$engine.collectable.backToList()
+      this.$router.push({
+        path: `/plasticland/inventory`,
+        component: Inventory
+      })
     }
   }
 }
