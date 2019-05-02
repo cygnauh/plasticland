@@ -117,7 +117,7 @@ export default class Engine {
           texture.wrapS = texture.wrapT = THREE.RepeatWrapping
         }),
         alpha: 1.0,
-        sunDirection: this.spotlight.position.clone().normalize(),
+        sunDirection: light.position.clone().normalize(),
         sunColor: 0xffffff,
         waterColor: 0x001e0f,
         distortionScale: 3.7,
@@ -133,11 +133,11 @@ export default class Engine {
     uniforms[ 'turbidity' ].value = 10
     uniforms[ 'rayleigh' ].value = 2
     uniforms[ 'luminance' ].value = 1
-    uniforms[ 'mieCoefficient' ].value = 0.005
+    uniforms[ 'mieCoefficient' ].value = 0.1
     uniforms[ 'mieDirectionalG' ].value = 0.8
 
     this.parameters = {
-      distance: 400,
+      distance: 1000,
       inclination: 0.278,
       azimuth: 0.248
     }
@@ -207,7 +207,7 @@ export default class Engine {
     // this.water.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed)
-    this.collectable.update()
+    // this.collectable.update()
     this.water.material.uniforms[ 'time' ].value += 0.1 / 60.0;
     this.render()
 
