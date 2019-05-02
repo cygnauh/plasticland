@@ -70,6 +70,7 @@
 <script>
 import Vue from 'vue'
 import Engine from '../three/Engine'
+import App from '../three/App'
 import Timer from '../components/Timer/Timer'
 
 export default {
@@ -96,7 +97,7 @@ export default {
   },
   methods: {
     initScene () {
-      Vue.prototype.$engine = new Engine(this.$refs.canvas) // init scene
+      Vue.prototype.$engine = new App(this.$refs.canvas) // init scene
       if (this.$route.path === '/plasticland/inventory') {
         this.setInventory(true)
       }
