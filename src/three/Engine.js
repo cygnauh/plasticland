@@ -54,7 +54,6 @@ export default class Engine {
 
     // raycaster
     this.raycaster = new THREE.Raycaster()
-    this.intersected = false
 
     // renderer
     this.renderer = new THREE.WebGLRenderer({
@@ -111,6 +110,7 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
+    document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
   resize () {
@@ -129,18 +129,24 @@ export default class Engine {
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
   }
 
+  onClick () {
+    let intersected = false
+    let intersects = this.raycaster.intersectObjects(this.scene.children)
+    intersects.forEach( (intersect) => {
+      switch (intersect.object.name) {
+        case 'cubeTest':
+          intersected = true
+          console.log('tu as clické sur le cubeTest')
+          break
+        default:
+          intersected = false
+          break
+      }
+    })
+  }
+
   render () {
     this.raycaster.setFromCamera(this.mouse, this.camera)
-
-    this.intersected = false
-    let intersects = this.raycaster.intersectObjects(this.scene.children)
-    for (let i = 0; i < intersects.length; i++) {
-      // console.log(intersects[i].object)
-      if (intersects[i].object.name === 'cubeTest') {
-        this.intersected = true
-        console.log(this.intersected)
-      }
-    }
 
     if (!this.displayInventory) {
       window.scene = this.scene
