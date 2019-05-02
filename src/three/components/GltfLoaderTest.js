@@ -1,8 +1,8 @@
-// import * as THREE from 'three'
+import * as THREE from 'three'
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoaderTest {
-  constructor (name, path, scene, manager, posX, posY, posZ, scale, rotateX) {
+  constructor (name, path, scene, manager, posX, posY, posZ, scale, rotateX, found) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
@@ -11,6 +11,11 @@ export default class GltfLoaderTest {
     // see gltf-pipeline
 
     this.root = null
+    this.flatMaterial = new THREE.MeshPhongMaterial({
+      color: (0x81C186),
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending
+    })
 
     this.loader.load(
       path,
@@ -30,6 +35,9 @@ export default class GltfLoaderTest {
           if (child.isMesh) {
             // show the count of vertices here
             child.material.side = 2
+            if (!found) {
+              child.material = this.flatMaterial
+            }
           }
         })
       },

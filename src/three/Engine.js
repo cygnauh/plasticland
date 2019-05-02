@@ -46,8 +46,12 @@ export default class Engine {
     this.timeElapsed = 0
 
     // light
-    this.light = new THREE.AmbientLight(0x404040)
-    this.scene.add(this.light)
+    this.ambiantlight = new THREE.AmbientLight(0x404040)
+    this.spotlight = new THREE.SpotLight(0x404040)
+    this.spotlight.position.set(100, 1000, 100)
+
+    this.scene.add(this.ambiantlight)
+    this.scene.add(this.spotlight)
 
     // mouse
     this.mouse = new THREE.Vector2(0, 0)
@@ -81,9 +85,9 @@ export default class Engine {
       1,
       10000
     )
-    this.inventoryCamera.position.set(0, 4, 20)
-    this.inventoryCamera.position.z = 1800
-    this.inventoryScene.add(this.light)
+    this.inventoryCamera.position.set(0, 3, 70)
+    this.inventoryScene.add(this.ambiantlight)
+    this.inventoryScene.add(this.spotlight)
     // helpers
     // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
@@ -163,7 +167,7 @@ export default class Engine {
       this.renderer.render(this.scene, this.camera)
     } else {
       window.scene = this.inventoryScene
-      this.renderer.render(this.inventoryScene, this.camera)
+      this.renderer.render(this.inventoryScene, this.inventoryCamera)
     }
   }
 }
