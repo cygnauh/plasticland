@@ -52,6 +52,10 @@ export default class Engine {
     // mouse
     this.mouse = new THREE.Vector2(0, 0)
 
+    // raycaster
+    this.raycaster = new THREE.Raycaster()
+    this.intersected = false
+
     // renderer
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
@@ -126,6 +130,18 @@ export default class Engine {
   }
 
   render () {
+    this.raycaster.setFromCamera(this.mouse, this.camera)
+
+    this.intersected = false
+    let intersects = this.raycaster.intersectObjects(this.scene.children)
+    for (let i = 0; i < intersects.length; i++) {
+      // console.log(intersects[i].object)
+      if (intersects[i].object.name === 'cubeTest') {
+        this.intersected = true
+        console.log(this.intersected)
+      }
+    }
+
     if (!this.displayInventory) {
       window.scene = this.scene
       this.renderer.render(this.scene, this.camera)
