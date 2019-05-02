@@ -1,4 +1,4 @@
-import { Object3D, PlaneBufferGeometry, Mesh, Points, Vector2, Color, TextureLoader, ShaderMaterial, RepeatWrapping, DoubleSide } from 'three'
+import { Object3D, PlaneBufferGeometry, Mesh, ShaderLib, UniformsUtils, Vector2, Color, TextureLoader, ShaderMaterial, RepeatWrapping, DoubleSide } from 'three'
 
 export default class Water extends Object3D {
   constructor (scene) {
@@ -58,7 +58,7 @@ export default class Water extends Object3D {
       void main() {
         vec2 mouse = uMouse;
         vec2 mouseFactor = vec2(mouse * 0.05);
-        vec2 uv = vUv * 10.0 + vec2(uTime * 0.05); // (0.05 * mouseFactor));
+        vec2 uv = vUv * 5.0 + vec2(uTime * 0.05); // (0.05 * mouseFactor));
     
         uv.y += 0.01 * (sin(uv.x * 3.5 + uTime * 0.35) + sin(uv.x * 4.8 + uTime * 1.05) + sin(uv.x * 7.3 + uTime * 0.45)) / 3.0;
         uv.x += 0.12 * (sin(uv.y * 4.0 + uTime * 0.5) + sin(uv.y * 6.8 + uTime * 0.75) + sin(uv.y * 11.3 + uTime * 0.2 )) / 3.0 ;
@@ -69,11 +69,23 @@ export default class Water extends Object3D {
         vec4 tex1 = texture2D(uMap, uv + vec2(key.x, key.y)); 
         vec4 tex2 = texture2D(uMap, uv + vec2(key.x + 0.3, key.y + 0.3));
         vec3 blue = uColor; 
-        float alpha = 0.02;
+        float alpha = 0.006;
         gl_FragColor = vec4(blue + vec3(tex1.a * alpha - tex2.a * alpha), 1.0);
       }
     `
-
+    // let phongShader = ShaderLib[ 'phong' ]
+    /*this.custumUniforms = UniformsUtils.merge([
+        ShaderLib.phong.uniforms,
+        { uMap: {
+                value: new TextureLoader().load('https://cinemont.com/tutorials/zelda/water.png', (texture) => {
+                    texture.wrapS = texture.wrapT = RepeatWrapping
+                })
+            }},
+        { uTime: { type: 'f', value: 0.0} },
+        { uColor: { type: 'f', value: new Color('#133D59')} },
+        { uKeyboard: { type: 'v2', value: new Vector2(0, 0)} },
+        { uMouse: { type: 'v2', value: new Vector2(0, 0) } }
+    ]);*/
     this.material = new ShaderMaterial({
       uniforms: {
         uMap: {
@@ -90,8 +102,8 @@ export default class Water extends Object3D {
       fragmentShader: this.fragmentShader,
       precision: 'highp',
       side: DoubleSide,
-      emissive: '0x032f50'
     })
+
   }
 
   addEventListeners () {

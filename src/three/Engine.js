@@ -1,10 +1,6 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
-//import Instances from './components/Instances'
-//import GltfLoader from './components/GltfLoader'
-import Water from './components/Water'
-//import Boat from './components/Boat'
-import CubeTest from './components/CubeTest'
+
 import Collectable from './components/Collectable'
 
 export default class Engine {
@@ -13,9 +9,8 @@ export default class Engine {
     this.initScene()
     this.initInventoryScene()
     this.initLoadingManager()
-    this.addGeometry()
+    //this.addGeometry()
     this.addEventListeners()
-    this.animate()
     this.displayInventory = false
   }
 
@@ -50,6 +45,7 @@ export default class Engine {
     this.pointLight.position.set(0, 6, 0)
     this.scene.add(this.pointLight)
 
+    // light helper
     let sphereSize = 1
     let pointLightHelper = new THREE.PointLightHelper(this.pointLight, sphereSize)
     this.scene.add(pointLightHelper)
@@ -98,26 +94,21 @@ export default class Engine {
 
   addGeometry () {
     this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
-    this.water = new Water(this.scene)
-    this.cube = new CubeTest(this.scene)
-    //this.boat = new Boat(this.scene, this.manager, this.camera)
-    //this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    //this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { scale : 0.1})
   }
 
   initLoadingManager () {
     this.manager = new THREE.LoadingManager()
     this.manager.onStart = (url, itemsLoaded, itemsTotal) => {
-      console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
+      // console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
     this.manager.onLoad = () => {
-      console.log('Loading complete!')
+      // console.log('Loading complete!')
     }
     this.manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-      console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
+      // console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
     this.manager.onError = (url) => {
-      console.log('There was an error loading ' + url)
+      // console.log('There was an error loading ' + url)
     }
   }
 
@@ -140,28 +131,6 @@ export default class Engine {
   onMouseMove (e) {
     this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
-  }
-
-  animate () {
-    // helpers
-
-    if (this.helpers.stats) this.helpers.stats.begin()
-    if (this.helpers.controls) this.helpers.controls.update()
-
-    // update
-    this.timeDelta = this.clock.getDelta()
-    this.timeElapsed = this.clock.getElapsedTime()
-
-    // update water
-    this.water.update(this.timeElapsed)
-    this.cube.update(this.timeElapsed)
-    //this.boat.update(this.timeElapsed)
-
-    this.render()
-
-    if (this.helpers.stats) this.helpers.stats.end()
-
-    requestAnimationFrame(() => this.animate())
   }
 
   render () {
