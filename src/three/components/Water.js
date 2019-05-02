@@ -18,7 +18,6 @@ export default class Water extends Object3D {
     this.plane = new Mesh(this.geometry, this.material)
     this.plane.position.y = 0
     this.scene.add(this.plane)
-
   }
 
   initShader () {
@@ -74,7 +73,7 @@ export default class Water extends Object3D {
       }
     `
     // let phongShader = ShaderLib[ 'phong' ]
-    /*this.custumUniforms = UniformsUtils.merge([
+    /* this.custumUniforms = UniformsUtils.merge([
         ShaderLib.phong.uniforms,
         { uMap: {
                 value: new TextureLoader().load('https://cinemont.com/tutorials/zelda/water.png', (texture) => {
@@ -85,7 +84,7 @@ export default class Water extends Object3D {
         { uColor: { type: 'f', value: new Color('#133D59')} },
         { uKeyboard: { type: 'v2', value: new Vector2(0, 0)} },
         { uMouse: { type: 'v2', value: new Vector2(0, 0) } }
-    ]);*/
+    ]); */
     this.material = new ShaderMaterial({
       uniforms: {
         uMap: {
@@ -101,9 +100,8 @@ export default class Water extends Object3D {
       vertexShader: this.vertexShader,
       fragmentShader: this.fragmentShader,
       precision: 'highp',
-      side: DoubleSide,
+      side: DoubleSide
     })
-
   }
 
   addEventListeners () {

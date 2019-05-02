@@ -34,10 +34,10 @@ export default class GltfLoader {
         resolve(geometries)
       },
       (xhr) => {
-        //console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+        // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
       },
       (error) => {
-        //console.log('An error happened' + error)
+        // console.log('An error happened' + error)
         reject(new Error('there is an error'))
       })
     })
