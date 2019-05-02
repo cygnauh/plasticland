@@ -129,22 +129,6 @@ export default class Engine {
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
   }
 
-  onClick () {
-    let intersected = false
-    let intersects = this.raycaster.intersectObjects(this.scene.children)
-    intersects.forEach( (intersect) => {
-      switch (intersect.object.name) {
-        case 'cubeTest':
-          intersected = true
-          console.log('tu as clické sur le cubeTest')
-          break
-        default:
-          intersected = false
-          break
-      }
-    })
-  }
-
   render () {
     this.raycaster.setFromCamera(this.mouse, this.camera)
 

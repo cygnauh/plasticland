@@ -24,6 +24,22 @@ export default class App extends Engine {
     this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
   }
 
+  onClick () {
+    let intersected = false
+    let intersects = this.raycaster.intersectObjects(this.scene.children)
+    intersects.forEach( (intersect) => {
+      switch (intersect.object.name) {
+        case 'cubeTest':
+          intersected = true
+          console.log('tu as clické sur le cubeTest')
+          break
+        default:
+          intersected = false
+          break
+      }
+    })
+  }
+
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
