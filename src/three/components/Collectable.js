@@ -59,6 +59,7 @@ export default class Collectable {
     })
   }
   backToList () {
+    console.log(this.item.name)
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     let x = itemIndex % 3 === 0 ? -13 : itemIndex % 3 === 1 ? 0 : 13
     let y = itemIndex < 3 ? 10 : 0

@@ -30,7 +30,8 @@ export default class Engine {
 
     // camera
     this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.01, 10000)
-    this.camera.position.set(0, 1, 0)
+    this.camera.position.set(0, 4, 20)
+    // this.camera.position.set(0, 1, 0)
 
     // clock
     this.clock = new THREE.Clock()
@@ -79,7 +80,7 @@ export default class Engine {
     this.inventoryScene = new THREE.Scene()
     // this.inventoryScene.background = new THREE.Color(0xff0000)
     this.inventoryScene.name = 'scene2'
-    this.inventoryScene.position.y = -5
+    this.inventoryScene.position.y = -8
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
       5,
@@ -87,11 +88,12 @@ export default class Engine {
       1,
       10000
     )
-    this.inventoryCamera.position.set(0, 10, 70)
+    // this.inventoryCamera.position.set(0, 10, 70)
+    this.inventoryCamera.position.set(0, 10, 250)
     this.inventoryScene.add(this.ambiantlight)
     this.inventoryScene.add(this.spotlight)
     // helpers
-    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
+    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   initLoadingManager () {

@@ -27,7 +27,7 @@ export default class App extends Engine {
   onClick () {
     let intersected = false
     let intersects = this.raycaster.intersectObjects(this.scene.children)
-    intersects.forEach( (intersect) => {
+    intersects.forEach((intersect) => {
       switch (intersect.object.name) {
         case 'cubeTest':
           intersected = true
@@ -52,6 +52,7 @@ export default class App extends Engine {
     // update
     this.water.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
+    this.collectable.update()
     // this.boat.update(this.timeElapsed)
 
     this.render()
