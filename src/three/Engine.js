@@ -1,15 +1,12 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
 
-import Collectable from './components/Collectable'
-
 export default class Engine {
   constructor (canvas) {
     this.initCanvas(canvas)
     this.initScene()
     this.initInventoryScene()
     this.initLoadingManager()
-    //this.addGeometry()
     this.addEventListeners()
     this.displayInventory = false
   }
@@ -27,7 +24,7 @@ export default class Engine {
   initScene () {
     // scene
     this.scene = new THREE.Scene()
-    this.scene.name = 'scene'
+    this.scene.name = 'scene1'
     window.scene = this.scene
     window.THREE = THREE
 
@@ -71,10 +68,12 @@ export default class Engine {
   }
 
   initInventoryScene () {
+    // scene
     this.inventoryScene = new THREE.Scene()
     // this.inventoryScene.background = new THREE.Color(0xff0000)
     this.inventoryScene.name = 'scene2'
     this.inventoryScene.position.y = -5
+
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
       20,
@@ -84,12 +83,9 @@ export default class Engine {
     )
     this.inventoryCamera.position.set(0, 4, 20)
     this.inventoryCamera.position.z = 1800
+
     // helpers
     // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
-  }
-
-  addGeometry () {
-    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
   }
 
   initLoadingManager () {
