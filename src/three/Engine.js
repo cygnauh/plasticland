@@ -38,7 +38,7 @@ export default class Engine {
 
     // camera
     this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.01, 10000)
-    this.camera.position.set(0, 4, 20)
+    this.camera.position.set(0, 1, 0)
 
     // clock
     this.clock = new THREE.Clock()
@@ -80,16 +80,16 @@ export default class Engine {
     this.inventoryScene.position.y = -5
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
-      20,
+      5,
       this.width / this.height,
       1,
       10000
     )
-    this.inventoryCamera.position.set(0, 3, 70)
+    this.inventoryCamera.position.set(0, 10, 70)
     this.inventoryScene.add(this.ambiantlight)
     this.inventoryScene.add(this.spotlight)
     // helpers
-    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
+    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   addGeometry () {
@@ -124,9 +124,9 @@ export default class Engine {
 
   resize () {
     this.setSize()
-    this.camera.aspect = this.width / this.height
+    this.camera.aspect = window.innerWidth / window.innerHeight
     this.camera.updateProjectionMatrix()
-    this.renderer.setSize(this.width, this.height)
+    this.renderer.setSize(window.innerWidth, window.innerHeight)
   }
 
   setDisplayInventory (value) {
