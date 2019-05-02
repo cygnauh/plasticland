@@ -1,5 +1,5 @@
 import Engine from './Engine'
-import Water from './components/Water'
+import Water from './components/WaterOld'
 
 export default class App extends Engine {
   constructor (props) {
