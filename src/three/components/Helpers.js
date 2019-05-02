@@ -37,4 +37,9 @@ export default class Helpers {
     this.gridHelper = new THREE.GridHelper(size, divisions)
     this.scene.add(this.gridHelper)
   }
+
+  pointLightHelper (pointLight, size) {
+    this.helper = new THREE.PointLightHelper(pointLight, size)
+    this.scene.add(this.helper)
+  }
 }

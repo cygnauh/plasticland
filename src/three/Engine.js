@@ -40,24 +40,20 @@ export default class Engine {
     this.timeDelta = 0
     this.timeElapsed = 0
 
+    // helpers
+    this.helpers = new Helpers(this.scene, this.camera)
+
     // light
     this.pointLight = new THREE.PointLight(0xffffff, 2, 15)
     this.pointLight.position.set(0, 6, 0)
     this.scene.add(this.pointLight)
-
-    // light helper
-    let sphereSize = 1
-    let pointLightHelper = new THREE.PointLightHelper(this.pointLight, sphereSize)
-    this.scene.add(pointLightHelper)
+    this.helpers.pointLightHelper(this.pointLight, 1) // light helper
 
     // fog
     this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
 
     // mouse
     this.mouse = new THREE.Vector2(0, 0)
-
-    // helpers
-    this.helpers = new Helpers(this.scene, this.camera)
 
     // renderer
     this.renderer = new THREE.WebGLRenderer({
