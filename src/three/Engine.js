@@ -1,11 +1,5 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
-import Instances from './components/Instances'
-import GltfLoader from './components/GltfLoader'
-import Water from './components/Water'
-import Boat from './components/Boat'
-import CubeTest from './components/CubeTest'
-import Collectable from './components/Collectable'
 
 export default class Engine {
   constructor (canvas) {
@@ -13,9 +7,7 @@ export default class Engine {
     this.initScene()
     this.initInventoryScene()
     this.initLoadingManager()
-    this.addGeometry()
     this.addEventListeners()
-    this.animate()
     this.displayInventory = false
   }
 
@@ -32,7 +24,7 @@ export default class Engine {
   initScene () {
     // scene
     this.scene = new THREE.Scene()
-    this.scene.name = 'scene'
+    this.scene.name = 'scene1'
     window.scene = this.scene
     window.THREE = THREE
 
@@ -45,6 +37,9 @@ export default class Engine {
     this.timeDelta = 0
     this.timeElapsed = 0
 
+    // helpers
+    this.helpers = new Helpers(this.scene, this.camera)
+
     // light
     this.ambiantlight = new THREE.AmbientLight(0x404040)
     this.spotlight = new THREE.SpotLight(0x404040)
@@ -53,11 +48,18 @@ export default class Engine {
     this.scene.add(this.ambiantlight)
     this.scene.add(this.spotlight)
 
+    this.pointLight = new THREE.PointLight(0xffffff, 2, 15)
+    this.pointLight.position.set(0, 6, 0)
+    this.scene.add(this.pointLight)
+    this.helpers.pointLightHelper(this.pointLight, 1) // light helper
+    // fog
+    this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
+
     // mouse
     this.mouse = new THREE.Vector2(0, 0)
 
-    // helpers
-    this.helpers = new Helpers(this.scene, this.camera)
+    // raycaster
+    this.raycaster = new THREE.Raycaster()
 
     // renderer
     this.renderer = new THREE.WebGLRenderer({
@@ -67,7 +69,7 @@ export default class Engine {
     })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0xffffff, 0)
+    this.renderer.setClearColor(0x0B2641, 1)
 
     // gltf lighting
     this.renderer.gammaOutput = true
@@ -89,16 +91,7 @@ export default class Engine {
     this.inventoryScene.add(this.ambiantlight)
     this.inventoryScene.add(this.spotlight)
     // helpers
-    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
-  }
-
-  addGeometry () {
-    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
-    this.water = new Water(this.scene)
-    this.cube = new CubeTest(this.scene)
-    this.boat = new Boat(this.scene, this.manager, this.camera)
-    this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
+    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   initLoadingManager () {
@@ -120,6 +113,7 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
+    document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
   resize () {
@@ -138,30 +132,9 @@ export default class Engine {
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
   }
 
-  animate () {
-    // helpers
-
-    if (this.helpers.stats) this.helpers.stats.begin()
-    if (this.helpers.controls) this.helpers.controls.update()
-
-    // update
-    this.timeDelta = this.clock.getDelta()
-    this.timeElapsed = this.clock.getElapsedTime()
-
-    // update water
-    this.water.update(this.timeElapsed)
-    this.cube.update(this.timeElapsed)
-    this.boat.update(this.timeElapsed)
-    this.collectable.update()
-
-    this.render()
-
-    if (this.helpers.stats) this.helpers.stats.end()
-
-    requestAnimationFrame(() => this.animate())
-  }
-
   render () {
+    this.raycaster.setFromCamera(this.mouse, this.camera)
+
     if (!this.displayInventory) {
       window.scene = this.scene
       this.renderer.render(this.scene, this.camera)
