@@ -1,14 +1,14 @@
 import GLTFLoader from 'three-gltf-loader'
 
 export default class GltfLoader {
-  constructor (name, path, scene, manager, { scale = 1 }) {
+  constructor (name, path, scene, manager) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
 
     // draco loader
     // see gltf-pipeline
-
+    let scale = 1
     let geometries = []
     let scaleFactor = scale
     console.log(scaleFactor)

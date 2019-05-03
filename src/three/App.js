@@ -24,7 +24,7 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     // this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { scale: 0.1 })
+    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
     this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
   }
   addWater () {
