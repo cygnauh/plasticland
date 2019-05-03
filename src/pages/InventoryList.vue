@@ -28,7 +28,7 @@ import Vue from 'vue'
 import InventoryDetail from './InventoryDetail'
 import { store } from '../store/index'
 export default {
-  name: 'Inventory',
+  name: 'InventoryList',
   data () {
     return {
       isMounted: false

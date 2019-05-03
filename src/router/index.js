@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 import Introduction from '../pages/Introduction'
 import Stage from '../pages/Stage'
-import Inventory from '../pages/Inventory'
+import InventoryList from '../pages/InventoryList'
 import InventoryDetail from '../pages/InventoryDetail'
 import Credits from '../pages/Credits'
 import About from '../pages/About'
@@ -31,7 +31,7 @@ export default new Router({
         // },
         {
           path: 'inventory',
-          component: Inventory
+          component: InventoryList
         },
         {
           path: 'inventory/:id',

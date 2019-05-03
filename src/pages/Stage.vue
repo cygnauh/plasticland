@@ -59,7 +59,7 @@
       to="/plasticland/inventory">
       <div
         class="interface inventory-btn"
-        @click="testRoute">
+        @click="goInventory">
         {{ objectFound }}
         /
         {{ totalObject }}
@@ -70,10 +70,11 @@
 
 <script>
 import Vue from 'vue'
-import Engine from '../three/Engine'
+// import Engine from '../three/Engine'
 import App from '../three/App'
 import Timer from '../components/Timer/Timer'
-import Inventory from './Inventory'
+import InventoryList from './InventoryList'
+import { store } from '../store/index'
 
 export default {
   name: 'Stage',
@@ -82,8 +83,8 @@ export default {
     return {
       data: '',
       title: 'Marécage de plastique',
-      objectFound: 0,
-      totalObject: 6,
+      objectFound: store.state.objects.filter(item => item.found).length,
+      totalObject: store.state.objects.length,
       displayReturn: false
     }
   },
@@ -107,6 +108,16 @@ export default {
     setInventory (value) {
       Vue.prototype.$engine.setDisplayInventory(value)
     },
+    goInventory () {
+      this.$router.push({
+        path: `/plasticland/inventory`,
+        component: InventoryList
+      })
+    },
+    backToInventoryList () {
+      Vue.prototype.$engine.collectable.backToList()
+      this.goInventory()
+    },
     checkRoute (route) {
       if (route === '/plasticland/inventory') {
         this.title = 'Explorez votre collection'
@@ -120,16 +131,6 @@ export default {
         this.displayReturn = true
       }
     },
-    testRoute () {
-      this.$router.push('inventory')
-    },
-    backToInventoryList () {
-      Vue.prototype.$engine.collectable.backToList()
-      this.$router.push({
-        path: `/plasticland/inventory`,
-        component: Inventory
-      })
-    }
   }
 }
 </script>

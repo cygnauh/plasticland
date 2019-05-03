@@ -53,6 +53,7 @@ export default class Engine {
     this.pointLight.position.set(0, 6, 0)
     this.scene.add(this.pointLight)
     this.helpers.pointLightHelper(this.pointLight, 1) // light helper
+
     // fog
     this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
 
@@ -90,10 +91,10 @@ export default class Engine {
     )
     // this.inventoryCamera.position.set(0, 10, 70)
     this.inventoryCamera.position.set(0, 10, 250)
-    this.inventoryScene.add(this.ambiantlight)
-    this.inventoryScene.add(this.spotlight)
+    // this.inventoryScene.add(this.ambiantlight)
+    // this.inventoryScene.add(this.spotlight)
     // helpers
-    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
+    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   initLoadingManager () {
@@ -137,12 +138,13 @@ export default class Engine {
   render () {
     this.raycaster.setFromCamera(this.mouse, this.camera)
 
-    if (!this.displayInventory) {
-      window.scene = this.scene
-      this.renderer.render(this.scene, this.camera)
-    } else {
-      window.scene = this.inventoryScene
-      this.renderer.render(this.inventoryScene, this.inventoryCamera)
-    }
+    // add and remove collectables or main XP scene
+    this.renderer.render(this.scene, this.camera)
+    // if (!this.displayInventory) {
+
+    // } else {
+    // window.scene = this.inventoryScene
+    // this.renderer.render(this.inventoryScene, this.inventoryCamera)
+    // }
   }
 }
