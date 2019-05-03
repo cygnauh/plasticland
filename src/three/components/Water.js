@@ -23,7 +23,7 @@ THREE.Water = function (geometry, options) {
   var normalSampler = options.waterNormals !== undefined ? options.waterNormals : null
   var sunDirection = options.sunDirection !== undefined ? options.sunDirection : new THREE.Vector3(0.70707, 0.70707, 0.0)
   var sunColor = new THREE.Color(options.sunColor !== undefined ? options.sunColor : 0xffffff)
-  var waterColor = new THREE.Color(options.waterColor !== undefined ? options.waterColor : 0x7F7F7F)
+  var waterColor = new THREE.Color(options.waterColor !== undefined ? options.waterColor : 0x7fa9ee)
   var eye = options.eye !== undefined ? options.eye : new THREE.Vector3(0, 0, 0)
   var distortionScale = options.distortionScale !== undefined ? options.distortionScale : 20.0
   var side = options.side !== undefined ? options.side : THREE.FrontSide
@@ -76,7 +76,7 @@ THREE.Water = function (geometry, options) {
         'sunColor': { value: new THREE.Color(0x7F7F7F) },
         'sunDirection': { value: new THREE.Vector3(0.70707, 0.70707, 0) },
         'eye': { value: new THREE.Vector3() },
-        'waterColor': { value: new THREE.Color(0x555555) }
+        'waterColor': { value: new THREE.Color(0x544d75) }
       }
     ]),
 
@@ -150,7 +150,7 @@ THREE.Water = function (geometry, options) {
       ' vec3 surfaceNormal = normalize( noise.xzy * vec3( 1.5, 1.0, 1.5 ) );',
 
       ' vec3 diffuseLight = vec3(0.0);',
-      ' vec3 specularLight = vec3(0.0);',
+      ' vec3 specularLight = vec3(0.5);',
 
       ' vec3 worldToEye = eye-worldPosition.xyz;',
       ' vec3 eyeDirection = normalize( worldToEye );',
@@ -160,13 +160,17 @@ THREE.Water = function (geometry, options) {
 
       ' vec2 distortion = surfaceNormal.xz * ( 0.001 + 1.0 / distance ) * distortionScale;',
       ' vec3 reflectionSample = vec3( texture2D( mirrorSampler, mirrorCoord.xy / mirrorCoord.w + distortion ) );',
+      // ' reflectionSample = smoothstep(vec3(0.1), vec3(0.3), reflectionSample);',
+      // ' reflectionSample = smoothstep(vec3(0.7), vec3(0.8), reflectionSample);',
 
       ' float theta = max( dot( eyeDirection, surfaceNormal ), 0.0 );',
       ' float rf0 = 0.3;',
-      ' float reflectance = rf0 + ( 1.0 - rf0 ) * pow( ( 1.0 - theta ), 5.0 );',
+      ' float reflectance = rf0 + ( 1.0 - rf0 ) * pow( ( 1.0 - theta ), 2.0 );',
       ' vec3 scatter = max( 0.0, dot( surfaceNormal, eyeDirection ) ) * waterColor;',
-      ' vec3 albedo = mix( ( sunColor * diffuseLight * 0.3 + scatter ) * getShadowMask(), ( vec3( 0.1 ) + reflectionSample * specularLight ), reflectance);',
-      // ' albedo = smoothstep(vec3(0.49), vec3(0.51), albedo);',
+      // ' scatter = smoothstep(vec3(0.6), vec3(0.8), scatter);',
+      // ' vec3 albedo = mix( ( sunColor * diffuseLight * 0.3 + scatter ) * getShadowMask(), ( vec3( 0.5 ) + reflectionSample * specularLight ), reflectance);',
+      ' vec3 albedo = mix( (diffuseLight * 0.1 + scatter ) * getShadowMask(), ( vec3( 0.1 ) + reflectionSample * specularLight ), reflectance);',
+      // ' albedo = smoothstep(vec3(0.5), vec3(0.6), albedo);',
       ' vec3 outgoingLight = albedo;',
       ' gl_FragColor = vec4( outgoingLight, alpha );',
 

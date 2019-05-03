@@ -36,6 +36,8 @@ export default class Engine {
     // scene
     this.scene = new THREE.Scene()
     this.scene.name = 'scene'
+    // this.scene.fog = new THREE.FogExp2(0x544d75, 0.5)
+    this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
     window.scene = this.scene
     window.THREE = THREE
 
@@ -106,7 +108,7 @@ export default class Engine {
   addWater () {
     let water, light
     let waterGeometry = new THREE.PlaneBufferGeometry(10000, 10000)
-    light = new THREE.DirectionalLight(0xffffff, 0.8)
+    light = new THREE.DirectionalLight(0x544d75, 0.8)
     this.scene.add(light)
     this.water = new THREE.Water(
       waterGeometry,
@@ -119,7 +121,7 @@ export default class Engine {
         alpha: 1.0,
         sunDirection: light.position.clone().normalize(),
         sunColor: 0xffffff,
-        waterColor: 0x001e0f,
+        waterColor: 0x544d75,
         distortionScale: 3.7,
         fog: this.scene.fog !== undefined
       }
@@ -137,9 +139,9 @@ export default class Engine {
     uniforms[ 'mieDirectionalG' ].value = 0.8
 
     this.parameters = {
-      distance: 1000,
-      inclination: 0.278,
-      azimuth: 0.248
+      distance: 500,
+      inclination: 0.1,
+      azimuth: 0.4
     }
     var cubeCamera = new THREE.CubeCamera(0.1, 1, 512)
     cubeCamera.renderTarget.texture.generateMipmaps = true
