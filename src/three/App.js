@@ -108,6 +108,7 @@ export default class App extends Engine {
     // update
     // this.waterOld.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
+    this.collectable.update()
     // this.boat.update(this.timeElapsed)
     if (this.water) this.water.material.uniforms[ 'time' ].value += 0.1 / 60.0
 

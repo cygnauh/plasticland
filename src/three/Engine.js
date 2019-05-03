@@ -76,14 +76,11 @@ export default class Engine {
     this.renderer.gammaOutput = true
     this.renderer.gammaFactor = 2.2
   }
-
   initInventoryScene () {
-    // scene
     this.inventoryScene = new THREE.Scene()
     // this.inventoryScene.background = new THREE.Color(0xff0000)
     this.inventoryScene.name = 'scene2'
-    this.inventoryScene.position.y = -5
-
+    this.inventoryScene.position.y = -8
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(
       5,
@@ -91,12 +88,12 @@ export default class Engine {
       1,
       10000
     )
-
-    this.inventoryCamera.position.set(0, 10, 70)
-    this.inventoryScene.add(this.ambiantlight)
-    this.inventoryScene.add(this.spotlight)
+    // this.inventoryCamera.position.set(0, 10, 70)
+    this.inventoryCamera.position.set(0, 10, 250)
+    // this.inventoryScene.add(this.ambiantlight)
+    // this.inventoryScene.add(this.spotlight)
     // helpers
-    this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
+    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   initLoadingManager () {
@@ -140,12 +137,13 @@ export default class Engine {
   render () {
     this.raycaster.setFromCamera(this.mouse, this.camera)
 
-    if (!this.displayInventory) {
-      window.scene = this.scene
-      this.renderer.render(this.scene, this.camera)
-    } else {
-      window.scene = this.inventoryScene
-      this.renderer.render(this.inventoryScene, this.inventoryCamera)
-    }
+    // add and remove collectables or main XP scene
+    this.renderer.render(this.scene, this.camera)
+    // if (!this.displayInventory) {
+
+    // } else {
+    // window.scene = this.inventoryScene
+    // this.renderer.render(this.inventoryScene, this.inventoryCamera)
+    // }
   }
 }

@@ -52,13 +52,11 @@ export default class Collectable {
 
     this.animateVector3(this.item.position, new THREE.Vector3(-5, 8, 8), {
       duration: 800,
-      easing: TWEEN.Easing.Quadratic.InOut,
-      callback: () => {
-        // console.log('Completed')
-      }
+      easing: TWEEN.Easing.Quadratic.InOut
     })
   }
   backToList () {
+    console.log(this.item.name)
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     let x = itemIndex % 3 === 0 ? -13 : itemIndex % 3 === 1 ? 0 : 13
     let y = itemIndex < 3 ? 10 : 0
@@ -66,10 +64,7 @@ export default class Collectable {
     this.scaleItems(this.otherItems, animation, 1)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
       duration: 800,
-      easing: TWEEN.Easing.Quadratic.InOut,
-      callback: () => {
-        // console.log('Completed')
-      }
+      easing: TWEEN.Easing.Quadratic.InOut
     })
   }
   scaleItems (array, animation, scale) {
@@ -79,7 +74,6 @@ export default class Collectable {
         easing: TWEEN.Easing.Quadratic.InOut,
         callback: () => {
           animation = false
-          // console.log('Completed')
         }
       })
     })
