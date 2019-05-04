@@ -17,7 +17,8 @@ export default class Instances {
     let material = new THREE.MeshPhongMaterial()
 
     // dechets Glb
-    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { scale: 1 })
+    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager)
+    // let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { scale: 1})
     dechetsPromise.then(geometries => {
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
 
@@ -38,8 +39,8 @@ export default class Instances {
           cluster.setPositionAt(rank, new THREE.Vector3(translation[0], translation[1], translation[2]))
           cluster.setScaleAt(rank, new THREE.Vector3(scale[0], scale[1], scale[2]).multiplyScalar(3))
         })
-        cluster.position.set(-50,0,0)
-        cluster.rotation.set(0,Math.PI*2,0)
+        cluster.position.set(-50, 0, 0)
+        cluster.rotation.set(0, Math.PI * 2, 0)
         cluster.scale.set(1.5, 1.8, 1.2)
         this.scene.add(cluster)
         console.log(cluster, this.scene)
