@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "tar": "^4.4.8",
     "three-instanced-mesh": "^0.96.2",
     "tween": "^0.9.0",
     "vue": "^2.6.6"

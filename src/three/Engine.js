@@ -25,8 +25,6 @@ export default class Engine {
     // scene
     this.scene = new THREE.Scene()
     this.scene.name = 'scene1'
-    // this.scene.fog = new THREE.FogExp2(0x544d75, 0.5)
-    this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
     window.scene1 = this.scene
     window.THREE = THREE
 
@@ -43,10 +41,11 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera)
 
     // light
-    this.pointLight = new THREE.PointLight(0xffffff, 2, 15)
-    this.pointLight.position.set(0, 6, 0)
-    this.scene.add(this.pointLight)
-    this.helpers.pointLightHelper(this.pointLight, 1) // light helper
+    // this.pointLight = new THREE.PointLight(0xffffff, 2, 15)
+    // this.pointLight.position.set(0, 6, 0)
+    // this.scene.add(this.pointLight)
+
+    // this.helpers.pointLightHelper(this.pointLight, 1) // light helper
     this.ambiantlight = new THREE.AmbientLight(0x404040)
     this.spotlight = new THREE.SpotLight(0x404040)
     this.spotlight.position.set(100, 1000, 100)
@@ -54,7 +53,8 @@ export default class Engine {
     this.scene.add(this.ambiantlight)
     this.scene.add(this.spotlight)
     // fog
-    this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
+    // this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
+    this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
 
     // mouse
     this.mouse = new THREE.Vector2(0, 0)
