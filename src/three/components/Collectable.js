@@ -5,8 +5,8 @@ import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
 
 export default class Collectable {
-  constructor (scene, manager, camera, width, height) {
-    this.scene = scene
+  constructor (manager, camera, width, height) {
+    // this.scene = scene
     this.manager = manager
     this.camera = camera
     this.width = width
@@ -27,7 +27,7 @@ export default class Collectable {
         obj = new GltfLoaderTest(
           value.name,
           value.model,
-          this.scene,
+          // this.scene,
           this.manager,
           x, // x
           y, // y

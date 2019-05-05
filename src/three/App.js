@@ -17,6 +17,7 @@ export default class App extends Engine {
     this.addGeometry()
     this.animate()
     this.addWater()
+    this.createGroup()
   }
 
   addGeometry () {
@@ -24,8 +25,15 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     // this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
-    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
+    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
+    this.collectable = new Collectable(this.manager, this.camera, this.width, this.height)
+
+    // TODO handle this, to displau when it's needed
+    setTimeout(() => {
+      this.collectable.objects.forEach((element) => {
+        this.scene.add(element.gltf)
+      })
+    }, 300)
   }
   addWater () {
     let light
@@ -80,6 +88,33 @@ export default class App extends Engine {
     cubeCamera.update(this.renderer, sky)
   }
 
+  createGroup () {
+    this.xpGroup = new THREE.Group()
+    setTimeout(() => {
+      console.log(this.mountain.gltf)
+      this.instances.clusterArray.forEach((element) => {
+        // console.log(element)
+        this.xpGroup.add(element)
+      })
+    }, 500)
+
+    this.xpGroup.add(this.water)
+    // this.xpGroup.add(this.mountain)
+    this.scene.add(this.xpGroup)
+  }
+
+  setDisplayInventory (value) {
+    this.displayInventory = value
+    // remove the groupe from the scene
+    if (this.displayInventory) {
+      console.log('hee')
+      this.scene.remove(this.camera)
+      // this.scene.add(this.inventoryCamera)
+    } else {
+      // this.scene.activeCamera = this.camera
+    }
+    // this.scene.activeCamera.needsUpdate = true
+  }
   onClick () {
     let intersected = false
     let intersects = this.raycaster.intersectObjects(this.scene.children)

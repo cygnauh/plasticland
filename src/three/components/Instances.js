@@ -9,7 +9,7 @@ export default class Instances {
     this.scene = scene
     this.manager = manager
     this.path = path
-
+    this.clusterArray = []
     this.initInstances()
   }
 
@@ -21,7 +21,6 @@ export default class Instances {
     // let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { scale: 1})
     dechetsPromise.then(geometries => {
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
-
       const e = new THREE.Euler()
 
       dechets.nodes.forEach(node => {
@@ -42,8 +41,9 @@ export default class Instances {
         cluster.position.set(-50, 0, 0)
         cluster.rotation.set(0, Math.PI * 2, 0)
         cluster.scale.set(1.5, 1.8, 1.2)
-        this.scene.add(cluster)
-        console.log(cluster, this.scene)
+        this.clusterArray.push(cluster)
+        // this.scene.add(cluster)
+        // console.log(cluster, this.scene)
       })
     })
     // console.log(dechets.geometry)

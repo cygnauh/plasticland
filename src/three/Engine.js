@@ -24,14 +24,18 @@ export default class Engine {
   initScene () {
     // scene
     this.scene = new THREE.Scene()
-    this.scene.name = 'scene1'
-    window.scene1 = this.scene
+    this.scene.name = 'scene'
+    window.scene = this.scene
     window.THREE = THREE
+    // this.scene.rotateX(-Math.PI / 4)
+    // this.scene.rotateZ(Math.PI / 2)
 
     // camera
     this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 1, 0)
-
+    // this.camera.name = 'currentCamera'
+    // this.camera.rotateX(-Math.PI / 2)
+    // var cam = this.scene.getObjectById(currentCamera)
     // clock
     this.clock = new THREE.Clock()
     this.timeDelta = 0
@@ -47,11 +51,11 @@ export default class Engine {
 
     // this.helpers.pointLightHelper(this.pointLight, 1) // light helper
     this.ambiantlight = new THREE.AmbientLight(0x404040)
-    this.spotlight = new THREE.SpotLight(0x404040)
-    this.spotlight.position.set(100, 1000, 100)
+    // this.spotlight = new THREE.SpotLight(0x404040)
+    // this.spotlight.position.set(100, 1000, 100)
 
     this.scene.add(this.ambiantlight)
-    this.scene.add(this.spotlight)
+    // this.scene.add(this.spotlight)
     // fog
     // this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
     this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
@@ -77,19 +81,14 @@ export default class Engine {
     this.renderer.gammaFactor = 2.2
   }
   initInventoryScene () {
-    this.inventoryScene = new THREE.Scene()
+    // this.inventoryScene = new THREE.Scene()
     // this.inventoryScene.background = new THREE.Color(0xff0000)
-    this.inventoryScene.name = 'scene2'
-    this.inventoryScene.position.y = -8
+    // this.inventoryScene.name = 'scene2'
+    // this.inventoryScene.position.y = -8
     // camera
-    this.inventoryCamera = new THREE.PerspectiveCamera(
-      5,
-      this.width / this.height,
-      1,
-      10000
-    )
-    // this.inventoryCamera.position.set(0, 10, 70)
+    this.inventoryCamera = new THREE.PerspectiveCamera(5, this.width / this.height, 100, 1000)
     this.inventoryCamera.position.set(0, 10, 250)
+    this.inventoryCamera.position.set(1000, 10, 250)
     // this.inventoryScene.add(this.ambiantlight)
     // this.inventoryScene.add(this.spotlight)
     // helpers
@@ -125,10 +124,6 @@ export default class Engine {
     this.renderer.setSize(window.innerWidth, window.innerHeight)
   }
 
-  setDisplayInventory (value) {
-    this.displayInventory = value
-  }
-
   onMouseMove (e) {
     this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
@@ -136,14 +131,7 @@ export default class Engine {
 
   render () {
     this.raycaster.setFromCamera(this.mouse, this.camera)
-
     // add and remove collectables or main XP scene
     this.renderer.render(this.scene, this.camera)
-    // if (!this.displayInventory) {
-
-    // } else {
-    // window.scene = this.inventoryScene
-    // this.renderer.render(this.inventoryScene, this.inventoryCamera)
-    // }
   }
 }

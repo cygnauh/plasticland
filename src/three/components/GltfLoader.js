@@ -5,7 +5,7 @@ export default class GltfLoader {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
-
+    this.gltf = null
     // draco loader
     // see gltf-pipeline
     // let scale = 1
@@ -13,13 +13,14 @@ export default class GltfLoader {
     // let scaleFactor = scale
     let promise = new Promise((resolve, reject) => {
       this.loader.load(path, (gltf) => {
-        gltf.scene.name = this.name
-        this.scene.add(gltf.scene)
-
+        this.gltf = gltf.scene
+        this.gltf.name = this.name
+        console.log(this.gltf)
+        this.scene.add(this.gltf)
         this.scene.scale.multiplyScalar(0.1)
 
-        console.log(gltf)
-        gltf.scene.traverse(function (child) {
+        // console.log(this.gltf)
+        this.gltf.traverse(function (child) {
           // console.log(child.material)
           if (child.isMesh) {
             // show the count of vertices here
