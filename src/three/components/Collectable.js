@@ -1,12 +1,12 @@
 // import * as THREE from 'three'
-import GltfLoaderTest from './GltfLoaderTest'
+import GltfLoader from './GltfLoader'
 import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
 
 export default class Collectable {
-  constructor (manager, camera, width, height) {
-    // this.scene = scene
+  constructor (scene, manager, camera, width, height) {
+    this.scene = scene
     this.manager = manager
     this.camera = camera
     this.width = width
@@ -24,17 +24,12 @@ export default class Collectable {
       let x = i % 3 === 0 ? -13 : i % 3 === 1 ? 0 : 13
       let y = i < 3 ? 10 : 0
       if (value) {
-        obj = new GltfLoaderTest(
+        obj = new GltfLoader(
           value.name,
           value.model,
-          // this.scene,
+          this.scene,
           this.manager,
-          x, // x
-          y, // y
-          0, // z
-          0.0001, // scale
-          0, // rotation
-          value.found
+          { posX: x, posY: y, posZ: 0, scale: 0.0001, found: value.found }
         )
       }
       this.objects.push(obj)

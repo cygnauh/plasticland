@@ -75,10 +75,12 @@ export default class Engine {
     this.renderer.gammaFactor = 2.2
   }
   initInventoryScene () {
-    // this.inventoryScene = new THREE.Scene()
-    // this.inventoryScene.background = new THREE.Color(0xff0000)
-    // this.inventoryScene.name = 'scene2'
-    // this.inventoryScene.position.y = -8
+    // scene
+    this.inventoryScene = new THREE.Scene()
+    this.inventoryScene.background = new THREE.Color(0xff0000)
+    this.inventoryScene.name = 'scene2'
+    this.inventoryScene.position.y = -8
+
     // camera
     this.inventoryCamera = new THREE.PerspectiveCamera(5, this.width / this.height, 100, 1000)
     this.inventoryCamera.position.set(0, 10, 250)

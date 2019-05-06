@@ -17,7 +17,7 @@ export default class Instances {
     let material = new THREE.MeshPhongMaterial()
 
     // dechets Glb
-    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager)
+    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, {})
     dechetsPromise.then(geometries => {
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
       const e = new THREE.Euler()
@@ -28,6 +28,7 @@ export default class Instances {
           clusterNodes[r].push(node)
         }
       })
+
       geometries.forEach((geometry, index) => {
         let cluster = new InstancedMesh(geometry, material, clusterNodes[index].length, true, false, true)
         clusterNodes[index].forEach((node, rank) => {

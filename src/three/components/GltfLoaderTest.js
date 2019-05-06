@@ -7,6 +7,7 @@ export default class GltfLoaderTest {
     this.name = name
     this.loader = new GLTFLoader(manager)
     this.gltf = null
+
     // draco loader
     // see gltf-pipeline
 

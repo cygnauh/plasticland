@@ -4,9 +4,9 @@ import Engine from './Engine'
 import WaterV2 from './components/WaterV2'
 import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
-// import Boat from './components/Boat'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
+// import Boat from './components/Boat'
 
 export default class App extends Engine {
   constructor (canvas) {
@@ -22,8 +22,8 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     // this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
-    this.collectable = new Collectable(this.manager, this.camera, this.width, this.height)
+    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, {})
+    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
 
     // TODO handle this, to display when it's needed
     setTimeout(() => {
