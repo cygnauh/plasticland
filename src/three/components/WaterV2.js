@@ -12,7 +12,8 @@ export default class WaterV2 extends THREE.Object3D {
     this.initPlaneGeometry(10000, 10000, 20, 20)
     this.initWater()
     this.initSkybox()
-    this.lightUpdate()
+    this.initCubeCamera()
+    this.updateGeom()
   }
 
   initLight () {
@@ -56,17 +57,12 @@ export default class WaterV2 extends THREE.Object3D {
     uniforms[ 'mieDirectionalG' ].value = 0.8
   }
 
-  lightUpdate () {
+  updateGeom () {
     this.parameters = {
       distance: 500,
       inclination: 0.1,
       azimuth: 0.4
     }
-
-    this.cubeCamera = new THREE.CubeCamera(0.1, 1, 512)
-    this.cubeCamera.renderTarget.texture.generateMipmaps = true
-    this.cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter
-    this.scene.background = this.cubeCamera.renderTarget
 
     let theta = Math.PI * (this.parameters.inclination - 0.5)
     let phi = 2 * Math.PI * (this.parameters.azimuth - 0.5)
@@ -75,13 +71,31 @@ export default class WaterV2 extends THREE.Object3D {
     this.light.position.y = this.parameters.distance * Math.sin(phi) * Math.sin(theta)
     this.light.position.z = this.parameters.distance * Math.sin(phi) * Math.cos(theta)
 
-    this.sky.material.uniforms['sunPosition'].value = this.light.position.copy(this.light.position)
-    this.water.material.uniforms['sunDirection'].value.copy(this.light.position).normalize()
+    this.updateSky()
+    this.updateWater()
+    this.updateCubeCamera()
+  }
 
+  initCubeCamera () {
+    this.cubeCamera = new THREE.CubeCamera(0.1, 1, 512)
+    this.cubeCamera.renderTarget.texture.generateMipmaps = true
+    this.cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter
+    this.scene.background = this.cubeCamera.renderTarget
+  }
+
+  updateSky () {
+    this.sky.material.uniforms['sunPosition'].value = this.light.position.copy(this.light.position)
+  }
+
+  updateWater () {
+    this.water.material.uniforms['sunDirection'].value.copy(this.light.position).normalize()
+  }
+
+  updateCubeCamera () {
     this.cubeCamera.update(this.renderer, this.sky)
   }
 
   update (time) {
-    this.water.material.uniforms['time'].value += 0.1 / 60.0
+    this.water.material.uniforms['time'].value = time / 10
   }
 }
