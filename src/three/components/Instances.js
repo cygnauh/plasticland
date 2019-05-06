@@ -18,7 +18,6 @@ export default class Instances {
 
     // dechets Glb
     let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager)
-    // let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { scale: 1})
     dechetsPromise.then(geometries => {
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
       const e = new THREE.Euler()

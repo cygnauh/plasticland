@@ -36,7 +36,7 @@ export default class App extends Engine {
   createGroup () {
     this.xpGroup = new THREE.Group()
     setTimeout(() => {
-      console.log(this.mountain.gltf)
+      // console.log(this.mountain.gltf)
       this.instances.clusterArray.forEach((element) => {
         // console.log(element)
         this.xpGroup.add(element)
