@@ -11,8 +11,8 @@ export default class GltfLoader {
     // draco loader
     // see gltf-pipeline
 
-    this.flatMaterial = new THREE.MeshPhongMaterial({
-      color: '0x81C186',
+    let flatMaterial = new THREE.MeshPhongMaterial({
+      color: (0x81C186),
       opacity: 0.2,
       blending: THREE.AdditiveBlending
     })
@@ -36,7 +36,7 @@ export default class GltfLoader {
           if (child.isMesh) {
             child.material.side = 2
             if (!found) {
-              child.material = this.flatMaterial
+              child.material = flatMaterial
             }
             let geometry = child.geometry
             geometries.push(geometry)
