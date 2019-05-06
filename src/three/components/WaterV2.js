@@ -3,22 +3,17 @@ import Water from '../three-examples/Water'
 import Sky from '../three-examples/Sky'
 
 export default class WaterV2 extends THREE.Object3D {
-  constructor (scene, renderer) {
+  constructor (scene, renderer, light) {
     super()
     this.scene = scene
     this.renderer = renderer
+    this.light = light
 
-    this.initLight()
-    this.initPlaneGeometry(10000, 10000, 20, 20)
+    this.initPlaneGeometry(5000, 5000, 20, 20)
     this.initWater()
     this.initSkybox()
     this.initCubeCamera()
     this.updateGeom()
-  }
-
-  initLight () {
-    this.light = new THREE.DirectionalLight(0x544d75, 0.8)
-    this.scene.add(this.light)
   }
 
   initPlaneGeometry (width, height, widthSegments, heightSegments) {
@@ -37,7 +32,7 @@ export default class WaterV2 extends THREE.Object3D {
         alpha: 1.0,
         sunDirection: this.light.position.clone().normalize(),
         sunColor: 0xffffff,
-        waterColor: 0x544d75,
+        waterColor: 0xffffff,
         distortionScale: 3.7,
         fog: this.scene.fog !== undefined
       }

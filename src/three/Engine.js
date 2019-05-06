@@ -36,6 +36,7 @@ export default class Engine {
     // this.camera.name = 'currentCamera'
     // this.camera.rotateX(-Math.PI / 2)
     // var cam = this.scene.getObjectById(currentCamera)
+
     // clock
     this.clock = new THREE.Clock()
     this.timeDelta = 0
@@ -45,9 +46,8 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera)
 
     // light
-    // this.pointLight = new THREE.PointLight(0xffffff, 2, 15)
-    // this.pointLight.position.set(0, 6, 0)
-    // this.scene.add(this.pointLight)
+    this.light = new THREE.DirectionalLight(0x544d75, 0.8)
+    this.scene.add(this.light)
 
     // this.helpers.pointLightHelper(this.pointLight, 1) // light helper
     this.ambiantlight = new THREE.AmbientLight(0x404040)
@@ -57,7 +57,6 @@ export default class Engine {
     this.scene.add(this.ambiantlight)
     // this.scene.add(this.spotlight)
     // fog
-    // this.scene.fog = new THREE.Fog(0x0B2641, 1, 40)
     this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
 
     // mouse
