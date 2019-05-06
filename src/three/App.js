@@ -26,22 +26,22 @@ export default class App extends Engine {
     this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
 
     // TODO handle this, to display when it's needed
-    setTimeout(() => {
-      this.collectable.objects.forEach((element) => {
-        this.scene.add(element.gltf)
-      })
-    }, 300)
+    // setTimeout(() => {
+    //   this.collectable.objects.forEach((element) => {
+    //     this.scene.add(element.gltf)
+    //   })
+    // }, 300)
   }
 
   createGroup () {
     this.xpGroup = new THREE.Group()
-    setTimeout(() => {
-      // console.log(this.mountain.gltf)
-      this.instances.clusterArray.forEach((element) => {
-        // console.log(element)
-        this.xpGroup.add(element)
-      })
-    }, 500)
+    // setTimeout(() => {
+    //   // console.log(this.mountain.gltf)
+    //   this.instances.clusterArray.forEach((element) => {
+    //     // console.log(element)
+    //     this.xpGroup.add(element)
+    //   })
+    // }, 500)
 
     this.xpGroup.add(this.water)
     // this.xpGroup.add(this.mountain)
@@ -88,7 +88,7 @@ export default class App extends Engine {
 
     // update
     this.cube.update(this.timeElapsed)
-    this.collectable.update()
+    // this.collectable.update()
     // this.boat.update(this.timeElapsed)
     this.water.update(this.timeElapsed)
 

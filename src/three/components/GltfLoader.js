@@ -1,7 +1,8 @@
 import GLTFLoader from 'three-gltf-loader'
+import * as THREE from 'three/src/Three'
 
 export default class GltfLoader {
-  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 0.1, found = false }) {
+  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 0.1, found = true }) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
@@ -9,6 +10,12 @@ export default class GltfLoader {
 
     // draco loader
     // see gltf-pipeline
+
+    this.flatMaterial = new THREE.MeshPhongMaterial({
+      color: '0x81C186',
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending
+    })
 
     let geometries = []
 
@@ -41,7 +48,7 @@ export default class GltfLoader {
         // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
       },
       (error) => {
-        // console.log('An error happened' + error)
+        console.log('An error happened' + error)
         reject(new Error('there is an error'))
       })
     })

@@ -64,6 +64,10 @@ export default class Collectable {
   }
   scaleItems (array, animation, scale) {
     array.forEach((element) => {
+      //console.log(element)
+      element.then(geometries => {
+        //console.log("hello")
+      })
       this.animateVector3(element.gltf.scale, new THREE.Vector3(scale, scale, scale), {
         duration: 500,
         easing: TWEEN.Easing.Quadratic.InOut,
