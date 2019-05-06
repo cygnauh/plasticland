@@ -1,11 +1,9 @@
 import * as THREE from 'three'
 import Engine from './Engine'
 
-import WaterOld from './components/WaterOld'
+import WaterV2 from './components/WaterV2'
 import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
-import Water from './components/Water'
-import Sky from './components/Sky'
 // import Boat from './components/Boat'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
@@ -16,76 +14,23 @@ export default class App extends Engine {
 
     this.addGeometry()
     this.animate()
-    this.addWater()
     this.createGroup()
   }
 
   addGeometry () {
-    // this.waterOld = new WaterOld(this.scene)
+    this.water = new WaterV2(this.scene, this.renderer) // this.waterOld = new WaterV1(this.scene) merci quoi :(
     this.cube = new CubeTest(this.scene)
     // this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager)
     this.collectable = new Collectable(this.manager, this.camera, this.width, this.height)
 
-    // TODO handle this, to displau when it's needed
+    // TODO handle this, to display when it's needed
     setTimeout(() => {
       this.collectable.objects.forEach((element) => {
         this.scene.add(element.gltf)
       })
     }, 300)
-  }
-  addWater () {
-    let light
-    let waterGeometry = new THREE.PlaneBufferGeometry(10000, 10000)
-    light = new THREE.DirectionalLight(0x544d75, 0.8)
-    this.scene.add(light)
-    this.water = new THREE.Water(
-      waterGeometry,
-      {
-        textureWidth: 512,
-        textureHeight: 512,
-        waterNormals: new THREE.TextureLoader().load('textures/waternormals.jpg', function (texture) {
-          texture.wrapS = texture.wrapT = THREE.RepeatWrapping
-        }),
-        alpha: 1.0,
-        sunDirection: light.position.clone().normalize(),
-        sunColor: 0xffffff,
-        waterColor: 0x544d75,
-        distortionScale: 3.7,
-        fog: this.scene.fog !== undefined
-      }
-    )
-    this.water.rotation.x = -Math.PI / 2
-    this.scene.add(this.water)
-
-    // Skybox
-    var sky = new THREE.Sky()
-    var uniforms = sky.material.uniforms
-    uniforms[ 'turbidity' ].value = 10
-    uniforms[ 'rayleigh' ].value = 2
-    uniforms[ 'luminance' ].value = 1
-    uniforms[ 'mieCoefficient' ].value = 0.1
-    uniforms[ 'mieDirectionalG' ].value = 0.8
-
-    this.parameters = {
-      distance: 500,
-      inclination: 0.1,
-      azimuth: 0.4
-    }
-    var cubeCamera = new THREE.CubeCamera(0.1, 1, 512)
-    cubeCamera.renderTarget.texture.generateMipmaps = true
-    cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter
-    this.scene.background = cubeCamera.renderTarget
-
-    var theta = Math.PI * (this.parameters.inclination - 0.5)
-    var phi = 2 * Math.PI * (this.parameters.azimuth - 0.5)
-    light.position.x = this.parameters.distance * Math.cos(phi)
-    light.position.y = this.parameters.distance * Math.sin(phi) * Math.sin(theta)
-    light.position.z = this.parameters.distance * Math.sin(phi) * Math.cos(theta)
-    sky.material.uniforms['sunPosition'].value = light.position.copy(light.position)
-    this.water.material.uniforms['sunDirection'].value.copy(light.position).normalize()
-    cubeCamera.update(this.renderer, sky)
   }
 
   createGroup () {
@@ -115,6 +60,7 @@ export default class App extends Engine {
     }
     // this.scene.activeCamera.needsUpdate = true
   }
+
   onClick () {
     let intersected = false
     let intersects = this.raycaster.intersectObjects(this.scene.children)
@@ -141,11 +87,10 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // update
-    // this.waterOld.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.collectable.update()
     // this.boat.update(this.timeElapsed)
-    if (this.water) this.water.material.uniforms[ 'time' ].value += 0.1 / 60.0
+    this.water.update() // this.waterOld.update(this.timeElapsed)
 
     this.render()
 

@@ -1,7 +1,7 @@
 import { Object3D, PlaneBufferGeometry, Mesh, Vector2, Color, TextureLoader, RepeatWrapping, DoubleSide } from 'three'
 import MagicShader from 'magicshader'
 
-export default class WaterOld extends Object3D {
+export default class WaterV1 extends Object3D {
   constructor (scene) {
     super()
     this.scene = scene

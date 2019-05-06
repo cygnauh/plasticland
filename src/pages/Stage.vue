@@ -130,7 +130,7 @@ export default {
       } else {
         this.displayReturn = true
       }
-    },
+    }
   }
 }
 </script>
