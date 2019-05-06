@@ -2,7 +2,7 @@ import GLTFLoader from 'three-gltf-loader'
 import * as THREE from 'three/src/Three'
 
 export default class GltfLoader {
-  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 0.1, found = true }) {
+  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 0.1, found = true, addToScene = true }) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
@@ -30,7 +30,9 @@ export default class GltfLoader {
         // this.gltf.scale.x = scale
         // this.gltf.scale.y = scale
         // this.gltf.scale.z = scale
-        this.scene.add(this.gltf)
+        if (addToScene) {
+          this.scene.add(this.gltf)
+        }
         this.scene.scale.multiplyScalar(scale)
         this.gltf.traverse(function (child) {
           // console.log(child.material)
