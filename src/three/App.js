@@ -23,7 +23,7 @@ export default class App extends Engine {
     // this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, {})
-    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
+    // this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
 
     // TODO handle this, to display when it's needed
     // setTimeout(() => {
@@ -35,13 +35,13 @@ export default class App extends Engine {
 
   createGroup () {
     this.xpGroup = new THREE.Group()
-    // setTimeout(() => {
-    //   // console.log(this.mountain.gltf)
-    //   this.instances.clusterArray.forEach((element) => {
-    //     // console.log(element)
-    //     this.xpGroup.add(element)
-    //   })
-    // }, 500)
+    setTimeout(() => {
+      // console.log(this.mountain.gltf)
+      this.instances.clusterArray.forEach((element) => {
+        // console.log(element)
+        this.xpGroup.add(element)
+      })
+    }, 500)
 
     this.xpGroup.add(this.water)
     // this.xpGroup.add(this.mountain)
