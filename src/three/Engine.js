@@ -48,14 +48,9 @@ export default class Engine {
     // light
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
     this.scene.add(this.light)
+    this.ambientlight = new THREE.AmbientLight(0x404040)
+    this.scene.add(this.ambientlight)
 
-    // this.helpers.pointLightHelper(this.pointLight, 1) // light helper
-    this.ambiantlight = new THREE.AmbientLight(0x404040)
-    // this.spotlight = new THREE.SpotLight(0x404040)
-    // this.spotlight.position.set(100, 1000, 100)
-
-    this.scene.add(this.ambiantlight)
-    // this.scene.add(this.spotlight)
     // fog
     this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
 
