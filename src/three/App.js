@@ -35,14 +35,12 @@ export default class App extends Engine {
 
   createGroup () {
     this.xpGroup = new THREE.Group()
-    // setTimeout(() => {
-    //   // console.log(this.mountain.gltf)
-    //   this.instances.clusterArray.forEach((element) => {
-    //     // console.log(element)
-    //     this.xpGroup.add(element)
-    //   })
-    // }, 500)
-
+    // console.log(this.instances.dechetsPromise)
+    this.instances.dechetsPromise.then(response => {
+      response.meshes.forEach(element => {
+        this.xpGroup.add(element)
+      })
+    })
     this.xpGroup.add(this.water)
     // this.xpGroup.add(this.mountain)
     this.scene.add(this.xpGroup)

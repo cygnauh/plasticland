@@ -17,8 +17,8 @@ export default class Instances {
     let material = new THREE.MeshPhongMaterial()
 
     // dechets Glb
-    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, {})
-    dechetsPromise.then(response => {
+    this.dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, {})
+    this.dechetsPromise.then(response => {
       var geometries = response.geometries
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
       const e = new THREE.Euler()
@@ -43,7 +43,7 @@ export default class Instances {
         cluster.rotation.set(0, Math.PI * 2, 0)
         cluster.scale.set(1.5, 1.8, 1.2)
         this.clusterArray.push(cluster)
-        // this.scene.add(cluster)
+        this.scene.add(cluster)
         // console.log(cluster, this.scene)
       })
     })
