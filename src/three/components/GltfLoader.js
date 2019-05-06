@@ -18,7 +18,7 @@ export default class GltfLoader {
     })
 
     let geometries = []
-    let meshs = []
+    let meshes = []
 
     let promise = new Promise((resolve, reject) => {
       this.loader.load(path, (gltf) => {
@@ -41,10 +41,13 @@ export default class GltfLoader {
             }
             let geometry = child.geometry
             geometries.push(geometry)
-            meshs.push(child)
+            meshes.push(child)
           }
         })
-        resolve(geometries, meshs)
+        resolve({
+          geometries: geometries,
+          meshes: meshes
+        })
       },
       (xhr) => {
         // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
