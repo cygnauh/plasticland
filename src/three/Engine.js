@@ -31,8 +31,8 @@ export default class Engine {
     // this.scene.rotateZ(Math.PI / 2)
 
     // camera
-    this.camera = new THREE.PerspectiveCamera(65, this.width / this.height, 0.01, 10000)
-    this.camera.position.set(0, 1, 0)
+    this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.01, 10000)
+    this.camera.position.set(0, 3.5, -52)
     // this.camera.name = 'currentCamera'
     // this.camera.rotateX(-Math.PI / 2)
     // var cam = this.scene.getObjectById(currentCamera)
@@ -52,7 +52,7 @@ export default class Engine {
     this.scene.add(this.ambientlight)
 
     // fog
-    this.scene.fog = new THREE.Fog(0x263247, 0.1, 18)
+    this.scene.fog = new THREE.Fog(0x263247, 0.1, 108)
 
     // mouse
     this.mouse = new THREE.Vector2(0, 0)

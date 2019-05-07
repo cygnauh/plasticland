@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import GltfLoaderTest from './GltfLoaderTest'
+import GltfLoader from './GltfLoader'
 
 export default class Boat {
   constructor (scene, manager, camera) {
@@ -11,17 +11,9 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoaderTest(
-      'boat',
-      process.env.BASE_URL + 'models/boat.gltf',
-      this.scene,
-      this.manager,
-      0,
-      0,
-      0,
-      Math.PI
-    )
+    this.object = new GltfLoader('boat', './models/boat.gltf', this.scene, this.manager, { posX: -0.1, posY: 0, posZ: -52 })
   }
+
   inclinaisonBoat (time) {
     let points = new Array(3).fill(null) // points around the boat
     let stepAngle = (Math.PI * 2) / points.length // angle of each point from origin
