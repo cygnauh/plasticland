@@ -1,11 +1,11 @@
-import GLTFLoader from 'three-gltf-loader'
-import * as THREE from 'three/src/Three'
+import * as THREE from 'three'
+import GLTFLoader from '../utils/GLTFLoader'
 
 export default class GltfLoader {
   constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 1, found = true, addToScene = true, rotateY = 0 }) {
     this.scene = scene
     this.name = name
-    this.loader = new GLTFLoader(manager)
+    this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
 
     // draco loader
