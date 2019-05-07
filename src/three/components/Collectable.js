@@ -22,7 +22,7 @@ export default class Collectable {
     let obj = null
     store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? -13 : i % 3 === 1 ? 0 : 13
-      let y = i < 3 ? 10 : 0
+      let y = i < 3 ? 5 : -5
       if (value) {
         obj = new GltfLoader(
           value.name,
@@ -48,7 +48,6 @@ export default class Collectable {
         this.item = element
       }
     })
-    console.log(this.item)
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, animation, 0.00001)
@@ -60,7 +59,7 @@ export default class Collectable {
   backToList () {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     let x = itemIndex % 3 === 0 ? -13 : itemIndex % 3 === 1 ? 0 : 13
-    let y = itemIndex < 3 ? 10 : 0
+    let y = itemIndex < 3 ? 5 : -5
     let animation = !this.canAnimated
     this.scaleItems(this.otherItems, animation, 1)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {

@@ -54,19 +54,19 @@ export default class App extends Engine {
       this.scene.background = null
       this.scene.remove(this.mainGroup)
       console.log(this.collectable.objects)
-      // this.collectable.objects.then(response => {
-      //   response.forEach(element => {
-      //     console.log(element)
-      //     this.scene.add(element)
-      //   })
-      // })
+      this.collectable.objects.forEach(element => {
+        console.log(element)
+        this.scene.add(element)
+      })
+      this.camera.position.set(10, 0, 40)
       // this.scene.add(this.inventoryCamera)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
-      // this.collectable.objects.forEach(element => {
-      //   this.scene.remove(element)
-      // })
+      this.collectable.objects.forEach(element => {
+        this.scene.remove(element)
+      })
       this.scene.add(this.mainGroup)
+      this.camera.position.set(0, 3.5, -52)
       // this.scene.activeCamera = this.camera
     }
     // this.scene.activeCamera.needsUpdate = true
@@ -100,7 +100,7 @@ export default class App extends Engine {
     // update
     this.cube.update(this.timeElapsed)
     this.collectable.update()
-    this.boat.update(this.timeElapsed)
+    // this.boat.update(this.timeElapsed)
     this.environment.update(this.timeElapsed)
 
     this.render()
