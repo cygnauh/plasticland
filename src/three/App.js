@@ -18,7 +18,7 @@ export default class App extends Engine {
   }
 
   addGeometry () {
-    this.water = new WaterV2(this.scene, this.renderer, this.light) // this.waterOld = new WaterV1(this.scene) merci quoi :(
+    this.water = new WaterV2(this.scene, this.renderer, this.light)
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
@@ -87,7 +87,7 @@ export default class App extends Engine {
     // update
     this.cube.update(this.timeElapsed)
     // this.collectable.update()
-    // this.boat.update(this.timeElapsed)
+    this.boat.update(this.timeElapsed)
     this.water.update(this.timeElapsed)
 
     this.render()
