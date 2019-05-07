@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import GltfLoader from './GltfLoader'
-import * as TWEEN from "tween";
+import * as TWEEN from 'tween'
 
 export default class Boat {
   constructor (scene, manager, camera) {
