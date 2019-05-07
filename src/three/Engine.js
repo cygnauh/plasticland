@@ -31,7 +31,7 @@ export default class Engine {
     // this.scene.rotateZ(Math.PI / 2)
 
     // camera
-    this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.01, 10000)
+    this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 3.5, -52)
     // this.camera.name = 'currentCamera'
     // this.camera.rotateX(-Math.PI / 2)
