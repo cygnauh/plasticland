@@ -26,7 +26,7 @@
 <script>
 import Vue from 'vue'
 import InventoryDetail from './InventoryDetail'
-import { store } from '../store/index'
+import { store } from '../../store/index'
 export default {
   name: 'InventoryList',
   data () {
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../assets/scss/index';
+  @import '../../assets/scss/index';
   .inventory{
     position: absolute;
     /*overflow: scroll;*/

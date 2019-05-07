@@ -1,8 +1,8 @@
 import * as THREE from 'three'
-import Water from '../three-examples/Water'
-import Sky from '../three-examples/Sky'
+import Water from './Water'
+import Sky from './Sky'
 
-export default class WaterV2 extends THREE.Object3D {
+export default class Environment extends THREE.Object3D {
   constructor (scene, renderer, light) {
     super()
     this.scene = scene
@@ -38,7 +38,7 @@ export default class WaterV2 extends THREE.Object3D {
       }
     )
     this.water.rotation.x = -Math.PI / 2
-    this.scene.add(this.water)
+    // this.scene.add(this.water)
   }
 
   initSkybox () {

@@ -871,7 +871,7 @@
     copy-webpack-plugin "^4.6.0"
     css-loader "^1.0.1"
     cssnano "^4.1.10"
-    current-script-polyfill "^1.0.0"
+    current-three-polyfill "^1.0.0"
     debug "^4.1.1"
     dotenv "^7.0.0"
     dotenv-expand "^5.1.0"
@@ -2595,7 +2595,7 @@ csso@^3.5.1:
 
 current-script-polyfill@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/current-script-polyfill/-/current-script-polyfill-1.0.0.tgz#f31cf7e4f3e218b0726e738ca92a02d3488ef615"
+  resolved "https://registry.yarnpkg.com/current-three-polyfill/-/current-three-polyfill-1.0.0.tgz#f31cf7e4f3e218b0726e738ca92a02d3488ef615"
   integrity sha1-8xz35PPiGLBybnOMqSoC00iO9hU=
 
 currently-unhandled@^0.4.1:

@@ -72,8 +72,8 @@
 import Vue from 'vue'
 // import Engine from '../three/Engine'
 import App from '../three/App'
-import Timer from '../components/Timer/Timer'
-import InventoryList from './InventoryList'
+import Timer from './Timer/Timer'
+import InventoryList from './Inventory/InventoryList'
 import { store } from '../store/index'
 
 export default {

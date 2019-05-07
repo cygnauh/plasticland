@@ -29,10 +29,12 @@ export default class Collectable {
           value.model,
           this.scene,
           this.manager,
-          { posX: x, posY: y, posZ: 0, scale: 0.0001, found: value.found }
+          { posX: x, posY: y, posZ: 0, scale: 1, found: value.found, addToScene: false }
         )
+        obj.then(response => {
+          this.objects.push(response.meshes[0])
+        })
       }
-      this.objects.push(obj)
     })
     setTimeout(() => {
       let animation = !this.canAnimated
@@ -63,15 +65,13 @@ export default class Collectable {
   }
   scaleItems (array, animation, scale) {
     array.forEach((element) => {
-      element.then(response => {
-        const meshes = response.meshes
-        this.animateVector3(meshes[0].scale, new THREE.Vector3(scale, scale, scale), {
-          duration: 500,
-          easing: TWEEN.Easing.Quadratic.InOut,
-          callback: () => {
-            animation = false
-          }
-        })
+      const meshes = element
+      this.animateVector3(meshes.scale, new THREE.Vector3(scale, scale, scale), {
+        duration: 500,
+        easing: TWEEN.Easing.Quadratic.InOut,
+        callback: () => {
+          animation = false
+        }
       })
     })
     this.canAnimated = animation

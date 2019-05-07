@@ -108,22 +108,22 @@ export default class WaterV1 extends Object3D {
         case 'ArrowRight':
           // console.log("turned right")
           this.plane.material.uniforms.uKeyboard.value.x += 0.1
-          console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
+          // console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
           break
         case 'ArrowLeft':
           // console.log("turned left")
           this.plane.material.uniforms.uKeyboard.value.x -= 0.1
-          console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
+          // console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
           break
         case 'ArrowDown':
           // console.log("go down")
           this.plane.material.uniforms.uKeyboard.value.y -= 0.1
-          console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
+          // console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
           break
         case 'ArrowUp':
           // console.log("go up")
           this.plane.material.uniforms.uKeyboard.value.y += 0.1
-          console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
+          // console.log(this.plane.material.uniforms.uKeyboard.value.x, this.plane.material.uniforms.uKeyboard.value.y)
           break
         default:
           break
