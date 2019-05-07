@@ -1,5 +1,4 @@
 import { Object3D, PlaneBufferGeometry, Mesh, Vector2, Color, TextureLoader, RepeatWrapping, DoubleSide } from 'three'
-import MagicShader from 'magicshader'
 
 export default class WaterV1 extends Object3D {
   constructor (scene) {
@@ -83,7 +82,7 @@ export default class WaterV1 extends Object3D {
             }
         `
 
-    this.material = new MagicShader({
+    this.material = new THREE.RawShaderMaterial({
       uniforms: {
         uMap: {
           value: new TextureLoader().load('https://cinemont.com/tutorials/zelda/water.png', (texture) => {
