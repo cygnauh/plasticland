@@ -2,7 +2,7 @@ import GLTFLoader from 'three-gltf-loader'
 import * as THREE from 'three/src/Three'
 
 export default class GltfLoader {
-  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 0.1, found = true, addToScene = true }) {
+  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 1, found = true, addToScene = true, rotateY = 0 }) {
     this.scene = scene
     this.name = name
     this.loader = new GLTFLoader(manager)
@@ -27,13 +27,14 @@ export default class GltfLoader {
         this.gltf.position.x = posX
         this.gltf.position.y = posY
         this.gltf.position.z = posZ
-        // this.gltf.scale.x = scale
-        // this.gltf.scale.y = scale
-        // this.gltf.scale.z = scale
+        this.gltf.scale.x = scale
+        this.gltf.scale.y = scale
+        this.gltf.scale.z = scale
+        this.gltf.rotation.y = rotateY
         if (addToScene) {
           this.scene.add(this.gltf)
         }
-        this.scene.scale.multiplyScalar(scale)
+        // this.scene.scale.multiplyScalar(scale)
         this.gltf.traverse(function (child) {
           // console.log(child.material)
           if (child.isMesh) {
@@ -55,7 +56,7 @@ export default class GltfLoader {
         // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
       },
       (error) => {
-        console.log('An error happened' + error)
+        // console.log('An error happened' + error)
         reject(new Error('there is an error'))
       })
     })

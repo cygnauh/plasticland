@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import GltfLoaderTest from './GltfLoaderTest'
+import GltfLoader from './GltfLoader'
+import * as TWEEN from "tween";
 
 export default class Boat {
   constructor (scene, manager, camera) {
@@ -11,17 +12,9 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoaderTest(
-      'boat',
-      process.env.BASE_URL + 'models/boat.gltf',
-      this.scene,
-      this.manager,
-      0,
-      0,
-      0,
-      Math.PI
-    )
+    this.object = new GltfLoader('boat', './models/boat.gltf', this.scene, this.manager, { posX: -0.1, posY: 0, posZ: -52 })
   }
+
   inclinaisonBoat (time) {
     let points = new Array(3).fill(null) // points around the boat
     let stepAngle = (Math.PI * 2) / points.length // angle of each point from origin
@@ -45,40 +38,46 @@ export default class Boat {
       cb.cross(ab) // cross product (produit vectoriel)
       cb.normalize()
 
-      if (this.object.gltf) {
-        let obj = this.object.gltf
-        // obj.up.copy(cb) // up vector, when it's uncomment boat become distorted TODO test
-        obj.matrixNeedsUpdate = true
-        let lookAtVector = new THREE.Vector3(0, 0, -1) // camera default lookAt position
-        lookAtVector.applyQuaternion(this.camera.quaternion)
-        lookAtVector.y = 0
-        lookAtVector.add(obj.position)
-        obj.lookAt(lookAtVector) // boat and camera look at the same direction
+      if (this.object) {
+        this.object.then(response => {
+          let obj = response.meshes[0]
+          // obj.up.copy(cb)
+          // up vector, when it's uncomment boat become distorted TODO
+          obj.matrixNeedsUpdate = true
+          let lookAtVector = new THREE.Vector3(0, 0, -1) // camera default lookAt position
+          lookAtVector.applyQuaternion(this.camera.quaternion)
+          //   lookAtVector.y = 0
+          //   lookAtVector.add(obj.position)
+          //   obj.lookAt(lookAtVector) // boat and camera look at the same direction
+        })
       }
     }
   }
 
   calculateSurface (x, z, uTime) {
     let y = 0.0
-    let SCALE = 10.0
+    const scale = 10.0
+    const strength = 10.0
     y +=
-      (Math.sin((x * 1.0) / SCALE + uTime * 1.0) +
-        Math.sin((x * 2.3) / SCALE + uTime * 1.5) +
-        Math.sin((x * 3.3) / SCALE + uTime * 0.4)) /
-      4.0
+      (Math.sin((x * 1.0) / scale + uTime * 1.0) +
+        Math.sin((x * 2.3) / scale + uTime * 1.5) +
+        Math.sin((x * 3.3) / scale + uTime * 0.4)) /
+      strength
     y +=
-      (Math.sin((z * 0.2) / SCALE + uTime * 1.8) +
-        Math.sin((z * 1.8) / SCALE + uTime * 1.8) +
-        Math.sin((z * 2.8) / SCALE + uTime * 0.8)) /
-      2.0
+      (Math.sin((z * 0.2) / scale + uTime * 1.8) +
+        Math.sin((z * 1.8) / scale + uTime * 1.8) +
+        Math.sin((z * 2.8) / scale + uTime * 0.8)) /
+      strength
     return y
   }
 
   update (time) {
-    if (this.object && this.object.gltf) {
-      let pos = this.object.gltf.position
-      let y = this.calculateSurface(pos.x, pos.z, time)
-      pos.y = y + 1.2
+    if (this.object) {
+      this.object.then(response => {
+        let pos = response.meshes[0].position
+        let y = this.calculateSurface(pos.x, pos.z, time)
+        pos.y = y
+      })
     }
     this.inclinaisonBoat(time)
   }

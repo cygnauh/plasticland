@@ -6,7 +6,7 @@ import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
-// import Boat from './components/Boat'
+import Boat from './components/Boat'
 
 export default class App extends Engine {
   constructor (canvas) {
@@ -18,9 +18,9 @@ export default class App extends Engine {
   initGeometry () {
     this.environment = new Environment(this.scene, this.renderer, this.light) // this.waterOld = new WaterV1(this.scene) merci quoi :(
     this.cube = new CubeTest(this.scene)
-    // this.boat = new Boat(this.scene, this.manager, this.camera)
+    this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { addToScene: false })
+    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: false })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
 
@@ -90,7 +90,7 @@ export default class App extends Engine {
     // update
     this.cube.update(this.timeElapsed)
     this.collectable.update()
-    // this.boat.update(this.timeElapsed)
+    this.boat.update(this.timeElapsed)
     this.environment.update(this.timeElapsed)
 
     this.render()
