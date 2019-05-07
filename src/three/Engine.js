@@ -43,7 +43,7 @@ export default class Engine {
     this.timeElapsed = 0
 
     // helpers
-    this.helpers = new Helpers(this.scene, this.camera)
+    this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // light
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
