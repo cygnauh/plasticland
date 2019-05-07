@@ -23,7 +23,7 @@ export default class GltfLoader {
     let promise = new Promise((resolve, reject) => {
       this.loader.load(path, (gltf) => {
         this.gltf = gltf.scene
-        this.gltf.name = this.name
+        this.gltf.name = name
         this.gltf.position.x = posX
         this.gltf.position.y = posY
         this.gltf.position.z = posZ
@@ -44,9 +44,9 @@ export default class GltfLoader {
             }
             let geometry = child.geometry
             geometries.push(geometry)
-            meshes.push(child)
           }
         })
+        meshes.push(this.gltf)
         resolve({
           geometries: geometries,
           meshes: meshes

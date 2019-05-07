@@ -12,7 +12,7 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoader('boat', './models/boat.gltf', this.scene, this.manager, { posX: -0.1, posY: 0, posZ: -52 })
+    this.object = new GltfLoader('boat', './models/boat.gltf', this.scene, this.manager, { posX: -0.1, posY: 0, posZ: -52, addToScene: false })
   }
 
   inclinaisonBoat (time) {

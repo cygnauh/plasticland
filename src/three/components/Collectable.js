@@ -12,10 +12,10 @@ export default class Collectable {
     this.width = width
     this.height = height
     this.objects = []
-    this.initCollectables()
     this.canAnimated = false
     this.item = null
     this.otherItems = []
+    this.initCollectables()
   }
 
   initCollectables () {
@@ -43,10 +43,15 @@ export default class Collectable {
   }
   selectedItem (name) {
     let animation = !this.canAnimated
-    this.item = this.objects.filter(item => item.name === name)[0].gltf
+    this.objects.forEach(element => {
+      if (element.name === name) {
+        this.item = element
+      }
+    })
+    console.log(this.item)
+
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, animation, 0.00001)
-
     this.animateVector3(this.item.position, new THREE.Vector3(-5, 8, 8), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut

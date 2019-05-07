@@ -12,7 +12,9 @@ export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
     this.initGeometry()
-    this.scene.add(this.mainXpGroup())
+    this.mainGroup = this.mainXpGroup()
+    this.scene.add(this.mainGroup)
+    // this.addToScene()
     this.animate()
   }
   initGeometry () {
@@ -20,10 +22,9 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: false })
+    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
-
   mainXpGroup () {
     this.xpGroup = new THREE.Group()
     this.instances.dechetsPromise.then(() => {
@@ -31,13 +32,18 @@ export default class App extends Engine {
         this.xpGroup.add(element)
       })
     })
-    this.xpGroup.add(this.environment.water)
-    this.xpGroup.add(this.cube.object)
     this.mountain.then(response => {
       response.meshes.forEach(element => {
         this.xpGroup.add(element)
       })
     })
+    this.boat.object.then(response => {
+      response.meshes.forEach(element => {
+        this.xpGroup.add(element)
+      })
+    })
+    this.xpGroup.add(this.environment.water)
+    this.xpGroup.add(this.cube.object)
     return this.xpGroup
   }
 
@@ -46,17 +52,21 @@ export default class App extends Engine {
     if (value) {
       this.scene.remove(this.camera)
       this.scene.background = null
-      this.scene.remove(this.mainXpGroup())
-      this.collectable.objects.forEach(element => {
-        this.scene.add(element)
-      })
+      this.scene.remove(this.mainGroup)
+      console.log(this.collectable.objects)
+      // this.collectable.objects.then(response => {
+      //   response.forEach(element => {
+      //     console.log(element)
+      //     this.scene.add(element)
+      //   })
+      // })
       // this.scene.add(this.inventoryCamera)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
-      this.collectable.objects.forEach(element => {
-        this.scene.remove(element)
-      })
-      this.scene.add(this.mainXpGroup())
+      // this.collectable.objects.forEach(element => {
+      //   this.scene.remove(element)
+      // })
+      this.scene.add(this.mainGroup)
       // this.scene.activeCamera = this.camera
     }
     // this.scene.activeCamera.needsUpdate = true
