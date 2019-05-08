@@ -55,7 +55,8 @@ export default class Engine {
     this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 108)
 
     // mouse
-    this.mouse = new THREE.Vector2(0, 0)
+    this.mouse = new THREE.Vector3(0, 0, 0)
+    this.oldMouse = new THREE.Vector3(0, 0, 0)
 
     // raycaster
     this.raycaster = new THREE.Raycaster()
@@ -123,6 +124,13 @@ export default class Engine {
   onMouseMove (e) {
     this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
+
+    setInterval( () => {
+      this.oldMouse.x = this.mouse.x
+      this.oldMouse.y = this.mouse.y
+    }, 2000)
+
+    // console.log(this.mouse, this.oldMouse)
   }
 
   render () {

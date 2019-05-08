@@ -8,6 +8,8 @@ export default class Boat {
     this.manager = manager
     this.camera = camera
     this.object = null
+    this.mouseCoord = null
+    this.oldMouseCoord = new THREE.Vector3(0,0,0)
     this.initBoat()
   }
 
@@ -71,12 +73,21 @@ export default class Boat {
     return y
   }
 
-  update (time) {
+  lerp (a, b, n) {
+    return (1 - n) * a + n * b;
+  }
+
+  update (time, mouse, oldMouse) {
     if (this.object) {
       this.object.then(response => {
         let pos = response.meshes[0].position
         let y = this.calculateSurface(pos.x, pos.z, time)
         pos.y = y
+
+        let rot = response.meshes[0].rotation
+        let lerpX = this.lerp(mouse.x, oldMouse.x, 0.1)
+        // mouse.lerp(oldMouse, 0.1)
+        rot.y = Math.PI - (lerpX / 10)
       })
     }
     this.inclinaisonBoat(time)
