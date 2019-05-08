@@ -50,26 +50,18 @@ export default class App extends Engine {
   setDisplayInventory (value) {
     // remove the groupe from the scene
     if (value) {
-      this.scene.remove(this.camera)
       this.scene.background = null
       this.scene.remove(this.mainGroup)
-      console.log(this.collectable.objects)
-      this.collectable.objects.forEach(element => {
-        console.log(element)
-        this.scene.add(element)
-      })
-      this.camera.position.set(10, 0, 40)
-      // this.scene.add(this.inventoryCamera)
+      this.collectable.objects.forEach(element => { this.scene.add(element) })
+      this.collectable.openInventory(true)
+      this.camera.position.set(10, 0, -40)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
-      this.collectable.objects.forEach(element => {
-        this.scene.remove(element)
-      })
+      this.collectable.openInventory(false)
+      this.collectable.objects.forEach(element => { this.scene.remove(element) })
       this.scene.add(this.mainGroup)
       this.camera.position.set(0, 3.5, -52)
-      // this.scene.activeCamera = this.camera
     }
-    // this.scene.activeCamera.needsUpdate = true
   }
 
   onClick () {

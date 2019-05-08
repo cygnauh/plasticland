@@ -12,7 +12,6 @@ export default class Collectable {
     this.width = width
     this.height = height
     this.objects = []
-    this.canAnimated = false
     this.item = null
     this.otherItems = []
     this.initCollectables()
@@ -21,7 +20,7 @@ export default class Collectable {
   initCollectables () {
     let obj = null
     store.state.objects.forEach((value, i) => {
-      let x = i % 3 === 0 ? -13 : i % 3 === 1 ? 0 : 13
+      let x = i % 3 === 0 ? 13 : i % 3 === 1 ? 0 : -13
       let y = i < 3 ? 5 : -5
       if (value) {
         obj = new GltfLoader(
@@ -29,20 +28,25 @@ export default class Collectable {
           value.model,
           this.scene,
           this.manager,
-          { posX: x, posY: y, posZ: 0, scale: 1, found: value.found, addToScene: false }
+          { posX: x, posY: y, posZ: 0, scale: 0.00001, found: value.found, addToScene: false }
         )
         obj.then(response => {
           this.objects.push(response.meshes[0])
         })
       }
     })
-    setTimeout(() => {
-      let animation = !this.canAnimated
-      this.scaleItems(this.objects, animation, 1)
-    }, 700)
   }
+
+  openInventory (value) {
+    if (value) {
+      this.scaleItems(this.objects, 1)
+    } else {
+      this.backToList()
+      this.scaleItems(this.objects, 0.00001)
+    }
+  }
+
   selectedItem (name) {
-    let animation = !this.canAnimated
     this.objects.forEach(element => {
       if (element.name === name) {
         this.item = element
@@ -50,35 +54,30 @@ export default class Collectable {
     })
 
     this.otherItems = this.objects.filter(item => item.name !== name)
-    this.scaleItems(this.otherItems, animation, 0.00001)
-    this.animateVector3(this.item.position, new THREE.Vector3(-5, 8, 8), {
+    this.scaleItems(this.otherItems, 0.00001)
+    this.animateVector3(this.item.position, new THREE.Vector3(0, 0, 8), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
   }
   backToList () {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
-    let x = itemIndex % 3 === 0 ? -13 : itemIndex % 3 === 1 ? 0 : 13
+    // initial position of the selected item
+    let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
     let y = itemIndex < 3 ? 5 : -5
-    let animation = !this.canAnimated
-    this.scaleItems(this.otherItems, animation, 1)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
+    this.scaleItems(this.otherItems, 1)
   }
-  scaleItems (array, animation, scale) {
+  scaleItems (array, scale) {
     array.forEach((element) => {
-      const meshes = element
-      this.animateVector3(meshes.scale, new THREE.Vector3(scale, scale, scale), {
-        duration: 500,
-        easing: TWEEN.Easing.Quadratic.InOut,
-        callback: () => {
-          animation = false
-        }
+      this.animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {
+        duration: 1000,
+        easing: TWEEN.Easing.Quadratic.InOut
       })
     })
-    this.canAnimated = animation
   }
   animateVector3 (vectorToAnimate, target, options) { // anim can be position or scale
     options = options || {}
@@ -101,6 +100,6 @@ export default class Collectable {
     return tweenVector3
   }
   update () {
-    if (this.canAnimated) TWEEN.update()
+    TWEEN.update()
   }
 }
