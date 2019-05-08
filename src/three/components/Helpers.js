@@ -1,17 +1,18 @@
 import * as THREE from 'three'
 import * as Stats from 'stats-js'
-import OrbitControls from 'three-orbitcontrols'
+import OrbitControls from '../utils/OrbitControls'
 
 export default class Helpers {
-  constructor (scene, camera) {
+  constructor (scene, camera, canvas) {
     this.scene = scene
     this.camera = camera
+    this.canvas = canvas
 
     this.initStats()
     this.initAxes()
     this.initControls()
-    // this.initCameraHelper()
-    // this.initGrid(50, 50)
+    this.initCameraHelper()
+    this.initGrid(50, 50)
   }
 
   initStats () {
@@ -25,7 +26,7 @@ export default class Helpers {
   }
 
   initControls () {
-    this.controls = new OrbitControls(this.camera)
+    this.controls = new THREE.OrbitControls(this.camera, this.canvas)
   }
 
   initCameraHelper () {

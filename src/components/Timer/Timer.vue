@@ -21,6 +21,12 @@ export default {
       hours: 0
     }
   },
+  created () {
+    setInterval(() => this.startTimer(), 1 * 1000)
+  },
+  mounted () {
+    this.initTime()
+  },
   methods: {
     initTime () {
       this.firstTime = new Date()
@@ -40,12 +46,6 @@ export default {
         this.seconds = this.ellapsedSeconds - (this.minutes * 60)
       }
     }
-  },
-  created () {
-    setInterval(() => this.startTimer(), 1 * 1000)
-  },
-  mounted () {
-    this.initTime()
   }
 }
 </script>

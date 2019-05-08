@@ -1,33 +1,73 @@
+import * as THREE from 'three'
 import Engine from './Engine'
 
-import Water from './components/Water'
+import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
-// import Boat from './components/Boat'
-// import Instances from './components/Instances'
-// import GltfLoader from './components/GltfLoader'
+import Instances from './components/Instances'
+import GltfLoader from './components/GltfLoader'
+import Boat from './components/Boat'
 
 export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
-
-    this.addGeometry()
+    this.initGeometry()
+    this.mainGroup = this.mainXpGroup()
+    this.scene.add(this.mainGroup)
+    // this.addToScene()
     this.animate()
   }
-
-  addGeometry () {
-    this.water = new Water(this.scene)
+  initGeometry () {
+    this.environment = new Environment(this.scene, this.renderer, this.light) // this.waterOld = new WaterV1(this.scene) merci quoi :(
     this.cube = new CubeTest(this.scene)
-    // this.boat = new Boat(this.scene, this.manager, this.camera)
-    // this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    // this.montagne = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { scale : 0.1})
-    this.collectable = new Collectable(this.inventoryScene, this.manager, this.camera, this.width, this.height)
+    this.boat = new Boat(this.scene, this.manager, this.camera)
+    this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
+    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
+    this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
+  }
+  mainXpGroup () {
+    this.xpGroup = new THREE.Group()
+    this.instances.dechetsPromise.then(() => {
+      this.instances.clusterArray.forEach(element => {
+        this.xpGroup.add(element)
+      })
+    })
+    this.mountain.then(response => {
+      response.meshes.forEach(element => {
+        this.xpGroup.add(element)
+      })
+    })
+    this.boat.object.then(response => {
+      response.meshes.forEach(element => {
+        this.xpGroup.add(element)
+      })
+    })
+    this.xpGroup.add(this.environment.water)
+    this.xpGroup.add(this.cube.object)
+    return this.xpGroup
+  }
+
+  setDisplayInventory (value) {
+    // remove the groupe from the scene
+    if (value) {
+      this.scene.background = null
+      this.scene.remove(this.mainGroup)
+      this.collectable.objects.forEach(element => { this.scene.add(element) })
+      this.collectable.openInventory(true)
+      this.camera.position.set(10, 0, -40)
+    } else {
+      this.scene.background = this.environment.cubeCamera.renderTarget
+      this.collectable.openInventory(false)
+      this.collectable.objects.forEach(element => { this.scene.remove(element) })
+      this.scene.add(this.mainGroup)
+      this.camera.position.set(0, 3.5, -52)
+    }
   }
 
   onClick () {
     let intersected = false
     let intersects = this.raycaster.intersectObjects(this.scene.children)
-    intersects.forEach( (intersect) => {
+    intersects.forEach((intersect) => {
       switch (intersect.object.name) {
         case 'cubeTest':
           intersected = true
@@ -50,9 +90,10 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // update
-    this.water.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
-    // this.boat.update(this.timeElapsed)
+    this.collectable.update()
+    this.boat.update(this.timeElapsed)
+    this.environment.update(this.timeElapsed)
 
     this.render()
 

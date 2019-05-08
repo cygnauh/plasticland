@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Introduction from '../pages/Introduction'
-import Stage from '../pages/Stage'
-import Inventory from '../pages/Inventory'
-import InventoryDetail from '../pages/InventoryDetail'
-import Credits from '../pages/Credits'
-import About from '../pages/About'
+import Introduction from '../components/Introduction'
+import Stage from '../components/Stage'
+import InventoryList from '../components/Inventory/InventoryList'
+import InventoryDetail from '../components/Inventory/InventoryDetail'
+import Credits from '../components/Credits'
+import About from '../components/About'
 
 Vue.use(Router)
 
@@ -31,7 +31,7 @@ export default new Router({
         // },
         {
           path: 'inventory',
-          component: Inventory
+          component: InventoryList
         },
         {
           path: 'inventory/:id',

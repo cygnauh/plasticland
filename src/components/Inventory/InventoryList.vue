@@ -1,14 +1,15 @@
 <template>
-  <div class='inventory'>
+  <div
+    :class="{'show': isMounted}"
+    class='inventory'>
     <div class='inventory-container'>
       <div class="box">
         <div
+          :class="{'canHover' : object.found}"
           :key="object.id"
           v-for="(object, i) in objects"
           class="object"
           @click.capture="(e) => onObjectClicked(e, object)">
-          <!--<router-link-->
-            <!--:to="`/plasticland/inventory/${object.id}`">-->
           <div
             :class=" (i+1) % 3 ? 'border-right': null"
             class="obj-container">
@@ -16,7 +17,6 @@
               {{ object.name }}
             </div>
           </div>
-          <!--</router-link>-->
         </div>
       </div>
     </div>
@@ -24,23 +24,33 @@
 </template>
 
 <script>
-import objects from '../assets/data/inventory'
+import Vue from 'vue'
 import InventoryDetail from './InventoryDetail'
+import { store } from '../../store/index'
 export default {
-  name: 'Inventory',
+  name: 'InventoryList',
+  data () {
+    return {
+      isMounted: false
+    }
+  },
   computed: {
     objects () {
-      return objects.objects.map((item) => {
+      return store.state.objects.map((item) => {
         return item
       })
     }
   },
+  mounted () {
+    this.isMounted = true
+  },
   methods: {
     onObjectClicked (e, obj) {
-      // const InventoryDetail = InventoryDetail
       if (!obj.found) {
         e.preventDefault()
       } else {
+        store.objectFound(obj.id)
+        Vue.prototype.$engine.collectable.selectedItem(obj.name, true)
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
           component: InventoryDetail
@@ -52,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../assets/scss/index';
+  @import '../../assets/scss/index';
   .inventory{
     position: absolute;
     /*overflow: scroll;*/
@@ -60,10 +70,11 @@ export default {
     top: 0;
     width: 100%;
     height: 100%;
+    will-change: transform;
+    &.show{
+      transition: transform 1s ease-in-out;
+    }
     &-container{
-      /*margin: 18px;*/
-      /*width: calc(100% - 18px);*/
-      /*height: calc(100% - 43px);*/
       .box{
         position: relative;
         bottom: 0;
@@ -71,10 +82,23 @@ export default {
         flex-wrap: wrap;
         align-items: flex-start;
         flex-direction: row;
+        transform: translateY(159px);
         .object{
-          border-top: 1px solid $medium_grey;
+          transform: translateZ(0);
           width: 33.2%;
-          transform: translateY(159px);
+          &:before{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 100%;
+            top: 0;
+            background-color: $medium_grey;
+            height: 1px;
+            transition-property: right;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+          }
           a{
             text-decoration: none;
           }
@@ -108,7 +132,9 @@ export default {
               will-change: opacity;
               opacity: 0;
             }
-            &:hover{
+          }
+          &.canHover{
+            .obj-container:hover{
               &:after{
                 opacity: 1;
               }
@@ -118,7 +144,37 @@ export default {
             }
           }
           .border-right{
-            border-right: 1px solid $medium_grey;
+            transform: translateZ(0);
+            &:before{
+              content: '';
+              position: absolute;
+              z-index: -1;
+              right: 0;
+              top: 0;
+              background-color: $medium_grey;
+              height: 0;
+              width: 1px;
+              transition: height 0.3s ease-out;
+              transition-delay: 0.6s;
+            }
+            &:hover:before{
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    &.show{
+      transition: transform 1s linear;
+      .object{
+        will-change: width;
+        box-shadow: 0;
+        &:before {
+          right: 0;
+        }
+        .border-right{
+          &:before{
+            height: 100%;
           }
         }
       }

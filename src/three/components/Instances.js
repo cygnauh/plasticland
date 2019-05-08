@@ -9,7 +9,7 @@ export default class Instances {
     this.scene = scene
     this.manager = manager
     this.path = path
-
+    this.clusterArray = []
     this.initInstances()
   }
 
@@ -17,10 +17,10 @@ export default class Instances {
     let material = new THREE.MeshPhongMaterial()
 
     // dechets Glb
-    let dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { scale: 1 })
-    dechetsPromise.then(geometries => {
+    this.dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { addToScene: false })
+    this.dechetsPromise.then(response => {
+      var geometries = response.geometries
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
-
       const e = new THREE.Euler()
 
       dechets.nodes.forEach(node => {
@@ -29,6 +29,7 @@ export default class Instances {
           clusterNodes[r].push(node)
         }
       })
+
       geometries.forEach((geometry, index) => {
         let cluster = new InstancedMesh(geometry, material, clusterNodes[index].length, true, false, true)
         clusterNodes[index].forEach((node, rank) => {
@@ -36,11 +37,14 @@ export default class Instances {
           e.set(rotation[0], rotation[1], rotation[2], eulerOrder)
           cluster.setQuaternionAt(rank, new THREE.Quaternion().setFromEuler(e))
           cluster.setPositionAt(rank, new THREE.Vector3(translation[0], translation[1], translation[2]))
-          cluster.setScaleAt(rank, new THREE.Vector3(scale[0], scale[1], scale[2]).multiplyScalar(5))
+          cluster.setScaleAt(rank, new THREE.Vector3(scale[0], scale[1], scale[2]).multiplyScalar(3))
         })
-        cluster.scale.set(0.1, 0.1, 0.1)
-        this.scene.add(cluster)
-        console.log(cluster, this.scene)
+        cluster.position.set(0, 0, 1) // cluster.position.set(-50, 0, 0)
+        cluster.rotation.set(0, Math.PI * 2 + 20, 0) // cluster.rotation.set(0, Math.PI * 2, 0)
+        let scale = 0.04
+        cluster.scale.set(scale, scale, scale) // cluster.scale.set(1.5, 1.8, 1.2)
+        this.clusterArray.push(cluster)
+        // this.scene.add(cluster)
       })
     })
     // console.log(dechets.geometry)

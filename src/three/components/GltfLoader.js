@@ -1,37 +1,56 @@
-import GLTFLoader from 'three-gltf-loader'
+import * as THREE from 'three'
+import GLTFLoader from '../utils/GLTFLoader'
 
 export default class GltfLoader {
-  constructor (name, path, scene, manager, { scale = 1 }) {
+  constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 1, found = true, addToScene = true, rotateY = 0 }) {
     this.scene = scene
     this.name = name
-    this.loader = new GLTFLoader(manager)
+    this.loader = new THREE.GLTFLoader(manager)
+    this.gltf = null
 
     // draco loader
     // see gltf-pipeline
 
+    let flatMaterial = new THREE.MeshPhongMaterial({
+      color: (0x81C186),
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending
+    })
+
     let geometries = []
-    let scaleFactor = scale
-    console.log(scaleFactor)
+    let meshes = []
+
     let promise = new Promise((resolve, reject) => {
       this.loader.load(path, (gltf) => {
-        gltf.scene.name = this.name
-        this.scene.add(gltf.scene)
-
-        this.scene.scale.multiplyScalar(0.1)
-
-        console.log(gltf)
-        gltf.scene.traverse(function (child) {
+        this.gltf = gltf.scene
+        this.gltf.name = name
+        this.gltf.position.x = posX
+        this.gltf.position.y = posY
+        this.gltf.position.z = posZ
+        this.gltf.scale.x = scale
+        this.gltf.scale.y = scale
+        this.gltf.scale.z = scale
+        this.gltf.rotation.y = rotateY
+        if (addToScene) {
+          this.scene.add(this.gltf)
+        }
+        // this.scene.scale.multiplyScalar(scale)
+        this.gltf.traverse(function (child) {
           // console.log(child.material)
           if (child.isMesh) {
-            // show the count of vertices here
             child.material.side = 2
-            child.scale.set(scaleFactor, scaleFactor, scaleFactor)
+            if (!found) {
+              child.material = flatMaterial
+            }
             let geometry = child.geometry
             geometries.push(geometry)
-            // console.log(geometries)
           }
         })
-        resolve(geometries)
+        meshes.push(this.gltf)
+        resolve({
+          geometries: geometries,
+          meshes: meshes
+        })
       },
       (xhr) => {
         // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
