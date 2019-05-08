@@ -57,6 +57,7 @@ export default class Engine {
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
     this.oldMouse = new THREE.Vector3(0, 0, 0)
+    this.mouseLerp = new THREE.Vector2(0, 0)
 
     // raycaster
     this.raycaster = new THREE.Raycaster()
@@ -125,10 +126,17 @@ export default class Engine {
     this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
     this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
 
-    setInterval( () => {
+    setInterval(() => {
       this.oldMouse.x = this.mouse.x
       this.oldMouse.y = this.mouse.y
     }, 2000)
+
+    this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
+    this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
+  }
+
+  lerp (a, b, n) {
+    return (1 - n) * a + n * b
   }
 
   render () {

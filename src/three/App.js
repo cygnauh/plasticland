@@ -30,11 +30,13 @@ export default class App extends Engine {
     this.scene.add(this.mainGroup)
   }
 
+
   moveGroup () {
     const strength = 10.0
-    let x = this.mainGroup.position.x + (this.mouse.x / strength)
-    let z = this.mainGroup.position.z - (this.mouse.y / strength * 2)
+    let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
+    let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
     this.mainGroup.position.set(x, 0, z)
+    this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5 )
   }
 
   mainXpGroup () {
@@ -107,7 +109,7 @@ export default class App extends Engine {
     // update
     this.cube.update(this.timeElapsed)
     this.collectable.update()
-    this.boat.update(this.timeElapsed, this.mouse, this.oldMouse)
+    this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
 
     this.render()

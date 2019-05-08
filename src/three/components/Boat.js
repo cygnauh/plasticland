@@ -71,11 +71,9 @@ export default class Boat {
     return y
   }
 
-  lerp (a, b, n) {
-    return (1 - n) * a + n * b;
-  }
 
-  update (time, mouse, oldMouse) {
+
+  update (time, mouseLerp) {
     if (this.object) {
       this.object.then(response => {
         let pos = response.meshes[0].position
@@ -83,9 +81,8 @@ export default class Boat {
         pos.y = y
 
         let rot = response.meshes[0].rotation
-        let lerpX = this.lerp(mouse.x, oldMouse.x, 0.1)
         // mouse.lerp(oldMouse, 0.1)
-        rot.y = Math.PI - (lerpX / 20)
+        rot.y = Math.PI - (mouseLerp.x / 20)
       })
     }
     this.inclinaisonBoat(time)
