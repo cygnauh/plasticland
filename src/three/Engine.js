@@ -129,8 +129,6 @@ export default class Engine {
       this.oldMouse.x = this.mouse.x
       this.oldMouse.y = this.mouse.y
     }, 2000)
-
-    // console.log(this.mouse, this.oldMouse)
   }
 
   render () {

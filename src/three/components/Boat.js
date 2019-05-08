@@ -8,8 +8,6 @@ export default class Boat {
     this.manager = manager
     this.camera = camera
     this.object = null
-    this.mouseCoord = null
-    this.oldMouseCoord = new THREE.Vector3(0,0,0)
     this.initBoat()
   }
 
