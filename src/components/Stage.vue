@@ -96,12 +96,19 @@ export default {
     if (this.inventory) this.setInventory(this.inventory)
     this.checkRoute(this.$route.path)
   },
+  beforeDestroy () {
+    window.removeEventListener('click', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   watch: {
     $route (to) {
       this.checkRoute(to.path)
     }
   },
   methods: {
+    handleScroll (a) {
+      console.log(a)
+    },
     initScene () {
       Vue.prototype.$engine = new App(this.$refs.canvas) // init scene
       if (this.$route.path === '/plasticland/inventory') {

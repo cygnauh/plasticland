@@ -87,8 +87,6 @@ export default class Engine {
     this.inventoryCamera.position.set(1000, 10, 250)
     // this.inventoryScene.add(this.ambiantlight)
     // this.inventoryScene.add(this.spotlight)
-    // helpers
-    // this.helpers = new Helpers(this.inventoryScene, this.inventoryCamera)
   }
 
   initLoadingManager () {

@@ -14,7 +14,6 @@ export default class App extends Engine {
     this.initGeometry()
     this.mainGroup = this.mainXpGroup()
     this.scene.add(this.mainGroup)
-    // this.addToScene()
     this.animate()
   }
   initGeometry () {
