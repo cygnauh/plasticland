@@ -41,7 +41,7 @@ export default class Collectable {
     if (value) {
       this.scaleItems(this.objects, 1)
     } else {
-      this.backToList()
+      if (this.item) this.backToList()
       this.scaleItems(this.objects, 0.00001)
     }
   }
