@@ -42,6 +42,28 @@ export default {
     description () {
       return this.object[0].description.split('@')
     }
+  },
+  data () {
+    return {
+      timer: null
+    }
+  },
+  beforeCreate () {
+    window.addEventListener('wheel', () => this.handleEvent())
+  },
+  beforeDestroy () {
+    window.removeEventListener('wheel', this.handleEvent)
+  },
+  methods: {
+    handleEvent () {
+      if (this.timer !== null) {
+        clearTimeout(this.timer)
+      }
+      this.timer = setTimeout(() => {
+        // do something
+        console.log('helo')
+      }, 100)
+    }
   }
 }
 </script>
