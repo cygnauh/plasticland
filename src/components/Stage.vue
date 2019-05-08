@@ -231,8 +231,8 @@ export default {
     }
   }
     .inventory-btn{
-      margin-left: 10px;
-      bottom: 28px;
+      margin-left: 43px;
+      bottom: 38px;
       width: 250px;
       height: 83px;
       position: absolute;
@@ -244,7 +244,7 @@ export default {
       background-size: contain;
       .inventory-btn-title{
         align-self: center;
-        width: calc(100% - 85px);
+        width: calc(100% - 90px);
         font-size: 16px;
       }
       .inventory-btn-count{
@@ -252,7 +252,8 @@ export default {
         height: 83px;
         display: flex;
         justify-content: center;
-        padding-right: 10px;
+        border-left: solid 2px $medium_grey;
+        background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);;
         span{
           font-size: 31px;
           position: relative;
