@@ -30,10 +30,10 @@ export default class Environment extends THREE.Object3D {
           texture.wrapS = texture.wrapT = THREE.RepeatWrapping
         }),
         alpha: 1.0,
-        sunDirection: this.light.position.clone().normalize(),
-        sunColor: 0xffffff,
-        waterColor: 0xffffff,
-        distortionScale: 3.7,
+        sunDirection: new THREE.Vector3(0, 0, 0),
+        sunColor: 0xFBE387,
+        waterColor: 0x394482,
+        distortionScale: 0.0,
         fog: this.scene.fog !== undefined
       }
     )
@@ -45,17 +45,17 @@ export default class Environment extends THREE.Object3D {
     this.sky = new THREE.Sky()
     let uniforms = this.sky.material.uniforms
 
-    uniforms[ 'turbidity' ].value = 10
-    uniforms[ 'rayleigh' ].value = 2
-    uniforms[ 'luminance' ].value = 1
-    uniforms[ 'mieCoefficient' ].value = 0.1
-    uniforms[ 'mieDirectionalG' ].value = 0.8
+    uniforms[ 'turbidity' ].value = 5.0
+    uniforms[ 'rayleigh' ].value = 2.0
+    uniforms[ 'luminance' ].value = 1.0
+    uniforms[ 'mieCoefficient' ].value = 0.0
+    uniforms[ 'mieDirectionalG' ].value = 0.4
   }
 
   updateGeom () {
     this.parameters = {
-      distance: 500,
-      inclination: 0.1,
+      distance: 10,
+      inclination: 0.08,
       azimuth: 0.4
     }
 

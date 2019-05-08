@@ -92,7 +92,7 @@ export default class App extends Engine {
     // update
     this.cube.update(this.timeElapsed)
     this.collectable.update()
-    // this.boat.update(this.timeElapsed)
+    this.boat.update(this.timeElapsed)
     this.environment.update(this.timeElapsed)
 
     this.render()

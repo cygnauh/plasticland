@@ -52,7 +52,7 @@ export default class Engine {
     this.scene.add(this.ambientlight)
 
     // fog
-    this.scene.fog = new THREE.Fog(0x263247, 0.1, 108)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 108)
 
     // mouse
     this.mouse = new THREE.Vector2(0, 0)

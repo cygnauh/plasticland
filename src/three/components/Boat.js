@@ -12,7 +12,7 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoader('boat', './models/Boat_01.glb', this.scene, this.manager, { posX: 0, posY: 1, posZ: -42, scale: 0.030, rotateY: Math.PI })
+    this.object = new GltfLoader('boat', './models/Boat_01.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: -40, scale: 0.030, rotateY: Math.PI })
   }
 
   inclinaisonBoat (time) {
@@ -55,18 +55,18 @@ export default class Boat {
   }
 
   calculateSurface (x, z, uTime) {
-    let y = 0.0
+    let y = 0.4
     const scale = 10.0
-    const strength = 2.0
+    const strength = 15.0
     y +=
       (Math.sin((x * 1.0) / scale + uTime * 1.0) +
         Math.sin((x * 2.3) / scale + uTime * 1.5) +
-        Math.sin((x * 3.3) / scale + uTime * 0.4)) *
+        Math.sin((x * 3.3) / scale + uTime * 0.4)) /
       strength
     y +=
       (Math.sin((z * 0.2) / scale + uTime * 1.8) +
         Math.sin((z * 1.8) / scale + uTime * 1.8) +
-        Math.sin((z * 2.8) / scale + uTime * 0.8)) *
+        Math.sin((z * 2.8) / scale + uTime * 0.8)) /
       strength / 2
     return y
   }
