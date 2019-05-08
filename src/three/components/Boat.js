@@ -85,7 +85,7 @@ export default class Boat {
         let rot = response.meshes[0].rotation
         let lerpX = this.lerp(mouse.x, oldMouse.x, 0.1)
         // mouse.lerp(oldMouse, 0.1)
-        rot.y = Math.PI - (lerpX / 10)
+        rot.y = Math.PI - (lerpX / 20)
       })
     }
     this.inclinaisonBoat(time)
