@@ -25,10 +25,18 @@ export default class App extends Engine {
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
 
-  initGroup() {
+  initGroup () {
     this.mainGroup = this.mainXpGroup()
     this.scene.add(this.mainGroup)
   }
+
+  moveGroup () {
+    const strength = 10.0
+    let x = this.mainGroup.position.x + (this.mouse.x / strength)
+    let z = this.mainGroup.position.z - (this.mouse.y / strength * 2)
+    this.mainGroup.position.set(x, 0, z)
+  }
+
   mainXpGroup () {
     this.xpGroup = new THREE.Group()
     this.instances.dechetsPromise.then(() => {
@@ -41,12 +49,12 @@ export default class App extends Engine {
         this.xpGroup.add(element)
       })
     })
-    this.boat.object.then(response => {
-      response.meshes.forEach(element => {
-        this.xpGroup.add(element)
-      })
-    })
-    this.xpGroup.add(this.environment.water)
+    // this.boat.object.then(response => {
+    //   response.meshes.forEach(element => {
+    //     this.xpGroup.add(element)
+    //   })
+    // })
+    // this.xpGroup.add(this.environment.water)
     this.xpGroup.add(this.cube.object)
     return this.xpGroup
   }
@@ -92,6 +100,9 @@ export default class App extends Engine {
     // update
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
+
+    // navigation
+    this.moveGroup()
 
     // update
     this.cube.update(this.timeElapsed)
