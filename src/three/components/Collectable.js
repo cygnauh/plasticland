@@ -50,6 +50,8 @@ export default class Collectable {
   }
 
   selectedItem (name) {
+    this.camera.position.set(10, 10, -40)
+    // this.camera.lookAt()
     this.objects.forEach(element => {
       if (element.name === name) {
         this.item = element
@@ -58,11 +60,12 @@ export default class Collectable {
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, 0.00001)
-    this.animateVector3(this.item.position, new THREE.Vector3(0, 0, 8), {
+    this.animateVector3(this.item.position, new THREE.Vector3(-10, 0, 8), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
   }
+
   backToList () {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
@@ -74,6 +77,13 @@ export default class Collectable {
     })
     this.scaleItems(this.otherItems, 1)
   }
+
+  rotateSelectedItem () {
+    if (this.item) {
+      this.item.rotation.y += 0.01
+    }
+  }
+
   scaleItems (array, scale) {
     array.forEach((element) => {
       this.animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {

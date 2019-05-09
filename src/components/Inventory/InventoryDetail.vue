@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import objects from '../../data/inventory'
 export default {
   name: 'InventoryDetail',
@@ -57,6 +58,8 @@ export default {
   methods: {
     handleEvent () {
       if (this.timer !== null) {
+        console.log('scroll')
+        Vue.prototype.$engine.collectable.rotateSelectedItem()
         clearTimeout(this.timer)
       }
       this.timer = setTimeout(() => {
