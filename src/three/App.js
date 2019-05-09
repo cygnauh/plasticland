@@ -25,46 +25,51 @@ export default class App extends Engine {
   }
 
   initGroup () {
-    this.mainGroup = this.mainXpGroup()
-    this.scene.add(this.mainGroup)
+    this.initMountainInstancesGroup()
+    this.initWaterBoatGroup()
+    this.scene.add(this.mountainInstancesGroup)
+    this.scene.add(this.waterBoatGroup)
   }
-
 
   moveGroup () {
     const strength = 10.0
-    let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
-    let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
-    this.mainGroup.position.set(x, 0, z)
-    this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5 )
+    let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
+    let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
+    this.mountainInstancesGroup.position.set(x, 0, z)
+    this.mountainInstancesGroup.rotation.y = (this.mouseLerp.x / strength / 5)
   }
 
-  mainXpGroup () {
-    this.xpGroup = new THREE.Group()
+  initWaterBoatGroup () {
+    this.waterBoatGroup = new THREE.Group()
+    this.boat.object.then(response => {
+      response.meshes.forEach(element => {
+        this.waterBoatGroup.add(element)
+      })
+    })
+    this.waterBoatGroup.add(this.environment.water)
+  }
+
+  initMountainInstancesGroup () {
+    this.mountainInstancesGroup = new THREE.Group()
     this.instances.dechetsPromise.then(() => {
       this.instances.clusterArray.forEach(element => {
-        this.xpGroup.add(element)
+        this.mountainInstancesGroup.add(element)
       })
     })
     this.mountain.then(response => {
       response.meshes.forEach(element => {
-        this.xpGroup.add(element)
+        this.mountainInstancesGroup.add(element)
       })
     })
-    // this.boat.object.then(response => {
-    //   response.meshes.forEach(element => {
-    //     this.xpGroup.add(element)
-    //   })
-    // })
-    // this.xpGroup.add(this.environment.water)
-    this.xpGroup.add(this.cube.object)
-    return this.xpGroup
+    this.mountainInstancesGroup.add(this.cube.object)
   }
 
   setDisplayInventory (value) {
     // remove the groupe from the scene
     if (value) {
       this.scene.background = null
-      this.scene.remove(this.mainGroup)
+      this.scene.remove(this.mountainInstancesGroup)
+      this.scene.remove(this.waterBoatGroup)
       this.scene.add(this.collectable.collectableGroup)
       this.collectable.openInventory(true)
       this.camera.position.set(0, 0, -40)
@@ -72,7 +77,8 @@ export default class App extends Engine {
       this.scene.background = this.environment.cubeCamera.renderTarget
       this.collectable.openInventory(false)
       this.scene.remove(this.collectable.collectableGroup)
-      this.scene.add(this.mainGroup)
+      this.scene.add(this.mountainInstancesGroup)
+      this.scene.add(this.waterBoatGroup)
       this.camera.position.set(0, 3.5, -52)
     }
   }
