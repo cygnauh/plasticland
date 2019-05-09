@@ -105,7 +105,7 @@ export default {
           flex-direction: column;
           .content-title{
             font-family: Arkhip, sans-serif;
-            font-size: 60px;
+            font-size: 43px;
             margin-bottom: 46px;
           }
           .content-description{

@@ -50,8 +50,6 @@ export default class Collectable {
   }
 
   selectedItem (name) {
-    this.camera.position.set(10, 10, -40)
-    // this.camera.lookAt()
     this.objects.forEach(element => {
       if (element.name === name) {
         this.item = element
@@ -60,9 +58,14 @@ export default class Collectable {
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, 0.00001)
-    this.animateVector3(this.item.position, new THREE.Vector3(-10, 0, 8), {
+    this.animateVector3(this.item.position, new THREE.Vector3(3, -1.9, -25), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
+    })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      delay: 400
     })
   }
 
@@ -75,12 +78,16 @@ export default class Collectable {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(0, 0, 0), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut
+    })
     this.scaleItems(this.otherItems, 1)
   }
 
   rotateSelectedItem () {
     if (this.item) {
-      this.item.rotation.y += 0.01
+      this.item.rotation.y += 0.0005
     }
   }
 

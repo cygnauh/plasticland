@@ -246,6 +246,7 @@ export default {
         align-self: center;
         width: calc(100% - 90px);
         font-size: 16px;
+        text-transform: uppercase;
       }
       .inventory-btn-count{
         width: 85px;
