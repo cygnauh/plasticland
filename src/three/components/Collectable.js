@@ -12,6 +12,7 @@ export default class Collectable {
     this.width = width
     this.height = height
     this.objects = []
+    this.collectableGroup = null
     this.item = null
     this.otherItems = []
     this.initCollectables()
@@ -19,9 +20,10 @@ export default class Collectable {
 
   initCollectables () {
     let obj = null
+    this.collectableGroup = new THREE.Group()
     store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? 13 : i % 3 === 1 ? 0 : -13
-      let y = i < 3 ? 5 : -5
+      let y = i < 3 ? 0 : -10
       if (value) {
         obj = new GltfLoader(
           value.name,
@@ -32,6 +34,7 @@ export default class Collectable {
         )
         obj.then(response => {
           this.objects.push(response.meshes[0])
+          this.collectableGroup.add(response.meshes[0])
         })
       }
     })
@@ -64,7 +67,7 @@ export default class Collectable {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
     let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
-    let y = itemIndex < 3 ? 5 : -5
+    let y = itemIndex < 3 ? 0 : -10
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut

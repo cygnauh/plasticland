@@ -51,13 +51,13 @@ export default class App extends Engine {
     if (value) {
       this.scene.background = null
       this.scene.remove(this.mainGroup)
-      this.collectable.objects.forEach(element => { this.scene.add(element) })
+      this.scene.add(this.collectable.collectableGroup)
       this.collectable.openInventory(true)
-      this.camera.position.set(10, 0, -40)
+      this.camera.position.set(0, 0, -40)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
       this.collectable.openInventory(false)
-      this.collectable.objects.forEach(element => { this.scene.remove(element) })
+      this.scene.remove(this.collectable.collectableGroup)
       this.scene.add(this.mainGroup)
       this.camera.position.set(0, 3.5, -52)
     }
