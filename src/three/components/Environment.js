@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import Water from './Water'
-import Sky from './Sky'
+import Water from '../three-examples/Water'
+import Sky from '../three-examples/Sky'
 
 export default class Environment extends THREE.Object3D {
   constructor (scene, renderer, light) {

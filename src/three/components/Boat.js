@@ -71,12 +71,18 @@ export default class Boat {
     return y
   }
 
-  update (time) {
+
+
+  update (time, mouseLerp) {
     if (this.object) {
       this.object.then(response => {
         let pos = response.meshes[0].position
         let y = this.calculateSurface(pos.x, pos.z, time)
         pos.y = y
+
+        let rot = response.meshes[0].rotation
+        // mouse.lerp(oldMouse, 0.1)
+        rot.y = Math.PI - (mouseLerp.x / 20)
       })
     }
     this.inclinaisonBoat(time)

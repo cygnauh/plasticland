@@ -12,8 +12,7 @@ export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
     this.initGeometry()
-    this.mainGroup = this.mainXpGroup()
-    this.scene.add(this.mainGroup)
+    this.initGroup()
     this.animate()
   }
   initGeometry () {
@@ -21,9 +20,24 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
+    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
+
+  initGroup () {
+    this.mainGroup = this.mainXpGroup()
+    this.scene.add(this.mainGroup)
+  }
+
+
+  moveGroup () {
+    const strength = 10.0
+    let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
+    let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
+    this.mainGroup.position.set(x, 0, z)
+    this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5 )
+  }
+
   mainXpGroup () {
     this.xpGroup = new THREE.Group()
     this.instances.dechetsPromise.then(() => {
@@ -36,12 +50,12 @@ export default class App extends Engine {
         this.xpGroup.add(element)
       })
     })
-    this.boat.object.then(response => {
-      response.meshes.forEach(element => {
-        this.xpGroup.add(element)
-      })
-    })
-    this.xpGroup.add(this.environment.water)
+    // this.boat.object.then(response => {
+    //   response.meshes.forEach(element => {
+    //     this.xpGroup.add(element)
+    //   })
+    // })
+    // this.xpGroup.add(this.environment.water)
     this.xpGroup.add(this.cube.object)
     return this.xpGroup
   }
@@ -88,10 +102,13 @@ export default class App extends Engine {
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
+    // navigation
+    this.moveGroup()
+
     // update
     this.cube.update(this.timeElapsed)
     this.collectable.update()
-    this.boat.update(this.timeElapsed)
+    this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
 
     this.render()
