@@ -27,32 +27,28 @@ export default class App extends Engine {
 
   initColliders () {
     // mountains
-    const mountainBoxes = []
-    this.mountain.then(response => {
+    this.mountainBoxesPromise = this.mountain.then(response => {
       let geom = response.geometries
+      const mountainBoxes = []
       geom.forEach(function (el) {
         el.computeBoundingBox()
         let mountainBox = new THREE.Box3(el.boundingBox.min, el.boundingBox.max)
         mountainBoxes.push(mountainBox)
+        // console.log(mountainBoxes)
       })
+      return mountainBoxes
     })
-    // console.log(mountainBoxes)
 
     // boat
-    this.boatBox = null
-    this.boat.object.then((response) => {
+    this.boatBoxPromise = this.boat.object.then((response) => {
       let geom = response.geometries
       let box = geom[0].computeBoundingBox()
-      this.boatBox = new THREE.Box3(geom[0].boundingBox.min, geom[0].boundingBox.max)
+      const boatBox = new THREE.Box3(geom[0].boundingBox.min, geom[0].boundingBox.max)
+      // console.log(boatBox)
+      return boatBox
     })
-    // setTimeout(() => { console.log(this.boatBox) }, 1000)
 
-    if (this.boatBox !== null) {
-      console.log("yeah is not null")
-      console.log(this.boatBox)
-    }
-
-    setTimeout(() => { this.detectCollision(mountainBoxes, this.boatBox) }, 1000)
+    setTimeout(() => { this.detectCollision(this.mountainBoxesPromise, this.boatBoxPromise) }, 2000)
   }
 
   initGroup () {
@@ -60,12 +56,17 @@ export default class App extends Engine {
     this.scene.add(this.mainGroup)
   }
 
-  detectCollision (mountainBoxes, boatBox) {
-    console.log(mountainBoxes)
-    mountainBoxes.forEach(el => {
-      console.log("hello")
-      let collision = el.intersectsBox(boatBox)
-      console.log("colision: " + collision)
+  detectCollision (mountainBoxPromise, boatBoxPromise) {
+
+    const collisionPromise = mountainBoxPromise.then(mountainBoxes => {
+      mountainBoxes.forEach(el => {
+        boatBoxPromise.then(boatBox => {
+          console.log(el, boatBox)
+          const collision = el.intersectsBox(boatBox)
+          console.log(collision)
+          return collision
+        })
+      })
     })
 
     // logic
@@ -145,7 +146,7 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // navigation
-    this.moveGroup()
+    // this.moveGroup()
 
     // update
     this.cube.update(this.timeElapsed)

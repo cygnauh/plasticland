@@ -4,7 +4,7 @@ export default
     {
       'id': 1,
       'name': 'bottle of coke',
-      'model': './models/boat.gltf',
+      'model': './models/starbucks_cup.glb',
       'found': false,
       'description': 'coke Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie arcu eget metus tempor, sit amet suscipit lacus aliquam. @Sed dapibus mauris a nisl consequat mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas volutpat quam lacus, non sagittis elit tempor sit amet.@Nunc tempus justo non sollicitudin pellentesque. Praesent vulputate, lectus luctus egestas porta, felis libero interdum mauris, ut dictum ipsum erat a ligula. Nulla in massa nisl.@Nam eleifend ipsum at quam vestibulum condimentum. Morbi luctus sit amet lectus ac vulputate. Cras sed turpis porta, euismod eros sit amet, dapibus mi. Proin ac sem sit amet ligula posuere convallis. Pellentesque id ultrices dui. Suspendisse porta tempus viverra.@Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque consectetur risus gravida posuere. Ut laoreet varius felis, at sodales metus vestibulum non.'
     },
@@ -18,14 +18,14 @@ export default
     {
       'id': 3,
       'name': 'bottle of bk',
-      'model': './models/boat.gltf',
+      'model': './models/starbucks_cup.glb',
       'found': false,
       'description': 'coke Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie arcu eget metus tempor, sit amet suscipit lacus aliquam. @Sed dapibus mauris a nisl consequat mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas volutpat quam lacus, non sagittis elit tempor sit amet.@Nunc tempus justo non sollicitudin pellentesque. Praesent vulputate, lectus luctus egestas porta, felis libero interdum mauris, ut dictum ipsum erat a ligula. Nulla in massa nisl.@Nam eleifend ipsum at quam vestibulum condimentum. Morbi luctus sit amet lectus ac vulputate. Cras sed turpis porta, euismod eros sit amet, dapibus mi. Proin ac sem sit amet ligula posuere convallis. Pellentesque id ultrices dui. Suspendisse porta tempus viverra.@Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque consectetur risus gravida posuere. Ut laoreet varius felis, at sodales metus vestibulum non.'
     },
     {
       'id': 4,
       'name': 'bottle of danone',
-      'model': './models/boat.gltf',
+      'model': './models/starbucks_cup.glb@',
       'found': true,
       'description': 'coke Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie arcu eget metus tempor, sit amet suscipit lacus aliquam. @Sed dapibus mauris a nisl consequat mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas volutpat quam lacus, non sagittis elit tempor sit amet.@Nunc tempus justo non sollicitudin pellentesque. Praesent vulputate, lectus luctus egestas porta, felis libero interdum mauris, ut dictum ipsum erat a ligula. Nulla in massa nisl.@Nam eleifend ipsum at quam vestibulum condimentum. Morbi luctus sit amet lectus ac vulputate. Cras sed turpis porta, euismod eros sit amet, dapibus mi. Proin ac sem sit amet ligula posuere convallis. Pellentesque id ultrices dui. Suspendisse porta tempus viverra.@Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque consectetur risus gravida posuere. Ut laoreet varius felis, at sodales metus vestibulum non.'
     },
