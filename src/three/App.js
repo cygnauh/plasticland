@@ -47,8 +47,6 @@ export default class App extends Engine {
       // console.log(boatBox)
       return boatBox
     })
-
-    setTimeout(() => { this.detectCollision(this.mountainBoxesPromise, this.boatBoxPromise) }, 2000)
   }
 
   initGroup () {
@@ -56,29 +54,27 @@ export default class App extends Engine {
     this.scene.add(this.mainGroup)
   }
 
-  detectCollision (mountainBoxPromise, boatBoxPromise) {
+  moveGroup () {
+    const strength = 10.0
 
-    const collisionPromise = mountainBoxPromise.then(mountainBoxes => {
+    // detect collision
+    this.mountainBoxesPromise.then(mountainBoxes => {
       mountainBoxes.forEach(el => {
-        boatBoxPromise.then(boatBox => {
+        this.boatBoxPromise.then(boatBox => {
           console.log(el, boatBox)
           const collision = el.intersectsBox(boatBox)
           console.log(collision)
-          return collision
+          if (!collision) {
+            let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
+            let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
+            this.mainGroup.position.set(x, 0, z)
+            this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
+          }
         })
       })
     })
 
-    // logic
-    // mountainBox.intersectsBox(boatBox)
-  }
-
-  moveGroup () {
-    const strength = 10.0
-    let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
-    let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
-    this.mainGroup.position.set(x, 0, z)
-    this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
+    // logic is check if mountainBox.intersectsBox(boatBox)
   }
 
   mainXpGroup () {
@@ -146,7 +142,7 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // navigation
-    // this.moveGroup()
+    this.moveGroup()
 
     // update
     this.cube.update(this.timeElapsed)
