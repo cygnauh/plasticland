@@ -12,8 +12,8 @@ export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
     this.initGeometry()
+    this.initColliders()
     this.initGroup()
-    // this.addToScene()
     this.animate()
   }
   initGeometry () {
@@ -21,8 +21,38 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
+    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posY: -1, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
+  }
+
+  initColliders () {
+    // mountains
+    const mountainBoxes = []
+    this.mountain.then(response => {
+      let geom = response.geometries
+      geom.forEach(function (el) {
+        el.computeBoundingBox()
+        let mountainBox = new THREE.Box3(el.boundingBox.min, el.boundingBox.max)
+        mountainBoxes.push(mountainBox)
+      })
+    })
+    // console.log(mountainBoxes)
+
+    // boat
+    this.boatBox = null
+    this.boat.object.then((response) => {
+      let geom = response.geometries
+      let box = geom[0].computeBoundingBox()
+      this.boatBox = new THREE.Box3(geom[0].boundingBox.min, geom[0].boundingBox.max)
+    })
+    // setTimeout(() => { console.log(this.boatBox) }, 1000)
+
+    if (this.boatBox !== null) {
+      console.log("yeah is not null")
+      console.log(this.boatBox)
+    }
+
+    setTimeout(() => { this.detectCollision(mountainBoxes, this.boatBox) }, 1000)
   }
 
   initGroup () {
@@ -30,13 +60,24 @@ export default class App extends Engine {
     this.scene.add(this.mainGroup)
   }
 
+  detectCollision (mountainBoxes, boatBox) {
+    console.log(mountainBoxes)
+    mountainBoxes.forEach(el => {
+      console.log("hello")
+      let collision = el.intersectsBox(boatBox)
+      console.log("colision: " + collision)
+    })
+
+    // logic
+    // mountainBox.intersectsBox(boatBox)
+  }
 
   moveGroup () {
     const strength = 10.0
     let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
     let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
     this.mainGroup.position.set(x, 0, z)
-    this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5 )
+    this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
   }
 
   mainXpGroup () {
