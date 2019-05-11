@@ -60,9 +60,12 @@
       <div
         class="interface inventory-btn"
         @click="goInventory">
-        {{ objectFound }}
-        /
-        {{ totalObject }}
+        <span class="inventory-btn-title">collection</span>
+        <div class="inventory-btn-count">
+          <span class="inventory-btn-obj-found">{{ objectFound }}</span>
+          <div class="border-separator"></div>
+          <span class="inventory-btn-obj-total">{{ totalObject }}</span>
+        </div>
       </div>
     </router-link>
   </div>
@@ -228,16 +231,51 @@ export default {
     }
   }
     .inventory-btn{
-      bottom: 28px;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border-left: solid 10px rgba(254, 248, 239, 0.11);
-      border-top: solid 10px rgba(254, 248, 239, 0.11);
+      margin-left: 43px;
+      bottom: 38px;
+      width: 250px;
+      height: 83px;
       position: absolute;
+      z-index: 0;
       font-family: Arkhip, sans-serif;
-      font-size: 46px;
       color: white;
+      display: flex;
+      background: url('../assets/img/svg/border-collection-cta.svg') left no-repeat;
+      background-size: contain;
+      .inventory-btn-title{
+        align-self: center;
+        width: calc(100% - 90px);
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+      .inventory-btn-count{
+        width: 85px;
+        height: 83px;
+        display: flex;
+        justify-content: center;
+        border-left: solid 2px $medium_grey;
+        background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);;
+        span{
+          font-size: 31px;
+          position: relative;
+        }
+        .border-separator{
+          transform-origin: center;
+          transform: rotate(45deg);
+          margin: 5px;
+          width: 2px;
+          background: white;
+          height: 30px;
+          position: relative;
+          top: 20px;
+        }
+        .inventory-btn-obj-found{
+          top:12px;
+        }
+        .inventory-btn-obj-total{
+          top:41px;
+        }
+      }
     }
 }
 </style>

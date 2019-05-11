@@ -10,7 +10,7 @@ export default class Helpers {
 
     this.initStats()
     this.initAxes()
-    this.initControls()
+    // this.initControls()
     this.initCameraHelper()
     this.initGrid(50, 50)
   }

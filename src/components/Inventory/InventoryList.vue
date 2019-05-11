@@ -107,6 +107,7 @@ export default {
             padding: 20px;
             height: 35vh;
             display: flex;
+            background: none;
             .obj-title{
               text-decoration: none;
               will-change: opacity;
@@ -119,25 +120,13 @@ export default {
               color: $sand_yellow;
               text-transform: uppercase;
               padding-bottom: 10px;
-            }
-            &:after{
-              content:'';
-              position: absolute;
-              top:0;
-              left: 0;
-              border: solid 1px $sand_yellow;
-              transform: translate(5%, 5%);
-              width: 90%;
-              height: 90%;
-              will-change: opacity;
-              opacity: 0;
+              margin: 10px;
             }
           }
           &.canHover{
             .obj-container:hover{
-              &:after{
-                opacity: 1;
-              }
+              background: url('../../assets/img/svg/border-collection-list-element.svg') center no-repeat;
+              background-size: 90% 90%;
               .obj-title{
                 opacity: 1;
               }

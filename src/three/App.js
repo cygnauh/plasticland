@@ -12,9 +12,7 @@ export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
     this.initGeometry()
-    this.mainGroup = this.mainXpGroup()
-    this.scene.add(this.mainGroup)
-    // this.addToScene()
+    this.initGroup()
     this.animate()
   }
   initGeometry () {
@@ -22,44 +20,65 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
+    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
-  mainXpGroup () {
-    this.xpGroup = new THREE.Group()
+
+  initGroup () {
+    this.initMountainInstancesGroup()
+    this.initWaterBoatGroup()
+    this.scene.add(this.mountainInstancesGroup)
+    this.scene.add(this.waterBoatGroup)
+  }
+
+  moveGroup () {
+    const strength = 10.0
+    let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
+    let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
+    this.mountainInstancesGroup.position.set(x, 0, z)
+    this.mountainInstancesGroup.rotation.y = (this.mouseLerp.x / strength / 5)
+  }
+
+  initWaterBoatGroup () {
+    this.waterBoatGroup = new THREE.Group()
+    this.boat.object.then(response => {
+      response.meshes.forEach(element => {
+        this.waterBoatGroup.add(element)
+      })
+    })
+    this.waterBoatGroup.add(this.environment.water)
+  }
+
+  initMountainInstancesGroup () {
+    this.mountainInstancesGroup = new THREE.Group()
     this.instances.dechetsPromise.then(() => {
       this.instances.clusterArray.forEach(element => {
-        this.xpGroup.add(element)
+        this.mountainInstancesGroup.add(element)
       })
     })
     this.mountain.then(response => {
       response.meshes.forEach(element => {
-        this.xpGroup.add(element)
+        this.mountainInstancesGroup.add(element)
       })
     })
-    this.boat.object.then(response => {
-      response.meshes.forEach(element => {
-        this.xpGroup.add(element)
-      })
-    })
-    this.xpGroup.add(this.environment.water)
-    this.xpGroup.add(this.cube.object)
-    return this.xpGroup
+    this.mountainInstancesGroup.add(this.cube.object)
   }
 
   setDisplayInventory (value) {
     // remove the groupe from the scene
     if (value) {
       this.scene.background = null
-      this.scene.remove(this.mainGroup)
-      this.collectable.objects.forEach(element => { this.scene.add(element) })
+      this.scene.remove(this.mountainInstancesGroup)
+      this.scene.remove(this.waterBoatGroup)
+      this.scene.add(this.collectable.collectableGroup)
       this.collectable.openInventory(true)
-      this.camera.position.set(10, 0, -40)
+      this.camera.position.set(0, 0, -40)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
       this.collectable.openInventory(false)
-      this.collectable.objects.forEach(element => { this.scene.remove(element) })
-      this.scene.add(this.mainGroup)
+      this.scene.remove(this.collectable.collectableGroup)
+      this.scene.add(this.mountainInstancesGroup)
+      this.scene.add(this.waterBoatGroup)
       this.camera.position.set(0, 3.5, -52)
     }
   }
@@ -89,10 +108,13 @@ export default class App extends Engine {
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
+    // navigation
+    this.moveGroup()
+
     // update
     this.cube.update(this.timeElapsed)
     this.collectable.update()
-    this.boat.update(this.timeElapsed)
+    this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
 
     this.render()

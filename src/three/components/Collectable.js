@@ -12,6 +12,7 @@ export default class Collectable {
     this.width = width
     this.height = height
     this.objects = []
+    this.collectableGroup = null
     this.item = null
     this.otherItems = []
     this.initCollectables()
@@ -19,9 +20,10 @@ export default class Collectable {
 
   initCollectables () {
     let obj = null
+    this.collectableGroup = new THREE.Group()
     store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? 13 : i % 3 === 1 ? 0 : -13
-      let y = i < 3 ? 5 : -5
+      let y = i < 3 ? 0 : -10
       if (value) {
         obj = new GltfLoader(
           value.name,
@@ -32,6 +34,7 @@ export default class Collectable {
         )
         obj.then(response => {
           this.objects.push(response.meshes[0])
+          this.collectableGroup.add(response.meshes[0])
         })
       }
     })
@@ -41,7 +44,7 @@ export default class Collectable {
     if (value) {
       this.scaleItems(this.objects, 1)
     } else {
-      this.backToList()
+      if (this.item) this.backToList()
       this.scaleItems(this.objects, 0.00001)
     }
   }
@@ -55,22 +58,39 @@ export default class Collectable {
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, 0.00001)
-    this.animateVector3(this.item.position, new THREE.Vector3(0, 0, 8), {
+    this.animateVector3(this.item.position, new THREE.Vector3(3, -1.9, -25), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      delay: 400
+    })
   }
+
   backToList () {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
     let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
-    let y = itemIndex < 3 ? 5 : -5
+    let y = itemIndex < 3 ? 0 : -10
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut
+    })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(0, 0, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
     this.scaleItems(this.otherItems, 1)
   }
+
+  rotateSelectedItem () {
+    if (this.item) {
+      this.item.rotation.y += 0.0005
+    }
+  }
+
   scaleItems (array, scale) {
     array.forEach((element) => {
       this.animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {
