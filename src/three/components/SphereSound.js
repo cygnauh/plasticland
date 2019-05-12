@@ -12,7 +12,7 @@ export default class SphereSound {
     var sphere = new THREE.SphereGeometry(3, 32, 16)
     var material = new THREE.MeshPhongMaterial({ color: 0xff2200 })
     this.mesh = new THREE.Mesh(sphere, material)
-    this.mesh.position.x = -10
+    this.mesh.position.x = 0
   }
 
   // update (time) {

@@ -36,11 +36,8 @@ export default class App extends Engine {
     this.initWaterBoatGroup()
     this.scene.add(this.mountainInstancesGroup)
     this.scene.add(this.waterBoatGroup)
-    // this.mountainInstancesGroup.position.x = 35
-    // this.mountainInstancesGroup.position.z = 315
-
-    // this.mountainInstancesGroup.position.x = 35
-    // this.mountainInstancesGroup.position.z = 115
+    this.mountainInstancesGroup.position.x = 35
+    this.mountainInstancesGroup.position.z = 370 // for test use 300
   }
   moveGroup () {
     const strength = 10.0
@@ -48,6 +45,9 @@ export default class App extends Engine {
     let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
     this.mountainInstancesGroup.position.set(x, 0, z)
     this.mountainInstancesGroup.rotation.y = (this.mouseLerp.x / strength / 5)
+    if (this.mountainInstancesGroup.position.z < 270) {
+      this.sound.fadeOut(this.sound.introSound)
+    }
   }
 
   initWaterBoatGroup () {
@@ -124,6 +124,7 @@ export default class App extends Engine {
     this.moveGroup()
 
     // update
+    this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.collectable.update()
     this.boat.update(this.timeElapsed, this.mouseLerp)
