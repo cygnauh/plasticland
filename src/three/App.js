@@ -8,13 +8,18 @@ import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import Boat from './components/Boat'
+import Sound from './components/Sound'
 
 export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
     this.initGeometry()
     this.initGroup()
+    this.initSound()
     this.animate()
+  }
+  initSound () {
+    this.sound = new Sound(this.scene, this.camera, this.sphere.mesh)
   }
   initGeometry () {
     this.environment = new Environment(this.scene, this.renderer, this.light) // this.waterOld = new WaterV1(this.scene) merci quoi :(
@@ -22,7 +27,7 @@ export default class App extends Engine {
     this.sphere = new Sphere(this.scene, this.camera)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    // this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
+    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
 
@@ -37,7 +42,6 @@ export default class App extends Engine {
     // this.mountainInstancesGroup.position.x = 35
     // this.mountainInstancesGroup.position.z = 115
   }
-
   moveGroup () {
     const strength = 10.0
     let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
@@ -59,16 +63,16 @@ export default class App extends Engine {
   initMountainInstancesGroup () {
     this.mountainInstancesGroup = new THREE.Group()
     this.mountainInstancesGroup.add(this.sphere.mesh)
-    // this.instances.dechetsPromise.then(() => {
-    //   this.instances.clusterArray.forEach(element => {
-    //     this.mountainInstancesGroup.add(element)
-    //   })
-    // })
-    // this.mountain.then(response => {
-    //   response.meshes.forEach(element => {
-    //     this.mountainInstancesGroup.add(element)
-    //   })
-    // })
+    this.instances.dechetsPromise.then(() => {
+      this.instances.clusterArray.forEach(element => {
+        this.mountainInstancesGroup.add(element)
+      })
+    })
+    this.mountain.then(response => {
+      response.meshes.forEach(element => {
+        this.mountainInstancesGroup.add(element)
+      })
+    })
     this.mountainInstancesGroup.add(this.cube.object)
   }
 
