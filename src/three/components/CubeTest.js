@@ -19,6 +19,7 @@ export default class CubeTest {
     this.object.position.y = 0
     this.object.position.x = 10
     this.object.position.z = 10
+
     // this.scene.add(this.object)
   }
 
