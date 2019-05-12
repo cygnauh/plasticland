@@ -62,7 +62,7 @@ export default class Collectable {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
-    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0), {
+    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0.1), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut,
       delay: 400
@@ -87,7 +87,7 @@ export default class Collectable {
 
   rotateSelectedItem () {
     if (this.item) {
-      this.item.rotation.y += 0.0005
+      this.item.rotation.y += 0.01
     }
   }
 

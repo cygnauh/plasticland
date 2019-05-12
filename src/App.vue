@@ -7,7 +7,7 @@
 export default {
   name: 'app',
   mounted () {
-    // this.$router.replace('/') // TODO : added this in production mode, on reload goes to main page
+    this.$router.replace('/plasticland') // TODO : added this in production mode, on reload goes to main page
   },
   methods: {}
 }
