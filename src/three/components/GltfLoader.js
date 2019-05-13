@@ -31,6 +31,7 @@ export default class GltfLoader {
         this.gltf.scale.y = scale
         this.gltf.scale.z = scale
         this.gltf.rotation.y = rotateY
+        this.gltf.castShadow = true
         if (addToScene) {
           this.scene.add(this.gltf)
         }

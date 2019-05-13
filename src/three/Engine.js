@@ -45,12 +45,6 @@ export default class Engine {
     // helpers
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
-    // light
-    this.light = new THREE.DirectionalLight(0x544d75, 0.8)
-    this.scene.add(this.light)
-    this.ambientlight = new THREE.AmbientLight(0x404040)
-    this.scene.add(this.ambientlight)
-
     // fog
     this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 108)
 
@@ -75,6 +69,16 @@ export default class Engine {
     // gltf lighting
     this.renderer.gammaOutput = true
     this.renderer.gammaFactor = 2.2
+
+    // light
+    this.light = new THREE.DirectionalLight(0x544d75, 0.8)
+    this.light.castShadow = true
+    this.light.shadow.mapSize.height = this.light.shadow.mapSize.width = 1000
+    this.scene.add(this.light)
+    this.ambientlight = new THREE.AmbientLight(0x404040)
+    this.scene.add(this.ambientlight)
+    this.renderer.shadowMap.enabled = true
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
   }
   initInventoryScene () {
     // scene
