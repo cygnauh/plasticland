@@ -135,7 +135,8 @@ export default class App extends Engine {
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
-    if (this.helpers.controls) this.helpers.controls.update()
+    if (this.helpers.orbitControls) this.helpers.orbitControls.update()
+    if (this.helpers.transformControls) this.helpers.transformControls.update()
 
     // update
     this.timeDelta = this.clock.getDelta()
