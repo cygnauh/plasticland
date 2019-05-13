@@ -72,13 +72,13 @@ export default class Engine {
 
     // light
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
-    this.light.castShadow = true
+    // this.light.castShadow = true
     this.light.shadow.mapSize.height = this.light.shadow.mapSize.width = 1000
     this.scene.add(this.light)
     this.ambientlight = new THREE.AmbientLight(0x404040)
     this.scene.add(this.ambientlight)
-    this.renderer.shadowMap.enabled = true
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+    // this.renderer.shadowMap.enabled = true
+    // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
   }
   initInventoryScene () {
     // scene
