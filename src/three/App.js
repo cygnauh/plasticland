@@ -8,6 +8,7 @@ import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import Boat from './components/Boat'
+import Photograph from './components/Photograph'
 import Sound from './components/Sound'
 
 export default class App extends Engine {
@@ -28,6 +29,7 @@ export default class App extends Engine {
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_05.glb', this.scene, this.manager, { posX: 0, posZ: 0, scale: 0.025, rotateY: -200, addToScene: true })
+    this.photograph = new Photograph(this.scene, this.camera)
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
 
@@ -52,6 +54,7 @@ export default class App extends Engine {
 
   initWaterBoatGroup () {
     this.waterBoatGroup = new THREE.Group()
+    this.waterBoatGroup.name = 'water and boat'
     this.boat.object.then(response => {
       response.meshes.forEach(element => {
         this.waterBoatGroup.add(element)
@@ -62,6 +65,7 @@ export default class App extends Engine {
 
   initMountainInstancesGroup () {
     this.mountainInstancesGroup = new THREE.Group()
+    this.mountainInstancesGroup.name = 'mountain and instances'
     this.mountainInstancesGroup.add(this.sphere.mesh)
     this.instances.dechetsPromise.then(() => {
       this.instances.clusterArray.forEach(element => {
@@ -73,6 +77,7 @@ export default class App extends Engine {
         this.mountainInstancesGroup.add(element)
       })
     })
+    this.mountainInstancesGroup.add(this.photograph.photographPoint)
     this.mountainInstancesGroup.add(this.cube.object)
   }
 
@@ -97,7 +102,8 @@ export default class App extends Engine {
 
   onClick () {
     let intersected = false
-    let intersects = this.raycaster.intersectObjects(this.scene.children)
+    let group = this.scene.children.filter(element => element.name === 'mountain and instances')
+    let intersects = this.raycaster.intersectObjects(group[0].children)
     intersects.forEach((intersect) => {
       switch (intersect.object.name) {
         case 'cubeTest':

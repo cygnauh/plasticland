@@ -14,7 +14,6 @@ export default class Sound {
     this.initAmbiantSound()
     this.initIntroSound()
     window.addEventListener('click', () => {
-      console.log('click')
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         this.ambiantSound.play()
         this.spacialSound.play()
@@ -72,7 +71,7 @@ export default class Sound {
     }, 5).onUpdate(() => {
       sound.setVolume(volume.x)
     }).onComplete(() => {
-      if (sound.getVolume() < 0.0001) {
+      if (sound && sound.isPlaying && sound.getVolume() < 0.0001) {
         sound.stop()
       }
     }).start()
