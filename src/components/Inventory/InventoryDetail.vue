@@ -5,7 +5,7 @@
         <div class="visual"/>
         <div
            ref="content"
-           :style="{'transform': 'translateY(-' + dx*10 + 'px)'}"
+           :style="{'transform': 'translateY(-' + 10 + 'px)'}"
            class="content">
           <div class="content-title">
             {{ object[0].name }}
@@ -77,19 +77,12 @@ export default {
   methods: {
     onMouseWheel (e) {
       if (e.deltaY < 0 && this.sy > 0) {
-        // this.sy = window.pageYOffset
         this.sy -= 1
-        console.log('down')
-        // dollyOut(getZoomScale())
+	    Vue.prototype.$engine.collectable.rotateSelectedItem(false)
       } else if (event.deltaY > 0 && this.sy < (window.innerHeight - this.contentHeight)) {
-        console.log('up')
-        // dollyIn(getZoomScale())
         this.sy += 1
+	    Vue.prototype.$engine.collectable.rotateSelectedItem(true)
       }
-      console.log(this.sy)
-
-      // console.log('scroll')
-      Vue.prototype.$engine.collectable.rotateSelectedItem()
       clearTimeout(this.timer)
     },
     lerp (a, b, n) {
@@ -133,7 +126,8 @@ export default {
           flex-direction: column;
           .content-title{
             font-family: Arkhip, sans-serif;
-            font-size: 50px;
+            font-size: 45px;
+            /*font-size: 50px;*/
             margin-bottom: 46px;
             text-transform: uppercase;
           }

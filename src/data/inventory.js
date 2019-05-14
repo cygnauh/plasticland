@@ -10,7 +10,7 @@ export default
     },
     {
       'id': 2,
-      'name': 'prendre la vie cote plastique 2',
+      'name': 'prendre la vie cote plastique',
       'model': './models/bottle_coca.glb',
       'found': true,
       'description': 'Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70.Consigne arrêter chez Coca cola dans les 70.@ Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70.'
@@ -26,7 +26,7 @@ export default
       'id': 4,
       'name': 'prendre la vie cote plastique 4',
       'model': './models/starbucks_cup_test.glb',
-      'found': true,
+      'found': false,
       'description': 'Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70.'
     },
     {
@@ -34,14 +34,14 @@ export default
       'name': 'prendre la vie côté plastique 5',
       'model': './models/bottle_coca.glb',
       'found': false,
-      'description': 'Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70.Consigne arrêter chez Coca cola dans les 70.@ Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez Coca cola dans les 70. @Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70.'
+      'description': 'Consigne arrêter dans les 70. @Consigne arrêter dans les 70. Consigne arrêter chez dans les 70.@ Consigne arrêter dans les 70.@ Consigne arrêter chez dans les 70. @Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70.@ Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez star dans les 70.'
     },
     {
       'id': 6,
-      'name': 'prendre la vie cote plastique 6',
+      'name': 'Ce n\'est pas juste du plastique, c\'est starbucks.',
       'model': './models/starbucks_cup.glb',
       'found': true,
-      'description': 'Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70.@C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70.@Consigne arrêter chez Coca cola dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez Coca cola dans les 70.'
+      'description': 'Consigne arrêter dans les 70 Consigne arrêter dans les 70. Consigne arrêter chez dans les 70.Consigne arrêter dans les 70 Consigne arrêter chez dans les 70. @Consigne arrêter chez star dans les 70. Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70.@ Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez star dans les 70.'
     }
   ]
 }

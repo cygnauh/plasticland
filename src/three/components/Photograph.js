@@ -13,9 +13,9 @@ export default class Photograph {
 	  var spriteMap = new THREE.TextureLoader().load('./textures/cta-photo@3x.png')
 	  var spriteMaterial = new THREE.SpriteMaterial({ map: spriteMap, color: 0xffffff })
 	  this.photographPoint = new THREE.Sprite(spriteMaterial)
-    this.photographPoint.position.z = -170
+    this.photographPoint.position.z = -110
     this.photographPoint.position.y = 10
-    this.photographPoint.position.x = -5
+    this.photographPoint.position.x = 50
     this.photographPoint.rotateY(10)
     this.photographPoint.name = 'photograph'
 	  this.photographPoint.scale.set(10, 10, 1)

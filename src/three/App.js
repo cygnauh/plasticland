@@ -187,21 +187,23 @@ export default class App extends Engine {
   onClick () {
     let intersected = false
     let group = this.scene.children.filter(element => element.name === 'mountain and instances')
-    let intersects = this.raycaster.intersectObjects(group[0].children)
-    intersects.forEach((intersect) => {
-      switch (intersect.object.name) {
-        case 'cubeTest':
-          intersected = true
-          break
-        case 'photograph':
-          intersected = true
-          this.showPhotograph = true
-          break
-        default:
-          intersected = false
-          break
-      }
-    })
+    if (group[0] && group[0].children) {
+      let intersects = this.raycaster.intersectObjects(group[0].children)
+      intersects.forEach((intersect) => {
+        switch (intersect.object.name) {
+          case 'cubeTest':
+            intersected = true
+            break
+          case 'photograph':
+            intersected = true
+            this.showPhotograph = true
+            break
+          default:
+            intersected = false
+            break
+        }
+      })
+    }
   }
 
   animate () {
