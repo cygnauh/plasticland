@@ -39,7 +39,7 @@ export default class App extends Engine {
     this.scene.add(this.mountainInstancesGroup)
     this.scene.add(this.waterBoatGroup)
     this.mountainInstancesGroup.position.x = 35
-    this.mountainInstancesGroup.position.z = 200 // use for prod 370
+    this.mountainInstancesGroup.position.z = 370 // use for prod 370
   }
   moveGroup () {
     if (this.showPhotograph) return
@@ -99,9 +99,8 @@ export default class App extends Engine {
     }
   }
   onShowPhotograph () {
-    let scale = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
     if (this.showPhotograph) {
-      this.photograph.photographPoint.scale.set(scale, scale, scale)
+      this.photograph.scaleOut(0.000001)
     }
     return this.showPhotograph
   }

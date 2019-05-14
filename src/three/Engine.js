@@ -5,7 +5,6 @@ export default class Engine {
   constructor (canvas) {
     this.initCanvas(canvas)
     this.initScene()
-    this.initInventoryScene()
     this.initLoadingManager()
     this.addEventListeners()
     this.displayInventory = false
@@ -27,16 +26,11 @@ export default class Engine {
     this.scene.name = 'scene'
     window.scene = this.scene
     window.THREE = THREE
-    // this.scene.rotateX(-Math.PI / 4)
-    // this.scene.rotateZ(Math.PI / 2)
 
     // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 3.5, -52)
     this.camera.lookAt(0, 0, 0)
-    // this.camera.name = 'currentCamera'
-    // this.camera.rotateX(-Math.PI / 2)
-    // var cam = this.scene.getObjectById(currentCamera)
 
     // clock
     this.clock = new THREE.Clock()
@@ -77,21 +71,6 @@ export default class Engine {
     this.renderer.gammaOutput = true
     this.renderer.gammaFactor = 2.2
   }
-  initInventoryScene () {
-    // scene
-    this.inventoryScene = new THREE.Scene()
-    this.inventoryScene.background = new THREE.Color(0xff0000)
-    this.inventoryScene.name = 'scene2'
-    this.inventoryScene.position.y = -8
-
-    // camera
-    this.inventoryCamera = new THREE.PerspectiveCamera(5, this.width / this.height, 100, 1000)
-    this.inventoryCamera.position.set(0, 10, 250)
-    this.inventoryCamera.position.set(1000, 10, 250)
-    // this.inventoryScene.add(this.ambiantlight)
-    // this.inventoryScene.add(this.spotlight)
-  }
-
   initLoadingManager () {
     this.manager = new THREE.LoadingManager()
     this.manager.onStart = (url, itemsLoaded, itemsTotal) => {
