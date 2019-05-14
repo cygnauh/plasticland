@@ -3,6 +3,7 @@ import GltfLoader from './GltfLoader'
 import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
+import { animateVector3 } from '../utils/Animation'
 
 export default class Collectable {
   constructor (scene, manager, camera, width, height) {
@@ -15,6 +16,7 @@ export default class Collectable {
     this.collectableGroup = null
     this.item = null
     this.otherItems = []
+    this.animateVector3 = animateVector3
     this.initCollectables()
   }
 
@@ -98,26 +100,6 @@ export default class Collectable {
         easing: TWEEN.Easing.Quadratic.InOut
       })
     })
-  }
-  animateVector3 (vectorToAnimate, target, options) { // anim can be position or scale
-    options = options || {}
-    // get targets from options or set to defaults
-    let to, easing, duration, delay
-    to = target || THREE.Vector3()
-    easing = options.easing || TWEEN.Easing.Quadratic.In
-    duration = options.duration || 2000
-    delay = options.delay || 0
-    // create the tween
-    let tweenVector3 = new TWEEN.Tween(vectorToAnimate)
-      .to({ x: to.x, y: to.y, z: to.z }, duration)
-      .delay(delay)
-      .easing(easing)
-      .onComplete(function () {
-        if (options.callback) options.callback()
-      })
-    tweenVector3.start()
-    // return the tween in case we want to manipulate it later on
-    return tweenVector3
   }
   update () {
     TWEEN.update()
