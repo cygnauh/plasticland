@@ -20,7 +20,7 @@ THREE.OrbitControls = function (object, domElement) {
   this.domElement = (domElement !== undefined) ? domElement : document
 
   // Set to false to disable this control
-  this.enabled = true
+  this.enabled = false
 
   // "target" sets the location of focus, where the object orbits around
   this.target = new THREE.Vector3()
@@ -45,16 +45,16 @@ THREE.OrbitControls = function (object, domElement) {
 
   // Set to true to enable damping (inertia)
   // If damping is enabled, you must call controls.update() in your animation loop
-  this.enableDamping = false
+  this.enableDamping = true
   this.dampingFactor = 0.25
 
   // This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
   // Set to false to disable zooming
-  this.enableZoom = true
+  this.enableZoom = false
   this.zoomSpeed = 1.0
 
   // Set to false to disable rotating
-  this.enableRotate = true
+  this.enableRotate = false
   this.rotateSpeed = 1.0
 
   // Set to false to disable panning

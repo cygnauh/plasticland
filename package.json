@@ -8,9 +8,11 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "cannon": "^0.6.2",
     "core-js": "^2.6.5",
     "tar": "^4.4.8",
     "three-instanced-mesh": "^0.96.2",
+    "three-transform-controls": "^1.0.4",
     "tween": "^0.9.0",
     "vue": "^2.6.6"
   },
