@@ -3,6 +3,7 @@ import GltfLoader from './GltfLoader'
 import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
+import { animateVector3 } from '../utils/Animation'
 
 export default class Collectable {
   constructor (scene, manager, camera, width, height) {
@@ -12,16 +13,19 @@ export default class Collectable {
     this.width = width
     this.height = height
     this.objects = []
+    this.collectableGroup = null
     this.item = null
     this.otherItems = []
+    this.animateVector3 = animateVector3
     this.initCollectables()
   }
 
   initCollectables () {
     let obj = null
+    this.collectableGroup = new THREE.Group()
     store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? 13 : i % 3 === 1 ? 0 : -13
-      let y = i < 3 ? 5 : -5
+      let y = i < 3 ? 0 : -10
       if (value) {
         obj = new GltfLoader(
           value.name,
@@ -32,6 +36,7 @@ export default class Collectable {
         )
         obj.then(response => {
           this.objects.push(response.meshes[0])
+          this.collectableGroup.add(response.meshes[0])
         })
       }
     })
@@ -55,22 +60,39 @@ export default class Collectable {
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, 0.00001)
-    this.animateVector3(this.item.position, new THREE.Vector3(0, 0, 8), {
+    this.animateVector3(this.item.position, new THREE.Vector3(3, -1.9, -25), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0.1), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      delay: 400
+    })
   }
+
   backToList () {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
     let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
-    let y = itemIndex < 3 ? 5 : -5
+    let y = itemIndex < 3 ? 0 : -10
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut
+    })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(0, 0, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
     })
     this.scaleItems(this.otherItems, 1)
   }
+
+  rotateSelectedItem () {
+    if (this.item) {
+      this.item.rotation.y += 0.01
+    }
+  }
+
   scaleItems (array, scale) {
     array.forEach((element) => {
       this.animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {
@@ -78,26 +100,6 @@ export default class Collectable {
         easing: TWEEN.Easing.Quadratic.InOut
       })
     })
-  }
-  animateVector3 (vectorToAnimate, target, options) { // anim can be position or scale
-    options = options || {}
-    // get targets from options or set to defaults
-    let to, easing, duration, delay
-    to = target || THREE.Vector3()
-    easing = options.easing || TWEEN.Easing.Quadratic.In
-    duration = options.duration || 2000
-    delay = options.delay || 0
-    // create the tween
-    let tweenVector3 = new TWEEN.Tween(vectorToAnimate)
-      .to({ x: to.x, y: to.y, z: to.z }, duration)
-      .delay(delay)
-      .easing(easing)
-      .onComplete(function () {
-        if (options.callback) options.callback()
-      })
-    tweenVector3.start()
-    // return the tween in case we want to manipulate it later on
-    return tweenVector3
   }
   update () {
     TWEEN.update()

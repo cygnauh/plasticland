@@ -57,8 +57,7 @@ export default class GltfLoader {
         // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
       },
       (error) => {
-        // console.log('An error happened' + error)
-        reject(new Error('there is an error'))
+        reject(new Error('there is an error' + error))
       })
     })
 
