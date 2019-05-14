@@ -23,6 +23,7 @@ export default class Instances {
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
       const e = new THREE.Euler()
 
+      // dechets positions from null
       dechets.translation.forEach(pos => {
         const r = Math.floor(Math.random() * clusterNodes.length)
         if (pos) {
@@ -37,9 +38,8 @@ export default class Instances {
 
         let cluster = new InstancedMesh(geometry, matTest, clusterNodes[index].length, true, false, true)
         clusterNodes[index].forEach((pos, rank) => {
-          console.log(pos, rank)
-          // e.set(rotation[0], rotation[1], rotation[2], eulerOrder)
-          let random = Math.random() * Math.PI
+          // console.log(pos, rank)
+          let random = Math.random()
           cluster.setQuaternionAt(rank, new THREE.Quaternion().setFromEuler(new THREE.Euler(
             Math.random() * 2 * Math.PI,
             Math.random() * 2 * Math.PI,
