@@ -55,7 +55,7 @@ export default class App extends Engine {
   }
 
   moveGroup () {
-    const strength = 10.0
+    const strength = 2.0
 
     // detect collision
     this.mountainBoxesPromise.then(mountainBoxes => {
@@ -100,7 +100,7 @@ export default class App extends Engine {
   }
 
   setDisplayInventory (value) {
-    // remove the groupe from the scene
+    // remove the group from the scene
     if (value) {
       this.scene.background = null
       this.scene.remove(this.mainGroup)
@@ -136,13 +136,12 @@ export default class App extends Engine {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
-    if (this.helpers.transformControls) this.helpers.transformControls.update()
 
     // update
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
-    // navigation
+    // nav
     this.moveGroup()
 
     // update
