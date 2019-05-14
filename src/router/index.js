@@ -7,6 +7,7 @@ import InventoryList from '../components/Inventory/InventoryList'
 import InventoryDetail from '../components/Inventory/InventoryDetail'
 import Credits from '../components/Credits'
 import About from '../components/About'
+import Phone from '../components/Phone'
 
 Vue.use(Router)
 
@@ -16,6 +17,10 @@ export default new Router({
     {
       path: '/',
       component: Introduction
+    },
+    {
+      path: '/phone',
+      component: Phone
     },
     {
       path: '/plasticland',

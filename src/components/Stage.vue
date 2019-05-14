@@ -53,6 +53,7 @@
     <canvas
       ref="canvas"
       id="canvas"> </canvas>
+    <Phone v-if="displayPhone"></Phone>
     <router-view/>
     <router-link
       v-if="$route.path === '/plasticland'"
@@ -77,34 +78,40 @@ import Vue from 'vue'
 import App from '../three/App'
 import Timer from './Timer/Timer'
 import InventoryList from './Inventory/InventoryList'
+import Phone from './Phone'
 import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: { Timer },
+  components: { Timer, Phone },
   data () {
     return {
       data: '',
       title: 'Marécage de plastique',
       objectFound: store.state.objects.filter(item => item.found).length,
       totalObject: store.state.objects.length,
-      displayReturn: false
+      displayReturn: false,
+      displayPhone: null
     }
   },
   mounted () {
     this.initScene()
     if (this.inventory) this.setInventory(this.inventory)
     this.checkRoute(this.$route.path)
+	document.addEventListener('click', (e) => this.handleClick(e), false)
   },
   watch: {
     $route (to) {
       this.checkRoute(to.path)
+    },
+    displayPhone (value) {
+      console.log(value)
     }
   },
   methods: {
     initScene () {
       Vue.prototype.$engine = new App(this.$refs.canvas) // init scene
-      if (this.$route.path === '/plasticland/inventory') {
+	  if (this.$route.path === '/plasticland/inventory') {
         this.setInventory(true)
       }
     },
@@ -112,10 +119,12 @@ export default {
       Vue.prototype.$engine.setDisplayInventory(value)
     },
     goInventory () {
-      this.$router.push({
-        path: `/plasticland/inventory`,
-        component: InventoryList
-      })
+      if (!this.displayPhone) {
+        this.$router.push({
+          path: `/plasticland/inventory`,
+          component: InventoryList
+        })
+      }
     },
     backToInventoryList () {
       Vue.prototype.$engine.collectable.backToList()
@@ -133,6 +142,18 @@ export default {
       } else {
         this.displayReturn = true
       }
+    },
+	handleClick () {
+      // photograph or Collectable
+      if (this.displayPhone === true) {
+        this.displayPhone = !this.displayPhone
+        Vue.prototype.$engine.closePhoto()
+	    return
+      }
+	  this.displayPhone = Vue.prototype.$engine.onShowPhotograph()
+    },
+    closePhoto () {
+      Vue.prototype.$engine.closePhoto()
     }
   }
 }

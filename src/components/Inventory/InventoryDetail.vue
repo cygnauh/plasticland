@@ -3,11 +3,15 @@
     <div class='inventory-detail-container'>
       <div class="box">
         <div class="visual"/>
-        <div class="content">
+        <div
+           ref="content"
+           :style="{'transform': 'translateY(-' + dx*10 + 'px)'}"
+           class="content">
           <div class="content-title">
             {{ object[0].name }}
           </div>
-          <div class="content-description">
+          <div
+            class="content-description">
             <span
               :key="i"
               v-for="(item, i) in description"
@@ -46,26 +50,50 @@ export default {
   },
   data () {
     return {
-      timer: null
+      timer: null,
+      sy: 0,
+      dy: this.sy,
+      contentHeight: 0
+
     }
   },
   beforeCreate () {
-    window.addEventListener('wheel', () => this.handleEvent())
+    window.addEventListener('wheel', (e) => this.onMouseWheel(e))
+    // window.addEventListener('scroll', () => this.handleEvent())
   },
   beforeDestroy () {
-    window.removeEventListener('wheel', this.handleEvent)
+    window.removeEventListener('wheel', this.onMouseWheel)
+    // window.removeEventListener('wheel', this.handleEvent)
+  },
+  mounted () {
+    this.contentHeight = this.$refs.content.offsetHeight
+    console.log(this.contentHeight, window.innerHeight)
+  },
+  watch: {
+    sy (value) {
+      this.dy = Math.floor(this.lerp(this.dy, value, 0.07) * 100) / 100
+    }
   },
   methods: {
-    handleEvent () {
-      if (this.timer !== null) {
-        console.log('scroll')
-        Vue.prototype.$engine.collectable.rotateSelectedItem()
-        clearTimeout(this.timer)
+    onMouseWheel (e) {
+      if (e.deltaY < 0 && this.sy > 0) {
+        // this.sy = window.pageYOffset
+        this.sy -= 1
+        console.log('down')
+        // dollyOut(getZoomScale())
+      } else if (event.deltaY > 0 && this.sy < (window.innerHeight - this.contentHeight)) {
+        console.log('up')
+        // dollyIn(getZoomScale())
+        this.sy += 1
       }
-      this.timer = setTimeout(() => {
-        // do something
-        console.log('helo')
-      }, 100)
+      console.log(this.sy)
+
+      // console.log('scroll')
+      Vue.prototype.$engine.collectable.rotateSelectedItem()
+      clearTimeout(this.timer)
+    },
+    lerp (a, b, n) {
+      return (1 - n) * a + n * b
     }
   }
 }
@@ -105,8 +133,9 @@ export default {
           flex-direction: column;
           .content-title{
             font-family: Arkhip, sans-serif;
-            font-size: 43px;
+            font-size: 50px;
             margin-bottom: 46px;
+            text-transform: uppercase;
           }
           .content-description{
             font-family: ApercuPro, sans-serif;
