@@ -14,11 +14,13 @@ import Sound from './components/Sound'
 export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
+    this.showPhotograph = false
     this.initGeometry()
     this.initGroup()
     this.initSound()
     this.animate()
   }
+
   initSound () {
     this.sound = new Sound(this.scene, this.camera, this.sphere.mesh)
   }
@@ -39,9 +41,10 @@ export default class App extends Engine {
     this.scene.add(this.mountainInstancesGroup)
     this.scene.add(this.waterBoatGroup)
     this.mountainInstancesGroup.position.x = 35
-    this.mountainInstancesGroup.position.z = 370 // for test use 300
+    this.mountainInstancesGroup.position.z = 200 // use for prod 370
   }
   moveGroup () {
+    if (this.showPhotograph) return
     const strength = 10.0
     let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
     let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
@@ -108,6 +111,11 @@ export default class App extends Engine {
       switch (intersect.object.name) {
         case 'cubeTest':
           intersected = true
+          console.log('tu as clické sur le cubeTest')
+          break
+        case 'photograph':
+          intersected = true
+          this.showPhotograph = true
           console.log('tu as clické sur le cubeTest')
           break
         default:
