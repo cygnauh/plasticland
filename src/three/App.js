@@ -7,15 +7,23 @@ import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import Boat from './components/Boat'
+import CannonTest from './components/cannonTest'
 
 export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
+    // this.initCannon()
     this.initGeometry()
     this.initColliders()
     this.initGroup()
+    // this.keyboard()
     this.animate()
   }
+
+  // initCannon () {
+  //   this.cannonTest = new CannonTest(this.scene, this.helpers.transformControls)
+  // }
+
   initGeometry () {
     this.environment = new Environment(this.scene, this.renderer, this.light)
     this.cube = new CubeTest(this.scene)
@@ -58,24 +66,56 @@ export default class App extends Engine {
     const strength = 2.0
 
     // detect collision
-    this.mountainBoxesPromise.then(mountainBoxes => {
-      mountainBoxes.forEach(el => {
-        this.boatBoxPromise.then(boatBox => {
-          console.log(el, boatBox)
-          const collision = el.intersectsBox(boatBox)
-          console.log(collision)
-          if (!collision) {
-            let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
-            let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
-            this.mainGroup.position.set(x, 0, z)
+    // this.mountainBoxesPromise.then(mountainBoxes => {
+    //   mountainBoxes.forEach(el => {
+    //     this.boatBoxPromise.then(boatBox => {
+    //       // console.log(el, boatBox)
+    //       const collision = el.intersectsBox(boatBox)
+    //       // console.log(collision)
+    //       if (!collision) {
+    //
+    //       }
+    //     })
+    //   })
+    // })
+
+    let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
+    let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
+    this.mainGroup.position.set(x, 0, z)
     // this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
-          }
-        })
-      })
-    })
 
     // logic is check if mountainBox.intersectsBox(boatBox)
   }
+
+  // keyboard () {
+  //   let mainGroup = this.mainGroup
+  //   let mouseLerp = this.mouseLerp
+  //   // this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
+  //
+  //   document.addEventListener('keydown', function (e) {
+  //     console.log(e.code)
+  //     switch (e.key) {
+  //       case 'ArrowRight':
+  //         // console.log("rotate right")
+  //         mainGroup.rotation.y += 0.1
+  //         break
+  //       case 'ArrowLeft':
+  //         // console.log("rotate left")
+  //         mainGroup.rotation.y -= 0.1
+  //         break
+  //       case 'ArrowDown':
+  //         // console.log("go down")
+  //         mainGroup.position.z += 1
+  //         break
+  //       case 'ArrowUp':
+  //         // console.log("go up")
+  //         mainGroup.position.z -= 1
+  //         break
+  //       default:
+  //         break
+  //     }
+  //   }, false)
+  // }
 
   mainXpGroup () {
     this.xpGroup = new THREE.Group()
@@ -149,6 +189,7 @@ export default class App extends Engine {
     this.collectable.update()
     this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
+    // this.cannonTest.update(this.timeDelta)
 
     this.render()
 

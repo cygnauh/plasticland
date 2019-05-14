@@ -8,7 +8,7 @@ export default class CannonTest {
 
     this.materials = {
       solid: new THREE.MeshBasicMaterial({
-        color: 0x00ff00,
+        color: 0x00ff00
       }),
       colliding: new THREE.MeshBasicMaterial({
         color: 0xff0000,
@@ -23,11 +23,14 @@ export default class CannonTest {
 
   initCube () {
     this.geom = new THREE.BoxGeometry(0.75, 0.75, 0.75)
-    this.cube = new THREE.Mesh(this.geom, this.materials.solid)
+    let blackMat = new THREE.MeshBasicMaterial({ color: 0x000000 })
+    this.cube = new THREE.Mesh(this.geom, blackMat)
     this.cube.position.set(2, 2, 1.74)
     this.scene.add(this.cube)
 
-    this.cubeTwo = new THREE.Mesh(this.geom, this.mat)
+    this.geom2 = new THREE.BoxGeometry(1.75, 1.75, 1.75)
+    let whiteMat = new THREE.MeshBasicMaterial({ color: 0xffffff })
+    this.cubeTwo = new THREE.Mesh(this.geom2, whiteMat)
     this.cubeTwo.position.set(5, 2, 1.74)
     this.scene.add(this.cubeTwo)
 
@@ -41,9 +44,11 @@ export default class CannonTest {
     this.cubeBody2 = this.addPhysicalBody(this.cubeTwo, { mass: 1 })
 
     // register for collide events
-    this.cubeBody.addEventListener('collide', (e) => {
+    this.cubeBody.addEventListener('collide', function (e) {
       console.log('Collision!' + e)
     })
+
+    this.cubeBody.angularVelocity.x = Math.PI / 4
   }
 
   setupWorld () {
@@ -56,6 +61,7 @@ export default class CannonTest {
   addPhysicalBody (mesh, bodyOptions) {
     mesh.geometry.computeBoundingBox()
     let box = mesh.geometry.boundingBox
+    console.log(box)
     let shape = new CANNON.Box(new CANNON.Vec3(
       (box.max.x - box.min.x) / 2,
       (box.max.y - box.min.y) / 2,
@@ -66,7 +72,7 @@ export default class CannonTest {
     body.addShape(shape)
     body.position.copy(mesh.position)
     body.computeAABB()
-    body.collisionResponse = false // collision response: objects (don't) move when they collide
+    body.collisionResponse = true // collision response: objects (don't) move when they collide
     body.mesh = mesh // keep a reference to the mesh so we can update its properties later
     this.world.addBody(body)
     return body
@@ -94,13 +100,10 @@ export default class CannonTest {
     let timeStep = 1.0 / 60.0 // seconds
     for (let i = 0; i < 60; ++i) {
       this.world.step(timeStep)
+      console.log(timeStep)
 
       // move the cube body with mouse controls
       this.cubeBody.position.copy(this.cube.position)
-
-      // reset materials
-      this.cube.material = this.materials.solid
-      this.cubeTwo.material = this.materials.solid
 
       this.world.contacts.forEach((contact) => {
         console.log(contact)
