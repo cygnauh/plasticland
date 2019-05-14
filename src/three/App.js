@@ -68,7 +68,7 @@ export default class App extends Engine {
             let x = this.mainGroup.position.x + (this.mouseLerp.x / strength)
             let z = this.mainGroup.position.z - (this.mouseLerp.y / strength)
             this.mainGroup.position.set(x, 0, z)
-            this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
+    // this.mainGroup.rotation.y = (this.mouseLerp.x / strength / 5)
           }
         })
       })
