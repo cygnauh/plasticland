@@ -20,7 +20,6 @@ export default class App extends Engine {
     this.initSound()
     this.animate()
   }
-
   initSound () {
     this.sound = new Sound(this.scene, this.camera, this.sphere.mesh)
   }
@@ -34,7 +33,6 @@ export default class App extends Engine {
     this.photograph = new Photograph(this.scene, this.camera)
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
   }
-
   initGroup () {
     this.initMountainInstancesGroup()
     this.initWaterBoatGroup()
@@ -54,7 +52,6 @@ export default class App extends Engine {
       this.sound.fadeOut(this.sound.introSound)
     }
   }
-
   initWaterBoatGroup () {
     this.waterBoatGroup = new THREE.Group()
     this.waterBoatGroup.name = 'water and boat'
@@ -83,7 +80,6 @@ export default class App extends Engine {
     this.mountainInstancesGroup.add(this.photograph.photographPoint)
     this.mountainInstancesGroup.add(this.cube.object)
   }
-
   setDisplayInventory (value) {
     // remove the groupe from the scene
     if (value) {
@@ -102,7 +98,17 @@ export default class App extends Engine {
       this.camera.position.set(0, 3.5, -52)
     }
   }
-
+  onShowPhotograph () {
+    let scale = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
+    if (this.showPhotograph) {
+      this.photograph.photographPoint.scale.set(scale, scale, scale)
+    }
+    return this.showPhotograph
+  }
+  closePhoto () {
+    this.showPhotograph = false
+    // remove point of interest
+  }
   onClick () {
     let intersected = false
     let group = this.scene.children.filter(element => element.name === 'mountain and instances')
@@ -111,12 +117,10 @@ export default class App extends Engine {
       switch (intersect.object.name) {
         case 'cubeTest':
           intersected = true
-          console.log('tu as clické sur le cubeTest')
           break
         case 'photograph':
           intersected = true
           this.showPhotograph = true
-          console.log('tu as clické sur le cubeTest')
           break
         default:
           intersected = false

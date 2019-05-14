@@ -53,6 +53,7 @@
     <canvas
       ref="canvas"
       id="canvas"> </canvas>
+    <Phone v-if="displayPhone"></Phone>
     <router-view/>
     <router-link
       v-if="$route.path === '/plasticland'"

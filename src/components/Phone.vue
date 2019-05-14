@@ -26,6 +26,7 @@
                 <img
                     v-if="showPhoto"
                     :src="require('../assets/img/svg/close.svg')"
+                    @click="$parent.closePhoto"
                     alt="close">
             </div>
         </div>
@@ -50,15 +51,20 @@ export default {
     }
   },
   mounted () {
-    this.countToZero()
-    setTimeout(() => { // this.openCamera = true
+    setTimeout(() => {
 	  this.showPhone = true
-    }, 1000)
+    }, 10)
+    setTimeout(() => {
+	  this.openCamera = true
+    }, 1500)
+    setTimeout(() => {
+	   this.countToZero()
+    }, 2000)
   },
   methods: {
     countToZero () {
       this.countDown = setInterval(() => {
-        if (!this.count) {
+        if (this.count < 2) {
           this.stopCountDown()
           return
         }
@@ -81,7 +87,7 @@ export default {
     left: 50%;
     top: 50%;
     will-change: transform;
-    transform: translateX(-1300px) translateY(500px) rotate(-50deg);
+    transform: translateX(-1300px) translateY(1300px) rotate(-50deg);
     transition: transform 1s ease-out;
     &.show-phone{
         transform: translateX(-50%) translateY(-50%) rotate(0deg);
@@ -102,24 +108,28 @@ export default {
             border-radius: 45px;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            height: 97%;
             width: 100%;
-            /*background: rgba(10, 10, 10, 0.5);*/
+            top: 6px;
             overflow: hidden;
             .dark{
                 height: 50%;
                 width: 100%;
-                /*position: absolute;*/
                 background: black;
-                border: solid 1px red;
                 z-index: 2;
                 will-change: transform;
-                transition: transform 0.5s ease;
-                &.open.up{
-                    transform: translateY(-100%);
+                transition: transform 0.1s ease;
+                &.up{
+                    margin-top: 10px;
+                    &.open{
+                        transform: translateY(-100%);
+                    }
                 }
-                &.open.down{
-                    transform: translateY(100%);
+                &.down{
+                    margin-bottom: 10px;
+                    &.open{
+                        transform: translateY(100%);
+                    }
                 }
             }
         }
