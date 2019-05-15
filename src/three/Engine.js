@@ -30,7 +30,6 @@ export default class Engine {
     // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 3.5, -52)
-    this.camera.lookAt(0, 0, 0)
 
     // clock
     this.clock = new THREE.Clock()
@@ -41,7 +40,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 108)
+    this.scene.fog = new THREE.Fog(0x2F3238, 0.1, 308)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
