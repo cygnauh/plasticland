@@ -142,7 +142,7 @@ export default {
       } else if (route === '/plasticland') {
         this.setInventory(false)
         this.displayReturn = false
-        this.title = 'Marécage de plastique' // to be set incording to Place
+        this.title = 'Montagne de recyclage' // to be set incording to Place
       } else {
         this.displayReturn = true
       }
@@ -177,7 +177,19 @@ export default {
   padding: 0;
   &.blue-bg{
     background: $dark_blue;
+    &-border {
+      color: $sand_yellow;
+    }
+    .right-side-content {
+      .menu{
+        a{
+          color: $sand_yellow;
+        }
+      }
+
+    }
   }
+  /*#app > div > div > div.right-side-content > div.menu > a:nth-child(1) > span*/
   &-border {
     position: absolute;
     z-index: 2;
@@ -186,7 +198,7 @@ export default {
     height: 102px;
     display: flex;
     justify-content: space-between;
-    color: $sand_yellow;
+    color: $dark_blue;
     text-transform: uppercase;
     .title{
       font-size: 18px;
@@ -247,7 +259,7 @@ export default {
           font-size: 14px;
           font-family: ApercuPro, sans-serif;
           font-weight: 400;
-          color: $sand_yellow;
+          color: $dark_blue;
         }
         .volume{
           align-self: end;
