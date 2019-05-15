@@ -33,8 +33,8 @@ export default class Instances {
 
       geometries.forEach((geometry, index) => {
         let matTest = new THREE.MeshPhongMaterial({
-          color: 0xffffff,
-          emissive: 0xffffff
+          color: 0xF8DDBA, //  color: 0x133D59,
+
         })
 
         let cluster = new InstancedMesh(geometry, matTest, clusterNodes[index].length, true, false, true)

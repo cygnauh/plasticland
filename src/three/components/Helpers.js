@@ -3,7 +3,6 @@ import * as Stats from 'stats-js'
 import OrbitControls from '../utils/OrbitControls'
 import TransformControls from '../three-examples/TransformControls'
 
-
 export default class Helpers {
   constructor (scene, camera, canvas) {
     this.scene = scene

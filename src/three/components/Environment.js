@@ -40,7 +40,7 @@ export default class Environment extends THREE.Object3D {
     this.water.rotation.x = -Math.PI / 2
     this.water.position.z = 250
 
-      // this.scene.add(this.water)
+    // this.scene.add(this.water)
   }
 
   initSkybox () {
