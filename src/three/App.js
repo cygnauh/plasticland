@@ -71,12 +71,12 @@ export default class App extends Engine {
     this.initWaterBoatGroup()
     this.scene.add(this.mountainInstancesGroup)
     this.scene.add(this.waterBoatGroup)
-    this.mountainInstancesGroup.position.x = 35
     this.mountainInstancesGroup.position.z = 370 // use for prod 370
   }
+
   moveGroup () {
     if (this.showPhotograph) return
-    const strength = 4.0
+    const strength = 1.0
     let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
     let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
     this.mountainInstancesGroup.position.set(x, 0, z)
@@ -223,6 +223,8 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
     // this.cannonTest.update(this.timeDelta)
+
+    // this.camera.lookAt(0, 3, 0)
 
     this.render()
 
