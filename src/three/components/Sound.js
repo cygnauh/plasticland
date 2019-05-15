@@ -6,11 +6,11 @@ import * as TWEEN from 'tween'
 // interaction sound
 
 export default class Sound {
-  constructor (scene, camera, mesh) {
+  constructor (scene, camera) {
     // this.scene = scene
     this.camera = camera
     this.initSound()
-    this.initSptialSound(mesh)
+    // this.initSptialSound(mesh)
     this.initAmbiantSound()
     this.initIntroSound()
     window.addEventListener('click', () => {

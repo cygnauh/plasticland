@@ -37,8 +37,19 @@ export default class Collectable {
         obj.then(response => {
           this.objects.push(response.meshes[0])
           this.collectableGroup.add(response.meshes[0])
+	        this.updateMaterial()
         })
       }
+    })
+  }
+  updateMaterial () {
+	  store.state.objects.forEach(obj => {
+      let foundObj = this.objects.filter(element => element.name === obj.name)
+      foundObj.forEach(element => {
+        element.traverse(function (child) {
+          console.log(child.material)
+        })
+      })
     })
   }
 
