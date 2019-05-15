@@ -144,6 +144,7 @@ export default {
       }
     },
 	handleClick () {
+	  this.objectFound = store.state.objects.filter(item => item.found).length
       // photograph or Collectable
       if (this.displayPhone === true) {
         this.displayPhone = !this.displayPhone

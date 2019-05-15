@@ -158,12 +158,12 @@ export default class App extends Engine {
     this.objectCollectable1.then(response => {
 	    response.meshes[0].rotation.x = -5
       this.mountainInstancesGroup.add(response.meshes[0])
-	    this.sound.initSptialSound(response.meshes[0])
+	    this.sound.initSptialSound(response.meshes[0].children[0])
     })
 	  this.objectCollectable2.then(response => {
 		  response.meshes[0].rotation.x = -20
 		  this.mountainInstancesGroup.add(response.meshes[0])
-      this.sound.initSptialSound(response.meshes[0])
+      this.sound.initSptialSound(response.meshes[0].children[0])
 	  })
     this.mountainInstancesGroup.add(this.photograph.photographPoint)
     this.mountainInstancesGroup.add(this.cube.object)

@@ -22,7 +22,7 @@ export default class GltfLoader {
 
     let promise = new Promise((resolve, reject) => {
       this.loader.load(path, (gltf) => {
-        this.gltf = gltf.scene
+        this.gltf = gltf.scene // TODO fix and replace, gltf.scene.children[0] to get de meshes
         this.gltf.name = name
         this.gltf.position.x = posX
         this.gltf.position.y = posY
