@@ -79,7 +79,7 @@ export default class App extends Engine {
 
   moveGroup () {
     if (this.showPhotograph) return
-    const strength = 1.0
+    const strength = 2.0
     let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
     let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
     this.mountainInstancesGroup.position.set(x, 0, z)

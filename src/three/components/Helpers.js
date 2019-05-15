@@ -1,8 +1,7 @@
 import * as THREE from 'three'
 import * as Stats from 'stats-js'
-// import OrbitControls from '../utils/OrbitControls'
+import OrbitControls from '../utils/OrbitControls'
 import TransformControls from '../three-examples/TransformControls'
-
 
 export default class Helpers {
   constructor (scene, camera, canvas) {
@@ -12,7 +11,7 @@ export default class Helpers {
 
     // this.initStats()
     // this.initAxes()
-    // this.initOrbitControls()
+    this.initOrbitControls()
     this.initTransformControls()
     // this.initCameraHelper()
     // this.initGrid(50, 50)
