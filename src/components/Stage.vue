@@ -62,7 +62,9 @@
         class="interface inventory-btn"
         @click="goInventory">
         <span class="inventory-btn-title">collection</span>
-        <div class="inventory-btn-count">
+        <div
+          :class="{notif : displayNotif}"
+          class="inventory-btn-count">
           <span class="inventory-btn-obj-found">{{ objectFound }}</span>
           <div class="border-separator"></div>
           <span class="inventory-btn-obj-total">{{ totalObject }}</span>
@@ -91,7 +93,8 @@ export default {
       objectFound: store.state.objects.filter(item => item.found).length,
       totalObject: store.state.objects.length,
       displayReturn: false,
-      displayPhone: null
+      displayPhone: null,
+	  displayNotif: false
     }
   },
   mounted () {
@@ -119,6 +122,7 @@ export default {
       Vue.prototype.$engine.setDisplayInventory(value)
     },
     goInventory () {
+	  this.displayNotif = false
       if (!this.displayPhone) {
         this.$router.push({
           path: `/plasticland/inventory`,
@@ -144,7 +148,12 @@ export default {
       }
     },
 	handleClick () {
-	  this.objectFound = store.state.objects.filter(item => item.found).length
+      let foundObj = store.state.objects.filter(item => item.found).length
+	  if (this.objectFound !== foundObj) {
+      	this.displayNotif = true
+		this.objectFound = foundObj
+      }
+
       // photograph or Collectable
       if (this.displayPhone === true) {
         this.displayPhone = !this.displayPhone
@@ -276,7 +285,10 @@ export default {
         display: flex;
         justify-content: center;
         border-left: solid 2px $medium_grey;
-        background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);;
+        background: none;
+        &.notif{
+          background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
+        }
         span{
           font-size: 31px;
           position: relative;
