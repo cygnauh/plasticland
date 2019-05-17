@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import GltfLoader from './GltfLoader'
+import GltfLoaderRefactored from './GltfLoaderRefactored'
 // import * as TWEEN from 'tween'
 
 export default class Boat {
@@ -12,7 +12,7 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoader('boat', './models/Boat_01.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: -40, scale: 0.030, rotateY: Math.PI, addToScene: false })
+    this.object = new GltfLoaderRefactored('boat', './models/Boat_01.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: -40, scale: 0.030, rotateY: Math.PI, addToScene: false })
   }
 
   inclinaisonBoat (time) {

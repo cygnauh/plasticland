@@ -25,7 +25,7 @@ export default class Collectable {
     this.collectableGroup = new THREE.Group()
     store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? 13 : i % 3 === 1 ? 0 : -13
-      let y = i === 0 ? -1 : i === 5 ? -11 : i < 3 ? 0 : -10
+      let y = (i === 0 ? -1 : i === 5 ? -11 : i < 3 ? 0 : -10) + (3)
       if (value) {
         obj = new GltfLoader(
           value.name,
@@ -47,7 +47,7 @@ export default class Collectable {
       let foundObj = this.objects.filter(element => element.name === obj.name)
       foundObj.forEach(element => {
         element.traverse(function (child) {
-          console.log(child.material)
+          // console.log(child.material)
         })
       })
     })
@@ -91,7 +91,7 @@ export default class Collectable {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
     let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
-	  let y = itemIndex === 0 ? -1 : itemIndex === 5 ? -11 : itemIndex < 3 ? 0 : -10
+	  let y = (itemIndex === 0 ? -1 : itemIndex === 5 ? -11 : itemIndex < 3 ? 0 : -10) + (3)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
@@ -105,6 +105,7 @@ export default class Collectable {
 
   rotateSelectedItem (boolean) {
     if (this.item) {
+      console.log(this.item.rotation.y)
       if (boolean) {
 	      this.item.rotation.y += 0.01
       } else {
