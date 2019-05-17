@@ -266,7 +266,7 @@ export default class App extends Engine {
     this.environment.update(this.timeElapsed)
     // this.cannonTest.update(this.timeDelta)
 
-    // this.camera.lookAt(0, 3, 0)
+    this.camera.lookAt(0, 0, 0)
 
     this.render()
 

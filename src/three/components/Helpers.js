@@ -11,8 +11,8 @@ export default class Helpers {
 
     // this.initStats()
     // this.initAxes()
-    this.initOrbitControls()
-    this.initTransformControls()
+    // this.initOrbitControls()
+    // this.initTransformControls()
     // this.initCameraHelper()
     // this.initGrid(50, 50)
   }
