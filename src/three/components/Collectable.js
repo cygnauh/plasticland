@@ -1,9 +1,11 @@
 // import * as THREE from 'three'
-import GltfLoader from './GltfLoader'
+import GltfLoader from './GltfLoaderRefactored'
 import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
 import { animateVector3 } from '../utils/Animation'
+
+// Inventory collectable and XP collectable
 
 export default class Collectable {
   constructor (scene, manager, camera, width, height) {
@@ -37,19 +39,24 @@ export default class Collectable {
         obj.then(response => {
           this.objects.push(response.meshes[0])
           this.collectableGroup.add(response.meshes[0])
-	        this.updateMaterial()
         })
       }
     })
   }
-  updateMaterial () {
-	  store.state.objects.forEach(obj => {
-      let foundObj = this.objects.filter(element => element.name === obj.name)
-      foundObj.forEach(element => {
-        element.traverse(function (child) {
-          // console.log(child.material)
-        })
-      })
+  changeMaterial (object) {
+    let flatMaterial = new THREE.MeshPhongMaterial({
+      color: (0x81C186),
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending
+    })
+    object.then(response => {
+      if (response.meshes[0].material.type !== 'MeshPhongMaterial') {
+        response.meshes[0].material = flatMaterial
+      } else {
+        response.meshes[0].material = response.materials[0].material
+      }
+      response.materials[0].isFlat = !response.materials[0].isFlat
+      console.log(response.meshes[0].material)
     })
   }
 
@@ -122,6 +129,7 @@ export default class Collectable {
       })
     })
   }
+  
   update () {
     TWEEN.update()
   }
