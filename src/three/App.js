@@ -44,7 +44,7 @@ export default class App extends Engine {
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
     this.objectCollectable1 = new GltfLoader('first', './models/starbucks_cup.glb', this.scene, this.manager, { posX: 35, posY: 3, posZ: 208, scale: 0.3, addToScene: false })
     this.objectCollectable2 = new GltfLoader('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: -40, addToScene: false })
-  
+
   }
 
   initColliders () {
