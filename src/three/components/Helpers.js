@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import * as Stats from 'stats-js'
 import OrbitControls from '../utils/OrbitControls'
-import TransformControls from '../three-examples/TransformControls'
+import TransformControls from '../utils/TransformControls'
 
 export default class Helpers {
   constructor (scene, camera, canvas) {

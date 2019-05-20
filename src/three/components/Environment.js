@@ -9,7 +9,7 @@ export default class Environment extends THREE.Object3D {
     this.renderer = renderer
     this.light = light
 
-    this.initPlaneGeometry(180, 605, 20, 20)
+    this.initPlaneGeometry(180, 100, 20, 20)
     this.initWater()
     this.initSkybox()
     this.initCubeCamera()
@@ -38,7 +38,6 @@ export default class Environment extends THREE.Object3D {
       }
     )
     this.water.rotation.x = -Math.PI / 2
-    this.water.position.z = 250
 
     // this.scene.add(this.water)
   }

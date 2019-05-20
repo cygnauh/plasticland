@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-// import GltfLoader from './GltfLoader'
-import GltfLoader from './GltfLoaderRefactored'
+import GltfLoader from './GltfLoader'
+// import GltfLoader from './GltfLoaderRefactored'
 import dechets from '../../data/instances/dechetsNewOpti.js'
 
 const InstancedMesh = require('three-instanced-mesh')(THREE) // should replace shaders on first call
@@ -18,7 +18,7 @@ export default class Instances {
     let material = new THREE.MeshPhongMaterial()
 
     // dechets Glb
-    this.dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { rotateY: Math.PI, addToScene: false })
+    this.dechetsPromise = new GltfLoader('dechets', this.path, this.scene, this.manager, { addToScene: false })
     this.dechetsPromise.then(response => {
       var geometries = response.geometries
       const clusterNodes = new Array(geometries.length).fill(null).map(() => [])
@@ -34,8 +34,7 @@ export default class Instances {
 
       geometries.forEach((geometry, index) => {
         let matTest = new THREE.MeshPhongMaterial({
-          color: 0xF8DDBA //  color: 0x133D59,
-
+          color: 0xF8DDBA
         })
 
         let cluster = new InstancedMesh(geometry, matTest, clusterNodes[index].length, true, false, true)

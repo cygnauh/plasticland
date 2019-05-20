@@ -108,7 +108,6 @@ export default class Collectable {
 
   rotateSelectedItem (boolean) {
     if (this.item) {
-      console.log(this.item.rotation.y)
       if (boolean) {
         this.item.rotation.y += 0.01
       } else {
@@ -125,7 +124,7 @@ export default class Collectable {
       })
     })
   }
-  
+
   update () {
     TWEEN.update()
   }
