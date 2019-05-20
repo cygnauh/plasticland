@@ -1,4 +1,3 @@
-// import * as THREE from 'three'
 import GltfLoader from './GltfLoaderRefactored'
 import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
