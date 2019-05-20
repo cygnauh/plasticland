@@ -130,7 +130,7 @@ export default class App extends Engine {
             })
             break
           case 'montagne':
-            console.log('montagne')
+            // console.log('montagne')
             intersected = true
             break
           case 'photograph':
