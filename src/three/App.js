@@ -40,55 +40,31 @@ export default class App extends Engine {
   }
 
   initGroup () {
-    this.initMountainInstancesGroup()
-    this.initWaterBoatGroup()
-    this.scene.add(this.mountainInstancesGroup)
-    this.scene.add(this.waterBoatGroup)
-    this.mountainInstancesGroup.position.z = 370
-  }
-
-  moveGroup () {
-    if (this.showPhotograph) return
-    const strength = 2.0
-    let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
-    let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
-    this.mountainInstancesGroup.position.set(x, 0, z)
-    if (this.mountainInstancesGroup.position.z < 270) {
-      this.sound.fadeOut(this.sound.introSound)
-    }
-  }
-
-  initWaterBoatGroup () {
-    this.waterBoatGroup = new THREE.Group()
-    this.waterBoatGroup.name = 'water and boat'
+    this.groupPlasticLand = new THREE.Group()
+    this.groupPlasticLand.name = 'plasticland'
     this.boat.object.then(response => {
-      response.meshes.forEach(element => {
-        this.waterBoatGroup.add(element)
+      response.meshes.forEach(el => {
+        this.groupPlasticLand.add(el)
       })
     })
-    this.waterBoatGroup.add(this.environment.water)
-  }
-
-  initMountainInstancesGroup () {
-    this.mountainInstancesGroup = new THREE.Group()
-    this.mountainInstancesGroup.name = 'mountain and instances'
+    this.groupPlasticLand.add(this.environment.water)
     this.instances.dechetsPromise.then(() => {
-      this.instances.clusterArray.forEach(element => {
-        // this.mountainInstancesGroup.add(element)
+      this.instances.clusterArray.forEach(el => {
+        this.groupPlasticLand.add(el)
       })
     })
     this.mountain.then(response => {
-      response.meshes.forEach(element => {
-        // this.mountainInstancesGroup.add(element)
+      response.meshes.forEach(el => {
+        this.groupPlasticLand.add(el)
       })
     })
     this.objectCollectable2.then(response => {
       response.meshes[0].rotation.x = -20
-      this.mountainInstancesGroup.add(response.meshes[0])
+      this.groupPlasticLand.add(response.meshes[0])
       this.sound.initSptialSound(response.meshes[0])
     })
-    // this.mountainInstancesGroup.add(this.photograph.photographPoint)
-    // this.mountainInstancesGroup.add(this.cube.object)
+    this.groupPlasticLand.add(this.cube.object)
+    this.scene.add(this.groupPlasticLand)
   }
 
   setDisplayInventory (value) {
@@ -176,9 +152,6 @@ export default class App extends Engine {
     // update
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
-
-    // nav
-    this.moveGroup()
 
     // update
     this.sound.update(this.timeElapsed)
