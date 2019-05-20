@@ -23,7 +23,6 @@ export default class App extends Engine {
     this.initGroup()
     this.initSound()
     this.animate()
-    // console.log(this.scene)
   }
   initSound () {
     this.sound = new Sound(this.scene, this.camera)
@@ -91,12 +90,12 @@ export default class App extends Engine {
     // this.mountainInstancesGroup.add(this.sphere.mesh)
     this.instances.dechetsPromise.then(() => {
       this.instances.clusterArray.forEach(element => {
-        // this.mountainInstancesGroup.add(element)
+        this.mountainInstancesGroup.add(element)
       })
     })
     this.mountain.then(response => {
       response.meshes.forEach(element => {
-        // this.mountainInstancesGroup.add(element)
+        this.mountainInstancesGroup.add(element)
       })
     })
     this.objectCollectable2.then(response => {
@@ -109,19 +108,19 @@ export default class App extends Engine {
   }
   setDisplayInventory (value) {
     if (value) {
-      // this.scene.background = null
-      // this.scene.remove(this.mountainInstancesGroup)
-      // this.scene.remove(this.waterBoatGroup)
-      // this.scene.add(this.collectable.collectableGroup)
-      // this.collectable.openInventory(true)
-      // this.camera.position.set(0, 0, -40)
+      this.scene.background = null
+      this.scene.remove(this.mountainInstancesGroup)
+      this.scene.remove(this.waterBoatGroup)
+      this.scene.add(this.collectable.collectableGroup)
+      this.collectable.openInventory(true)
+      this.camera.position.set(0, 0, -40)
     } else {
-      // this.scene.background = this.environment.cubeCamera.renderTarget
-      // this.collectable.openInventory(false)
-      // this.scene.remove(this.collectable.collectableGroup)
-      // this.scene.add(this.mountainInstancesGroup)
-      // this.scene.add(this.waterBoatGroup)
-      // this.camera.position.set(0, 3.5, -52)
+      this.scene.background = this.environment.cubeCamera.renderTarget
+      this.collectable.openInventory(false)
+      this.scene.remove(this.collectable.collectableGroup)
+      this.scene.add(this.mountainInstancesGroup)
+      this.scene.add(this.waterBoatGroup)
+      this.camera.position.set(0, 3.5, -52)
     }
   }
   onShowPhotograph () {
@@ -137,7 +136,6 @@ export default class App extends Engine {
   
   onClick () {
     this.collectable.changeMaterial(this.objectCollectable2)
-    // console.log(store)
     let intersected = false
     let group = this.scene.children.filter(element => element.name === 'mountain and instances')
     if (group[0] && group[0].children) {
@@ -197,7 +195,6 @@ export default class App extends Engine {
     // update
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
-    // this.collectable.update()
     this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
 

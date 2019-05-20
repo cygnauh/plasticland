@@ -55,8 +55,6 @@ export default class Collectable {
       } else {
         response.meshes[0].material = response.materials[0].material
       }
-      response.materials[0].isFlat = !response.materials[0].isFlat
-      console.log(response.meshes[0].material)
     })
   }
 
@@ -75,30 +73,29 @@ export default class Collectable {
       if (element.name === name) {
         this.item = element
         if (this.item.name === 'Ce n\'est pas juste du plastique, c\'est starbucks.') {
-	        // console.log(this.item.name)
-	        posY = -3
+          posY = -3
         }
       }
     })
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, 0.00001)
-    this.animateVector3(this.item.position, new THREE.Vector3(3, posY, -25), {
-      duration: 800,
-      easing: TWEEN.Easing.Quadratic.InOut
-    })
-    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0.1), {
-      duration: 800,
-      easing: TWEEN.Easing.Quadratic.InOut,
-      delay: 400
-    })
+    // this.animateVector3(this.item.position, new THREE.Vector3(3, posY, -25), {
+    //   duration: 800,
+    //   easing: TWEEN.Easing.Quadratic.InOut
+    // })
+    // this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0.1), {
+    //   duration: 800,
+    //   easing: TWEEN.Easing.Quadratic.InOut,
+    //   delay: 400
+    // })
   }
 
   backToList () {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
     let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
-	  let y = (itemIndex === 0 ? -1 : itemIndex === 5 ? -11 : itemIndex < 3 ? 0 : -10) + (3)
+    let y = (itemIndex === 0 ? -1 : itemIndex === 5 ? -11 : itemIndex < 3 ? 0 : -10) + (3)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
@@ -114,9 +111,9 @@ export default class Collectable {
     if (this.item) {
       console.log(this.item.rotation.y)
       if (boolean) {
-	      this.item.rotation.y += 0.01
+        this.item.rotation.y += 0.01
       } else {
-	      this.item.rotation.y -= 0.01
+        this.item.rotation.y -= 0.01
       }
     }
   }
