@@ -5,10 +5,8 @@ import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
 import Instances from './components/Instances'
-// import GltfLoader from './components/GltfLoader'
 import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
-// import Photograph from './components/Photograph'
 import Sound from './components/Sound'
 import { animateVector3 } from './utils/Animation'
 
@@ -23,8 +21,8 @@ export default class App extends Engine {
     this.initGroup()
     this.initSound()
     this.animate()
-    // console.log(this.scene)
   }
+
   initSound () {
     this.sound = new Sound(this.scene, this.camera)
   }
@@ -35,28 +33,17 @@ export default class App extends Engine {
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoaderRefactored('montagne', './models/montagne_ensemble_12.glb', this.scene, this.manager, { addToScene: false })
-    // this.photograph = new Photograph(this.scene, this.camera)
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
     this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: -40, scale: 0.1, addToScene: true })
     this.scene.add(this.collectable.collectableGroup)
   }
-	
-  initColliders () {
-    // mountains
-    this.mountainBoxesPromise = this.mountain.then(response => {
-    })
-    
-    // boat
-    this.boatBoxPromise = this.boat.object.then((response) => {
-    })
-  }
-  
-	initGroup () {
+
+  initGroup () {
     this.initMountainInstancesGroup()
     this.initWaterBoatGroup()
     this.scene.add(this.mountainInstancesGroup)
     this.scene.add(this.waterBoatGroup)
-    this.mountainInstancesGroup.position.z = 370 // use for prod 370
+    this.mountainInstancesGroup.position.z = 370
   }
 
   moveGroup () {
@@ -65,16 +52,11 @@ export default class App extends Engine {
     let x = this.mountainInstancesGroup.position.x + (this.mouseLerp.x / strength)
     let z = this.mountainInstancesGroup.position.z - (this.mouseLerp.y / strength)
     this.mountainInstancesGroup.position.set(x, 0, z)
-    // this.mountainInstancesGroup.rotation.y = (this.mouseLerp.x / strength / 5)
     if (this.mountainInstancesGroup.position.z < 270) {
       this.sound.fadeOut(this.sound.introSound)
     }
-    // detect collision
-    // this.mountainBoxesPromise.then(mountainBoxes => {
-    // })
   }
-  // keyboard () {
-  // }
+
   initWaterBoatGroup () {
     this.waterBoatGroup = new THREE.Group()
     this.waterBoatGroup.name = 'water and boat'
@@ -85,10 +67,10 @@ export default class App extends Engine {
     })
     this.waterBoatGroup.add(this.environment.water)
   }
+
   initMountainInstancesGroup () {
     this.mountainInstancesGroup = new THREE.Group()
     this.mountainInstancesGroup.name = 'mountain and instances'
-    // this.mountainInstancesGroup.add(this.sphere.mesh)
     this.instances.dechetsPromise.then(() => {
       this.instances.clusterArray.forEach(element => {
         // this.mountainInstancesGroup.add(element)
@@ -107,6 +89,7 @@ export default class App extends Engine {
     // this.mountainInstancesGroup.add(this.photograph.photographPoint)
     // this.mountainInstancesGroup.add(this.cube.object)
   }
+
   setDisplayInventory (value) {
     if (value) {
       // this.scene.background = null
@@ -124,17 +107,19 @@ export default class App extends Engine {
       // this.camera.position.set(0, 3.5, -52)
     }
   }
+
   onShowPhotograph () {
     if (this.showPhotograph) {
       // this.photograph.scaleOut(0.000001)
     }
     return this.showPhotograph
   }
+
   closePhoto () {
     this.showPhotograph = false
     // remove point of interest
   }
-  
+
   onClick () {
     this.collectable.changeMaterial(this.objectCollectable2)
     // console.log(store)
