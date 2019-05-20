@@ -4,13 +4,13 @@ import GLTFLoader from '../utils/GLTFLoader'
 export default class GltfLoaderRefactored {
   constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 1, found = true, addToScene = true, rotateX = 0, rotateY = 0, rotateZ = 0 }) {
     this.scene = scene
-    this.name = name
     this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
     let gltfChild = null
-	  let geometries = []
+    let childName = name
+    let geometries = []
     let materials = []
-	  let meshes = []
+    let meshes = []
 
     // draco loader
     // see gltf-pipeline
@@ -23,7 +23,7 @@ export default class GltfLoaderRefactored {
         // this.scene.scale.multiplyScalar(scale)
         this.gltf.traverse(function (child) {
           if (child.isMesh) {
-	          gltfChild = child
+            gltfChild = child
             child.position.x = posX
             child.position.y = posY
             child.position.z = posZ
@@ -34,11 +34,8 @@ export default class GltfLoaderRefactored {
             child.rotation.y = rotateY
             child.rotation.z = rotateZ
             child.material.side = 2
+            child.name = childName
             meshes.push(child)
-            // console.log(child.material)
-            // if (!found) {
-            //   child.material = flatMaterial
-            // }
             let geometry = child.geometry
             geometries.push(geometry)
             materials.push({ name: child.name, material: child.material })

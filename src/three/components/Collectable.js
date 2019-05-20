@@ -34,7 +34,7 @@ export default class Collectable {
           value.model,
           this.scene,
           this.manager,
-          { posX: x, posY: y, posZ: 0, scale: 0.00001, found: value.found, addToScene: false }
+          { posX: x, posY: y, scale: 0.00001, found: value.found, addToScene: false }
         )
         obj.then(response => {
           this.objects.push(response.meshes[0])
@@ -80,15 +80,15 @@ export default class Collectable {
 
     this.otherItems = this.objects.filter(item => item.name !== name)
     this.scaleItems(this.otherItems, 0.00001)
-    // this.animateVector3(this.item.position, new THREE.Vector3(3, posY, -25), {
-    //   duration: 800,
-    //   easing: TWEEN.Easing.Quadratic.InOut
-    // })
-    // this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0.1), {
-    //   duration: 800,
-    //   easing: TWEEN.Easing.Quadratic.InOut,
-    //   delay: 400
-    // })
+    this.animateVector3(this.item.position, new THREE.Vector3(3, posY, -25), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut
+    })
+    this.animateVector3(this.item.rotation, new THREE.Vector3(-0.4, 0, 0.1), {
+      duration: 800,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      delay: 400
+    })
   }
 
   backToList () {

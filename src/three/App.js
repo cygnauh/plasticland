@@ -176,13 +176,14 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // nav
-    this.moveGroup()
+    // this.moveGroup()
 
     // update
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
+    this.collectable.update()
 
     this.camera.lookAt(0, 0, 0)
 
