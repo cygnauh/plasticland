@@ -33,6 +33,7 @@ export default class CameraSpline {
       color: 0xffffff
     })
     let curveObject = new THREE.Line(geometry, material)
+    curveObject.rotateX(Math.PI)
     this.scene.add(curveObject)
   }
 }
