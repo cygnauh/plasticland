@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
+import CameraSpline from './components/CameraSpline'
 
 export default class Engine {
   constructor (canvas) {
@@ -7,6 +8,7 @@ export default class Engine {
     this.initScene()
     this.initLoadingManager()
     this.addEventListeners()
+    this.initSplineCamera()
     this.displayInventory = false
   }
 
@@ -89,6 +91,10 @@ export default class Engine {
     this.manager.onError = (url) => {
       // console.log('There was an error loading ' + url)
     }
+  }
+
+  initSplineCamera () {
+    this.spline = new CameraSpline(this.scene)
   }
 
   addEventListeners () {
