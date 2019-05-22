@@ -9,8 +9,8 @@ export default class Helpers {
     this.camera = camera
     this.canvas = canvas
 
-    // this.initStats()
-    // this.initAxes()
+    this.initStats()
+    this.initAxes()
     // this.initOrbitControls()
     // this.initTransformControls()
     // this.initCameraHelper()
