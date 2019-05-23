@@ -94,14 +94,14 @@ export default class App extends Engine {
     this.showPhotograph = false
   }
 
-  onClick (array) {
-    onClickRaycaster(array)
+  onClick () {
+    let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
+    onClickRaycaster(arrayMesh[0].children, this.raycaster)
   }
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
-
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
     this.sound.update(this.timeElapsed)
@@ -109,13 +109,9 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
     this.collectable.update()
-
     this.camera.lookAt(0, 0, 0)
-
     this.render()
-
     if (this.helpers.stats) this.helpers.stats.end()
-
     requestAnimationFrame(() => this.animate())
   }
 }
