@@ -50,7 +50,6 @@ const setupScene2 = () => {
 
 const rendenerSceneInfo = (sceneInfo, renderer) => {
   const { scene, camera, elem } = sceneInfo
-	console.log(sceneInfo)
   // get the viewport relative position opf this element
   const { left, right, top, bottom, width, height } = elem.getBoundingClientRect()
 

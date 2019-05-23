@@ -27,7 +27,6 @@
 <script>
 import Vue from 'vue'
 import InventoryDetail from './InventoryDetail'
-import * as THREE from 'three'
 import { store } from '../../store/index'
 export default {
   name: 'InventoryList',
