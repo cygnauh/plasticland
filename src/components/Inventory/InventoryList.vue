@@ -3,8 +3,9 @@
     :class="{'show': isMounted}"
     class='inventory'>
     <div class='inventory-container'>
-      <div class="box">
+      <div id="box" class="box">
         <div
+          :ref="object.name"
           :class="{'canHover' : object.found}"
           :key="object.id"
           v-for="(object, i) in objects"
@@ -14,7 +15,7 @@
             :class=" (i+1) % 3 ? 'border-right': null"
             class="obj-container">
             <div class="obj-title">
-              {{ object.name }}
+              {{ object.title }}
             </div>
           </div>
         </div>
