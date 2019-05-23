@@ -122,7 +122,7 @@ export default class Engine {
   }
 
   render () {
-    this.raycaster.setFromCamera(this.mouse, this.camera)
+    // this.raycaster.setFromCamera(this.mouse, this.camera)
     // add and remove collectables or main XP scene
     this.renderer.render(this.scene, this.camera)
   }

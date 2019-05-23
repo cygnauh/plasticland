@@ -27,6 +27,7 @@
 <script>
 import Vue from 'vue'
 import InventoryDetail from './InventoryDetail'
+import * as THREE from 'three'
 import { store } from '../../store/index'
 export default {
   name: 'InventoryList',
@@ -44,6 +45,7 @@ export default {
   },
   mounted () {
     this.isMounted = true
+    console.log(this.$refs)
   },
   methods: {
     onObjectClicked (e, obj) {
@@ -85,8 +87,9 @@ export default {
         flex-direction: row;
         transform: translateY(159px);
         .object{
+          border: solid 1px yellow;
           transform: translateZ(0);
-          width: 33.2%;
+          width: 33.0%;
           &:before{
             content: '';
             position: absolute;

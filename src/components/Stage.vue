@@ -101,7 +101,8 @@ export default {
     this.initScene()
     if (this.inventory) this.setInventory(this.inventory)
     this.checkRoute(this.$route.path)
-	document.addEventListener('click', (e) => this.handleClick(e), false)
+    document.addEventListener('click', (e) => this.handleClick(e), false)
+    console.log(this.$refs)
   },
   watch: {
     $route (to) {
@@ -113,7 +114,7 @@ export default {
   },
   methods: {
     initScene () {
-      Vue.prototype.$engine = new App(this.$refs.canvas) // init scene
+      Vue.prototype.$engine = new App(this.$refs) // init scene
 	  if (this.$route.path === '/plasticland/inventory') {
         this.setInventory(true)
       }
@@ -147,11 +148,11 @@ export default {
         this.displayReturn = true
       }
     },
-	handleClick () {
+    handleClick () {
       let foundObj = store.state.objects.filter(item => item.found).length
 	  if (this.objectFound !== foundObj) {
       	this.displayNotif = true
-		this.objectFound = foundObj
+        this.objectFound = foundObj
       }
 
       // photograph or Collectable
