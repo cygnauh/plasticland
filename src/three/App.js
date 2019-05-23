@@ -71,8 +71,7 @@ export default class App extends Engine {
   setDisplayInventory (value) {
     if (value) {
       this.scene.background = null
-      this.scene.remove(this.mountainInstancesGroup)
-      this.scene.remove(this.waterBoatGroup)
+      this.scene.remove(this.groupPlasticLand)
       this.scene.add(this.collectable.collectableGroup)
       this.collectable.openInventory(true)
       this.camera.position.set(0, 0, -40)
@@ -80,8 +79,7 @@ export default class App extends Engine {
       this.scene.background = this.environment.cubeCamera.renderTarget
       this.collectable.openInventory(false)
       this.scene.remove(this.collectable.collectableGroup)
-      this.scene.add(this.mountainInstancesGroup)
-      this.scene.add(this.waterBoatGroup)
+      this.scene.add(this.groupPlasticLand)
       this.camera.position.set(0, 3.5, -52)
     }
   }
