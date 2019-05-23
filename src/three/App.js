@@ -86,72 +86,25 @@ export default class App extends Engine {
   }
 
   onShowPhotograph () {
-    if (this.showPhotograph) {
-      // this.photograph.scaleOut(0.000001)
-    }
-    return this.showPhotograph
+    // if (this.showPhotograph) {
+    // }
+    // return this.showPhotograph
   }
 
   closePhoto () {
     this.showPhotograph = false
-    // remove point of interest
   }
 
-  onClick () {
-    this.collectable.changeMaterial(this.objectCollectable2)
-    let intersected = false
-    let group = this.scene.children.filter(element => element.name === 'mountain and instances')
-    if (group[0] && group[0].children) {
-      let clickableElement = []
-      let groupScene = group[0].children.filter(element => element.type === 'Scene')
-      clickableElement.push(group[0].children)
-      groupScene.forEach(element => {
-        if (element.children[0].type === 'Mesh') clickableElement[0].push(element.children[0])
-      })
-      let intersects = this.raycaster.intersectObjects(clickableElement[0])
-      let scaleOut = 0.00001
-      intersects.forEach((intersect) => {
-        switch (intersect.object.name) {
-          case 'starbucks':
-            store.objectFound(6)
-            animateVector3(intersect.object.scale, new THREE.Vector3(scaleOut, scaleOut, scaleOut), {
-              duration: 1000,
-              easing: TWEEN.Easing.Quadratic.InOut
-            })
-            intersected = true
-            break
-          case 'bouteille_coca':
-            intersected = true
-            store.objectFound(2)
-            animateVector3(intersect.object.scale, new THREE.Vector3(scaleOut, scaleOut, scaleOut), {
-              duration: 1000,
-              easing: TWEEN.Easing.Quadratic.InOut
-            })
-            break
-          case 'montagne':
-            intersected = true
-            break
-          case 'photograph':
-            intersected = true
-            this.showPhotograph = true
-            break
-          default:
-            intersected = false
-            break
-        }
-      })
-    }
+  onClick (array) {
+    onClickRaycaster(array)
   }
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
 
-    // update
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
-
-    // update
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp)
