@@ -10,6 +10,7 @@ import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
 import Sound from './components/Sound'
 import { animateVector3 } from './utils/Animation'
+import { onClickRaycaster } from './utils/Event'
 
 import { store } from '../store/index'
 import * as TWEEN from 'tween'
