@@ -97,7 +97,7 @@ export default class App extends Engine {
     // remove point of interest
   }
 
-  onClick () {
+  /* onClick () {
     this.collectable.changeMaterial(this.objectCollectable2)
     let intersected = false
     let group = this.scene.children.filter(element => element.name === 'mountain and instances')
@@ -141,7 +141,7 @@ export default class App extends Engine {
         }
       })
     }
-  }
+  } */
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
