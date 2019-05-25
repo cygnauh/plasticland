@@ -85,7 +85,9 @@ export default class Engine {
     this.manager.onLoad = () => {
       // console.log('Loading complete!')
       loadingScreen.classList.add('fade-out')
-      loadingScreen.addEventListener('transitionend', () => this.onTransitionEnd) // remove loader from DOM via event listener
+      loadingScreen.addEventListener('transitionend', function (e) {
+        e.target.remove()
+      })
     }
     this.manager.onProgress = (url, itemsLoaded, itemsTotal) => {
       // console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
@@ -93,10 +95,6 @@ export default class Engine {
     this.manager.onError = (url) => {
       // console.log('There was an error loading ' + url)
     }
-  }
-
-  onTransitionEnd(e) {
-    e.target.remove()
   }
 
   initSplineCamera () {
