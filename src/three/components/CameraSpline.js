@@ -9,16 +9,15 @@ export default class CameraSpline {
 
   initSpline () {
     let points = [
-      [7.275232315063477, -151.403076171875, 0.021109700202941895],
-      [4.846329689025879, -58.97895050048828, 0.021109700202941895],
-      [11.49052906036377, -39.558982849121094, 0.021109700202941895],
-      [-1.8230066299438477, -28.93889617919922, 0.021109700202941895],
-      [-15.107107162475586, -18.751258850097656, 0.021109702065587044],
-      [-15.685903549194336, -2.1816024780273438, 0.021109700202941895],
-      [0.08921146392822266, -2.5730514526367188, 0.021109700202941895]
+      [33.29779815673828, -1625.17333984375, 0.09950000047683716],
+      [31.629199981689453, -1193.315185546875, 0.09950000047683716],
+      [-54.100799560546875, -810.0264282226562, 0.09950000047683716],
+      [100.6720962524414, -527.3427734375, 0.09950000047683716],
+      [82.0342025756836, -169.00909423828125, 0.09950000047683716],
+      [-51.996498107910156, 363.8955993652344, 0.09950000047683716]
     ]
 
-    let scale = 2
+    let scale = 1
     for (let i = 0; i < points.length; i++) {
       let x = points[i][0] * scale
       let y = points[i][1] * scale
@@ -30,10 +29,10 @@ export default class CameraSpline {
     let totalPoints = curve.getPoints(50)
     let geometry = new THREE.BufferGeometry().setFromPoints(totalPoints)
     let material = new THREE.LineBasicMaterial({
-      color: 0xffffff
+      color: 0xff00ff
     })
     let curveObject = new THREE.Line(geometry, material)
-    curveObject.rotateX(Math.PI)
+    // curveObject.rotateX(Math.PI)
     this.scene.add(curveObject)
   }
 }

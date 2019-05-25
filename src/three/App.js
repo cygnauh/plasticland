@@ -33,7 +33,7 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_12.glb', this.scene, this.manager, { addToScene: false })
+    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_15.glb', this.scene, this.manager, { addToScene: false })
     this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
     this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: 0, scale: 0.01, addToScene: true })
     this.scene.add(this.collectable.collectableGroup)
