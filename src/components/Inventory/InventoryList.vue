@@ -45,7 +45,7 @@ export default {
   },
   mounted () {
     this.isMounted = true
-    console.log(this.$refs)
+    store.setContainers(this.$refs)
   },
   methods: {
     onObjectClicked (e, obj) {

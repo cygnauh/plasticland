@@ -6,7 +6,7 @@ import { animateVector3 } from '../utils/Animation'
 
 // Inventory collectable and XP collectable
 
-export default class Collectable {
+export default class CollectableOld {
   constructor (scene, manager, camera, width, height) {
     this.scene = scene
     this.manager = manager
