@@ -102,14 +102,14 @@ export default {
     if (this.inventory) this.setInventory(this.inventory)
     this.checkRoute(this.$route.path)
     document.addEventListener('click', (e) => this.handleClick(e), false)
-    console.log(this.$refs)
+    // console.log(this.$refs)
   },
   watch: {
     $route (to) {
       this.checkRoute(to.path)
     },
     displayPhone (value) {
-      console.log(value)
+      // console.log(value)
     }
   },
   methods: {

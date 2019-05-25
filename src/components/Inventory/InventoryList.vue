@@ -6,6 +6,7 @@
       <div id="box" class="box">
         <div
           :ref="object.name"
+          :id="object.name"
           :class="{'canHover' : object.found}"
           :key="object.id"
           v-for="(object, i) in objects"

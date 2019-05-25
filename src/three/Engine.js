@@ -22,34 +22,34 @@ export default class Engine {
 
   initScene () {
     // scene
-    this.scene = new THREE.Scene()
-    this.scene.name = 'scene'
-    window.scene = this.scene
-    window.THREE = THREE
-
-    // camera
-    this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
-    this.camera.position.set(0, 3.5, -52)
+    // this.scene = new THREE.Scene()
+    // this.scene.name = 'scene'
+    // window.scene = this.scene
+    // window.THREE = THREE
+    //
+    // // camera
+    // this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
+    // this.camera.position.set(0, 3.5, -52)
 
     // clock
-    this.clock = new THREE.Clock()
-    this.timeDelta = 0
-    this.timeElapsed = 0
+    // this.clock = new THREE.Clock()
+    // this.timeDelta = 0
+    // this.timeElapsed = 0
 
     // helpers
-    this.helpers = new Helpers(this.scene, this.camera, this.canvas)
+    // this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 308)
+    // this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 308)
     // this.scene.fog = new THREE.Fog(0x2F3238, 0.1, 308)
 
     // mouse
-    this.mouse = new THREE.Vector3(0, 0, 0)
-    this.oldMouse = new THREE.Vector3(0, 0, 0)
-    this.mouseLerp = new THREE.Vector2(0, 0)
+    // this.mouse = new THREE.Vector3(0, 0, 0)
+    // this.oldMouse = new THREE.Vector3(0, 0, 0)
+    // this.mouseLerp = new THREE.Vector2(0, 0)
 
     // raycaster
-    this.raycaster = new THREE.Raycaster()
+    // this.raycaster = new THREE.Raycaster()
 
     // renderer
     this.renderer = new THREE.WebGLRenderer({
@@ -57,9 +57,9 @@ export default class Engine {
       antialias: true,
       alpha: true
     })
-    this.renderer.setPixelRatio(window.devicePixelRatio)
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0x0B2641, 1)
+    // this.renderer.setPixelRatio(window.devicePixelRatio)
+    // this.renderer.setSize(window.innerWidth, window.innerHeight)
+    // this.renderer.setClearColor(0x0B2641, 1)
 
     // gltf lighting
     this.renderer.gammaOutput = true
@@ -69,9 +69,9 @@ export default class Engine {
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
     // this.light.castShadow = true
     this.light.shadow.mapSize.height = this.light.shadow.mapSize.width = 1000
-    this.scene.add(this.light)
+    // this.scene.add(this.light)
     this.ambientlight = new THREE.AmbientLight(0x404040)
-    this.scene.add(this.ambientlight)
+    // this.scene.add(this.ambientlight)
     // this.renderer.shadowMap.enabled = true
     // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
   }
@@ -124,6 +124,6 @@ export default class Engine {
   render () {
     // this.raycaster.setFromCamera(this.mouse, this.camera)
     // add and remove collectables or main XP scene
-    this.renderer.render(this.scene, this.camera)
+    // this.renderer.render(this.scene, this.camera)
   }
 }

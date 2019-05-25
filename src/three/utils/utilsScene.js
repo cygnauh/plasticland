@@ -21,9 +21,9 @@ const makeScene = (elem) => {
   return { scene, camera, elem }
 }
 
-const setupScene1 = () => {
-  const sceneInfo = makeScene(document.querySelector('#box'))
-	console.log(document.querySelector('#box'))
+const setupScene = (element) => {
+  const sceneInfo = makeScene(element)
+  // const sceneInfo = makeScene(document.querySelector('#box'))
   const geometry = new THREE.BoxBufferGeometry(1, 1, 1)
   const material = new THREE.MeshPhongMaterial({ color: 'red' })
   const mesh = new THREE.Mesh(geometry, material)
@@ -32,8 +32,8 @@ const setupScene1 = () => {
   return sceneInfo
 }
 
-const setupScene2 = () => {
-  const sceneInfo = makeScene(document.querySelector('#pyramid'))
+const setupScene2 = (element) => {
+  const sceneInfo = makeScene(element)
   const radius = 0.8
   const widthSegments = 4
   const heightSegments = 2
@@ -48,16 +48,36 @@ const setupScene2 = () => {
   return sceneInfo
 }
 
+const resizeRendererToDisplaySize = (renderer) => {
+  const canvas = renderer.domElement
+  const width = canvas.clientWidth
+  const height = canvas.clientHeight
+  const needResize = canvas.width !== width || canvas.height !== height
+  if (needResize) {
+    renderer.setSize(width, height, false)
+  }
+  return needResize
+}
+
 const rendenerSceneInfo = (sceneInfo, renderer) => {
   const { scene, camera, elem } = sceneInfo
   // get the viewport relative position opf this element
+  // let left, right, top, bottom, width, height
+  // if (elem) {
+  // 	left = elem.getBoundingClientRect().left
+  //   right = elem.getBoundingClientRect().right
+  //   top = elem.getBoundingClientRect().top
+  //   bottom = elem.getBoundingClientRect().bottom
+  //   width = elem.getBoundingClientRect().width
+  //   height = elem.getBoundingClientRect().height
+  // }
   const { left, right, top, bottom, width, height } = elem.getBoundingClientRect()
 
   const isOffscreen =
-		bottom < 0 ||
-		top > renderer.domElement.clientHeight ||
-		right < 0 ||
-		left > renderer.domElement.clientWidth
+  bottom < 0 ||
+  top > renderer.domElement.clientHeight ||
+  right < 0 ||
+  left > renderer.domElement.clientWidth
 
   if (isOffscreen) {
     return
@@ -73,4 +93,4 @@ const rendenerSceneInfo = (sceneInfo, renderer) => {
   renderer.render(scene, camera)
 }
 
-export { makeScene, setupScene1, setupScene2, rendenerSceneInfo }
+export { makeScene, setupScene, setupScene2, rendenerSceneInfo, resizeRendererToDisplaySize }

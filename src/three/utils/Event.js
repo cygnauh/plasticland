@@ -8,7 +8,7 @@ const onClickRaycaster = (array, raycaster) => { // array to raycast -> an array
   if (array.length > 0) {
     let intersects = raycaster.intersectObjects(array)
     intersects.forEach((intersect) => {
-      console.log(intersect.object)
+      // console.log(intersect.object)
       switch (intersect.object.name) {
         case 'starbucks':
           store.objectFound(6)
