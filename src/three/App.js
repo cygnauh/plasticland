@@ -94,27 +94,23 @@ export default class App extends Engine {
   }
 
   onClick () {
-    // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
-    // onClickRaycaster(arrayMesh[0].children, this.raycaster)
+    let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
+    onClickRaycaster(arrayMesh[0].children, this.raycaster)
   }
   animate () {
     // helpers
-	  resizeRendererToDisplaySize(this.renderer)
-    rendenerSceneInfo(this.sceneInfo, this.renderer)
-    rendenerSceneInfo(this.sceneInfo2, this.renderer)
-	  // rendenerSceneInfo(this.sceneInfo2, this.renderer)
-    if (this.helpers.stats) this.helpers.stats.begin()
-    if (this.helpers.orbitControls) this.helpers.orbitControls.update()
-    this.timeDelta = this.clock.getDelta()
-    this.timeElapsed = this.clock.getElapsedTime()
+	  this.collectable2.collectableRender(this.collectableElement)
+	  // if (this.helpers.stats) this.helpers.stats.begin()
+	  // if (this.helpers.orbitControls) this.helpers.orbitControls.update()
+	  // this.timeDelta = this.clock.getDelta()
+	  // this.timeElapsed = this.clock.getElapsedTime()
     // this.sound.update(this.timeElapsed)
     // this.cube.update(this.timeElapsed)
     // this.boat.update(this.timeElapsed, this.mouseLerp)
     // this.environment.update(this.timeElapsed)
-    // this.collectable.update()
     // this.camera.lookAt(0, 0, 0)
     // this.render()
-    if (this.helpers.stats) this.helpers.stats.end()
+    // if (this.helpers.stats) this.helpers.stats.end()
     requestAnimationFrame(() => this.animate())
   }
 }
