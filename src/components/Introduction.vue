@@ -40,7 +40,7 @@ export default {
     this.draggableElement = this.$refs.dragTicket
     this.ticket = this.$refs.ticket
     // console.log(this.ticket.offset)
-    console.log(this.draggableElement.getBoundingClientRect())
+    // console.log(this.draggableElement.getBoundingClientRect())
     this.setDragListeners()
   },
   beforeDestroy () {
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     setDragListeners () {
-      console.log(this.draggableElement)
+      // console.log(this.draggableElement)
       if (this.draggableElement) {
         this.draggableElement.addEventListener('mousedown', this.onMousedown)
         // this.draggableElement.addEventListener('mouseup', this.onMouseup)
@@ -62,7 +62,7 @@ export default {
     },
     onMousedown (event) {
       this.isMouseDown = true
-      console.log('down')
+      // console.log('down')
     },
     onMousemove (event) {
       if (!this.isMouseDown) return
@@ -70,12 +70,12 @@ export default {
       if (translateYPosition < 320 && translateYPosition > -30) {
         this.dragPosition = translateYPosition
       }
-      console.log(this.dragPosition)
-      console.log('move')
+      // console.log(this.dragPosition)
+      // console.log('move')
     },
     onMouseup (event) {
       this.isMouseDown = false
-      console.log('up')
+      // console.log('up')
     }
   }
 }
