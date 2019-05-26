@@ -82,7 +82,6 @@ export default class Boat {
         let percentageCamera = cameraSpline.percentageCamera
         let offsetPercentageCamera = percentageCamera + 0.005
         let p1 = spline.getPointAt(offsetPercentageCamera % 1) // x,y,z
-        let p2 = spline.getPointAt((offsetPercentageCamera + 0.01) % 1) // lookat
 
         // position
         let y = this.calculateSurface(pos.x, pos.z, time)
