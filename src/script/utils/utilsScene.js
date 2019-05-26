@@ -28,6 +28,13 @@ const setupScene = (element, name, path, manager) => {
   let test = new GltfLoader(name, path, null, manager, { addToScene: false })
   test.then(response => {
     mesh = response.meshes[0]
+    console.log(mesh)
+    mesh.scale.x = 0.002
+    mesh.scale.y = 0.002
+    mesh.scale.z = 0.002
+    mesh.rotation.z = Math.PI / 2
+    mesh.rotation.x = Math.PI / 3
+	  mesh.position.y = 1
     sceneInfo.scene.add(mesh)
     sceneInfo.mesh = mesh
   })
