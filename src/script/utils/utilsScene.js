@@ -32,22 +32,6 @@ const setupScene = (element) => {
   return sceneInfo
 }
 
-const setupScene2 = (element) => {
-  const sceneInfo = makeScene(element)
-  const radius = 0.8
-  const widthSegments = 4
-  const heightSegments = 2
-  const geometry = new THREE.SphereBufferGeometry(radius, widthSegments, heightSegments)
-  const material = new THREE.MeshPhongMaterial({
-    color: 'blue',
-    flatShading: true
-  })
-  const mesh = new THREE.Mesh(geometry, material)
-  sceneInfo.scene.add(mesh)
-  sceneInfo.mesh = mesh
-  return sceneInfo
-}
-
 const resizeRendererToDisplaySize = (renderer) => {
   const canvas = renderer.domElement
   const width = canvas.clientWidth
@@ -62,15 +46,6 @@ const resizeRendererToDisplaySize = (renderer) => {
 const rendenerSceneInfo = (sceneInfo, renderer) => {
   const { scene, camera, elem } = sceneInfo
   // get the viewport relative position opf this element
-  // let left, right, top, bottom, width, height
-  // if (elem) {
-  // 	left = elem.getBoundingClientRect().left
-  //   right = elem.getBoundingClientRect().right
-  //   top = elem.getBoundingClientRect().top
-  //   bottom = elem.getBoundingClientRect().bottom
-  //   width = elem.getBoundingClientRect().width
-  //   height = elem.getBoundingClientRect().height
-  // }
   const { left, right, top, bottom, width, height } = elem.getBoundingClientRect()
 
   const isOffscreen =
@@ -93,4 +68,4 @@ const rendenerSceneInfo = (sceneInfo, renderer) => {
   renderer.render(scene, camera)
 }
 
-export { makeScene, setupScene, setupScene2, rendenerSceneInfo, resizeRendererToDisplaySize }
+export { makeScene, setupScene, rendenerSceneInfo, resizeRendererToDisplaySize }
