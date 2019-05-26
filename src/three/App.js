@@ -143,7 +143,7 @@ export default class App extends Engine {
     // update
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
-    this.boat.update(this.timeElapsed, this.mouseLerp)
+    this.boat.update(this.timeElapsed, this.mouseLerp, this.camera)
     this.environment.update(this.timeElapsed)
     this.collectable.update()
     this.curvePath.moveCamera()

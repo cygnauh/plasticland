@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import GltfLoader from './GltfLoader'
 // import GltfLoader from './GltfLoaderRefactored'
 import dechets from '../../data/instances/dechetsNewOpti.js'
-
 const InstancedMesh = require('three-instanced-mesh')(THREE) // should replace shaders on first call
 
 export default class Instances {
