@@ -17,7 +17,7 @@ import * as TWEEN from 'tween'
 export default class App extends Engine {
   constructor (canvas) {
     super(canvas)
-    this.showPhotograph = false
+    this.displayInventory = false
     this.initGeometry()
     this.initGroup()
     this.initSound()
@@ -83,18 +83,6 @@ export default class App extends Engine {
       this.scene.add(this.waterBoatGroup)
       this.camera.position.set(0, 3.5, -52)
     }
-  }
-
-  onShowPhotograph () {
-    if (this.showPhotograph) {
-      // this.photograph.scaleOut(0.000001)
-    }
-    return this.showPhotograph
-  }
-
-  closePhoto () {
-    this.showPhotograph = false
-    // remove point of interest
   }
 
   /* onClick () {
