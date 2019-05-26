@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import GltfLoader from '../components/GltfLoader'
+
 const makeScene = (elem) => {
   const scene = new THREE.Scene()
 
@@ -21,14 +23,15 @@ const makeScene = (elem) => {
   return { scene, camera, elem }
 }
 
-const setupScene = (element) => {
+const setupScene = (element, name, path, scene, manager) => {
   const sceneInfo = makeScene(element)
-  // const sceneInfo = makeScene(document.querySelector('#box'))
-  const geometry = new THREE.BoxBufferGeometry(1, 1, 1)
-  const material = new THREE.MeshPhongMaterial({ color: 'red' })
-  const mesh = new THREE.Mesh(geometry, material)
-  sceneInfo.scene.add(mesh)
-  sceneInfo.mesh = mesh
+  let mesh = null
+  let test = new GltfLoader(name, path, scene, manager, { addToScene: false })
+  test.then(response => {
+    mesh = response.meshes[0]
+    sceneInfo.scene.add(mesh)
+    sceneInfo.mesh = mesh
+  })
   return sceneInfo
 }
 
