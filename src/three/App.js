@@ -142,6 +142,7 @@ export default class App extends Engine {
       })
     }
   } */
+
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
@@ -157,8 +158,7 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp)
     this.environment.update(this.timeElapsed)
     this.collectable.update()
-
-    this.camera.lookAt(0, 0, 0)
+    this.curvePath.moveCamera()
 
     this.render()
 

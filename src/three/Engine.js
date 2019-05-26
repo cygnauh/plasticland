@@ -8,7 +8,6 @@ export default class Engine {
     this.initScene()
     this.initLoadingManager()
     this.addEventListeners()
-    this.initSplineCamera()
     this.displayInventory = false
   }
 
@@ -32,6 +31,7 @@ export default class Engine {
     // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 3.5, -52)
+    this.curvePath = new CameraSpline(this.scene, this.camera)
 
     // clock
     this.clock = new THREE.Clock()
@@ -95,10 +95,6 @@ export default class Engine {
     this.manager.onError = (url) => {
       // console.log('There was an error loading ' + url)
     }
-  }
-
-  initSplineCamera () {
-    this.spline = new CameraSpline(this.scene)
   }
 
   addEventListeners () {

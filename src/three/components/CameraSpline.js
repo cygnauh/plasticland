@@ -1,8 +1,10 @@
 import * as THREE from 'three'
 
 export default class CameraSpline {
-  constructor (scene) {
+  constructor (scene, camera) {
     this.scene = scene
+    this.camera = camera
+    this.percentageCamera = 0
 
     this.initSpline()
   }
@@ -17,22 +19,31 @@ export default class CameraSpline {
       [-51.996498107910156, 363.8955993652344, 0.09950000047683716]
     ]
 
-    let scale = 1
     for (let i = 0; i < points.length; i++) {
-      let x = points[i][0] * scale
-      let y = points[i][1] * scale
-      let z = points[i][2] * scale
+      let x = points[i][0]
+      let y = points[i][1]
+      let z = points[i][2]
       points[i] = new THREE.Vector3(x, z, -y)
     }
 
-    let curve = new THREE.CatmullRomCurve3(points)
-    let totalPoints = curve.getPoints(50)
+    this.curve = new THREE.CatmullRomCurve3(points)
+    let totalPoints = this.curve.getPoints(50)
     let geometry = new THREE.BufferGeometry().setFromPoints(totalPoints)
     let material = new THREE.LineBasicMaterial({
       color: 0xff00ff
     })
-    let curveObject = new THREE.Line(geometry, material)
-    // curveObject.rotateX(Math.PI)
-    this.scene.add(curveObject)
+    let spline = new THREE.Line(geometry, material)
+    this.scene.add(spline)
+  }
+
+  moveCamera () {
+    this.percentageCamera += 0.00095
+    let p1 = this.curve.getPointAt(this.percentageCamera % 1) // x,y,z
+    let p2 = this.curve.getPointAt((this.percentageCamera + 0.01) % 1) // lookat
+
+    this.camera.position.x = p1.x
+    this.camera.position.y = p1.y + 2
+    this.camera.position.z = p1.z
+    this.camera.lookAt(p2.x, p2.y + 3, p2.z)
   }
 }
