@@ -26,8 +26,8 @@ export default class CameraSpline {
       points[i] = new THREE.Vector3(x, z, -y)
     }
 
-    this.curve = new THREE.CatmullRomCurve3(points)
-    let totalPoints = this.curve.getPoints(50)
+    this.spline = new THREE.CatmullRomCurve3(points)
+    let totalPoints = this.spline.getPoints(50)
     let geometry = new THREE.BufferGeometry().setFromPoints(totalPoints)
     let material = new THREE.LineBasicMaterial({
       color: 0xff00ff
@@ -37,13 +37,19 @@ export default class CameraSpline {
   }
 
   moveCamera () {
-    this.percentageCamera += 0.00095
-    let p1 = this.curve.getPointAt(this.percentageCamera % 1) // x,y,z
-    let p2 = this.curve.getPointAt((this.percentageCamera + 0.01) % 1) // lookat
+    this.percentageCamera += 0.00045
+
+    // position
+    let p1 = this.spline.getPointAt(this.percentageCamera % 1) // x,y,z
+    let p2 = this.spline.getPointAt((this.percentageCamera + 0.01) % 1) // lookat
+
+    // angle
+    let tangent = this.spline.getTangent(this.percentageCamera)
 
     this.camera.position.x = p1.x
     this.camera.position.y = p1.y + 2
     this.camera.position.z = p1.z
     this.camera.lookAt(p2.x, p2.y + 3, p2.z)
+    this.camera.rotation.y = -tangent.x
   }
 }

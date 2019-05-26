@@ -12,7 +12,7 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoaderRefactored('boat', './models/Boat_01.glb', this.scene, this.manager, { rotateY: Math.PI , addToScene: false })
+    this.object = new GltfLoaderRefactored('boat', './models/Boat_01.glb', this.scene, this.manager, { rotateY: Math.PI, addToScene: false })
   }
 
   inclinaisonBoat (time) {
@@ -75,13 +75,19 @@ export default class Boat {
     if (this.object) {
       this.object.then(response => {
         let pos = response.meshes[0].position
+        let rot = response.meshes[0].rotation
+
+        // position
         let y = this.calculateSurface(pos.x, pos.z, time)
         pos.y = y
         pos.x = camera.position.x
-        pos.z = camera.position.z - 10
+        pos.z = camera.position.z
 
-        let rot = response.meshes[0].rotation
-        rot.y = Math.PI - (mouseLerp.x / 20)
+        // angle
+        let tangent = camera.getWorldDirection(new THREE.Vector3())
+
+        // rotation
+        rot.y = -tangent.x - (mouseLerp.x / 20)
       })
     }
     this.inclinaisonBoat(time)
