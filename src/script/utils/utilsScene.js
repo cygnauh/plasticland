@@ -1,16 +1,15 @@
 import * as THREE from 'three'
-import GltfLoader from '../components/GltfLoader'
+import GltfLoader from '../components/GltfLoaderRefactored'
 
 const makeScene = (elem) => {
   const scene = new THREE.Scene()
-
   const fov = 45
   const aspect = 2 // the canvas default
   const near = 0.1
-  const far = 5
+  const far = 50
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
   camera.position.set(0, 1, 2)
-  camera.lookAt(0, 0, 0)
+  camera.lookAt(0, 0, -150)
 
   {
     const color = 0xFFFFFF
@@ -23,10 +22,10 @@ const makeScene = (elem) => {
   return { scene, camera, elem }
 }
 
-const setupScene = (element, name, path, scene, manager) => {
+const setupScene = (element, name, path, manager) => {
   const sceneInfo = makeScene(element)
   let mesh = null
-  let test = new GltfLoader(name, path, scene, manager, { addToScene: false })
+  let test = new GltfLoader(name, path, null, manager, { addToScene: false })
   test.then(response => {
     mesh = response.meshes[0]
     sceneInfo.scene.add(mesh)

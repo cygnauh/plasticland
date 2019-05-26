@@ -7,13 +7,14 @@ export default class Collectable {
   constructor (renderer, manager) {
     this.renderer = renderer
     this.manager = manager
+    // this.scene = scene // if using GLTFLoader.js pass scene in params
   }
 
   initCollectables () {
     let collectableArray = []
 	  const containers = store.state.objectContainers
 	  store.state.objects.forEach(element => {
-		  collectableArray.push(setupScene(containers[`${element.name}`][0]))
+		  collectableArray.push(setupScene(containers[`${element.name}`][0], element.name, element.model, this.manager))
 	  })
 	  return collectableArray
   }
