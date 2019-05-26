@@ -13,11 +13,11 @@ export default class Sound {
     // this.initSptialSound(mesh)
     this.initAmbiantSound()
     this.initIntroSound()
-    window.addEventListener('click', () => {
+    window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
-        this.ambiantSound.play()
-        this.spacialSound.play()
-        this.introSound.play()
+        // this.ambiantSound.play()
+        // this.spacialSound.play()
+        // this.introSound.play()
       }
     }, false)
   }

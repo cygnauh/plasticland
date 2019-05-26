@@ -1,9 +1,10 @@
-// import * as THREE from 'three'
-import GltfLoader from './GltfLoader'
+import GltfLoader from './GltfLoaderRefactored'
 import { store } from '../../store/index'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
 import { animateVector3 } from '../utils/Animation'
+
+// Inventory collectable and XP collectable
 
 export default class Collectable {
   constructor (scene, manager, camera, width, height) {
@@ -25,31 +26,34 @@ export default class Collectable {
     this.collectableGroup = new THREE.Group()
     store.state.objects.forEach((value, i) => {
       let x = i % 3 === 0 ? 13 : i % 3 === 1 ? 0 : -13
-      let y = i === 0 ? -1 : i === 5 ? -11 : i < 3 ? 0 : -10
+      let y = (i === 0 ? -1 : i === 5 ? -11 : i < 3 ? 0 : -10) + (3)
       if (value) {
         obj = new GltfLoader(
           value.name,
           value.model,
           this.scene,
           this.manager,
-          { posX: x, posY: y, posZ: 0, scale: 0.00001, found: value.found, addToScene: false }
+          { posX: x, posY: y, scale: 0.00001, found: value.found, addToScene: false }
         )
         obj.then(response => {
           this.objects.push(response.meshes[0])
           this.collectableGroup.add(response.meshes[0])
-	        this.updateMaterial()
         })
       }
     })
   }
-  updateMaterial () {
-	  store.state.objects.forEach(obj => {
-      let foundObj = this.objects.filter(element => element.name === obj.name)
-      foundObj.forEach(element => {
-        element.traverse(function (child) {
-          console.log(child.material)
-        })
-      })
+  changeMaterial (object) {
+    let flatMaterial = new THREE.MeshPhongMaterial({
+      color: (0x81C186),
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending
+    })
+    object.then(response => {
+      if (response.meshes[0].material.type !== 'MeshPhongMaterial') {
+        response.meshes[0].material = flatMaterial
+      } else {
+        response.meshes[0].material = response.materials[0].material
+      }
     })
   }
 
@@ -68,8 +72,7 @@ export default class Collectable {
       if (element.name === name) {
         this.item = element
         if (this.item.name === 'Ce n\'est pas juste du plastique, c\'est starbucks.') {
-	        // console.log(this.item.name)
-	        posY = -3
+          posY = -3
         }
       }
     })
@@ -91,7 +94,7 @@ export default class Collectable {
     let itemIndex = store.state.objects.filter(item => item.name === this.item.name)[0].id - 1
     // initial position of the selected item
     let x = itemIndex % 3 === 0 ? 13 : itemIndex % 3 === 1 ? 0 : -13
-	  let y = itemIndex === 0 ? -1 : itemIndex === 5 ? -11 : itemIndex < 3 ? 0 : -10
+    let y = (itemIndex === 0 ? -1 : itemIndex === 5 ? -11 : itemIndex < 3 ? 0 : -10) + (3)
     this.animateVector3(this.item.position, new THREE.Vector3(x, y, 0), {
       duration: 800,
       easing: TWEEN.Easing.Quadratic.InOut
@@ -106,9 +109,9 @@ export default class Collectable {
   rotateSelectedItem (boolean) {
     if (this.item) {
       if (boolean) {
-	      this.item.rotation.y += 0.01
+        this.item.rotation.y += 0.01
       } else {
-	      this.item.rotation.y -= 0.01
+        this.item.rotation.y -= 0.01
       }
     }
   }
@@ -121,6 +124,7 @@ export default class Collectable {
       })
     })
   }
+
   update () {
     TWEEN.update()
   }

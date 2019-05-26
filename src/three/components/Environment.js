@@ -9,7 +9,7 @@ export default class Environment extends THREE.Object3D {
     this.renderer = renderer
     this.light = light
 
-    this.initPlaneGeometry(180, 605, 20, 20)
+    this.initPlaneGeometry(200, 150, 20, 20)
     this.initWater()
     this.initSkybox()
     this.initCubeCamera()
@@ -37,9 +37,7 @@ export default class Environment extends THREE.Object3D {
         fog: this.scene.fog !== undefined
       }
     )
-    this.water.rotation.x = -Math.PI / 2
-    this.water.position.z = 250
-
+    this.water.rotation.x = -Math.PI / 2  // + 0.027
     // this.scene.add(this.water)
   }
 
@@ -92,7 +90,19 @@ export default class Environment extends THREE.Object3D {
     this.cubeCamera.update(this.renderer, this.sky)
   }
 
-  update (time) {
+  update (time, cameraSpline) {
     this.water.material.uniforms['time'].value = time / 10
+
+    // spline of camera
+    let spline = cameraSpline.spline
+    let percentageCamera = cameraSpline.percentageCamera
+    let offsetPercentageCamera = percentageCamera + 0.0225
+    let p1 = spline.getPointAt(offsetPercentageCamera % 1) // x,y,z
+    let tangent = spline.getTangent(offsetPercentageCamera)
+
+    // update position + rotation of water plane
+    this.water.position.x = p1.x
+    this.water.position.z = p1.z
+    this.water.rotation.z = -tangent.x
   }
 }

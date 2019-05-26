@@ -2,6 +2,7 @@
   <div
     :class="{ 'blue-bg' : ($route.path !== '/plasticland') }"
     class="Stage">
+    <Loader />
     <div class="Stage-border">
       <div
         v-if="!displayReturn"
@@ -78,6 +79,7 @@
 import Vue from 'vue'
 // import Engine from '../three/Engine'
 import App from '../three/App'
+import Loader from './Loader/Loader'
 import Timer from './Timer/Timer'
 import InventoryList from './Inventory/InventoryList'
 import Phone from './Phone'
@@ -85,7 +87,7 @@ import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: { Timer, Phone },
+  components: {Loader, Timer, Phone },
   data () {
     return {
       data: '',
@@ -101,7 +103,7 @@ export default {
     this.initScene()
     if (this.inventory) this.setInventory(this.inventory)
     this.checkRoute(this.$route.path)
-	document.addEventListener('click', (e) => this.handleClick(e), false)
+    document.addEventListener('click', (e) => this.handleClick(e), false)
   },
   watch: {
     $route (to) {
@@ -147,11 +149,11 @@ export default {
         this.displayReturn = true
       }
     },
-	handleClick () {
+    handleClick () {
       let foundObj = store.state.objects.filter(item => item.found).length
 	  if (this.objectFound !== foundObj) {
       	this.displayNotif = true
-		this.objectFound = foundObj
+        this.objectFound = foundObj
       }
 
       // photograph or Collectable
