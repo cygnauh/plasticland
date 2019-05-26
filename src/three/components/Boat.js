@@ -71,22 +71,27 @@ export default class Boat {
     return y
   }
 
-  update (time, mouseLerp, camera) {
+  update (time, mouseLerp, cameraSpline) {
     if (this.object) {
       this.object.then(response => {
         let pos = response.meshes[0].position
         let rot = response.meshes[0].rotation
 
+        // spline of camera
+        let spline = cameraSpline.spline
+        let percentageCamera = cameraSpline.percentageCamera
+        let offsetPercentageCamera = percentageCamera + 0.005
+        let p1 = spline.getPointAt(offsetPercentageCamera % 1) // x,y,z
+        let p2 = spline.getPointAt((offsetPercentageCamera + 0.01) % 1) // lookat
+
         // position
         let y = this.calculateSurface(pos.x, pos.z, time)
         pos.y = y
-        pos.x = camera.position.x
-        pos.z = camera.position.z
-
-        // angle
-        let tangent = camera.getWorldDirection(new THREE.Vector3())
+        pos.x = p1.x
+        pos.z = p1.z
 
         // rotation
+        let tangent = spline.getTangent(offsetPercentageCamera)
         rot.y = -tangent.x - (mouseLerp.x / 20)
       })
     }
