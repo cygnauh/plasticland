@@ -63,6 +63,10 @@ export default class App extends Engine {
     this.groupPlasticLand.add(this.cube.object)
     this.scene.add(this.groupPlasticLand)
   }
+  initCollectable () {
+	  this.collectable = new Collectable(this.renderer, this.manager, this.scene)
+	  this.collectableElement = this.collectable.initCollectables()
+  }
 
   setDisplayInventory (value) {
     if (value) {
@@ -114,7 +118,10 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
 	  // this.collectable.collectableRender(this.collectableElement)
-	  
+
+	  if (this.openInventory && this.collectable) {
+		  this.collectable.collectableRender(this.collectableElement)
+	  }
 	  this.render()
     if (this.helpers.stats) this.helpers.stats.end()
 

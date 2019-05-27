@@ -67,6 +67,7 @@ export default {
   mounted () {
     this.isMounted = true
     store.setContainers(this.$refs)
+    Vue.prototype.$engine.initCollectable()
   },
   methods: {
     onObjectClicked (e, obj) {
