@@ -83,7 +83,7 @@ export default class App extends Engine {
       this.openInventory = false
       this.scene.add(this.groupPlasticLand)
       this.scene.add(this.cameraSpline)
-	    this.scene.add(this.cameraSpline.splineLine)
+      this.scene.add(this.cameraSpline.splineLine)
     //   this.camera.position.set(0, 3.5, -52)
     }
   }
@@ -117,14 +117,15 @@ export default class App extends Engine {
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
-	  // this.collectable.collectableRender(this.collectableElement)
-
-	  if (this.openInventory && this.collectable) {
-		  this.collectable.collectableRender(this.collectableElement)
-	  }
-	  this.render()
+    // this.collectable.collectableRender(this.collectableElement)
+    if (this.openInventory && this.collectable) {
+      this.collectable.collectableRender(this.collectableElement)
+    } else {
+      this.renderer.setScissor(0, 0, this.width, this.height)
+      this.renderer.setViewport(0, 0, this.width, this.height)
+    }
+    this.render()
     if (this.helpers.stats) this.helpers.stats.end()
-
     requestAnimationFrame(() => this.animate())
   }
 }
