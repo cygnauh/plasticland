@@ -72,17 +72,14 @@ export default class App extends Engine {
     if (value) {
       this.scene.remove(this.groupPlasticLand)
       this.scene.remove(this.cameraSpline.splineLine)
-      this.scene.remove(this.cameraSpline)
       this.openInventory = true
       this.scene.background = null
-
       //   // this.collectable.openInventory(true)
       //   this.camera.position.set(0, 0, -40)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
       this.openInventory = false
       this.scene.add(this.groupPlasticLand)
-      this.scene.add(this.cameraSpline)
       this.scene.add(this.cameraSpline.splineLine)
     //   this.camera.position.set(0, 3.5, -52)
     }
@@ -117,7 +114,6 @@ export default class App extends Engine {
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
-    // this.collectable.collectableRender(this.collectableElement)
     if (this.openInventory && this.collectable) {
       this.collectable.collectableRender(this.collectableElement)
     } else {
