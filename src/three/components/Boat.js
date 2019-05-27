@@ -12,7 +12,7 @@ export default class Boat {
   }
 
   initBoat () {
-    this.object = new GltfLoaderRefactored('boat', './models/Boat_01.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: -40, scale: 0.01, rotateY: Math.PI, rotateX: -Math.PI / 2, addToScene: false })
+    this.object = new GltfLoaderRefactored('boat', './models/Boat_01.glb', this.scene, this.manager, { rotateY: Math.PI, addToScene: false })
   }
 
   inclinaisonBoat (time) {
@@ -71,16 +71,27 @@ export default class Boat {
     return y
   }
 
-  update (time, mouseLerp) {
+  update (time, mouseLerp, cameraSpline) {
     if (this.object) {
       this.object.then(response => {
         let pos = response.meshes[0].position
+        let rot = response.meshes[0].rotation
+
+        // spline of camera
+        let spline = cameraSpline.spline
+        let percentageCamera = cameraSpline.percentageCamera
+        let offsetPercentageCamera = percentageCamera + 0.005
+        let p1 = spline.getPointAt(offsetPercentageCamera % 1) // x,y,z
+
+        // position
         let y = this.calculateSurface(pos.x, pos.z, time)
         pos.y = y
+        pos.x = p1.x
+        pos.z = p1.z
 
-        let rot = response.meshes[0].rotation
-        // mouse.lerp(oldMouse, 0.1)
-        rot.y = Math.PI - (mouseLerp.x / 20)
+        // rotation
+        let tangent = spline.getTangent(offsetPercentageCamera)
+        rot.y = -tangent.x - (mouseLerp.x / 20)
       })
     }
     this.inclinaisonBoat(time)

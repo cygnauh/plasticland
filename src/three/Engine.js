@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
+import CameraSpline from './components/CameraSpline'
 
 export default class Engine {
   constructor (canvas) {
@@ -30,6 +31,7 @@ export default class Engine {
     // // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 3.5, -52)
+    this.cameraSpline = new CameraSpline(this.scene, this.camera)
 
     // clock
     this.clock = new THREE.Clock()
@@ -40,8 +42,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 308)
-    // this.scene.fog = new THREE.Fog(0x2F3238, 0.1, 308)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
@@ -77,11 +78,16 @@ export default class Engine {
   }
   initLoadingManager () {
     this.manager = new THREE.LoadingManager()
+    const loadingScreen = document.getElementById('loading-screen')
     this.manager.onStart = (url, itemsLoaded, itemsTotal) => {
       // console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
     this.manager.onLoad = () => {
       // console.log('Loading complete!')
+      loadingScreen.classList.add('fade-out')
+      loadingScreen.addEventListener('transitionend', function (e) {
+        e.target.remove()
+      })
     }
     this.manager.onProgress = (url, itemsLoaded, itemsTotal) => {
       // console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')

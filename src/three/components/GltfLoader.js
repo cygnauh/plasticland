@@ -32,7 +32,9 @@ export default class GltfLoader {
         if (addToScene) {
           this.scene.add(this.gltf)
         }
+        // this.scene.scale.multiplyScalar(scale)
         this.gltf.traverse(function (child) {
+          // console.log(child.material)
           if (child.isMesh) {
             child.material.side = 2
             if (!found) {
