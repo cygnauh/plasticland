@@ -12,11 +12,11 @@ export default class Collectable {
 
   initCollectables () {
     let collectableArray = []
-	  const containers = store.state.objectContainers
-	  store.state.objects.forEach(element => {
-		  collectableArray.push(setupScene(containers[`${element.name}`][0], element.name, element.model, this.manager))
-	  })
-	  return collectableArray
+    const containers = store.state.objectContainers
+    store.state.objects.forEach(element => {
+			collectableArray.push(setupScene(containers[`${element.name}`][0], element.name, element.model, this.manager))
+    })
+    return collectableArray
   }
 
   collectableRender (array) {

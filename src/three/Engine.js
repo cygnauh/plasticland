@@ -70,9 +70,9 @@ export default class Engine {
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
     // this.light.castShadow = true
     this.light.shadow.mapSize.height = this.light.shadow.mapSize.width = 1000
-    // this.scene.add(this.light)
+    this.scene.add(this.light)
     this.ambientlight = new THREE.AmbientLight(0x404040)
-    // this.scene.add(this.ambientlight)
+    this.scene.add(this.ambientlight)
     // this.renderer.shadowMap.enabled = true
     // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
   }
@@ -130,6 +130,6 @@ export default class Engine {
   render () {
     // this.raycaster.setFromCamera(this.mouse, this.camera)
     // add and remove collectables or main XP scene
-    // this.renderer.render(this.scene, this.camera)
+    this.renderer.render(this.scene, this.camera)
   }
 }
