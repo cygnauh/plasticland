@@ -3,8 +3,8 @@ import Engine from './Engine'
 
 import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
-// import CollectableOld from './components/Collectable'
-// import Collectable from './components/Collectable'
+import CollectableOld from './components/Collectable'
+import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import GltfLoaderRefactored from './components/GltfLoaderRefactored'
@@ -16,6 +16,7 @@ import { onClickRaycaster } from './utils/Event'
 export default class App extends Engine {
   constructor (refs) {
     super(refs.canvas)
+    this.openInventory = false
     this.initGeometry(refs)
     this.initGroup()
     this.initSound()
@@ -32,10 +33,8 @@ export default class App extends Engine {
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_15.glb', this.scene, this.manager, { addToScene: false })
-    // this.collectable = new Collectable(this.renderer, this.manager, this.scene)
-    // this.collectableElement = this.collectable.initCollectables()
     this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: 0, scale: 0.01, addToScene: true })
-   }
+  }
 
   initGroup () {
     this.groupPlasticLand = new THREE.Group()
@@ -66,17 +65,23 @@ export default class App extends Engine {
   }
 
   setDisplayInventory (value) {
-    // if (value) {
-    //   this.scene.background = null
-    //   this.scene.remove(this.groupPlasticLand)
-    //   // this.collectable.openInventory(true)
-    //   this.camera.position.set(0, 0, -40)
-    // } else {
-    //   this.scene.background = this.environment.cubeCamera.renderTarget
-    //   // this.collectable.openInventory(false)
-    //   this.scene.add(this.groupPlasticLand)
+    if (value) {
+      this.scene.remove(this.groupPlasticLand)
+      this.scene.remove(this.cameraSpline.splineLine)
+      this.scene.remove(this.cameraSpline)
+      this.openInventory = true
+      this.scene.background = null
+
+      //   // this.collectable.openInventory(true)
+      //   this.camera.position.set(0, 0, -40)
+    } else {
+      this.scene.background = this.environment.cubeCamera.renderTarget
+      this.openInventory = false
+      this.scene.add(this.groupPlasticLand)
+      this.scene.add(this.cameraSpline)
+	    this.scene.add(this.cameraSpline.splineLine)
     //   this.camera.position.set(0, 3.5, -52)
-    // }
+    }
   }
 
   onShowPhotograph () {
@@ -90,8 +95,8 @@ export default class App extends Engine {
   }
 
   onClick () {
-    let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
-    onClickRaycaster(arrayMesh[0].children, this.raycaster)
+    // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
+    // onClickRaycaster(arrayMesh[0].children, this.raycaster)
   }
   animate () {
     // helpers
@@ -111,7 +116,6 @@ export default class App extends Engine {
 	  // this.collectable.collectableRender(this.collectableElement)
 	  
 	  this.render()
-
     if (this.helpers.stats) this.helpers.stats.end()
 
     requestAnimationFrame(() => this.animate())

@@ -87,7 +87,7 @@ import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: {Loader, Timer, Phone },
+  components: { Loader, Timer, Phone },
   data () {
     return {
       data: '',

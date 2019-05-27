@@ -32,8 +32,9 @@ export default class CameraSpline {
     let material = new THREE.LineBasicMaterial({
       color: 0xff00ff
     })
-    let spline = new THREE.Line(geometry, material)
-    this.scene.add(spline)
+    this.splineLine = new THREE.Line(geometry, material)
+	  this.splineLine.name = 'splineLine'
+    this.scene.add(this.splineLine)
   }
 
   moveCamera () {
