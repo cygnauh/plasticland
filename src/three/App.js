@@ -4,7 +4,7 @@ import Engine from './Engine'
 import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
 // import CollectableOld from './components/Collectable'
-import Collectable from './components/Collectable'
+// import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import GltfLoaderRefactored from './components/GltfLoaderRefactored'
@@ -32,8 +32,8 @@ export default class App extends Engine {
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_15.glb', this.scene, this.manager, { addToScene: false })
-    this.collectable = new Collectable(this.renderer, this.manager, this.scene)
-    this.collectableElement = this.collectable.initCollectables()
+    // this.collectable = new Collectable(this.renderer, this.manager, this.scene)
+    // this.collectableElement = this.collectable.initCollectables()
     this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: 0, scale: 0.01, addToScene: true })
    }
 
@@ -108,7 +108,7 @@ export default class App extends Engine {
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
-	  this.collectable.collectableRender(this.collectableElement)
+	  // this.collectable.collectableRender(this.collectableElement)
 	  
 	  this.render()
 
