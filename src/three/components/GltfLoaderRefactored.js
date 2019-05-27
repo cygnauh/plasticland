@@ -6,7 +6,7 @@ export default class GltfLoaderRefactored {
     posX = 0,
     posY = 0,
     posZ = 0,
-    scale = 0.1,
+    scale = 1,
     rotateX = 0,
     rotateY = 0,
     rotateZ = 0,
