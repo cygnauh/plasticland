@@ -72,7 +72,9 @@ export default class App extends Engine {
     if (value) {
       this.scene.remove(this.groupPlasticLand)
       this.scene.remove(this.cameraSpline.splineLine)
-      this.openInventory = true
+      setTimeout(() => {
+        this.openInventory = true
+      }, 1)
       this.scene.background = null
       //   // this.collectable.openInventory(true)
       //   this.camera.position.set(0, 0, -40)
@@ -120,7 +122,7 @@ export default class App extends Engine {
       this.renderer.setScissor(0, 0, this.width, this.height)
       this.renderer.setViewport(0, 0, this.width, this.height)
     }
-    this.render()
+    if (!this.openInventory) this.render()
     if (this.helpers.stats) this.helpers.stats.end()
     requestAnimationFrame(() => this.animate())
   }
