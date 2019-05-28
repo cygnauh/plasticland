@@ -97,13 +97,17 @@ export default class App extends Engine {
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
-    // update
+    // update scene children
     this.cameraSpline.moveCamera()
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
-    if (this.openInventory && this.collectable) {
+    
+	  // post processing
+	  this.composer.render(this.timeDelta)
+   
+	  if (this.openInventory && this.collectable) {
       this.collectable.collectableRender(this.collectableElement)
     } else {
       this.renderer.setScissor(0, 0, this.width, this.height)
