@@ -155,18 +155,7 @@ export default {
       	this.displayNotif = true
         this.objectFound = foundObj
       }
-
-      // photograph or Collectable
-      if (this.displayPhone === true) {
-        this.displayPhone = !this.displayPhone
-        Vue.prototype.$engine.closePhoto()
-	    return
-      }
-	  this.displayPhone = Vue.prototype.$engine.onShowPhotograph()
-    },
-    closePhoto () {
-      Vue.prototype.$engine.closePhoto()
-    }
+	}
   }
 }
 </script>

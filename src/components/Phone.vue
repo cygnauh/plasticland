@@ -26,7 +26,6 @@
                 <img
                     v-if="showPhoto"
                     :src="require('../assets/img/svg/close.svg')"
-                    @click="$parent.closePhoto"
                     alt="close">
             </div>
         </div>

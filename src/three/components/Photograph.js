@@ -28,16 +28,4 @@ export default class Photograph {
       easing: TWEEN.Easing.Quadratic.InOut
     })
   }
-
-  onShowPhotograph () {
-    if (this.showPhotograph) {
-      // this.photograph.scaleOut(0.000001)
-    }
-    return this.showPhotograph
-  }
-
-  closePhoto () {
-    this.showPhotograph = false
-    // remove point of interest
-  }
 }

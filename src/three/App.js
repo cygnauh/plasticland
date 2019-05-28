@@ -76,25 +76,12 @@ export default class App extends Engine {
         this.openInventory = true
       }, 1)
       this.scene.background = null
-      //   // this.collectable.openInventory(true)
-      //   this.camera.position.set(0, 0, -40)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
       this.openInventory = false
       this.scene.add(this.groupPlasticLand)
       this.scene.add(this.cameraSpline.splineLine)
-    //   this.camera.position.set(0, 3.5, -52)
     }
-  }
-
-  onShowPhotograph () {
-    // if (this.showPhotograph) {
-    // }
-    // return this.showPhotograph
-  }
-
-  closePhoto () {
-    this.showPhotograph = false
   }
 
   onClick () {
