@@ -37,7 +37,6 @@ const setupScene = (name, path, manager) => {
     sceneInfo.scene.add(mesh)
     sceneInfo.mesh = mesh
     sceneInfo.name = name
-	  console.log(sceneInfo)
   })
   return sceneInfo
 }

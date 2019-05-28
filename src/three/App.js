@@ -11,7 +11,6 @@ import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
 import Sound from './components/Sound'
 import { onClickRaycaster } from './utils/Event'
-// import { setupScene, setupScene2, rendenerSceneInfo, resizeRendererToDisplaySize } from './utils/utilsScene'
 
 export default class App extends Engine {
   constructor (refs) {

@@ -13,6 +13,7 @@
           v-for="(object) in objects.slice(0, 1)"
           @click.capture="(e) => onObjectClicked(e, object)">
           <div class="number"> {{object.id}} </div>
+          <div class="title"> {{ object.title }} </div>
         </div>
         <div class="el grow-three">
           <div
@@ -26,6 +27,7 @@
               v-for="(object, i) in objects.slice(1, 3)"
               @click.capture="(e) => onObjectClicked(e,object)">
               <div class="number">{{object.id}}</div>
+              <div class="title"> {{ object.title }} </div>
             </div>
           </div>
           <div class="container">
@@ -38,6 +40,7 @@
               v-for="(object) in objects.slice(3)"
               class="obj">
               <div class="number">{{object.id}}</div>
+              <div class="title"> {{ object.title }} </div>
             </div>
           </div>
         </div>
@@ -112,15 +115,6 @@ export default {
         width: calc(100% - 40px);
         height: 73vh;
         padding: 20px;
-        .canHover{
-          .obj-container:hover{
-            background: url('../../assets/img/svg/border-collection-list-element.svg') center no-repeat;
-            background-size: 90% 90%;
-            .obj-title{
-              opacity: 1;
-            }
-          }
-        }
         .el {
           height: 100%;
           &.first-object{
@@ -147,6 +141,7 @@ export default {
           border-radius: 8px;
           margin: 0 5px 5px 0;
           height: 100%;
+          position: relative;
           &.grow-two{
             flex-grow: 2;
           }
@@ -159,6 +154,23 @@ export default {
             border-radius: 8px 2px 2px 2px;
             font-size: 28px;
             font-weight: bold;
+          }
+          &.canHover{
+            will-change: opacity;
+            opacity: 1; // TODO to 0 in prod
+            &:hover{
+              .title{
+                opacity: 1;
+              }
+            }
+          }
+          .title{
+            color: $sand_yellow;
+            text-transform: uppercase;
+            bottom: 0;
+            position: absolute;
+            margin: 33px;
+            text-align: left;
           }
         }
       }
