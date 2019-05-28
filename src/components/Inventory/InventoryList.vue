@@ -67,7 +67,7 @@ export default {
   mounted () {
     this.isMounted = true
     store.setContainers(this.$refs)
-    if (Vue.prototype && Vue.prototype.$engine) Vue.prototype.$engine.initCollectable()
+    // if (Vue.prototype && Vue.prototype.$engine) Vue.prototype.$engine.initCollectable()
   },
   methods: {
     onObjectClicked (e, obj) {
@@ -157,6 +157,8 @@ export default {
             color: white;
             text-align: center;
             border-radius: 8px 2px 2px 2px;
+            font-size: 28px;
+            font-weight: bold;
           }
         }
       }

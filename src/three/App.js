@@ -71,11 +71,17 @@ export default class App extends Engine {
 
   setDisplayInventory (value) {
     if (value) {
+      this.scene.remove(this.groupPlasticLand)
+      this.scene.remove(this.cameraSpline.splineLine)
       setTimeout(() => {
         this.openInventory = true
       }, 1)
+      this.scene.background = null
     } else {
+      this.scene.background = this.environment.cubeCamera.renderTarget
       this.openInventory = false
+      this.scene.add(this.groupPlasticLand)
+      this.scene.add(this.cameraSpline.splineLine)
     }
   }
 
