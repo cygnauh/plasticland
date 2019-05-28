@@ -140,7 +140,7 @@ export default class App extends Engine {
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
-    // update
+    // update scene children
     this.cameraSpline.moveCamera()
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
@@ -148,7 +148,10 @@ export default class App extends Engine {
     this.environment.update(this.timeElapsed, this.cameraSpline)
     this.collectable.update()
 
-    this.render()
+    // post processing
+    this.composer.render(this.timeDelta)
+
+    // this.render()
 
     if (this.helpers.stats) this.helpers.stats.end()
 

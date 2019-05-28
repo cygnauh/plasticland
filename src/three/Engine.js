@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import Helpers from './components/Helpers'
 import CameraSpline from './components/CameraSpline'
+import { NoiseEffect, EffectComposer, EffectPass, RenderPass } from 'postprocessing'
 
 export default class Engine {
   constructor (canvas) {
@@ -42,7 +43,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
+    // this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
@@ -55,8 +56,7 @@ export default class Engine {
     // renderer
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      antialias: true,
-      alpha: true
+      antialias: false
     })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
@@ -73,9 +73,22 @@ export default class Engine {
     this.scene.add(this.light)
     this.ambientlight = new THREE.AmbientLight(0x404040)
     this.scene.add(this.ambientlight)
-    // this.renderer.shadowMap.enabled = true
-    // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+
+    // passes
+    const noiseEffect = new NoiseEffect({ premultiply: true })
+
+    this.composer = new EffectComposer(this.renderer)
+    this.renderPass = new RenderPass(this.scene, this.camera)
+    this.effectPass = new EffectPass(this.camera, noiseEffect)
+
+    noiseEffect.blendMode.opacity.value = 0.75
+    this.effectPass.renderToScreen = true
+
+    this.composer.addPass(this.renderPass)
+    this.composer.addPass(this.effectPass)
+    console.log(this.composer)
   }
+
   initLoadingManager () {
     this.manager = new THREE.LoadingManager()
     const loadingScreen = document.getElementById('loading-screen')
@@ -100,7 +113,7 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
-    document.addEventListener('click', (e) => this.onClick(e), false)
+    // document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
   resize () {
