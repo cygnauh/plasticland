@@ -47,9 +47,9 @@ export default class CameraSpline {
     let tangent = this.spline.getTangent(this.percentageCamera)
 
     this.camera.position.x = p1.x
-    this.camera.position.y = p1.y + 2.5
+    this.camera.position.y = p1.y + 3
     this.camera.position.z = p1.z
-    this.camera.lookAt(p2.x, p2.y + 4.5, p2.z)
+    this.camera.lookAt(p2.x, p2.y + 3.5, p2.z)
     this.camera.rotation.y = -tangent.x
   }
 }
