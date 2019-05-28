@@ -8,9 +8,6 @@ export default class GltfLoader {
     this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
 
-    // draco loader
-    // see gltf-pipeline
-
     let flatMaterial = new THREE.MeshPhongMaterial({
       color: (0x81C186),
       opacity: 0.2,
