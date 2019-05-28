@@ -67,7 +67,7 @@ export default {
   mounted () {
     this.isMounted = true
     store.setContainers(this.$refs)
-    Vue.prototype.$engine.initCollectable()
+    if (Vue.prototype && Vue.prototype.$engine) Vue.prototype.$engine.initCollectable()
   },
   methods: {
     onObjectClicked (e, obj) {
