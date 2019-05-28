@@ -64,8 +64,8 @@ export default class App extends Engine {
     this.scene.add(this.groupPlasticLand)
   }
   initCollectable () {
-	  this.collectable = new Collectable(this.renderer, this.manager, this.scene)
-	  this.collectableElement = this.collectable.initCollectables()
+    this.collectable = new Collectable(this.renderer, this.manager, this.scene)
+    this.collectableElement = this.collectable.initCollectables()
   }
 
   setDisplayInventory (value) {

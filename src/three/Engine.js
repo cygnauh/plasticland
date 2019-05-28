@@ -43,7 +43,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    // this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
