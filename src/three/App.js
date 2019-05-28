@@ -70,17 +70,11 @@ export default class App extends Engine {
 
   setDisplayInventory (value) {
     if (value) {
-      this.scene.remove(this.groupPlasticLand)
-      this.scene.remove(this.cameraSpline.splineLine)
       setTimeout(() => {
         this.openInventory = true
       }, 1)
-      this.scene.background = null
     } else {
-      this.scene.background = this.environment.cubeCamera.renderTarget
       this.openInventory = false
-      this.scene.add(this.groupPlasticLand)
-      this.scene.add(this.cameraSpline.splineLine)
     }
   }
 
@@ -103,17 +97,21 @@ export default class App extends Engine {
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
-    
+
 	  // post processing
 	  this.composer.render(this.timeDelta)
-   
+
 	  if (this.openInventory && this.collectable) {
+      // render collectable scenes
       this.collectable.collectableRender(this.collectableElement)
     } else {
+      // reset initial viewport, full screen size
       this.renderer.setScissor(0, 0, this.width, this.height)
       this.renderer.setViewport(0, 0, this.width, this.height)
     }
+    // stop rendering the main scene when inventory open
     if (!this.openInventory) this.render()
+
     if (this.helpers.stats) this.helpers.stats.end()
     requestAnimationFrame(() => this.animate())
   }
