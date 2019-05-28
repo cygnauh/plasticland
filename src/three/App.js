@@ -19,6 +19,7 @@ export default class App extends Engine {
     this.openInventory = false
     this.initGeometry(refs)
     this.initGroup()
+    this.initCollectable()
     this.initSound()
     this.animate()
   }

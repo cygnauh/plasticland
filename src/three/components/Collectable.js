@@ -1,7 +1,7 @@
 import GltfLoader from './GltfLoaderRefactored'
 import * as THREE from 'three/src/Three'
 import { store } from '../../store/index'
-import { setupScene, resizeRendererToDisplaySize, rendenerSceneInfo } from '../utils/utilsScene'
+import { setupScene, rendenerSceneInfo } from '../utils/utilsScene'
 
 export default class Collectable {
   constructor (renderer, manager) {
@@ -14,19 +14,21 @@ export default class Collectable {
     let collectableArray = []
     const containers = store.state.objectContainers
     store.state.objects.forEach(element => {
-			collectableArray.push(setupScene(containers[`${element.name}`][0], element.name, element.model, this.manager))
+      // collectableArray.push(setupScene(containers[`${element.name}`][0], element.name, element.model, this.manager))
+      collectableArray.push(setupScene(element.name, element.model, this.manager))
     })
     return collectableArray
   }
 
   collectableRender (array) {
-    resizeRendererToDisplaySize(this.renderer)
-
     this.renderer.setScissorTest(false)
     this.renderer.clear(true, true)
     this.renderer.setScissorTest(true)
+	  const containers = store.state.objectContainers
     array.forEach(scene => {
-      rendenerSceneInfo(scene, this.renderer)
+      if (scene && scene.name) {
+        rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
+      }
     })
   }
   update () {

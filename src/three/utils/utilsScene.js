@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import GltfLoader from '../components/GltfLoaderRefactored'
 
-const makeScene = (elem) => {
+const makeScene = (name) => {
   const scene = new THREE.Scene()
   const fov = 45
   const aspect = 2 // the canvas default
@@ -19,16 +19,15 @@ const makeScene = (elem) => {
     scene.add(light)
   }
 
-  return { scene, camera, elem }
+  return { scene, camera }
 }
 
-const setupScene = (element, name, path, manager) => {
-  const sceneInfo = makeScene(element)
+const setupScene = (name, path, manager) => {
+  const sceneInfo = makeScene()
   let mesh = null
   let test = new GltfLoader(name, path, null, manager, { addToScene: false })
   test.then(response => {
     mesh = response.meshes[0]
-    console.log(mesh)
     mesh.scale.x = 0.002
     mesh.scale.y = 0.002
     mesh.scale.z = 0.002
@@ -37,23 +36,14 @@ const setupScene = (element, name, path, manager) => {
 	  mesh.position.y = 1
     sceneInfo.scene.add(mesh)
     sceneInfo.mesh = mesh
+    sceneInfo.name = name
+	  console.log(sceneInfo)
   })
   return sceneInfo
 }
 
-const resizeRendererToDisplaySize = (renderer) => {
-  const canvas = renderer.domElement
-  const width = canvas.clientWidth
-  const height = canvas.clientHeight
-  const needResize = canvas.width !== width || canvas.height !== height
-  if (needResize) {
-    renderer.setSize(width, height, false)
-  }
-  return needResize
-}
-
-const rendenerSceneInfo = (sceneInfo, renderer) => {
-  const { scene, camera, elem } = sceneInfo
+const rendenerSceneInfo = (sceneInfo, elem, renderer) => {
+  const { scene, camera } = sceneInfo
   // get the viewport relative position opf this element
   const { left, right, top, bottom, width, height } = elem.getBoundingClientRect()
 
@@ -77,4 +67,4 @@ const rendenerSceneInfo = (sceneInfo, renderer) => {
   renderer.render(scene, camera)
 }
 
-export { makeScene, setupScene, rendenerSceneInfo, resizeRendererToDisplaySize }
+export { makeScene, setupScene, rendenerSceneInfo }
