@@ -7,7 +7,7 @@
       <div
         v-if="!displayReturn"
         class="title">
-        {{ title }}
+        <!--{{ title }}-->
       </div>
       <div
         v-else
@@ -62,7 +62,11 @@
       <div
         class="interface inventory-btn"
         @click="goInventory">
-        <span class="inventory-btn-title">collection</span>
+        <div class="inventory-btn-title">
+          <span>
+            collection
+          </span>
+        </div>
         <div
           :class="{notif : displayNotif}"
           class="inventory-btn-count">
@@ -267,28 +271,35 @@ export default {
     .inventory-btn{
       margin-left: 43px;
       bottom: 38px;
-      width: 250px;
-      height: 83px;
+      width: 241px;
+      height: 79px;
       position: absolute;
       z-index: 0;
       font-family: Arkhip, sans-serif;
       color: white;
       display: flex;
-      background: url('../assets/img/svg/border-collection-cta.svg') left no-repeat;
-      background-size: contain;
       .inventory-btn-title{
-        align-self: center;
-        width: calc(100% - 90px);
+        display: flex;
+        align-items: center;
+        width: calc(100% - 83px);
         font-size: 16px;
         text-transform: uppercase;
+        background: $dark_blue;
+        border-radius: 5px;
+        height: 100%;
+        span{
+          width: 100%;
+        }
       }
       .inventory-btn-count{
-        width: 85px;
-        height: 83px;
+        width: 81px;
+        height: 79px;
         display: flex;
         justify-content: center;
-        border-left: solid 2px $medium_grey;
+        margin-left: 5px ;
         background: none;
+        background: $dark_blue;
+        border-radius: 5px;
         &.notif{
           background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
         }
