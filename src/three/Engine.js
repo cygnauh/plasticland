@@ -76,9 +76,9 @@ export default class Engine {
 
     // passes
     const noiseEffect = new NoiseEffect({ premultiply: true })
-    const vignetteEffect = new VignetteEffect({offset: 0.3, darkness: 0.442, opacity: 1})
-    const brightnessContrastEffect = new BrightnessContrastEffect({brightness: 0.1, contrast: -0.3, opacity: 0.5})
-    const hueSaturationEffect = new HueSaturationEffect({hue: 0, saturation: -0.1, opacity: 1})
+    const vignetteEffect = new VignetteEffect({ offset: 0.3, darkness: 0.442, opacity: 1 })
+    const brightnessContrastEffect = new BrightnessContrastEffect({ brightness: 0.1, contrast: -0.3, opacity: 0.5 })
+    const hueSaturationEffect = new HueSaturationEffect({ hue: 0, saturation: -0.1, opacity: 1 })
 
     this.composer = new EffectComposer(this.renderer)
     this.renderPass = new RenderPass(this.scene, this.camera)
