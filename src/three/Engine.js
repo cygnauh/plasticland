@@ -125,16 +125,16 @@ export default class Engine {
   }
 
   onMouseMove (e) {
-    // this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
-    // this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
-    //
-    // setInterval(() => {
-    //   this.oldMouse.x = this.mouse.x
-    //   this.oldMouse.y = this.mouse.y
-    // }, 2000)
-    //
-    // this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
-    // this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
+    this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
+    this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
+
+    setInterval(() => {
+      this.oldMouse.x = this.mouse.x
+      this.oldMouse.y = this.mouse.y
+    }, 2000)
+
+    this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
+    this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
   }
 
   lerp (a, b, n) {

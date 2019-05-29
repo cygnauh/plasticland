@@ -43,11 +43,7 @@ export default class CameraSpline {
 
   moveCamera () {
     setTimeout(() => {
-      console.log("1")
       this.tweenToBreakpoint(this.breakPoints[4])
-      console.log(this.tween)
-      console.log(this.percentageCamera.value)
-      console.log("2")
     }, 4000)
   }
 

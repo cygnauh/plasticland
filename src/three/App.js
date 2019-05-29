@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import * as TWEEN from 'tween'
 import Engine from './Engine'
 import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
@@ -94,6 +95,7 @@ export default class App extends Engine {
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
 
     // update
+    TWEEN.update()
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
