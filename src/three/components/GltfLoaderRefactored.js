@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import GLTFLoader from '../utils/GLTFLoader'
+import GLTFLoader from '../three-examples/loader/GLTFLoader'
 
 export default class GltfLoaderRefactored {
   constructor (name, path, scene, manager, {
@@ -13,7 +13,7 @@ export default class GltfLoaderRefactored {
     found = true,
     addToScene = true
   }) {
-    this.scene = scene
+    if (this.scene) this.scene = scene
     this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
     let gltfChild = null
@@ -47,7 +47,7 @@ export default class GltfLoaderRefactored {
             materials.push({ name: child.name, material: child.material })
           }
         })
-        if (addToScene && gltfChild) {
+        if (addToScene && gltfChild && this.scene) {
           this.scene.add(gltfChild)
         }
         resolve({
@@ -68,7 +68,9 @@ export default class GltfLoaderRefactored {
   }
 
   destroy () {
-    let gltf = this.scene.getObjectByName(this.name)
-    this.scene.remove(gltf)
+    if (this.scene) {
+	    let gltf = this.scene.getObjectByName(this.name)
+	    this.scene.remove(gltf)
+    }
   }
 }

@@ -43,7 +43,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    // this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
@@ -68,7 +68,6 @@ export default class Engine {
 
     // light
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
-    // this.light.castShadow = true
     this.light.shadow.mapSize.height = this.light.shadow.mapSize.width = 1000
     this.scene.add(this.light)
     this.ambientlight = new THREE.AmbientLight(0x404040)
@@ -76,9 +75,9 @@ export default class Engine {
 
     // passes
     const noiseEffect = new NoiseEffect({ premultiply: true })
-    const vignetteEffect = new VignetteEffect({offset: 0.3, darkness: 0.442, opacity: 1})
-    const brightnessContrastEffect = new BrightnessContrastEffect({brightness: 0.1, contrast: -0.3, opacity: 0.5})
-    const hueSaturationEffect = new HueSaturationEffect({hue: 0, saturation: -0.1, opacity: 1})
+    const vignetteEffect = new VignetteEffect({ offset: 0.3, darkness: 0.442, opacity: 1 })
+    const brightnessContrastEffect = new BrightnessContrastEffect({ brightness: 0.1, contrast: -0.3, opacity: 0.5 })
+    const hueSaturationEffect = new HueSaturationEffect({ hue: 0, saturation: -0.1, opacity: 1 })
 
     this.composer = new EffectComposer(this.renderer)
     this.renderPass = new RenderPass(this.scene, this.camera)
@@ -126,16 +125,16 @@ export default class Engine {
   }
 
   onMouseMove (e) {
-    this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
-    this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
-
-    setInterval(() => {
-      this.oldMouse.x = this.mouse.x
-      this.oldMouse.y = this.mouse.y
-    }, 2000)
-
-    this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
-    this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
+    // this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
+    // this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
+    //
+    // setInterval(() => {
+    //   this.oldMouse.x = this.mouse.x
+    //   this.oldMouse.y = this.mouse.y
+    // }, 2000)
+    //
+    // this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
+    // this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
   }
 
   lerp (a, b, n) {
@@ -143,7 +142,7 @@ export default class Engine {
   }
 
   render () {
-    this.raycaster.setFromCamera(this.mouse, this.camera)
+    // this.raycaster.setFromCamera(this.mouse, this.camera)
     // add and remove collectables or main XP scene
     this.renderer.render(this.scene, this.camera)
   }

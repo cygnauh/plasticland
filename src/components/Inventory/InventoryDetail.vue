@@ -54,7 +54,6 @@ export default {
       sy: 0,
       dy: this.sy,
       contentHeight: 0
-
     }
   },
   beforeCreate () {
@@ -78,10 +77,10 @@ export default {
     onMouseWheel (e) {
       if (e.deltaY < 0 && this.sy > 0) {
         this.sy -= 1
-	    Vue.prototype.$engine.collectable.rotateSelectedItem(false)
+        Vue.prototype.$engine.collectable.rotateSelectedItem(false)
       } else if (event.deltaY > 0 && this.sy < (window.innerHeight - this.contentHeight)) {
         this.sy += 1
-	    Vue.prototype.$engine.collectable.rotateSelectedItem(true)
+        Vue.prototype.$engine.collectable.rotateSelectedItem(true)
       }
       clearTimeout(this.timer)
     },

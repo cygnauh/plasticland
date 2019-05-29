@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import Engine from './Engine'
-
 import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
 import Collectable from './components/Collectable'
@@ -9,17 +8,15 @@ import GltfLoader from './components/GltfLoader'
 import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
 import Sound from './components/Sound'
-import { animateVector3 } from './utils/Animation'
-
-import { store } from '../store/index'
-import * as TWEEN from 'tween'
+import { onClickRaycaster } from './utils/Event'
 
 export default class App extends Engine {
-  constructor (canvas) {
-    super(canvas)
-    this.displayInventory = false
-    this.initGeometry()
+  constructor (refs) {
+    super(refs.canvas)
+    this.openInventory = false
+    this.initGeometry(refs)
     this.initGroup()
+    this.initCollectable()
     this.initSound()
     this.animate()
   }
@@ -34,9 +31,7 @@ export default class App extends Engine {
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
     this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_15.glb', this.scene, this.manager, { addToScene: false })
-    this.collectable = new Collectable(this.scene, this.manager, this.camera, this.width, this.height)
     this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: 0, scale: 0.01, addToScene: true })
-    this.scene.add(this.collectable.collectableGroup)
   }
 
   initGroup () {
@@ -67,69 +62,31 @@ export default class App extends Engine {
     this.scene.add(this.groupPlasticLand)
   }
 
+  initCollectable () {
+    this.collectable = new Collectable(this.renderer, this.manager, this.scene)
+    this.collectableElement = this.collectable.initCollectables()
+  }
+
   setDisplayInventory (value) {
     if (value) {
+      this.scene.remove(this.groupPlasticLand)
+      this.scene.remove(this.cameraSpline.splineLine)
+      setTimeout(() => {
+        this.openInventory = true
+      }, 1)
       this.scene.background = null
-      this.scene.remove(this.mountainInstancesGroup)
-      this.scene.remove(this.waterBoatGroup)
-      this.scene.add(this.collectable.collectableGroup)
-      this.collectable.openInventory(true)
-      this.camera.position.set(0, 0, -40)
     } else {
       this.scene.background = this.environment.cubeCamera.renderTarget
-      this.collectable.openInventory(false)
-      this.scene.remove(this.collectable.collectableGroup)
-      this.scene.add(this.mountainInstancesGroup)
-      this.scene.add(this.waterBoatGroup)
-      this.camera.position.set(0, 3.5, -52)
+      this.openInventory = false
+      this.scene.add(this.groupPlasticLand)
+      this.scene.add(this.cameraSpline.splineLine)
     }
   }
 
-  /* onClick () {
-    this.collectable.changeMaterial(this.objectCollectable2)
-    let intersected = false
-    let group = this.scene.children.filter(element => element.name === 'mountain and instances')
-    if (group[0] && group[0].children) {
-      let clickableElement = []
-      let groupScene = group[0].children.filter(element => element.type === 'Scene')
-      clickableElement.push(group[0].children)
-      groupScene.forEach(element => {
-        if (element.children[0].type === 'Mesh') clickableElement[0].push(element.children[0])
-      })
-      let intersects = this.raycaster.intersectObjects(clickableElement[0])
-      let scaleOut = 0.00001
-      intersects.forEach((intersect) => {
-        switch (intersect.object.name) {
-          case 'starbucks':
-            store.objectFound(6)
-            animateVector3(intersect.object.scale, new THREE.Vector3(scaleOut, scaleOut, scaleOut), {
-              duration: 1000,
-              easing: TWEEN.Easing.Quadratic.InOut
-            })
-            intersected = true
-            break
-          case 'bouteille_coca':
-            intersected = true
-            store.objectFound(2)
-            animateVector3(intersect.object.scale, new THREE.Vector3(scaleOut, scaleOut, scaleOut), {
-              duration: 1000,
-              easing: TWEEN.Easing.Quadratic.InOut
-            })
-            break
-          case 'montagne':
-            intersected = true
-            break
-          case 'photograph':
-            intersected = true
-            this.showPhotograph = true
-            break
-          default:
-            intersected = false
-            break
-        }
-      })
-    }
-  } */
+  onClick () {
+    // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
+    // onClickRaycaster(arrayMesh[0].children, this.raycaster)
+  }
 
   animate () {
     // helpers
@@ -146,15 +103,19 @@ export default class App extends Engine {
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
-    this.collectable.update()
 
-    // post processing
-    this.composer.render(this.timeDelta)
-
-    // this.render()
+    if (this.openInventory && this.collectable) {
+      // render collectable scenes
+      this.collectable.collectableRender(this.collectableElement)
+    } else {
+      // reset initial viewport, full screen size
+      this.renderer.setScissor(0, 0, this.width, this.height)
+      this.renderer.setViewport(0, 0, this.width, this.height)
+    }
+    // stop rendering the main scene when inventory open
+    if (!this.openInventory) this.composer.render(this.timeDelta)
 
     if (this.helpers.stats) this.helpers.stats.end()
-
     requestAnimationFrame(() => this.animate())
   }
 }
