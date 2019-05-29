@@ -57,7 +57,7 @@ export default class Boat {
   calculateSurface (x, z, uTime) {
     let y = 0.4
     const scale = 10.0
-    const strength = 15.0
+    const strength = 20.0
     y +=
       (Math.sin((x * 1.0) / scale + uTime * 1.0) +
         Math.sin((x * 2.3) / scale + uTime * 1.5) +
