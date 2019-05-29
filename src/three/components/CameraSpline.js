@@ -1,12 +1,16 @@
 import * as THREE from 'three'
+import * as TWEEN from 'tween'
 
 export default class CameraSpline {
   constructor (scene, camera) {
     this.scene = scene
     this.camera = camera
-    this.percentageCamera = 0
+    this.percentageCamera = { value: 0 }
+    this.breakPoints = [0.5, 0.6, 0.7, 0.8, 0.95]
+    this.tween = null
 
     this.initSpline()
+    this.moveCamera()
   }
 
   initSpline () {
@@ -37,14 +41,25 @@ export default class CameraSpline {
   }
 
   moveCamera () {
-    this.percentageCamera += 0.00045
+    setTimeout(() => {
+      this.tweenToBreakpoint(this.breakPoints[4])
+    }, 4000)
+  }
 
+  tweenToBreakpoint (breakpoint) {
+    this.tween = new TWEEN.Tween(this.percentageCamera)
+      .to({ value: breakpoint }, 40000)
+      .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .start()
+  }
+
+  updateCamera () {
     // position
-    let p1 = this.spline.getPointAt(this.percentageCamera % 1) // x,y,z
-    let p2 = this.spline.getPointAt((this.percentageCamera + 0.01) % 1) // lookat
+    let p1 = this.spline.getPointAt(this.percentageCamera.value % 1) // x,y,z
+    let p2 = this.spline.getPointAt((this.percentageCamera.value + 0.01) % 1) // lookat
 
     // angle
-    let tangent = this.spline.getTangent(this.percentageCamera)
+    let tangent = this.spline.getTangent(this.percentageCamera.value)
 
     this.camera.position.x = p1.x
     this.camera.position.y = p1.y + 3

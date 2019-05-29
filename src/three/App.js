@@ -141,7 +141,7 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // update scene children
-    this.cameraSpline.moveCamera()
+    this.cameraSpline.updateCamera()
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
