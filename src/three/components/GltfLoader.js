@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import GLTFLoader from '../utils/GLTFLoader'
+import GLTFLoader from '../three-examples/loader/GLTFLoader'
 
 export default class GltfLoader {
   constructor (name, path, scene, manager, { posX = 0, posY = 0, posZ = 0, scale = 1, found = true, addToScene = true, rotateY = 0 }) {

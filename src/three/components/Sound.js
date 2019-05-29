@@ -38,6 +38,7 @@ export default class Sound {
       this.ambiantSound.setVolume(1)
     })
   }
+
   initIntroSound () {
     // create a global audio source
     this.introSound = new THREE.Audio(this.listener)
@@ -48,6 +49,7 @@ export default class Sound {
       this.introSound.setVolume(0.5)
     })
   }
+
   initSptialSound (mesh) {
     // create the PositionalAudio object (passing in the listener)
     this.spacialSound = new THREE.PositionalAudio(this.listener)
@@ -63,6 +65,7 @@ export default class Sound {
     // finally add the sound to the mesh
     mesh.add(this.spacialSound)
   }
+
   fadeOut (sound) {
     let volume = { x: sound.getVolume() } // tweens not work without object
     // using Tween.js
@@ -76,6 +79,7 @@ export default class Sound {
       }
     }).start()
   }
+
   update (time) {
     TWEEN.update(time)
   }

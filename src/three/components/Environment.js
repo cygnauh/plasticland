@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import Water from '../three-examples/Water'
-import Sky from '../three-examples/Sky'
+import Water from '../three-examples/water/Water'
+import Sky from '../three-examples/sky/Sky'
 
 export default class Environment extends THREE.Object3D {
   constructor (scene, renderer, light) {
@@ -37,7 +37,7 @@ export default class Environment extends THREE.Object3D {
         fog: this.scene.fog !== undefined
       }
     )
-    this.water.rotation.x = -Math.PI / 2  // + 0.027
+    this.water.rotation.x = -Math.PI / 2 // + 0.027
     // this.scene.add(this.water)
   }
 

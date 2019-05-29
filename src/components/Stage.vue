@@ -54,7 +54,6 @@
     <canvas
       ref="canvas"
       id="canvas"> </canvas>
-    <Phone v-if="displayPhone"></Phone>
     <router-view/>
     <router-link
       v-if="$route.path === '/plasticland'"
@@ -81,17 +80,16 @@
 
 <script>
 import Vue from 'vue'
-// import Engine from '../three/Engine'
+// import Engine from '../three-examples/Engine'
 import App from '../three/App'
 import Loader from './Loader/Loader'
 import Timer from './Timer/Timer'
 import InventoryList from './Inventory/InventoryList'
-import Phone from './Phone'
 import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer, Phone },
+  components: { Loader, Timer },
   data () {
     return {
       data: '',
@@ -99,7 +97,6 @@ export default {
       objectFound: store.state.objects.filter(item => item.found).length,
       totalObject: store.state.objects.length,
       displayReturn: false,
-      displayPhone: null,
 	  displayNotif: false
     }
   },
@@ -112,15 +109,12 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
-    },
-    displayPhone (value) {
-      // console.log(value)
     }
   },
   methods: {
     initScene () {
       Vue.prototype.$engine = new App(this.$refs) // init scene
-	  if (this.$route.path === '/plasticland/inventory') {
+      if (this.$route.path === '/plasticland/inventory') {
         this.setInventory(true)
       }
     },
@@ -128,7 +122,7 @@ export default {
       Vue.prototype.$engine.setDisplayInventory(value)
     },
     goInventory () {
-	  this.displayNotif = false
+      this.displayNotif = false
       if (!this.displayPhone) {
         this.$router.push({
           path: `/plasticland/inventory`,
@@ -159,7 +153,7 @@ export default {
       	this.displayNotif = true
         this.objectFound = foundObj
       }
-	}
+    }
   }
 }
 </script>

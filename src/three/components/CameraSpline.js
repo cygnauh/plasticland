@@ -33,7 +33,7 @@ export default class CameraSpline {
       color: 0xff00ff
     })
     this.splineLine = new THREE.Line(geometry, material)
-	  this.splineLine.name = 'splineLine'
+    this.splineLine.name = 'splineLine'
     this.scene.add(this.splineLine)
   }
 

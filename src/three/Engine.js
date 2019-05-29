@@ -28,8 +28,8 @@ export default class Engine {
     this.scene.name = 'scene'
     window.scene = this.scene
     window.THREE = THREE
-    //
-    // // camera
+
+    // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
     this.camera.position.set(0, 3.5, -52)
     this.cameraSpline = new CameraSpline(this.scene, this.camera)
@@ -68,7 +68,6 @@ export default class Engine {
 
     // light
     this.light = new THREE.DirectionalLight(0x544d75, 0.8)
-    // this.light.castShadow = true
     this.light.shadow.mapSize.height = this.light.shadow.mapSize.width = 1000
     this.scene.add(this.light)
     this.ambientlight = new THREE.AmbientLight(0x404040)

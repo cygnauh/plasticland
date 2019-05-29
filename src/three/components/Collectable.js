@@ -31,6 +31,7 @@ export default class Collectable {
       }
     })
   }
+
   update () {
     // TWEEN.update()
   }

@@ -33,7 +33,7 @@ const setupScene = (name, path, manager) => {
     mesh.scale.z = 0.002
     mesh.rotation.z = Math.PI / 2
     mesh.rotation.x = Math.PI / 3
-	  mesh.position.y = 1
+    mesh.position.y = 1
     sceneInfo.scene.add(mesh)
     sceneInfo.mesh = mesh
     sceneInfo.name = name
