@@ -7,7 +7,7 @@
       <div
         v-if="!displayReturn"
         class="title">
-        {{ title }}
+        <!--{{ title }}-->
       </div>
       <div
         v-else
@@ -54,7 +54,6 @@
     <canvas
       ref="canvas"
       id="canvas"> </canvas>
-    <Phone v-if="displayPhone"></Phone>
     <router-view/>
     <router-link
       v-if="$route.path === '/plasticland'"
@@ -62,7 +61,11 @@
       <div
         class="interface inventory-btn"
         @click="goInventory">
-        <span class="inventory-btn-title">collection</span>
+        <div class="inventory-btn-title">
+          <span>
+            collection
+          </span>
+        </div>
         <div
           :class="{notif : displayNotif}"
           class="inventory-btn-count">
@@ -77,17 +80,16 @@
 
 <script>
 import Vue from 'vue'
-// import Engine from '../three/Engine'
+// import Engine from '../three-examples/Engine'
 import App from '../three/App'
 import Loader from './Loader/Loader'
 import Timer from './Timer/Timer'
 import InventoryList from './Inventory/InventoryList'
-import Phone from './Phone'
 import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: {Loader, Timer, Phone },
+  components: { Loader, Timer },
   data () {
     return {
       data: '',
@@ -95,7 +97,6 @@ export default {
       objectFound: store.state.objects.filter(item => item.found).length,
       totalObject: store.state.objects.length,
       displayReturn: false,
-      displayPhone: null,
 	  displayNotif: false
     }
   },
@@ -108,15 +109,12 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
-    },
-    displayPhone (value) {
-      console.log(value)
     }
   },
   methods: {
     initScene () {
-      Vue.prototype.$engine = new App(this.$refs.canvas) // init scene
-	  if (this.$route.path === '/plasticland/inventory') {
+      Vue.prototype.$engine = new App(this.$refs) // init scene
+      if (this.$route.path === '/plasticland/inventory') {
         this.setInventory(true)
       }
     },
@@ -124,7 +122,7 @@ export default {
       Vue.prototype.$engine.setDisplayInventory(value)
     },
     goInventory () {
-	  this.displayNotif = false
+      this.displayNotif = false
       if (!this.displayPhone) {
         this.$router.push({
           path: `/plasticland/inventory`,
@@ -155,17 +153,6 @@ export default {
       	this.displayNotif = true
         this.objectFound = foundObj
       }
-
-      // photograph or Collectable
-      if (this.displayPhone === true) {
-        this.displayPhone = !this.displayPhone
-        Vue.prototype.$engine.closePhoto()
-	    return
-      }
-	  this.displayPhone = Vue.prototype.$engine.onShowPhotograph()
-    },
-    closePhoto () {
-      Vue.prototype.$engine.closePhoto()
     }
   }
 }
@@ -278,28 +265,35 @@ export default {
     .inventory-btn{
       margin-left: 43px;
       bottom: 38px;
-      width: 250px;
-      height: 83px;
+      width: 241px;
+      height: 79px;
       position: absolute;
       z-index: 0;
       font-family: Arkhip, sans-serif;
       color: white;
       display: flex;
-      background: url('../assets/img/svg/border-collection-cta.svg') left no-repeat;
-      background-size: contain;
       .inventory-btn-title{
-        align-self: center;
-        width: calc(100% - 90px);
+        display: flex;
+        align-items: center;
+        width: calc(100% - 83px);
         font-size: 16px;
         text-transform: uppercase;
+        background: $dark_blue;
+        border-radius: 5px;
+        height: 100%;
+        span{
+          width: 100%;
+        }
       }
       .inventory-btn-count{
-        width: 85px;
-        height: 83px;
+        width: 81px;
+        height: 79px;
         display: flex;
         justify-content: center;
-        border-left: solid 2px $medium_grey;
+        margin-left: 5px ;
         background: none;
+        background: $dark_blue;
+        border-radius: 5px;
         &.notif{
           background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
         }
