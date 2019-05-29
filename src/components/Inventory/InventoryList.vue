@@ -137,22 +137,23 @@ export default {
         }
         .obj{
           flex: 1 0 0;
-          border: solid 1px $sand_yellow;
+          border: solid 4px $sand_yellow;
           border-radius: 8px;
           margin: 0 5px 5px 0;
           height: 100%;
           position: relative;
+          font-family: AxeHandel, sans-serif;
           &.grow-two{
             flex-grow: 2;
           }
           .number{
-            width: 39px;
-            height: 39px;
+            width: 42px;
+            height: 42px;
             background: $sand_yellow;
             color: white;
             text-align: center;
             border-radius: 8px 2px 2px 2px;
-            font-size: 28px;
+            font-size: 41px;
             font-weight: bold;
           }
           &.canHover{
@@ -166,6 +167,7 @@ export default {
           }
           .title{
             color: $sand_yellow;
+            font-size: 33px;
             text-transform: uppercase;
             bottom: 0;
             position: absolute;

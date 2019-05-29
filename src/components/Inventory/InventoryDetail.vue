@@ -124,14 +124,14 @@ export default {
           display: flex;
           flex-direction: column;
           .content-title{
-            font-family: Arkhip, sans-serif;
+            font-family: AxeHandel, sans-serif;
             font-size: 45px;
             /*font-size: 50px;*/
             margin-bottom: 46px;
             text-transform: uppercase;
           }
           .content-description{
-            font-family: ApercuPro, sans-serif;
+            font-family: AxeHandel, sans-serif;
             font-size: 22px;
             height: 398px;
             .paragraph{

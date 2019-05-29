@@ -1,13 +1,10 @@
 <template>
   <div
-    :class="{ 'blue-bg' : ($route.path !== '/plasticland') }"
     class="Stage">
     <Loader />
     <div class="Stage-border">
       <div
-        v-if="!displayReturn"
-        class="title">
-        <!--{{ title }}-->
+        v-if="!displayReturn">
       </div>
       <div
         v-else
@@ -41,10 +38,10 @@
             crédits
           </span>
           </router-link>
-          <img
-            :src="require('../assets/img/svg/volume.svg')"
-            class="volume"
-            alt="volume">
+          <!--<img-->
+          <!--:src="require('../assets/img/svg/volume.svg')"-->
+          <!--class="volume"-->
+          <!--alt="volume">-->
         </div>
         <div class="timer">
           <Timer></Timer>
@@ -164,20 +161,6 @@ export default {
   border: 0;
   margin: 0;
   padding: 0;
-  &.blue-bg{
-    background: $dark_blue;
-    &-border {
-      color: $sand_yellow;
-    }
-    .right-side-content {
-      .menu{
-        a{
-          color: $sand_yellow;
-        }
-      }
-
-    }
-  }
   /*#app > div > div > div.right-side-content > div.menu > a:nth-child(1) > span*/
   &-border {
     position: absolute;
@@ -191,7 +174,7 @@ export default {
     text-transform: uppercase;
     .title{
       font-size: 18px;
-      font-family: Arkhip, sans-serif;
+      font-family: AxeHandel, sans-serif;
     }
     .back{
       display: flex;
@@ -202,8 +185,8 @@ export default {
       span{
         padding-left: 10px;
       }
-      font-size: 14px;
-      font-family: ApercuPro, sans-serif;
+      font-size: 22px;
+      font-family: AxeHandel, sans-serif;
       color: $sand_yellow;
     }
     .router-link-active{
@@ -227,8 +210,8 @@ export default {
           color: $sand_yellow;
           text-transform: uppercase;
           text-underline: transparent;
-          font-family: ApercuPro, sans-serif;
-          font-size: 14px;
+          font-family: AxeHandel, sans-serif;
+          font-size: 22px;
         }
         &:hover{
           cursor: pointer;
@@ -245,10 +228,10 @@ export default {
         a{
           padding: 0 10px;
           text-decoration: none;
-          font-size: 14px;
-          font-family: ApercuPro, sans-serif;
+          font-size: 22px;
+          font-family: AxeHandel, sans-serif;
           font-weight: 400;
-          color: $dark_blue;
+          color: $light_grey;
         }
         .volume{
           align-self: end;
@@ -269,14 +252,14 @@ export default {
       height: 79px;
       position: absolute;
       z-index: 0;
-      font-family: Arkhip, sans-serif;
-      color: white;
+      font-family: AxeHandel, sans-serif;
+      color: $light_grey;
       display: flex;
       .inventory-btn-title{
         display: flex;
         align-items: center;
         width: calc(100% - 83px);
-        font-size: 16px;
+        font-size: 28px;
         text-transform: uppercase;
         background: $dark_blue;
         border-radius: 5px;
@@ -298,7 +281,7 @@ export default {
           background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
         }
         span{
-          font-size: 31px;
+          font-size: 41px;
           position: relative;
         }
         .border-separator{
@@ -312,10 +295,10 @@ export default {
           top: 20px;
         }
         .inventory-btn-obj-found{
-          top:12px;
+          top:3px;
         }
         .inventory-btn-obj-total{
-          top:41px;
+          top:31px;
         }
       }
     }
