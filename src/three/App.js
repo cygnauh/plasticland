@@ -1,9 +1,7 @@
 import * as THREE from 'three'
 import Engine from './Engine'
-
 import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
-import CollectableOld from './components/Collectable'
 import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
@@ -63,6 +61,7 @@ export default class App extends Engine {
     this.groupPlasticLand.add(this.cube.object)
     this.scene.add(this.groupPlasticLand)
   }
+
   initCollectable () {
     this.collectable = new Collectable(this.renderer, this.manager, this.scene)
     this.collectableElement = this.collectable.initCollectables()
@@ -88,6 +87,7 @@ export default class App extends Engine {
     // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
     // onClickRaycaster(arrayMesh[0].children, this.raycaster)
   }
+
   animate () {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
@@ -104,10 +104,7 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
 
-	  // post processing
-	  this.composer.render(this.timeDelta)
-
-	  if (this.openInventory && this.collectable) {
+    if (this.openInventory && this.collectable) {
       // render collectable scenes
       this.collectable.collectableRender(this.collectableElement)
     } else {
@@ -116,7 +113,7 @@ export default class App extends Engine {
       this.renderer.setViewport(0, 0, this.width, this.height)
     }
     // stop rendering the main scene when inventory open
-    if (!this.openInventory) this.render()
+    if (!this.openInventory) this.composer.render(this.timeDelta)
 
     if (this.helpers.stats) this.helpers.stats.end()
     requestAnimationFrame(() => this.animate())
