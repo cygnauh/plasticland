@@ -1,7 +1,8 @@
 import * as THREE from 'three'
+import { store } from '../../store/index'
 import GltfLoader from '../components/GltfLoaderRefactored'
 
-const makeScene = (name) => {
+const makeScene = () => {
   const scene = new THREE.Scene()
   const fov = 45
   const aspect = 2 // the canvas default
@@ -22,7 +23,7 @@ const makeScene = (name) => {
   return { scene, camera }
 }
 
-const setupScene = (name, path, manager) => {
+const setupScene = (name, path, manager, isFound, flatMat) => {
   const sceneInfo = makeScene()
   let mesh = null
   let test = new GltfLoader(name, path, null, manager, { addToScene: false })
@@ -34,8 +35,13 @@ const setupScene = (name, path, manager) => {
     mesh.rotation.z = Math.PI / 2
     mesh.rotation.x = Math.PI / 3
     mesh.position.y = 1
+    if (!isFound) {
+      mesh.material = flatMat
+    }
     sceneInfo.scene.add(mesh)
     sceneInfo.mesh = mesh
+    sceneInfo.gltf = response
+    sceneInfo.materials = response.materials[0]
     sceneInfo.name = name
   })
   return sceneInfo
