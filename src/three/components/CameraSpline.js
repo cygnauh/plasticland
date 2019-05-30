@@ -6,11 +6,11 @@ export default class CameraSpline {
     this.scene = scene
     this.camera = camera
     this.percentageCamera = { value: 0 }
-    this.breakPoints = [0.5, 0.6, 0.7, 0.8, 0.95]
+    this.breakPoints = [0.2, 0.6, 0.7, 0.8, 0.98]
     this.tween = null
 
     this.initSpline()
-    this.moveCamera()
+    // this.moveCamera()
   }
 
   initSpline () {
@@ -20,7 +20,15 @@ export default class CameraSpline {
       [-54.100799560546875, -810.0264282226562, 0.09950000047683716],
       [100.6720962524414, -527.3427734375, 0.09950000047683716],
       [82.0342025756836, -169.00909423828125, 0.09950000047683716],
-      [-51.996498107910156, 363.8955993652344, 0.09950000047683716]
+      [-109.14830017089844, -69.94390106201172, 0.09950000047683716],
+      [-40.162498474121094, 136.98829650878906, 0.09950000047683716],
+      [-47.44369888305664, 329.62548828125, 0.09950000047683716]
+      // [33.29779815673828, -1625.17333984375, 0.09950000047683716],
+      // [31.629199981689453, -1193.315185546875, 0.09950000047683716],
+      // [-54.100799560546875, -810.0264282226562, 0.09950000047683716],
+      // [100.6720962524414, -527.3427734375, 0.09950000047683716],
+      // [82.0342025756836, -169.00909423828125, 0.09950000047683716],
+      // [-51.996498107910156, 363.8955993652344, 0.09950000047683716]
     ]
 
     for (let i = 0; i < points.length; i++) {
@@ -31,7 +39,7 @@ export default class CameraSpline {
     }
 
     this.spline = new THREE.CatmullRomCurve3(points)
-    let totalPoints = this.spline.getPoints(50)
+    let totalPoints = this.spline.getPoints(100)
     let geometry = new THREE.BufferGeometry().setFromPoints(totalPoints)
     let material = new THREE.LineBasicMaterial({
       color: 0xff00ff
@@ -49,25 +57,20 @@ export default class CameraSpline {
 
   tweenToBreakpoint (breakpoint) {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: breakpoint }, 40000)
-      .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .to({ value: breakpoint }, 60000)
+      .easing(TWEEN.Easing.Linear.None)
       .start()
   }
 
   updateCamera () {
-    // this.percentageCamera.value += 0.00045
+    // console.log(this.percentageCamera)
+    this.percentageCamera.value += 0.00045
 
     // position
-    let p1 = this.spline.getPointAt(this.percentageCamera.value % 1) // x,y,z
-    let p2 = this.spline.getPointAt((this.percentageCamera.value + 0.01) % 1) // lookat
+    let p1 = this.spline.getPoint(this.percentageCamera.value % 1) // x,y,z
+    let p2 = this.spline.getPoint((this.percentageCamera.value + 0.01) % 1) // lookat
 
-    // angle
-    let tangent = this.spline.getTangent(this.percentageCamera.value)
-
-    this.camera.position.x = p1.x
-    this.camera.position.y = p1.y + 3
-    this.camera.position.z = p1.z
+    this.camera.position.set(p1.x, p1.y + 3, p1.z)
     this.camera.lookAt(p2.x, p2.y + 3.5, p2.z)
-    this.camera.rotation.y = -tangent.x
   }
 }
