@@ -91,7 +91,7 @@ export default class Boat {
 
         // rotation
         let tangent = spline.getTangent(offsetPercentageCamera).normalize()
-        rot.y = -tangent.x - (mouseLerp.x / 20) 
+        rot.y = -tangent.x - (mouseLerp.x / 20)
       })
     }
     this.inclinaisonBoat(time)
