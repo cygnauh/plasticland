@@ -261,21 +261,23 @@ export default {
         width: calc(100% - 83px);
         font-size: 28px;
         text-transform: uppercase;
-        background: $dark_blue;
+        background: url('../assets/img/svg/collectable-t-bg.svg') no-repeat center center;
+        background-size: contain;
         border-radius: 5px;
-        height: 100%;
+        height: 79px;
         span{
           width: 100%;
         }
       }
       .inventory-btn-count{
-        width: 81px;
+        width: 85px;
         height: 79px;
         display: flex;
         justify-content: center;
         margin-left: 5px ;
-        background: none;
-        background: $dark_blue;
+        /*background: none;*/
+        background: url('../assets/img/svg/collectable-n-bg.svg') no-repeat;
+        background-size: contain;
         border-radius: 5px;
         &.notif{
           background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
