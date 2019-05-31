@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import * as TWEEN from 'tween'
 import Engine from './Engine'
 import Environment from './components/Environment'
 import CubeTest from './components/CubeTest'
@@ -30,7 +31,7 @@ export default class App extends Engine {
     this.cube = new CubeTest(this.scene)
     this.boat = new Boat(this.scene, this.manager, this.camera)
     this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_15.glb', this.scene, this.manager, { addToScene: false })
+    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_16.glb', this.scene, this.manager, { addToScene: false })
     this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: 0, scale: 0.01, addToScene: true })
   }
 
@@ -98,11 +99,12 @@ export default class App extends Engine {
     this.timeElapsed = this.clock.getElapsedTime()
 
     // update scene children
-    this.cameraSpline.moveCamera()
+    this.cameraSpline.updateCamera()
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
-    this.environment.update(this.timeElapsed, this.cameraSpline)
+    this.environment.update(this.cameraSpline)
+    this.collectable.tweenUpdate() // update tween
 
     if (this.openInventory && this.collectable) {
       // render collectable scenes

@@ -15,36 +15,46 @@ export default {
     return {
       firstTime: 0,
       secondTime: 0,
-      ellapsedSeconds: 0,
       seconds: 0,
       minutes: 0,
-      hours: 0
+      hours: 0,
+      ellapsedSeconds: 0,
+      ellapsedMinutes: 0,
+      ellapsedHours: 0
     }
   },
   created () {
-    setInterval(() => this.startTimer(), 1 * 1000)
+    setInterval(() => {
+      this.initSecondTime()
+      this.updateClock()
+      this.startTimer()
+    }, 1 * 1000)
   },
   mounted () {
-    this.initTime()
+    this.initFirstTime()
   },
   methods: {
-    initTime () {
+    initFirstTime () {
       this.firstTime = new Date()
     },
-    startTimer () {
+    initSecondTime () {
       this.secondTime = new Date()
-
+    },
+    startTimer () {
       this.ellapsedSeconds = this.secondTime - this.firstTime
       this.ellapsedSeconds /= 1000
       this.ellapsedSeconds = Math.round(this.ellapsedSeconds)
-
-      this.seconds = this.ellapsedSeconds
-      this.minutes = Math.floor(this.ellapsedSeconds / 60)
-      this.hours = Math.floor(this.minutes / 60)
+      this.ellapsedMinutes = Math.floor(this.ellapsedSeconds / 60)
+      this.ellapsedHours = Math.floor(this.ellapsedMinutes / 60)
 
       if (this.ellapsedSeconds >= 60) {
-        this.seconds = this.ellapsedSeconds - (this.minutes * 60)
+        this.ellapsedSeconds = this.ellapsedSeconds - (this.ellapsedMinutes * 60)
       }
+    },
+    updateClock () {
+      this.seconds = this.secondTime.getSeconds()
+      this.minutes = this.secondTime.getMinutes()
+      this.hours = this.secondTime.getHours()
     }
   }
 }

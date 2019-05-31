@@ -43,7 +43,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 208)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 508)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
@@ -114,6 +114,7 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
+    window.addEventListener( 'wheel', (e) => this.cameraSpline.moveCamera(e), false )
     // document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
@@ -125,16 +126,16 @@ export default class Engine {
   }
 
   onMouseMove (e) {
-    // this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
-    // this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
-    //
-    // setInterval(() => {
-    //   this.oldMouse.x = this.mouse.x
-    //   this.oldMouse.y = this.mouse.y
-    // }, 2000)
-    //
-    // this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
-    // this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
+    this.mouse.x = (e.clientX / this.renderer.domElement.clientWidth) * 2 - 1
+    this.mouse.y = -(e.clientY / this.renderer.domElement.clientHeight) * 2 + 1
+
+    setInterval(() => {
+      this.oldMouse.x = this.mouse.x
+      this.oldMouse.y = this.mouse.y
+    }, 2000)
+
+    this.mouseLerp.x = this.lerp(this.mouse.x, this.oldMouse.x, 0.1)
+    this.mouseLerp.y = this.lerp(this.mouse.y, this.oldMouse.y, 0.1)
   }
 
   lerp (a, b, n) {
