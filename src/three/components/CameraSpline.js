@@ -13,27 +13,32 @@ export default class CameraSpline {
       {
         name: 'starbucks',
         breakpoint: 0.22,
-        speed: 10000
+        speed: 12000,
+        collected: false
       },
       {
         name: 'carrefour',
         breakpoint: 0.4,
-        speed: 8000
+        speed: 8000,
+        collected: false
       },
       {
         name: 'coca-cola',
         breakpoint: 0.55,
-        speed: 8000
+        speed: 8000,
+        collected: false
       },
       {
         name: 'suremballage',
         breakpoint: 0.68,
-        speed: 8000
+        speed: 8000,
+        collected: false
       },
       {
         name: 'cube',
         breakpoint: 0.86,
-        speed: 8000
+        speed: 8000,
+        collected: false
       },
       {
         name: 'end',
