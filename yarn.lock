@@ -6517,6 +6517,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.5:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+postprocessing@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.4.0.tgz#e6b185ae9bc05e1a3d5b7d3b7d98318b36b3f7e4"
+  integrity sha512-usXg4D7L3d6Q58bx/WuBct7QbR0NoqMuKGjOEhJmIY9WEAl1ObJB45daYpSonfZSDfSS5AVYWyY11YXxbggMIQ==
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -7912,6 +7917,11 @@ three-instanced-mesh@^0.96.2:
   version "0.96.2"
   resolved "https://registry.yarnpkg.com/three-instanced-mesh/-/three-instanced-mesh-0.96.2.tgz#a8af5d678cf670ddfe1e63b9e1e8bc7dca6a01d4"
   integrity sha512-cnpvYpBbwv4LdbuQjgzFtlA70lZy6+p78YI+vaQLJYBEMhd0qNOf3VMC+YVLD0JzHZCPbnPvjvzeF7lvcU5D+Q==
+
+three-transform-controls@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/three-transform-controls/-/three-transform-controls-1.0.4.tgz#dea99f8b30d1b8e0bb9f9055f8862ce80c0eaf52"
+  integrity sha1-3qmfizDRuOC7n5BV+IYs6AwOr1I=
 
 three@^0.103.0:
   version "0.103.0"

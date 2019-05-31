@@ -59,8 +59,8 @@ export default class Collectable {
       objMesh.material = obj.materials.material
     }
   }
-
-  update () {
-    // TWEEN.update()
+  
+  tweenUpdate () {
+    TWEEN.update()
   }
 }
