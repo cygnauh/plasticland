@@ -1,6 +1,7 @@
 import GltfLoader from './GltfLoaderRefactored'
 import * as THREE from 'three/src/Three'
 import { store } from '../../store/index'
+import * as TWEEN from 'tween'
 import { setupScene, rendenerSceneInfo } from '../utils/utilsScene'
 
 export default class Collectable {
@@ -24,7 +25,7 @@ export default class Collectable {
     this.renderer.setScissorTest(false)
     this.renderer.clear(true, true)
     this.renderer.setScissorTest(true)
-	  const containers = store.state.objectContainers
+    const containers = store.state.objectContainers
     array.forEach(scene => {
       if (scene && scene.name) {
         rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
@@ -32,7 +33,7 @@ export default class Collectable {
     })
   }
 
-  update () {
-    // TWEEN.update()
+  tweenUpdate () {
+    TWEEN.update()
   }
 }

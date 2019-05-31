@@ -95,7 +95,6 @@ export default class App extends Engine {
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
 
     // update
-    TWEEN.update()
     this.timeDelta = this.clock.getDelta()
     this.timeElapsed = this.clock.getElapsedTime()
 
@@ -105,6 +104,7 @@ export default class App extends Engine {
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
+    this.collectable.tweenUpdate() // update tween
 
     if (this.openInventory && this.collectable) {
       // render collectable scenes

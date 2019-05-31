@@ -10,7 +10,7 @@ export default class CameraSpline {
     this.tween = null
 
     this.initSpline()
-    // this.moveCamera()
+    this.moveCamera()
   }
 
   initSpline () {
@@ -23,12 +23,6 @@ export default class CameraSpline {
       [-109.14830017089844, -69.94390106201172, 0.09950000047683716],
       [-40.162498474121094, 136.98829650878906, 0.09950000047683716],
       [-47.44369888305664, 329.62548828125, 0.09950000047683716]
-      // [33.29779815673828, -1625.17333984375, 0.09950000047683716],
-      // [31.629199981689453, -1193.315185546875, 0.09950000047683716],
-      // [-54.100799560546875, -810.0264282226562, 0.09950000047683716],
-      // [100.6720962524414, -527.3427734375, 0.09950000047683716],
-      // [82.0342025756836, -169.00909423828125, 0.09950000047683716],
-      // [-51.996498107910156, 363.8955993652344, 0.09950000047683716]
     ]
 
     for (let i = 0; i < points.length; i++) {
@@ -63,9 +57,6 @@ export default class CameraSpline {
   }
 
   updateCamera () {
-    // console.log(this.percentageCamera)
-    this.percentageCamera.value += 0.00045
-
     // position
     let p1 = this.spline.getPoint(this.percentageCamera.value % 1) // x,y,z
     let p2 = this.spline.getPoint((this.percentageCamera.value + 0.01) % 1) // lookat
