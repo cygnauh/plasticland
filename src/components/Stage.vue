@@ -3,9 +3,6 @@
     class="Stage">
     <Loader />
     <div class="Stage-border">
-      <!--<div-->
-        <!--v-if="!displayReturn">-->
-      <!--</div>-->
       <router-link
         to="/plasticland">
         <div
@@ -34,14 +31,14 @@
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
           class="menu">
           <router-link to="/plasticland/about">
-          <span>
-            à propos
-          </span>
+            <span>
+              à propos
+            </span>
           </router-link>
           <router-link to="/plasticland/credits">
-          <span>
-            crédits
-          </span>
+            <span>
+              crédits
+            </span>
           </router-link>
           <!--<img-->
           <!--:src="require('../assets/img/svg/volume.svg')"-->
@@ -131,19 +128,20 @@ export default {
       })
     },
     backToInventoryList () {
-      // Vue.prototype.$engine.collectable.backToList()
       this.goInventory()
     },
     checkRoute (route) {
-      if (route === '/plasticland/inventory') {
-        this.title = 'Explorez votre collection'
-        this.goTo('list')
-        this.displayReturn = false
-      } else if (route === '/plasticland') {
-        this.goTo('scene')
-        this.displayReturn = false
-      } else {
-        this.displayReturn = true
+      switch (route) {
+        case '/plasticland/inventory':
+          this.goTo('list')
+          this.displayReturn = false
+          break
+        case '/plasticland':
+          this.goTo('scene')
+          this.displayReturn = false
+          break
+        default:
+          this.displayReturn = true
       }
     },
     handleClick () {
