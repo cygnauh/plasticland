@@ -3,31 +3,36 @@
     class="Stage">
     <Loader />
     <div class="Stage-border">
-      <div
-        v-if="!displayReturn">
-      </div>
-      <div
-        v-else
-        class="back"
-        @click="backToInventoryList">
-        <img
-          :src="require('../assets/img/svg/arrow.svg')"
-          alt="back">
-        <span>Retour à votre collection</span>
-      </div>
+      <!--<div-->
+        <!--v-if="!displayReturn">-->
+      <!--</div>-->
       <router-link
-        to="/plasticland"
-        v-if="$route.path !== '/plasticland'"
-        class="close-link">
-        <div class="close-btn">
+        to="/plasticland">
+        <div
+          class="back"
+          v-if="$route.path === '/plasticland/inventory'">
           <img
-            :src="require('../assets/img/svg/close.svg')"
+            :src="require('../assets/img/back.png')"
+            alt="back">
+          <span>Retour</span>
+        </div>
+      </router-link>
+      <router-link
+        to="/plasticland/inventory"
+        v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory'"
+        class="close-link">
+        <div
+          class="close-btn"
+          @click="backToInventoryList">
+          <img
+            :src="require('../assets/img/close.png')"
             alt="Vue logo">
-          <span>Fermer</span>
         </div>
       </router-link>
       <div class="right-side-content">
-        <div class="menu">
+        <div
+          :class="{ 'dark' : ($route.path !== '/plasticland') }"
+          class="menu">
           <router-link to="/plasticland/about">
           <span>
             à propos
@@ -44,7 +49,7 @@
           <!--alt="volume">-->
         </div>
         <div class="timer">
-          <Timer></Timer>
+          <Timer :theme="$route.path !== '/plasticland' ? 'dark': ''"></Timer>
         </div>
       </div>
     </div>
@@ -99,7 +104,7 @@ export default {
   },
   mounted () {
     this.initScene()
-    if (this.inventory) this.setInventory(this.inventory)
+    // if (this.inventory) this.goTo(this.inventory)
     this.checkRoute(this.$route.path)
     document.addEventListener('click', (e) => this.handleClick(e), false)
   },
@@ -112,34 +117,31 @@ export default {
     initScene () {
       Vue.prototype.$engine = new App(this.$refs) // init scene
       if (this.$route.path === '/plasticland/inventory') {
-        this.setInventory(true)
+        this.goTo('list')
       }
     },
-    setInventory (value) {
-      Vue.prototype.$engine.setDisplayInventory(value)
+    goTo (value) {
+      Vue.prototype.$engine.handleRender(value)
     },
     goInventory () {
       this.displayNotif = false
-      if (!this.displayPhone) {
-        this.$router.push({
-          path: `/plasticland/inventory`,
-          component: InventoryList
-        })
-      }
+      this.$router.push({
+        path: `/plasticland/inventory`,
+        component: InventoryList
+      })
     },
     backToInventoryList () {
-      Vue.prototype.$engine.collectable.backToList()
+      // Vue.prototype.$engine.collectable.backToList()
       this.goInventory()
     },
     checkRoute (route) {
       if (route === '/plasticland/inventory') {
         this.title = 'Explorez votre collection'
-        this.setInventory(true)
+        this.goTo('list')
         this.displayReturn = false
       } else if (route === '/plasticland') {
-        this.setInventory(false)
+        this.goTo('scene')
         this.displayReturn = false
-        this.title = 'Montagne de recyclage' // to be set incording to Place
       } else {
         this.displayReturn = true
       }
@@ -171,7 +173,6 @@ export default {
     display: flex;
     justify-content: space-between;
     color: $dark_blue;
-    text-transform: uppercase;
     .title{
       font-size: 18px;
       font-family: AxeHandel, sans-serif;
@@ -179,6 +180,7 @@ export default {
     .back{
       display: flex;
       img{
+        margin-top: 2px;
         width: 17px;
         height: 19px;
       }
@@ -187,7 +189,7 @@ export default {
       }
       font-size: 22px;
       font-family: AxeHandel, sans-serif;
-      color: $sand_yellow;
+      color: $medium_grey;
     }
     .router-link-active{
       top: 0;
@@ -225,6 +227,11 @@ export default {
       .menu{
         text-decoration: none;
         display: flex;
+        &.dark{
+          a{
+            color: $medium_grey;
+          }
+        }
         a{
           padding: 0 10px;
           text-decoration: none;
