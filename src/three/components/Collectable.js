@@ -1,5 +1,6 @@
 import GltfLoader from './GltfLoaderRefactored'
 import * as THREE from 'three/src/Three'
+import * as TWEEN from 'tween'
 import { store } from '../../store/index'
 import { setupScene, rendenerSceneInfo } from '../utils/utilsScene'
 
@@ -14,6 +15,8 @@ export default class Collectable {
       opacity: 0.2,
       blending: THREE.AdditiveBlending
     })
+    this.itemSelected = ''
+    this.initCollectables()
   }
 
   initCollectables () {
@@ -24,16 +27,27 @@ export default class Collectable {
     return this.collectableArray
   }
 
-  collectableRender (array) {
+  renderScissor () {
     this.renderer.setScissorTest(false)
     this.renderer.clear(true, true)
     this.renderer.setScissorTest(true)
+  }
+
+  renderCollectables () {
+    this.renderScissor()
     const containers = store.state.objectContainers
-    array.forEach(scene => {
+    this.collectableArray.forEach(scene => {
       if (scene && scene.name) {
         rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
       }
     })
+  }
+
+  renderSelectedCollectable () {
+    const name = this.itemSelected
+    let scene = this.collectableArray.filter(element => element.name === name)
+    this.renderScissor()
+    rendenerSceneInfo(scene[0], store.state.selectItemContainer, this.renderer)
   }
 
   changeMaterial (name) {

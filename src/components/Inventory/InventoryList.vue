@@ -51,8 +51,7 @@
             <div
               :key="object.id"
               :class="{'canHover' : object.found}"
-              @click.capture="(e) => onObjectClicked(e, object)"
-              v-for="(object) in objects.slice(3)"
+              v-for="(object, i) in objects.slice(3)"
               class="obj">
               <!--<img-->
                 <!--:src="[ object.found ? require('../../assets/img/svg/grow-one-y.svg') : require('../../assets/img/svg/grow-one-g.svg') ]"-->
@@ -60,6 +59,7 @@
               <div
                 :ref="object.name"
                 :id="object.name"
+                @click.capture="(e) => onObjectClicked(e, object)"
                 class="border">
                 <div
                   :class="{'y-bg' : object.found}"
@@ -103,7 +103,8 @@ export default {
         e.preventDefault()
       } else {
         store.objectFound(obj.id)
-        Vue.prototype.$engine.collectable.selectedItem(obj.name, true)
+        Vue.prototype.$engine.handleRender('detail')
+        Vue.prototype.$engine.collectable.itemSelected = obj.name
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
           component: InventoryDetail
@@ -204,7 +205,7 @@ export default {
           }
           .title{
             will-change: opacity;
-            opacity: 1; // TODO to 0 in prod
+            opacity: 0; // TODO to 0 in prod
             transition: opacity 0.2s ease-in-out;
           }
           &.canHover{

@@ -13,7 +13,7 @@ import { onClickRaycaster } from './utils/Event'
 export default class App extends Engine {
   constructor (refs) {
     super(refs.canvas)
-    this.openInventory = false
+    this.currentRender = 'scene'
     this.initGeometry(refs)
     this.initGroup()
     this.initCollectable()
@@ -64,28 +64,30 @@ export default class App extends Engine {
 
   initCollectable () {
     this.collectable = new Collectable(this.renderer, this.manager, this.scene)
-    this.collectableElement = this.collectable.initCollectables()
   }
 
-  setDisplayInventory (value) {
-    if (value) {
+  handleRender (value) {
+    if (value === 'list') {
       this.scene.remove(this.groupPlasticLand)
       this.scene.remove(this.cameraSpline.splineLine)
-      setTimeout(() => {
-        this.openInventory = true
-      }, 1)
+      // setTimeout(() => {
+      this.currentRender = 'list'
+      // }, 1)
       this.scene.background = null
-    } else {
+    } else if (value === 'scene') {
       this.scene.background = this.environment.cubeCamera.renderTarget
-      this.openInventory = false
+      this.currentRender = 'scene'
       this.scene.add(this.groupPlasticLand)
       this.scene.add(this.cameraSpline.splineLine)
+    } else {
+      this.currentRender = 'detail' // TODO handle the other case ( about page )
     }
   }
 
   onClick () {
     // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
     // onClickRaycaster(arrayMesh[0].children, this.raycaster)
+    if (this.collectable) this.collectable.changeMaterial('cocacola')
   }
 
   animate () {
@@ -104,16 +106,20 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.timeElapsed, this.cameraSpline)
 
-    if (this.openInventory && this.collectable) {
+    if (this.currentRender === 'list' && this.collectable) {
       // render collectable scenes
-      this.collectable.collectableRender(this.collectableElement)
-    } else {
+      this.collectable.renderCollectables()
+    } else if (this.currentRender === 'scene') {
       // reset initial viewport, full screen size
       this.renderer.setScissor(0, 0, this.width, this.height)
       this.renderer.setViewport(0, 0, this.width, this.height)
+    } else {
+      this.collectable.renderSelectedCollectable()
     }
     // stop rendering the main scene when inventory open
-    if (!this.openInventory) this.composer.render(this.timeDelta)
+    if (this.currentRender === 'scene') { // scene
+      this.composer.render(this.timeDelta)
+    }
 
     if (this.helpers.stats) this.helpers.stats.end()
     requestAnimationFrame(() => this.animate())
