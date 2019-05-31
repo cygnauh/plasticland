@@ -2,5 +2,8 @@
 .timer {
   font-family: AxeHandel, sans-serif;
   font-size: 44px;
-  color: white;
+  color: $light_grey;
+  &.dark{
+    color: $medium_grey;
+  }
 }

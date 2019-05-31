@@ -1,5 +1,7 @@
 <template id="timer">
-    <div class="timer">
+    <div
+        :class="theme"
+        class="timer">
         <span class="hour"> {{ hours }} </span>
         <span> : </span>
         <span class="minutes"> {{ minutes }} </span>
@@ -11,6 +13,12 @@
 <script>
 export default {
   name: 'Timer',
+  props: {
+    theme: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       firstTime: 0,
