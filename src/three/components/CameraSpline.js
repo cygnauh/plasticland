@@ -5,34 +5,45 @@ export default class CameraSpline {
   constructor (scene, camera) {
     this.scene = scene
     this.camera = camera
+
     this.percentageCamera = { value: 0 }
     this.tween = null
-
+    this.moving = false
     this.stops = [
       {
         name: 'starbucks',
-        breakpoint: 0.22
+        breakpoint: 0.22,
+        speed: 10000
       },
       {
         name: 'carrefour',
-        breakpoint: 0.4
+        breakpoint: 0.4,
+        speed: 8000
       },
       {
         name: 'coca-cola',
-        breakpoint: 0.55
+        breakpoint: 0.55,
+        speed: 8000
       },
       {
         name: 'suremballage',
-        breakpoint: 0.68
+        breakpoint: 0.68,
+        speed: 8000
       },
       {
         name: 'cube',
-        breakpoint: 0.86
+        breakpoint: 0.86,
+        speed: 8000
+      },
+      {
+        name: 'end',
+        breakpoint: 0.95,
+        speed: 3000
       }
     ]
+    this.positionStop = 0
 
     this.initSpline()
-    this.moveCamera()
   }
 
   initSpline () {
@@ -65,16 +76,23 @@ export default class CameraSpline {
     this.scene.add(this.splineLine)
   }
 
-  moveCamera () {
-    setTimeout(() => {
-      this.tweenToBreakpoint(this.stops[4].breakpoint)
-    }, 4000)
+  moveCamera (e) {
+    // e.preventDefault()
+    if (!this.moving) {
+      this.moving = true
+      console.log(e)
+      this.tweenToBreakpoint(this.stops[this.positionStop].breakpoint, this.stops[this.positionStop].speed)
+    }
   }
 
-  tweenToBreakpoint (breakpoint) {
+  tweenToBreakpoint (breakpoint, speed) {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: breakpoint }, 6000)
+      .to({ value: breakpoint }, speed)
       .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .onComplete(() => {
+        this.moving = false
+        this.positionStop = this.positionStop + 1
+      })
       .start()
   }
 
