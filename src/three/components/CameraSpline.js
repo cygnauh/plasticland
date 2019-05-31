@@ -6,8 +6,30 @@ export default class CameraSpline {
     this.scene = scene
     this.camera = camera
     this.percentageCamera = { value: 0 }
-    this.breakPoints = [0.2, 0.6, 0.7, 0.8, 0.98]
     this.tween = null
+
+    this.stops = [
+      {
+        name: 'starbucks',
+        breakpoint: 0.22
+      },
+      {
+        name: 'carrefour',
+        breakpoint: 0.4
+      },
+      {
+        name: 'coca-cola',
+        breakpoint: 0.55
+      },
+      {
+        name: 'suremballage',
+        breakpoint: 0.68
+      },
+      {
+        name: 'cube',
+        breakpoint: 0.86
+      }
+    ]
 
     this.initSpline()
     this.moveCamera()
@@ -45,14 +67,14 @@ export default class CameraSpline {
 
   moveCamera () {
     setTimeout(() => {
-      this.tweenToBreakpoint(this.breakPoints[4])
+      this.tweenToBreakpoint(this.stops[4].breakpoint)
     }, 4000)
   }
 
   tweenToBreakpoint (breakpoint) {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: breakpoint }, 60000)
-      .easing(TWEEN.Easing.Linear.None)
+      .to({ value: breakpoint }, 6000)
+      .easing(TWEEN.Easing.Sinusoidal.InOut)
       .start()
   }
 
