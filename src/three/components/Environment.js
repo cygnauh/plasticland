@@ -17,7 +17,6 @@ export default class Environment extends THREE.Object3D {
     this.updateGeom()
   }
 
-
   initPlaneGeometry (width, height, widthSegments, heightSegments) {
     this.geometry = new THREE.PlaneBufferGeometry(width, height, widthSegments, heightSegments)
   }
