@@ -40,10 +40,10 @@
               crédits
             </span>
           </router-link>
-          <!--<img-->
-          <!--:src="require('../assets/img/svg/volume.svg')"-->
-          <!--class="volume"-->
-          <!--alt="volume">-->
+          <img
+            :src="require('../assets/img/svg/volume.svg')"
+            class="volume"
+            alt="volume">
         </div>
         <div class="timer">
           <Timer :theme="$route.path !== '/plasticland' ? 'dark': ''"></Timer>
