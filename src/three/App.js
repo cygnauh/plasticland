@@ -103,7 +103,7 @@ export default class App extends Engine {
     this.sound.update(this.timeElapsed)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
-    this.environment.update(this.timeElapsed, this.cameraSpline)
+    this.environment.update(this.cameraSpline)
     this.collectable.tweenUpdate() // update tween
 
     if (this.openInventory && this.collectable) {

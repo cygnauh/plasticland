@@ -47,6 +47,7 @@ export default class CameraSpline {
       }
     ]
     this.positionStop = 0
+    this.animateWater = true
 
     this.initSpline()
   }
@@ -85,6 +86,7 @@ export default class CameraSpline {
     // e.preventDefault()
     if (!this.moving) {
       this.moving = true
+      this.animateWater = false
       console.log(e)
       this.tweenToBreakpoint(this.stops[this.positionStop].breakpoint, this.stops[this.positionStop].speed)
     }
@@ -97,6 +99,7 @@ export default class CameraSpline {
       .onComplete(() => {
         this.moving = false
         this.positionStop = this.positionStop + 1
+        this.animateWater = true
       })
       .start()
   }
