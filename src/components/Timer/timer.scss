@@ -6,4 +6,9 @@
   &.dark{
     color: $medium_grey;
   }
+  .item{
+    text-align: center;
+    width: 40px;
+    display: inline-block;
+  }
 }

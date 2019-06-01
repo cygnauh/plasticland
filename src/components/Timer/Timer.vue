@@ -2,11 +2,11 @@
     <div
         :class="theme"
         class="timer">
-        <span class="hour"> {{ hours }} </span>
+        <span class="hour item"> {{ hours }} </span>
         <span> : </span>
-        <span class="minutes"> {{ minutes }} </span>
+        <span class="minutes item"> {{ minutes }} </span>
         <span> : </span>
-        <span class="seconds"> {{ seconds }} </span>
+        <span class="seconds item"> {{ seconds }} </span>
     </div>
 </template>
 
