@@ -5,42 +5,58 @@
     <div class='inventory-container'>
       <div id="box" class="box">
         <div
-          :ref="object.name"
-          :id="object.name"
-          :class="{'canHover' : object.found}"
           :key="object.id"
+          :class="{'canHover' : object.found}"
           class="el first-object obj"
           v-for="(object) in objects.slice(0, 1)"
           @click.capture="(e) => onObjectClicked(e, object)">
-          <div class="number"> {{object.id}} </div>
-          <div class="title"> {{ object.title }} </div>
+          <div
+            :ref="object.name"
+            :id="object.name"
+            class="border"
+          >
+            <div
+              :class="{'y-bg' : object.found}"
+              class="number"> {{object.id}} </div>
+            <div class="title"> {{ object.title }} </div>
+          </div>
         </div>
         <div class="el grow-three">
           <div
             class="container">
             <div
-              :ref="object.name"
-              :id="object.name"
-              :class="[{'canHover' : object.found}, {'grow-two': (i === 1)}]"
               :key="object.id"
+              :class="[{'canHover' : object.found}, {'grow-two': (i === 1)}]"
               class="obj"
               v-for="(object, i) in objects.slice(1, 3)"
               @click.capture="(e) => onObjectClicked(e,object)">
-              <div class="number">{{object.id}}</div>
-              <div class="title"> {{ object.title }} </div>
+              <div
+                :ref="object.name"
+                :id="object.name"
+                class="border">
+                <div
+                  :class="{'y-bg' : object.found}"
+                  class="number">{{object.id}}</div>
+                <div class="title"> {{ object.title }} </div>
+              </div>
             </div>
           </div>
           <div class="container">
             <div
               :key="object.id"
-              :ref="object.name"
-              :id="object.name"
               :class="{'canHover' : object.found}"
-              @click.capture="(e) => onObjectClicked(e, object)"
               v-for="(object) in objects.slice(3)"
               class="obj">
-              <div class="number">{{object.id}}</div>
-              <div class="title"> {{ object.title }} </div>
+              <div
+                :ref="object.name"
+                :id="object.name"
+                @click.capture="(e) => onObjectClicked(e, object)"
+                class="border">
+                <div
+                  :class="{'y-bg' : object.found}"
+                  class="number">{{object.id}}</div>
+                <div class="title"> {{ object.title }} </div>
+              </div>
             </div>
           </div>
         </div>
@@ -70,7 +86,10 @@ export default {
   mounted () {
     this.isMounted = true
     store.setContainers(this.$refs)
-    // if (Vue.prototype && Vue.prototype.$engine) Vue.prototype.$engine.initCollectable()
+    Vue.prototype.$engine.collectable.openCollectable()
+  },
+  beforeDestroy () {
+    Vue.prototype.$engine.collectable.closeCollectable()
   },
   methods: {
     onObjectClicked (e, obj) {
@@ -78,7 +97,9 @@ export default {
         e.preventDefault()
       } else {
         store.objectFound(obj.id)
-        Vue.prototype.$engine.collectable.selectedItem(obj.name, true)
+        Vue.prototype.$engine.handleRender('detail')
+        Vue.prototype.$engine.collectable.itemSelected = obj.name
+        Vue.prototype.$engine.collectable.openItem()
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
           component: InventoryDetail
@@ -133,39 +154,79 @@ export default {
           flex: 1 0 0;
           display: flex;
           flex-direction: row;
-          /*margin: 5px 5px 5px 0;*/
         }
         .obj{
           flex: 1 0 0;
-          border: solid 1px $sand_yellow;
-          border-radius: 8px;
-          margin: 0 5px 5px 0;
           height: 100%;
           position: relative;
+          font-family: AxeHandel, sans-serif;
+          .border{
+            border: 8px solid;
+            border-image-slice: 10;
+            border-image-source: url('../../assets/img/svg/grow-one-g.svg');
+            height: calc(100% - 28px);
+            width: calc(100% - 28px);
+          }
           &.grow-two{
             flex-grow: 2;
+            .border{
+              border-image-source: url('../../assets/img/svg/grow-two-g.svg');
+            }
+            &.canHover {
+              &:hover {
+                .border{
+                  border-image-source: url('../../assets/img/svg/grow-two-y.svg');
+                }
+              }
+            }
           }
           .number{
-            width: 39px;
-            height: 39px;
-            background: $sand_yellow;
+            width: 45px;
+            height: 45px;
             color: white;
             text-align: center;
-            border-radius: 8px 2px 2px 2px;
-            font-size: 28px;
+            font-size: 41px;
             font-weight: bold;
+            position: relative;
+            left: -4px;
+            top: -4px;
+            background: url('../../assets/img/svg/grey-bg.svg') center center;
+            background-size: contain;
+            will-change: background;
+            transition: background 0.1s ease-in-out;
+          }
+          .title{
+            will-change: opacity;
+            opacity: 0; // TODO to 0 in prod
+            transition: opacity 0.2s ease-in-out;
           }
           &.canHover{
-            will-change: opacity;
-            opacity: 1; // TODO to 0 in prod
+            &:hover{
+              .border{
+                border-image-source: url('../../assets/img/svg/grow-one-y.svg');
+              }
+              .y-bg{
+                background: url('../../assets/img/svg/yellow-bg.svg') center center;
+                background-size: contain;
+              }
+            }
+
             &:hover{
               .title{
                 opacity: 1;
               }
             }
           }
+          img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
           .title{
             color: $sand_yellow;
+            font-size: 33px;
             text-transform: uppercase;
             bottom: 0;
             position: absolute;
@@ -189,10 +250,6 @@ export default {
           }
         }
       }
-    }
-    .test{
-      position: absolute;
-      z-index: 3;
     }
   }
 </style>

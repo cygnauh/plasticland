@@ -1,45 +1,44 @@
 <template>
   <div
-    :class="{ 'blue-bg' : ($route.path !== '/plasticland') }"
     class="Stage">
     <Loader />
     <div class="Stage-border">
-      <div
-        v-if="!displayReturn"
-        class="title">
-        <!--{{ title }}-->
-      </div>
-      <div
-        v-else
-        class="back"
-        @click="backToInventoryList">
-        <img
-          :src="require('../assets/img/svg/arrow.svg')"
-          alt="back">
-        <span>Retour à votre collection</span>
-      </div>
       <router-link
-        to="/plasticland"
-        v-if="$route.path !== '/plasticland'"
-        class="close-link">
-        <div class="close-btn">
+        to="/plasticland">
+        <div
+          class="back"
+          v-if="$route.path === '/plasticland/inventory'">
           <img
-            :src="require('../assets/img/svg/close.svg')"
+            :src="require('../assets/img/back.png')"
+            alt="back">
+          <span>Retour</span>
+        </div>
+      </router-link>
+      <router-link
+        to="/plasticland/inventory"
+        v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory'"
+        class="close-link">
+        <div
+          class="close-btn"
+          @click="goInventory">
+          <img
+            :src="require('../assets/img/close.png')"
             alt="Vue logo">
-          <span>Fermer</span>
         </div>
       </router-link>
       <div class="right-side-content">
-        <div class="menu">
+        <div
+          :class="{ 'dark' : ($route.path !== '/plasticland') }"
+          class="menu">
           <router-link to="/plasticland/about">
-          <span>
-            à propos
-          </span>
+            <span>
+              à propos
+            </span>
           </router-link>
           <router-link to="/plasticland/credits">
-          <span>
-            crédits
-          </span>
+            <span>
+              crédits
+            </span>
           </router-link>
           <img
             :src="require('../assets/img/svg/volume.svg')"
@@ -47,7 +46,7 @@
             alt="volume">
         </div>
         <div class="timer">
-          <Timer></Timer>
+          <Timer :theme="$route.path !== '/plasticland' ? 'dark': ''"></Timer>
         </div>
       </div>
     </div>
@@ -102,7 +101,6 @@ export default {
   },
   mounted () {
     this.initScene()
-    if (this.inventory) this.setInventory(this.inventory)
     this.checkRoute(this.$route.path)
     document.addEventListener('click', (e) => this.handleClick(e), false)
   },
@@ -115,36 +113,31 @@ export default {
     initScene () {
       Vue.prototype.$engine = new App(this.$refs) // init scene
       if (this.$route.path === '/plasticland/inventory') {
-        this.setInventory(true)
+        this.goTo('list')
       }
     },
-    setInventory (value) {
-      Vue.prototype.$engine.setDisplayInventory(value)
+    goTo (value) {
+      Vue.prototype.$engine.handleRender(value)
     },
     goInventory () {
       this.displayNotif = false
-      if (!this.displayPhone) {
-        this.$router.push({
-          path: `/plasticland/inventory`,
-          component: InventoryList
-        })
-      }
-    },
-    backToInventoryList () {
-      Vue.prototype.$engine.collectable.backToList()
-      this.goInventory()
+      this.$router.push({
+        path: `/plasticland/inventory`,
+        component: InventoryList
+      })
     },
     checkRoute (route) {
-      if (route === '/plasticland/inventory') {
-        this.title = 'Explorez votre collection'
-        this.setInventory(true)
-        this.displayReturn = false
-      } else if (route === '/plasticland') {
-        this.setInventory(false)
-        this.displayReturn = false
-        this.title = 'Montagne de recyclage' // to be set incording to Place
-      } else {
-        this.displayReturn = true
+      switch (route) {
+        case '/plasticland/inventory':
+          this.goTo('list')
+          this.displayReturn = false
+          break
+        case '/plasticland':
+          this.goTo('scene')
+          this.displayReturn = false
+          break
+        default:
+          this.displayReturn = true
       }
     },
     handleClick () {
@@ -164,47 +157,33 @@ export default {
   border: 0;
   margin: 0;
   padding: 0;
-  &.blue-bg{
-    background: $dark_blue;
-    &-border {
-      color: $sand_yellow;
-    }
-    .right-side-content {
-      .menu{
-        a{
-          color: $sand_yellow;
-        }
-      }
-
-    }
-  }
   /*#app > div > div > div.right-side-content > div.menu > a:nth-child(1) > span*/
   &-border {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     margin: 18px;
     width: calc(100% - 36px);
     height: 102px;
     display: flex;
     justify-content: space-between;
     color: $dark_blue;
-    text-transform: uppercase;
     .title{
       font-size: 18px;
-      font-family: Arkhip, sans-serif;
+      font-family: AxeHandel, sans-serif;
     }
     .back{
       display: flex;
       img{
+        margin-top: 2px;
         width: 17px;
         height: 19px;
       }
       span{
         padding-left: 10px;
       }
-      font-size: 14px;
-      font-family: ApercuPro, sans-serif;
-      color: $sand_yellow;
+      font-size: 22px;
+      font-family: AxeHandel, sans-serif;
+      color: $medium_grey;
     }
     .router-link-active{
       top: 0;
@@ -227,8 +206,8 @@ export default {
           color: $sand_yellow;
           text-transform: uppercase;
           text-underline: transparent;
-          font-family: ApercuPro, sans-serif;
-          font-size: 14px;
+          font-family: AxeHandel, sans-serif;
+          font-size: 22px;
         }
         &:hover{
           cursor: pointer;
@@ -242,13 +221,18 @@ export default {
       .menu{
         text-decoration: none;
         display: flex;
+        &.dark{
+          a{
+            color: $medium_grey;
+          }
+        }
         a{
           padding: 0 10px;
           text-decoration: none;
-          font-size: 14px;
-          font-family: ApercuPro, sans-serif;
+          font-size: 22px;
+          font-family: AxeHandel, sans-serif;
           font-weight: 400;
-          color: $dark_blue;
+          color: $light_grey;
         }
         .volume{
           align-self: end;
@@ -269,36 +253,38 @@ export default {
       height: 79px;
       position: absolute;
       z-index: 0;
-      font-family: Arkhip, sans-serif;
-      color: white;
+      font-family: AxeHandel, sans-serif;
+      color: $light_grey;
       display: flex;
       .inventory-btn-title{
         display: flex;
         align-items: center;
         width: calc(100% - 83px);
-        font-size: 16px;
+        font-size: 28px;
         text-transform: uppercase;
-        background: $dark_blue;
+        background: url('../assets/img/svg/collectable-t-bg.svg') no-repeat center center;
+        background-size: contain;
         border-radius: 5px;
-        height: 100%;
+        height: 79px;
         span{
           width: 100%;
         }
       }
       .inventory-btn-count{
-        width: 81px;
+        width: 85px;
         height: 79px;
         display: flex;
         justify-content: center;
         margin-left: 5px ;
-        background: none;
-        background: $dark_blue;
+        /*background: none;*/
+        background: url('../assets/img/svg/collectable-n-bg.svg') no-repeat;
+        background-size: contain;
         border-radius: 5px;
         &.notif{
           background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
         }
         span{
-          font-size: 31px;
+          font-size: 41px;
           position: relative;
         }
         .border-separator{
@@ -312,10 +298,10 @@ export default {
           top: 20px;
         }
         .inventory-btn-obj-found{
-          top:12px;
+          top:3px;
         }
         .inventory-btn-obj-total{
-          top:41px;
+          top:31px;
         }
       }
     }

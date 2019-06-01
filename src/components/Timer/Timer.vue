@@ -1,16 +1,24 @@
 <template id="timer">
-    <div class="timer">
-        <span class="hour"> {{ hours }} </span>
+    <div
+        :class="theme"
+        class="timer">
+        <span class="hour item"> {{ hours }} </span>
         <span> : </span>
-        <span class="minutes"> {{ minutes }} </span>
+        <span class="minutes item"> {{ minutes }} </span>
         <span> : </span>
-        <span class="seconds"> {{ seconds }} </span>
+        <span class="seconds item"> {{ seconds }} </span>
     </div>
 </template>
 
 <script>
 export default {
   name: 'Timer',
+  props: {
+    theme: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       firstTime: 0,

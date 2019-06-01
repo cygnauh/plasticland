@@ -2,13 +2,16 @@
   <div class='inventory-detail'>
     <div class='inventory-detail-container'>
       <div class="box">
-        <div class="visual"/>
+        <div
+          ref="visual"
+          id="visual"
+          class="visual"/>
         <div
            ref="content"
            :style="{'transform': 'translateY(-' + 10 + 'px)'}"
            class="content">
           <div class="content-title">
-            {{ object[0].name }}
+            {{ object[0].title }}
           </div>
           <div
             class="content-description">
@@ -33,6 +36,7 @@
 <script>
 import Vue from 'vue'
 import objects from '../../data/inventory'
+import { store } from '../../store/index'
 export default {
   name: 'InventoryDetail',
   computed: {
@@ -56,17 +60,12 @@ export default {
       contentHeight: 0
     }
   },
-  beforeCreate () {
-    window.addEventListener('wheel', (e) => this.onMouseWheel(e))
-    // window.addEventListener('scroll', () => this.handleEvent())
-  },
-  beforeDestroy () {
-    window.removeEventListener('wheel', this.onMouseWheel)
-    // window.removeEventListener('wheel', this.handleEvent)
-  },
   mounted () {
     this.contentHeight = this.$refs.content.offsetHeight
-    console.log(this.contentHeight, window.innerHeight)
+    store.setSelectedItemContainer(this.$refs.visual)
+  },
+  beforeDestroy () {
+    Vue.prototype.$engine.collectable.itemSelected = ''
   },
   watch: {
     sy (value) {
@@ -110,7 +109,9 @@ export default {
         height: 100%;
         .visual{
           width: 50%;
-          height: 100%;
+          height: 90%;
+          top: -70px;
+          position: relative;
         }
         .content{
           padding-top: 20vh;
@@ -124,14 +125,14 @@ export default {
           display: flex;
           flex-direction: column;
           .content-title{
-            font-family: Arkhip, sans-serif;
+            font-family: AxeHandel, sans-serif;
             font-size: 45px;
             /*font-size: 50px;*/
             margin-bottom: 46px;
             text-transform: uppercase;
           }
           .content-description{
-            font-family: ApercuPro, sans-serif;
+            font-family: AxeHandel, sans-serif;
             font-size: 22px;
             height: 398px;
             .paragraph{

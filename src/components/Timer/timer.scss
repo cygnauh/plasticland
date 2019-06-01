@@ -1,6 +1,14 @@
 @import '../../assets/scss/index';
 .timer {
-  font-family: Arkhip, sans-serif;
-  font-size: 23px;
-  color: white;
+  font-family: AxeHandel, sans-serif;
+  font-size: 44px;
+  color: $light_grey;
+  &.dark{
+    color: $medium_grey;
+  }
+  .item{
+    text-align: center;
+    width: 40px;
+    display: inline-block;
+  }
 }

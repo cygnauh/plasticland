@@ -1,35 +1,86 @@
 import GltfLoader from './GltfLoaderRefactored'
 import * as THREE from 'three/src/Three'
-import { store } from '../../store/index'
 import * as TWEEN from 'tween'
+import { store } from '../../store/index'
 import { setupScene, rendenerSceneInfo } from '../utils/utilsScene'
+import { animateVector3 } from '../utils/Animation'
 
 export default class Collectable {
   constructor (renderer, manager) {
     this.renderer = renderer
     this.manager = manager
     // this.scene = scene // if using GLTFLoader.js pass scene in params
+    this.collectableArray = []
+    this.flatMaterial = new THREE.MeshPhongMaterial({
+      color: (0x81C186),
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending
+    })
+    this.itemSelected = ''
+    this.initCollectables()
   }
 
   initCollectables () {
-    let collectableArray = []
-    const containers = store.state.objectContainers
     store.state.objects.forEach(element => {
-      // collectableArray.push(setupScene(containers[`${element.name}`][0], element.name, element.model, this.manager))
-      collectableArray.push(setupScene(element.name, element.model, this.manager))
+      let object = setupScene(element.name, element.model, this.manager, element.found, this.flatMaterial)
+      this.collectableArray.push(object)
     })
-    return collectableArray
+    return this.collectableArray
   }
 
-  collectableRender (array) {
+  renderScissor () {
     this.renderer.setScissorTest(false)
     this.renderer.clear(true, true)
     this.renderer.setScissorTest(true)
+  }
+
+  renderCollectables () {
+    this.renderScissor()
     const containers = store.state.objectContainers
-    array.forEach(scene => {
+    this.collectableArray.forEach(scene => {
       if (scene && scene.name) {
         rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
       }
+    })
+  }
+
+  renderSelectedCollectable () {
+    let scene = this.collectableArray.filter(element => element.name === this.itemSelected)
+    this.renderScissor()
+    rendenerSceneInfo(scene[0], store.state.selectItemContainer, this.renderer)
+  }
+
+  changeMaterial (name) {
+    let obj = this.collectableArray.filter(element => element.mesh.name === name)[0]
+    let objMesh = obj.scene.children[1]
+    if (objMesh.material.type !== 'MeshPhongMaterial') {
+      objMesh.material = this.flatMaterial
+    } else {
+      objMesh.material = obj.materials.material
+    }
+  }
+  closeCollectable () { // TODO if selected item, scale out all execept selected item
+    this.collectableArray.forEach((element) => {
+      element.mesh.scale.x = 0.000001
+      element.mesh.scale.y = 0.000001
+      element.mesh.scale.z = 0.000001
+    })
+  }
+  openCollectable () {
+    this.collectableArray.forEach((element) => {
+      this.scaleItems(element.mesh, 0.002)
+    })
+  }
+
+  openItem () {
+    let item = this.collectableArray.filter(element => element.name === this.itemSelected)
+    this.scaleItems(item[0].mesh, 0.003)
+  }
+
+  scaleItems (element, scale) {
+    animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {
+      duration: 1000,
+      easing: TWEEN.Easing.Quadratic.InOut
     })
   }
 
