@@ -29,9 +29,9 @@ const setupScene = (name, path, manager, isFound, flatMat) => {
   let test = new GltfLoader(name, path, null, manager, { addToScene: false })
   test.then(response => {
     mesh = response.meshes[0]
-    mesh.scale.x = 0.002
-    mesh.scale.y = 0.002
-    mesh.scale.z = 0.002
+    mesh.scale.x = 0.00001
+    mesh.scale.y = 0.00001
+    mesh.scale.z = 0.00001
     mesh.rotation.z = Math.PI / 2
     mesh.rotation.x = Math.PI / 3
     mesh.position.y = 1

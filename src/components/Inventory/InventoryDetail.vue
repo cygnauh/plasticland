@@ -64,6 +64,9 @@ export default {
     this.contentHeight = this.$refs.content.offsetHeight
     store.setSelectedItemContainer(this.$refs.visual)
   },
+  beforeDestroy () {
+    Vue.prototype.$engine.collectable.itemSelected = ''
+  },
   watch: {
     sy (value) {
       this.dy = Math.floor(this.lerp(this.dy, value, 0.07) * 100) / 100

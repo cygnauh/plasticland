@@ -20,7 +20,7 @@
         class="close-link">
         <div
           class="close-btn"
-          @click="backToInventoryList">
+          @click="goInventory">
           <img
             :src="require('../assets/img/close.png')"
             alt="Vue logo">
@@ -101,7 +101,6 @@ export default {
   },
   mounted () {
     this.initScene()
-    // if (this.inventory) this.goTo(this.inventory)
     this.checkRoute(this.$route.path)
     document.addEventListener('click', (e) => this.handleClick(e), false)
   },
@@ -126,9 +125,6 @@ export default {
         path: `/plasticland/inventory`,
         component: InventoryList
       })
-    },
-    backToInventoryList () {
-      this.goInventory()
     },
     checkRoute (route) {
       switch (route) {

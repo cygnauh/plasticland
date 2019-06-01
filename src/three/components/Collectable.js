@@ -3,6 +3,7 @@ import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
 import { store } from '../../store/index'
 import { setupScene, rendenerSceneInfo } from '../utils/utilsScene'
+import { animateVector3 } from '../utils/Animation'
 
 export default class Collectable {
   constructor (renderer, manager) {
@@ -59,7 +60,26 @@ export default class Collectable {
       objMesh.material = obj.materials.material
     }
   }
-  
+  closeCollectable () { // TODO if selected item, scale out all execept selected item
+    this.collectableArray.forEach((element) => {
+      this.scaleItems(element.mesh, 0.000001)
+    })
+  }
+  openCollectable () {
+    this.collectableArray.forEach((element) => {
+      this.scaleItems(element.mesh, 0.002)
+    })
+  }
+
+  scaleItems (element, scale) {
+    // array.forEach((element) => {
+    animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {
+      duration: 1000,
+      easing: TWEEN.Easing.Quadratic.InOut
+    })
+    // })
+  }
+
   tweenUpdate () {
     TWEEN.update()
   }
