@@ -99,6 +99,7 @@ export default {
         store.objectFound(obj.id)
         Vue.prototype.$engine.handleRender('detail')
         Vue.prototype.$engine.collectable.itemSelected = obj.name
+        Vue.prototype.$engine.collectable.openItem()
         this.$router.push({ // TODO : test which way is more interesting for routing
           path: `/plasticland/inventory/${obj.id}`,
           component: InventoryDetail

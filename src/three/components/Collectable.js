@@ -45,8 +45,7 @@ export default class Collectable {
   }
 
   renderSelectedCollectable () {
-    const name = this.itemSelected
-    let scene = this.collectableArray.filter(element => element.name === name)
+    let scene = this.collectableArray.filter(element => element.name === this.itemSelected)
     this.renderScissor()
     rendenerSceneInfo(scene[0], store.state.selectItemContainer, this.renderer)
   }
@@ -62,7 +61,9 @@ export default class Collectable {
   }
   closeCollectable () { // TODO if selected item, scale out all execept selected item
     this.collectableArray.forEach((element) => {
-      this.scaleItems(element.mesh, 0.000001)
+      element.mesh.scale.x = 0.000001
+      element.mesh.scale.y = 0.000001
+      element.mesh.scale.z = 0.000001
     })
   }
   openCollectable () {
@@ -71,13 +72,16 @@ export default class Collectable {
     })
   }
 
+  openItem () {
+    let item = this.collectableArray.filter(element => element.name === this.itemSelected)
+    this.scaleItems(item[0].mesh, 0.003)
+  }
+
   scaleItems (element, scale) {
-    // array.forEach((element) => {
     animateVector3(element.scale, new THREE.Vector3(scale, scale, scale), {
       duration: 1000,
       easing: TWEEN.Easing.Quadratic.InOut
     })
-    // })
   }
 
   tweenUpdate () {

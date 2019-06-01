@@ -160,7 +160,7 @@ export default {
   /*#app > div > div > div.right-side-content > div.menu > a:nth-child(1) > span*/
   &-border {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     margin: 18px;
     width: calc(100% - 36px);
     height: 102px;
