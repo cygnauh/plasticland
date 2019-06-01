@@ -28,7 +28,10 @@ export default {
       hours: 0,
       ellapsedSeconds: 0,
       ellapsedMinutes: 0,
-      ellapsedHours: 0
+      ellapsedHours: 0,
+      finished: false,
+      totalPlasticWaste: 0,
+      totalEllapsedSeconds: 0
     }
   },
   created () {
@@ -49,14 +52,20 @@ export default {
       this.secondTime = new Date()
     },
     startTimer () {
-      this.ellapsedSeconds = this.secondTime - this.firstTime
-      this.ellapsedSeconds /= 1000
-      this.ellapsedSeconds = Math.round(this.ellapsedSeconds)
-      this.ellapsedMinutes = Math.floor(this.ellapsedSeconds / 60)
+      this.totalEllapsedSeconds = this.secondTime - this.firstTime
+      this.totalEllapsedSeconds /= 1000
+      this.totalEllapsedSeconds = Math.round(this.totalEllapsedSeconds)
+      this.ellapsedMinutes = Math.floor(this.totalEllapsedSeconds / 60)
       this.ellapsedHours = Math.floor(this.ellapsedMinutes / 60)
 
-      if (this.ellapsedSeconds >= 60) {
-        this.ellapsedSeconds = this.ellapsedSeconds - (this.ellapsedMinutes * 60)
+      if (this.totalEllapsedSeconds >= 60) {
+        this.ellapsedSeconds = this.totalEllapsedSeconds - (this.totalEllapsedSeconds * 60)
+      }
+    },
+    conversionPlasticWaste () {
+      if (this.finished) {
+        this.totalPlasticWaste = this.totalEllapsedSeconds * 206
+        return this.totalPlasticWaste
       }
     },
     updateClock () {
