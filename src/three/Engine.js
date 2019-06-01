@@ -43,7 +43,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 508)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 708)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
@@ -114,8 +114,24 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
-    window.addEventListener( 'wheel', (e) => this.cameraSpline.moveCamera(e), false )
+    window.addEventListener('wheel', (e) => this.debounce(this.cameraSpline.moveCamera(e)), { capture: true, passive: true })
     // document.addEventListener('click', (e) => this.onClick(e), false)
+  }
+
+  debounce (fn) {
+    // Setup a timer
+    var timeout
+    // Return a function to run debounced
+    return  () => {
+      var context = this
+      var args = arguments
+      if (timeout) {
+        window.cancelAnimationFrame(timeout)
+      }
+      timeout = window.requestAnimationFrame(function () {
+        fn.apply(context, args)
+      })
+    }
   }
 
   resize () {

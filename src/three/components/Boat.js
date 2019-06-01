@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import GltfLoaderRefactored from './GltfLoaderRefactored'
+import * as TWEEN from 'tween'
 // import * as TWEEN from 'tween'
 
 export default class Boat {
@@ -84,7 +85,6 @@ export default class Boat {
         let p1 = spline.getPoint(offsetPercentageCamera % 1) // x,y,z
 
         // position
-        let y = this.calculateSurface(pos.x, pos.z, time)
         pos.x = p1.x
         pos.z = p1.z
         pos.y = this.calculateSurface(pos.x, pos.z, time)

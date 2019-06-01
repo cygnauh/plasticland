@@ -83,26 +83,32 @@ export default class CameraSpline {
   }
 
   moveCamera (e) {
-    // e.preventDefault()
-    if (!this.moving) {
-      this.moving = true
-      this.animateWater = false
-      console.log(e)
-      this.tweenToBreakpoint(this.stops[this.positionStop].breakpoint, this.stops[this.positionStop].speed)
-    }
+    this.percentageCamera.value +=  (Math.abs(e.deltaY) / 10000)
+    console.log(this.percentageCamera.value)
   }
 
-  tweenToBreakpoint (breakpoint, speed) {
+  tweenToScroll () {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: breakpoint }, speed)
+      .to({ value: this.percentageCamera.value + 0.05 }, 5000)
       .easing(TWEEN.Easing.Sinusoidal.InOut)
       .onComplete(() => {
-        this.moving = false
-        this.positionStop = this.positionStop + 1
-        this.animateWater = true
+        // this.moving = false
+        // this.animateWater = true
       })
       .start()
   }
+
+  // tweenToBreakpoint (breakpoint, speed) {
+  //   this.tween = new TWEEN.Tween(this.percentageCamera)
+  //     .to({ value: breakpoint }, speed)
+  //     .easing(TWEEN.Easing.Sinusoidal.InOut)
+  //     .onComplete(() => {
+  //       this.moving = false
+  //       this.positionStop = this.positionStop + 0.5
+  //       this.animateWater = true
+  //     })
+  //     .start()
+  // }
 
   updateCamera () {
     // position

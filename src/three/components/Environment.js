@@ -93,11 +93,11 @@ export default class Environment extends THREE.Object3D {
   }
 
   update (cameraSpline) {
-    if (cameraSpline.animateWater) {
-      this.tempo += 0.025
-    } else {
-      this.tempo += 0.035
-    }
+    // if (cameraSpline.animateWater) {
+    //   this.tempo += 0.025
+    // } else {
+    this.tempo += 0.035
+    // }
 
     this.water.material.uniforms['time'].value = this.tempo
   }
