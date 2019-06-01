@@ -10,9 +10,6 @@
           class="el first-object obj"
           v-for="(object) in objects.slice(0, 1)"
           @click.capture="(e) => onObjectClicked(e, object)">
-          <!--<img-->
-            <!--:src="require('../../assets/img/svg/grow-vertical-y.svg')"-->
-            <!--alt="border">-->
           <div
             :ref="object.name"
             :id="object.name"
@@ -33,9 +30,6 @@
               class="obj"
               v-for="(object, i) in objects.slice(1, 3)"
               @click.capture="(e) => onObjectClicked(e,object)">
-              <!--<img-->
-                <!--:src="[ i === 1 && object.found ? require('../../assets/img/svg/grow-two-y.svg') : i === 1 && !object.found ? require('../../assets/img/svg/grow-two-g.svg') : i === 0 && object.found ? require('../../assets/img/svg/grow-one-y.svg') : require('../../assets/img/svg/grow-one-y.svg') ]"-->
-                <!--alt="border">-->
               <div
                 :ref="object.name"
                 :id="object.name"
@@ -51,11 +45,8 @@
             <div
               :key="object.id"
               :class="{'canHover' : object.found}"
-              v-for="(object, i) in objects.slice(3)"
+              v-for="(object) in objects.slice(3)"
               class="obj">
-              <!--<img-->
-                <!--:src="[ object.found ? require('../../assets/img/svg/grow-one-y.svg') : require('../../assets/img/svg/grow-one-g.svg') ]"-->
-                <!--alt="border">-->
               <div
                 :ref="object.name"
                 :id="object.name"
@@ -148,8 +139,6 @@ export default {
           height: 100%;
           &.first-object{
             margin-left: 5px;
-            /*background: url('../../assets/img/svg/grow-vertical-y.svg') no-repeat;*/
-            /*background-size: cover;*/
           }
           &.grow-three{
             flex-grow: 3;
@@ -164,30 +153,30 @@ export default {
           flex: 1 0 0;
           display: flex;
           flex-direction: row;
-          /*margin: 5px 5px 5px 0;*/
         }
         .obj{
           flex: 1 0 0;
-          /*padding: 15px;*/
           height: 100%;
           position: relative;
           font-family: AxeHandel, sans-serif;
           .border{
-            /*margin: 15px 15px 15px 0;*/
-            border: solid 4px $light_blue;
-            border-radius: 5px;
-            height: calc(100% - 15px);
-            width: calc(100% - 15px);
+            border: 8px solid;
+            border-image-slice: 10;
+            border-image-source: url('../../assets/img/svg/grow-one-g.svg');
+            height: calc(100% - 28px);
+            width: calc(100% - 28px);
           }
-          /*background: url('../../assets/img/svg/grow-one-g.svg') no-repeat center center;*/
-          /*background-size: cover;*/
           &.grow-two{
             flex-grow: 2;
-            /*background: url('../../assets/img/svg/grow-two-g.svg') no-repeat center center;*/
-            /*background-size: cover;*/
+            .border{
+              border-image-source: url('../../assets/img/svg/grow-two-g.svg');
+            }
             &.canHover {
-              /*background: url('../../assets/img/svg/grow-two-y.svg') no-repeat center center;*/
-              /*background-size: cover;*/
+              &:hover {
+                .border{
+                  border-image-source: url('../../assets/img/svg/grow-two-y.svg');
+                }
+              }
             }
           }
           .number{
@@ -195,12 +184,11 @@ export default {
             height: 45px;
             color: white;
             text-align: center;
-            /*border-radius: 8px 2px 2px 2px;*/
             font-size: 41px;
             font-weight: bold;
             position: relative;
-            left: -1px;
-            top: -1px;
+            left: -4px;
+            top: -4px;
             background: url('../../assets/img/svg/grey-bg.svg') center center;
             background-size: contain;
             will-change: background;
@@ -212,11 +200,9 @@ export default {
             transition: opacity 0.2s ease-in-out;
           }
           &.canHover{
-            /*background: url('../../assets/img/svg/grow-one-y.svg') no-repeat center center;*/
-            /*background-size: cover;*/
             &:hover{
               .border{
-                border: solid 4px $sand_yellow;
+                border-image-source: url('../../assets/img/svg/grow-one-y.svg');
               }
               .y-bg{
                 background: url('../../assets/img/svg/yellow-bg.svg') center center;
@@ -263,10 +249,6 @@ export default {
           }
         }
       }
-    }
-    .test{
-      position: absolute;
-      z-index: 3;
     }
   }
 </style>
