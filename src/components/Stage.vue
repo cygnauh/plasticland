@@ -1,8 +1,7 @@
 <template>
-  <div
-    class="Stage">
+  <div class="Stage">
     <Loader />
-    <div class="Stage-border">
+    <div class="Stage-border-top">
       <router-link
         to="/plasticland">
         <div
@@ -26,7 +25,7 @@
             alt="Vue logo">
         </div>
       </router-link>
-      <div class="right-side-content">
+      <div class="right-side-content-top">
         <div
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
           class="menu">
@@ -50,30 +49,35 @@
         </div>
       </div>
     </div>
-    <canvas
-      ref="canvas"
-      id="canvas"> </canvas>
-    <router-view/>
-    <router-link
-      v-if="$route.path === '/plasticland'"
-      to="/plasticland/inventory">
-      <div
-        class="interface inventory-btn"
-        @click="goInventory">
-        <div class="inventory-btn-title">
-          <span>
-            collection
-          </span>
-        </div>
-        <div
-          :class="{notif : displayNotif}"
-          class="inventory-btn-count">
-          <span class="inventory-btn-obj-found">{{ objectFound }}</span>
-          <div class="border-separator"></div>
-          <span class="inventory-btn-obj-total">{{ totalObject }}</span>
-        </div>
+    <div class="Stage-border-bottom">
+      <div class="left-side-content-bottom">
+        <router-link
+          v-if="$route.path === '/plasticland'"
+          to="/plasticland/inventory">
+          <div
+            class="interface inventory-btn"
+            @click="goInventory">
+            <div class="inventory-btn-title">
+              <span>
+                collection
+              </span>
+            </div>
+            <div
+              :class="{notif : displayNotif}"
+              class="inventory-btn-count">
+              <span class="inventory-btn-obj-found">{{ objectFound }}</span>
+              <div class="border-separator"></div>
+              <span class="inventory-btn-obj-total">{{ totalObject }}</span>
+            </div>
+          </div>
+        </router-link>
       </div>
-    </router-link>
+      <div class="right-side-content-bottom">
+        <Radar></Radar>
+      </div>
+    </div>
+    <router-view/>
+    <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
 
@@ -83,12 +87,13 @@ import Vue from 'vue'
 import App from '../three/App'
 import Loader from './Loader/Loader'
 import Timer from './Timer/Timer'
+import Radar from './Radar/Radar'
 import InventoryList from './Inventory/InventoryList'
 import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer },
+  components: { Loader, Timer, Radar },
   data () {
     return {
       data: '',
@@ -157,9 +162,11 @@ export default {
   border: 0;
   margin: 0;
   padding: 0;
+  height: 100vh;
   /*#app > div > div > div.right-side-content > div.menu > a:nth-child(1) > span*/
-  &-border {
+  &-border-top {
     position: absolute;
+    top: 0;
     z-index: 3;
     margin: 18px;
     width: calc(100% - 36px);
@@ -214,10 +221,11 @@ export default {
         }
       }
     }
-    .right-side-content{
+    .right-side-content-top{
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      width: 100vw;
       .menu{
         text-decoration: none;
         display: flex;
@@ -246,12 +254,23 @@ export default {
       }
     }
   }
+  &-border-bottom {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    margin: 18px;
+    width: calc(100% - 36px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /*justify-content: flex-end;*/
+    color: $dark_blue;
+    a {
+      text-decoration: none;
+    }
     .inventory-btn{
-      margin-left: 43px;
-      bottom: 38px;
       width: 241px;
-      height: 79px;
-      position: absolute;
+      position: relative;
       z-index: 0;
       font-family: AxeHandel, sans-serif;
       color: $light_grey;
@@ -305,5 +324,6 @@ export default {
         }
       }
     }
+  }
 }
 </style>
