@@ -75,6 +75,14 @@
       //background-color: red;
     }
   }
+
+  .radar-map {
+    width: 491px;
+    height: 1199px;
+    position: absolute;
+    clip-path: circle(7%);
+    background-image: url('../../assets/img/svg/radar-map.svg');
+  }
 }
 
 @keyframes lineDetection {
