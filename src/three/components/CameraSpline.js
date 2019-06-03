@@ -13,32 +13,32 @@ export default class CameraSpline {
     this.stops = [
       {
         name: 'starbucks',
-        breakpoint: 0.22,
-        collected: false
+        position: 0.2,
+        collected: true
       },
       {
         name: 'carrefour',
-        breakpoint: 0.4,
+        position: 0.4,
         collected: false
       },
       {
         name: 'coca-cola',
-        breakpoint: 0.55,
+        position: 0.55,
         collected: false
       },
       {
         name: 'suremballage',
-        breakpoint: 0.68,
+        position: 0.68,
         collected: false
       },
       {
         name: 'cube',
-        breakpoint: 0.86,
+        position: 0.86,
         collected: false
       },
       {
         name: 'end',
-        breakpoint: 0.95,
+        position: 0.95
       }
     ]
     this.positionStop = 0
@@ -82,8 +82,26 @@ export default class CameraSpline {
 
   moveCamera (e) {
     this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
-    this.tweenToScroll()
-    this.moveRadar()
+    // console.log(this.percentageCamera.value)
+    if (this.percentageCamera.value <= this.stops[0].position) {
+      this.tweenToScroll()
+      this.moveRadar()
+    } else if (this.stops[0].collected && this.percentageCamera.value <= this.stops[1].position) {
+      this.tweenToScroll()
+      this.moveRadar()
+    } else if (this.stops[0].collected && this.stops[1].collected && this.percentageCamera.value <= this.stops[2].position) {
+      this.tweenToScroll()
+      this.moveRadar()
+    } else if (this.stops[0].collected && this.stops[1].collected && this.stops[2].collected && this.percentageCamera.value <= this.stops[3].position) {
+      this.tweenToScroll()
+      this.moveRadar()
+    } else if (this.stops[0].collected && this.stops[1].collected && this.stops[2].collected && this.stops[3].collected && this.percentageCamera.value <= this.stops[4].position) {
+      this.tweenToScroll()
+      this.moveRadar()
+    } else if (this.stops[0].collected && this.stops[1].collected && this.stops[2].collected && this.stops[3].collected && this.stops[4].collected && this.percentageCamera.value <= this.stops[5].position) {
+      this.tweenToScroll()
+      this.moveRadar()
+    }
   }
 
   tweenToScroll () {
