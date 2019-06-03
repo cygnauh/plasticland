@@ -74,13 +74,12 @@ export default class Collectable {
   }
   closeItem () {
     let item = this.collectableArray.filter(element => element.name === this.itemSelected)
-    console.log(item[0])
     item[0].scene.children[1].rotation.y = 0
   }
-  
+
   openItem () {
     let item = this.collectableArray.filter(element => element.name === this.itemSelected)
-    this.scaleItems(item[0].mesh, 1.2)
+    this.scaleItems(item[0].mesh, 1)
   }
 
   scaleItems (element, scale) {

@@ -87,7 +87,6 @@ export default class CameraSpline {
 
   moveCamera (e) {
 	  this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
-    console.log(this.percentageCamera.value + 0.04)
 	  this.tweenToScroll()
     this.moveRadar()
   }

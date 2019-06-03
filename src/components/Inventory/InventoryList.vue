@@ -98,7 +98,6 @@ export default {
         e.preventDefault()
       } else {
 	    this.clickedElement = obj.name
-        console.log(this.clickedElement)
         store.objectFound(obj.id)
         Vue.prototype.$engine.handleRender('detail')
         Vue.prototype.$engine.collectable.itemSelected = obj.name

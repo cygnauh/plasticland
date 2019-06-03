@@ -18,6 +18,7 @@
         v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory'"
         class="close-link">
         <div
+          :class="[$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' ? 'show' : '']"
           class="close-btn"
           @click="goInventory">
           <img
@@ -73,7 +74,7 @@
         </router-link>
       </div>
       <div class="right-side-content-bottom">
-        <Radar></Radar>
+        <Radar v-if="$route.path === '/plasticland'"></Radar>
       </div>
     </div>
     <router-view/>
@@ -198,27 +199,34 @@ export default {
       &.close-link{
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
       }
-      .close-btn{
+    }
+    .close-btn{
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      will-change: opacity;
+      transition: opacity 1s ease-in-out;
+      transform: translateX(-50%);
+      &.show{
+        transition: opacity 1s ease-in-out;
+        opacity: 1;
+      }
+      img{
+        width: 51px;
+        height: 51px;
+      }
+      span{
+        margin-top: 13px;
+        color: $sand_yellow;
+        text-transform: uppercase;
+        text-underline: transparent;
+        font-family: AxeHandel, sans-serif;
+        font-size: 22px;
+      }
+      &:hover{
         cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        img{
-          width: 51px;
-          height: 51px;
-        }
-        span{
-          margin-top: 13px;
-          color: $sand_yellow;
-          text-transform: uppercase;
-          text-underline: transparent;
-          font-family: AxeHandel, sans-serif;
-          font-size: 22px;
-        }
-        &:hover{
-          cursor: pointer;
-        }
       }
     }
     .right-side-content-top{
