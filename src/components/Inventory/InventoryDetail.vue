@@ -91,6 +91,7 @@ export default {
 </script>
 
 <style lang="scss">
+  @import '../../assets/scss/index';
   .inventory-detail{
     transform: translateY(159px);
     z-index: 2;
@@ -126,15 +127,15 @@ export default {
           flex-direction: column;
           .content-title{
             font-family: AxeHandel, sans-serif;
-            font-size: 45px;
-            /*font-size: 50px;*/
+            font-size: 64px;
             margin-bottom: 46px;
             text-transform: uppercase;
           }
           .content-description{
-            font-family: AxeHandel, sans-serif;
-            font-size: 22px;
+            font-family: AveriaLibre, sans-serif;
+            font-size: 23px;
             height: 398px;
+            color: $light_blue;
             .paragraph{
               margin-bottom: 22px;
               display: block;
