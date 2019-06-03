@@ -52,7 +52,6 @@ export default class App extends Engine {
     this.mountain.then(response => {
       response.meshes.forEach(el => {
         this.groupPlasticLand.add(el)
-        console.log(el.children)
       })
     })
     this.objectCollectable2.then(response => {

@@ -6,15 +6,15 @@
       <div id="box" class="box">
         <div
           :key="object.id"
-          :class="{'canHover' : object.found}"
+          :class="[{'canHover' : object.found}, ( clickedElement  &&  clickedElement === object.name ) ? 'itemClicked' : clickedElement ? 'itemHide' : '' ]"
           class="el first-object obj"
           v-for="(object) in objects.slice(0, 1)"
           @click.capture="(e) => onObjectClicked(e, object)">
+            <!--<span style="color: red">{{ clickedElement }}{{ object.name }}</span>-->
           <div
             :ref="object.name"
             :id="object.name"
-            class="border"
-          >
+            class="border">
             <div
               :class="{'y-bg' : object.found}"
               class="number"> {{object.id}} </div>
@@ -26,7 +26,7 @@
             class="container">
             <div
               :key="object.id"
-              :class="[{'canHover' : object.found}, {'grow-two': (i === 1)}]"
+              :class="[{'canHover' : object.found}, {'grow-two': (i === 1)}, ( clickedElement  &&  clickedElement === object.name ) ? 'itemClicked' : clickedElement ? 'itemHide' : '' ]"
               class="obj"
               v-for="(object, i) in objects.slice(1, 3)"
               @click.capture="(e) => onObjectClicked(e,object)">
@@ -44,7 +44,7 @@
           <div class="container">
             <div
               :key="object.id"
-              :class="{'canHover' : object.found}"
+              :class="[{'canHover' : object.found}, ( clickedElement  &&  clickedElement === object.name ) ? 'itemClicked' : clickedElement ? 'itemHide' : '' ]"
               v-for="(object) in objects.slice(3)"
               class="obj">
               <div
@@ -73,7 +73,8 @@ export default {
   name: 'InventoryList',
   data () {
     return {
-      isMounted: false
+      isMounted: false,
+      clickedElement: null
     }
   },
   computed: {
@@ -96,6 +97,8 @@ export default {
       if (!obj.found) {
         e.preventDefault()
       } else {
+	    this.clickedElement = obj.name
+        console.log(this.clickedElement)
         store.objectFound(obj.id)
         Vue.prototype.$engine.handleRender('detail')
         Vue.prototype.$engine.collectable.itemSelected = obj.name
@@ -140,8 +143,16 @@ export default {
           height: 100%;
           &.first-object{
             margin-left: 5px;
+            /*position: absolute;*/
+            /*width: 50vw;*/
+            /*height: 50vh;*/
+            &:hover{
+              flex-grow: 1.2;
+
+            }
           }
           &.grow-three{
+            /*opacity: 0;*/
             flex-grow: 3;
             display: flex;
             flex-direction: column;
@@ -160,6 +171,34 @@ export default {
           height: 100%;
           position: relative;
           font-family: AxeHandel, sans-serif;
+          will-change: transform, flex-grow;
+          transition:
+                  flex-grow 500ms ease-in-out,
+                  transform 1s ease-in-out,
+                  left 1s ease-in-out,
+                  width 1s ease-in-out,
+                  height 1s ease-in-out;
+          &.itemClicked{
+            transition:
+                  left 3s ease-in-out,
+                  width 2s ease-in-out,
+                  height 2s ease-in-out;
+            /*background: darkseagreen;*/
+            /*position: absolute;*/
+            width: 50vw;
+            height: 70vh;
+            flex-grow: 1.2;
+            &.grow-two{
+              flex-grow: 2.2;
+            }
+          }
+          &.itemHide{
+            transition: transform 1s ease-in-out;
+            transform: translateY(200%) scale(0);
+          }
+          &:hover{
+            flex-grow: 1.2;
+          }
           .border{
             border: 8px solid;
             border-image-slice: 10;
@@ -174,6 +213,7 @@ export default {
             }
             &.canHover {
               &:hover {
+                flex-grow: 2.2;
                 .border{
                   border-image-source: url('../../assets/img/svg/grow-two-y.svg');
                 }

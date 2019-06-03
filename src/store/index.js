@@ -5,7 +5,7 @@ export const store = {
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
-    photographs: config.photographs,
+    sounds: sounds,
     radar: null
   },
   setRadar (ref) {

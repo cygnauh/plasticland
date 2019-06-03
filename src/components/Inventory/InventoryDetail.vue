@@ -5,15 +5,18 @@
         <div
           ref="visual"
           id="visual"
+          :class="{'show': isMounted}"
           class="visual"/>
         <div
            ref="content"
            :style="{'transform': 'translateY(-' + 10 + 'px)'}"
            class="content">
-          <div class="content-title">
+          <div :class="{'show': isMounted}"
+               class="content-title">
             {{ object[0].title }}
           </div>
           <div
+            :class="{'show': isMounted}"
             class="content-description">
             <span
               :key="i"
@@ -57,14 +60,17 @@ export default {
       timer: null,
       sy: 0,
       dy: this.sy,
-      contentHeight: 0
+      contentHeight: 0,
+      isMounted: false
     }
   },
   mounted () {
     this.contentHeight = this.$refs.content.offsetHeight
     store.setSelectedItemContainer(this.$refs.visual)
+    this.isMounted = true
   },
   beforeDestroy () {
+    Vue.prototype.$engine.collectable.closeItem()
     Vue.prototype.$engine.collectable.itemSelected = ''
   },
   watch: {
@@ -113,6 +119,13 @@ export default {
           height: 90%;
           top: -70px;
           position: relative;
+          will-change: transform;
+          transition: transform 1s ease-in-out;
+          transform: translateX(-90%);
+          &.show{
+            transform: translateX(0);
+            transition: transform 1s ease-in-out;
+          }
         }
         .content{
           padding-top: 20vh;
@@ -131,7 +144,18 @@ export default {
             margin-bottom: 46px;
             text-transform: uppercase;
           }
+          .content-title, .content-description{
+            will-change: transform;
+            transition: transform 1s ease-in-out;
+            transform: translateY(200%);
+            &.show{
+              transform: translateY(0);
+            }
+          }
           .content-description{
+            &.show{
+              transition-delay: 0.5s;
+            }
             font-family: AveriaLibre, sans-serif;
             font-size: 23px;
             height: 398px;
