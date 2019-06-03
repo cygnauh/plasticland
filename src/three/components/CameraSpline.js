@@ -86,15 +86,16 @@ export default class CameraSpline {
   }
 
   moveCamera (e) {
-    this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
-    console.log(this.percentageCamera.value)
+	  this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
+    console.log(this.percentageCamera.value + 0.04)
+	  this.tweenToScroll()
     this.moveRadar()
   }
 
   tweenToScroll () {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: this.percentageCamera.value + 0.05 }, 5000)
-      .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .to({ value: this.percentageCamera.value + 0.04 }, 4000)
+      .easing(TWEEN.Easing.Cubic.Out)
       .onComplete(() => {
         // this.moving = false
         // this.animateWater = true

@@ -10,6 +10,8 @@ export default class Engine {
     this.initLoadingManager()
     this.addEventListeners()
     this.displayInventory = false
+    this.timer = null
+    this.wheelStart = false
   }
 
   initCanvas (canvas) {
@@ -114,34 +116,23 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
-    window.addEventListener('wheel', (e) => this.throttle(this.cameraSpline.moveCamera(e), 1000), { capture: true, passive: true })
+    window.addEventListener('wheel', (e) => this.handleWheel(e), { capture: true, passive: true })
     // document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
-  throttle (fn, wait) {
-    let time = Date.now()
-    return function () {
-      if ((time + wait - Date.now()) < 0) {
-        fn()
-        time = Date.now()
-      }
+  handleWheel (e) {
+    // apply on the first wheel event triggered
+    if (!this.wheelStart) {
+      this.cameraSpline.moveCamera(e)
     }
-  }
-
-  debounce (fn) {
-    // Setup a timer
-    var timeout
-    // Return a function to run debounced
-    return () => {
-      var context = this
-      var args = arguments
-      if (timeout) {
-        window.cancelAnimationFrame(timeout)
-      }
-      timeout = window.requestAnimationFrame(function () {
-        fn.apply(context, args)
-      })
+    this.wheelStart = true
+    if (this.timer !== null) {
+      clearTimeout(this.timer)
     }
+    // triggered when the wheel stops
+    this.timer = setTimeout(() => {
+      this.wheelStart = false
+    }, 100)
   }
 
   resize () {
