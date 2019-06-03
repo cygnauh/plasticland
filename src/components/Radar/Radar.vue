@@ -2,7 +2,7 @@
     <div class="radar">
         <div class="radar-background">
             <div class="radar-map">
-                <div class="radar-map-el"></div>
+                <div class="radar-map-el" ref="radarMap"></div>
             </div>
             <div>
                 <div class="radar-circle-el yellow center"></div>
@@ -22,12 +22,22 @@
 </template>
 
 <script>
+import { store } from '../../store/index'
+
 export default {
   name: 'Radar',
   props: {
     theme: {
       type: String,
       default: ''
+    }
+  },
+  mounted () {
+    this.getRadar()
+  },
+  methods: {
+    getRadar () {
+      store.setRadar(this.$refs.radarMap)
     }
   }
 }

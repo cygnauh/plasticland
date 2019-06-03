@@ -114,15 +114,25 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
-    window.addEventListener('wheel', (e) => this.debounce(this.cameraSpline.moveCamera(e)), { capture: true, passive: true })
+    window.addEventListener('wheel', (e) => this.throttle(this.cameraSpline.moveCamera(e), 1000), { capture: true, passive: true })
     // document.addEventListener('click', (e) => this.onClick(e), false)
+  }
+
+  throttle (fn, wait) {
+    let time = Date.now()
+    return function () {
+      if ((time + wait - Date.now()) < 0) {
+        fn()
+        time = Date.now()
+      }
+    }
   }
 
   debounce (fn) {
     // Setup a timer
     var timeout
     // Return a function to run debounced
-    return  () => {
+    return () => {
       var context = this
       var args = arguments
       if (timeout) {
