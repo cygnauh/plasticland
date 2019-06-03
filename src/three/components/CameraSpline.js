@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
+import { store } from '../../store/index'
 
 export default class CameraSpline {
   constructor (scene, camera) {
@@ -48,6 +49,8 @@ export default class CameraSpline {
     ]
     this.positionStop = 0
     this.animateWater = true
+    this.radar = store.state.radar
+    console.log(this.radar)
 
     this.initSpline()
   }
@@ -83,26 +86,40 @@ export default class CameraSpline {
   }
 
   moveCamera (e) {
-    // e.preventDefault()
-    if (!this.moving) {
-      this.moving = true
-      this.animateWater = false
-      console.log(e)
-      this.tweenToBreakpoint(this.stops[this.positionStop].breakpoint, this.stops[this.positionStop].speed)
-    }
+	  this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
+    console.log(this.percentageCamera.value + 0.04)
+	  this.tweenToScroll()
+    this.moveRadar()
   }
 
-  tweenToBreakpoint (breakpoint, speed) {
+  tweenToScroll () {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: breakpoint }, speed)
-      .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .to({ value: this.percentageCamera.value + 0.04 }, 4000)
+      .easing(TWEEN.Easing.Cubic.Out)
       .onComplete(() => {
-        this.moving = false
-        this.positionStop = this.positionStop + 1
-        this.animateWater = true
+        // this.moving = false
+        // this.animateWater = true
       })
       .start()
   }
+
+  moveRadar () {
+    let offset = this.percentageCamera.value * 100
+    this.radar.style.top = `${offset}px`
+    // console.log(this.radar.style.top)
+  }
+
+  // tweenToBreakpoint (breakpoint, speed) {
+  //   this.tween = new TWEEN.Tween(this.percentageCamera)
+  //     .to({ value: breakpoint }, speed)
+  //     .easing(TWEEN.Easing.Sinusoidal.InOut)
+  //     .onComplete(() => {
+  //       this.moving = false
+  //       this.positionStop = this.positionStop + 0.5
+  //       this.animateWater = true
+  //     })
+  //     .start()
+  // }
 
   updateCamera () {
     // position

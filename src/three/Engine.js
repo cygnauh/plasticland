@@ -10,6 +10,8 @@ export default class Engine {
     this.initLoadingManager()
     this.addEventListeners()
     this.displayInventory = false
+    this.timer = null
+    this.wheelStart = false
   }
 
   initCanvas (canvas) {
@@ -43,7 +45,7 @@ export default class Engine {
     this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
-    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 508)
+    this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 708)
 
     // mouse
     this.mouse = new THREE.Vector3(0, 0, 0)
@@ -114,8 +116,23 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
-    window.addEventListener('wheel', (e) => this.cameraSpline.moveCamera(e), false)
+    window.addEventListener('wheel', (e) => this.handleWheel(e), { capture: true, passive: true })
     // document.addEventListener('click', (e) => this.onClick(e), false)
+  }
+
+  handleWheel (e) {
+    // apply on the first wheel event triggered
+    if (!this.wheelStart) {
+      this.cameraSpline.moveCamera(e)
+    }
+    this.wheelStart = true
+    if (this.timer !== null) {
+      clearTimeout(this.timer)
+    }
+    // triggered when the wheel stops
+    this.timer = setTimeout(() => {
+      this.wheelStart = false
+    }, 100)
   }
 
   resize () {
