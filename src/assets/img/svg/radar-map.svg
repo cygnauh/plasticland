@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 491 1199" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="_6" serif:id="6">
-        <circle id="XMLID_21_" cx="217" cy="243" r="14.6" style="fill:rgb(245,205,102);"/>
-        <circle id="XMLID_22_" cx="217" cy="243" r="24" style="fill:rgb(245,205,102);fill-opacity:0.36;"/>
-    </g>
-    <g id="_5" serif:id="5">
-        <circle id="XMLID_28_" cx="319" cy="449" r="14.6" style="fill:rgb(245,205,102);"/>
-        <circle id="XMLID_25_" cx="319" cy="449" r="24" style="fill:rgb(245,205,102);fill-opacity:0.36;"/>
-    </g>
-    <g id="_4" serif:id="4">
-        <circle id="XMLID_39_" cx="115" cy="611" r="14.6" style="fill:rgb(245,205,102);"/>
-        <circle id="XMLID_26_" cx="115" cy="611" r="24" style="fill:rgb(245,205,102);fill-opacity:0.36;"/>
-    </g>
-    <g id="_3" serif:id="3">
-        <circle id="XMLID_41_" cx="276" cy="654" r="14.6" style="fill:rgb(245,205,102);"/>
-        <circle id="XMLID_27_" cx="276" cy="654" r="24" style="fill:rgb(245,205,102);fill-opacity:0.36;"/>
-    </g>
-    <g id="_2" serif:id="2">
-        <circle id="XMLID_40_" cx="315" cy="798" r="14.6" style="fill:rgb(245,205,102);"/>
-        <circle id="XMLID_29_" cx="315" cy="798" r="24" style="fill:rgb(245,205,102);fill-opacity:0.36;"/>
-    </g>
-    <g id="_1" serif:id="1">
-        <circle id="XMLID_38_" cx="232" cy="944" r="14.6" style="fill:rgb(245,205,102);"/>
-        <circle id="XMLID_33_" cx="232" cy="944" r="24" style="fill:rgb(245,205,102);fill-opacity:0.36;"/>
+<svg width="100%" height="100%" viewBox="0 0 92 396" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g id="Plan-de-travail1" serif:id="Plan de travail1" transform="matrix(0.186629,0,0,0.32965,0,0)">
+        <rect x="0" y="0" width="491" height="1199" style="fill:none;"/>
+        <g id="_6" serif:id="6" transform="matrix(5.35822,0,0,3.03352,-622.648,-744.094)">
+            <g id="XMLID_21_" transform="matrix(0.179759,0,0,0.179759,121.323,222.403)">
+                <circle cx="217" cy="243" r="14.6" style="fill:rgb(245,205,102);"/>
+            </g>
+            <g id="XMLID_22_" transform="matrix(0.179759,0,0,0.179759,121.323,222.403)">
+                <circle cx="217" cy="243" r="24" style="fill:rgb(245,205,102);fill-opacity:0.356863;"/>
+            </g>
+        </g>
+        <g id="_5" serif:id="5" transform="matrix(5.35822,0,0,3.03352,-622.648,-744.094)">
+            <g id="XMLID_28_" transform="matrix(0.179759,0,0,0.179759,89.2409,269.4)">
+                <circle cx="319" cy="449" r="14.6" style="fill:rgb(245,205,102);"/>
+            </g>
+            <g id="XMLID_25_" transform="matrix(0.179759,0,0,0.179759,89.2409,269.4)">
+                <circle cx="319" cy="449" r="24" style="fill:rgb(245,205,102);fill-opacity:0.356863;"/>
+            </g>
+        </g>
+        <g id="_4" serif:id="4" transform="matrix(5.35822,0,0,3.03352,-622.648,-744.094)">
+            <g id="XMLID_39_" transform="matrix(0.179759,0,0,0.179759,162.308,283.072)">
+                <circle cx="115" cy="611" r="14.6" style="fill:rgb(245,205,102);"/>
+            </g>
+            <g id="XMLID_26_" transform="matrix(0.179759,0,0,0.179759,162.308,283.072)">
+                <circle cx="115" cy="611" r="24" style="fill:rgb(245,205,102);fill-opacity:0.356863;"/>
+            </g>
+        </g>
+        <g id="_3" serif:id="3" transform="matrix(5.35822,0,0,3.03352,-622.648,-744.094)">
+            <g id="XMLID_41_" transform="matrix(0.179759,0,0,0.179759,96.9706,329.668)">
+                <circle cx="276" cy="654" r="14.6" style="fill:rgb(245,205,102);"/>
+            </g>
+            <g id="XMLID_27_" transform="matrix(0.179759,0,0,0.179759,96.6829,329.668)">
+                <circle cx="276" cy="654" r="24" style="fill:rgb(245,205,102);fill-opacity:0.356863;"/>
+            </g>
+        </g>
+        <g id="_2" serif:id="2" transform="matrix(5.35822,0,0,3.03352,-622.648,-744.094)">
+            <g id="XMLID_40_" transform="matrix(0.179759,0,0,0.179759,123.732,380.484)">
+                <circle cx="315" cy="798" r="14.6" style="fill:rgb(245,205,102);"/>
+            </g>
+            <g id="XMLID_29_" transform="matrix(0.179759,0,0,0.179759,123.732,380.484)">
+                <circle cx="315" cy="798" r="24" style="fill:rgb(245,205,102);fill-opacity:0.356863;"/>
+            </g>
+        </g>
+        <g id="_1" serif:id="1" transform="matrix(5.35822,0,0,3.03352,-622.648,-744.094)">
+            <g id="XMLID_38_" transform="matrix(0.179759,0,0,0.179759,127.255,409.58)">
+                <circle cx="232" cy="944" r="14.6" style="fill:rgb(245,205,102);"/>
+            </g>
+            <g id="XMLID_33_" transform="matrix(0.179759,0,0,0.179759,127.255,409.58)">
+                <circle cx="232" cy="944" r="24" style="fill:rgb(245,205,102);fill-opacity:0.356863;"/>
+            </g>
+        </g>
     </g>
 </svg>

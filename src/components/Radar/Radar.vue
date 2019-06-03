@@ -1,7 +1,9 @@
 <template>
     <div class="radar">
         <div class="radar-background">
-            <div class="radar-map center" ></div>
+            <div class="radar-map">
+                <div class="radar-map-el"></div>
+            </div>
             <div>
                 <div class="radar-circle-el yellow center"></div>
                 <div class="radar-circle-el dotted small center"></div>

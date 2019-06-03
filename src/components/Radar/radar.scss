@@ -77,10 +77,22 @@
   }
 
   .radar-map {
-    width: 491px;
-    height: 1199px;
+    width: 161px;
+    height: 151px;
     position: absolute;
-    clip-path: circle(7%);
+    clip-path: circle(40% at 50% 51%);
+    left: 50%;
+    transform: translateX(-50%);
+    //background-color: red;
+  }
+
+  .radar-map-el {
+    width: 92px;
+    height: 396px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%);
     background-image: url('../../assets/img/svg/radar-map.svg');
   }
 }
