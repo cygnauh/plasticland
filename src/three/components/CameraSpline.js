@@ -14,37 +14,31 @@ export default class CameraSpline {
       {
         name: 'starbucks',
         breakpoint: 0.22,
-        speed: 12000,
         collected: false
       },
       {
         name: 'carrefour',
         breakpoint: 0.4,
-        speed: 8000,
         collected: false
       },
       {
         name: 'coca-cola',
         breakpoint: 0.55,
-        speed: 8000,
         collected: false
       },
       {
         name: 'suremballage',
         breakpoint: 0.68,
-        speed: 8000,
         collected: false
       },
       {
         name: 'cube',
         breakpoint: 0.86,
-        speed: 8000,
         collected: false
       },
       {
         name: 'end',
         breakpoint: 0.95,
-        speed: 3000
       }
     ]
     this.positionStop = 0
@@ -82,23 +76,24 @@ export default class CameraSpline {
     })
     this.splineLine = new THREE.Line(geometry, material)
     this.splineLine.name = 'splineLine'
+    this.splineLine.visible = false
     this.scene.add(this.splineLine)
   }
 
   moveCamera (e) {
-	  this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
-    console.log(this.percentageCamera.value + 0.04)
-	  this.tweenToScroll()
+    // this.percentageCamera.value += (Math.abs(e.deltaY) / 10)
+    this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
+    // console.log(this.percentageCamera.value + 0.04)
+    this.tweenToScroll()
     this.moveRadar()
   }
 
   tweenToScroll () {
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: this.percentageCamera.value + 0.04 }, 4000)
+      .to({ value: this.percentageCamera.value + 0.05 }, 4000)
       .easing(TWEEN.Easing.Cubic.Out)
       .onComplete(() => {
-        // this.moving = false
-        // this.animateWater = true
+        this.moving = false
       })
       .start()
   }
