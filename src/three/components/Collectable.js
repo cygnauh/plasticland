@@ -69,13 +69,13 @@ export default class Collectable {
   }
   openCollectable () {
     this.collectableArray.forEach((element) => {
-      this.scaleItems(element.mesh, 1)
+      this.scaleItems(element.mesh, 0.002)
     })
   }
 
   openItem () {
     let item = this.collectableArray.filter(element => element.name === this.itemSelected)
-    this.scaleItems(item[0].mesh, 1)
+    this.scaleItems(item[0].mesh, 0.002)
   }
 
   scaleItems (element, scale) {
