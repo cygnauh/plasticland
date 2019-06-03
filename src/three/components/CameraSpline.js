@@ -81,9 +81,7 @@ export default class CameraSpline {
   }
 
   moveCamera (e) {
-    // this.percentageCamera.value += (Math.abs(e.deltaY) / 10)
     this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
-    // console.log(this.percentageCamera.value + 0.04)
     this.tweenToScroll()
     this.moveRadar()
   }
@@ -101,23 +99,9 @@ export default class CameraSpline {
   moveRadar () {
     let offset = this.percentageCamera.value * 100
     this.radar.style.top = `${offset}px`
-    // console.log(this.radar.style.top)
   }
 
-  // tweenToBreakpoint (breakpoint, speed) {
-  //   this.tween = new TWEEN.Tween(this.percentageCamera)
-  //     .to({ value: breakpoint }, speed)
-  //     .easing(TWEEN.Easing.Sinusoidal.InOut)
-  //     .onComplete(() => {
-  //       this.moving = false
-  //       this.positionStop = this.positionStop + 0.5
-  //       this.animateWater = true
-  //     })
-  //     .start()
-  // }
-
   updateCamera () {
-    // position
     let p1 = this.spline.getPoint(this.percentageCamera.value % 1) // x,y,z
     let p2 = this.spline.getPoint((this.percentageCamera.value + 0.01) % 1) // lookat
 
