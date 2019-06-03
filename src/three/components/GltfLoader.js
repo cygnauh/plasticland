@@ -8,10 +8,10 @@ export default class GltfLoader {
     this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
 
-    let flatMaterial = new THREE.MeshPhongMaterial({
-      color: (0x81C186),
-      opacity: 0.2,
-      blending: THREE.AdditiveBlending
+    let flatMaterial = new THREE.MeshBasicMaterial({
+      color: (0x3b3c55)
+      // opacity: 0.2
+      // blending: THREE.AdditiveBlending
     })
 
     let geometries = []

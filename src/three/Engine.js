@@ -60,7 +60,7 @@ export default class Engine {
     })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0x0B2641, 1)
+    this.renderer.setClearColor(0x1d2535, 1)
 
     // gltf lighting
     this.renderer.gammaOutput = true
@@ -114,7 +114,7 @@ export default class Engine {
   addEventListeners () {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
-    window.addEventListener( 'wheel', (e) => this.cameraSpline.moveCamera(e), false )
+    window.addEventListener('wheel', (e) => this.cameraSpline.moveCamera(e), false)
     // document.addEventListener('click', (e) => this.onClick(e), false)
   }
 

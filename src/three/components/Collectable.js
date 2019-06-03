@@ -11,10 +11,10 @@ export default class Collectable {
     this.manager = manager
     // this.scene = scene // if using GLTFLoader.js pass scene in params
     this.collectableArray = []
-    this.flatMaterial = new THREE.MeshPhongMaterial({
-      color: (0x81C186),
-      opacity: 0.2,
-      blending: THREE.AdditiveBlending
+    this.flatMaterial = new THREE.MeshBasicMaterial({
+      color: (0x3b3c55)
+      // opacity: 0.2
+      // blending: THREE.AdditiveBlending
     })
     this.itemSelected = ''
     this.initCollectables()
@@ -46,6 +46,7 @@ export default class Collectable {
 
   renderSelectedCollectable () {
     let scene = this.collectableArray.filter(element => element.name === this.itemSelected)
+	  scene[0].mesh.rotation.y += 0.01
     this.renderScissor()
     rendenerSceneInfo(scene[0], store.state.selectItemContainer, this.renderer)
   }
@@ -68,13 +69,13 @@ export default class Collectable {
   }
   openCollectable () {
     this.collectableArray.forEach((element) => {
-      this.scaleItems(element.mesh, 0.002)
+      this.scaleItems(element.mesh, 1)
     })
   }
 
   openItem () {
     let item = this.collectableArray.filter(element => element.name === this.itemSelected)
-    this.scaleItems(item[0].mesh, 0.003)
+    this.scaleItems(item[0].mesh, 1)
   }
 
   scaleItems (element, scale) {

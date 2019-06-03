@@ -2,15 +2,27 @@ import * as THREE from 'three'
 import { store } from '../../store/index'
 import GltfLoader from '../components/GltfLoaderRefactored'
 
+const textureCubeMap = () => {
+  let path = './textures/'
+  let format = '.jpg'
+  let urls = [
+    path + 'posx' + format, path + 'negx' + format,
+    path + 'posy' + format, path + 'negy' + format,
+    path + 'posz' + format, path + 'negz' + format
+  ]
+  return urls
+}
+
 const makeScene = () => {
-  const scene = new THREE.Scene()
   const fov = 45
   const aspect = 2 // the canvas default
   const near = 0.1
   const far = 50
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
   camera.position.set(0, 1, 2)
-  camera.lookAt(0, 0, -150)
+  let scene = new THREE.Scene()
+  // camera.rotation.x = Math.PI / 4
+  // camera.lookAt(0, 0, -150)
 
   {
     const color = 0xFFFFFF
@@ -32,8 +44,6 @@ const setupScene = (name, path, manager, isFound, flatMat) => {
     mesh.scale.x = 0.00001
     mesh.scale.y = 0.00001
     mesh.scale.z = 0.00001
-    mesh.rotation.z = Math.PI / 2
-    mesh.rotation.x = Math.PI / 3
     mesh.position.y = 1
     if (!isFound) {
       mesh.material = flatMat
@@ -72,4 +82,4 @@ const rendenerSceneInfo = (sceneInfo, elem, renderer) => {
   renderer.render(scene, camera)
 }
 
-export { makeScene, setupScene, rendenerSceneInfo }
+export { makeScene, setupScene, rendenerSceneInfo, textureCubeMap }
