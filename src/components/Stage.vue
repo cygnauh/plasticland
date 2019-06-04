@@ -74,6 +74,9 @@
         </div>
       </div>
     </router-link>
+    <div class="subtitle-container">
+      <Subtitle text="subtitle"/>
+    </div>
   </div>
 </template>
 
@@ -82,13 +85,14 @@ import Vue from 'vue'
 // import Engine from '../three-examples/Engine'
 import App from '../three/App'
 import Loader from './Loader/Loader'
+import Subtitle from './Subtitle'
 import Timer from './Timer/Timer'
 import InventoryList from './Inventory/InventoryList'
 import { store } from '../store/index'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer },
+  components: { Loader, Timer, Subtitle },
   data () {
     return {
       data: '',
@@ -305,5 +309,12 @@ export default {
         }
       }
     }
+  .subtitle-container{
+    position: absolute;
+    border: 0;
+    width: 100%;
+    height: 0;
+    bottom: 90px;
+  }
 }
 </style>
