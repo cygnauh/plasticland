@@ -39,7 +39,6 @@
 <script>
 import Vue from 'vue'
 import objects from '../../data/inventory'
-import { store } from '../../store/index'
 export default {
   name: 'InventoryDetail',
   computed: {
@@ -66,7 +65,7 @@ export default {
   },
   mounted () {
     this.contentHeight = this.$refs.content.offsetHeight
-    store.setSelectedItemContainer(this.$refs.visual)
+    this.$store.commit('setSelectedItemContainer', this.$refs.visual)
     this.isMounted = true
   },
   beforeDestroy () {

@@ -2,6 +2,9 @@
   <div class="Stage">
     <Loader />
     <div class="Stage-border-top">
+      <div class="title">
+        {{ title }}
+      </div>
       <router-link
         to="/plasticland">
         <div
@@ -76,6 +79,10 @@
       <div class="right-side-content-bottom">
         <Radar v-if="$route.path === '/plasticland'"></Radar>
       </div>
+      <div class="subtitle-container">
+        <Subtitle text="subtitle is coming"/>
+      </div>
+
     </div>
     <router-view/>
     <canvas ref="canvas" id="canvas"></canvas>
@@ -91,7 +98,6 @@ import Subtitle from './Subtitle'
 import Timer from './Timer/Timer'
 import Radar from './Radar/Radar'
 import InventoryList from './Inventory/InventoryList'
-import { store } from '../store/index'
 
 export default {
   name: 'Stage',
@@ -99,14 +105,19 @@ export default {
   data () {
     return {
       data: '',
-      title: 'Marécage de plastique',
-      objectFound: store.state.objects.filter(item => item.found).length,
-      totalObject: store.state.objects.length,
+      objectFound: this.$store.state.objects.filter(item => item.found).length,
+      totalObject: this.$store.state.objects.length,
       displayReturn: false,
 	  displayNotif: false
     }
   },
+  computed: {
+    title () {
+      return this.$store.state.currentPlace.name
+    }
+  },
   mounted () {
+    setTimeout(() => { this.$store.commit('setCurrentPlace', 'success') }, 3000)
     this.initScene()
     this.checkRoute(this.$route.path)
     document.addEventListener('click', (e) => this.handleClick(e), false)
@@ -118,7 +129,7 @@ export default {
   },
   methods: {
     initScene () {
-      Vue.prototype.$engine = new App(this.$refs) // init scene
+      Vue.prototype.$engine = new App(this.$refs, this.$store) // init scene
       if (this.$route.path === '/plasticland/inventory') {
         this.goTo('list')
       }
@@ -148,7 +159,7 @@ export default {
       }
     },
     handleClick () {
-      let foundObj = store.state.objects.filter(item => item.found).length
+      let foundObj = this.$store.state.objects.filter(item => item.found).length
 	  if (this.objectFound !== foundObj) {
       	this.displayNotif = true
         this.objectFound = foundObj
@@ -281,7 +292,7 @@ export default {
     .inventory-btn{
       width: 241px;
       height: 79px;
-      position: absolute;
+      position: relative;
       z-index: 0;
       font-family: AxeHandel, sans-serif;
       color: $light_grey;
@@ -335,12 +346,13 @@ export default {
         }
       }
     }
-  .subtitle-container{
-    position: absolute;
-    border: 0;
-    width: 100%;
-    height: 0;
-    bottom: 90px;
+    .subtitle-container{
+      position: absolute;
+      border: 0;
+      width: 100%;
+      height: 0;
+      bottom: 90px;
+    }
   }
 }
 </style>

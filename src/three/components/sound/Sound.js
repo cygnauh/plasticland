@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
-import { store } from '../../../store/index'
+import * as store from '../../../store'
 import { Howl } from 'howler'
 // positionial sound
 // ambiant sound
@@ -13,7 +13,12 @@ export default class Sound {
     this.initSound()
     this.initAmbiantSound()
     this.initPlaceSound()
+    this.currendSound = null
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
+      // this.test.play()
+      console.log('hello')
+      // this.placeSound.rate(1.5, this.test)
+      this.placeSound.fade(0, 1, 3000, this.test)
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         // this.ambiantSound.play()
       }
@@ -30,7 +35,7 @@ export default class Sound {
     // create a global audio source
     this.ambiantSound = new THREE.Audio(this.listener)
     // load a sound and set it as the Audio object's buffer
-    const srcAmbiant = store.state.sounds.ambiant.src
+    const srcAmbiant = store.default.state.sounds.ambiant.src
     this.audioLoader.load(srcAmbiant, (buffer) => {
       this.ambiantSound.setBuffer(buffer)
       this.ambiantSound.setLoop(true)
@@ -40,26 +45,27 @@ export default class Sound {
 
   initPlaceSound () {
     this.placeSounds = []
-    store.state.sounds.place.forEach(element => {
-      // let placeSound = new THREE.Audio(this.listener)
+    store.default.state.sounds.place.forEach(element => {
+      let src = element.src
       let placeSound = new Howl({
-        src: [element.src]
+        src: [src],
+        volume: 0
       })
-
-      // Clear listener after first call.
       placeSound.once('load', () => {
-        let test = placeSound.play()
-        console.log(test)
-        this.placeSounds.push([placeSound, placeSound.play])
+        this.placeSounds.push([{ 'name': element.name }, { sound: placeSound }])
+        console.log(this.placeSounds)
+        // if (store.default.state.sounds.place.length === this.placeSounds)
       })
-
-      // Fires when the sound finishes playing.
-      // this.audioLoader.load(element.src, (buffer) => {
-      //   placeSound.setBuffer(buffer)
-      //   placeSound.setLoop(true)
-      //   placeSound.setVolume(1)
-      // })
     })
+    // let placeSound = new THREE.Audio(this.listener)
+    // console.log(test)
+    // Clear listener after first call.
+    // placeSound.once('load', () => {
+    //   placeSound.play()
+    // })
+    // placeSound.once('end', () => {
+    //  console.log('end')
+    // })
   }
 
   fadeOut (sound) {
@@ -76,7 +82,15 @@ export default class Sound {
     }).start()
   }
 
-  update (time) {
+  update (time, cameraPosition) {
+    let currentSound = store.default.state.sounds.place.filter(element => (element.startAt >= cameraPosition && element.endAt < cameraPosition))
+    // if (currentSound.length !== 0) console.log(currentSound)
+    if (cameraPosition === store.default.state.sounds.place.startAt) {
+      console.log(store.default.state.sounds.place.name)
+      // this.placeSounds.filter(element => element[0].name === )
+    }
+    
+    //is bigger than the next break point
     TWEEN.update(time)
   }
 }

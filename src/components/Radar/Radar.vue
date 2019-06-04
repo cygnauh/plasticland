@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { store } from '../../store/index'
 
 export default {
   name: 'Radar',
@@ -37,7 +36,7 @@ export default {
   },
   methods: {
     getRadar () {
-      store.setRadar(this.$refs.radarMap)
+      this.$store.commit('setRadar', this.$refs.radarMap)
     }
   }
 }

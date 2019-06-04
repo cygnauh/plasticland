@@ -1,7 +1,7 @@
 import GltfLoader from './GltfLoaderRefactored'
 import * as THREE from 'three/src/Three'
 import * as TWEEN from 'tween'
-import { store } from '../../store/index'
+import * as store from '../../store'
 import { setupScene, rendenerSceneInfo } from '../utils/utilsScene'
 import { animateVector3 } from '../utils/Animation'
 
@@ -21,7 +21,7 @@ export default class Collectable {
   }
 
   initCollectables () {
-    store.state.objects.forEach(element => {
+    store.default.state.objects.forEach(element => {
       let object = setupScene(element.name, element.model, this.manager, element.found, this.flatMaterial)
       this.collectableArray.push(object)
     })
@@ -36,7 +36,7 @@ export default class Collectable {
 
   renderCollectables () {
     this.renderScissor()
-    const containers = store.state.objectContainers
+    const containers = store.default.state.objectContainers
     this.collectableArray.forEach(scene => {
       if (scene && scene.name && containers[`${scene.name}`][0]) {
         rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
@@ -48,7 +48,7 @@ export default class Collectable {
     let scene = this.collectableArray.filter(element => element.name === this.itemSelected)
 	  scene[0].mesh.rotation.y += 0.01
     this.renderScissor()
-    rendenerSceneInfo(scene[0], store.state.selectItemContainer, this.renderer)
+    rendenerSceneInfo(scene[0], store.default.state.selectItemContainer, this.renderer)
   }
 
   changeMaterial (name) {

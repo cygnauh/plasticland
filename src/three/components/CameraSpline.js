@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
-import { store } from '../../store/index'
+import * as store from '../../store'
 
 export default class CameraSpline {
   constructor (scene, camera) {
@@ -49,7 +49,7 @@ export default class CameraSpline {
     ]
     this.positionStop = 0
     this.animateWater = true
-    this.radar = store.state.radar
+    this.radar = store.default.state.radar
     console.log(this.radar)
 
     this.initSpline()
@@ -89,6 +89,16 @@ export default class CameraSpline {
 	  this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
 	  this.tweenToScroll()
     this.moveRadar()
+    console.log(this.percentageCamera.value)
+    store.default.state.sounds.place.forEach(element => {
+      console.log(this.percentageCamera.value, element.startAt, element.endAt, element.name, store.default.state.currentPlace.name)
+      if (this.percentageCamera.value > element.startAt &&
+        this.percentageCamera.value <= element.endAt) {
+        console.log(store.default.state.currentPlace.name)
+        // this.percentageCamera.value <= element.endAt && store.state.currentPlace.name !== element.name) {
+        store.default.commit('setCurrentPlace', element)
+      }
+    })
   }
 
   tweenToScroll () {

@@ -68,7 +68,6 @@
 <script>
 import Vue from 'vue'
 import InventoryDetail from './InventoryDetail'
-import { store } from '../../store/index'
 export default {
   name: 'InventoryList',
   data () {
@@ -79,14 +78,14 @@ export default {
   },
   computed: {
     objects () {
-      return store.state.objects.map((item) => {
+      return this.$store.state.objects.map((item) => {
         return item
       })
     }
   },
   mounted () {
     this.isMounted = true
-    store.setContainers(this.$refs)
+    this.$store.commit('setContainers', this.$refs)
     Vue.prototype.$engine.collectable.openCollectable()
   },
   beforeDestroy () {
@@ -98,7 +97,7 @@ export default {
         e.preventDefault()
       } else {
 	    this.clickedElement = obj.name
-        store.objectFound(obj.id)
+        this.$store.objectFound(obj.id)
         Vue.prototype.$engine.handleRender('detail')
         Vue.prototype.$engine.collectable.itemSelected = obj.name
         Vue.prototype.$engine.collectable.openItem()

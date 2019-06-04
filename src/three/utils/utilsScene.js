@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { store } from '../../store/index'
 import GltfLoader from '../components/GltfLoaderRefactored'
 
 const textureCubeMap = () => {

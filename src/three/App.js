@@ -10,6 +10,7 @@ import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
 import Sound from './components/sound/Sound'
 import { onClickRaycaster } from './utils/Event'
+import * as store from '../store'
 
 export default class App extends Engine {
   constructor (refs) {
@@ -20,6 +21,7 @@ export default class App extends Engine {
     this.initCollectable()
     this.initSound()
     this.animate()
+    console.log(store.default.state.currentPlace)
   }
 
   initSound () {
@@ -101,7 +103,7 @@ export default class App extends Engine {
 
     // update scene children
     this.cameraSpline.updateCamera()
-    this.sound.update(this.timeElapsed)
+    this.sound.update(this.timeElapsed, this.cameraSpline.percentageCamera)
     this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.cameraSpline)
