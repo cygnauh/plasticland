@@ -1,27 +1,35 @@
 import config from '../data/inventory'
 import sounds from '../data/sounds'
-export const store = {
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
   state: {
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
+    currentPlace: 'test',
+    currentSubtitle: '',
     sounds: sounds,
-    currrentSubtitle: '',
     radar: null
   },
-  setRadar (ref) {
-    this.state.radar = ref
-  },
-  setCurrrentSubtitle (string) {
-    this.state.currrentSubtitle = string
-  },
-  setContainers (array) {
-    this.state.objectContainers = array
-  },
-  setSelectedItemContainer (array) {
-    this.state.selectItemContainer = array
-  },
-  objectFound (id) {
-    this.state.objects.filter(item => item.id === id)[0].found = true
+  mutations: {
+    setCurrentPlace (state, ref) {
+      state.currentPlace = ref
+    },
+    setRadar (state, ref) {
+      state.radar = ref
+    },
+    setContainers (state, array) {
+      state.objectContainers = array
+    },
+    setSelectedItemContainer (state, array) {
+      state.selectItemContainer = array
+    },
+    objectFound (state, id) {
+      state.objects.filter(item => item.id === id)[0].found = true
+    }
   }
-}
+})
