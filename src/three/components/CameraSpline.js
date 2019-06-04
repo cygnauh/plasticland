@@ -10,41 +10,7 @@ export default class CameraSpline {
     this.percentageCamera = { value: 0 }
     this.tween = null
     this.moving = false
-    this.stops = [
-      {
-        name: 'starbucks',
-        position: 0.2,
-        collected: true
-      },
-      {
-        name: 'carrefour',
-        position: 0.4,
-        collected: false
-      },
-      {
-        name: 'coca-cola',
-        position: 0.55,
-        collected: false
-      },
-      {
-        name: 'suremballage',
-        position: 0.68,
-        collected: false
-      },
-      {
-        name: 'cube',
-        position: 0.86,
-        collected: false
-      },
-      {
-        name: 'end',
-        position: 0.95
-      }
-    ]
-    this.positionStop = 0
-    this.animateWater = true
     this.radar = store.state.radar
-    console.log(this.radar)
 
     this.initSpline()
   }
@@ -83,28 +49,29 @@ export default class CameraSpline {
   moveCamera (e) {
     this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
     // console.log(this.percentageCamera.value)
-    if (this.percentageCamera.value <= this.stops[0].position) {
+    if (this.percentageCamera.value <= store.objects[0].position) {
       this.tweenToScroll()
       this.moveRadar()
-    } else if (this.stops[0].collected && this.percentageCamera.value <= this.stops[1].position) {
+    } else if (store.objects[0].found && this.percentageCamera.value <= store.objects[1].position) {
       this.tweenToScroll()
       this.moveRadar()
-    } else if (this.stops[0].collected && this.stops[1].collected && this.percentageCamera.value <= this.stops[2].position) {
+    } else if (store.objects[0].found && store.objects[1].found && this.percentageCamera.value <= store.objects[2].position) {
       this.tweenToScroll()
       this.moveRadar()
-    } else if (this.stops[0].collected && this.stops[1].collected && this.stops[2].collected && this.percentageCamera.value <= this.stops[3].position) {
+    } else if (store.objects[0].found && store.objects[1].found && store.objects[2].found && this.percentageCamera.value <= store.objects[3].position) {
       this.tweenToScroll()
       this.moveRadar()
-    } else if (this.stops[0].collected && this.stops[1].collected && this.stops[2].collected && this.stops[3].collected && this.percentageCamera.value <= this.stops[4].position) {
+    } else if (store.objects[0].found && store.objects[1].found && store.objects[2].found && store.objects[3].found && this.percentageCamera.value <= store.objects[4].position) {
       this.tweenToScroll()
       this.moveRadar()
-    } else if (this.stops[0].collected && this.stops[1].collected && this.stops[2].collected && this.stops[3].collected && this.stops[4].collected && this.percentageCamera.value <= this.stops[5].position) {
+    } else if (store.objects[0].found && store.objects[1].found && store.objects[2].found && store.objects[3].found && store.objects[4].found && this.percentageCamera.value <= store.objects[5].position) {
       this.tweenToScroll()
       this.moveRadar()
     }
   }
 
   tweenToScroll () {
+    this.moving = true
     this.tween = new TWEEN.Tween(this.percentageCamera)
       .to({ value: this.percentageCamera.value + 0.05 }, 4000)
       .easing(TWEEN.Easing.Cubic.Out)
