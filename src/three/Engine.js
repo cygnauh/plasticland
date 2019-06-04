@@ -33,7 +33,7 @@ export default class Engine {
 
     // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
-    this.camera.position.set(0, 3.5, -52)
+    this.camera.position.set(50, 8.1, 1619.15)
     this.cameraSpline = new CameraSpline(this.scene, this.camera)
 
     // clock
