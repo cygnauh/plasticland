@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
-
+import { store } from '../../store/index'
 // positionial sound
 // ambiant sound
 // interaction sound
@@ -10,14 +10,11 @@ export default class Sound {
     // this.scene = scene
     this.camera = camera
     this.initSound()
-    // this.initSptialSound(mesh)
     this.initAmbiantSound()
-    this.initIntroSound()
+    this.initPlaceSound()
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         // this.ambiantSound.play()
-        // this.spacialSound.play()
-        // this.introSound.play()
       }
     }, false)
   }
@@ -32,38 +29,25 @@ export default class Sound {
     // create a global audio source
     this.ambiantSound = new THREE.Audio(this.listener)
     // load a sound and set it as the Audio object's buffer
-    this.audioLoader.load('../../sounds/sound_ambiant_xp.mp3', (buffer) => {
+    const srcAmbiant = store.state.sounds.ambiant.src
+    this.audioLoader.load(srcAmbiant, (buffer) => {
       this.ambiantSound.setBuffer(buffer)
       this.ambiantSound.setLoop(true)
       this.ambiantSound.setVolume(1)
     })
   }
 
-  initIntroSound () {
-    // create a global audio source
-    this.introSound = new THREE.Audio(this.listener)
-    // load a sound and set it as the Audio object's buffer
-    this.audioLoader.load('../../sounds/sound_spatial_intro.mp3', (buffer) => {
-      this.introSound.setBuffer(buffer)
-      this.introSound.setLoop(false)
-      this.introSound.setVolume(0.5)
+  initPlaceSound () {
+    this.placeSounds = []
+    store.state.sounds.place.forEach(element => {
+      let placeSound = new THREE.Audio(this.listener)
+      this.audioLoader.load(element.src, (buffer) => {
+        placeSound.setBuffer(buffer)
+        placeSound.setLoop(true)
+        placeSound.setVolume(1)
+        this.placeSounds.push(placeSound)
+      })
     })
-  }
-
-  initSptialSound (mesh) {
-    // create the PositionalAudio object (passing in the listener)
-    this.spacialSound = new THREE.PositionalAudio(this.listener)
-
-    // load a sound and set it as the PositionalAudio object's buffer
-    this.audioLoader.load('../../sounds/sound_spatial_seagulls.mp3', (buffer) => {
-      this.spacialSound.setBuffer(buffer)
-      this.spacialSound.setRefDistance(8)
-      this.spacialSound.setLoop(true)
-      this.spacialSound.setVolume(1)
-    })
-
-    // finally add the sound to the mesh
-    mesh.add(this.spacialSound)
   }
 
   fadeOut (sound) {

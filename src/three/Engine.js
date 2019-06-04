@@ -62,7 +62,7 @@ export default class Engine {
     })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0x0B2641, 1)
+    this.renderer.setClearColor(0x1d2535, 1)
 
     // gltf lighting
     this.renderer.gammaOutput = true

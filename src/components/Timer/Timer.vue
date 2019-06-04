@@ -49,10 +49,10 @@ export default {
       this.secondTime = new Date()
     },
     startTimer () {
-      this.ellapsedSeconds = this.secondTime - this.firstTime
-      this.ellapsedSeconds /= 1000
-      this.ellapsedSeconds = Math.round(this.ellapsedSeconds)
-      this.ellapsedMinutes = Math.floor(this.ellapsedSeconds / 60)
+      this.totalEllapsedSeconds = this.secondTime - this.firstTime
+      this.totalEllapsedSeconds /= 1000
+      this.totalEllapsedSeconds = Math.round(this.totalEllapsedSeconds)
+      this.ellapsedMinutes = Math.floor(this.totalEllapsedSeconds / 60)
       this.ellapsedHours = Math.floor(this.ellapsedMinutes / 60)
 
       this.totalEllapsedSeconds = this.ellapsedSeconds
