@@ -96,6 +96,7 @@ export default class App extends Engine {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
+    // this.raycaster.setFromCamera(this.mouse, this.camera)
 
     // update
     this.timeDelta = this.clock.getDelta()

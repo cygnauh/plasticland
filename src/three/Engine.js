@@ -158,10 +158,4 @@ export default class Engine {
   lerp (a, b, n) {
     return (1 - n) * a + n * b
   }
-
-  render () {
-    // this.raycaster.setFromCamera(this.mouse, this.camera)
-    // add and remove collectables or main XP scene
-    this.renderer.render(this.scene, this.camera)
-  }
 }
