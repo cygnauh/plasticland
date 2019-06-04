@@ -1,0 +1,114 @@
+.radar {
+  z-index: 0;
+}
+
+.radar-background {
+  width: 161px;
+  height: 155px;
+  position: relative;
+  background-image: url('../../assets/img/svg/radar-background.svg');
+
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .radar-circle-el {
+    border-radius: 50%;
+    &.yellow {
+      width: 123px;
+      height: 124px;
+      border: 2px solid #F4CB5C;
+    }
+    &.dotted {
+      opacity: 0.2;
+      border: dotted 1px #979797;
+      &.small {
+        width: 53.1px;
+        height: 55.8px;
+      }
+      &.medium {
+        width: 83.1px;
+        height: 85.8px;
+      }
+    }
+  }
+
+  .radar-cross-el {
+    width: 1px;
+    height: 125px;
+    background-color: #979797;
+    opacity: 0.2;
+    &.left {
+      transform: rotate(45deg);
+      position: absolute;
+      transform-origin: center;
+    }
+    &.right {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .radar-boat {
+    width: 16px;
+    height: 36px;
+    background-image: url('../../assets/img/svg/radar-boat.svg');
+  }
+
+  .radar-line {
+    width: 50px;
+    height: 62px;
+    position: absolute;
+    left: 74%;
+    top: 17%;
+    transform: translate(-74%, -17%);
+    .radar-line-el {
+      position: absolute;
+      transform: rotate(0deg);
+      transform-origin: bottom left;
+      width: 50px;
+      height: 62px;
+      background-image: url('../../assets/img/svg/radar-line-detection.svg');
+      animation: lineDetection 5s linear infinite ;
+      //background-color: red;
+    }
+  }
+
+  .radar-map {
+    width: 161px;
+    height: 151px;
+    position: absolute;
+    clip-path: circle(40% at 50% 51%);
+  }
+
+  .radar-map-el {
+    width: 92px;
+    height: 396px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%);
+    transition: top 0.3s ease-in;
+    background-image: url('../../assets/img/svg/radar-map.svg');
+  }
+}
+
+@keyframes lineDetection {
+  0%   {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes  lineDetection {
+  0%   {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

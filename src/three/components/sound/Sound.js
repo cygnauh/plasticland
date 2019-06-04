@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
-import { store } from '../../store/index'
+import { store } from '../../../store/index'
+import { Howl } from 'howler'
 // positionial sound
 // ambiant sound
 // interaction sound
@@ -40,13 +41,24 @@ export default class Sound {
   initPlaceSound () {
     this.placeSounds = []
     store.state.sounds.place.forEach(element => {
-      let placeSound = new THREE.Audio(this.listener)
-      this.audioLoader.load(element.src, (buffer) => {
-        placeSound.setBuffer(buffer)
-        placeSound.setLoop(true)
-        placeSound.setVolume(1)
-        this.placeSounds.push(placeSound)
+      // let placeSound = new THREE.Audio(this.listener)
+      let placeSound = new Howl({
+        src: [element.src]
       })
+
+      // Clear listener after first call.
+      placeSound.once('load', () => {
+        let test = placeSound.play()
+        console.log(test)
+        this.placeSounds.push([placeSound, placeSound.play])
+      })
+
+      // Fires when the sound finishes playing.
+      // this.audioLoader.load(element.src, (buffer) => {
+      //   placeSound.setBuffer(buffer)
+      //   placeSound.setLoop(true)
+      //   placeSound.setVolume(1)
+      // })
     })
   }
 

@@ -5,7 +5,15 @@ export const store = {
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
-    sounds: sounds
+    sounds: sounds,
+    currrentSubtitle: '',
+    radar: null
+  },
+  setRadar (ref) {
+    this.state.radar = ref
+  },
+  setCurrrentSubtitle (string) {
+    this.state.currrentSubtitle = string
   },
   setContainers (array) {
     this.state.objectContainers = array

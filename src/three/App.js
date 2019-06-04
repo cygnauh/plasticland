@@ -8,7 +8,7 @@ import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
-import Sound from './components/Sound'
+import Sound from './components/sound/Sound'
 import { onClickRaycaster } from './utils/Event'
 
 export default class App extends Engine {

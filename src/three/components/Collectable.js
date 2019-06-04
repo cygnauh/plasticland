@@ -38,7 +38,7 @@ export default class Collectable {
     this.renderScissor()
     const containers = store.state.objectContainers
     this.collectableArray.forEach(scene => {
-      if (scene && scene.name) {
+      if (scene && scene.name && containers[`${scene.name}`][0]) {
         rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
       }
     })
@@ -71,6 +71,10 @@ export default class Collectable {
     this.collectableArray.forEach((element) => {
       this.scaleItems(element.mesh, 1)
     })
+  }
+  closeItem () {
+    let item = this.collectableArray.filter(element => element.name === this.itemSelected)
+    item[0].scene.children[1].rotation.y = 0
   }
 
   openItem () {
