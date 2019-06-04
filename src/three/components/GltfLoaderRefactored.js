@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import GLTFLoader from '../three-examples/loader/GLTFLoader'
+import { textureCubeMap } from '../utils/utilsScene'
 
 export default class GltfLoaderRefactored {
   constructor (name, path, scene, manager, {
@@ -27,6 +28,9 @@ export default class GltfLoaderRefactored {
         this.gltf = gltf.scene
         this.gltf.name = name
         // this.gltf.castShadow = true
+        let textureCube = new THREE.CubeTextureLoader().load(textureCubeMap())
+        textureCube.mapping = THREE.CubeReflectionMapping
+        textureCube.format = THREE.RGBFormat
         this.gltf.traverse(function (child) {
           if (child.isMesh) {
             gltfChild = child
@@ -36,10 +40,12 @@ export default class GltfLoaderRefactored {
             child.scale.x = scale
             child.scale.y = scale
             child.scale.z = scale
-            child.rotation.x = rotateX
-            child.rotation.y = rotateY
-            child.rotation.z = rotateZ
+            // child.rotation.x = rotateX
+            // child.rotation.y = rotateY
+            // child.rotation.z = rotateZ
             child.material.side = 2
+	          child.material.envMap = textureCube
+	          child.material.needsUpdate = true
             child.name = childName
             meshes.push(child)
             let geometry = child.geometry

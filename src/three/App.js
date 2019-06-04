@@ -57,7 +57,6 @@ export default class App extends Engine {
     this.objectCollectable2.then(response => {
       response.meshes[0].rotation.x = -20
       this.groupPlasticLand.add(response.meshes[0])
-      this.sound.initSptialSound(response.meshes[0])
     })
     this.groupPlasticLand.add(this.cube.object)
     this.scene.add(this.groupPlasticLand)

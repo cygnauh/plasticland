@@ -1,10 +1,15 @@
 import config from '../data/inventory'
+import sounds from '../data/sounds'
 export const store = {
   state: {
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
-    photographs: config.photographs
+    sounds: sounds,
+    radar: null
+  },
+  setRadar (ref) {
+    this.state.radar = ref
   },
   setContainers (array) {
     this.state.objectContainers = array
