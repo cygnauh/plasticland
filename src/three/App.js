@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import * as TWEEN from 'tween'
 import Engine from './Engine'
 import Environment from './components/Environment'
-import CubeTest from './components/CubeTest'
+import ObjectsToCollect from './components/ObjectsToCollect'
 import Collectable from './components/Collectable'
 import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
@@ -27,12 +27,11 @@ export default class App extends Engine {
   }
 
   initGeometry () {
-    this.environment = new Environment(this.scene, this.renderer, this.light)
-    this.cube = new CubeTest(this.scene)
-    this.boat = new Boat(this.scene, this.manager, this.camera)
-    this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb')
-    this.mountain = new GltfLoader('montagne', './models/montagne_ensemble_16.glb', this.scene, this.manager, { addToScene: false })
-    this.objectCollectable2 = new GltfLoaderRefactored('second', './models/bottle_coca.glb', this.scene, this.manager, { posX: 0, posY: 0, posZ: 0, scale: 0.01, addToScene: true })
+    this.environment = new Environment(this.scene, this.renderer, this.light) // water and sky
+    this.mountain = new GltfLoader('montagne', './models/environnement.glb', this.scene, this.manager, { addToScene: false }) // mountains
+    this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb') // instances on mountains
+    this.boat = new Boat(this.scene, this.manager, this.camera) // boat
+    this.objectsToCollect = new ObjectsToCollect(this.scene, this.manager, this.raycaster) // objects to collect
   }
 
   initGroup () {
@@ -52,14 +51,13 @@ export default class App extends Engine {
     this.mountain.then(response => {
       response.meshes.forEach(el => {
         this.groupPlasticLand.add(el)
-        console.log(el.children)
+        // console.log(el.children)
       })
     })
-    this.objectCollectable2.then(response => {
-      response.meshes[0].rotation.x = -20
-      this.groupPlasticLand.add(response.meshes[0])
-    })
-    this.groupPlasticLand.add(this.cube.object)
+    // this.objectCollectable2.then(response => {
+    //   response.meshes[0].rotation.x = -20
+    //   this.groupPlasticLand.add(response.meshes[0])
+    // })
     this.scene.add(this.groupPlasticLand)
   }
 
@@ -88,6 +86,7 @@ export default class App extends Engine {
   onClick () {
     // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
     // onClickRaycaster(arrayMesh[0].children, this.raycaster)
+    this.objectsToCollect.onClick()
     if (this.collectable) this.collectable.changeMaterial('cocacola')
   }
 
@@ -95,7 +94,7 @@ export default class App extends Engine {
     // helpers
     if (this.helpers.stats) this.helpers.stats.begin()
     if (this.helpers.orbitControls) this.helpers.orbitControls.update()
-      // this.raycaster.setFromCamera(this.mouse, this.camera)
+    this.raycaster.setFromCamera(this.mouse, this.camera)
 
     // update
     this.timeDelta = this.clock.getDelta()
@@ -103,8 +102,8 @@ export default class App extends Engine {
 
     // update scene children
     this.cameraSpline.updateCamera()
+    this.objectsToCollect.update(this.timeElapsed)
     this.sound.update(this.timeElapsed)
-    this.cube.update(this.timeElapsed)
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.cameraSpline)
     this.collectable.tweenUpdate() // update tween
@@ -119,6 +118,7 @@ export default class App extends Engine {
     } else {
       this.collectable.renderSelectedCollectable()
     }
+
     // stop rendering the main scene when inventory open
     if (this.currentRender === 'scene') { // scene
       this.composer.render(this.timeDelta)

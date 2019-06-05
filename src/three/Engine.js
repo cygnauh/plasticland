@@ -117,7 +117,7 @@ export default class Engine {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
     window.addEventListener('wheel', (e) => this.handleWheel(e), { capture: true, passive: true })
-    // document.addEventListener('click', (e) => this.onClick(e), false)
+    document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
   handleWheel (e) {
