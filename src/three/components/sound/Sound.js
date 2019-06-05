@@ -13,12 +13,9 @@ export default class Sound {
     this.initSound()
     this.initAmbiantSound()
     this.initPlaceSound()
-    this.currendSound = null
+    this.currentSound = null
+    this.soundId = null
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
-      // this.test.play()
-      console.log('hello')
-      // this.placeSound.rate(1.5, this.test)
-      this.placeSound.fade(0, 1, 3000, this.test)
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         // this.ambiantSound.play()
       }
@@ -49,48 +46,24 @@ export default class Sound {
       let src = element.src
       let placeSound = new Howl({
         src: [src],
-        volume: 0
+        volume: 0 // fade to 1 when it plays
       })
       placeSound.once('load', () => {
         this.placeSounds.push([{ 'name': element.name }, { sound: placeSound }])
-        console.log(this.placeSounds)
-        // if (store.default.state.sounds.place.length === this.placeSounds)
       })
     })
-    // let placeSound = new THREE.Audio(this.listener)
-    // console.log(test)
-    // Clear listener after first call.
-    // placeSound.once('load', () => {
-    //   placeSound.play()
-    // })
-    // placeSound.once('end', () => {
-    //  console.log('end')
-    // })
   }
 
-  fadeOut (sound) {
-    let volume = { x: sound.getVolume() } // tweens not work without object
-    // using Tween.js
-    new TWEEN.Tween(volume).to({
-      x: 0
-    }, 5).onUpdate(() => {
-      sound.setVolume(volume.x)
-    }).onComplete(() => {
-      if (sound && sound.isPlaying && sound.getVolume() < 0.0001) {
-        sound.stop()
-      }
-    }).start()
-  }
-
-  update (time, cameraPosition) {
-    let currentSound = store.default.state.sounds.place.filter(element => (element.startAt >= cameraPosition && element.endAt < cameraPosition))
-    // if (currentSound.length !== 0) console.log(currentSound)
-    if (cameraPosition === store.default.state.sounds.place.startAt) {
-      console.log(store.default.state.sounds.place.name)
-      // this.placeSounds.filter(element => element[0].name === )
+  updatePlaceSound (value) {
+    if (this.soundId) {
+      this.currentSound.fade(1, 0, 2000, this.soundId)
     }
-    
-    //is bigger than the next break point
+    this.currentSound = this.placeSounds.filter(element => element[0].name === value)[0][1].sound
+    this.soundId = this.currentSound.play()
+    this.currentSound.fade(0, 1, 3000, this.soundId)
+  }
+  update (time) {
+    // is bigger than the next break point
     TWEEN.update(time)
   }
 }

@@ -2,7 +2,9 @@
   <div class="Stage">
     <Loader />
     <div class="Stage-border-top">
-      <div class="title">
+      <div
+        v-if="$route.path === '/plasticland'"
+        class="title">
         {{ title }}
       </div>
       <router-link
@@ -88,10 +90,8 @@
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
-
 <script>
 import Vue from 'vue'
-// import Engine from '../three-examples/Engine'
 import App from '../three/App'
 import Loader from './Loader/Loader'
 import Subtitle from './Subtitle'
@@ -125,6 +125,9 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
+    },
+    title (value) {
+      Vue.prototype.$engine.sound.updatePlaceSound(value)
     }
   },
   methods: {
@@ -160,8 +163,8 @@ export default {
     },
     handleClick () {
       let foundObj = this.$store.state.objects.filter(item => item.found).length
-	  if (this.objectFound !== foundObj) {
-      	this.displayNotif = true
+      if (this.objectFound !== foundObj) {
+        this.displayNotif = true
         this.objectFound = foundObj
       }
     }
