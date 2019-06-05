@@ -78,7 +78,7 @@ export default class ObjectsToCollect {
           response.meshes.forEach(mesh => {
             mesh.position.y = y
             mesh.rotation.y = Math.sin(time) / 3
-            mesh.rotation.z = mesh.rotation.x =  Math.sin(time) / 4
+            mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
           })
         })
       })
