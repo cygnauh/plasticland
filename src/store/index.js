@@ -10,7 +10,7 @@ export default new Vuex.Store({
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
-    currentPlace: 'test',
+    currentPlace: '',
     currentSubtitle: '',
     sounds: sounds,
     radar: null

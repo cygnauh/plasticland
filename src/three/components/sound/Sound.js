@@ -1,10 +1,7 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
-import * as store from '../../../store'
+import * as store from '../../../store/index'
 import { Howl } from 'howler'
-// positionial sound
-// ambiant sound
-// interaction sound
 
 export default class Sound {
   constructor (scene, camera) {
@@ -13,6 +10,7 @@ export default class Sound {
     this.initSound()
     this.initAmbiantSound()
     this.initPlaceSound()
+    this.initVoiceOver()
     this.currentSound = null
     this.soundId = null
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
@@ -49,8 +47,19 @@ export default class Sound {
         volume: 0 // fade to 1 when it plays
       })
       placeSound.once('load', () => {
-        this.placeSounds.push([{ 'name': element.name }, { sound: placeSound }])
+        this.placeSounds.push({ 'name': element.name, sound: placeSound })
       })
+    })
+  }
+
+  initVoiceOver () {
+    let src = store.default.state.sounds.voice.src
+    this.voiceOver = new Howl({
+      src: [src],
+      volume: 0 // fade to 1 when it plays
+    })
+    this.voiceOver.once('load', () => {
+      this.voiceOver.play()
     })
   }
 
@@ -58,11 +67,17 @@ export default class Sound {
     if (this.soundId) {
       this.currentSound.fade(1, 0, 2000, this.soundId)
     }
-    this.currentSound = this.placeSounds.filter(element => element[0].name === value)[0][1].sound
-    this.soundId = this.currentSound.play()
-    this.currentSound.fade(0, 1, 3000, this.soundId)
+    this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0].sound : null
+    console.log(this.currentSound)
+    if (this.currentSound) {
+      this.soundId = this.currentSound.play()
+      this.currentSound.fade(0, 1, 3000, this.soundId)
+    }
   }
   update (time) {
+    if (this.soundId) {
+      // console.log(this.currentSound.seek()) // ==>  on play return the current Time
+    }
     // is bigger than the next break point
     TWEEN.update(time)
   }

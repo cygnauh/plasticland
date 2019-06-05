@@ -21,7 +21,6 @@ export default class App extends Engine {
     this.initCollectable()
     this.initSound()
     this.animate()
-    console.log(store.default.state.currentPlace)
   }
 
   initSound () {
