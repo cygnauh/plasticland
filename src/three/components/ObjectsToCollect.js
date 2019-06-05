@@ -1,4 +1,3 @@
-import GltfLoader from './GltfLoader'
 import * as store from '../../store/index'
 import GltfLoaderRefactored from './GltfLoaderRefactored'
 
@@ -45,22 +44,29 @@ export default class ObjectsToCollect {
         switch (intersect.object.name) {
           case 'starbucks':
             store.default.commit('objectFound', 1)
+            store.default.commit('setCinematicObject')
+            console.log(store.default.state.displayCinematicObject)
             break
           case 'carrefour':
             store.default.commit('objectFound', 2)
+            store.default.commit('setCinematicObject')
             break
           case 'cocacola':
             store.default.commit('objectFound', 3)
+            store.default.commit('setCinematicObject')
             break
           case 'gestespropres':
             store.default.commit('objectFound', 4)
+            store.default.commit('setCinematicObject')
             break
           case 'nestle':
             store.default.commit('objectFound', 5)
+            store.default.commit('setCinematicObject')
             break
           case 'final':
             store.default.commit('objectFound', 6)
-            break
+            store.default.commit('setCinematicObject')
+              break
           default:
             break
         }
