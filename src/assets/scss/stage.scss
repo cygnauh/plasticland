@@ -1,0 +1,188 @@
+@import './index';
+
+.Stage{
+  position: relative;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /*#app > div > div > div.right-side-content > div.menu > a:nth-child(1) > span*/
+  &-border-top {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    margin: 18px;
+    width: calc(100% - 36px);
+    height: 102px;
+    display: flex;
+    justify-content: space-between;
+    color: $dark_blue;
+    .title{
+      font-size: 18px;
+      font-family: AxeHandel, sans-serif;
+      transform: translateX(70px); // TODO remove after test
+    }
+    .back{
+      display: flex;
+      img{
+        margin-top: 2px;
+        width: 17px;
+        height: 19px;
+      }
+      span{
+        padding-left: 10px;
+      }
+      font-size: 22px;
+      font-family: AxeHandel, sans-serif;
+      color: $medium_grey;
+    }
+    .router-link-active{
+      top: 0;
+      text-decoration: none;
+      &.close-link{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .close-btn{
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      will-change: opacity;
+      transition: opacity 1s ease-in-out;
+      transform: translateX(-50%);
+      &.show{
+        transition: opacity 1s ease-in-out;
+        opacity: 1;
+      }
+      img{
+        width: 51px;
+        height: 51px;
+      }
+      span{
+        margin-top: 13px;
+        color: $sand_yellow;
+        text-transform: uppercase;
+        text-underline: transparent;
+        font-family: AxeHandel, sans-serif;
+        font-size: 22px;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .right-side-content-top{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100vw;
+      .menu{
+        text-decoration: none;
+        display: flex;
+        &.dark{
+          a{
+            color: $medium_grey;
+          }
+        }
+        a{
+          padding: 0 10px;
+          text-decoration: none;
+          font-size: 22px;
+          font-family: AxeHandel, sans-serif;
+          font-weight: 400;
+          color: $light_grey;
+        }
+        .volume{
+          align-self: end;
+          padding: 0 10px;
+          width: 20px;
+          height: 17px;
+        }
+      }
+      .timer{
+        padding: 10px 5px;
+      }
+    }
+  }
+  &-border-bottom {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    margin: 18px;
+    width: calc(100% - 36px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /*justify-content: flex-end;*/
+    color: $dark_blue;
+    a {
+      text-decoration: none;
+    }
+    .inventory-btn{
+      width: 241px;
+      height: 79px;
+      position: relative;
+      z-index: 0;
+      font-family: AxeHandel, sans-serif;
+      color: $light_grey;
+      display: flex;
+      .inventory-btn-title{
+        display: flex;
+        align-items: center;
+        width: calc(100% - 83px);
+        font-size: 28px;
+        text-transform: uppercase;
+        background: url('../assets/img/svg/collectable-t-bg.svg') no-repeat center center;
+        background-size: contain;
+        border-radius: 5px;
+        height: 79px;
+        span{
+          width: 100%;
+        }
+      }
+      .inventory-btn-count{
+        width: 85px;
+        height: 79px;
+        display: flex;
+        justify-content: center;
+        margin-left: 5px ;
+        /*background: none;*/
+        background: url('../assets/img/svg/collectable-n-bg.svg') no-repeat;
+        background-size: contain;
+        border-radius: 5px;
+        &.notif{
+          background: linear-gradient(225deg, rgba(251, 210, 73, 0), rgba(253, 219, 106, 0.4) 43%, #ffe48b);
+        }
+        span{
+          font-size: 41px;
+          position: relative;
+        }
+        .border-separator{
+          transform-origin: center;
+          transform: rotate(45deg);
+          margin: 5px;
+          width: 2px;
+          background: white;
+          height: 30px;
+          position: relative;
+          top: 20px;
+        }
+        .inventory-btn-obj-found{
+          top:3px;
+        }
+        .inventory-btn-obj-total{
+          top:31px;
+        }
+      }
+    }
+    .subtitle-container{
+      position: absolute;
+      border: 0;
+      width: 100%;
+      height: 0;
+      bottom: 90px;
+    }
+  }
+}
