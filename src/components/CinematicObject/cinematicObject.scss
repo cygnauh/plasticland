@@ -1,9 +1,99 @@
+@import '../../assets/scss/index';
+
 .cinematicObject {
-  z-index: 4;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
   position: absolute;
   display: flex;
-  //justify-content: center;
-  //align-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(circle at 0 0, rgba(192, 193, 212, 0.77), rgba(63, 64, 95, 0.83));
+
+  .head {
+    position: absolute;
+    top: 39px;
+    .close-btn {
+      opacity: 1;
+      img{
+        width: 45px;
+        height: 45px;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .main {
+    max-width: 55vw;
+    left: 30%;
+    transform: translateX(-30%);
+    top: -40px;
+    position: relative;
+    text-align: left;
+    .inventory-btn-count {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      margin-left: 5px ;
+      background: url('../../assets/img/svg/collectable-n-bg.svg') no-repeat;
+      background-size: contain;
+      border-radius: 5px;
+      span{
+        position: relative;
+        font-family: AxeHandel;
+        font-size: 35px;
+        color: #e4e4e5;
+      }
+      .border-separator{
+        transform-origin: center;
+        transform: rotate(40deg);
+        margin: 5px;
+        width: 2px;
+        background: white;
+        height: 30px;
+        position: relative;
+        top: 13px;
+        left: 3px;
+      }
+      .inventory-btn-obj-found{
+        top: 3px;
+      }
+      .inventory-btn-obj-total{
+        top: 25px;
+      }
+    }
+    .title {
+      font-size: 55px;
+      font-family: AxeHandel, sans-serif;
+      color: #f3f3f3;
+      max-width: 40vw;
+      position: relative;
+      left: 7px;
+    }
+    .yellow-btn {
+      width: 161px;
+      height: 52px;
+      background: url('../../assets/img/svg/yellow-button.svg') no-repeat;
+      p {
+        font-family: AxeHandel;
+        font-size: 28px;
+        text-align: center;
+        padding: 8px 0px;
+      }
+      a {
+        text-decoration: none;
+        color: #51526b;
+        transition: color 0.3s ease-in;
+        &:hover {
+          color: #2c2c3c;
+        }
+      }
+    }
+  }
 }
+
+

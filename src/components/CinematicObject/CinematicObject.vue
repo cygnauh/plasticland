@@ -1,19 +1,21 @@
 <template id="cinematicObject">
     <div class="cinematicObject">
-        <router-link to="/plasticland/" class="close-link">
+        <div class="head">
             <div class="close-btn">
                 <img :src="require('../../assets/img/close.png')" alt="close">
             </div>
-        </router-link>
-        <div class="inventory-btn-count">
-            <span class="inventory-btn-obj-found">{{ objectFound }}</span>
-            <div class="border-separator"></div>
-            <span class="inventory-btn-obj-total">{{ totalObject }}</span>
         </div>
-        <div
-            v-for="(object) in objects.slice(objectFound, objectFound+1)"
-            class="title"> {{ object.title }} </div>
-        <div><p>en savoir plus</p></div>
+        <div class="main">
+            <div class="inventory-btn-count">
+                <span class="inventory-btn-obj-found">{{ objectFound }}</span>
+                <div class="border-separator"></div>
+                <span class="inventory-btn-obj-total">{{ totalObject }}</span>
+            </div>
+            <div v-for="(object) in objects.slice(objectFound, objectFound+1)" class="title"> {{ object.title }} </div>
+            <div class="yellow-btn">
+                <p><a href="#">en savoir plus</a></p>
+            </div>
+        </div>
     </div>
 </template>
 
