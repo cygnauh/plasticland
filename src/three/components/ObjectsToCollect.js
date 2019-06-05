@@ -72,12 +72,14 @@ export default class ObjectsToCollect {
   update (time) {
     let y = this.calculateSurface(10, 10, time)
 
-    // if (this.array.length > 0) {
-    //   this.array.forEach(collectable => {
-    //     collectable.then(mesh => {
-    //       mesh.position.y = y
-    //     })
-    //   })
-    // }
+    if (this.array.length > 0) {
+      this.array.forEach(collectable => {
+        collectable.then(response => {
+          response.meshes.forEach(mesh => {
+            mesh.position.y = y
+          })
+        })
+      })
+    }
   }
 }

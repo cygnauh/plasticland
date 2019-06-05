@@ -94,7 +94,7 @@ export default class CameraSpline {
     let p1 = this.spline.getPointAt(this.percentageCamera.value) // x,y,z
     let p2 = this.spline.getPointAt((this.percentageCamera.value + 0.01) % 1) // lookat
 
-    console.log(this.percentageCamera.value)
+    // console.log(this.percentageCamera.value)
 
     this.camera.position.set(p1.x, p1.y + 3, p1.z)
     this.camera.lookAt(p2.x, p2.y + 3.5, p2.z)
