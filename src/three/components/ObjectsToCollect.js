@@ -1,5 +1,5 @@
 import GltfLoader from './GltfLoader'
-import { store } from '../../store/index'
+import * as store from '../../store/index'
 import GltfLoaderRefactored from './GltfLoaderRefactored'
 
 export default class ObjectsToCollect {
@@ -13,7 +13,7 @@ export default class ObjectsToCollect {
   }
 
   initCollectables () {
-    let objects = store.state.objects
+    let objects = store.default.state.objects
     objects.forEach((object) => {
       let mesh = new GltfLoaderRefactored(object.name, object.model, this.scene, this.manager, { posX: object.x, posY: 0, posZ: object.z, scale: 10, addToScene: true })
       this.array.push(mesh)
@@ -44,22 +44,22 @@ export default class ObjectsToCollect {
         // if (intersect.object.type === 'mesh') {
         switch (intersect.object.name) {
           case 'starbucks':
-            store.objectFound(1)
+            store.default.commit('objectFound', 1)
             break
           case 'carrefour':
-            store.objectFound(2)
+            store.default.commit('objectFound', 2)
             break
           case 'cocacola':
-            store.objectFound(3)
+            store.default.commit('objectFound', 3)
             break
           case 'gestespropres':
-            store.objectFound(4)
+            store.default.commit('objectFound', 4)
             break
           case 'nestle':
-            store.objectFound(5)
+            store.default.commit('objectFound', 5)
             break
           case 'final':
-            store.objectFound(6)
+            store.default.commit('objectFound', 6)
             break
           default:
             break
