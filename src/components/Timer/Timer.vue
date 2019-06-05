@@ -55,7 +55,7 @@ export default {
       this.ellapsedMinutes = Math.floor(this.totalEllapsedSeconds / 60)
       this.ellapsedHours = Math.floor(this.ellapsedMinutes / 60)
 
-      this.totalEllapsedSeconds = this.ellapsedSeconds
+      this.ellapsedSeconds = this.totalEllapsedSeconds
       if (this.ellapsedSeconds >= 60) {
         this.ellapsedSeconds = this.ellapsedSeconds - (this.ellapsedMinutes * 60)
       }

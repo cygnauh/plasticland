@@ -97,7 +97,7 @@ export default {
         e.preventDefault()
       } else {
 	    this.clickedElement = obj.name
-        this.$store.objectFound(obj.id)
+        this.$store.commit('objectFound', obj.id)
         Vue.prototype.$engine.handleRender('detail')
         Vue.prototype.$engine.collectable.itemSelected = obj.name
         Vue.prototype.$engine.collectable.openItem()
