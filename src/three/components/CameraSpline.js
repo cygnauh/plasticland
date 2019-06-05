@@ -10,52 +10,14 @@ export default class CameraSpline {
     this.percentageCamera = { value: 0 }
     this.tween = null
     this.moving = false
-    this.stops = [
-      {
-        name: 'starbucks',
-        breakpoint: 0.22,
-        speed: 12000,
-        collected: false
-      },
-      {
-        name: 'carrefour',
-        breakpoint: 0.4,
-        speed: 8000,
-        collected: false
-      },
-      {
-        name: 'coca-cola',
-        breakpoint: 0.55,
-        speed: 8000,
-        collected: false
-      },
-      {
-        name: 'suremballage',
-        breakpoint: 0.68,
-        speed: 8000,
-        collected: false
-      },
-      {
-        name: 'cube',
-        breakpoint: 0.86,
-        speed: 8000,
-        collected: false
-      },
-      {
-        name: 'end',
-        breakpoint: 0.95,
-        speed: 3000
-      }
-    ]
-    this.positionStop = 0
-    this.animateWater = true
-    this.radar = store.default.state.radar
+    this.radar = store.state.radar
+
     this.initSpline()
   }
 
   initSpline () {
     let points = [
-      [33.29779815673828, -1625.17333984375, 0.09950000047683716],
+      [33.29779815673828, -2174.857421875, 0.09950000047683716],
       [31.629199981689453, -1193.315185546875, 0.09950000047683716],
       [-54.100799560546875, -810.0264282226562, 0.09950000047683716],
       [100.6720962524414, -527.3427734375, 0.09950000047683716],
@@ -73,20 +35,43 @@ export default class CameraSpline {
     }
 
     this.spline = new THREE.CatmullRomCurve3(points)
-    let totalPoints = this.spline.getPoints(100)
+    let totalPoints = this.spline.getPoints(150)
     let geometry = new THREE.BufferGeometry().setFromPoints(totalPoints)
     let material = new THREE.LineBasicMaterial({
       color: 0xff00ff
     })
     this.splineLine = new THREE.Line(geometry, material)
     this.splineLine.name = 'splineLine'
+    this.splineLine.visible = false
     this.scene.add(this.splineLine)
   }
 
   moveCamera (e) {
-	  this.percentageCamera.value += (Math.abs(e.deltaY) / 10000)
-	  this.tweenToScroll()
-    this.moveRadar()
+    // console.log(this.percentageCamera.value)
+    let speed = {
+      slow: 0.03,
+      mid: 0.05,
+      fast: 0.15
+    }
+    if (this.percentageCamera.value <= store.state.objects[0].position) {
+      this.tweenToScroll(speed.slow)
+      this.moveRadar()
+    } else if (store.state.objects[0].found && this.percentageCamera.value <= store.state.objects[1].position) {
+      this.tweenToScroll(speed.mid)
+      this.moveRadar()
+    } else if (store.state.objects[0].found && store.state.objects[1].found && this.percentageCamera.value <= store.state.objects[2].position) {
+      this.tweenToScroll(speed.mid)
+      this.moveRadar()
+    } else if (store.state.objects[0].found && store.state.objects[1].found && store.state.objects[2].found && this.percentageCamera.value <= store.state.objects[3].position) {
+      this.tweenToScroll(speed.mid)
+      this.moveRadar()
+    } else if (store.state.objects[0].found && store.state.objects[1].found && store.state.objects[2].found && store.state.objects[3].found && this.percentageCamera.value <= store.state.objects[4].position) {
+      this.tweenToScroll(speed.mid)
+      this.moveRadar()
+    } else if (store.state.objects[0].found && store.state.objects[1].found && store.state.objects[2].found && store.state.objects[3].found && store.state.objects[4].found && this.percentageCamera.value <= store.state.objects[5].position) {
+      this.tweenToScroll(speed.mid)
+      this.moveRadar()
+    }
     store.default.state.sounds.place.forEach(element => {
       if (this.percentageCamera.value > element.startAt &&
         this.percentageCamera.value <= element.endAt) {
@@ -95,13 +80,13 @@ export default class CameraSpline {
     })
   }
 
-  tweenToScroll () {
+  tweenToScroll (speed) {
+    this.moving = true
     this.tween = new TWEEN.Tween(this.percentageCamera)
-      .to({ value: this.percentageCamera.value + 0.04 }, 4000)
+      .to({ value: this.percentageCamera.value + speed }, 4000)
       .easing(TWEEN.Easing.Cubic.Out)
       .onComplete(() => {
-        // this.moving = false
-        // this.animateWater = true
+        this.moving = false
       })
       .start()
   }
@@ -109,26 +94,12 @@ export default class CameraSpline {
   moveRadar () {
     let offset = this.percentageCamera.value * 100
     this.radar.style.top = `${offset}px`
-    // console.log(this.radar.style.top)
   }
 
-  // tweenToBreakpoint (breakpoint, speed) {
-  //   this.tween = new TWEEN.Tween(this.percentageCamera)
-  //     .to({ value: breakpoint }, speed)
-  //     .easing(TWEEN.Easing.Sinusoidal.InOut)
-  //     .onComplete(() => {
-  //       this.moving = false
-  //       this.positionStop = this.positionStop + 0.5
-  //       this.animateWater = true
-  //     })
-  //     .start()
-  // }
-
   updateCamera () {
-    // position
-    let p1 = this.spline.getPoint(this.percentageCamera.value % 1) // x,y,z
-    let p2 = this.spline.getPoint((this.percentageCamera.value + 0.01) % 1) // lookat
-
+    let p1 = this.spline.getPointAt(this.percentageCamera.value) // x,y,z
+    let p2 = this.spline.getPointAt((this.percentageCamera.value + 0.01) % 1) // lookat
+    
     this.camera.position.set(p1.x, p1.y + 3, p1.z)
     this.camera.lookAt(p2.x, p2.y + 3.5, p2.z)
   }

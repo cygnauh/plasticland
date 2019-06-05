@@ -2,11 +2,11 @@
     <div
         :class="theme"
         class="timer">
-        <span class="hour item"> {{ hours }} </span>
+        <span class="hour item"> {{ ellapsedHours }} </span>
         <span> : </span>
-        <span class="minutes item"> {{ minutes }} </span>
+        <span class="minutes item"> {{ ellapsedMinutes }} </span>
         <span> : </span>
-        <span class="seconds item"> {{ seconds }} </span>
+        <span class="seconds item"> {{ ellapsedSeconds }} </span>
     </div>
 </template>
 
@@ -23,9 +23,6 @@ export default {
     return {
       firstTime: 0,
       secondTime: 0,
-      seconds: 0,
-      minutes: 0,
-      hours: 0,
       ellapsedSeconds: 0,
       ellapsedMinutes: 0,
       ellapsedHours: 0,
@@ -58,8 +55,9 @@ export default {
       this.ellapsedMinutes = Math.floor(this.totalEllapsedSeconds / 60)
       this.ellapsedHours = Math.floor(this.ellapsedMinutes / 60)
 
-      if (this.totalEllapsedSeconds >= 60) {
-        this.ellapsedSeconds = this.totalEllapsedSeconds - (this.totalEllapsedSeconds * 60)
+      this.totalEllapsedSeconds = this.ellapsedSeconds
+      if (this.ellapsedSeconds >= 60) {
+        this.ellapsedSeconds = this.ellapsedSeconds - (this.ellapsedMinutes * 60)
       }
     },
     conversionPlasticWaste () {

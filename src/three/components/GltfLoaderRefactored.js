@@ -44,8 +44,8 @@ export default class GltfLoaderRefactored {
             // child.rotation.y = rotateY
             // child.rotation.z = rotateZ
             child.material.side = 2
-	          child.material.envMap = textureCube
-	          child.material.needsUpdate = true
+            child.material.envMap = textureCube
+            child.material.needsUpdate = true
             child.name = childName
             meshes.push(child)
             let geometry = child.geometry

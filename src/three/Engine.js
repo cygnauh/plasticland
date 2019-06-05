@@ -33,7 +33,7 @@ export default class Engine {
 
     // camera
     this.camera = new THREE.PerspectiveCamera(35, this.width / this.height, 0.01, 10000)
-    this.camera.position.set(0, 3.5, -52)
+    this.camera.position.set(50, 8.1, 1619.15)
     this.cameraSpline = new CameraSpline(this.scene, this.camera)
 
     // clock
@@ -117,7 +117,7 @@ export default class Engine {
     window.addEventListener('resize', () => this.resize())
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
     window.addEventListener('wheel', (e) => this.handleWheel(e), { capture: true, passive: true })
-    // document.addEventListener('click', (e) => this.onClick(e), false)
+    document.addEventListener('click', (e) => this.onClick(e), false)
   }
 
   handleWheel (e) {
@@ -157,11 +157,5 @@ export default class Engine {
 
   lerp (a, b, n) {
     return (1 - n) * a + n * b
-  }
-
-  render () {
-    // this.raycaster.setFromCamera(this.mouse, this.camera)
-    // add and remove collectables or main XP scene
-    this.renderer.render(this.scene, this.camera)
   }
 }
