@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as TWEEN from 'tween'
-import * as store from '../../../store/index'
+import * as store from '../../store/index'
 import { Howl } from 'howler'
 
 export default class Sound {

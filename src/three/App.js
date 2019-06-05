@@ -8,8 +8,7 @@ import Instances from './components/Instances'
 import GltfLoader from './components/GltfLoader'
 import GltfLoaderRefactored from './components/GltfLoaderRefactored'
 import Boat from './components/Boat'
-import Sound from './components/sound/Sound'
-import { onClickRaycaster } from './utils/Event'
+import Sound from './components/Sound'
 import * as store from '../store'
 
 export default class App extends Engine {
@@ -118,6 +117,7 @@ export default class App extends Engine {
     } else {
       this.collectable.renderSelectedCollectable()
     }
+
     // stop rendering the main scene when inventory open
     if (this.currentRender === 'scene') { // scene
       this.composer.render(this.timeDelta)
