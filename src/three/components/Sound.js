@@ -61,7 +61,7 @@ export default class Sound {
         yes: [1000, 1000],
         intro1: [3000, 5000],
         intro2: [9000, 6000], // maybe mixed both
-        intro2bis: [16000, 6000], // maybe mixed both
+        intro2bis: [16000, 8000], // maybe mixed both
         starbucks: [26000, 9000],
         carrefour: [36000, 11000],
         cocacola: [49000, 9000],
