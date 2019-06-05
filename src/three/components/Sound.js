@@ -59,9 +59,9 @@ export default class Sound {
       src: [src],
       sprite: {
         yes: [1000, 1000],
-        remember: [3000, 5000],
-        traveling: [9000, 6000], // maybe mixed both
-        time: [16000, 6000], // maybe mixed both
+        intro1: [3000, 5000],
+        intro2: [9000, 6000], // maybe mixed both
+        intro2bis: [16000, 6000], // maybe mixed both
         starbucks: [26000, 9000],
         carrefour: [36000, 11000],
         cocacola: [49000, 9000],
@@ -72,10 +72,6 @@ export default class Sound {
       },
       volume: 1 // fade to 1 when it plays
     })
-    this.voiceOver.once('load', () => {
-      // this.voiceOver.play()
-      console.log('load')
-    })
   }
 
   updatePlaceSound (value) {
@@ -85,30 +81,23 @@ export default class Sound {
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
       // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      this.voiceId = this.voiceOver.play(this.currentSound.name)
-      console.log(this.voiceId)
-      console.log(this.currentSound.name)
-      console.log(this.voiceOver._onplay)
+      this.voiceOver.play(this.currentSound.name)
       // this.currentSound.fade(0, 0.3, 3000, this.soundId) // TODO uncomment when voiceOver task's done
     }
   }
   updateSubtitle () {
     store.default.state.subtitle.forEach(element => {
-      // if ()
+      if (this.voiceOver.seek() > element.startAt &&
+        this.voiceOver.seek() <= element.endAt) {
+        store.default.commit('setCurrentSubtitle', element.text)
+      }
     })
-    store.default.commit('setCurrentSubtitle', '')
   }
   update (time) {
-    if (this.soundId) {
-      // console.log(this.currentSound.seek()) // ==>  on play return the current Time
-    }
     if (this.voiceOver.playing()) {
-      // console.log(this.voiceId.seek())
-      // console.log(this.voiceOver.seek())
-      // this.updateSubtitle()
-      // console.log(this.voiceOver.seek()) // ==>  on play return the current Time
+      this.updateSubtitle()
     } else {
-      // store.default.commit('setCurrentSubtitle', '')
+      store.default.commit('setCurrentSubtitle', '')
     }
     // is bigger than the next break point
     TWEEN.update(time)

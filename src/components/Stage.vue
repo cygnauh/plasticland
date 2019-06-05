@@ -124,10 +124,10 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
-    },
-    title (value) {
-      Vue.prototype.$engine.sound.updatePlaceSound(value)
-    }
+    } // ,
+    // title (value) {
+    //   Vue.prototype.$engine.sound.updatePlaceSound(value)
+    // }
   },
   methods: {
     initScene () {

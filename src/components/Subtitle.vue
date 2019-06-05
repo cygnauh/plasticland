@@ -15,9 +15,14 @@ export default {
 }
 </script>
 <style lang="scss">
+  @import '../assets/scss/index';
   .subtitle{
-    text-shadow: #FC0 1px 0 10px;
+    text-shadow: -1px -1px 0 rgba($dark_blue, 0.5),
+    1px -1px 0 rgba($dark_blue, 0.5),
+    -1px 1px 0 rgba($dark_blue, 0.5),
+    1px 1px 0 rgba($dark_blue, 0.5);
+    color: $light_grey;
     font-size: 20px;
-    font-family: Apercu, sans-serif;
+    font-family: AveriaLibre, sans-serif;
   }
 </style>

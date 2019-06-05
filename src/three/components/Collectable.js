@@ -13,8 +13,6 @@ export default class Collectable {
     this.collectableArray = []
     this.flatMaterial = new THREE.MeshBasicMaterial({
       color: (0x3b3c55)
-      // opacity: 0.2
-      // blending: THREE.AdditiveBlending
     })
     this.itemSelected = ''
     this.initCollectables()
