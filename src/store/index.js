@@ -1,5 +1,6 @@
 import config from '../data/inventory'
 import sounds from '../data/sounds'
+import subtitle from '../data/subtitle'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -10,12 +11,17 @@ export default new Vuex.Store({
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
+    subtitle: subtitle.voice,
     currentPlace: '',
-    currentSubtitle: '',
+    currentSubtitle: 'subtitle',
     sounds: sounds,
     radar: null
   },
   mutations: {
+    setCurrentSubtitle (state, ref) {
+      // console.log('ok')
+      state.currentSubtitle = ref
+    },
     setCurrentPlace (state, ref) {
       state.currentPlace = ref
     },
