@@ -86,6 +86,7 @@
       </div>
     </div>
     <router-view/>
+    <CinematicObject v-if="hasFoundObject"/>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -97,10 +98,11 @@ import Subtitle from './Subtitle'
 import Timer from './Timer/Timer'
 import Radar from './Radar/Radar'
 import InventoryList from './Inventory/InventoryList'
+import CinematicObject from './CinematicObject/CinematicObject'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer, Subtitle, Radar },
+  components: { CinematicObject, Loader, Timer, Subtitle, Radar },
   data () {
     return {
       data: '',
@@ -113,6 +115,10 @@ export default {
   computed: {
     title () {
       return this.$store.state.currentPlace.name
+    },
+    hasFoundObject () {
+      let active = this.objectFound - 1
+      if (active >= 0) return this.$store.state.objects[active].found
     }
   },
   mounted () {
