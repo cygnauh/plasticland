@@ -7,10 +7,9 @@
 <script>
 export default {
   name: 'Subtitle',
-  props: {
-    text: {
-      type: String,
-      default: ''
+  computed: {
+    text () {
+      return this.$store.state.currentSubtitle
     }
   }
 }

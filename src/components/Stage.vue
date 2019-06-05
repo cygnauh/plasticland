@@ -78,13 +78,12 @@
           </div>
         </router-link>
       </div>
+      <div class="subtitle-container">
+        <Subtitle/>
+      </div>
       <div class="right-side-content-bottom">
         <Radar v-if="$route.path === '/plasticland'"></Radar>
       </div>
-      <div class="subtitle-container">
-        <Subtitle text="subtitle is coming"/>
-      </div>
-
     </div>
     <router-view/>
     <canvas ref="canvas" id="canvas"></canvas>

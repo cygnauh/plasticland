@@ -14,7 +14,7 @@ export default class GltfLoaderRefactored {
     found = true,
     addToScene = true
   }) {
-    if (this.scene) this.scene = scene
+    if (addToScene) this.scene = scene
     this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
     let gltfChild = null
