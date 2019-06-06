@@ -72,12 +72,6 @@ export default class CameraSpline {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     }
-    store.default.state.sounds.place.forEach(element => {
-      if (this.percentageCamera.value > element.startAt &&
-        this.percentageCamera.value <= element.endAt) {
-        store.default.commit('setCurrentPlace', element)
-      }
-    })
   }
 
   tweenToScroll (speed) {

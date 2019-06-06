@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import Helpers from './components/Helpers'
 import CameraSpline from './components/CameraSpline'
 import { NoiseEffect, VignetteEffect, HueSaturationEffect, BrightnessContrastEffect, EffectComposer, EffectPass, RenderPass } from 'postprocessing'
+import * as store from "../store"
 
 export default class Engine {
   constructor (canvas) {
@@ -60,7 +61,7 @@ export default class Engine {
       canvas: this.canvas,
       antialias: false
     })
-    this.renderer.setPixelRatio(window.devicePixelRatio)
+    // this.renderer.setPixelRatio(window.devicePixelRatio) // TODO uncomment in prod, make retina
     this.renderer.setSize(window.innerWidth, window.innerHeight)
     this.renderer.setClearColor(0x1d2535, 1)
 
@@ -118,21 +119,6 @@ export default class Engine {
     window.addEventListener('mousemove', (e) => this.onMouseMove(e))
     window.addEventListener('wheel', (e) => this.handleWheel(e), { capture: true, passive: true })
     document.addEventListener('click', (e) => this.onClick(e), false)
-  }
-
-  handleWheel (e) {
-    // apply on the first wheel event triggered
-    if (!this.wheelStart) {
-      this.cameraSpline.moveCamera(e)
-    }
-    this.wheelStart = true
-    if (this.timer !== null) {
-      clearTimeout(this.timer)
-    }
-    // triggered when the wheel stops
-    this.timer = setTimeout(() => {
-      this.wheelStart = false
-    }, 100)
   }
 
   resize () {

@@ -14,17 +14,21 @@ export default new Vuex.Store({
     subtitle: subtitle.voice,
     currentPlace: '',
     currentSubtitle: 'subtitle',
+    splinePosition: 0,
     sounds: sounds,
     radar: null,
     displayCinematicObject: false,
     cinematicObjectContainer: ''
   },
   mutations: {
-    setCurrentSubtitle (state, ref) {
-      state.currentSubtitle = ref
+    setSplinePosition (state, pos) {
+      state.splinePosition = pos
     },
-    setCurrentPlace (state, ref) {
-      state.currentPlace = ref
+    setCurrentSubtitle (state, str) {
+      state.currentSubtitle = str
+    },
+    setCurrentPlace (state, str) {
+      state.currentPlace = str
     },
     setRadar (state, ref) {
       state.radar = ref
