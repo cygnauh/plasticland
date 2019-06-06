@@ -86,7 +86,7 @@
       </div>
     </div>
     <router-view/>
-    <CinematicObject v-if="displayCinematicObject"/>
+    <CinematicObject v-if="hasFoundObject"/>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -116,7 +116,10 @@ export default {
     title () {
       return this.$store.state.currentPlace.name
     },
-    displayCinematicObject () {
+    hasFoundObject () {
+      // let active = this.objectFound - 1
+      // if (active >= 0) return this.$store.state.objects[active].found
+      // return false
       return this.$store.state.displayCinematicObject
     }
   },

@@ -39,8 +39,8 @@ export default new Vuex.Store({
     setSelectedItemContainer (state, array) {
       state.selectItemContainer = array
     },
-    setCinematicObject (state) {
-      state.displayCinematicObject = true
+    setCinematicObject (state, bool) {
+      state.displayCinematicObject = bool
     },
     setContainerCinematicObject (state, ref) {
       state.cinematicObjectContainer = ref
