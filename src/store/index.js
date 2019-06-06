@@ -16,7 +16,8 @@ export default new Vuex.Store({
     currentSubtitle: 'subtitle',
     sounds: sounds,
     radar: null,
-    displayCinematicObject: false
+    displayCinematicObject: false,
+    cinematicObjectContainer: ''
   },
   mutations: {
     setCurrentSubtitle (state, ref) {
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     },
     setCinematicObject (state) {
       state.displayCinematicObject = true
+    },
+    setContainerCinematicObject (state, ref) {
+      state.cinematicObjectContainer = ref
     },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true

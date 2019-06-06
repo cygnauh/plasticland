@@ -16,14 +16,19 @@
     top: 39px;
     .close-btn {
       opacity: 1;
+      cursor: pointer;
       img{
         width: 45px;
         height: 45px;
       }
-      &:hover{
-        cursor: pointer;
-      }
     }
+  }
+
+  .cinematicObject-scene {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
   }
 
   .main {

@@ -1,12 +1,20 @@
 import * as store from '../../store/index'
 import GltfLoaderRefactored from './GltfLoaderRefactored'
+import { animateVector3 } from '../utils/Animation'
+import * as TWEEN from 'tween'
+import * as THREE from 'three/src/Three'
+import { rendenerSceneInfo } from '../utils/utilsScene'
 
 export default class ObjectsToCollect {
-  constructor (scene, manager, raycaster) {
+  constructor (scene, manager, raycaster, cameraSpline, renderer) {
     this.scene = scene
     this.manager = manager
     this.raycaster = raycaster
+    this.cameraSpline = cameraSpline
+    this.renderer = renderer
+
     this.array = []
+    this.found = false
 
     this.initCollectables()
   }
@@ -45,7 +53,9 @@ export default class ObjectsToCollect {
           case 'starbucks':
             store.default.commit('objectFound', 1)
             store.default.commit('setCinematicObject')
-            console.log(store.default.state.displayCinematicObject)
+            // console.log(intersect.object.position)
+            // this.moveItem(intersect.object.position)
+            this.renderSelectedCollectable(intersect.object.name)
             break
           case 'carrefour':
             store.default.commit('objectFound', 2)
@@ -66,7 +76,7 @@ export default class ObjectsToCollect {
           case 'final':
             store.default.commit('objectFound', 6)
             store.default.commit('setCinematicObject')
-              break
+            break
           default:
             break
         }
@@ -75,19 +85,45 @@ export default class ObjectsToCollect {
     }
   }
 
-  update (time) {
-    let y = this.calculateSurface(10, 10, time)
+  // moveItem (element) {
+  //   this.found = true
+  //   let spline = this.cameraSpline.spline
+  //   let percentageCamera = this.cameraSpline.percentageCamera.value + 0.0285
+  //   let target = spline.getPointAt(percentageCamera) // x,y,z
+  //   let newTarget = new THREE.Vector3(target.x - 5, target.y + 5, target.z)
+  //   animateVector3(element, newTarget, {
+  //     duration: 4000,
+  //     easing: TWEEN.Easing.Quadratic.InOut
+  //   })
+  // }
 
-    if (this.array.length > 0) {
-      this.array.forEach(collectable => {
-        collectable.then(response => {
-          response.meshes.forEach(mesh => {
-            mesh.position.y = y
-            mesh.rotation.y = Math.sin(time) / 3
-            mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
+  renderSelectedCollectable (itemSelected) {
+    let scene = store.default.state.objects.filter(element => element.name === itemSelected)
+    // scene.mesh.rotation.y += 0.01
+    this.renderScissor()
+    rendenerSceneInfo(scene, store.default.state.cinematicObjectContainer, this.renderer)
+  }
+
+  renderScissor () {
+    this.renderer.setScissorTest(false)
+    this.renderer.clear(true, true)
+    this.renderer.setScissorTest(true)
+  }
+
+  update (time) {
+    if (!this.found) {
+      let y = this.calculateSurface(10, 10, time)
+      if (this.array.length > 0) {
+        this.array.forEach(collectable => {
+          collectable.then(response => {
+            response.meshes.forEach(mesh => {
+              mesh.position.y = y
+              mesh.rotation.y = Math.sin(time) / 3
+              mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
+            })
           })
         })
-      })
+      }
     }
   }
 }

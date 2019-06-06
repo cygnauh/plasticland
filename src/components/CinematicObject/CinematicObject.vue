@@ -1,10 +1,12 @@
 <template id="cinematicObject">
     <div class="cinematicObject">
         <div class="head">
-            <div class="close-btn">
+            <div class="close-btn" @click="close">
                 <img :src="require('../../assets/img/close.png')" alt="close">
             </div>
         </div>
+
+        <div class="cinematicObject-scene" ref="cinematicObjectScene"></div>
         <div class="main">
             <div class="inventory-btn-count">
                 <span class="inventory-btn-obj-found">{{ objectFound }}</span>
@@ -28,6 +30,9 @@ export default {
       totalObject: this.$store.state.objects.length
     }
   },
+  mounted () {
+    this.$store.commit('setSelectedItemContainer', this.$refs.cinematicObjectScene)
+  },
   computed: {
     objectFound () {
       return this.$store.state.objects.filter(item => item.found).length
@@ -40,7 +45,12 @@ export default {
   },
   created () {
   },
-  methods: {}
+  methods: {
+    close () {
+      console.log('close', !this.$store.state.displayCinematicObject)
+      return !this.$store.state.displayCinematicObject
+    }
+  }
 }
 </script>
 
