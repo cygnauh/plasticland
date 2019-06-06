@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(circle at 0 0, rgba(192, 193, 212, 0.77), rgba(63, 64, 95, 0.83));
+  //background-image: radial-gradient(circle at 0 0, rgba(192, 193, 212, 0.77), rgba(63, 64, 95, 0.83));
 
   .head {
     position: absolute;
@@ -26,9 +26,10 @@
 
   .cinematicObject-scene {
     position: absolute;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    left: 31px;
+    width: 406px;
+    height: 500px;
+    border: solid 1px;
   }
 
   .main {

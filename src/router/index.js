@@ -5,6 +5,7 @@ import Introduction from '../components/Introduction'
 import Stage from '../components/Stage'
 import InventoryList from '../components/Inventory/InventoryList'
 import InventoryDetail from '../components/Inventory/InventoryDetail'
+import CinematicObject from '../components/CinematicObject/CinematicObject'
 import Credits from '../components/Credits'
 import About from '../components/About'
 
@@ -29,6 +30,10 @@ export default new Router({
         //     }
         //   ]
         // },
+        {
+          path: 'cinematic',
+          component: CinematicObject
+        },
         {
           path: 'inventory',
           component: InventoryList

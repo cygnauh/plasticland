@@ -86,6 +86,7 @@ export default {
   mounted () {
     this.isMounted = true
     this.$store.commit('setContainers', this.$refs)
+    Vue.prototype.$engine.collectable.itemSelected = ''
     Vue.prototype.$engine.collectable.openCollectable()
   },
   beforeDestroy () {

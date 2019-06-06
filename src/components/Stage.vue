@@ -86,7 +86,7 @@
       </div>
     </div>
     <router-view/>
-    <CinematicObject v-if="hasFoundObject"/>
+    <!--<CinematicObject v-if="hasFoundObject"/>-->
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -102,7 +102,7 @@ import CinematicObject from './CinematicObject/CinematicObject'
 
 export default {
   name: 'Stage',
-  components: { CinematicObject, Loader, Timer, Subtitle, Radar },
+  components: { Loader, Timer, Subtitle, Radar },
   data () {
     return {
       data: '',
@@ -132,10 +132,18 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
-    } // ,
+    },
     // title (value) {
     //   Vue.prototype.$engine.sound.updatePlaceSound(value)
     // }
+    hasFoundObject (value) {
+      if (value) {
+        this.$router.push({
+          path: `/plasticland/cinematic`,
+          component: CinematicObject
+        })
+      }
+    }
   },
   methods: {
     initScene () {
@@ -148,11 +156,12 @@ export default {
       Vue.prototype.$engine.handleRender(value)
     },
     goInventory () {
-      this.displayNotif = false
-      this.$router.push({
-        path: `/plasticland/inventory`,
-        component: InventoryList
-      })
+      console.log('test')
+      // this.displayNotif = false
+      // this.$router.push({
+      //   path: `/plasticland/inventory`,
+      //   component: InventoryList
+      // })
     },
     checkRoute (route) {
       switch (route) {
