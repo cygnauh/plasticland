@@ -86,7 +86,7 @@
       </div>
     </div>
     <router-view/>
-    <!--<CinematicObject v-if="hasFoundObject"/>-->
+    <CinematicObject v-if="hasFoundObject = false"/>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>

@@ -91,14 +91,13 @@ export default class Sound {
       })
       // create an object for the sound to play from
       var geometry = new THREE.BoxGeometry(50, 50, 50)
-      var material = new THREE.MeshBasicMaterial({ color: 0xff2200, opacity: 0 })
+      var material = new THREE.MeshBasicMaterial({ color: 0xff2200 })
       var mesh = new THREE.Mesh(geometry, material)
       mesh.position.x = element.x + 60
       mesh.position.z = element.z - 20
       mesh.visible = false
       // mesh.position.y = element.y - 20
       this.scene.add(mesh)
-      console.log(mesh.position)
       // finally add the sound to the mesh
       mesh.add(sound)
     })
