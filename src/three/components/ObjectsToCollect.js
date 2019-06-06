@@ -44,28 +44,28 @@ export default class ObjectsToCollect {
         switch (intersect.object.name) {
           case 'starbucks':
             store.default.commit('objectFound', 1)
-            store.default.commit('setCinematicObject')
+            store.default.commit('setCinematicObject', true)
             console.log(store.default.state.displayCinematicObject)
             break
           case 'carrefour':
             store.default.commit('objectFound', 2)
-            store.default.commit('setCinematicObject')
+            store.default.commit('setCinematicObject', true)
             break
           case 'cocacola':
             store.default.commit('objectFound', 3)
-            store.default.commit('setCinematicObject')
+            store.default.commit('setCinematicObject', true)
             break
           case 'gestespropres':
             store.default.commit('objectFound', 4)
-            store.default.commit('setCinematicObject')
+            store.default.commit('setCinematicObject', true)
             break
           case 'nestle':
             store.default.commit('objectFound', 5)
-            store.default.commit('setCinematicObject')
+            store.default.commit('setCinematicObject', true)
             break
           case 'final':
             store.default.commit('objectFound', 6)
-            store.default.commit('setCinematicObject')
+            store.default.commit('setCinematicObject', true)
               break
           default:
             break

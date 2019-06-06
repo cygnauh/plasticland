@@ -1,7 +1,7 @@
 <template id="cinematicObject">
     <div class="cinematicObject">
         <div class="head">
-            <div class="close-btn">
+            <div class="close-btn" @click="closeCinematic">
                 <img :src="require('../../assets/img/close.png')" alt="close">
             </div>
         </div>
@@ -40,7 +40,11 @@ export default {
   },
   created () {
   },
-  methods: {}
+  methods: {
+    closeCinematic () {
+      this.$store.commit('setCinematicObject', false)
+    }
+  }
 }
 </script>
 

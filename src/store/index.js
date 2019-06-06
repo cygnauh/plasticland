@@ -38,8 +38,8 @@ export default new Vuex.Store({
     setSelectedItemContainer (state, array) {
       state.selectItemContainer = array
     },
-    setCinematicObject (state) {
-      state.displayCinematicObject = true
+    setCinematicObject (state, bool) {
+      state.displayCinematicObject = bool
     },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true
