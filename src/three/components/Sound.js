@@ -5,15 +5,17 @@ import { Howl } from 'howler'
 
 export default class Sound {
   constructor (scene, camera) {
-    // this.scene = scene
+    this.scene = scene
     this.camera = camera
     this.initSound()
     this.initAmbiantSound()
     this.initPlaceSound()
     this.initVoiceOver()
+    this.initSpatialSound()
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
+    this.spatialSounds = []
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         // this.ambiantSound.play()
@@ -73,6 +75,38 @@ export default class Sound {
       volume: 1 // fade to 1 when it plays
     })
   }
+  
+  initSpatialSound () {
+  // create the PositionalAudio object (passing in the listener)
+    store.default.state.objects.forEach(element => {
+      var sound = new THREE.PositionalAudio(this.listener)
+      console.log(element.soundSrc)
+      // load a sound and set it as the PositionalAudio object's buffer
+      var audioLoader = new THREE.AudioLoader()
+      audioLoader.load(element.soundSrc, (buffer) => {
+        sound.setBuffer(buffer)
+        sound.setRefDistance(1)
+        sound.play()
+        this.spatialSounds.push(sound)
+      })
+      // create an object for the sound to play from
+      var sphere = new THREE.SphereGeometry(20, 32, 16)
+      var material = new THREE.MeshBasicMaterial({ color: 0xff2200, opacity: 0 })
+      var mesh = new THREE.Mesh(sphere, material)
+      mesh.position.x = element.x + 10
+      mesh.position.z = element.z - 20
+      this.scene.add(mesh)
+      console.log(mesh.position)
+      // finally add the sound to the mesh
+      mesh.add(sound)
+    })
+  }
+  
+  playSpatialSounds () {
+    this.spatialSounds.forEach(element => {
+      element.play()
+    })
+  }
 
   updatePlaceSound (value) {
     if (this.soundId) {
@@ -81,7 +115,7 @@ export default class Sound {
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
       // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      this.voiceOver.play(this.currentSound.name)
+      // this.voiceOver.play(this.currentSound.name)
       // this.currentSound.fade(0, 0.3, 3000, this.soundId) // TODO uncomment when voiceOver task's done
     }
   }

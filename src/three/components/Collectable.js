@@ -52,7 +52,7 @@ export default class Collectable {
   changeMaterial (name) {
     let obj = this.collectableArray.filter(element => element.mesh.name === name)[0]
     let objMesh = obj.scene.children[1]
-    if (objMesh.material.type !== 'MeshPhongMaterial') {
+    if (objMesh.material.type !== 'MeshBasicMaterial') {
       objMesh.material = this.flatMaterial
     } else {
       objMesh.material = obj.materials.material

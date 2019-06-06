@@ -112,6 +112,7 @@ export default class App extends Engine {
     // onClickRaycaster(arrayMesh[0].children, this.raycaster)
     this.objectsToCollect.onClick()
     if (this.collectable) this.collectable.changeMaterial('cocacola')
+    this.sound.playSpatialSounds()
   }
 
   animate () {
