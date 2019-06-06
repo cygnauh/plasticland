@@ -14,6 +14,7 @@ export default new Vuex.Store({
     subtitle: subtitle.voice,
     currentPlace: '',
     currentSubtitle: 'subtitle',
+    currentFoundObjectName: '',
     splinePosition: 0,
     sounds: sounds,
     radar: null,
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     cinematicObjectContainer: null
   },
   mutations: {
+    setFoundObjectName (state, str) {
+      state.currentFoundObjectName = str
+    },
     setSplinePosition (state, pos) {
       state.splinePosition = pos
     },
@@ -38,13 +42,15 @@ export default new Vuex.Store({
     },
     setSelectedItemContainer (state, array) {
       state.selectItemContainer = array
+      console.log(array)
     },
     setCinematicObject (state, bool) {
       state.displayCinematicObject = bool
     },
-    setContainerCinematicObject (state, ref) {
-      state.cinematicObjectContainer = ref
-    },
+    // setContainerCinematicObject (state, ref) {
+    //   console.log()
+    //   state.cinematicObjectContainer = ref
+    // },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true
     }

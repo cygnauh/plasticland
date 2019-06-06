@@ -80,7 +80,6 @@ export default class Sound {
   // create the PositionalAudio object (passing in the listener)
     store.default.state.objects.forEach(element => {
       var sound = new THREE.PositionalAudio(this.listener)
-      console.log(element.soundSrc)
       // load a sound and set it as the PositionalAudio object's buffer
       var audioLoader = new THREE.AudioLoader()
       audioLoader.load(element.soundSrc, (buffer) => {

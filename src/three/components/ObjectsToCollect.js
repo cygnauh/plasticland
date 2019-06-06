@@ -47,15 +47,14 @@ export default class ObjectsToCollect {
     if (this.array.length > 0) {
       let intersects = this.raycaster.intersectObjects(this.scene.children)
       intersects.forEach((intersect) => {
-        // console.log(intersect)
         // if (intersect.object.type === 'mesh') {
         switch (intersect.object.name) {
           case 'starbucks':
             store.default.commit('objectFound', 1)
             // this.moveItem(intersect.object.position)
             store.default.commit('setCinematicObject', true)
-            this.renderSelectedCollectable(intersect.object.name)
-            console.log(store.default.state.displayCinematicObject)
+            // this.renderSelectedCollectable(intersect.object.name)
+            // console.log(store.default.state.displayCinematicObject)
             break
           case 'carrefour':
             store.default.commit('objectFound', 2)
@@ -80,6 +79,9 @@ export default class ObjectsToCollect {
           default:
             break
         }
+        if (intersect.object.name) {
+          store.default.commit('setFoundObjectName', intersect.object.name)
+        }
         // }
       })
     }
@@ -97,18 +99,19 @@ export default class ObjectsToCollect {
   //   })
   // }
 
-  renderSelectedCollectable (itemSelected) {
-    let scene = store.default.state.objects.filter(element => element.name === itemSelected)
+  // renderSelectedCollectable (itemSelected) {
+    // let scene = store.default.state.objects.filter(element => element.name === itemSelected)
     // scene.mesh.rotation.y += 0.01
-    this.renderScissor()
-    rendenerSceneInfo(scene, store.default.state.cinematicObjectContainer, this.renderer)
-  }
+    // this.renderScissor()
+    // console.log(store.default.state.cinematicObjectContainer)
+    // rendenerSceneInfo(scene, store.default.state.cinematicObjectContainer, this.renderer)
+  // }
 
-  renderScissor () {
-    this.renderer.setScissorTest(false)
-    this.renderer.clear(true, true)
-    this.renderer.setScissorTest(true)
-  }
+  // renderScissor () {
+  //   this.renderer.setScissorTest(false)
+  //   this.renderer.clear(true, true)
+  //   this.renderer.setScissorTest(true)
+  // }
 
   update (time) {
     if (!this.found) {

@@ -86,7 +86,7 @@ export default class App extends Engine {
     // apply on the first wheel event triggered
     if (!this.wheelStart) {
       this.cameraSpline.moveCamera(e)
-      console.log(this.cameraSpline.percentageCamera)
+      // console.log(this.cameraSpline.percentageCamera)
       store.default.state.sounds.place.forEach(element => {
         if (this.cameraSpline.percentageCamera.value > element.startAt &&
           this.cameraSpline.percentageCamera.value <= element.endAt &&

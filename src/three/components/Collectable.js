@@ -45,6 +45,13 @@ export default class Collectable {
   renderSelectedCollectable () {
     let scene = this.collectableArray.filter(element => element.name === this.itemSelected)
     scene[0].mesh.rotation.y += 0.01
+    if (scene && scene[0].mesh.position.x !== 0.1) {
+      scene[0].mesh.position.x = 0
+      scene[0].mesh.position.z = 0
+      scene[0].mesh.scale.x = 1
+      scene[0].mesh.scale.y = 1
+      scene[0].mesh.scale.z = 1
+    }
     this.renderScissor()
     rendenerSceneInfo(scene[0], store.default.state.selectItemContainer, this.renderer)
   }
