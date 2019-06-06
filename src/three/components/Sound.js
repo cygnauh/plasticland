@@ -86,15 +86,16 @@ export default class Sound {
       audioLoader.load(element.soundSrc, (buffer) => {
         sound.setBuffer(buffer)
         sound.setRefDistance(1)
-        sound.play()
+        // sound.play()
         this.spatialSounds.push(sound)
       })
       // create an object for the sound to play from
-      var sphere = new THREE.SphereGeometry(20, 32, 16)
+      var geometry = new THREE.BoxGeometry(50, 50, 50)
       var material = new THREE.MeshBasicMaterial({ color: 0xff2200, opacity: 0 })
-      var mesh = new THREE.Mesh(sphere, material)
-      mesh.position.x = element.x + 10
+      var mesh = new THREE.Mesh(geometry, material)
+      mesh.position.x = element.x + 60
       mesh.position.z = element.z - 20
+      // mesh.position.y = element.y - 20
       this.scene.add(mesh)
       console.log(mesh.position)
       // finally add the sound to the mesh
