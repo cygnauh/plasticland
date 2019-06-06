@@ -54,6 +54,7 @@ export default class ObjectsToCollect {
             store.default.commit('objectFound', 1)
             // this.moveItem(intersect.object.position)
             store.default.commit('setCinematicObject', true)
+            this.renderSelectedCollectable(intersect.object.name)
             console.log(store.default.state.displayCinematicObject)
             break
           case 'carrefour':
@@ -75,7 +76,7 @@ export default class ObjectsToCollect {
           case 'final':
             store.default.commit('objectFound', 6)
             store.default.commit('setCinematicObject', true)
-              break
+            break
           default:
             break
         }

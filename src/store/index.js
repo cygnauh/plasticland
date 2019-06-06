@@ -18,7 +18,7 @@ export default new Vuex.Store({
     sounds: sounds,
     radar: null,
     displayCinematicObject: false,
-    cinematicObjectContainer: ''
+    cinematicObjectContainer: null
   },
   mutations: {
     setSplinePosition (state, pos) {
