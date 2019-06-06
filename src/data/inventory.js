@@ -11,7 +11,7 @@ export default
       'model': './models/starbucks_cup.glb',
       'soundSrc': './sounds/test1.mp3',
       'found': false,
-      'position': 0.2278,
+      'position': 0.2178,
       'description': 'La plupart des gobelets à boissons recouverts de carton sont difficilement recyclables du fait d\'une fine couche de plastique qui borde la face interne. C\'est le cas pour cette célèbre marque de café qui a reconnu les faits en 2008. Pour se racheter, elle a organisé un grand concours pour rede­si­gner ses gobelets et enfin respecter comme il se doit l’en­vi­ron­n­ement. Après cinq années de compétition, elle a pris la décision d’an­nu­ler le concours et de continuer à utiliser ses gobelets polluants, en attendant que les techniques de recyclage s’adaptent à ses gobelets. Aux dernières nouvelles, la situation reste inchangée et chaque année dans le monde, quatre milliards de gobelets non-recyclables atterrissent dans l\'environnement.'
     },
     {

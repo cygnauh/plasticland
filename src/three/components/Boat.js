@@ -80,7 +80,7 @@ export default class Boat {
 
         // spline of camera
         let spline = cameraSpline.spline
-        let percentageBoat = cameraSpline.percentageCamera.value + 0.0035
+        let percentageBoat = cameraSpline.percentageCamera.value + 0.0025
         let p1 = spline.getPointAt(percentageBoat) // x,y,z
 
         // position
