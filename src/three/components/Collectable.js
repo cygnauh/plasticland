@@ -13,8 +13,6 @@ export default class Collectable {
     this.collectableArray = []
     this.flatMaterial = new THREE.MeshBasicMaterial({
       color: (0x3b3c55)
-      // opacity: 0.2
-      // blending: THREE.AdditiveBlending
     })
     this.itemSelected = ''
     this.initCollectables()
@@ -51,10 +49,10 @@ export default class Collectable {
     rendenerSceneInfo(scene[0], store.default.state.selectItemContainer, this.renderer)
   }
 
-  changeMaterial (name) {
+  changeMaterial (name, bool) {
     let obj = this.collectableArray.filter(element => element.mesh.name === name)[0]
     let objMesh = obj.scene.children[1]
-    if (objMesh.material.type !== 'MeshPhongMaterial') {
+    if (objMesh.material.type !== 'MeshBasicMaterial' && !bool) {
       objMesh.material = this.flatMaterial
     } else {
       objMesh.material = obj.materials.material

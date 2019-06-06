@@ -86,7 +86,7 @@
       </div>
     </div>
     <router-view/>
-    <CinematicObject v-if="hasFoundObject"/>
+    <!--<CinematicObject v-if="hasFoundObject"/>-->
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -130,10 +130,10 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
-    },
-    title (value) {
-      Vue.prototype.$engine.sound.updatePlaceSound(value)
-    }
+    } // ,
+    // title (value) {
+    //   Vue.prototype.$engine.sound.updatePlaceSound(value)
+    // }
   },
   methods: {
     initScene () {

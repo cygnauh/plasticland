@@ -81,12 +81,42 @@ export default class App extends Engine {
       this.currentRender = 'detail' // TODO handle the other case ( about page )
     }
   }
+  
+  handleWheel (e) {
+    // apply on the first wheel event triggered
+    if (!this.wheelStart) {
+      this.cameraSpline.moveCamera(e)
+      console.log(this.cameraSpline.percentageCamera)
+      store.default.state.sounds.place.forEach(element => {
+        if (this.cameraSpline.percentageCamera.value > element.startAt &&
+          this.cameraSpline.percentageCamera.value <= element.endAt &&
+          store.default.state.currentPlace.name !== element.name
+        ) {
+          store.default.commit('setCurrentPlace', element)
+          this.sound.updatePlaceSound(element.name)
+        }
+      })
+    }
+    this.wheelStart = true
+    if (this.timer !== null) {
+      clearTimeout(this.timer)
+    }
+    // triggered when the wheel stops
+    this.timer = setTimeout(() => {
+      this.wheelStart = false
+    }, 100)
+  }
 
   onClick () {
     // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
     // onClickRaycaster(arrayMesh[0].children, this.raycaster)
     this.objectsToCollect.onClick()
-    if (this.collectable) this.collectable.changeMaterial('cocacola')
+    store.default.state.objects.forEach(element => {
+      if (element.found) {
+        this.collectable.changeMaterial(element.name, true)
+      }
+    })
+    // this.sound.playSpatialSounds()
   }
 
   animate () {

@@ -5,15 +5,17 @@ import { Howl } from 'howler'
 
 export default class Sound {
   constructor (scene, camera) {
-    // this.scene = scene
+    this.scene = scene
     this.camera = camera
     this.initSound()
     this.initAmbiantSound()
     this.initPlaceSound()
     this.initVoiceOver()
+    this.initSpatialSound()
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
+    this.spatialSounds = []
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         // this.ambiantSound.play()
@@ -59,9 +61,9 @@ export default class Sound {
       src: [src],
       sprite: {
         yes: [1000, 1000],
-        remember: [3000, 5000],
-        traveling: [9000, 6000], // maybe mixed both
-        time: [16000, 6000], // maybe mixed both
+        intro1: [3000, 5000],
+        intro2: [9000, 6000], // maybe mixed both
+        intro2bis: [16000, 8000], // maybe mixed both
         starbucks: [26000, 9000],
         carrefour: [36000, 11000],
         cocacola: [49000, 9000],
@@ -72,9 +74,39 @@ export default class Sound {
       },
       volume: 1 // fade to 1 when it plays
     })
-    this.voiceOver.once('load', () => {
-      // this.voiceOver.play()
-      console.log('load')
+  }
+  
+  initSpatialSound () {
+  // create the PositionalAudio object (passing in the listener)
+    store.default.state.objects.forEach(element => {
+      var sound = new THREE.PositionalAudio(this.listener)
+      console.log(element.soundSrc)
+      // load a sound and set it as the PositionalAudio object's buffer
+      var audioLoader = new THREE.AudioLoader()
+      audioLoader.load(element.soundSrc, (buffer) => {
+        sound.setBuffer(buffer)
+        sound.setRefDistance(1)
+        // sound.play()
+        this.spatialSounds.push(sound)
+      })
+      // create an object for the sound to play from
+      var geometry = new THREE.BoxGeometry(50, 50, 50)
+      var material = new THREE.MeshBasicMaterial({ color: 0xff2200, opacity: 0 })
+      var mesh = new THREE.Mesh(geometry, material)
+      mesh.position.x = element.x + 60
+      mesh.position.z = element.z - 20
+      mesh.visible = false
+      // mesh.position.y = element.y - 20
+      this.scene.add(mesh)
+      console.log(mesh.position)
+      // finally add the sound to the mesh
+      mesh.add(sound)
+    })
+  }
+  
+  playSpatialSounds () {
+    this.spatialSounds.forEach(element => {
+      element.play()
     })
   }
 
@@ -85,30 +117,23 @@ export default class Sound {
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
       // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      this.voiceId = this.voiceOver.play(this.currentSound.name)
-      console.log(this.voiceId)
-      console.log(this.currentSound.name)
-      console.log(this.voiceOver._onplay)
+      this.voiceOver.play(this.currentSound.name)
       // this.currentSound.fade(0, 0.3, 3000, this.soundId) // TODO uncomment when voiceOver task's done
     }
   }
   updateSubtitle () {
     store.default.state.subtitle.forEach(element => {
-      // if ()
+      if (this.voiceOver.seek() > element.startAt &&
+        this.voiceOver.seek() <= element.endAt) {
+        store.default.commit('setCurrentSubtitle', element.text)
+      }
     })
-    store.default.commit('setCurrentSubtitle', '')
   }
   update (time) {
-    if (this.soundId) {
-      // console.log(this.currentSound.seek()) // ==>  on play return the current Time
-    }
     if (this.voiceOver.playing()) {
-      // console.log(this.voiceId.seek())
-      // console.log(this.voiceOver.seek())
-      // this.updateSubtitle()
-      // console.log(this.voiceOver.seek()) // ==>  on play return the current Time
+      this.updateSubtitle()
     } else {
-      // store.default.commit('setCurrentSubtitle', '')
+      store.default.commit('setCurrentSubtitle', '')
     }
     // is bigger than the next break point
     TWEEN.update(time)
