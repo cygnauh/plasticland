@@ -51,7 +51,7 @@ export default class ObjectsToCollect {
         switch (intersect.object.name) {
           case 'starbucks':
             store.default.commit('objectFound', 1)
-            // this.moveItem(intersect.object.position)
+            this.moveItem(intersect.object.position)
             store.default.commit('setCinematicObject', true)
             // this.renderSelectedCollectable(intersect.object.name)
             // console.log(store.default.state.displayCinematicObject)
@@ -87,31 +87,18 @@ export default class ObjectsToCollect {
     }
   }
 
-  // moveItem (element) {
-  //   this.found = true
-  //   let spline = this.cameraSpline.spline
-  //   let percentageCamera = this.cameraSpline.percentageCamera.value + 0.0285
-  //   let target = spline.getPointAt(percentageCamera) // x,y,z
-  //   let newTarget = new THREE.Vector3(target.x - 5, target.y + 5, target.z)
-  //   animateVector3(element, newTarget, {
-  //     duration: 4000,
-  //     easing: TWEEN.Easing.Quadratic.InOut
-  //   })
-  // }
-
-  // renderSelectedCollectable (itemSelected) {
-    // let scene = store.default.state.objects.filter(element => element.name === itemSelected)
-    // scene.mesh.rotation.y += 0.01
-    // this.renderScissor()
-    // console.log(store.default.state.cinematicObjectContainer)
-    // rendenerSceneInfo(scene, store.default.state.cinematicObjectContainer, this.renderer)
-  // }
-
-  // renderScissor () {
-  //   this.renderer.setScissorTest(false)
-  //   this.renderer.clear(true, true)
-  //   this.renderer.setScissorTest(true)
-  // }
+  moveItem (element) {
+    this.found = true
+    // let spline = this.cameraSpline.spline
+    // let percentageCamera = this.cameraSpline.percentageCamera.value + 0.0285
+    // let target = spline.getPointAt(percentageCamera) // x,y,z
+    // let newTarget = new THREE.Vector3(target.x - 5, target.y + 5, target.z)
+    let target = new THREE.Vector3(element.x, element.y + 25, element.z)
+    animateVector3(element, target, {
+      duration: 1000,
+      easing: TWEEN.Easing.Quadratic.InOut
+    })
+  }
 
   update (time) {
     if (!this.found) {
@@ -123,6 +110,17 @@ export default class ObjectsToCollect {
               mesh.position.y = y
               mesh.rotation.y = Math.sin(time) / 3
               mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
+            })
+          })
+        })
+      }
+    } else {
+      if (this.array.length > 0) {
+        this.array.forEach(collectable => {
+          collectable.then(response => {
+            response.meshes.forEach(mesh => {
+              mesh.rotation.y = Math.sin(time) / 3
+              mesh.position.y = mesh.position.y + Math.sin(time) / 10
             })
           })
         })

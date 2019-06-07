@@ -61,7 +61,7 @@ export default class Engine {
       canvas: this.canvas,
       antialias: false
     })
-    // this.renderer.setPixelRatio(window.devicePixelRatio) // TODO uncomment in prod, make retina
+    this.renderer.setPixelRatio(window.devicePixelRatio) // TODO uncomment in prod, make retina
     this.renderer.setSize(window.innerWidth, window.innerHeight)
     this.renderer.setClearColor(0x1d2535, 1)
 

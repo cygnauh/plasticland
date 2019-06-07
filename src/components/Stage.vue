@@ -56,6 +56,10 @@
       </div>
     </div>
     <div v-if="!displayIntro" class="Stage-border-bottom">
+      <Didactiel
+        title="scroller pour explorer PLASTICLAND"
+        logo="require('../../assets/img/svg/didacticiel-scroll.svg')"
+      />
       <div class="left-side-content-bottom">
         <router-link
           v-if="$route.path === '/plasticland'"
@@ -98,20 +102,21 @@ import Loader from './Loader/Loader'
 import Subtitle from './Subtitle'
 import Timer from './Timer/Timer'
 import Radar from './Radar/Radar'
+import Didactiel from './didacticiel/Didactiel'
 import InventoryList from './Inventory/InventoryList'
 import CinematicObject from './CinematicObject/CinematicObject'
 import Intro from './Introduction'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer, Subtitle, Radar, Intro },
+  components: { CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro },
   data () {
     return {
       data: '',
       objectFound: this.$store.state.objects.filter(item => item.found).length,
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
-	  displayNotif: false
+	  displayNotif: false,
     }
   },
   computed: {

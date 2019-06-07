@@ -1,6 +1,7 @@
 import config from '../data/inventory'
 import sounds from '../data/sounds'
 import subtitle from '../data/subtitle'
+import didacticiels from '../data/didacticiels'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -19,6 +20,7 @@ export default new Vuex.Store({
     currentFoundObjectName: '',
     splinePosition: 0,
     sounds: sounds,
+    didacticiels: didacticiels,
     radar: null,
     displayCinematicObject: false,
     cinematicObjectContainer: null

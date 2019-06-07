@@ -29,7 +29,7 @@ export default class App extends Engine {
   initGeometry () {
     this.environment = new Environment(this.scene, this.renderer, this.light) // water and sky
     this.mountain = new GltfLoader('montagne', './models/environnement.glb', this.scene, this.manager, { addToScene: false }) // mountains
-    this.instances = new Instances(this.scene, this.manager, './models/instance_montange_null_01.glb') // instances on mountains
+    this.instances = new Instances(this.scene, this.manager, './models/instances_01.glb') // instances on mountains
     this.boat = new Boat(this.scene, this.manager, this.camera) // boat
     this.objectsToCollect = new ObjectsToCollect(this.scene, this.manager, this.raycaster, this.cameraSpline, this.renderer) // objects to collect
   }
