@@ -53,22 +53,22 @@ export default class CameraSpline {
       mid: 0.05,
       fast: 0.15
     }
-    if (this.percentageCamera.value <= store.default.state.objects[0].position) {
+    if (this.percentageCamera.value + speed.slow <= store.default.state.objects[0].position) {
       this.tweenToScroll(speed.slow)
       this.moveRadar()
-    } else if (store.default.state.objects[0].found && this.percentageCamera.value <= store.default.state.objects[1].position) {
+    } else if (store.default.state.objects[0].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[1].position) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
-    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && this.percentageCamera.value <= store.default.state.objects[2].position) {
+    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[2].position) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
-    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && this.percentageCamera.value <= store.default.state.objects[3].position) {
+    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[3].position) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
-    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && this.percentageCamera.value <= store.default.state.objects[4].position) {
+    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[4].position) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
-    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && store.default.state.objects[4].found && this.percentageCamera.value <= store.default.state.objects[5].position) {
+    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && store.default.state.objects[4].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[5].position) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     }
