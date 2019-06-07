@@ -3,15 +3,12 @@ import GltfLoaderRefactored from './GltfLoaderRefactored'
 import { animateVector3 } from '../utils/Animation'
 import * as TWEEN from 'tween'
 import * as THREE from 'three/src/Three'
-import { rendenerSceneInfo } from '../utils/utilsScene'
 
 export default class ObjectsToCollect {
-  constructor (scene, manager, raycaster, cameraSpline, renderer) {
+  constructor (scene, manager, raycaster) {
     this.scene = scene
     this.manager = manager
     this.raycaster = raycaster
-    this.cameraSpline = cameraSpline
-    this.renderer = renderer
 
     this.array = []
     this.found = false
@@ -89,10 +86,6 @@ export default class ObjectsToCollect {
 
   moveItem (element) {
     this.found = true
-    // let spline = this.cameraSpline.spline
-    // let percentageCamera = this.cameraSpline.percentageCamera.value + 0.0285
-    // let target = spline.getPointAt(percentageCamera) // x,y,z
-    // let newTarget = new THREE.Vector3(target.x - 5, target.y + 5, target.z)
     let target = new THREE.Vector3(element.x, element.y + 25, element.z)
     animateVector3(element, target, {
       duration: 1000,
@@ -101,30 +94,22 @@ export default class ObjectsToCollect {
   }
 
   update (time) {
-    if (!this.found) {
-      let y = this.calculateSurface(10, 10, time)
-      if (this.array.length > 0) {
-        this.array.forEach(collectable => {
-          collectable.then(response => {
-            response.meshes.forEach(mesh => {
+    let y = this.calculateSurface(10, 10, time)
+    if (this.array.length > 0) {
+      this.array.forEach(collectable => {
+        collectable.then(response => {
+          response.meshes.forEach(mesh => {
+            if (!this.found) {
               mesh.position.y = y
               mesh.rotation.y = Math.sin(time) / 3
               mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
-            })
-          })
-        })
-      }
-    } else {
-      if (this.array.length > 0) {
-        this.array.forEach(collectable => {
-          collectable.then(response => {
-            response.meshes.forEach(mesh => {
+            } else {
               mesh.rotation.y = Math.sin(time) / 3
               mesh.position.y = mesh.position.y + Math.sin(time) / 10
-            })
+            }
           })
         })
-      }
+      })
     }
   }
 }

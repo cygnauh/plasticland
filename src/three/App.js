@@ -31,7 +31,7 @@ export default class App extends Engine {
     this.mountain = new GltfLoader('montagne', './models_converted/environnement.glb', this.scene, this.manager, { addToScene: false }) // mountains
     this.instances = new Instances(this.scene, this.manager, './models_converted/instances_01.glb') // instances on mountains
     this.boat = new Boat(this.scene, this.manager, this.camera) // boat
-    this.objectsToCollect = new ObjectsToCollect(this.scene, this.manager, this.raycaster, this.cameraSpline, this.renderer) // objects to collect
+    this.objectsToCollect = new ObjectsToCollect(this.scene, this.manager, this.raycaster) // objects to collect
   }
 
   initGroup () {
