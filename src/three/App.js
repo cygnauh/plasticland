@@ -77,6 +77,9 @@ export default class App extends Engine {
       this.currentRender = 'scene'
       this.scene.add(this.groupPlasticLand)
       this.scene.add(this.cameraSpline.splineLine)
+    } else if (value === 'cinematic') {
+      this.currentRender = 'cinematic'
+      this.collectable.itemSelected = store.default.state.currentFoundObjectName
     } else {
       this.currentRender = 'detail' // TODO handle the other case ( about page )
     }
@@ -145,7 +148,7 @@ export default class App extends Engine {
       this.renderer.setScissor(0, 0, this.width, this.height)
       this.renderer.setViewport(0, 0, this.width, this.height)
     } else {
-      this.collectable.renderSelectedCollectable()
+      this.collectable.renderSelectedCollectable(this.currentRender)
     }
 
     // stop rendering the main scene when inventory open

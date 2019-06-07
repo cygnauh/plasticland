@@ -20,7 +20,7 @@
       </router-link>
       <router-link
         to="/plasticland/inventory"
-        v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory'"
+        v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' && $route.path !== '/plasticland/cinematic'"
         class="close-link">
         <div
           :class="[$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' ? 'show' : '']"

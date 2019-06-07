@@ -43,6 +43,7 @@ export default {
   },
   mounted () {
     this.$store.commit('setSelectedItemContainer', this.$refs.cinematicObjectScene)
+    Vue.prototype.$engine.handleRender('cinematic')
   },
   beforeDestroy () {
     this.$store.commit('setFoundObjectName', '')
@@ -58,7 +59,6 @@ export default {
       })
     },
     objectOpen () {
-      console.log(this.objects[this.objectFound - 1])
       return this.objects[this.objectFound - 1]
     }
   },

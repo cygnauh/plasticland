@@ -42,9 +42,9 @@ export default class Collectable {
     })
   }
 
-  renderSelectedCollectable () {
+  renderSelectedCollectable (mode) {
     let scene = this.collectableArray.filter(element => element.name === this.itemSelected)
-    scene[0].mesh.rotation.y += 0.01
+    if (mode === 'detail') scene[0].mesh.rotation.y += 0.01
     if (scene && scene[0].mesh.position.x !== 0.1) {
       scene[0].mesh.position.x = 0
       scene[0].mesh.position.z = 0
