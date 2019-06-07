@@ -101,6 +101,7 @@ export default class Engine {
     }
     this.manager.onLoad = () => {
       // console.log('Loading complete!')
+      store.default.commit('isLoad')
       loadingScreen.classList.add('fade-out')
       loadingScreen.addEventListener('transitionend', function (e) {
         e.target.remove()

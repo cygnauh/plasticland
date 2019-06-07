@@ -20,7 +20,7 @@
       </router-link>
       <router-link
         to="/plasticland/inventory"
-        v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory'"
+        v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' && $route.path !== '/plasticland/cinematic'"
         class="close-link">
         <div
           :class="[$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' ? 'show' : '']"
@@ -31,7 +31,7 @@
             alt="Vue logo">
         </div>
       </router-link>
-      <div class="right-side-content-top">
+      <div v-if="!displayIntro" class="right-side-content-top">
         <div
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
           class="menu">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="Stage-border-bottom">
+    <div v-if="!displayIntro" class="Stage-border-bottom">
       <Didactiel
         title="scroller pour explorer PLASTICLAND"
         logo="require('../../assets/img/svg/didacticiel-scroll.svg')"
@@ -90,7 +90,8 @@
       </div>
     </div>
     <router-view/>
-    <CinematicObject v-if="hasFoundObject"/>
+    <!--<CinematicObject v-if="hasFoundObject"/>-->
+    <Intro v-if="displayIntro"></Intro>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -104,10 +105,11 @@ import Radar from './Radar/Radar'
 import Didactiel from './didacticiel/Didactiel'
 import InventoryList from './Inventory/InventoryList'
 import CinematicObject from './CinematicObject/CinematicObject'
+import Intro from './Introduction'
 
 export default {
   name: 'Stage',
-  components: { CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel },
+  components: { CinematicObject, Loader, Timer, Subtitle, Radar },
   data () {
     return {
       data: '',
@@ -123,6 +125,9 @@ export default {
     },
     hasFoundObject () {
       return this.$store.state.displayCinematicObject
+    },
+    displayIntro () {
+      return this.$store.state.displayIntro
     }
   },
   mounted () {
@@ -134,10 +139,18 @@ export default {
   watch: {
     $route (to) {
       this.checkRoute(to.path)
-    } // ,
+    },
     // title (value) {
     //   Vue.prototype.$engine.sound.updatePlaceSound(value)
     // }
+    hasFoundObject (value) {
+      if (value) {
+        this.$router.push({
+          path: `/plasticland/cinematic`,
+          component: CinematicObject
+        })
+      }
+    }
   },
   methods: {
     initScene () {
@@ -150,11 +163,12 @@ export default {
       Vue.prototype.$engine.handleRender(value)
     },
     goInventory () {
-      this.displayNotif = false
-      this.$router.push({
-        path: `/plasticland/inventory`,
-        component: InventoryList
-      })
+      console.log('test')
+      // this.displayNotif = false
+      // this.$router.push({
+      //   path: `/plasticland/inventory`,
+      //   component: InventoryList
+      // })
     },
     checkRoute (route) {
       switch (route) {

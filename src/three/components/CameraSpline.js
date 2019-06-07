@@ -91,7 +91,7 @@ export default class CameraSpline {
 
   moveRadar () {
     let offset = this.percentageCamera.value * 100
-    this.radar.style.top = `${offset}px`
+    if (this.radar) this.radar.style.top = `${offset}px`
   }
 
   updateCamera () {

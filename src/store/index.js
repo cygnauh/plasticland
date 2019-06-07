@@ -9,12 +9,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    assetsLoad: false,
+    displayIntro: true,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
     subtitle: subtitle.voice,
     currentPlace: '',
     currentSubtitle: 'subtitle',
+    currentFoundObjectName: '',
     splinePosition: 0,
     sounds: sounds,
     didacticiels: didacticiels,
@@ -23,6 +26,15 @@ export default new Vuex.Store({
     cinematicObjectContainer: null
   },
   mutations: {
+    isLoad (state) {
+      state.assetsLoad = true
+    },
+    hideIntro (state) {
+      state.displayIntro = false
+    },
+    setFoundObjectName (state, str) {
+      state.currentFoundObjectName = str
+    },
     setSplinePosition (state, pos) {
       state.splinePosition = pos
     },
@@ -44,9 +56,10 @@ export default new Vuex.Store({
     setCinematicObject (state, bool) {
       state.displayCinematicObject = bool
     },
-    setContainerCinematicObject (state, ref) {
-      state.cinematicObjectContainer = ref
-    },
+    // setContainerCinematicObject (state, ref) {
+    //   console.log()
+    //   state.cinematicObjectContainer = ref
+    // },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true
     }

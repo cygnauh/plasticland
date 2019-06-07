@@ -77,6 +77,9 @@ export default class App extends Engine {
       this.currentRender = 'scene'
       this.scene.add(this.groupPlasticLand)
       this.scene.add(this.cameraSpline.splineLine)
+    } else if (value === 'cinematic') {
+      this.currentRender = 'cinematic'
+      this.collectable.itemSelected = store.default.state.currentFoundObjectName
     } else {
       this.currentRender = 'detail' // TODO handle the other case ( about page )
     }
@@ -84,9 +87,12 @@ export default class App extends Engine {
   
   handleWheel (e) {
     // apply on the first wheel event triggered
+    if (store.default.state.displayIntro) {
+      store.default.commit('hideIntro')
+    }
     if (!this.wheelStart) {
       this.cameraSpline.moveCamera(e)
-      console.log(this.cameraSpline.percentageCamera)
+      // console.log(this.cameraSpline.percentageCamera)
       store.default.state.sounds.place.forEach(element => {
         if (this.cameraSpline.percentageCamera.value > element.startAt &&
           this.cameraSpline.percentageCamera.value <= element.endAt &&
@@ -145,7 +151,7 @@ export default class App extends Engine {
       this.renderer.setScissor(0, 0, this.width, this.height)
       this.renderer.setViewport(0, 0, this.width, this.height)
     } else {
-      this.collectable.renderSelectedCollectable()
+      this.collectable.renderSelectedCollectable(this.currentRender)
     }
 
     // stop rendering the main scene when inventory open
