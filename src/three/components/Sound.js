@@ -85,7 +85,7 @@ export default class Sound {
       audioLoader.load(element.soundSrc, (buffer) => {
         sound.setBuffer(buffer)
         sound.setRefDistance(1)
-        // sound.play()
+        sound.setVolume(1)
         this.spatialSounds.push(sound)
       })
       // create an object for the sound to play from
