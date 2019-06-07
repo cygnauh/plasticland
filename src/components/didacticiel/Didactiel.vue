@@ -22,14 +22,32 @@ export default {
   },
   data () {
     return {
-      isShowing: true,
-      // totalActive: total
+      isShowing: false
     }
   },
   computed: {
-    // total () {
-    //   return this.$store.state.didacticiels.active.length
-    // }
+    splinePosition () {
+      console.log(this.$store.state.splinePosition)
+      return this.$store.state.splinePosition
+    }
+  },
+  watch: {
+    splinePosition () {
+      this.openDidactiel()
+    }
+  },
+  methods: {
+    openDidactiel () {
+      console.log(this.splinePosition)
+      this.$store.state.didacticiels.forEach(el => {
+        if (this.splinePosition > el.position && this.splinePosition < el.position + 0.01) {
+          this.isShowing = true
+          setTimeout(() => {
+            this.isShowing = false
+          }, 3000)
+        }
+      })
+    }
   }
 }
 </script>

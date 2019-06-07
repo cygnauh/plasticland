@@ -5,22 +5,19 @@ export default {
       name: 'scroll',
       path: '../../assets/img/svg/didacticiel-scroll.svg',
       position: '0.1',
-      message: 'scroller pour explorer PLASTICLAND',
-      active: false
+      message: 'scroller pour explorer PLASTICLAND'
     }, {
       id: 1,
       name: 'radar',
       path: '../../assets/img/svg/didacticiel-radar.svg',
       position: '0.14',
-      message: 'SUIVEZ le radar POUR VOIR LES OBJETS à collecter',
-      active: false
+      message: 'SUIVEZ le radar POUR VOIR LES OBJETS à collecter'
     }, {
       id: 2,
       name: 'collection',
       path: '../../assets/img/svg/didacticiel-bottle.svg',
       position: '0.16',
-      message: 'Cliquez pour voir votre collection',
-      active: false
+      message: 'Cliquez pour voir votre collection'
     }
   ]
 }

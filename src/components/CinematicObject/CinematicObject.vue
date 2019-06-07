@@ -11,7 +11,7 @@
             </router-link>
         </div>
 
-        <div class="cinematicObject-scene" ref="cinematicObjectScene"></div>
+        <!--<div class="cinematicObject-scene" ref="cinematicObjectScene"></div>-->
         <div class="main">
             <div class="inventory-btn-count">
                 <span class="inventory-btn-obj-found">{{ objectFound }}</span>
