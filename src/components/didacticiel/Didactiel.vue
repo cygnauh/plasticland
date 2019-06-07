@@ -22,8 +22,14 @@ export default {
   },
   data () {
     return {
-      isShowing: false
+      isShowing: true,
+      // totalActive: total
     }
+  },
+  computed: {
+    // total () {
+    //   return this.$store.state.didacticiels.active.length
+    // }
   }
 }
 </script>

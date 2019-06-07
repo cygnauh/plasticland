@@ -73,9 +73,9 @@ export default class CameraSpline {
       this.moveRadar()
     }
 
-    if (this.percentageCamera.value <= store.default.state.didacticiels[0].position) {
+    /* if (this.percentageCamera.value <= store.default.state.didacticiels[0].position) {
 
-    }
+    } */
   }
 
   tweenToScroll (speed) {

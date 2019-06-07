@@ -10,7 +10,6 @@ export default class ObjectsToCollect {
     this.scene = scene
     this.manager = manager
     this.raycaster = raycaster
-    this.cameraSpline = cameraSpline
     this.renderer = renderer
 
     this.array = []
@@ -89,10 +88,6 @@ export default class ObjectsToCollect {
 
   moveItem (element) {
     this.found = true
-    // let spline = this.cameraSpline.spline
-    // let percentageCamera = this.cameraSpline.percentageCamera.value + 0.0285
-    // let target = spline.getPointAt(percentageCamera) // x,y,z
-    // let newTarget = new THREE.Vector3(target.x - 5, target.y + 5, target.z)
     let target = new THREE.Vector3(element.x, element.y + 25, element.z)
     animateVector3(element, target, {
       duration: 1000,
