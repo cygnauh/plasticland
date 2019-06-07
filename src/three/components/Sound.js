@@ -60,17 +60,19 @@ export default class Sound {
     this.voiceOver = new Howl({
       src: [src],
       sprite: {
-        yes: [1000, 1000],
-        intro1: [3000, 5000],
-        intro2: [9000, 6000], // maybe mixed both
-        intro2bis: [16000, 8000], // maybe mixed both
+        intro1: [3000, 5000], // charles, yes, tell me about one of your expedition,
+        intro2: [9000, 6000], // I was traveling the ocean, watching the endless horizon.
         starbucks: [26000, 9000],
         carrefour: [36000, 11000],
         cocacola: [49000, 9000],
         gestespropres: [59000, 14000],
         nestle: [76000, 12000],
         final: [88000, 8000],
-        seconds: [88000, 8000]
+        seconds: [88000, 8000],
+        reaction1: [88000, 8000], // REACTIONS : It looks big here.
+        reaction2: [88000, 8000], // REACTIONS : It's a huge mountain.
+        reaction3: [88000, 8000], // REACTIONS : Oooooh, that smell, it's awful.
+        reaction4: [88000, 8000] // REACTIONS : I can't believe it.
       },
       volume: 1 // fade to 1 when it plays
     })

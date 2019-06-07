@@ -72,6 +72,6 @@ export default {
   'voice': {
     'id': 30,
     'name': 'voice',
-    'src': '../../sounds/voice_v1.mp3'
+    'src': '../../sounds/voice_v2.mp3'
   }
 }
