@@ -109,7 +109,7 @@ import Intro from './Introduction'
 
 export default {
   name: 'Stage',
-  components: { CinematicObject, Loader, Timer, Subtitle, Radar },
+  components: { CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro },
   data () {
     return {
       data: '',
