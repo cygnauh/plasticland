@@ -21,8 +21,6 @@ export default {
   },
   computed: {
     splinePosition () {
-      //   // console.log(require(this.testUrl))
-      // console.log(this.$store.state.splinePosition)
       return this.$store.state.splinePosition
     }
   },
@@ -37,10 +35,10 @@ export default {
         if (this.splinePosition > el.position && !el.active) {
           this.element = el
           this.isShowing = true
+          this.$store.commit('didacticielShowed', el.name)
           setTimeout(() => {
             this.isShowing = false
             this.element = null
-            el.active = true
           }, 10000)
         }
       })

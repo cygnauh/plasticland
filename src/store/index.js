@@ -56,12 +56,11 @@ export default new Vuex.Store({
     setCinematicObject (state, bool) {
       state.displayCinematicObject = bool
     },
-    // setContainerCinematicObject (state, ref) {
-    //   console.log()
-    //   state.cinematicObjectContainer = ref
-    // },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true
+    },
+    didacticielShowed (state, bool) {
+      state.didacticiels.filter(item => item.name === bool)[0].active = true
     }
   }
 })
