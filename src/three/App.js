@@ -122,7 +122,13 @@ export default class App extends Engine {
         this.collectable.changeMaterial(element.name, true)
       }
     })
-    // this.sound.playSpatialSounds()
+    // this.sound.voiceOver.play()
+    console.log(this.sound.voiceOver)
+    // var promise = HTMLMediaElement.play()
+    // promise.then(response => {
+    //   console.log(response)
+    // })
+    this.sound.playSpatialSounds()
   }
 
   animate () {

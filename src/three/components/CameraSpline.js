@@ -72,6 +72,7 @@ export default class CameraSpline {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     }
+    store.default.commit('setSplinePosition', this.percentageCamera.value)
   }
 
   tweenToScroll (speed) {
