@@ -84,7 +84,7 @@ export default class App extends Engine {
       this.currentRender = 'detail' // TODO handle the other case ( about page )
     }
   }
-  
+
   handleWheel (e) {
     // apply on the first wheel event triggered
     if (store.default.state.displayIntro) {
@@ -122,12 +122,31 @@ export default class App extends Engine {
         this.collectable.changeMaterial(element.name, true)
       }
     })
-    // this.sound.voiceOver.play()
-    console.log(this.sound.voiceOver)
-    // var promise = HTMLMediaElement.play()
-    // promise.then(response => {
-    //   console.log(response)
-    // })
+    if (!this.soundPlayed) {
+      this.handleSoundFirstTime()
+    } else {
+      console.log(this.sound.placeSounds)
+      console.log(this.sound.placeSounds[0])
+      console.log(this.sound.placeSounds[0].sound)
+      this.sound.placeSounds[0].sound.play()
+    }
+  }
+
+  handleSoundFirstTime () {
+    this.soundPlayed = true
+    if (this.sound && this.sound.placeSounds) {
+      this.sound.placeSounds.forEach(element => {
+        element.sound.play()
+        element.sound.on('play', () => {
+          element.sound.pause()
+        })
+      })
+    } else if (this.sound.voiceOver) {
+      this.sound.voiceOver.play()
+      this.sound.voiceOver.on('play', () => {
+        this.sound.voiceOver.pause()
+      })
+    }
   }
 
   animate () {
