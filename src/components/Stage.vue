@@ -56,10 +56,7 @@
       </div>
     </div>
     <div v-if="!displayIntro" class="Stage-border-bottom">
-      <Didactiel
-        title="scroller pour explorer PLASTICLAND"
-        logo="require('../../assets/img/svg/didacticiel-scroll.svg')"
-      />
+      <Didactiel />
       <div class="left-side-content-bottom">
         <router-link
           v-if="$route.path === '/plasticland'"

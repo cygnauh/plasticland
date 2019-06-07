@@ -20,7 +20,7 @@ export default new Vuex.Store({
     currentFoundObjectName: '',
     splinePosition: 0,
     sounds: sounds,
-    didacticiels: didacticiels,
+    didacticiels: didacticiels.array,
     radar: null,
     displayCinematicObject: false,
     cinematicObjectContainer: null
