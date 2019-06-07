@@ -94,8 +94,7 @@ export default class Sound {
       var mesh = new THREE.Mesh(geometry, material)
       mesh.position.x = element.x + 60
       mesh.position.z = element.z - 20
-      mesh.visible = false
-      // mesh.position.y = element.y - 20
+      // mesh.visible = false
       this.scene.add(mesh)
       // finally add the sound to the mesh
       mesh.add(sound)

@@ -8,6 +8,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    assetsLoad: false,
+    displayIntro: true,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
@@ -22,6 +24,12 @@ export default new Vuex.Store({
     cinematicObjectContainer: null
   },
   mutations: {
+    isLoad (state) {
+      state.assetsLoad = true
+    },
+    hideIntro (state) {
+      state.displayIntro = false
+    },
     setFoundObjectName (state, str) {
       state.currentFoundObjectName = str
     },

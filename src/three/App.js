@@ -87,6 +87,9 @@ export default class App extends Engine {
   
   handleWheel (e) {
     // apply on the first wheel event triggered
+    if (store.default.state.displayIntro) {
+      store.default.commit('hideIntro')
+    }
     if (!this.wheelStart) {
       this.cameraSpline.moveCamera(e)
       // console.log(this.cameraSpline.percentageCamera)

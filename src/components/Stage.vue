@@ -31,7 +31,7 @@
             alt="Vue logo">
         </div>
       </router-link>
-      <div class="right-side-content-top">
+      <div v-if="!displayIntro" class="right-side-content-top">
         <div
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
           class="menu">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="Stage-border-bottom">
+    <div v-if="!displayIntro" class="Stage-border-bottom">
       <div class="left-side-content-bottom">
         <router-link
           v-if="$route.path === '/plasticland'"
@@ -87,6 +87,7 @@
     </div>
     <router-view/>
     <!--<CinematicObject v-if="hasFoundObject"/>-->
+    <Intro v-if="displayIntro"></Intro>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -99,10 +100,11 @@ import Timer from './Timer/Timer'
 import Radar from './Radar/Radar'
 import InventoryList from './Inventory/InventoryList'
 import CinematicObject from './CinematicObject/CinematicObject'
+import Intro from './Introduction'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer, Subtitle, Radar },
+  components: { Loader, Timer, Subtitle, Radar, Intro },
   data () {
     return {
       data: '',
@@ -117,10 +119,10 @@ export default {
       return this.$store.state.currentPlace.name
     },
     hasFoundObject () {
-      // let active = this.objectFound - 1
-      // if (active >= 0) return this.$store.state.objects[active].found
-      // return false
       return this.$store.state.displayCinematicObject
+    },
+    displayIntro () {
+      return this.$store.state.displayIntro
     }
   },
   mounted () {
