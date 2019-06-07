@@ -18,12 +18,15 @@
                 <div class="border-separator"></div>
                 <span class="inventory-btn-obj-total">{{ totalObject }}</span>
             </div>
-            <div class="title"> {{ objectOpen.title }} </div>
-            <div
-               class="yellow-btn"
-                @click="showDetail">
-                <p><a href="#">en savoir plus</a></p>
-            </div>
+            <div class="title"> {{ objectOpen.title }}</div>
+            <router-link
+                :to="detailRoute">
+                <div
+                    class="yellow-btn"
+                    @click="showDetail">
+                    <p><a href="#">en savoir plus</a></p>
+                </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -60,6 +63,9 @@ export default {
     },
     objectOpen () {
       return this.objects[this.objectFound - 1]
+    },
+    detailRoute () {
+      return `/plasticland/inventory/${this.objectOpen.id}`
     }
   },
   methods: {
@@ -70,10 +76,7 @@ export default {
       Vue.prototype.$engine.handleRender('detail')
       Vue.prototype.$engine.collectable.itemSelected = this.objectOpen.name
       Vue.prototype.$engine.collectable.openItem()
-      this.$router.push({ // TODO : test which way is more interesting for routing
-        path: `/plasticland/inventory/${this.objectOpen.id}`,
-        component: InventoryDetail
-      })
+      this.$store.commit('sePreviousRoute', true)
     }
   }
 }

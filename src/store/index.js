@@ -23,7 +23,8 @@ export default new Vuex.Store({
     didacticiels: didacticiels.array,
     radar: null,
     displayCinematicObject: false,
-    cinematicObjectContainer: null
+    cinematicObjectContainer: null,
+    isPreviousCinematic: false
   },
   mutations: {
     isLoad (state) {
@@ -61,6 +62,9 @@ export default new Vuex.Store({
     },
     didacticielShowed (state, bool) {
       state.didacticiels.filter(item => item.name === bool)[0].active = true
+    },
+    sePreviousRoute (state, bool) {
+      state.isPreviousCinematic = bool
     }
   }
 })

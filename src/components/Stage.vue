@@ -18,8 +18,7 @@
           <span>Retour</span>
         </div>
       </router-link>
-      <router-link
-        to="/plasticland/inventory"
+      <div
         v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' && $route.path !== '/plasticland/cinematic'"
         class="close-link">
         <div
@@ -30,7 +29,7 @@
             :src="require('../assets/img/close.png')"
             alt="Vue logo">
         </div>
-      </router-link>
+      </div>
       <div v-if="!displayIntro" class="right-side-content-top">
         <div
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
@@ -106,14 +105,14 @@ import Intro from './Introduction'
 
 export default {
   name: 'Stage',
-  components: { CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro },
+  components: { Loader, Timer, Subtitle, Radar, Didactiel, Intro },
   data () {
     return {
       data: '',
       objectFound: this.$store.state.objects.filter(item => item.found).length,
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
-	  displayNotif: false,
+      displayNotif: false
     }
   },
   computed: {
@@ -160,7 +159,12 @@ export default {
       Vue.prototype.$engine.handleRender(value)
     },
     goInventory () {
-      console.log('test')
+      if (this.$store.state.isPreviousCinematic) {
+        this.$router.go(-2)
+        this.$store.commit('sePreviousRoute', false)
+      } else {
+        this.$router.go(-1)
+      }
       // this.displayNotif = false
       // this.$router.push({
       //   path: `/plasticland/inventory`,
