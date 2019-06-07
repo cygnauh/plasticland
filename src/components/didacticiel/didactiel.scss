@@ -1,0 +1,35 @@
+.didactiel {
+  position: absolute;
+  width: 297px;
+  height: 66px;
+  background-image: url('../../assets/img/svg/didacticiel-bg.svg');
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  &.scroll {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 89px;
+  }
+  &.radar {
+    right: 0;
+    bottom: 165px;
+  }
+  &.collection {
+    bottom: 90px;
+  }
+}
+
+p {
+  text-transform: uppercase;
+  font-family: AxeHandel;
+  font-size: 16px;
+  color: #e4e4e5;
+}
+
+img {
+  width: 34px;
+  height: 37px;
+}
