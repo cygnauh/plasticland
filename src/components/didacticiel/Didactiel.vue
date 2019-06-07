@@ -15,7 +15,7 @@ export default {
     },
     logo: {
       type: String,
-      required: false,
+      required: true,
       default: ''
     }
   },
