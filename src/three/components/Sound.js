@@ -11,11 +11,9 @@ export default class Sound {
     this.initAmbiantSound()
     this.initPlaceSound()
     this.initVoiceOver()
-    this.initSpatialSound()
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
-    this.spatialSounds = []
     window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
       if (this.ambiantSound && !this.ambiantSound.isPlaying) {
         // this.ambiantSound.play()
@@ -75,37 +73,6 @@ export default class Sound {
         reaction4: [88000, 8000] // REACTIONS : I can't believe it.
       },
       volume: 1 // fade to 1 when it plays
-    })
-  }
-  
-  initSpatialSound () {
-  // create the PositionalAudio object (passing in the listener)
-    store.default.state.objects.forEach(element => {
-      var sound = new THREE.PositionalAudio(this.listener)
-      // load a sound and set it as the PositionalAudio object's buffer
-      var audioLoader = new THREE.AudioLoader()
-      audioLoader.load(element.soundSrc, (buffer) => {
-        sound.setBuffer(buffer)
-        sound.setRefDistance(1)
-        sound.setVolume(1)
-        this.spatialSounds.push(sound)
-      })
-      // create an object for the sound to play from
-      var geometry = new THREE.BoxGeometry(50, 50, 50)
-      var material = new THREE.MeshBasicMaterial({ color: 0xff2200 })
-      var mesh = new THREE.Mesh(geometry, material)
-      mesh.position.x = element.x + 60
-      mesh.position.z = element.z - 20
-      mesh.visible = false
-      this.scene.add(mesh)
-      // finally add the sound to the mesh
-      mesh.add(sound)
-    })
-  }
-  
-  playSpatialSounds () {
-    this.spatialSounds.forEach(element => {
-      element.play()
     })
   }
 

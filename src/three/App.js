@@ -128,7 +128,6 @@ export default class App extends Engine {
     // promise.then(response => {
     //   console.log(response)
     // })
-    this.sound.playSpatialSounds()
   }
 
   animate () {
