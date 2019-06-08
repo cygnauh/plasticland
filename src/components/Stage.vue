@@ -30,7 +30,7 @@
             alt="Vue logo">
         </div>
       </div>
-      <div v-if="!displayIntro" class="right-side-content-top">
+      <div class="right-side-content-top">
         <div
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
           class="menu">
@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div v-if="!displayIntro" class="Stage-border-bottom">
+    <div class="Stage-border-bottom">
       <Didactiel />
       <div class="left-side-content-bottom">
         <router-link
@@ -86,7 +86,7 @@
     </div>
     <router-view/>
     <!--<CinematicObject v-if="hasFoundObject"/>-->
-    <Intro v-if="displayIntro"></Intro>
+    <Intro></Intro>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -114,22 +114,19 @@ export default {
       displayNotif: false
     }
   },
+  mounted () {
+    setTimeout(() => { this.$store.commit('setCurrentPlace', 'success') }, 3000)
+    this.initScene()
+    this.checkRoute(this.$route.path)
+    document.addEventListener('click', (e) => this.handleClick(e), false)
+  },
   computed: {
     title () {
       return this.$store.state.currentPlace.name
     },
     hasFoundObject () {
       return this.$store.state.displayCinematicObject
-    },
-    displayIntro () {
-      return this.$store.state.displayIntro
     }
-  },
-  mounted () {
-    setTimeout(() => { this.$store.commit('setCurrentPlace', 'success') }, 3000)
-    this.initScene()
-    this.checkRoute(this.$route.path)
-    document.addEventListener('click', (e) => this.handleClick(e), false)
   },
   watch: {
     $route (to) {

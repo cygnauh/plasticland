@@ -1,14 +1,12 @@
 <template>
-  <div class="introduction">
-    <div :class="{'show': 'isMounted'}"
-         class="intro-text">
-      <span>Inspired</span>
-      <span>by</span>
-      <span>a</span>
-      <span>true</span>
-      <span>story</span>
+  <div
+    :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}]"
+    class="introduction">
+    <div
+      class="intro-text">
+      Inspired by a true story
     </div>
-    <div :class="{'show': 'isMounted'}"
+    <div :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}]"
          class="scroll">scroll to continue</div>
   </div>
 </template>
@@ -23,6 +21,16 @@ export default {
   },
   mounted () {
     this.isMounted = true
+    console.log(this.displayIntroText)
+  },
+  computed: {
+    displayIntroText () {
+      console.log(this.$store.state.displayIntroText)
+      return this.$store.state.displayIntroText
+    },
+    assetsLoad () {
+      return this.$store.state.assetsLoad
+    }
   },
   methods: {
   }
@@ -33,33 +41,43 @@ export default {
 @import '../assets/scss/index';
 .introduction{
   position: absolute;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
   background: $dark_blue;
   display: flex;
   font-family: AveriaLibre, sans-serif;
+  color: $light_grey;
+  &.show{
+    z-index: 10;
+    .intro-text{
+      transition: opacity 1s ease, transform 1s ease;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  &.hide{
+    .intro-text{
+      opacity: 0;
+      transition: opacity 1s ease, transform 1s ease;
+      transform: translateX(-50%) translateY(-200%);
+    }
+  }
   .intro-text{
     position: absolute;
     font-size: 30px;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(200%);
     left: 50%;
     top: 50%;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
     will-change: opacity;
-    span{
-      color: $light_grey;
-      margin: 5px;
-      transform: translateY(200%) rotateX(40deg);
-    }
-    &.show{
-      opacity: 1;
-    }
+    display: inline-block;
+    margin: 5px;
   }
   .scroll{
     position: absolute;
     bottom: 50px;
-    color: $light_grey;
     left: 50%;
     font-size: 20px;
     transition: transform 1s ease-in-out;
@@ -72,11 +90,22 @@ export default {
       width: 2px;
       background: $light_grey;
       height: 40px;
+      transition: height 1s ease;
     }
     &.show{
       transition-delay: 2s;
       transition: transform 1s ease-in-out;
       transform: translateX(-50%) translateY(0);
+    }
+    &.hide{
+      opacity: 0;
+      transition: opacity 1s ease, transform 1s ease-in-out;
+      transform: translateX(-50%) translateY(-200%);
+    }
+    &.hide:after{
+      transition-delay: 0.5s;
+      transition: height 1s ease;
+      height: 0;
     }
   }
 }

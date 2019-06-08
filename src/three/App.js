@@ -88,8 +88,9 @@ export default class App extends Engine {
 
   handleWheel (e) {
     // apply on the first wheel event triggered
-    if (store.default.state.displayIntro) {
-      store.default.commit('hideIntro')
+    if (store.default.state.displayIntroText) {
+      store.default.commit('hideIntroText')
+      if (this.sound && this.sound.voiceOver) this.sound.voiceOver.play('intro1')
     }
     if (!this.wheelStart) {
       this.cameraSpline.moveCamera(e)
@@ -133,7 +134,6 @@ export default class App extends Engine {
     if (this.sound) {
       this.sound.initPlaceSound()
       this.sound.initVoiceOver()
-      this.sound.voiceOver.play('intro1')
     }
   }
 

@@ -10,7 +10,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     assetsLoad: false,
-    displayIntro: true,
+    displayIntroText: true,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
@@ -30,8 +30,8 @@ export default new Vuex.Store({
     isLoad (state) {
       state.assetsLoad = true
     },
-    hideIntro (state) {
-      state.displayIntro = false
+    hideIntroText (state) {
+      state.displayIntroText = false
     },
     setFoundObjectName (state, str) {
       state.currentFoundObjectName = str
