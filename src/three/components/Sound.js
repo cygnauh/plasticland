@@ -9,7 +9,7 @@ export default class Sound {
     this.camera = camera
     this.initSound()
     this.initAmbiantSound()
-    this.initPlaceSound()
+    // this.initPlaceSound()
     this.initVoiceOver()
     this.currentSound = null
     this.soundId = null
@@ -45,6 +45,7 @@ export default class Sound {
       let src = element.src
       let placeSound = new Howl({
         src: [src],
+        loop: true,
         volume: 1 // fade to 1 when it plays
       })
       placeSound.once('load', () => {
@@ -84,16 +85,20 @@ export default class Sound {
 
   updatePlaceSound (value) {
     if (this.soundId) {
-      // this.currentSound.sound.fade(1, 0, 5000, this.soundId)
+      this.currentSound.sound.fade(1, 0, 5000, this.soundId)
+      // setTimeout(() => {
+      //   this.currentSound.sound.pause(this.soundId)
+      // }, 5000)
     }
     console.log(value)
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
-      this.currentSound.sound.play()
-      // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      // console.log(this.soundId)
+      // this.currentSound.sound.play()
+      // console.log()
+      this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
+      console.log(this.soundId)
       // this.voiceOver.play(this.currentSound.name)
-      // this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
+      this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
     }
   }
   updateSubtitle () {
@@ -105,7 +110,7 @@ export default class Sound {
     })
   }
   update (time) {
-    if (this.voiceOver.playing()) {
+    if (this.voiceOver && this.voiceOver.playing()) {
       this.updateSubtitle()
     } else {
       store.default.commit('setCurrentSubtitle', '')

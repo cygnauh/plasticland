@@ -20,6 +20,7 @@ export default class App extends Engine {
     this.initCollectable()
     this.initSound()
     this.animate()
+    this.soundPlayed = false
   }
 
   initSound () {
@@ -122,29 +123,24 @@ export default class App extends Engine {
         this.collectable.changeMaterial(element.name, true)
       }
     })
+    console.log('click')
     if (!this.soundPlayed) {
+      console.log(this.soundPlayed, 'soundPlayed')
       this.handleSoundFirstTime()
-    } else {
-      console.log(this.sound.placeSounds)
-      console.log(this.sound.placeSounds[0])
-      console.log(this.sound.placeSounds[0].sound)
-      this.sound.placeSounds[0].sound.play()
     }
   }
 
   handleSoundFirstTime () {
     this.soundPlayed = true
-    if (this.sound && this.sound.placeSounds) {
+    if (this.sound) {
+      this.sound.initPlaceSound()
       this.sound.placeSounds.forEach(element => {
         element.sound.play()
+        console.log('play')
         element.sound.on('play', () => {
+          console.log('pause')
           element.sound.pause()
         })
-      })
-    } else if (this.sound.voiceOver) {
-      this.sound.voiceOver.play()
-      this.sound.voiceOver.on('play', () => {
-        this.sound.voiceOver.pause()
       })
     }
   }

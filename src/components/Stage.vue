@@ -135,9 +135,6 @@ export default {
     $route (to) {
       this.checkRoute(to.path)
     },
-    // title (value) {
-    //   Vue.prototype.$engine.sound.updatePlaceSound(value)
-    // }
     hasFoundObject (value) {
       if (value) {
         this.$router.push({
@@ -164,13 +161,6 @@ export default {
       } else {
         this.$router.go(-1)
       }
-
-
-      // this.displayNotif = false
-      // this.$router.push({
-      //   path: `/plasticland/inventory`,
-      //   component: InventoryList
-      // })
     },
     checkRoute (route) {
       switch (route) {
