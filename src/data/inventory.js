@@ -23,7 +23,7 @@ export default
       'model': './models_converted/barquette_04.glb',
       'soundSrc': './sounds/carrefour.mp3',
       'found': false,
-      'position': 0.36,
+      'position': 0.38,
       'description': 'Des tomates coupées en deux et vendues dans des barquettes recouvertes d’un film plastique, des bananes emballées individuellement dans de petits sachets en plastique. Ce sont des images que dénoncent les internautes. Dans leur viseur, les hypermarchés qui participent largement à la multiplication de ces produits.@L’autre raison évoquée principalement par la plupart des Français, c’est le suremballage des produits Bio dont les emballages ne sont pas forcément nécessaires ce qui les rends autant nocifs pour l’environnement que les pesticides.\n'
     },
     {
@@ -35,7 +35,7 @@ export default
       'model': './models_converted/bottle_coca.glb',
       'soundSrc': './sounds/cocacola.mp3',
       'found': false,
-      'position': 0.55,
+      'position': 0.565,
       'description': 'Dans les années 50, plusieurs marques de soda utilisaient encore les bouteilles en verre pour la distribution de leur produit. Des bouteilles réutilisable grâce au système de consigne mise en place par les marques.@Mais à partir de 1960, l’industrialisation et l’apparition de la matière plastique ouvrent de nouvelles perspectives pour les firmes qui décident d\'abandonner la bouteille en verre consigné.@Une décision qui ne prend pas en compte les rapports des scientifiques qui alertaient déjà sur les dangers du plastique à usage unique.'
     },
     {
@@ -47,7 +47,7 @@ export default
       'soundSrc': './sounds/lobbies.mp3',
       'title': 'MES PLASTIQUES, TU RECYCLERAS',
       'found': false,
-      'position': 0.67,
+      'position': 0.68,
       'description': 'Après avoir verdi leur image via de vastes campagnes de communication sur le recyclage, les industriels ont adopté une nouvelle stratégie : celle de culpabiliser le consommateur à travers le financement des OGM dont l’objet est d’organiser de grands évènements de ramassage de déchets dans la nature et dont le mot d’ordre consiste à pointer « l’incivilité » individuelle.@En finançant ces ONG, les industriels déplacent le débat sur d\'autres questions autre que l\'abandon de l\'utilisation du plastique. Ils peuvent ainsi continuer à produire pendant que les utilisateurs s\'efforcent à recycler.'
     },
     {
@@ -71,7 +71,7 @@ export default
       'model': './models_converted/starbucks_cup.glb',
       'soundSrc': './sounds/lobbies.mp3',
       'found': false,
-      'position': 0.85,
+      'position': 0.99,
       'description': 'Consigne arrêter dans les 70 Consigne arrêter dans les 70. Consigne arrêter chez dans les 70.Consigne arrêter dans les 70 Consigne arrêter chez dans les 70. @Consigne arrêter chez star dans les 70. Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70.@ Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez star dans les 70.'
     }
   ]
