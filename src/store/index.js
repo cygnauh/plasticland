@@ -14,12 +14,13 @@ export default new Vuex.Store({
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
+    sounds: sounds,
     subtitle: subtitle.voice,
     currentPlace: '',
     currentSubtitle: 'subtitle',
     currentFoundObjectName: '',
+    currentRoute: '',
     splinePosition: 0,
-    sounds: sounds,
     didacticiels: didacticiels.array,
     radar: null,
     displayCinematicObject: false,
@@ -56,6 +57,9 @@ export default new Vuex.Store({
     },
     setCinematicObject (state, bool) {
       state.displayCinematicObject = bool
+    },
+    setCurrentRoute (state, route) {
+      state.currentRoute = route
     },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true

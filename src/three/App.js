@@ -92,7 +92,7 @@ export default class App extends Engine {
       store.default.commit('hideIntroText')
       if (this.sound && this.sound.voiceOver) this.sound.voiceOver.play('intro1')
     }
-    if (!this.wheelStart) {
+    if (!this.wheelStart && store.default.state.currentRoute === '/plasticland') {
       this.cameraSpline.moveCamera(e)
       // console.log(this.cameraSpline.percentageCamera)
       store.default.state.sounds.place.forEach(element => {

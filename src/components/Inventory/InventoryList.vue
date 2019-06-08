@@ -117,10 +117,10 @@ export default {
   .inventory{
     position: absolute;
     /*overflow: scroll;*/
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    z-index: 5;
+    top: 159px;
+    width: 100vw;
+    /*height: 100%;*/
     will-change: transform;
     &.show{
       transition: transform 1s ease-in-out;
@@ -133,7 +133,7 @@ export default {
         flex-wrap: wrap;
         align-items: flex-start;
         flex-direction: row;
-        transform: translateY(159px);
+        /*transform: translateY(159px);*/
         flex-flow: row wrap;
         width: calc(100% - 40px);
         height: 73vh;

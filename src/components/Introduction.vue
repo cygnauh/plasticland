@@ -25,7 +25,6 @@ export default {
   },
   computed: {
     displayIntroText () {
-      console.log(this.$store.state.displayIntroText)
       return this.$store.state.displayIntroText
     },
     assetsLoad () {
@@ -48,10 +47,14 @@ export default {
   display: flex;
   font-family: AveriaLibre, sans-serif;
   color: $light_grey;
-  &.show{
+  &.show, &.hide{
     z-index: 10;
     .intro-text{
       transition: opacity 1s ease, transform 1s ease;
+    }
+  }
+  &.show{
+    .intro-text{
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
@@ -59,7 +62,6 @@ export default {
   &.hide{
     .intro-text{
       opacity: 0;
-      transition: opacity 1s ease, transform 1s ease;
       transform: translateX(-50%) translateY(-200%);
     }
   }

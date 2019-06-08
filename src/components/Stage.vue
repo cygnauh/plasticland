@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="Stage-border-bottom">
-      <Didactiel />
+      <Didactiel v-if="$route.path === '/plasticland'"/>
       <div class="left-side-content-bottom">
         <router-link
           v-if="$route.path === '/plasticland'"
@@ -163,13 +163,16 @@ export default {
       switch (route) {
         case '/plasticland/inventory':
           this.goTo('list')
+          this.$store.commit('setCurrentRoute', '/plasticland/inventory')
           this.displayReturn = false
           break
         case '/plasticland':
           this.goTo('scene')
+          this.$store.commit('setCurrentRoute', '/plasticland')
           this.displayReturn = false
           break
         default:
+          this.$store.commit('setCurrentRoute', '')
           this.displayReturn = true
       }
     },
