@@ -123,9 +123,7 @@ export default class App extends Engine {
         this.collectable.changeMaterial(element.name, true)
       }
     })
-    console.log('click')
     if (!this.soundPlayed) {
-      console.log(this.soundPlayed, 'soundPlayed')
       this.handleSoundFirstTime()
     }
   }
@@ -134,14 +132,8 @@ export default class App extends Engine {
     this.soundPlayed = true
     if (this.sound) {
       this.sound.initPlaceSound()
-      this.sound.placeSounds.forEach(element => {
-        element.sound.play()
-        console.log('play')
-        element.sound.on('play', () => {
-          console.log('pause')
-          element.sound.pause()
-        })
-      })
+      this.sound.initVoiceOver()
+      this.sound.voiceOver.play('intro1')
     }
   }
 
