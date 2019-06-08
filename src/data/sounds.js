@@ -7,50 +7,29 @@ export default {
   'place': [
     {
       'id': 21,
-      'name': 'intro1',
-      'src': './sounds/carrefour.mp3',
-      'startAt': 0.02,
-      'endAt': 0.07
-    },
-    {
-      'id': 21,
-      'name': 'intro2',
-      'src': './sounds/carrefour.mp3',
-      'startAt': 0.08,
-      'endAt': 0.13
-    },
-    {
-      'id': 21,
-      'name': 'intro2bis',
-      'src': './sounds/carrefour.mp3',
-      'startAt': 0.14,
-      'endAt': 0.23
-    },
-    {
-      'id': 21,
       'name': 'starbucks',
-      'src': './sounds/carrefour.mp3',
-      'startAt': 0.2178,
-      'endAt': 0.345
+      'src': './sounds/starbucks.mp3',
+      'startAt': 0.1,
+      'endAt': 0.2
     },
     {
       'id': 22,
       'name': 'carrefour',
       'src': './sounds/carrefour.mp3',
-      'startAt': 0.35,
+      'startAt': 0.21,
       'endAt': 0.49
     },
     {
       'id': 23,
       'name': 'cocacola',
-      'src': './sounds/carrefour.mp3',
+      'src': './sounds/cocacola.mp3',
       'startAt': 0.50,
       'endAt': 0.60
     },
     {
       'id': 24,
       'name': 'gestespropres',
-      'src': './sounds/test1.carrefour',
+      'src': './sounds/lobbies.mp3',
       'startAt': 0.66,
       'endAt': 0.89
     },
@@ -72,6 +51,6 @@ export default {
   'voice': {
     'id': 30,
     'name': 'voice',
-    'src': '../../sounds/voice_v1.mp3'
+    'src': '../../sounds/voice_v3.mp3'
   }
 }

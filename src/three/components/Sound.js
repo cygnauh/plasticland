@@ -9,18 +9,11 @@ export default class Sound {
     this.camera = camera
     this.initSound()
     this.initAmbiantSound()
-    this.initPlaceSound()
+    // this.initPlaceSound()
     this.initVoiceOver()
-    this.initSpatialSound()
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
-    this.spatialSounds = []
-    window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
-      if (this.ambiantSound && !this.ambiantSound.isPlaying) {
-        // this.ambiantSound.play()
-      }
-    }, false)
   }
 
   initSound () {
@@ -47,7 +40,8 @@ export default class Sound {
       let src = element.src
       let placeSound = new Howl({
         src: [src],
-        volume: 0 // fade to 1 when it plays
+        loop: true,
+        volume: 1 // fade to 1 when it plays
       })
       placeSound.once('load', () => {
         this.placeSounds.push({ 'name': element.name, sound: placeSound })
@@ -60,62 +54,41 @@ export default class Sound {
     this.voiceOver = new Howl({
       src: [src],
       sprite: {
-        yes: [1000, 1000],
-        intro1: [3000, 5000],
-        intro2: [9000, 6000], // maybe mixed both
-        intro2bis: [16000, 8000], // maybe mixed both
+        intro1: [3000, 5000], // charles, yes, tell me about one of your expedition,
+        intro2: [9000, 6000], // I was traveling the ocean, watching the endless horizon.
         starbucks: [26000, 9000],
         carrefour: [36000, 11000],
         cocacola: [49000, 9000],
         gestespropres: [59000, 14000],
         nestle: [76000, 12000],
         final: [88000, 8000],
-        seconds: [88000, 8000]
+        interaction1: [88000, 8000], // INTERATIONS : Look at that!
+        interaction2: [88000, 8000], // INTERATIONS : Check this out!
+        interaction3: [88000, 8000], // INTERATIONS : Do you know this?
+        interaction4: [88000, 8000], // INTERATIONS : What was that doing there?
+        interaction5: [88000, 8000], // INTERATIONS : What the hell is that?
+        interaction6: [88000, 8000], // INTERATIONS : Why is this object here?
+        interaction7: [88000, 8000], // INTERATIONS : What is it?
+        reaction1: [88000, 8000], // REACTIONS : It looks big here.
+        reaction2: [88000, 8000], // REACTIONS : It's a huge mountain.
+        reaction3: [88000, 8000], // REACTIONS : Oooooh, that smell, it's awful.
+        reaction4: [88000, 8000] // REACTIONS : I can't believe it.
       },
       volume: 1 // fade to 1 when it plays
-    })
-  }
-  
-  initSpatialSound () {
-  // create the PositionalAudio object (passing in the listener)
-    store.default.state.objects.forEach(element => {
-      var sound = new THREE.PositionalAudio(this.listener)
-      // load a sound and set it as the PositionalAudio object's buffer
-      var audioLoader = new THREE.AudioLoader()
-      audioLoader.load(element.soundSrc, (buffer) => {
-        sound.setBuffer(buffer)
-        sound.setRefDistance(1)
-        sound.setVolume(1)
-        this.spatialSounds.push(sound)
-      })
-      // create an object for the sound to play from
-      var geometry = new THREE.BoxGeometry(50, 50, 50)
-      var material = new THREE.MeshBasicMaterial({ color: 0xff2200 })
-      var mesh = new THREE.Mesh(geometry, material)
-      mesh.position.x = element.x + 60
-      mesh.position.z = element.z - 20
-      mesh.visible = false
-      this.scene.add(mesh)
-      // finally add the sound to the mesh
-      mesh.add(sound)
-    })
-  }
-  
-  playSpatialSounds () {
-    this.spatialSounds.forEach(element => {
-      element.play()
     })
   }
 
   updatePlaceSound (value) {
     if (this.soundId) {
-      this.currentSound.fade(1, 0, 2000, this.soundId)
+      this.currentSound.sound.fade(1, 0, 5000, this.soundId)
     }
+    console.log(value)
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
-      // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      this.voiceOver.play(this.currentSound.name)
-      // this.currentSound.fade(0, 0.3, 3000, this.soundId) // TODO uncomment when voiceOver task's done
+      this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
+      console.log(this.soundId)
+      // this.voiceOver.play(this.currentSound.name)
+      this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
     }
   }
   updateSubtitle () {
@@ -127,7 +100,7 @@ export default class Sound {
     })
   }
   update (time) {
-    if (this.voiceOver.playing()) {
+    if (this.voiceOver && this.voiceOver.playing()) {
       this.updateSubtitle()
     } else {
       store.default.commit('setCurrentSubtitle', '')
