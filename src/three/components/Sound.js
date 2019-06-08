@@ -45,7 +45,7 @@ export default class Sound {
       let src = element.src
       let placeSound = new Howl({
         src: [src],
-        volume: 0 // fade to 1 when it plays
+        volume: 1 // fade to 1 when it plays
       })
       placeSound.once('load', () => {
         this.placeSounds.push({ 'name': element.name, sound: placeSound })
@@ -66,7 +66,13 @@ export default class Sound {
         gestespropres: [59000, 14000],
         nestle: [76000, 12000],
         final: [88000, 8000],
-        seconds: [88000, 8000],
+        interaction1: [88000, 8000], // INTERATIONS : Look at that!
+        interaction2: [88000, 8000], // INTERATIONS : Check this out!
+        interaction3: [88000, 8000], // INTERATIONS : Do you know this?
+        interaction4: [88000, 8000], // INTERATIONS : What was that doing there?
+        interaction5: [88000, 8000], // INTERATIONS : What the hell is that?
+        interaction6: [88000, 8000], // INTERATIONS : Why is this object here?
+        interaction7: [88000, 8000], // INTERATIONS : What is it?
         reaction1: [88000, 8000], // REACTIONS : It looks big here.
         reaction2: [88000, 8000], // REACTIONS : It's a huge mountain.
         reaction3: [88000, 8000], // REACTIONS : Oooooh, that smell, it's awful.
@@ -78,13 +84,16 @@ export default class Sound {
 
   updatePlaceSound (value) {
     if (this.soundId) {
-      this.currentSound.fade(1, 0, 2000, this.soundId)
+      // this.currentSound.sound.fade(1, 0, 5000, this.soundId)
     }
+    console.log(value)
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
+      this.currentSound.sound.play()
       // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      this.voiceOver.play(this.currentSound.name)
-      // this.currentSound.fade(0, 0.3, 3000, this.soundId) // TODO uncomment when voiceOver task's done
+      // console.log(this.soundId)
+      // this.voiceOver.play(this.currentSound.name)
+      // this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
     }
   }
   updateSubtitle () {
