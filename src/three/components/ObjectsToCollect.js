@@ -5,20 +5,38 @@ import * as TWEEN from 'tween'
 import * as THREE from 'three/src/Three'
 
 export default class ObjectsToCollect {
-  constructor (scene, manager, raycaster) {
+  constructor (scene, manager, raycaster, camera, spline, composer) {
     this.scene = scene
     this.manager = manager
     this.raycaster = raycaster
+    this.camera = camera
+    this.cameraSpline = spline
+    this.composer = composer
 
     this.array = []
-    this.found = false
+    this.objects = null
+    this.changeCamera = {
+      active: false,
+      vector3: null,
+      vectorObject: null
+    }
+
+    this.vignettePass = this.composer.passes[1].effects[1]
+    this.vignette = {
+      offset: {
+        value: 0.3,
+      },
+      darkness: {
+        value: 0.442,
+      }
+    }
 
     this.initCollectables()
   }
 
   initCollectables () {
-    let objects = store.default.state.objects
-    objects.forEach((object) => {
+    this.objects = store.default.state.objects
+    this.objects.forEach((object) => {
       let mesh = new GltfLoaderRefactored(object.name, object.model, this.scene, this.manager, { posX: object.x, posY: 0, posZ: object.z, scale: 10, addToScene: true })
       this.array.push(mesh)
     })
@@ -48,30 +66,35 @@ export default class ObjectsToCollect {
         switch (intersect.object.name) {
           case 'starbucks':
             store.default.commit('objectFound', 1)
-            this.moveItem(intersect.object.position)
             store.default.commit('setCinematicObject', true)
-            // this.renderSelectedCollectable(intersect.object.name)
-            // console.log(store.default.state.displayCinematicObject)
+            this.moveItem(intersect.object.position)
+            this.tweenVignette()
+            this.changeCamera.active = true
             break
           case 'carrefour':
             store.default.commit('objectFound', 2)
             store.default.commit('setCinematicObject', true)
+            this.moveItem(intersect.object.position)
             break
           case 'cocacola':
             store.default.commit('objectFound', 3)
             store.default.commit('setCinematicObject', true)
+            this.moveItem(intersect.object.position)
             break
           case 'gestespropres':
             store.default.commit('objectFound', 4)
             store.default.commit('setCinematicObject', true)
+            this.moveItem(intersect.object.position)
             break
           case 'nestle':
             store.default.commit('objectFound', 5)
             store.default.commit('setCinematicObject', true)
+            this.moveItem(intersect.object.position)
             break
           case 'final':
             store.default.commit('objectFound', 6)
             store.default.commit('setCinematicObject', true)
+            this.moveItem(intersect.object.position)
             break
           default:
             break
@@ -85,9 +108,39 @@ export default class ObjectsToCollect {
   }
 
   moveItem (element) {
-    this.found = true
-    let target = new THREE.Vector3(element.x, element.y + 25, element.z)
+    let target = new THREE.Vector3(element.x, element.y + 15, element.z)
     animateVector3(element, target, {
+      duration: 1000,
+      easing: TWEEN.Easing.Quadratic.InOut,
+      onComplete: function () {
+        this.changeCamera.active = true
+      }
+    })
+  }
+
+  getCameraLookat () {
+    if (this.cameraSpline) {
+      this.lookat = this.cameraSpline.spline.getPointAt((store.default.state.splinePosition + 0.01) % 1) // lookat
+      this.changeCamera.vector3 = this.lookat
+    }
+  }
+
+  tweenVignette () {
+    this.tween1 = new TWEEN.Tween(this.vignette.offset)
+      .to({ value: 0.54 }, 1000)
+    this.tween1.start()
+    this.tween2 = new TWEEN.Tween(this.vignette.darkness)
+      .to({ value: 0.54 }, 1000)
+    this.tween2.start()
+  }
+
+  updateVignette () {
+    this.vignettePass.uniforms.get("offset").value = this.vignette.offset.value // animateFloat(obj1, 0.5)
+    this.vignettePass.uniforms.get("darkness").value = this.vignette.darkness.value // animateFloat(0.442, 0.5)
+  }
+
+  changeCameraLookat (target) {
+    animateVector3(this.changeCamera.vector3, target, {
       duration: 1000,
       easing: TWEEN.Easing.Quadratic.InOut
     })
@@ -95,21 +148,41 @@ export default class ObjectsToCollect {
 
   update (time) {
     let y = this.calculateSurface(10, 10, time)
-    if (this.array.length > 0) {
-      this.array.forEach(collectable => {
-        collectable.then(response => {
-          response.meshes.forEach(mesh => {
-            if (!this.found) {
-              mesh.position.y = y
-              mesh.rotation.y = Math.sin(time) / 3
-              mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
-            } else {
-              mesh.rotation.y = Math.sin(time) / 3
-              mesh.position.y = mesh.position.y + Math.sin(time) / 10
-            }
+
+    if (this.objects !== null) {
+      this.objects.forEach(object => {
+        if (this.array.length > 0) {
+          this.array.forEach(collectable => {
+            collectable.then(response => {
+              response.meshes.forEach(mesh => {
+                if (!object.found) {
+                  // mesh.position.y = y
+                  mesh.rotation.y = Math.sin(time) / 3
+                  mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
+                } else if (object.found) {
+                  mesh.rotation.y = Math.sin(time) / 3
+                  mesh.position.y = mesh.position.y + Math.sin(time) / 15
+                }
+              })
+              /*if (this.changeCamera.active ) {
+                // console.log(response.meshes[this.objects.found.length])
+                  // this.changeCameraLookat(response.meshes[this.objects.found.length].position)
+              }*/
+            })
           })
-        })
+        }
       })
     }
+
+    //  console.log(this.vignette.offset, this.vignette.darkness)
+
+    if (this.changeCamera.active) {
+      this.updateVignette()
+      // this.camera.lookAt(this.changeCamera.vector3)
+    } else {
+      this.getCameraLookat()
+    }
+
+    // console.log(this.changeCamera.active)
   }
 }
