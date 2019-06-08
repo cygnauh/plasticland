@@ -14,11 +14,6 @@ export default class Sound {
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
-    window.addEventListener('click', () => { // TODO temporary, need to be removed as soon as possible
-      if (this.ambiantSound && !this.ambiantSound.isPlaying) {
-        // this.ambiantSound.play()
-      }
-    }, false)
   }
 
   initSound () {
@@ -86,15 +81,10 @@ export default class Sound {
   updatePlaceSound (value) {
     if (this.soundId) {
       this.currentSound.sound.fade(1, 0, 5000, this.soundId)
-      // setTimeout(() => {
-      //   this.currentSound.sound.pause(this.soundId)
-      // }, 5000)
     }
     console.log(value)
     this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
     if (this.currentSound) {
-      // this.currentSound.sound.play()
-      // console.log()
       this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
       console.log(this.soundId)
       // this.voiceOver.play(this.currentSound.name)
