@@ -74,6 +74,7 @@ export default class Sound {
     store.default.state.subtitle.forEach(element => {
       if (this.voiceOver.seek() > element.startAt &&
         this.voiceOver.seek() <= element.endAt) {
+        console.log(element.text)
         store.default.commit('setCurrentSubtitle', element.text)
       }
     })
@@ -82,7 +83,9 @@ export default class Sound {
     if (this.voiceOver && this.voiceOver.playing()) {
       this.updateSubtitle()
     } else {
-      store.default.commit('setCurrentSubtitle', '')
+      if (store.default.state.currentSubtitle !== '') {
+        store.default.commit('setCurrentSubtitle', '')
+      }
     }
     // is bigger than the next break point
     TWEEN.update(time)

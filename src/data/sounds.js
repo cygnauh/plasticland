@@ -51,7 +51,7 @@ export default {
   'voice': {
     'id': 30,
     'name': 'voice',
-    'src': '../../sounds/voice_final.mp3',
+    'src': '../../sounds/voice_over.mp3',
     'sprites': [
       {
         intro1: [0, 28180], // 0 - 26s charles, yes, tell me about one of your expedition,

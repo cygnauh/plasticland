@@ -54,10 +54,6 @@ export default class App extends Engine {
         this.groupPlasticLand.add(el)
       })
     })
-    // this.objectCollectable2.then(response => {
-    //   response.meshes[0].rotation.x = -20
-    //   this.groupPlasticLand.add(response.meshes[0])
-    // })
     this.scene.add(this.groupPlasticLand)
   }
 
@@ -90,7 +86,11 @@ export default class App extends Engine {
     // apply on the first wheel event triggered
     if (store.default.state.displayIntroText) {
       store.default.commit('hideIntroText')
-      if (this.sound && this.sound.voiceOver) this.sound.voiceOver.play('intro1')
+      if (this.sound && this.sound.voiceOver) {
+        setTimeout(() => {
+          this.sound.voiceOver.play('intro1')
+        }, 500)
+      }
     }
     if (!this.wheelStart && store.default.state.currentRoute === '/plasticland') {
       this.cameraSpline.moveCamera(e)
@@ -156,6 +156,7 @@ export default class App extends Engine {
     this.collectable.tweenUpdate() // update tween
 
     if (this.currentRender === 'list' && this.collectable) {
+      
       // render collectable scenes
       this.collectable.renderCollectables()
     } else if (this.currentRender === 'scene') {

@@ -48,7 +48,7 @@ export default {
   font-family: AveriaLibre, sans-serif;
   color: $light_grey;
   &.show, &.hide{
-    z-index: 10;
+    z-index: 8;
     .intro-text{
       transition: opacity 1s ease, transform 1s ease;
     }
