@@ -24,7 +24,7 @@
         <div
           :class="[$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' ? 'show' : '']"
           class="close-btn"
-          @click="goInventory">
+          @click="closeInventoryDetail">
           <img
             :src="require('../assets/img/close.png')"
             alt="Vue logo">
@@ -61,8 +61,7 @@
           v-if="$route.path === '/plasticland'"
           to="/plasticland/inventory">
           <div
-            class="interface inventory-btn"
-            @click="goInventory">
+            class="interface inventory-btn">
             <div class="inventory-btn-title">
               <span>
                 collection
@@ -158,13 +157,15 @@ export default {
     goTo (value) {
       Vue.prototype.$engine.handleRender(value)
     },
-    goInventory () {
+    closeInventoryDetail () {
       if (this.$store.state.isPreviousCinematic) {
         this.$router.go(-2)
         this.$store.commit('sePreviousRoute', false)
       } else {
         this.$router.go(-1)
       }
+
+
       // this.displayNotif = false
       // this.$router.push({
       //   path: `/plasticland/inventory`,
