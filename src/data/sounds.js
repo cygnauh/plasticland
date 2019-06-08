@@ -51,6 +51,66 @@ export default {
   'voice': {
     'id': 30,
     'name': 'voice',
-    'src': '../../sounds/voice_v3.mp3'
+    'src': '../../sounds/voice_final.mp3',
+    'sprites': [
+      {
+        intro1: [0, 28180], // 0 - 26s charles, yes, tell me about one of your expedition,
+        // intro2: [13220, 12000], // 10s - 21.23s I was traveling the ocean, watching the endless horizon.
+        starbucks: [23000, 6000], // 23s - 29s
+        carrefour: [30000, 8000], // 30s - 38s
+        cocacola: [39000, 6500], // 39s -45.5s
+        gestespropres: [48000, 14000], // 48s - 56.11s
+        nestle: [76000, 12000],
+        final: [88000, 8000],
+        interaction1: [88000, 8000], // INTERATIONS : Starbuck Look at that / ooh it’s starbucks cup / What was that doing there?
+        interaction2: [88000, 8000], // INTERATIONS : Carrefour Check this out! What the hell is that?
+        interaction3: [88000, 8000], // INTERATIONS : Do you know this?
+        interaction4: [88000, 8000], // INTERATIONS : What was that doing there?
+        interaction5: [88000, 8000], // INTERATIONS : What the hell is that?
+        interaction6: [88000, 8000], // INTERATIONS : Why is this object here?
+        interaction7: [88000, 8000], // INTERATIONS : What is it?
+        reaction1: [88000, 8000], // REACTIONS : It looks big here.
+        reaction2: [88000, 8000], // REACTIONS : It's a huge mountain.
+        reaction3: [88000, 8000], // REACTIONS : Oooooh, that smell, it's awful.
+        reaction4: [88000, 8000] // REACTIONS : I can't believe it.
+      }
+    ],
+    'interval': [
+      {
+        'name': 'intro1',
+        'startAt': 0.9,
+        'endAt': 1
+      },
+      {
+        'name': 'intro2',
+        'startAt': 0.9,
+        'endAt': 1
+      },
+      {
+        'name': 'starbucks',
+        'startAt': 0.9,
+        'endAt': 1
+      },
+      {
+        'name': 'carrefour',
+        'startAt': 0.9,
+        'endAt': 1
+      },
+      {
+        'name': 'cocacola',
+        'startAt': 0.9,
+        'endAt': 1
+      },
+      {
+        'name': 'gestespropres',
+        'startAt': 0.9,
+        'endAt': 1
+      },
+      {
+        'name': 'nestle',
+        'startAt': 0.9,
+        'endAt': 1
+      }
+    ]
   }
 }
