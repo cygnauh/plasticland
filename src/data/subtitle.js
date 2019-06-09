@@ -1,60 +1,96 @@
 export default {
   'voice': [
-    // {
-    //   'id': 51,
-    //   'name': 'starbucks',
-    //   'text': 'Charles…',
-    //   'startAt': 0.0, // TODO need to be update with final version
-    //   'endAt': 0.1
-    // },
-    // {
-    //   'id': 51,
-    //   'name': 'carrefour',
-    //   'text': 'Yes,',
-    //   'startAt': 3.0,
-    //   'endAt': 7.14
-    // },
-    // {
-    //   'id': 51, // child
-    //   'name': 'cocacola',
-    //   'text': 'Tell me about one of your expeditions.',
-    //   'startAt': 0.05,
-    //   'endAt': 0.2
-    // },
+    {
+      'text': 'Charles…',
+      'startAt': 0.08, // TODO need to be update with final version
+      'endAt': 0.59
+    },
+    {
+      'text': '',
+      'startAt': 0.6,
+      'endAt': 1.11
+    },
+    {
+      'text': 'Yes,',
+      'startAt': 1.12,
+      'endAt': 2.08
+    },
+    {
+      'text': '',
+      'startAt': 2.9,
+      'endAt': 3.04
+    },
+    {
+      'id': 51, // child
+      'text': 'Can you tell me about one of your expeditions ?',
+      'startAt': 3.05,
+      'endAt': 5.10
+    },
+    {
+      'text': '',
+      'startAt': 5.11,
+      'endAt': 6.11
+    },
     {
       'id': 51,
       'name': 'gestespropres',
       'text': 'I remember one of the most memorable trips in my life.',
-      'startAt': 3.0,
-      'endAt': 4.14
+      'startAt': 6.12,
+      'endAt': 11.0
     },
     {
-      'id': 51,
+      'text': '',
+      'startAt': 11.1,
+      'endAt': 16.3
+    },
+    {
+      'type': 'intro',
       'name': 'nestle',
       'text': 'I was traveling the ocean, watching the endless horizon.',
-      'startAt': 9.0,
-      'endAt': 15.0
+      'startAt': 16.2,
+      'endAt': 18.20
     },
     {
-      'id': 51,
-      'name': 'final',
+      'text': '',
+      'startAt': 18.3,
+      'endAt': 19.0
+    },
+    {
+      'type': 'intro',
+      'text': 'I was traveling the ocean,',
+      'startAt': 19.11,
+      'endAt': 21.12
+    },
+    {
+      'type': 'intro',
+      'text': '',
+      'startAt': 21.2,
+      'endAt': 21.9
+    },
+    {
+      'type': 'intro',
       'text': 'And while the time passed,',
-      'startAt': 16.0,
-      'endAt': 18.0
+      'startAt': 22.0,
+      'endAt': 23.18
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'intro',
+      'text': '',
+      'startAt': 23.2,
+      'endAt': 24.0
+    },
+    {
+      'type': 'intro',
       'text': 'some strange objects started to scatter from everywhere.',
-      'startAt': 18.18,
-      'endAt': 23.0
+      'startAt': 24.08,
+      'endAt': 28.2
     },
     {
-      'id': 51,
+      'type': 'starbucks',
       'name': 'final',
       'text': 'It all started with some kind of',
-      'startAt': 26.0,
-      'endAt': 28.0
+      'startAt': 29.0,
+      'endAt': 29.0
     },
     {
       'id': 51,
