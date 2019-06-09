@@ -2,7 +2,7 @@ export default {
   'ambiant': {
     'id': 20,
     'name': 'ocean',
-    'src': '../../sounds/sound_ambiant_xp.mp3'
+    'src': './sounds/sound_ambiant_xp.mp3'
   },
   'place': [
     {

@@ -132,6 +132,7 @@ export default class App extends Engine {
   handleSoundFirstTime () {
     this.soundPlayed = true
     if (this.sound) {
+      this.sound.initAmbiantSound()
       this.sound.initPlaceSound()
       this.sound.initVoiceOver()
     }

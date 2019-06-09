@@ -8,13 +8,10 @@ export default class Sound {
     this.scene = scene
     this.camera = camera
     this.initSound()
-    this.initAmbiantSound()
-    // this.initPlaceSound()
-    // this.initVoiceOver()
+    this.ambiantSoundPlaying = false
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
-    console.log(store.default.state.sounds.voice.sprites)
   }
 
   initSound () {
@@ -25,13 +22,12 @@ export default class Sound {
 
   initAmbiantSound () {
     // create a global audio source
-    this.ambiantSound = new THREE.Audio(this.listener)
-    // load a sound and set it as the Audio object's buffer
-    const srcAmbiant = store.default.state.sounds.ambiant.src
-    this.audioLoader.load(srcAmbiant, (buffer) => {
-      this.ambiantSound.setBuffer(buffer)
-      this.ambiantSound.setLoop(true)
-      this.ambiantSound.setVolume(1)
+    let src = store.default.state.sounds.ambiant.src
+    console.log(src)
+    this.ambiantSound = new Howl({
+      src: [src],
+      loop: true,
+      volume: 0 // fade to 1 when it plays
     })
   }
 
@@ -55,10 +51,16 @@ export default class Sound {
     this.voiceOver = new Howl({
       src: [src],
       sprite: store.default.state.sounds.voice.sprites[0],
-      volume: 1 // fade to 1 when it plays
+      volume: 1 // TODO put to 1 in prod
     })
   }
-
+  playAmbiantAndMelody () {
+    if (this.voiceOver.seek() > 13.0 && !this.ambiantSoundPlaying) {
+      this.ambiantSound.id = this.ambiantSound.play()
+      this.ambiantSound.fade(0, 1, 1000, this.ambiantSound.id)
+      this.ambiantSoundPlaying = true
+    }
+  }
   updatePlaceSound (value) {
     if (this.soundId) {
       this.currentSound.sound.fade(1, 0, 5000, this.soundId)
@@ -74,13 +76,13 @@ export default class Sound {
     store.default.state.subtitle.forEach(element => {
       if (this.voiceOver.seek() > element.startAt &&
         this.voiceOver.seek() <= element.endAt) {
-        console.log(element.text)
         store.default.commit('setCurrentSubtitle', element.text)
       }
     })
   }
   update (time) {
     if (this.voiceOver && this.voiceOver.playing()) {
+      if (!this.ambiantSoundPlaying) this.playAmbiantAndMelody()
       this.updateSubtitle()
       if (store.default.state.currentVoiceOverSeek !== this.voiceOver.seek()) {
         store.default.commit('setVoiceOver', this.voiceOver.seek())
