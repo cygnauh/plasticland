@@ -101,18 +101,21 @@ export default class ObjectsToCollect {
 
   open () {
     this.tweenVignette(0.54, 0.54)
-    this.moveItem(this.intersect.object.position, 15)
+    this.moveItem(this.intersect.object.position, 1000, { y: 15 })
   }
 
   close () {
     this.tweenVignette(0.3, 0.442)
-    this.moveItem(this.intersect.object.position, 35)
+    this.moveItem(this.intersect.object.rotation, 3000, { y: 35 })
+    this.moveItem(this.intersect.object.position, 1000, { y: 35 })
+    this.moveItem(this.intersect.object.scale, 1000, { x: 2, y: 2, z: 2 })
+    this.moveItem(this.intersect.object.position, 2000, { y: 102 })
   }
 
-  moveItem (element, y) {
-    let target = new THREE.Vector3(element.x, element.y + y, element.z)
+  moveItem (element, speed, {x = 0, y = 0, z = 0 }) {
+    let target = new THREE.Vector3(element.x + x, element.y + y, element.z + z)
     animateVector3(element, target, {
-      duration: 1000,
+      duration: speed,
       easing: TWEEN.Easing.Quadratic.InOut
     })
   }
