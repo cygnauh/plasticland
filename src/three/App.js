@@ -98,15 +98,8 @@ export default class App extends Engine {
       store.default.state.currentVoiceOverSeek > 13.19 // first didacticiel
     ) {
       this.cameraSpline.moveCamera(e)
-      store.default.state.sounds.place.forEach(element => {
-        if (this.cameraSpline.percentageCamera.value > element.startAt &&
-          this.cameraSpline.percentageCamera.value <= element.endAt &&
-          store.default.state.currentPlace.name !== element.name
-        ) {
-          store.default.commit('setCurrentPlace', element)
-          this.sound.updatePlaceSound(element.name)
-        }
-      })
+      this.sound.updatePlaceSound(this.cameraSpline.percentageCamera.value)
+      this.sound.updateVoiceOverSound(this.cameraSpline.percentageCamera.value)
     }
     this.wheelStart = true
     if (this.timer !== null) {

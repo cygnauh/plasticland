@@ -80,41 +80,42 @@ export default {
         reaction4: [88000, 8000] // REACTIONS : I can't believe it.
       }
     ],
-    'interval': [
-      {
-        'name': 'intro1',
-        'startAt': 0.9,
-        'endAt': 1
-      },
+    'interval': [ // play voiceOver according to Spline position
       {
         'name': 'intro2',
-        'startAt': 0.9,
-        'endAt': 1
+        'startAt': 0.05,
+        'endAt': 0.4,
+        'played': false
       },
       {
         'name': 'starbucks',
         'startAt': 0.9,
-        'endAt': 1
+        'endAt': 1,
+        'played': false
       },
       {
         'name': 'carrefour',
         'startAt': 0.9,
-        'endAt': 1
+        'endAt': 1,
+        'played': false
       },
       {
         'name': 'cocacola',
         'startAt': 0.9,
-        'endAt': 1
+        'endAt': 1,
+        'played': false
       },
       {
         'name': 'gestespropres',
         'startAt': 0.9,
-        'endAt': 1
+        'endAt': 1,
+        'played': false
       },
       {
         'name': 'nestle',
         'startAt': 0.9,
-        'endAt': 1
+        'endAt': 1,
+        'played': false
       }
     ]
   }

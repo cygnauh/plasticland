@@ -38,6 +38,9 @@ export default new Vuex.Store({
     setVoiceOver (state, num) {
       state.currentVoiceOverSeek = num
     },
+    voiceOverPlayed (state, name) {
+      state.sounds.voice.interval.filter(item => item.name === name)[0].played = true
+    },
     setFoundObjectName (state, str) {
       state.currentFoundObjectName = str
     },

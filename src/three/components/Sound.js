@@ -75,16 +75,26 @@ export default class Sound {
       this.melodySoundPlaying = true
     }
   }
-  updatePlaceSound (value) {
-    if (this.soundId) {
-      this.currentSound.sound.fade(1, 0, 5000, this.soundId)
-    }
-    this.currentSound = this.placeSounds.filter(element => element.name === value) ? this.placeSounds.filter(element => element.name === value)[0] : null
-    if (this.currentSound) {
-      // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
-      // this.voiceOver.play(this.currentSound.name)
-      this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
-    }
+  updatePlaceSound (percentageCamera) {
+    store.default.state.sounds.place.forEach(element => {
+      if (percentageCamera > element.startAt && percentageCamera <= element.endAt && store.default.state.currentPlace.name !== element.name) {
+        store.default.commit('setCurrentPlace', element)
+        if (this.soundId) this.currentSound.sound.fade(1, 0, 5000, this.soundId)
+        this.currentSound = this.placeSounds.filter(item => item.name === element.name) ? this.placeSounds.filter(item => item.name === element.name)[0] : null
+        if (this.currentSound) {
+          this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
+          this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
+        }
+      }
+    })
+  }
+  updateVoiceOverSound (percentageCamera) {
+    store.default.state.sounds.voice.interval.forEach(element => {
+      if (percentageCamera > element.startAt && percentageCamera <= element.endAt && !element.played) {
+        store.default.commit('voiceOverPlayed', element.name) // set play to true
+        this.voiceOver.play(element.name)
+      }
+    })
   }
   updateSubtitle () {
     store.default.state.subtitle.forEach(element => {

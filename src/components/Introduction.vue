@@ -1,6 +1,11 @@
 <template>
   <div
-    :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}, {'hide-intro' : showScene}]"
+    v-if="!removeIntroduction"
+    :class="[
+      {show: isMounted && assetsLoad && displayIntroText},
+      {hide: !displayIntroText},
+      {'hide-intro' : showScene}
+    ]"
     class="introduction">
     <div
       class="intro-text">
@@ -22,7 +27,8 @@ export default {
   name: 'Introduction',
   data () {
     return {
-      isMounted: false
+      isMounted: false,
+      removeIntroduction: false
     }
   },
   mounted () {
@@ -39,7 +45,14 @@ export default {
       return this.$store.state.currentVoiceOverSeek > 9.24
     }
   },
-  methods: {
+  watch: {
+    showScene (value) {
+      if (value) {
+        setTimeout(() => {
+          this.removeIntroduction = true
+        }, 4000)
+      }
+    }
   }
 }
 </script>
