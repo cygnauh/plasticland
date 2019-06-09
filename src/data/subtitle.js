@@ -3,12 +3,7 @@ export default {
     {
       'text': 'Charles…',
       'startAt': 0.08, // TODO need to be update with final version
-      'endAt': 0.59
-    },
-    {
-      'text': '',
-      'startAt': 0.6,
-      'endAt': 1.11
+      'endAt': 1.0
     },
     {
       'text': 'Yes,',
@@ -41,23 +36,18 @@ export default {
     {
       'text': '',
       'startAt': 11.1,
-      'endAt': 16.3
+      'endAt': 16.0
     },
     {
       'type': 'intro',
       'name': 'nestle',
-      'text': 'I was traveling the ocean, watching the endless horizon.',
+      'text': 'I was traveling the ocean, ',
       'startAt': 16.2,
-      'endAt': 18.20
-    },
-    {
-      'text': '',
-      'startAt': 18.3,
-      'endAt': 19.0
+      'endAt': 19.04
     },
     {
       'type': 'intro',
-      'text': 'I was traveling the ocean,',
+      'text': 'watching the endless horizon.',
       'startAt': 19.11,
       'endAt': 21.12
     },
