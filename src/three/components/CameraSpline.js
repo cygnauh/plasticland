@@ -51,10 +51,9 @@ export default class CameraSpline {
     let speed = {
       slow: 0.03,
       mid: 0.05,
-      fast: 0.15
     }
     if (this.percentageCamera.value + speed.slow <= store.default.state.objects[0].position) {
-      this.tweenToScroll(speed.slow)
+      this.tweenToScroll(speed.mid)
       this.moveRadar()
     } else if (store.default.state.objects[0].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[1].position) {
       this.tweenToScroll(speed.mid)
@@ -72,7 +71,6 @@ export default class CameraSpline {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     }
-    store.default.commit('setSplinePosition', this.percentageCamera.value)
   }
 
   tweenToScroll (speed) {
@@ -92,10 +90,8 @@ export default class CameraSpline {
   }
 
   updateCamera () {
+    store.default.commit('setSplinePosition', this.percentageCamera.value)
     let p1 = this.spline.getPointAt(this.percentageCamera.value) // x,y,z
-    let p2 = this.spline.getPointAt((this.percentageCamera.value + 0.01) % 1) // lookat
-
     this.camera.position.set(p1.x, p1.y + 3, p1.z)
-    this.camera.lookAt(p2.x, p2.y + 3.5, p2.z)
   }
 }
