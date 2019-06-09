@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 export default {
   name: 'Introduction',
   data () {
@@ -133,7 +132,7 @@ export default {
       position: absolute;
       display: inline-block;
       width: 60%;
-      height: 100%;
+      height: 140%;
       background: url('../assets/img/cloud_01.png') no-repeat;
       background-size: cover;
       opacity:0.75;

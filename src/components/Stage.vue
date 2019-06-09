@@ -58,7 +58,7 @@
       <Didactiel v-if="$route.path === '/plasticland'"/>
       <div class="left-side-content-bottom">
         <router-link
-          v-if="$route.path === '/plasticland'"
+          v-if="$route.path === '/plasticland' && showInventoryCta"
           to="/plasticland/inventory">
           <div
             class="interface inventory-btn">
@@ -78,7 +78,7 @@
         </router-link>
       </div>
       <div class="right-side-content-bottom">
-        <Radar v-if="$route.path === '/plasticland'"></Radar>
+        <Radar v-if="$route.path === '/plasticland' && showRadar"></Radar>
       </div>
     </div>
     <div class="subtitle-container">
@@ -126,6 +126,12 @@ export default {
     },
     hasFoundObject () {
       return this.$store.state.displayCinematicObject
+    },
+    showInventoryCta () {
+      return this.$store.state.didacticiels.filter(item => item.name === 'collection')[0].active
+    },
+    showRadar () {
+      return this.$store.state.didacticiels.filter(item => item.name === 'radar')[0].active
     }
   },
   watch: {

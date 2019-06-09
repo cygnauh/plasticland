@@ -59,8 +59,8 @@ export default {
     'src': '../../sounds/voice_over.mp3',
     'sprites': [
       {
-        intro1: [0, 29000], // 0 - 26s charles, yes, tell me about one of your expedition,
-        // intro2: [13220, 12000], // 10s - 21.23s I was traveling the ocean, watching the endless horizon.
+        intro1: [0, 14000], // 0 - 26s charles, yes, tell me about one of your expedition,
+        intro2: [16140, 12860], // 16.14s - 29.0s I was traveling the ocean, watching the endless horizon.
         starbucks: [23000, 6000], // 23s - 29s
         carrefour: [30000, 8000], // 30s - 38s
         cocacola: [39000, 6500], // 39s -45.5s

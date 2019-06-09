@@ -92,9 +92,12 @@ export default class App extends Engine {
         }, 500)
       }
     }
-    if (!this.wheelStart && store.default.state.currentRoute === '/plasticland') {
+    if (
+      !this.wheelStart &&
+      store.default.state.currentRoute === '/plasticland' &&
+      store.default.state.currentVoiceOverSeek > 13.19 // first didacticiel
+    ) {
       this.cameraSpline.moveCamera(e)
-      // console.log(this.cameraSpline.percentageCamera)
       store.default.state.sounds.place.forEach(element => {
         if (this.cameraSpline.percentageCamera.value > element.startAt &&
           this.cameraSpline.percentageCamera.value <= element.endAt &&
@@ -158,7 +161,6 @@ export default class App extends Engine {
     this.collectable.tweenUpdate() // update tween
 
     if (this.currentRender === 'list' && this.collectable) {
-      
       // render collectable scenes
       this.collectable.renderCollectables()
     } else if (this.currentRender === 'scene') {

@@ -73,6 +73,9 @@ export default new Vuex.Store({
     },
     sePreviousRoute (state, bool) {
       state.isPreviousCinematic = bool
+    },
+    hideSrollDidacticiel (state) {
+      state.didacticiels.filter(item => item.name === 'scroll')[0].show = false
     }
   }
 })

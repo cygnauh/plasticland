@@ -8,7 +8,6 @@
 </template>
 
 <script>
-// import {} from ''
 export default {
   name: 'Didactiel',
   data () {
@@ -16,30 +15,50 @@ export default {
       element: null,
       isShowing: false,
       state: 'init'
-      // testUrl: '@/assets/img/svg/didacticiel-scroll.svg'
     }
   },
   computed: {
     splinePosition () {
       return this.$store.state.splinePosition
+    },
+    voiceOver () {
+      return this.$store.state.currentVoiceOverSeek
     }
   },
   watch: {
     splinePosition () {
       this.openDidactiel()
+    },
+    voiceOver () {
+      this.scrollDidacticiel()
     }
   },
   methods: {
+    scrollDidacticiel () {
+      let element = this.$store.state.didacticiels.filter(element => element.name === 'scroll')[0]
+      if (this.voiceOver > 13.19 && element.show) {
+        this.element = element
+        this.isShowing = true
+        this.$store.commit('didacticielShowed', this.element.name)
+      }
+    },
     openDidactiel () {
       this.$store.state.didacticiels.forEach(el => {
-        if (this.splinePosition > el.position && !el.active) {
-          this.element = el
-          this.isShowing = true
+        if (el.name === 'scroll' && this.splinePosition > el.position) {
+          this.isShowing = false
+          this.element = null
           this.$store.commit('didacticielShowed', el.name)
-          setTimeout(() => {
-            this.isShowing = false
-            this.element = null
-          }, 10000)
+          this.$store.commit('hideSrollDidacticiel')
+        } else {
+          if (this.splinePosition > el.position && !el.active && el.name !== 'scroll') {
+            this.element = el
+            this.isShowing = true
+            this.$store.commit('didacticielShowed', el.name)
+            setTimeout(() => {
+              this.isShowing = false
+              this.element = null
+            }, 10000)
+          }
         }
       })
     }
