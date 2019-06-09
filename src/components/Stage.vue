@@ -55,7 +55,9 @@
       </div>
     </div>
     <div class="Stage-border-bottom">
-      <Didactiel v-if="$route.path === '/plasticland'"/>
+      <Didactiel
+        v-if="$route.path === '/plasticland'"
+        :show-last-didac="showInventoryCta"/>
       <div class="left-side-content-bottom">
         <router-link
           v-if="$route.path === '/plasticland' && showInventoryCta"
@@ -128,7 +130,7 @@ export default {
       return this.$store.state.displayCinematicObject
     },
     showInventoryCta () {
-      return this.$store.state.didacticiels.filter(item => item.name === 'collection')[0].active
+      return this.$store.state.collectionDidacticiel
     },
     showRadar () {
       return this.$store.state.didacticiels.filter(item => item.name === 'radar')[0].active
@@ -163,6 +165,11 @@ export default {
         this.$store.commit('sePreviousRoute', false)
       } else {
         this.$router.go(-1)
+      }
+      if (this.$store.state.objects.filter(item => item.found).length === 1 && !this.$store.state.didacticiels.filter(item => item.name === 'collection').show) {
+        // show last didacticiel
+        console.log('close first')
+        this.$store.commit('showCollectionDidacticiel')
       }
     },
     checkRoute (route) {

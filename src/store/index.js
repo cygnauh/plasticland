@@ -11,7 +11,7 @@ export default new Vuex.Store({
   state: {
     assetsLoad: false,
     displayIntroText: true,
-    currentVoiceOverSeek: false,
+    currentVoiceOverSeek: 0,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
@@ -27,7 +27,7 @@ export default new Vuex.Store({
     displayCinematicObject: false,
     cinematicObjectContainer: null,
     isPreviousCinematic: false,
-    showFirstDidacticielAt: 12.0
+    collectionDidacticiel: false
   },
   mutations: {
     isLoad (state) {
@@ -72,8 +72,15 @@ export default new Vuex.Store({
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true
     },
-    didacticielShowed (state, bool) {
-      state.didacticiels.filter(item => item.name === bool)[0].active = true
+    didacticielShowed (state, name) {
+      state.didacticiels.filter(item => item.name === name)[0].active = true
+    },
+    // showCollectionDidacticiel (state) {
+    //   state.didacticiels.filter(item => item.name === 'collection')[0].show = true
+    //   console.log(state.didacticiels.filter(item => item.name === 'collection')[0].show)
+    // },
+    showCollectionDidacticiel (state) {
+      state.collectionDidacticiel = true
     },
     sePreviousRoute (state, bool) {
       state.isPreviousCinematic = bool

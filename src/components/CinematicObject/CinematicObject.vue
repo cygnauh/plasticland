@@ -71,6 +71,11 @@ export default {
   methods: {
     closeCinematic () {
       this.$store.commit('setCinematicObject', false)
+      if (this.$store.state.objects.filter(item => item.found).length === 1 && !this.$store.state.didacticiels.filter(item => item.name === 'collection').show) {
+        // show last didacticiel
+        console.log('close setCinematicObject')
+        this.$store.commit('showCollectionDidacticiel')
+      }
     },
     showDetail () {
       Vue.prototype.$engine.handleRender('detail')

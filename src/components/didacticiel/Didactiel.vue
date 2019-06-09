@@ -10,11 +10,18 @@
 <script>
 export default {
   name: 'Didactiel',
+  props: {
+    showLastDidac: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       element: null,
       isShowing: false,
-      state: 'init'
+      state: 'init',
+      collectionDidac: this.$store.state.didacticiels.filter(element => element.name === 'collection')[0].show
     }
   },
   computed: {
@@ -31,16 +38,22 @@ export default {
     },
     voiceOver () {
       this.scrollDidacticiel()
+    },
+    showLastDidac (value) {
+      console.log('éeee')
+      if (value) this.displayCollectionDidacticiel()
     }
   },
   methods: {
     scrollDidacticiel () {
-      let element = this.$store.state.didacticiels.filter(element => element.name === 'scroll')[0]
-      if (this.voiceOver > this.$store.state.showFirstDidacticielAt && element.show) {
-        this.element = element
-        this.isShowing = true
-        this.$store.commit('didacticielShowed', this.element.name)
-      }
+      // let element = this.$store.state.didacticiels.filter(element => element.name === 'scroll')[0]
+      this.$store.state.didacticiels.forEach(el => {
+        if (this.voiceOver > el.seekPosition && !el.active && el.seekPosition) {
+          this.element = el
+          this.isShowing = true
+          this.$store.commit('didacticielShowed', this.element.name)
+        }
+      })
     },
     openDidactiel () {
       this.$store.state.didacticiels.forEach(el => {
@@ -48,19 +61,27 @@ export default {
           this.isShowing = false
           this.element = null
           this.$store.commit('didacticielShowed', el.name)
-          this.$store.commit('hideSrollDidacticiel')
-        } else {
-          if (this.splinePosition > el.position && !el.active && el.name !== 'scroll') {
-            this.element = el
-            this.isShowing = true
+        } else if (el.name === 'radar' && this.splinePosition > el.position && el.active) {
+          setTimeout(() => {
+            this.isShowing = false
+            this.element = null
             this.$store.commit('didacticielShowed', el.name)
-            setTimeout(() => {
-              this.isShowing = false
-              this.element = null
-            }, 10000)
-          }
+          }, 10000)
+        } else { // TODO show collection on first recollect object
         }
       })
+    },
+    displayCollectionDidacticiel () {
+      let element = this.$store.state.didacticiels.filter(element => element.name === 'collection')[0]
+      if (element.name === 'collection' && !element.active) {
+        this.element = element
+        this.isShowing = true
+        this.$store.commit('didacticielShowed', element.name)
+        setTimeout(() => {
+          this.isShowing = false
+          this.element = null
+        }, 5000)
+      }
     }
   }
 }
