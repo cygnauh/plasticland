@@ -11,6 +11,7 @@ export default new Vuex.Store({
   state: {
     assetsLoad: false,
     displayIntroText: true,
+    currentVoiceOverSeek: false,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
@@ -33,6 +34,9 @@ export default new Vuex.Store({
     },
     hideIntroText (state) {
       state.displayIntroText = false
+    },
+    setVoiceOver (state, num) {
+      state.currentVoiceOverSeek = num
     },
     setFoundObjectName (state, str) {
       state.currentFoundObjectName = str

@@ -1,11 +1,13 @@
 export default {
   'voice': [
     {
+      'type': 'intro',
       'text': 'Charles…',
       'startAt': 0.08, // TODO need to be update with final version
       'endAt': 1.0
     },
     {
+      'type': 'intro',
       'text': 'Yes,',
       'startAt': 1.12,
       'endAt': 2.08
@@ -16,7 +18,7 @@ export default {
       'endAt': 3.04
     },
     {
-      'id': 51, // child
+      'type': 'intro',
       'text': 'Can you tell me about one of your expeditions ?',
       'startAt': 3.05,
       'endAt': 5.10
@@ -27,8 +29,7 @@ export default {
       'endAt': 6.11
     },
     {
-      'id': 51,
-      'name': 'gestespropres',
+      'type': 'intro',
       'text': 'I remember one of the most memorable trips in my life.',
       'startAt': 6.12,
       'endAt': 11.0
@@ -40,7 +41,6 @@ export default {
     },
     {
       'type': 'intro',
-      'name': 'nestle',
       'text': 'I was traveling the ocean, ',
       'startAt': 16.2,
       'endAt': 19.04

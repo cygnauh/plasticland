@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}]"
+    :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}, {'hide-intro' : showScene}]"
     class="introduction">
     <div
       class="intro-text">
@@ -8,10 +8,17 @@
     </div>
     <div :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}]"
          class="scroll">scroll to continue</div>
+    <div
+      :class="{'show-scene' : showScene}"
+      class="cloud">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: 'Introduction',
   data () {
@@ -21,7 +28,6 @@ export default {
   },
   mounted () {
     this.isMounted = true
-    console.log(this.displayIntroText)
   },
   computed: {
     displayIntroText () {
@@ -29,6 +35,9 @@ export default {
     },
     assetsLoad () {
       return this.$store.state.assetsLoad
+    },
+    showScene () {
+      return this.$store.state.currentVoiceOverSeek > 9.24
     }
   },
   methods: {
@@ -47,6 +56,7 @@ export default {
   display: flex;
   font-family: AveriaLibre, sans-serif;
   color: $light_grey;
+  opacity: 1;
   &.show, &.hide{
     z-index: 8;
     .intro-text{
@@ -64,6 +74,11 @@ export default {
       opacity: 0;
       transform: translateX(-50%) translateY(-200%);
     }
+  }
+  &.hide-intro{
+    transition: opacity 2.5s ease;
+    transition-delay: 1.5s;
+    opacity: 0;
   }
   .intro-text{
     position: absolute;
@@ -109,6 +124,47 @@ export default {
       transition: height 1s ease;
       height: 0;
     }
+  }
+  .cloud{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    .left, .right{
+      position: absolute;
+      display: inline-block;
+      width: 60%;
+      height: 100%;
+      background: url('../assets/img/cloud_01.png') no-repeat;
+      background-size: cover;
+      /*border: solid 1px;*/
+      opacity:0.75;
+      /*transition: transform 2s ease-in-out;*/
+    }
+    .left{
+      background-position: 100% 200px;
+      left: 0;
+      /*background: rgba(rebeccapurple, 0.3);*/
+      transform: translateX(-100%) ;
+    }
+    .right{
+      background-position: 0 136px;
+      right: 0;
+      /*background: rgba(blue, 0.3);*/
+      transform: translateX(100%);
+    }
+    &.show-scene{
+      .left, .right{
+        transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out;
+        opacity:0.05;
+      }
+      .left{
+       transform: translateX(10px) translateY(-100px);
+      }
+      .right{
+        transform: translateX(10px) translateY(10px);
+      }
+    }
+
   }
 }
 

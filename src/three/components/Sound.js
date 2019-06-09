@@ -82,6 +82,9 @@ export default class Sound {
   update (time) {
     if (this.voiceOver && this.voiceOver.playing()) {
       this.updateSubtitle()
+      if (store.default.state.currentVoiceOverSeek !== this.voiceOver.seek()) {
+        store.default.commit('setVoiceOver', this.voiceOver.seek())
+      }
     } else {
       if (store.default.state.currentSubtitle !== '') {
         store.default.commit('setCurrentSubtitle', '')
