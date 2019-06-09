@@ -1,6 +1,7 @@
 import config from '../data/inventory'
 import sounds from '../data/sounds'
 import subtitle from '../data/subtitle'
+import timer from '../data/timer'
 import didacticiels from '../data/didacticiels'
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -24,7 +25,8 @@ export default new Vuex.Store({
     radar: null,
     displayCinematicObject: false,
     cinematicObjectContainer: null,
-    isPreviousCinematic: false
+    isPreviousCinematic: false,
+    time: timer.time
   },
   mutations: {
     isLoad (state) {
@@ -65,6 +67,12 @@ export default new Vuex.Store({
     },
     sePreviousRoute (state, bool) {
       state.isPreviousCinematic = bool
-    }
+    },
+    setTimeEllapsed (state, seconds, minutes, hours, totalSeconds) {
+      state.time.ellapsedSeconds = seconds
+      state.time.ellapsedMinutes = minutes
+      state.time.ellapsedHours = hours
+      state.time.totalEllapsedSeconds = totalSeconds
+    },
   }
 })

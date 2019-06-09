@@ -26,8 +26,6 @@ export default {
       ellapsedSeconds: 0,
       ellapsedMinutes: 0,
       ellapsedHours: 0,
-      finished: false,
-      totalPlasticWaste: 0,
       totalEllapsedSeconds: 0
     }
   },
@@ -60,16 +58,13 @@ export default {
         this.ellapsedSeconds = this.ellapsedSeconds - (this.ellapsedMinutes * 60)
       }
     },
-    conversionPlasticWaste () {
-      if (this.finished) {
-        this.totalPlasticWaste = this.totalEllapsedSeconds * 206
-        return this.totalPlasticWaste
-      }
-    },
     updateClock () {
       this.seconds = this.secondTime.getSeconds()
       this.minutes = this.secondTime.getMinutes()
       this.hours = this.secondTime.getHours()
+    },
+    updateStore () {
+      this.$store.commit('setTimeEllapsed', this.ellapsedSeconds, this.ellapsedMinutes, this.ellapsedHours, this.totalEllapsedSeconds, this.totalPlasticWaste)
     }
   }
 }

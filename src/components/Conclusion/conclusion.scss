@@ -1,14 +1,5 @@
 @import '../../assets/scss/index';
 
-$min_width: 320px;
-$max_width: 1200px;
-$min_font: 16px;
-
-$h1: 257.4px;
-$h2: 44px;
-$h3: 27px;
-$p: 23px;
-
 .conclusion {
   z-index: 3;
   width: 100vw;
@@ -93,6 +84,15 @@ $p: 23px;
     }
   }
 }
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+
+$h1: 257.4px;
+$h2: 44px;
+$h3: 27px;
+$p: 23px;
 
 h1, h2, h3, p, a {
   font-family: AxeHandel;
