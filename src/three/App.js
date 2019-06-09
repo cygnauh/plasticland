@@ -84,14 +84,6 @@ export default class App extends Engine {
 
   handleWheel (e) {
     // apply on the first wheel event triggered
-    if (store.default.state.displayIntroText) {
-      store.default.commit('hideIntroText')
-      if (this.sound && this.sound.voiceOver) {
-        setTimeout(() => {
-          this.sound.voiceOver.play('intro1')
-        }, 500)
-      }
-    }
     if (
       !this.wheelStart &&
       store.default.state.currentRoute === '/plasticland' &&
@@ -114,15 +106,23 @@ export default class App extends Engine {
   onClick () {
     // let arrayMesh = this.scene.children.filter(x => x.type === 'Group')
     // onClickRaycaster(arrayMesh[0].children, this.raycaster)
+    if (!this.soundPlayed) {
+      this.handleSoundFirstTime()
+    }
+    if (store.default.state.displayIntroText) {
+      store.default.commit('hideIntroText')
+      if (this.sound && this.sound.voiceOver) {
+        setTimeout(() => {
+          this.sound.voiceOver.play('intro1')
+        }, 500)
+      }
+    }
     this.objectsToCollect.onClick()
     store.default.state.objects.forEach(element => {
       if (element.found) {
         this.collectable.changeMaterial(element.name, true)
       }
     })
-    if (!this.soundPlayed) {
-      this.handleSoundFirstTime()
-    }
   }
 
   handleSoundFirstTime () {

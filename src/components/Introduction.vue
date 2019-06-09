@@ -12,7 +12,7 @@
       Inspired by a true story
     </div>
     <div :class="[{show: isMounted && assetsLoad && displayIntroText}, {hide: !displayIntroText}]"
-         class="scroll">scroll to continue</div>
+         class="scroll">click to continue</div>
     <div
       :class="{'show-scene' : showScene}"
       class="cloud">
