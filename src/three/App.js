@@ -95,7 +95,7 @@ export default class App extends Engine {
     if (
       !this.wheelStart &&
       store.default.state.currentRoute === '/plasticland' &&
-      store.default.state.currentVoiceOverSeek > 13.19 // first didacticiel
+      store.default.state.currentVoiceOverSeek > store.default.state.showFirstDidacticielAt // first didacticiel
     ) {
       this.cameraSpline.moveCamera(e)
       this.sound.updatePlaceSound(this.cameraSpline.percentageCamera.value)

@@ -90,7 +90,7 @@ export default class Sound {
   }
   updateVoiceOverSound (percentageCamera) {
     store.default.state.sounds.voice.interval.forEach(element => {
-      if (percentageCamera > element.startAt && percentageCamera <= element.endAt && !element.played) {
+      if (percentageCamera > element.startAt && !element.played) {
         store.default.commit('voiceOverPlayed', element.name) // set play to true
         this.voiceOver.play(element.name)
       }

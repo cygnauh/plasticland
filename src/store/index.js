@@ -26,7 +26,8 @@ export default new Vuex.Store({
     radar: null,
     displayCinematicObject: false,
     cinematicObjectContainer: null,
-    isPreviousCinematic: false
+    isPreviousCinematic: false,
+    showFirstDidacticielAt: 12.0
   },
   mutations: {
     isLoad (state) {

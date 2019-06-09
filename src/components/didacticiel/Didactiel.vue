@@ -36,7 +36,7 @@ export default {
   methods: {
     scrollDidacticiel () {
       let element = this.$store.state.didacticiels.filter(element => element.name === 'scroll')[0]
-      if (this.voiceOver > 12.0 && element.show) {
+      if (this.voiceOver > this.$store.state.showFirstDidacticielAt && element.show) {
         this.element = element
         this.isShowing = true
         this.$store.commit('didacticielShowed', this.element.name)
