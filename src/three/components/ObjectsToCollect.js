@@ -102,7 +102,7 @@ export default class ObjectsToCollect {
   open () {
     this.tweenVignette(0.54, 0.54)
     this.moveItem(this.intersect.object.position, 1000, { y: 15 })
-    this.changeCameraLookat(this.intersect.object.position, 15, true)
+    this.changeCameraLookat(this.cameraLookat.vector, this.intersect.object.position, 15, true)
     // this.changeOffsetCamera()
   }
 
@@ -112,7 +112,7 @@ export default class ObjectsToCollect {
     this.moveItem(this.intersect.object.position, 1000, { y: 35 })
     this.moveItem(this.intersect.object.scale, 1000, { x: 0.5, y: 0.5, z: 0.5 })
     this.moveItem(this.intersect.object.position, 2000, { y: 82 })
-    this.changeCameraLookat(this.cameraLookat.vector, 0, false)
+    this.changeCameraLookat(this.cameraLookat.vector, this.intersect.object.position, -15, false)
   }
 
   moveItem (element, speed, { x = 0, y = 0, z = 0 }) {
@@ -129,10 +129,10 @@ export default class ObjectsToCollect {
     this.cameraLookat.vector = p2
   }
 
-  changeCameraLookat (target, y, changed) {
+  changeCameraLookat (from, to, y, changed) {
     // console.log(this.intersect.object.position, 'position of object')
-    this.tween3 = new TWEEN.Tween(this.cameraLookat.vector)
-      .to({ x: target.x, y: target.y + y, z: target.z }, 1000)
+    this.tween3 = new TWEEN.Tween(from)
+      .to({ x: to.x, y: to.y + y, z: to.z }, 1000)
       .onComplete(() => {
         this.cameraLookat.changed = changed
       })
@@ -150,7 +150,7 @@ export default class ObjectsToCollect {
   }
 
   updateCameraLookat () {
-    console.log(this.cameraLookat.vector, 'position of lookat')
+    // .log(this.cameraLookat.vector, 'position of lookat')
     // console.log(this.cameraLookat.changed)
 
     // if cinematic is closed and lookat hasnt changed
@@ -159,19 +159,20 @@ export default class ObjectsToCollect {
       this.camera.lookAt(this.cameraLookat.vector)
     }
 
-    //  if cinematic is closed and camera lookat has changed
+    /*
+    // problem here, I think I need to store the last pos
+    //  if cinematic is closed and camera lookat has changed = do the tween
     if (!store.default.state.displayCinematicObject && this.cameraLookat.changed) {
-      this.camera.lookAt(this.intersect.object.position)
+      this.camera.lookAt(this.cameraLookat.vector)
     }
+    */
 
-    // if cinematic is open and lookat has not changed yet
-    // do the tween
+    // if cinematic is open and lookat has not changed = do the tween
     if (store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
       this.camera.lookAt(this.cameraLookat.vector)
     }
 
-    // if cinematic is open and lookat has changed
-    // you can look at the intersect position
+    // if cinematic is open and lookat has changed you can look at the intersect position
     if (store.default.state.displayCinematicObject && this.cameraLookat.changed ) {
       this.camera.lookAt(this.intersect.object.position)
     }
