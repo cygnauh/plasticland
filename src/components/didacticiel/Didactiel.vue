@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-         <div :class="element.name" class="didactiel collection" v-if="isShowing">
+         <div :class="element.name" class="didactiel" v-if="isShowing">
             <img v-if='element' :src="element.path" alt="logo">
             <p>{{ element.message }}</p>
          </div>

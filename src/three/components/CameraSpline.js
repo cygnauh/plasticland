@@ -47,7 +47,7 @@ export default class CameraSpline {
   }
 
   moveCamera (e) {
-    // console.log(this.percentageCamera.value)
+    console.log(this.percentageCamera.value)
     let speed = {
       slow: 0.03,
       mid: 0.05,

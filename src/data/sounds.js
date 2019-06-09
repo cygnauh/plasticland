@@ -14,36 +14,36 @@ export default {
       'id': 21,
       'name': 'starbucks',
       'src': './sounds/starbucks.mp3',
-      'startAt': 0.1,
-      'endAt': 0.2
+      'startAt': 0.22,
+      'endAt': 0.34
     },
     {
       'id': 22,
       'name': 'carrefour',
       'src': './sounds/carrefour.mp3',
-      'startAt': 0.21,
+      'startAt': 0.35,
       'endAt': 0.49
     },
     {
       'id': 23,
       'name': 'cocacola',
       'src': './sounds/cocacola.mp3',
-      'startAt': 0.50,
-      'endAt': 0.60
+      'startAt': 0.5,
+      'endAt': 0.65
     },
     {
       'id': 24,
       'name': 'gestespropres',
       'src': './sounds/lobbies.mp3',
       'startAt': 0.66,
-      'endAt': 0.89
+      'endAt': 0.7
     },
     {
       'id': 25,
       'name': 'nestle',
       'src': './sounds/carrefour.mp3',
-      'startAt': 0.90,
-      'endAt': 1
+      'startAt': 0.80,
+      'endAt': 0.89
     },
     {
       'id': 26,
