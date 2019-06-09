@@ -133,6 +133,7 @@ export default class App extends Engine {
     this.soundPlayed = true
     if (this.sound) {
       this.sound.initAmbiantSound()
+      this.sound.initMelodySound()
       this.sound.initPlaceSound()
       this.sound.initVoiceOver()
     }

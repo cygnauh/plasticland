@@ -4,6 +4,11 @@ export default {
     'name': 'ocean',
     'src': './sounds/sound_ambiant_xp.mp3'
   },
+  'melody': {
+    'id': 200,
+    'name': 'melody',
+    'src': './sounds/melodie.mp3'
+  },
   'place': [
     {
       'id': 21,

@@ -9,6 +9,7 @@ export default class Sound {
     this.camera = camera
     this.initSound()
     this.ambiantSoundPlaying = false
+    this.melodySoundPlaying = false
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
@@ -23,8 +24,16 @@ export default class Sound {
   initAmbiantSound () {
     // create a global audio source
     let src = store.default.state.sounds.ambiant.src
-    console.log(src)
     this.ambiantSound = new Howl({
+      src: [src],
+      loop: true,
+      volume: 0 // fade to 1 when it plays
+    })
+  }
+  
+  initMelodySound () {
+    let src = store.default.state.sounds.melody.src
+    this.melodySound = new Howl({
       src: [src],
       loop: true,
       volume: 0 // fade to 1 when it plays
@@ -55,10 +64,15 @@ export default class Sound {
     })
   }
   playAmbiantAndMelody () {
+    if (this.ambiantSoundPlaying && this.melodySoundPlaying) return
     if (this.voiceOver.seek() > 13.0 && !this.ambiantSoundPlaying) {
       this.ambiantSound.id = this.ambiantSound.play()
       this.ambiantSound.fade(0, 1, 1000, this.ambiantSound.id)
       this.ambiantSoundPlaying = true
+    } else if (this.voiceOver.seek() > 21.19 && !this.melodySoundPlaying) {
+      this.melodySound.id = this.melodySound.play()
+      this.melodySound.fade(0, 1, 1000, this.melodySound.id)
+      this.melodySoundPlaying = true
     }
   }
   updatePlaceSound (value) {
@@ -82,7 +96,7 @@ export default class Sound {
   }
   update (time) {
     if (this.voiceOver && this.voiceOver.playing()) {
-      if (!this.ambiantSoundPlaying) this.playAmbiantAndMelody()
+      this.playAmbiantAndMelody()
       this.updateSubtitle()
       if (store.default.state.currentVoiceOverSeek !== this.voiceOver.seek()) {
         store.default.commit('setVoiceOver', this.voiceOver.seek())

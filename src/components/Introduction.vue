@@ -136,20 +136,16 @@ export default {
       height: 100%;
       background: url('../assets/img/cloud_01.png') no-repeat;
       background-size: cover;
-      /*border: solid 1px;*/
       opacity:0.75;
-      /*transition: transform 2s ease-in-out;*/
     }
     .left{
       background-position: 100% 200px;
       left: 0;
-      /*background: rgba(rebeccapurple, 0.3);*/
       transform: translateX(-100%) ;
     }
     .right{
       background-position: 0 136px;
       right: 0;
-      /*background: rgba(blue, 0.3);*/
       transform: translateX(100%);
     }
     &.show-scene{
