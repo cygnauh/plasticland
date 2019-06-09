@@ -77,150 +77,237 @@ export default {
     },
     {
       'type': 'starbucks',
-      'name': 'final',
       'text': 'It all started with some kind of',
-      'startAt': 29.0,
-      'endAt': 29.0
+      'startAt': 30.0,
+      'endAt': 32.11
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'coffee',
-      'startAt': 29.0,
-      'endAt': 30.0
-    },
-    {
-      'id': 51,
-      'name': 'final',
-      'text': 'mixed',
-      'startAt': 30.22,
-      'endAt': 31.22
-    },
-    {
-      'id': 51,
-      'name': 'final',
-      'text': 'with trash smell.',
-      'startAt': 32.0,
+      'type': 'starbucks',
+      'text': 'coffee mixed with trash smell.',
+      'startAt': 32.20,
       'endAt': 33.22
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'carrefour',
       'text': 'As I traveled through this place,',
-      'startAt': 36.0,
+      'startAt': 36.18,
       'endAt': 38.23
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'I saw objects,',
+      'type': 'carrefour',
+      'text': 'I saw objects, wrapped under multiple layers of plastic.',
       'startAt': 39.16,
-      'endAt': 41.14
+      'endAt': 43.18
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'wrapped under multiple layers of plastic.',
-      'startAt': 42.13,
-      'endAt': 46.1
-    },
-    {
-      'id': 51,
-      'name': 'final',
+      'type': 'cocacola',
       'text': 'Further on,',
-      'startAt': 49.07,
-      'endAt': 50.19
+      'startAt': 46.02,
+      'endAt': 47.03
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'cocacola',
       'text': 'there were transparent bottles.',
-      'startAt': 51.04,
-      'endAt': 53.24
+      'startAt': 47.15,
+      'endAt': 49.10
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'cocacola',
       'text': 'I thought they were made of glass.',
-      'startAt': 55.0,
-      'endAt': 57.16
+      'startAt': 49.22,
+      'endAt': 51.5
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'I remember',
-      'startAt': 59.21,
-      'endAt': 61.2
+      'type': 'lobbies',
+      'text': 'I remember I started to feel guilty about',
+      'startAt': 54.23,
+      'endAt': 57.13
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'I started to feel guilty about being there.',
-      'startAt': 62.21,
-      'endAt': 66.0
+      'type': 'lobbies',
+      'text': 'being there.',
+      'startAt': 57.23,
+      'endAt': 59.0
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'lobbies',
       'text': 'It was just too weird,',
-      'startAt': 68.0,
-      'endAt': 70.2
+      'startAt': 59.04,
+      'endAt': 60.2
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'lobbies',
       'text': 'looking at the statue.',
-      'startAt': 71.0,
-      'endAt': 73.1
+      'startAt': 61.04,
+      'endAt': 62.18
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'nestle',
       'text': 'Surrounded by all those mountains of plastic waste,',
-      'startAt': 76.0,
-      'endAt': 81.1
+      'startAt': 65.14,
+      'endAt': 68.24
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'I witnessed some kind of',
-      'startAt': 82.1,
-      'endAt': 84.24
+      'type': 'nestle',
+      'text': 'I witnessed some kind of award ceremony.',
+      'startAt': 69.11,
+      'endAt': 72.16
     },
     {
-      'id': 51,
-      'name': 'final',
-      'text': 'award ceremony.',
-      'startAt': 85.1,
-      'endAt': 87.1
-    },
-    {
-      'id': 51,
-      'name': 'final',
+      'type': 'final',
       'text': 'At the end of my expedition…..',
-      'startAt': 82.23,
-      'endAt': 92.2
+      'startAt': 74.12,
+      'endAt': 76.10
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'final',
       'text': 'I realized something.',
-      'startAt': 93.2,
-      'endAt': 95.2
+      'startAt': 76.12,
+      'endAt': 78.11
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'final',
+      'text': 'What?',
+      'startAt': 78.12,
+      'endAt': 79.01
+    },
+    {
+      'type': 'final',
+      'text': '',
+      'startAt': 79.01,
+      'endAt': 79.9
+    },
+    {
+      'type': 'final',
       'text': 'Every second…',
-      'startAt': 98.05,
-      'endAt': 100.0
+      'startAt': 80.02,
+      'endAt': 81.05
     },
     {
-      'id': 51,
-      'name': 'final',
+      'type': 'final',
       'text': 'counts.',
-      'startAt': 100.1,
-      'endAt': 101.08
+      'startAt': 81.18,
+      'endAt': 82.22
+    },
+    {
+      'type': 'interactionSt',
+      'text': 'Look at that!',
+      'startAt': 91.05,
+      'endAt': 92.01
+    },
+    {
+      'type': 'interactionSt',
+      'text': '',
+      'startAt': 92.02,
+      'endAt': 93.03
+    },
+    {
+      'type': 'interactionSt',
+      'text': 'Oh ! It’s starbucks cup.',
+      'startAt': 93.04,
+      'endAt': 94.20
+    },
+    {
+      'type': 'interactionSt',
+      'text': 'What was that doing there?',
+      'startAt': 94.23,
+      'endAt': 96.08
+    },
+    {
+      'type': 'interactionCr',
+      'text': 'Check this out!',
+      'startAt': 100.18,
+      'endAt': 101.19
+    },
+    {
+      'type': 'interactionCr',
+      'text': '',
+      'startAt': 101.2,
+      'endAt': 103.03
+    },
+    {
+      'type': 'interactionCr',
+      'text': 'What the hell is that?',
+      'startAt': 103.04,
+      'endAt': 104.11
+    },
+    {
+      'type': 'interactionCc',
+      'text': 'Do you know this ?',
+      'startAt': 106.13,
+      'endAt': 107.2
+    },
+    {
+      'type': 'interactionCc',
+      'text': '',
+      'startAt': 107.3,
+      'endAt': 109.03
+    },
+    {
+      'type': 'interactionCc',
+      'text': 'Is it a Coca-Cola?',
+      'startAt': 109.05,
+      'endAt': 110.13
+    },
+    {
+      'type': 'interactionCc',
+      'text': 'What was that doing there?',
+      'startAt': 110.15,
+      'endAt': 111.20
+    },
+    {
+      'type': 'interactionLb',
+      'text': 'Look at that',
+      'startAt': 113.14,
+      'endAt': 114.12
+    },
+    {
+      'type': 'interactionLb',
+      'text': '',
+      'startAt': 114.13,
+      'endAt': 115.12
+    },
+    {
+      'type': 'interactionLb',
+      'text': 'What the hell is that?',
+      'startAt': 115.14,
+      'endAt': 117.0
+    },
+    {
+      'type': 'interactionNe',
+      'text': 'Check this out!',
+      'startAt': 118.21,
+      'endAt': 119.23
+    },
+    {
+      'type': 'interactionNe',
+      'text': '',
+      'startAt': 119.25,
+      'endAt': 117.0
+    },
+    {
+      'type': 'interactionNe',
+      'text': 'I seem to know this brand.',
+      'startAt': 121.25,
+      'endAt': 122.12
+    },
+    {
+      'type': 'reaction',
+      'text': 'It looks big here.',
+      'startAt': 124.05,
+      'endAt': 126.07
+    },
+    {
+      'type': 'reaction',
+      'text': 'It\'s a huge mountain.',
+      'startAt': 127.12,
+      'endAt': 129.13
+    },
+    {
+      'type': 'reaction',
+      'text': 'I can\'t believe it.',
+      'startAt': 130.25,
+      'endAt': 132.12
     }
   ]
 }
