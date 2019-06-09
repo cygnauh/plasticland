@@ -39,11 +39,11 @@
     .router-link-active{
       top: 0;
       text-decoration: none;
-      &.close-link{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    }
+    .close-link{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .close-btn{
       cursor: pointer;

@@ -18,19 +18,18 @@
           <span>Retour</span>
         </div>
       </router-link>
-      <router-link
-        to="/plasticland/inventory"
+      <div
         v-if="$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' && $route.path !== '/plasticland/cinematic'"
         class="close-link">
         <div
           :class="[$route.path !== '/plasticland' && $route.path !== '/plasticland/inventory' ? 'show' : '']"
           class="close-btn"
-          @click="goInventory">
+          @click="closeInventoryDetail">
           <img
             :src="require('../assets/img/close.png')"
             alt="Vue logo">
         </div>
-      </router-link>
+      </div>
       <div v-if="!displayIntro" class="right-side-content-top">
         <div
           :class="{ 'dark' : ($route.path !== '/plasticland') }"
@@ -62,8 +61,7 @@
           v-if="$route.path === '/plasticland'"
           to="/plasticland/inventory">
           <div
-            class="interface inventory-btn"
-            @click="goInventory">
+            class="interface inventory-btn">
             <div class="inventory-btn-title">
               <span>
                 collection
@@ -106,14 +104,14 @@ import Intro from './Introduction'
 
 export default {
   name: 'Stage',
-  components: { CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro },
+  components: { Loader, Timer, Subtitle, Radar, Didactiel, Intro },
   data () {
     return {
       data: '',
       objectFound: this.$store.state.objects.filter(item => item.found).length,
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
-	  displayNotif: false,
+      displayNotif: false
     }
   },
   computed: {
@@ -137,9 +135,6 @@ export default {
     $route (to) {
       this.checkRoute(to.path)
     },
-    // title (value) {
-    //   Vue.prototype.$engine.sound.updatePlaceSound(value)
-    // }
     hasFoundObject (value) {
       if (value) {
         this.$router.push({
@@ -159,13 +154,13 @@ export default {
     goTo (value) {
       Vue.prototype.$engine.handleRender(value)
     },
-    goInventory () {
-      console.log('test')
-      // this.displayNotif = false
-      // this.$router.push({
-      //   path: `/plasticland/inventory`,
-      //   component: InventoryList
-      // })
+    closeInventoryDetail () {
+      if (this.$store.state.isPreviousCinematic) {
+        this.$router.go(-2)
+        this.$store.commit('sePreviousRoute', false)
+      } else {
+        this.$router.go(-1)
+      }
     },
     checkRoute (route) {
       switch (route) {

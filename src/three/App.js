@@ -20,6 +20,7 @@ export default class App extends Engine {
     this.initCollectable()
     this.initSound()
     this.animate()
+    this.soundPlayed = false
   }
 
   initSound () {
@@ -28,10 +29,10 @@ export default class App extends Engine {
 
   initGeometry () {
     this.environment = new Environment(this.scene, this.renderer, this.light) // water and sky
-    this.mountain = new GltfLoader('montagne', './models/environnement.glb', this.scene, this.manager, { addToScene: false }) // mountains
-    this.instances = new Instances(this.scene, this.manager, './models/instances_01.glb') // instances on mountains
+    this.mountain = new GltfLoader('montagne', './models_converted/environnement.glb', this.scene, this.manager, { addToScene: false }) // mountains
+    this.instances = new Instances(this.scene, this.manager, './models_converted/instances_01.glb') // instances on mountains
     this.boat = new Boat(this.scene, this.manager, this.camera) // boat
-    this.objectsToCollect = new ObjectsToCollect(this.scene, this.manager, this.raycaster) // objects to collect
+    this.objectsToCollect = new ObjectsToCollect(this.scene, this.manager, this.raycaster, this.camera, this.cameraSpline, this.composer) // objects to collect
   }
 
   initGroup () {
@@ -84,7 +85,7 @@ export default class App extends Engine {
       this.currentRender = 'detail' // TODO handle the other case ( about page )
     }
   }
-  
+
   handleWheel (e) {
     // apply on the first wheel event triggered
     if (store.default.state.displayIntro) {
@@ -122,13 +123,26 @@ export default class App extends Engine {
         this.collectable.changeMaterial(element.name, true)
       }
     })
-    // this.sound.voiceOver.play()
-    console.log(this.sound.voiceOver)
-    // var promise = HTMLMediaElement.play()
-    // promise.then(response => {
-    //   console.log(response)
-    // })
-    this.sound.playSpatialSounds()
+    console.log('click')
+    if (!this.soundPlayed) {
+      console.log(this.soundPlayed, 'soundPlayed')
+      this.handleSoundFirstTime()
+    }
+  }
+
+  handleSoundFirstTime () {
+    this.soundPlayed = true
+    if (this.sound) {
+      this.sound.initPlaceSound()
+      this.sound.placeSounds.forEach(element => {
+        element.sound.play()
+        console.log('play')
+        element.sound.on('play', () => {
+          console.log('pause')
+          element.sound.pause()
+        })
+      })
+    }
   }
 
   animate () {
