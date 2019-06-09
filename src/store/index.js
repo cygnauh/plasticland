@@ -68,11 +68,11 @@ export default new Vuex.Store({
     sePreviousRoute (state, bool) {
       state.isPreviousCinematic = bool
     },
-    setTimeEllapsed (state, seconds, minutes, hours, totalSeconds) {
-      state.time.ellapsedSeconds = seconds
-      state.time.ellapsedMinutes = minutes
-      state.time.ellapsedHours = hours
-      state.time.totalEllapsedSeconds = totalSeconds
+    setTimeEllapsed (state, array) {
+      state.time.ellapsedSeconds = array[0]
+      state.time.ellapsedMinutes = array[1]
+      state.time.ellapsedHours = array[2]
+      state.time.totalEllapsedSeconds = array[3]
     },
   }
 })

@@ -29,6 +29,11 @@ export default {
       totalEllapsedSeconds: 0
     }
   },
+  watch: {
+    updateStore () {
+      this.updateStore()
+    }
+  },
   created () {
     setInterval(() => {
       this.initSecondTime()
@@ -64,7 +69,8 @@ export default {
       this.hours = this.secondTime.getHours()
     },
     updateStore () {
-      this.$store.commit('setTimeEllapsed', this.ellapsedSeconds, this.ellapsedMinutes, this.ellapsedHours, this.totalEllapsedSeconds, this.totalPlasticWaste)
+      const array = [this.ellapsedSeconds, this.ellapsedMinutes, this.ellapsedHours, this.totalEllapsedSeconds]
+      this.$store.commit('setTimeEllapsed', array)
     }
   }
 }
