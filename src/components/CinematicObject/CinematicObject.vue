@@ -49,9 +49,8 @@ export default {
     // Vue.prototype.$engine.handleRender('cinematic')
   },
   beforeDestroy () {
-    this.$store.commit('setFoundObjectName', '')
     this.$store.commit('setCinematicObject', false)
-    Vue.prototype.$engine.objectsToCollect.tweenVignette(0.3, 0.442)
+    Vue.prototype.$engine.objectsToCollect.close()
   },
   computed: {
     objectFound () {

@@ -14,13 +14,14 @@ export default class ObjectsToCollect {
     this.composer = composer
 
     this.array = []
-    this.objects = null
 
+    // for the animation of the camera lookat
     this.cameraLookat = {
       vectorSpline: null,
       vectorObject: null
     }
 
+    // for the animation of the vignette
     this.vignettePass = this.composer.passes[1].effects[1]
     this.vignette = {
       offset: {
@@ -31,12 +32,14 @@ export default class ObjectsToCollect {
       }
     }
 
+    this.intersect = null
+
     this.initCollectables()
   }
 
   initCollectables () {
-    this.objects = store.default.state.objects
-    this.objects.forEach((object) => {
+    let objects = store.default.state.objects
+    objects.forEach((object) => {
       let mesh = new GltfLoaderRefactored(object.name, object.model, this.scene, this.manager, { posX: object.x, posY: 0, posZ: object.z, scale: 10, addToScene: true })
       this.array.push(mesh)
     })
@@ -82,7 +85,6 @@ export default class ObjectsToCollect {
             this.animateObject(6, intersect)
             break
           default:
-            store.default.commit('setFoundObjectName', intersect.object.name)
             break
         }
       })
@@ -92,12 +94,23 @@ export default class ObjectsToCollect {
   animateObject (id, intersect) {
     store.default.commit('objectFound', id)
     store.default.commit('setCinematicObject', true)
-    this.moveItem(intersect.object.position)
-    this.tweenVignette(0.54, 0.54)
+    store.default.commit('setFoundObjectName', intersect.object.name)
+    this.intersect = intersect
+    this.open()
   }
 
-  moveItem (element) {
-    let target = new THREE.Vector3(element.x, element.y + 15, element.z)
+  open () {
+    this.tweenVignette(0.54, 0.54)
+    this.moveItem(this.intersect.object.position, 15)
+  }
+
+  close () {
+    this.tweenVignette(0.3, 0.442)
+    this.moveItem(this.intersect.object.position, 35)
+  }
+
+  moveItem (element, y) {
+    let target = new THREE.Vector3(element.x, element.y + y, element.z)
     animateVector3(element, target, {
       duration: 1000,
       easing: TWEEN.Easing.Quadratic.InOut
@@ -135,29 +148,33 @@ export default class ObjectsToCollect {
   update (time) {
     let y = this.calculateSurface(10, 10, time)
 
-    if (this.objects !== null) {
-      this.objects.forEach(object => {
-        if (this.array.length > 0) {
-          this.array.forEach(collectable => {
-            collectable.then(response => {
-              response.meshes.forEach(mesh => {
-                if (!object.found) {
-                  // mesh.position.y = y
-                  mesh.rotation.y = Math.sin(time) / 3
-                  mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
-                } else if (object.found) {
-                  mesh.rotation.y = Math.sin(time) / 3
-                  mesh.position.y = mesh.position.y + Math.sin(time) / 15
-                }
-              })
-              /* if (this.changeCamera.active ) {
-                // console.log(response.meshes[this.objects.found.length])
-                  // this.changeCameraLookat(response.meshes[this.objects.found.length].position)
-              } */
-            })
+
+    if (this.array.length > 0) {
+      this.array.forEach(collectable => {
+        collectable.then(response => {
+          response.meshes.forEach(mesh => {
+            if ( store.default.state.currentFoundObjectName !== mesh.name && !store.default.state.displayCinematicObject) {
+              //  si l'objet n'est pas trouvé et que la cinématique n'est pas ouverte
+              mesh.position.y = y
+              mesh.rotation.y = Math.sin(time) / 3
+              mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
+            } else if (store.default.state.currentFoundObjectName === mesh.name && store.default.state.displayCinematicObject) {
+              // si l'objet est trouvé et que la cinématique est ouverte
+              mesh.rotation.y = Math.sin(time) / 3
+              mesh.position.y = mesh.position.y + Math.sin(time) / 35
+            } else if (store.default.state.currentFoundObjectName === mesh.name && !store.default.state.displayCinematicObject) {
+              // si l'objet a été trouvé mais que la cinématique fermé
+              mesh.position.y = mesh.position.y + Math.sin(time) / 10
+            }
+
           })
-        }
+          /* if (this.changeCamera.active ) {
+            // console.log(response.meshes[this.objects.found.length])
+              // this.changeCameraLookat(response.meshes[this.objects.found.length].position)
+          } */
+        })
       })
+
     }
 
     this.updateVignette()
