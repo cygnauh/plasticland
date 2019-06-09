@@ -17,8 +17,8 @@ export default class ObjectsToCollect {
 
     // for the animation of the camera lookat
     this.cameraLookat = {
-      vectorSpline: null,
-      vectorObject: null
+      vector: null,
+      changed: false
     }
 
     // for the animation of the vignette
@@ -102,17 +102,20 @@ export default class ObjectsToCollect {
   open () {
     this.tweenVignette(0.54, 0.54)
     this.moveItem(this.intersect.object.position, 1000, { y: 15 })
+    this.changeCameraLookat(this.intersect.object.position, 15, true)
+    // this.changeOffsetCamera()
   }
 
   close () {
     this.tweenVignette(0.3, 0.442)
     this.moveItem(this.intersect.object.rotation, 3000, { y: 35 })
     this.moveItem(this.intersect.object.position, 1000, { y: 35 })
-    this.moveItem(this.intersect.object.scale, 1000, { x: 2, y: 2, z: 2 })
-    this.moveItem(this.intersect.object.position, 2000, { y: 102 })
+    this.moveItem(this.intersect.object.scale, 1000, { x: 0.5, y: 0.5, z: 0.5 })
+    this.moveItem(this.intersect.object.position, 2000, { y: 82 })
+    this.changeCameraLookat(this.cameraLookat.vector, 0, false)
   }
 
-  moveItem (element, speed, {x = 0, y = 0, z = 0 }) {
+  moveItem (element, speed, { x = 0, y = 0, z = 0 }) {
     let target = new THREE.Vector3(element.x + x, element.y + y, element.z + z)
     animateVector3(element, target, {
       duration: speed,
@@ -121,17 +124,58 @@ export default class ObjectsToCollect {
   }
 
   getCameraLookat () {
-    if (this.cameraSpline) {
-      this.lookat = this.cameraSpline.spline.getPointAt((store.default.state.splinePosition + 0.01) % 1) // lookat
-      this.cameraLookat.vectorSpline = this.lookat
-    }
+    let p2 = this.cameraSpline.spline.getPointAt((store.default.state.splinePosition + 0.01) % 1) // lookat
+    p2.y = p2.y + 3.5
+    this.cameraLookat.vector = p2
   }
 
-  changeCameraLookat (target) {
-    animateVector3(this.cameraLookat.vectorSpline, target, {
-      duration: 1000,
-      easing: TWEEN.Easing.Quadratic.InOut
-    })
+  changeCameraLookat (target, y, changed) {
+    // console.log(this.intersect.object.position, 'position of object')
+    this.tween3 = new TWEEN.Tween(this.cameraLookat.vector)
+      .to({ x: target.x, y: target.y + y, z: target.z }, 1000)
+      .onComplete(() => {
+        this.cameraLookat.changed = changed
+      })
+    this.tween3.start()
+  }
+
+  changeOffsetCamera () {
+    const width = 1920 // width of subcamera
+    const height = 1080 // height of subcamera
+    const fullWidth = width * 3
+    const fullHeight = height * 3
+    const x = width * 1 // horizontal offset of subcamera
+    const y = height * 0 // vertical offset of subcamera
+    this.camera.setViewOffset(fullWidth, fullHeight, x, y, width, height)
+  }
+
+  updateCameraLookat () {
+    console.log(this.cameraLookat.vector, 'position of lookat')
+    // console.log(this.cameraLookat.changed)
+
+    // if cinematic is closed and lookat hasnt changed
+    if (!store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
+      this.getCameraLookat()
+      this.camera.lookAt(this.cameraLookat.vector)
+    }
+
+    //  if cinematic is closed and camera lookat has changed
+    if (!store.default.state.displayCinematicObject && this.cameraLookat.changed) {
+      this.camera.lookAt(this.intersect.object.position)
+    }
+
+    // if cinematic is open and lookat has not changed yet
+    // do the tween
+    if (store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
+      this.camera.lookAt(this.cameraLookat.vector)
+    }
+
+    // if cinematic is open and lookat has changed
+    // you can look at the intersect position
+    if (store.default.state.displayCinematicObject && this.cameraLookat.changed ) {
+      this.camera.lookAt(this.intersect.object.position)
+    }
+
   }
 
   tweenVignette (offset, darkness) {
@@ -151,12 +195,11 @@ export default class ObjectsToCollect {
   update (time) {
     let y = this.calculateSurface(10, 10, time)
 
-
     if (this.array.length > 0) {
       this.array.forEach(collectable => {
         collectable.then(response => {
           response.meshes.forEach(mesh => {
-            if ( store.default.state.currentFoundObjectName !== mesh.name && !store.default.state.displayCinematicObject) {
+            if (store.default.state.currentFoundObjectName !== mesh.name && !store.default.state.displayCinematicObject) {
               //  si l'objet n'est pas trouvé et que la cinématique n'est pas ouverte
               mesh.position.y = y
               mesh.rotation.y = Math.sin(time) / 3
@@ -169,23 +212,12 @@ export default class ObjectsToCollect {
               // si l'objet a été trouvé mais que la cinématique fermé
               mesh.position.y = mesh.position.y + Math.sin(time) / 10
             }
-
           })
-          /* if (this.changeCamera.active ) {
-            // console.log(response.meshes[this.objects.found.length])
-              // this.changeCameraLookat(response.meshes[this.objects.found.length].position)
-          } */
         })
       })
-
     }
 
     this.updateVignette()
-
-    if (store.default.state.displayCinematicObject) {
-      // this.camera.lookAt(this.cameraLookat.vectorSpline)
-    } else {
-      this.getCameraLookat()
-    }
+    this.updateCameraLookat()
   }
 }
