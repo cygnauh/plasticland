@@ -48,7 +48,7 @@ export default class Sound {
     console.log(src)
     this.climaxSound = new Howl({
       src: [src],
-      loop: true,
+      loop: false,
       volume: 1 // fade to 1 when it plays
     })
   }
@@ -101,14 +101,14 @@ export default class Sound {
       this.melodySound.pause()
       console.log('hello')
     }
-    if (this.voiceOver.seek() > 75.2 && this.currentSound && !this.isClimaxSoundPlaying) {
+    if (this.voiceOver.seek() > 74.21 && this.currentSound && !this.isClimaxSoundPlaying) {
       // this.currentSound.sound.pause()
       this.climaxId = this.climaxSound.play()
       this.isClimaxSoundPlaying = true
       console.log('cli')
     }
-    if (this.voiceOver.seek() > 78.25 && this.climaxSound && this.climaxSound.playing() && !this.isClockPlaying) {
-      this.climaxSound.fade(1, 0, 1000, this.climaxId)
+    if (this.voiceOver.seek() > 78.6 && this.climaxSound && this.climaxSound.playing() && !this.isClockPlaying) {
+      // this.climaxSound.fade(1, 0, 200, this.climaxId)
       // this.climaxSound.pause()
       this.clockSound.play()
       this.isClockPlaying = true
