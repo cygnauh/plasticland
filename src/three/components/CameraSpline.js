@@ -49,11 +49,11 @@ export default class CameraSpline {
   moveCamera (e) {
     console.log(this.percentageCamera.value)
     let speed = {
-      slow: 0.03,
-      mid: 0.05
+      slow: 0.02,
+      mid: 0.04
     }
     if (this.percentageCamera.value + speed.slow <= store.default.state.objects[0].position) {
-      this.tweenToScroll(speed.mid)
+      this.tweenToScroll(speed.slow)
       this.moveRadar()
     } else if (store.default.state.objects[0].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[1].position) {
       this.tweenToScroll(speed.mid)
