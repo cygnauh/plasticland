@@ -4,7 +4,7 @@ export default {
       id: 0,
       name: 'scroll',
       path: require('@/assets/img/svg/didacticiel-scroll.svg'),
-      position: '0.001',
+      position: '0.05',
       seekPosition: 12.0,
       message: 'Scrollez pour explorer PLASTICLAND',
       active: false
