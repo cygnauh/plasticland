@@ -133,7 +133,8 @@ export default class ObjectsToCollect {
   changeCameraLookat (from, to, y, changed) {
     // console.log(this.intersect.object.position, 'position of object')
     this.tween3 = new TWEEN.Tween(from)
-      .to({ x: to.x, y: to.y + y, z: to.z }, 1000)
+      .to({ x: to.x, y: to.y + y, z: to.z }, 1500)
+      .easing(TWEEN.Easing.Sinusoidal.InOut)
       .onComplete(() => {
         this.cameraLookat.changed = changed
       })
