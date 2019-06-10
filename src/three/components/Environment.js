@@ -10,7 +10,7 @@ export default class Environment extends THREE.Object3D {
     this.light = light
     this.tempo = 0
 
-    this.initPlaneGeometry(1000, 3500, 20, 20)
+    this.initPlaneGeometry(1000, 3800, 20, 20)
     this.initWater()
     this.initSkybox()
     this.initCubeCamera()
