@@ -120,7 +120,7 @@ export default {
       },
       {
         'name': 'final',
-        'startAt': 0.9,
+        'startAt': 0.98,
         'played': false
       }
     ]
