@@ -12,6 +12,8 @@ export default new Vuex.Store({
   state: {
     assetsLoad: false,
     displayIntro: true,
+    displayCinematicObject: false,
+    displayConclusion: false,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
@@ -23,7 +25,6 @@ export default new Vuex.Store({
     sounds: sounds,
     didacticiels: didacticiels.array,
     radar: null,
-    displayCinematicObject: false,
     cinematicObjectContainer: null,
     isPreviousCinematic: false,
     time: timer.time
@@ -58,6 +59,9 @@ export default new Vuex.Store({
     },
     setCinematicObject (state, bool) {
       state.displayCinematicObject = bool
+    },
+    setConclusion (state, bool) {
+      state.displayConclusion = bool
     },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true

@@ -114,7 +114,7 @@ export default {
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
       displayNotif: false,
-      displayConclusion: false
+      displayConclusion: this.$store.state.displayConclusion
     }
   },
   computed: {
