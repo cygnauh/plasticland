@@ -15,6 +15,7 @@ export default class Sound {
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
+    this.initSound()
   }
 
   initSound () {
@@ -69,9 +70,9 @@ export default class Sound {
         loop: true,
         volume: 1
       })
-      placeSound.once('load', () => {
-        this.placeSounds.push({ 'name': element.name, sound: placeSound })
-      })
+      // placeSound.once('load', () => {
+      this.placeSounds.push({ 'name': element.name, sound: placeSound })
+      // })
     })
   }
 
@@ -81,6 +82,25 @@ export default class Sound {
       src: [src],
       sprite: store.default.state.sounds.voice.sprites[0],
       volume: 1
+    })
+  }
+  firstPlay (sound) {
+    if (sound) {
+      sound.once('load', () => {
+        sound.play()
+        sound.on('play', () => {
+          sound.pause()
+        })
+      })
+    }
+  }
+  playAllSounds () {
+    this.firstPlay(this.melodySound)
+    this.firstPlay(this.ambiantSound)
+    this.firstPlay(this.climaxSound)
+    this.firstPlay(this.clockSound)
+    this.placeSounds.forEach(element => {
+      this.firstPlay(element.sound)
     })
   }
   playAmbiantAndMelody () {

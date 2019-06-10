@@ -128,7 +128,7 @@ export default class App extends Engine {
   handleSoundFirstTime () {
     this.soundPlayed = true
     if (this.sound) {
-      this.sound.initSound()
+      this.sound.playAllSounds()
     }
   }
 
