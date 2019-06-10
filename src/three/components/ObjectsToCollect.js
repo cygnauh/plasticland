@@ -5,13 +5,35 @@ import * as TWEEN from 'tween'
 import * as THREE from 'three/src/Three'
 
 export default class ObjectsToCollect {
-  constructor (scene, manager, raycaster) {
+  constructor (scene, manager, raycaster, camera, spline, composer) {
     this.scene = scene
     this.manager = manager
     this.raycaster = raycaster
+    this.camera = camera
+    this.cameraSpline = spline
+    this.composer = composer
 
     this.array = []
-    this.found = false
+
+    // for the animation of the camera lookat
+    this.cameraLookat = {
+      newVector: null,
+      changed: false,
+      spline: null
+    }
+
+    // for the animation of the vignette
+    this.vignettePass = this.composer.passes[1].effects[1]
+    this.vignette = {
+      offset: {
+        value: 0.3
+      },
+      darkness: {
+        value: 0.442
+      }
+    }
+
+    this.intersect = null
 
     this.initCollectables()
   }
