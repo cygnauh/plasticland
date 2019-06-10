@@ -86,7 +86,7 @@
     </div>
     <router-view/>
     <!--<CinematicObject v-if="hasFoundObject"/>-->
-    <Conclusion/>
+    <Conclusion v-if="displayConclusion"/>
     <Intro v-if="displayIntro"></Intro>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
@@ -113,7 +113,8 @@ export default {
       objectFound: this.$store.state.objects.filter(item => item.found).length,
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
-      displayNotif: false
+      displayNotif: false,
+      displayConclusion: false
     }
   },
   computed: {
