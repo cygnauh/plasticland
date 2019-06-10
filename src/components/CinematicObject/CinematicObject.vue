@@ -1,29 +1,16 @@
 <template id="cinematicObject">
     <div class="cinematicObject">
-        <div class="head">
-            <router-link
-              to="/plasticland">
-              <div
-                class="close-btn"
-                @click="closeCinematic">
-                <img :src="require('../../assets/img/close.png')" alt="close">
-              </div>
-            </router-link>
-        </div>
 
         <!--<div class="cinematicObject-scene" ref="cinematicObjectScene"></div>-->
         <div class="main">
-            <div class="inventory-btn-count">
-                <span class="inventory-btn-obj-found">{{ objectFound }}</span>
-                <div class="border-separator"></div>
-                <span class="inventory-btn-obj-total">{{ totalObject }}</span>
-            </div>
+            <router-link to="/plasticland">
+                <div class="close-btn" @click="closeCinematic">
+                    <img :src="require('../../assets/img/close.png')" alt="close">
+                </div>
+            </router-link>
             <div class="title"> {{ objectOpen.title }}</div>
-            <router-link
-                :to="detailRoute">
-                <div
-                    class="yellow-btn"
-                    @click="showDetail">
+            <router-link :to="detailRoute">
+                <div class="yellow-btn" @click="showDetail">
                     <p><a href="#">en savoir plus</a></p>
                 </div>
             </router-link>
