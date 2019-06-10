@@ -5,21 +5,23 @@ import * as TWEEN from 'tween'
 import * as THREE from 'three/src/Three'
 
 export default class ObjectsToCollect {
-  constructor (scene, manager, raycaster, camera, spline, composer) {
+  constructor (scene, manager, raycaster, camera, spline, composer, mouse) {
     this.scene = scene
     this.manager = manager
     this.raycaster = raycaster
     this.camera = camera
     this.cameraSpline = spline
     this.composer = composer
+    this.mouse = mouse
 
     this.array = []
 
     // for the animation of the camera lookat
     this.cameraLookat = {
-      newVector: null,
-      changed: false,
-      spline: null
+      mouseFinal: new THREE.Vector3(0, 0, 0),
+      objects: new THREE.Vector3(0, 0, 0),
+      spline: new THREE.Vector3(0, 0, 0),
+      changed: false
     }
 
     // for the animation of the vignette
@@ -103,7 +105,7 @@ export default class ObjectsToCollect {
   open () {
     this.tweenVignette(0.54, 0.54)
     this.moveItem(this.intersect.object.position, 1000, { y: 15 })
-    this.changeCameraLookat(this.cameraLookat.newVector, this.intersect.object.position, 15, true)
+    this.changeCameraLookat(this.cameraLookat.objects, this.intersect.object.position, 15, true)
     // this.changeOffsetCamera()
   }
 
@@ -113,7 +115,7 @@ export default class ObjectsToCollect {
     this.moveItem(this.intersect.object.position, 1000, { y: 35 })
     this.moveItem(this.intersect.object.scale, 1000, { x: 0.5, y: 0.5, z: 0.5 })
     this.moveItem(this.intersect.object.position, 2000, { y: 82 })
-    this.changeCameraLookat(this.cameraLookat.newVector, this.cameraLookat.spline, 0, false)
+    this.changeCameraLookat(this.cameraLookat.objects, this.cameraLookat.spline, 0, false)
   }
 
   moveItem (element, speed, { x = 0, y = 0, z = 0 }) {
@@ -141,6 +143,18 @@ export default class ObjectsToCollect {
     this.tween3.start()
   }
 
+  mouseCameraLookat () {
+    const mouse = new THREE.Vector3(this.mouse.x, this.mouse.y, 0)
+    const object = new THREE.Object3D()
+    object.position.copy(this.cameraLookat.objects)
+    const newPosition = object.localToWorld(mouse)
+    // console.log(newPosition)
+
+    this.cameraLookat.mouseFinal.x = this.cameraLookat.objects.x + newPosition.x
+    this.cameraLookat.mouseFinal.y = this.cameraLookat.objects.y + newPosition.y
+    this.cameraLookat.mouseFinal.z = this.cameraLookat.objects.z + newPosition.z
+  }
+
   changeOffsetCamera () {
     const width = 1920 // width of subcamera
     const height = 1080 // height of subcamera
@@ -152,33 +166,33 @@ export default class ObjectsToCollect {
   }
 
   updateCameraLookat () {
-    // console.log(this.cameraLookat.newVector, 'position of animated lookat ')
+    // console.log(this.cameraLookat.objects, 'position of animated lookat ')
     // console.log(this.cameraLookat.spline, 'position of spline lookat')
 
     this.getCameraLookat()
+    this.mouseCameraLookat()
 
     // if cinematic is closed and lookat hasnt changed
     if (!store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
-      this.cameraLookat.newVector = this.cameraLookat.spline
-      this.camera.lookAt(this.cameraLookat.newVector)
+      this.cameraLookat.objects = this.cameraLookat.spline
+      this.camera.lookAt(this.cameraLookat.mouseFinal)
     }
 
     //  if cinematic is closed and camera lookat has changed = do the tween
     if (!store.default.state.displayCinematicObject && this.cameraLookat.changed) {
-      this.camera.lookAt(this.cameraLookat.newVector)
+      this.camera.lookAt(this.cameraLookat.mouseFinal)
     }
 
     // if cinematic is open and lookat has not changed = do the tween
     if (store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
-      this.camera.lookAt(this.cameraLookat.newVector)
+      this.camera.lookAt(this.cameraLookat.mouseFinal)
     }
 
     // if cinematic is open and lookat has changed you can look at the intersect position
-    if (store.default.state.displayCinematicObject && this.cameraLookat.changed ) {
-      // this.camera.lookAt(this.cameraLookat.newVector)
+    if (store.default.state.displayCinematicObject && this.cameraLookat.changed) {
+      // this.camera.lookAt(this.cameraLookat.objects)
       this.camera.lookAt(this.intersect.object.position)
     }
-
   }
 
   tweenVignette (offset, darkness) {
