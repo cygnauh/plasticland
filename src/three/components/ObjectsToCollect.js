@@ -66,34 +66,24 @@ export default class ObjectsToCollect {
     if (this.array.length > 0) {
       let intersects = this.raycaster.intersectObjects(this.scene.children)
       intersects.forEach((intersect) => {
-        // if (intersect.object.type === 'mesh') {
         switch (intersect.object.name) {
           case 'starbucks':
-            store.default.commit('objectFound', 1)
-            this.moveItem(intersect.object.position)
-            store.default.commit('setCinematicObject', true)
-            // this.renderSelectedCollectable(intersect.object.name)
-            // console.log(store.default.state.displayCinematicObject)
+            this.animateObject(1, intersect)
             break
           case 'carrefour':
-            store.default.commit('objectFound', 2)
-            store.default.commit('setCinematicObject', true)
+            this.animateObject(2, intersect)
             break
           case 'cocacola':
-            store.default.commit('objectFound', 3)
-            store.default.commit('setCinematicObject', true)
+            this.animateObject(3, intersect)
             break
           case 'gestespropres':
-            store.default.commit('objectFound', 4)
-            store.default.commit('setCinematicObject', true)
+            this.animateObject(4, intersect)
             break
           case 'nestle':
-            store.default.commit('objectFound', 5)
-            store.default.commit('setCinematicObject', true)
+            this.animateObject(5, intersect)
             break
           case 'final':
-            store.default.commit('objectFound', 6)
-            store.default.commit('setCinematicObject', true)
+            this.animateObject(6, intersect)
             break
           default:
             break
@@ -101,37 +91,139 @@ export default class ObjectsToCollect {
         if (intersect.object.name) {
           store.default.commit('setFoundObjectName', intersect.object.name)
         }
-        // }
       })
     }
   }
 
-  moveItem (element) {
-    this.found = true
-    let target = new THREE.Vector3(element.x, element.y + 25, element.z)
+  animateObject (id, intersect) {
+    store.default.commit('objectFound', id)
+    store.default.commit('setCinematicObject', true)
+    store.default.commit('setFoundObjectName', intersect.object.name)
+    this.intersect = intersect
+    this.open()
+  }
+
+  open () {
+    this.tweenVignette(0.54, 0.54)
+    this.moveItem(this.intersect.object.position, 1000, { y: 15 })
+    this.changeCameraLookat(this.cameraLookat.newVector, this.intersect.object.position, 15, true)
+    // this.changeOffsetCamera()
+  }
+
+  close () {
+    this.tweenVignette(0.3, 0.442)
+    this.moveItem(this.intersect.object.rotation, 3000, { y: 35 })
+    this.moveItem(this.intersect.object.position, 1000, { y: 35 })
+    this.moveItem(this.intersect.object.scale, 1000, { x: 0.5, y: 0.5, z: 0.5 })
+    this.moveItem(this.intersect.object.position, 2000, { y: 82 })
+    this.changeCameraLookat(this.cameraLookat.newVector, this.cameraLookat.spline, 0, false)
+  }
+
+  moveItem (element, speed, { x = 0, y = 0, z = 0 }) {
+    let target = new THREE.Vector3(element.x + x, element.y + y, element.z + z)
     animateVector3(element, target, {
-      duration: 1000,
+      duration: speed,
       easing: TWEEN.Easing.Quadratic.InOut
     })
   }
 
+  getCameraLookat () {
+    let p2 = this.cameraSpline.spline.getPointAt((store.default.state.splinePosition + 0.01) % 1) // lookat
+    p2.y = p2.y + 3.5
+    this.cameraLookat.spline = p2
+  }
+
+  changeCameraLookat (from, to, y, changed) {
+    // console.log(this.intersect.object.position, 'position of object')
+    this.tween3 = new TWEEN.Tween(from)
+      .to({ x: to.x, y: to.y + y, z: to.z }, 1500)
+      .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .onComplete(() => {
+        this.cameraLookat.changed = changed
+      })
+    this.tween3.start()
+  }
+
+  changeOffsetCamera () {
+    const width = 1920 // width of subcamera
+    const height = 1080 // height of subcamera
+    const fullWidth = width * 3
+    const fullHeight = height * 3
+    const x = width * 1 // horizontal offset of subcamera
+    const y = height * 0 // vertical offset of subcamera
+    this.camera.setViewOffset(fullWidth, fullHeight, x, y, width, height)
+  }
+
+  updateCameraLookat () {
+    // console.log(this.cameraLookat.newVector, 'position of animated lookat ')
+    // console.log(this.cameraLookat.spline, 'position of spline lookat')
+
+    this.getCameraLookat()
+
+    // if cinematic is closed and lookat hasnt changed
+    if (!store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
+      this.cameraLookat.newVector = this.cameraLookat.spline
+      this.camera.lookAt(this.cameraLookat.newVector)
+    }
+
+    //  if cinematic is closed and camera lookat has changed = do the tween
+    if (!store.default.state.displayCinematicObject && this.cameraLookat.changed) {
+      this.camera.lookAt(this.cameraLookat.newVector)
+    }
+
+    // if cinematic is open and lookat has not changed = do the tween
+    if (store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
+      this.camera.lookAt(this.cameraLookat.newVector)
+    }
+
+    // if cinematic is open and lookat has changed you can look at the intersect position
+    if (store.default.state.displayCinematicObject && this.cameraLookat.changed ) {
+      // this.camera.lookAt(this.cameraLookat.newVector)
+      this.camera.lookAt(this.intersect.object.position)
+    }
+
+  }
+
+  tweenVignette (offset, darkness) {
+    this.tween1 = new TWEEN.Tween(this.vignette.offset)
+      .to({ value: offset }, 1000)
+    this.tween1.start()
+    this.tween2 = new TWEEN.Tween(this.vignette.darkness)
+      .to({ value: darkness }, 1000)
+    this.tween2.start()
+  }
+
+  updateVignette () {
+    this.vignettePass.uniforms.get('offset').value = this.vignette.offset.value // animateFloat(obj1, 0.5)
+    this.vignettePass.uniforms.get('darkness').value = this.vignette.darkness.value // animateFloat(0.442, 0.5)
+  }
+
   update (time) {
     let y = this.calculateSurface(10, 10, time)
+
     if (this.array.length > 0) {
       this.array.forEach(collectable => {
         collectable.then(response => {
           response.meshes.forEach(mesh => {
-            if (!this.found) {
+            if (store.default.state.currentFoundObjectName !== mesh.name && !store.default.state.displayCinematicObject) {
+              //  si l'objet n'est pas trouvé et que la cinématique n'est pas ouverte
               mesh.position.y = y
               mesh.rotation.y = Math.sin(time) / 3
               mesh.rotation.z = mesh.rotation.x = Math.sin(time) / 4
-            } else {
+            } else if (store.default.state.currentFoundObjectName === mesh.name && store.default.state.displayCinematicObject) {
+              // si l'objet est trouvé et que la cinématique est ouverte
               mesh.rotation.y = Math.sin(time) / 3
+              mesh.position.y = mesh.position.y + Math.sin(time) / 35
+            } else if (store.default.state.currentFoundObjectName === mesh.name && !store.default.state.displayCinematicObject) {
+              // si l'objet a été trouvé mais que la cinématique fermé
               mesh.position.y = mesh.position.y + Math.sin(time) / 10
             }
           })
         })
       })
     }
+
+    this.updateVignette()
+    this.updateCameraLookat()
   }
 }
