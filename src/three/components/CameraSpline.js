@@ -73,7 +73,6 @@ export default class CameraSpline {
     }
     store.default.commit('setSplinePosition', this.percentageCamera.value)
   }
-
   tweenToScroll (speed) {
     this.moving = true
     this.tween = new TWEEN.Tween(this.percentageCamera)
@@ -92,9 +91,6 @@ export default class CameraSpline {
 
   updateCamera () {
     let p1 = this.spline.getPointAt(this.percentageCamera.value) // x,y,z
-    let p2 = this.spline.getPointAt((this.percentageCamera.value + 0.01) % 1) // lookat
-
     this.camera.position.set(p1.x, p1.y + 3, p1.z)
-    this.camera.lookAt(p2.x, p2.y + 3.5, p2.z)
   }
 }

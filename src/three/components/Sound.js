@@ -166,6 +166,7 @@ export default class Sound {
   update (time) {
     if (this.voiceOver && this.voiceOver.playing()) {
       this.playAmbiantAndMelody()
+      console.log(this.voiceOver.seek())
       this.finalTwist()
       this.updateSubtitle()
       if (store.default.state.currentVoiceOverSeek !== this.voiceOver.seek()) {
