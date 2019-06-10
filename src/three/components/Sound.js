@@ -49,7 +49,7 @@ export default class Sound {
     this.climaxSound = new Howl({
       src: [src],
       loop: false,
-      volume: 1 // fade to 1 when it plays
+      volume: 1
     })
   }
   initClockSound () {
@@ -57,7 +57,7 @@ export default class Sound {
     this.clockSound = new Howl({
       src: [src],
       loop: true,
-      volume: 1 // fade to 1 when it plays
+      volume: 1
     })
   }
   initPlaceSound () {
@@ -67,7 +67,7 @@ export default class Sound {
       let placeSound = new Howl({
         src: [src],
         loop: true,
-        volume: 1 // fade to 1 when it plays
+        volume: 1
       })
       placeSound.once('load', () => {
         this.placeSounds.push({ 'name': element.name, sound: placeSound })
@@ -80,7 +80,7 @@ export default class Sound {
     this.voiceOver = new Howl({
       src: [src],
       sprite: store.default.state.sounds.voice.sprites[0],
-      volume: 1 // TODO put to 1 in prod
+      volume: 1
     })
   }
   playAmbiantAndMelody () {
@@ -96,23 +96,17 @@ export default class Sound {
     }
   }
   finalTwist () {
-    // stop melody at 75.07s, stop placeSound, play Nestle2.mp3 at 76.08s, playClock at 79.24s
     if (this.voiceOver.seek() > 75.07 && this.melodySound && this.melodySound.playing()) {
       this.melodySound.pause()
-      console.log('hello')
     }
-    if (this.voiceOver.seek() > 74.21 && this.currentSound && !this.isClimaxSoundPlaying) {
-      // this.currentSound.sound.pause()
-      this.climaxId = this.climaxSound.play()
+    if (this.voiceOver.seek() > 74.21 && this.currentSound && this.currentSound.sound.playing() && !this.isClimaxSoundPlaying) {
+      this.currentSound.sound.pause()
+      this.climaxSound.play()
       this.isClimaxSoundPlaying = true
-      console.log('cli')
     }
     if (this.voiceOver.seek() > 78.6 && this.climaxSound && this.climaxSound.playing() && !this.isClockPlaying) {
-      // this.climaxSound.fade(1, 0, 200, this.climaxId)
-      // this.climaxSound.pause()
       this.clockSound.play()
       this.isClockPlaying = true
-      console.log('clo')
     }
   }
   updatePlaceSound (percentageCamera) {
@@ -127,7 +121,7 @@ export default class Sound {
         if (this.soundId) this.currentSound.sound.fade(1, 0, 5000, this.soundId)
         this.currentSound = this.placeSounds.filter(item => item.name === element.name) ? this.placeSounds.filter(item => item.name === element.name)[0] : null
         if (this.currentSound) {
-          // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
+          this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
           this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
         }
       }
