@@ -17,8 +17,9 @@ export default class ObjectsToCollect {
 
     // for the animation of the camera lookat
     this.cameraLookat = {
-      vector: null,
-      changed: false
+      newVector: null,
+      changed: false,
+      spline: null
     }
 
     // for the animation of the vignette
@@ -102,7 +103,7 @@ export default class ObjectsToCollect {
   open () {
     this.tweenVignette(0.54, 0.54)
     this.moveItem(this.intersect.object.position, 1000, { y: 15 })
-    this.changeCameraLookat(this.cameraLookat.vector, this.intersect.object.position, 15, true)
+    this.changeCameraLookat(this.cameraLookat.newVector, this.intersect.object.position, 15, true)
     // this.changeOffsetCamera()
   }
 
@@ -112,7 +113,7 @@ export default class ObjectsToCollect {
     this.moveItem(this.intersect.object.position, 1000, { y: 35 })
     this.moveItem(this.intersect.object.scale, 1000, { x: 0.5, y: 0.5, z: 0.5 })
     this.moveItem(this.intersect.object.position, 2000, { y: 82 })
-    this.changeCameraLookat(this.cameraLookat.vector, this.intersect.object.position, -15, false)
+    this.changeCameraLookat(this.cameraLookat.newVector, this.cameraLookat.spline, 0, false)
   }
 
   moveItem (element, speed, { x = 0, y = 0, z = 0 }) {
@@ -126,7 +127,7 @@ export default class ObjectsToCollect {
   getCameraLookat () {
     let p2 = this.cameraSpline.spline.getPointAt((store.default.state.splinePosition + 0.01) % 1) // lookat
     p2.y = p2.y + 3.5
-    this.cameraLookat.vector = p2
+    this.cameraLookat.spline = p2
   }
 
   changeCameraLookat (from, to, y, changed) {
@@ -150,30 +151,30 @@ export default class ObjectsToCollect {
   }
 
   updateCameraLookat () {
-    // .log(this.cameraLookat.vector, 'position of lookat')
-    // console.log(this.cameraLookat.changed)
+    // console.log(this.cameraLookat.newVector, 'position of animated lookat ')
+    // console.log(this.cameraLookat.spline, 'position of spline lookat')
+
+    this.getCameraLookat()
 
     // if cinematic is closed and lookat hasnt changed
     if (!store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
-      this.getCameraLookat()
-      this.camera.lookAt(this.cameraLookat.vector)
+      this.cameraLookat.newVector = this.cameraLookat.spline
+      this.camera.lookAt(this.cameraLookat.newVector)
     }
 
-    /*
-    // problem here, I think I need to store the last pos
     //  if cinematic is closed and camera lookat has changed = do the tween
     if (!store.default.state.displayCinematicObject && this.cameraLookat.changed) {
-      this.camera.lookAt(this.cameraLookat.vector)
+      this.camera.lookAt(this.cameraLookat.newVector)
     }
-    */
 
     // if cinematic is open and lookat has not changed = do the tween
     if (store.default.state.displayCinematicObject && !this.cameraLookat.changed) {
-      this.camera.lookAt(this.cameraLookat.vector)
+      this.camera.lookAt(this.cameraLookat.newVector)
     }
 
     // if cinematic is open and lookat has changed you can look at the intersect position
     if (store.default.state.displayCinematicObject && this.cameraLookat.changed ) {
+      // this.camera.lookAt(this.cameraLookat.newVector)
       this.camera.lookAt(this.intersect.object.position)
     }
 
