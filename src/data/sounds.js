@@ -24,55 +24,43 @@ export default {
       'id': 21,
       'name': 'starbucks',
       'src': './sounds/starbucks.mp3',
-      // 'startAt': 0.22,
-      // 'endAt': 0.34
-      'startAt': 0.9,
-      'endAt': 1
+      'startAt': 0.22,
+      'endAt': 0.34
     },
     {
       'id': 22,
       'name': 'carrefour',
       'src': './sounds/carrefour.mp3',
-      // 'startAt': 0.35,
-      // 'endAt': 0.49
-      'startAt': 0.9,
-      'endAt': 1
+      'startAt': 0.35,
+      'endAt': 0.49
     },
     {
       'id': 23,
       'name': 'cocacola',
       'src': './sounds/cocacola.mp3',
-      // 'startAt': 0.5,
-      // 'endAt': 0.65
-      'startAt': 0.9,
-      'endAt': 1
+      'startAt': 0.5,
+      'endAt': 0.65
     },
     {
       'id': 24,
       'name': 'gestespropres',
       'src': './sounds/lobbies.mp3',
-      // 'startAt': 0.66,
-      // 'endAt': 0.7
-      'startAt': 0.9,
-      'endAt': 1
+      'startAt': 0.66,
+      'endAt': 0.7
     },
     {
       'id': 25,
       'name': 'nestle',
       'src': './sounds/nestle1.mp3',
-      // 'startAt': 0.80,
-      // 'endAt': 0.89
-      'startAt': 0.03,
-      'endAt': 0.09
+      'startAt': 0.80,
+      'endAt': 0.89
     },
     {
       'id': 26,
       'name': 'final',
       'src': './sounds/nestle1.mp3',
-      // 'startAt': 0.9,
-      // 'endAt': 1
-      'startAt': 0.1,
-      'endAt': 0.30
+      'startAt': 0.9,
+      'endAt': 1
     }
   ],
   'voice': {
@@ -102,44 +90,37 @@ export default {
     'interval': [ // play voiceOver according to Spline position
       {
         'name': 'intro2',
-        // 'startAt': 0.02,
-        'startAt': 1,
+        'startAt': 0.02,
         'played': false
       },
       {
         'name': 'starbucks',
-        // 'startAt': 0.22,
-        'startAt': 1,
+        'startAt': 0.22,
         'played': false
       },
       {
         'name': 'carrefour',
-        // 'startAt': 0.35,
-        'startAt': 1,
+        'startAt': 0.35,
         'played': false
       },
       {
         'name': 'cocacola',
-        // 'startAt': 0.5,
-        'startAt': 1,
+        'startAt': 0.5,
         'played': false
       },
       {
         'name': 'gestespropres',
-        // 'startAt': 0.66,
-        'startAt': 1,
+        'startAt': 0.66,
         'played': false
       },
       {
         'name': 'nestle',
-        // 'startAt': 0.9,
-        'startAt': 0.03,
+        'startAt': 0.9,
         'played': false
       },
       {
         'name': 'final',
-        // 'startAt': 0.9,
-        'startAt': 0.1,
+        'startAt': 0.9,
         'played': false
       }
     ]

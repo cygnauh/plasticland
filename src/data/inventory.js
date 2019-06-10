@@ -61,18 +61,6 @@ export default
       'found': false,
       'position': 0.90,
       'description': 'Au cours des cinq dern... coming soon'
-    },
-    {
-      'id': 6,
-      'x': -236.435,
-      'z': -1379.22,
-      'name': 'final',
-      'title': 'le grand final in progress',
-      'model': './models_converted/starbucks_cup.glb',
-      'soundSrc': './sounds/lobbies.mp3',
-      'found': false,
-      'position': 0.85,
-      'description': 'Consigne arrêter dans les 70 Consigne arrêter dans les 70. Consigne arrêter chez dans les 70.Consigne arrêter dans les 70 Consigne arrêter chez dans les 70. @Consigne arrêter chez star dans les 70. Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70Consigne arrêter chez star dans les 70 Consigne arrêter chez star dans les 70.@ Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.@Consigne arrêter chez star dans les 70. @Consigne arrêter chez star dans les 70. C’est la mort de la bouteille en verre en faveur de la bouteille de plastique.Consigne arrêter chez star dans les 70.'
     }
   ]
 }
