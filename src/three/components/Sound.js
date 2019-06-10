@@ -101,7 +101,7 @@ export default class Sound {
       this.melodySound.pause()
       console.log('hello')
     }
-    if (this.voiceOver.seek() > 76.08 && this.currentSound && !this.isClimaxSoundPlaying) {
+    if (this.voiceOver.seek() > 75.01 && this.currentSound && !this.isClimaxSoundPlaying) {
       // this.currentSound.sound.pause()
       this.climaxId = this.climaxSound.play()
       this.isClimaxSoundPlaying = true
