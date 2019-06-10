@@ -40,13 +40,11 @@ export default {
       this.scrollDidacticiel()
     },
     showLastDidac (value) {
-      console.log('éeee')
       if (value) this.displayCollectionDidacticiel()
     }
   },
   methods: {
     scrollDidacticiel () {
-      // let element = this.$store.state.didacticiels.filter(element => element.name === 'scroll')[0]
       this.$store.state.didacticiels.forEach(el => {
         if (this.voiceOver > el.seekPosition && !el.active && el.seekPosition) {
           this.element = el

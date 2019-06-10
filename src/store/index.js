@@ -75,10 +75,6 @@ export default new Vuex.Store({
     didacticielShowed (state, name) {
       state.didacticiels.filter(item => item.name === name)[0].active = true
     },
-    // showCollectionDidacticiel (state) {
-    //   state.didacticiels.filter(item => item.name === 'collection')[0].show = true
-    //   console.log(state.didacticiels.filter(item => item.name === 'collection')[0].show)
-    // },
     showCollectionDidacticiel (state) {
       state.collectionDidacticiel = true
     },

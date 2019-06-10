@@ -7,18 +7,23 @@ export default class Sound {
   constructor (scene, camera) {
     this.scene = scene
     this.camera = camera
-    this.initSound()
     this.ambiantSoundPlaying = false
     this.melodySoundPlaying = false
+    this.isClimaxSoundPlaying = false
+    this.climaxId = null
+    this.isClockPlaying = false
     this.currentSound = null
     this.soundId = null
     this.voiceId = null
   }
 
   initSound () {
-    this.listener = new THREE.AudioListener()
-    this.camera.add(this.listener)
-    this.audioLoader = new THREE.AudioLoader()
+    this.initAmbiantSound()
+    this.initMelodySound()
+    this.initPlaceSound()
+    this.initVoiceOver()
+    this.initClimaxSound()
+    this.initClockSound()
   }
 
   initAmbiantSound () {
@@ -30,7 +35,6 @@ export default class Sound {
       volume: 0 // fade to 1 when it plays
     })
   }
-  
   initMelodySound () {
     let src = store.default.state.sounds.melody.src
     this.melodySound = new Howl({
@@ -39,7 +43,23 @@ export default class Sound {
       volume: 0 // fade to 1 when it plays
     })
   }
-
+  initClimaxSound () {
+    let src = store.default.state.sounds.climax.src
+    console.log(src)
+    this.climaxSound = new Howl({
+      src: [src],
+      loop: true,
+      volume: 1 // fade to 1 when it plays
+    })
+  }
+  initClockSound () {
+    let src = store.default.state.sounds.clock.src
+    this.clockSound = new Howl({
+      src: [src],
+      loop: true,
+      volume: 1 // fade to 1 when it plays
+    })
+  }
   initPlaceSound () {
     this.placeSounds = []
     store.default.state.sounds.place.forEach(element => {
@@ -69,20 +89,45 @@ export default class Sound {
       this.ambiantSound.id = this.ambiantSound.play()
       this.ambiantSound.fade(0, 1, 1000, this.ambiantSound.id)
       this.ambiantSoundPlaying = true
-    } else if (this.voiceOver.seek() > 21.19 && !this.melodySoundPlaying) {
+    } else if (this.voiceOver.seek() > 21.19 && !this.melodySoundPlaying && this.voiceOver.seek() < 75.07) {
       this.melodySound.id = this.melodySound.play()
       this.melodySound.fade(0, 1, 1000, this.melodySound.id)
       this.melodySoundPlaying = true
     }
   }
+  finalTwist () {
+    // stop melody at 75.07s, stop placeSound, play Nestle2.mp3 at 76.08s, playClock at 79.24s
+    if (this.voiceOver.seek() > 75.07 && this.melodySound && this.melodySound.playing()) {
+      this.melodySound.pause()
+      console.log('hello')
+    }
+    if (this.voiceOver.seek() > 76.08 && this.currentSound && !this.isClimaxSoundPlaying) {
+      // this.currentSound.sound.pause()
+      this.climaxId = this.climaxSound.play()
+      this.isClimaxSoundPlaying = true
+      console.log('cli')
+    }
+    if (this.voiceOver.seek() > 78.17 && this.climaxSound && this.climaxSound.playing() && !this.isClockPlaying) {
+      this.climaxSound.fade(1, 0, 500, this.climaxId)
+      // this.climaxSound.pause()
+      this.clockSound.play()
+      this.isClockPlaying = true
+      console.log('clo')
+    }
+  }
   updatePlaceSound (percentageCamera) {
     store.default.state.sounds.place.forEach(element => {
-      if (percentageCamera > element.startAt && percentageCamera <= element.endAt && store.default.state.currentPlace.name !== element.name) {
+      if (
+        percentageCamera > element.startAt &&
+        percentageCamera <= element.endAt &&
+        store.default.state.currentPlace.name !== element.name &&
+        element.name !== 'final'
+      ) {
         store.default.commit('setCurrentPlace', element)
         if (this.soundId) this.currentSound.sound.fade(1, 0, 5000, this.soundId)
         this.currentSound = this.placeSounds.filter(item => item.name === element.name) ? this.placeSounds.filter(item => item.name === element.name)[0] : null
         if (this.currentSound) {
-          this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
+          // this.soundId = this.currentSound.sound.play() // TODO uncomment when voiceOver task's done
           this.currentSound.sound.fade(0, 1, 5000, this.soundId) // TODO uncomment when voiceOver task's done
         }
       }
@@ -107,6 +152,7 @@ export default class Sound {
   update (time) {
     if (this.voiceOver && this.voiceOver.playing()) {
       this.playAmbiantAndMelody()
+      this.finalTwist()
       this.updateSubtitle()
       if (store.default.state.currentVoiceOverSeek !== this.voiceOver.seek()) {
         store.default.commit('setVoiceOver', this.voiceOver.seek())
