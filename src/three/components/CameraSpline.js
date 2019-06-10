@@ -50,7 +50,7 @@ export default class CameraSpline {
     // console.log(this.percentageCamera.value)
     let speed = {
       slow: 0.03,
-      mid: 0.05,
+      mid: 0.05
     }
     if (this.percentageCamera.value + speed.slow <= store.default.state.objects[0].position) {
       this.tweenToScroll(speed.mid)

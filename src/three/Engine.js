@@ -85,10 +85,9 @@ export default class Engine {
     this.composer = new EffectComposer(this.renderer)
     this.renderPass = new RenderPass(this.scene, this.camera)
     this.effectPass = new EffectPass(this.camera, noiseEffect, vignetteEffect, hueSaturationEffect, brightnessContrastEffect)
-
     noiseEffect.blendMode.opacity.value = 0.75
     this.effectPass.renderToScreen = true
-
+      
     this.composer.addPass(this.renderPass)
     this.composer.addPass(this.effectPass)
   }
