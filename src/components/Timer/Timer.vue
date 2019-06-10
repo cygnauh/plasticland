@@ -26,9 +26,13 @@ export default {
       ellapsedSeconds: 0,
       ellapsedMinutes: 0,
       ellapsedHours: 0,
-      finished: false,
-      totalPlasticWaste: 0,
       totalEllapsedSeconds: 0
+    }
+  },
+  watch: {
+    updateStore () {
+      const array = [this.ellapsedSeconds, this.ellapsedMinutes, this.ellapsedHours, this.totalEllapsedSeconds]
+      this.$store.commit('setTimeEllapsed', array)
     }
   },
   created () {
@@ -58,12 +62,6 @@ export default {
       this.ellapsedSeconds = this.totalEllapsedSeconds
       if (this.ellapsedSeconds >= 60) {
         this.ellapsedSeconds = this.ellapsedSeconds - (this.ellapsedMinutes * 60)
-      }
-    },
-    conversionPlasticWaste () {
-      if (this.finished) {
-        this.totalPlasticWaste = this.totalEllapsedSeconds * 206
-        return this.totalPlasticWaste
       }
     },
     updateClock () {

@@ -1,0 +1,132 @@
+@import '../../assets/scss/index';
+
+.conclusion {
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+
+  .head, .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .head {
+    position: relative;
+    height: 20vh;
+    justify-content: center;
+    .close-btn {
+      opacity: 1;
+      cursor: pointer;
+      img{
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  .main {
+    position: relative;
+    height: 70vh;
+    justify-content: space-evenly;
+    .inventory-btn-count {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      margin-left: 5px ;
+      background: url('../../assets/img/svg/collectable-n-bg-light.svg') no-repeat;
+      background-size: contain;
+      border-radius: 5px;
+      span{
+        position: relative;
+        font-family: AxeHandel;
+        font-size: 35px;
+        color: #e4e4e5;
+      }
+      .border-separator{
+        transform-origin: center;
+        transform: rotate(40deg);
+        margin: 5px;
+        width: 2px;
+        background: white;
+        height: 30px;
+        position: relative;
+        top: 13px;
+        left: 3px;
+      }
+      .inventory-btn-obj-found{
+        top: 3px;
+      }
+      .inventory-btn-obj-total{
+        top: 25px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      width: 50vw;
+      justify-content: space-evenly;
+      div {
+        padding: 0 10px;
+        width: 180px;
+        height: 60px;
+        &.petition {
+          background: url('../../assets/img/svg/conclusion-bg-yellow.svg') no-repeat;
+        }
+        &.collection {
+          background: url('../../assets/img/svg/conclusion-bg-blue.svg') no-repeat;
+        }
+      }
+    }
+  }
+
+  $min_width: 320px;
+  $max_width: 1200px;
+  $min_font: 16px;
+
+  $h1: 257.4px;
+  $h2: 44px;
+  $h3: 27px;
+  $p: 23px;
+
+  h1, h2, h3, p, a {
+    font-family: AxeHandel;
+    color: #ffffff;
+    margin: 15px 0;
+  }
+
+  h1 {
+    @include fluid-type($min_width, $max_width, $min_font, $h1);
+    letter-spacing: 18.7px;
+    line-height: 122px;
+    sup {
+      @include fluid-type($min_width, $max_width, $min_font, 87.8px);
+      letter-spacing: normal;
+    }
+  }
+
+  h2 {
+    @include fluid-type($min_width, $max_width, $min_font, $h2);
+    max-width: 45%;
+  }
+
+  h3 {
+    @include fluid-type($min_width, $max_width, $min_font, $h3);
+    max-width: 55%;
+    span {
+      color: #f4cb5c;
+    }
+  }
+
+  p {
+    @include fluid-type($min_width, $max_width, $min_font, $p);
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

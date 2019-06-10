@@ -122,6 +122,19 @@ export default {
     width: 100vw;
     /*height: 100%;*/
     will-change: transform;
+    &:after {
+      content: "";
+      animation: grain 8s steps(10) infinite;
+      background-image: url('../../assets/img/grain.jpg');
+      position: fixed;
+      height: 300%;
+      width: 300%;
+      top: -100%;
+      left: -50%;
+      opacity: 0.3;
+      mix-blend-mode: hue;
+      z-index: -1;
+    }
     &.show{
       transition: transform 1s ease-in-out;
     }

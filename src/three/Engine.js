@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import Helpers from './components/Helpers'
 import CameraSpline from './components/CameraSpline'
 import { NoiseEffect, VignetteEffect, HueSaturationEffect, BrightnessContrastEffect, EffectComposer, EffectPass, RenderPass } from 'postprocessing'
-import * as store from "../store"
+import * as store from '../store'
 
 export default class Engine {
   constructor (canvas) {
@@ -85,7 +85,6 @@ export default class Engine {
     this.composer = new EffectComposer(this.renderer)
     this.renderPass = new RenderPass(this.scene, this.camera)
     this.effectPass = new EffectPass(this.camera, noiseEffect, vignetteEffect, hueSaturationEffect, brightnessContrastEffect)
-
     noiseEffect.blendMode.opacity.value = 0.75
     this.effectPass.renderToScreen = true
 

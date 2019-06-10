@@ -1,6 +1,7 @@
 import config from '../data/inventory'
 import sounds from '../data/sounds'
 import subtitle from '../data/subtitle'
+import timer from '../data/timer'
 import didacticiels from '../data/didacticiels'
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -12,6 +13,8 @@ export default new Vuex.Store({
     assetsLoad: false,
     displayIntroText: true,
     currentVoiceOverSeek: 0,
+    displayCinematicObject: false,
+    displayConclusion: false,
     objectContainers: [],
     selectItemContainer: [],
     objects: config.objects,
@@ -24,10 +27,10 @@ export default new Vuex.Store({
     splinePosition: 0,
     didacticiels: didacticiels.array,
     radar: null,
-    displayCinematicObject: false,
     cinematicObjectContainer: null,
     isPreviousCinematic: false,
-    collectionDidacticiel: false
+    collectionDidacticiel: false,
+    time: timer.time
   },
   mutations: {
     isLoad (state) {
@@ -69,6 +72,9 @@ export default new Vuex.Store({
     setCurrentRoute (state, route) {
       state.currentRoute = route
     },
+    setConclusion (state, bool) {
+      state.displayConclusion = bool
+    },
     objectFound (state, id) {
       state.objects.filter(item => item.id === id)[0].found = true
     },
@@ -83,6 +89,12 @@ export default new Vuex.Store({
     },
     hideSrollDidacticiel (state) {
       state.didacticiels.filter(item => item.name === 'scroll')[0].show = false
+    },
+    setTimeEllapsed (state, array) {
+      state.time.ellapsedSeconds = array[0]
+      state.time.ellapsedMinutes = array[1]
+      state.time.ellapsedHours = array[2]
+      state.time.totalEllapsedSeconds = array[3]
     }
   }
 })
