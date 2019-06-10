@@ -36,6 +36,7 @@ export default class ObjectsToCollect {
     }
 
     this.intersect = null
+    this.newPosition = new THREE.Vector3(0, 0, 0)
 
     this.initCollectables()
   }
@@ -144,15 +145,15 @@ export default class ObjectsToCollect {
   }
 
   mouseCameraLookat () {
-    const mouse = new THREE.Vector3(this.mouse.x, this.mouse.y, 0)
+    const mouse = new THREE.Vector3(this.mouse.x / 5, this.mouse.y / 5, 0)
     const object = new THREE.Object3D()
     object.position.copy(this.cameraLookat.objects)
-    const newPosition = object.localToWorld(mouse)
+    this.newPosition = object.localToWorld(mouse)
     // console.log(newPosition)
 
-    this.cameraLookat.mouseFinal.x = this.cameraLookat.objects.x + newPosition.x
-    this.cameraLookat.mouseFinal.y = this.cameraLookat.objects.y + newPosition.y
-    this.cameraLookat.mouseFinal.z = this.cameraLookat.objects.z + newPosition.z
+    this.cameraLookat.mouseFinal.x = this.cameraLookat.objects.x + this.newPosition.x
+    this.cameraLookat.mouseFinal.y = this.cameraLookat.objects.y + this.newPosition.y
+    this.cameraLookat.mouseFinal.z = this.cameraLookat.objects.z + this.newPosition.z
   }
 
   changeOffsetCamera () {
