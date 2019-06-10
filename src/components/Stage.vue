@@ -88,6 +88,7 @@
     </div>
     <router-view/>
     <!--<CinematicObject v-if="hasFoundObject"/>-->
+    <Conclusion v-if="displayConclusion"/>
     <Intro></Intro>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
@@ -103,10 +104,11 @@ import Didactiel from './didacticiel/Didactiel'
 import InventoryList from './Inventory/InventoryList'
 import CinematicObject from './CinematicObject/CinematicObject'
 import Intro from './Introduction'
+import Conclusion from './Conclusion/Conclusion'
 
 export default {
   name: 'Stage',
-  components: { Loader, Timer, Subtitle, Radar, Didactiel, Intro },
+  components: { Conclusion, CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro },
   data () {
     return {
       data: '',

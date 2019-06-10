@@ -11,59 +11,23 @@
   justify-content: center;
   //background-image: radial-gradient(circle at 0 0, rgba(192, 193, 212, 0.77), rgba(63, 64, 95, 0.83));
 
-  .head {
-    position: absolute;
-    top: 39px;
-    .close-btn {
-      opacity: 1;
-      cursor: pointer;
-      img{
-        width: 45px;
-        height: 45px;
-      }
-    }
-  }
   a{
     text-decoration: none;
   }
   .main {
     max-width: 55vw;
-    left: 30%;
-    transform: translateX(-30%);
+    left: 45%;
+    transform: translateX(-45%);
     top: -40px;
     position: relative;
     text-align: left;
-    .inventory-btn-count {
-      width: 70px;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      margin-left: 5px ;
-      background: url('../../assets/img/svg/collectable-n-bg.svg') no-repeat;
-      background-size: contain;
-      border-radius: 5px;
-      span{
-        position: relative;
-        font-family: AxeHandel;
-        font-size: 35px;
-        color: #e4e4e5;
-      }
-      .border-separator{
-        transform-origin: center;
-        transform: rotate(40deg);
-        margin: 5px;
-        width: 2px;
-        background: white;
-        height: 30px;
-        position: relative;
-        top: 13px;
-        left: 3px;
-      }
-      .inventory-btn-obj-found{
-        top: 3px;
-      }
-      .inventory-btn-obj-total{
-        top: 25px;
+    .close-btn {
+      opacity: 1;
+      cursor: pointer;
+      padding: 10px 0;
+      img{
+        width: 45px;
+        height: 45px;
       }
     }
     .title {
@@ -72,24 +36,22 @@
       color: #f3f3f3;
       max-width: 40vw;
       position: relative;
-      left: 7px;
     }
     .yellow-btn {
-      width: 161px;
-      height: 52px;
-      background: url('../../assets/img/svg/yellow-button.svg') no-repeat;
       p {
         font-family: AxeHandel;
         font-size: 28px;
-        text-align: center;
+        text-align: left;
         padding: 8px 0px;
+        margin: 5px 0;
       }
       a {
         text-decoration: none;
-        color: #51526b;
+        color: #f4cb5c;
         transition: color 0.3s ease-in;
+        border-bottom: 4px solid #f4cb5c;
         &:hover {
-          color: #2c2c3c;
+          color: #ffd361;
         }
       }
     }
