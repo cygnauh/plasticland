@@ -28,9 +28,11 @@ export default class GltfLoaderRefactored {
         this.gltf = gltf.scene
         this.gltf.name = name
         // this.gltf.castShadow = true
+
         let textureCube = new THREE.CubeTextureLoader().load(textureCubeMap())
-        textureCube.mapping = THREE.CubeReflectionMapping
+        textureCube.mapping = THREE.CubeRefractionMapping
         textureCube.format = THREE.RGBFormat
+
         this.gltf.traverse(function (child) {
           if (child.isMesh) {
             gltfChild = child
@@ -46,6 +48,8 @@ export default class GltfLoaderRefactored {
             child.material.side = 2
             child.material.envMap = textureCube
             child.material.needsUpdate = true
+            child.material.roughness = 0.5
+            child.material.metalness = 0.5
             child.name = childName
             meshes.push(child)
             let geometry = child.geometry
@@ -80,3 +84,4 @@ export default class GltfLoaderRefactored {
     }
   }
 }
+

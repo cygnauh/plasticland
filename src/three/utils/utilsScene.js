@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import GltfLoader from '../components/GltfLoaderRefactored'
 
 const textureCubeMap = () => {
-  let path = './textures/'
+  let path = './textures/envMap/'
   let format = '.jpg'
   let urls = [
     path + 'posx' + format, path + 'negx' + format,
