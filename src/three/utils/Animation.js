@@ -22,4 +22,10 @@ const animateVector3 = (vectorToAnimate, target, options) => {
   return tweenVector3
 }
 
-export { animateVector3 }
+const animateFloat = (FloatToAnimate, to) => {
+  this.tween = TWEEN.Tween(FloatToAnimate)
+    .to({ value: to }, 100)
+  this.tween.start()
+}
+
+export { animateVector3, animateFloat }

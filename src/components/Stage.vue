@@ -115,8 +115,19 @@ export default {
       objectFound: this.$store.state.objects.filter(item => item.found).length,
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
-      displayNotif: false,
-      displayConclusion: this.$store.state.displayConclusion
+      displayConclusion: this.$store.state.displayConclusion,
+      displayNotif: false
+    }
+  },
+  computed: {
+    title () {
+      return this.$store.state.currentPlace.name
+    },
+    hasFoundObject () {
+      return this.$store.state.displayCinematicObject
+    },
+    displayIntro () {
+      return this.$store.state.displayIntro
     }
   },
   mounted () {
