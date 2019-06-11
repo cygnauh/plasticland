@@ -138,8 +138,8 @@ export default class App extends Engine {
 
   animate () {
     // helpers
-    if (this.helpers.stats) this.helpers.stats.begin()
-    if (this.helpers.orbitControls) this.helpers.orbitControls.update()
+    //if (this.helpers.stats) this.helpers.stats.begin()
+    //if (this.helpers.orbitControls) this.helpers.orbitControls.update()
     this.raycaster.setFromCamera(this.mouse, this.camera)
 
     // update
@@ -153,8 +153,9 @@ export default class App extends Engine {
     this.boat.update(this.timeElapsed, this.mouseLerp, this.cameraSpline)
     this.environment.update(this.cameraSpline)
     this.collectable.tweenUpdate() // update tween
-    if (store.default.state.splinePosition > 0.018 && store.default.state.splinePosition <= 0.1) {
-      this.mountain.then( (response) => {
+    // console.log(store.default.state.splinePosition)
+    if (store.default.state.splinePosition > 0.04 && store.default.state.splinePosition <= 0.1) {
+      this.mountain.then((response) => {
         response.animationMixer.update(this.timeDelta)
       })
     }
@@ -176,7 +177,7 @@ export default class App extends Engine {
       this.composer.render(this.timeDelta)
     }
 
-    if (this.helpers.stats) this.helpers.stats.end()
+    //if (this.helpers.stats) this.helpers.stats.end()
     requestAnimationFrame(() => this.animate())
   }
 }
