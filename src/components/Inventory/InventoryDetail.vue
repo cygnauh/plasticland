@@ -104,6 +104,19 @@ export default {
     top: 0;
     width: 100%;
     height: calc(100% - 159px);
+    &:after {
+      content: "";
+      animation: grain 8s steps(10) infinite;
+      background-image: url('../../assets/img/grain.jpg');
+      position: fixed;
+      height: 300%;
+      width: 300%;
+      top: -100%;
+      left: -50%;
+      opacity: 0.3;
+      mix-blend-mode: hue;
+      z-index: -1;
+    }
     &-container{
       color: white;
       height: 100%;
