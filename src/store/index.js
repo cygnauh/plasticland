@@ -90,11 +90,11 @@ export default new Vuex.Store({
     hideSrollDidacticiel (state) {
       state.didacticiels.filter(item => item.name === 'scroll')[0].show = false
     },
-    setTimeEllapsed (state, array) {
-      state.time.ellapsedSeconds = array[0]
-      state.time.ellapsedMinutes = array[1]
-      state.time.ellapsedHours = array[2]
-      state.time.totalEllapsedSeconds = array[3]
+    setFirstTime (state, name) {
+      state.time.firstTime = name
+    },
+    setSecondTime (state, name) {
+      state.time.secondTime = name
     }
   }
 })

@@ -132,7 +132,7 @@ export default class ObjectsToCollect {
     this.moveItem(this.intersect.object.rotation, 3000, { y: 35 })
     this.moveItem(this.intersect.object.position, 1000, { y: 35 })
     this.moveItem(this.intersect.object.scale, 1000, { x: 0.5, y: 0.5, z: 0.5 })
-    this.moveItem(this.intersect.object.position, 2000, { y: 82 })
+    this.moveItem(this.intersect.object.position, 2000, { y: 122 })
     this.changeCameraLookat(this.cameraLookat.objects, this.cameraLookat.spline, 0, false)
   }
 
