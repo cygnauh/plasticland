@@ -31,7 +31,6 @@ export default class GltfLoader {
         this.gltf.rotation.y = rotateY
         // this.gltf.castShadow = true
         if (gltf.animations && gltf.animations.length) {
-          console.log(gltf.animations)
           this.mixer = new THREE.AnimationMixer(gltf.scene)
           for (let i = 0; i < gltf.animations.length; i++) {
             let animation = gltf.animations[i]
