@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import GltfLoader from '../components/GltfLoaderRefactored'
+import GltfLoader from '../components/GltfLoader'
 
 const textureCubeMap = () => {
   let path = './textures/envMap/'
@@ -20,22 +20,31 @@ const makeScene = () => {
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
   camera.position.set(0, 1, 2)
   let scene = new THREE.Scene()
-  // camera.rotation.x = Math.PI / 4
-  // camera.lookAt(0, 0, -150)
 
-  {
-    const color = 0xFFFFFF
-    const intensity = 1
-    const light = new THREE.DirectionalLight(color, intensity)
-    light.position.set(-1, 2, 4)
-    scene.add(light)
-  }
+  const light = new THREE.DirectionalLight(0xFFFFFF, 1)
+  light.position.set(-1, 2, 4)
+  scene.add(light)
+
+  // create new sprite
+  const spriteMap = new THREE.TextureLoader().load('./textures/inventory-light.png')
+  const spriteMaterial = new THREE.SpriteMaterial({
+    map: spriteMap,
+    transparent: true,
+    opacity: 0.3,
+    alphaTest: 0
+  })
+  const sprite = new THREE.Sprite(spriteMaterial)
+  sprite.position.set(0, 1, -1)
+  sprite.scale.multiplyScalar(2.5)
+  scene.add(sprite)
 
   return { scene, camera }
 }
 
 const setupScene = (name, path, manager, isFound, flatMat) => {
   const sceneInfo = makeScene()
+
+  // create new meshes
   let mesh = null
   let test = new GltfLoader(name, path, null, manager, { addToScene: false })
   test.then(response => {
@@ -50,7 +59,7 @@ const setupScene = (name, path, manager, isFound, flatMat) => {
     sceneInfo.scene.add(mesh)
     sceneInfo.mesh = mesh
     sceneInfo.gltf = response
-    sceneInfo.materials = response.materials[0]
+    sceneInfo.materials = response.materials
     sceneInfo.name = name
   })
   return sceneInfo
