@@ -88,7 +88,7 @@
     </div>
     <router-view/>
     <!--<CinematicObject v-if="hasFoundObject"/>-->
-    <Conclusion v-if="displayConclusion"/>
+    <Conclusion v-if="$route.path === '/plasticland'"/>
     <Intro></Intro>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
