@@ -30,7 +30,8 @@ export default new Vuex.Store({
     cinematicObjectContainer: null,
     isPreviousCinematic: false,
     collectionDidacticiel: false,
-    time: timer.time
+    time: timer.time,
+    hoverAndHold: false
   },
   mutations: {
     isLoad (state) {
@@ -95,6 +96,9 @@ export default new Vuex.Store({
     },
     setSecondTime (state, name) {
       state.time.secondTime = name
+    },
+    showHoverAndHold (state, bool) {
+      state.hoverAndHold = bool
     }
   }
 })

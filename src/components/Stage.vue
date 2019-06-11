@@ -90,6 +90,7 @@
     <!--<CinematicObject v-if="hasFoundObject"/>-->
     <Conclusion v-if="$route.path === '/plasticland'"/>
     <Intro></Intro>
+    <HoverAndHold></HoverAndHold>
     <canvas ref="canvas" id="canvas"></canvas>
   </div>
 </template>
@@ -105,10 +106,11 @@ import Didactiel from './didacticiel/Didactiel'
 import CinematicObject from './CinematicObject/CinematicObject'
 import Intro from './Introduction'
 import Conclusion from './Conclusion/Conclusion'
+import HoverAndHold from './HoverAndHold'
 
 export default {
   name: 'Stage',
-  components: { Conclusion, CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro },
+  components: { Conclusion, CinematicObject, Loader, Timer, Subtitle, Radar, Didactiel, Intro, HoverAndHold },
   data () {
     return {
       data: '',
@@ -117,17 +119,6 @@ export default {
       displayReturn: false,
       displayConclusion: this.$store.state.displayConclusion,
       displayNotif: false
-    }
-  },
-  computed: {
-    title () {
-      return this.$store.state.currentPlace.name
-    },
-    hasFoundObject () {
-      return this.$store.state.displayCinematicObject
-    },
-    displayIntro () {
-      return this.$store.state.displayIntro
     }
   },
   mounted () {
@@ -142,6 +133,9 @@ export default {
     },
     hasFoundObject () {
       return this.$store.state.displayCinematicObject
+    },
+    displayIntro () {
+      return this.$store.state.displayIntro
     },
     showInventoryCta () {
       return this.$store.state.collectionDidacticiel

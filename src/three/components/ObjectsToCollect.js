@@ -90,13 +90,16 @@ export default class ObjectsToCollect {
   }
   mouseDownTest (obj, sound, intersect) {
     if (obj && !obj.found && !this.canContinue) {
+      store.default.commit('showHoverAndHold', true)
       store.default.commit('setCurrentSubtitle', '')
       this.currentInteractionSound = sound.voiceOver.play(obj.interactionSound)
       let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
       this.interactionTimer = setTimeout(() => {
         this.canContinue = true
         console.log('ok')
+        store.default.commit('showHoverAndHold', false)
         this.animateObject(this.raycasteredObject.id, intersect)
+        this.canContinue = false
       }, timeout)
     }
   }
@@ -105,6 +108,7 @@ export default class ObjectsToCollect {
     if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing() && this.currentInteractionSound) {
       clearTimeout(this.interactionTimer)
       console.log('mouseUpTest')
+      store.default.commit('showHoverAndHold', false)
       // sound.voiceOver.pause(obj.interactionSound)
       sound.voiceOver.pause()
       this.currentInteractionSound = null
