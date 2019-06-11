@@ -154,7 +154,7 @@ export default class App extends Engine {
     this.environment.update(this.cameraSpline)
     this.collectable.tweenUpdate() // update tween
     // console.log(store.default.state.splinePosition)
-    if (store.default.state.splinePosition > 0.014 && store.default.state.splinePosition <= 0.04) {
+    if (store.default.state.splinePosition > 0.018 && store.default.state.splinePosition <= 0.1) {
       this.mountain.then( (response) => {
         response.animationMixer.update(this.timeDelta)
       })
