@@ -25,6 +25,12 @@
 import Vue from 'vue'
 export default {
   name: 'HoverAndHold',
+  data () {
+    return {
+      clientX: 0,
+      clientY: 0
+    }
+  },
   props: {
     positionX: {
       type: Number,
@@ -46,30 +52,19 @@ export default {
       }
       return ''
     },
-    posX () {
-      if (Vue.prototype.$engine) {
-        console.log(Vue.prototype.$engine)
-        return (Vue.prototype.$engine.clientX / 2) + 30
-      }
-      return 500
-    },
-    posY () {
-      if (Vue.prototype.$engine) {
-        console.log(Vue.prototype.$engine.clientY)
-        return Vue.prototype.$engine.clientY / 2
-      }
-      return 500
-    },
     style () {
-      return { transform: 'translateX(' + this.posX + 'px) translateY(' + this.posY + 'px)' }
+      return { transform: 'translateX(' + this.clientX + 'px) translateY(' + this.clientY + 'px)' }
     }
   },
-  watch: {
-    posX (value) {
-      console.log(value)
-    },
-    posY (value) {
-      console.log(value)
+  mounted () {
+    window.addEventListener('mousemove', (e) => {
+      this.test(e)
+    })
+  },
+  methods: {
+    test (e) {
+      this.clientX = e.clientX
+      this.clientY = e.clientY
     }
   }
 }
@@ -81,8 +76,7 @@ export default {
     width: 90px;
     height: 127px;
     position: absolute;
-    z-index: 10;
-    /*transform: translateX(500px) translateY(500px);*/
+    z-index: -10;
     &.held{
       z-index: 10;
       .text{
@@ -96,7 +90,6 @@ export default {
       font-family: AveriaLibre, sans-serif;
       color: $dark_blue;
       margin-bottom: 5px;
-      /*color: #1d2535;*/
     }
     .load{
       &.starbucks{
@@ -132,9 +125,6 @@ export default {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
       stroke: $dark_blue;
-
-      /*animation: stroke ease-out forwards;*/
-      /*animation-duration: 4s;*/
     }
     &.held{
       .circle {

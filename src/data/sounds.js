@@ -24,14 +24,14 @@ export default {
       'id': 21,
       'name': 'starbucks',
       'src': './sounds/starbucks.mp3',
-      'startAt': 0.22,
+      'startAt': 0.20,
       'endAt': 0.34
     },
     {
       'id': 22,
       'name': 'carrefour',
       'src': './sounds/carrefour.mp3',
-      'startAt': 0.35,
+      'startAt': 0.36,
       'endAt': 0.49
     },
     {
@@ -52,14 +52,14 @@ export default {
       'id': 25,
       'name': 'nestle',
       'src': './sounds/nestle1.mp3',
-      'startAt': 0.80,
-      'endAt': 0.89
+      'startAt': 0.75,
+      'endAt': 0.85
     },
     {
       'id': 26,
       'name': 'final',
       'src': './sounds/nestle1.mp3',
-      'startAt': 0.9,
+      'startAt': 0.95,
       'endAt': 1
     }
   ],
@@ -115,12 +115,12 @@ export default {
       },
       {
         'name': 'nestle',
-        'startAt': 0.9,
+        'startAt': 0.8,
         'played': false
       },
       {
         'name': 'final',
-        'startAt': 0.98,
+        'startAt': 0.976,
         'played': false
       }
     ]

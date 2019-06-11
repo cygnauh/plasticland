@@ -57,13 +57,13 @@ export default class Collectable {
   }
 
   changeMaterial (name, bool) {
-    let obj = this.collectableArray.filter(element => element.mesh.name === name)[0]
-    let objMesh = obj.scene.children[1]
-    if (objMesh.material.type !== 'MeshBasicMaterial' && !bool) {
-      objMesh.material = this.flatMaterial
-    } else {
-      objMesh.material = obj.materials.material
-    }
+    // let obj = this.collectableArray.filter(element => element.mesh.name === name)[0]
+    // let objMesh = obj.scene.children[1]
+    // if (objMesh.material.type !== 'MeshBasicMaterial' && !bool) {
+    //   objMesh.material = this.flatMaterial
+    // } else {
+    //   objMesh.material = obj.materials.material
+    // }
   }
   closeCollectable () { // TODO if selected item, scale out all execept selected item
     this.collectableArray.forEach((element) => {

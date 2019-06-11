@@ -98,7 +98,7 @@ export default class ObjectsToCollect {
         // console.log('ok')
         store.default.commit('showHoverAndHold', false)
         this.animateObject(this.raycasteredObject.id, intersect)
-        setTimeout(() => { this.canContinue = false }, 1000)
+        setTimeout(() => { this.canContinue = false }, 2000)
       }, timeout)
     }
   }
