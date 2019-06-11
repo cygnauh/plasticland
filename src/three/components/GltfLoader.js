@@ -36,8 +36,8 @@ export default class GltfLoader {
           for (let i = 0; i < gltf.animations.length; i++) {
             let animation = gltf.animations[i]
             let action = this.mixer.clipAction(animation)
-            action.startAt(15) // delay of 15
-            action.setLoop(THREE.LoopRepeat) // LoopOnce
+            action.startAt(0) // delay of 5
+            action.setLoop(THREE.LoopOnce) // LoopOnce
             action.clampWhenFinished = true
             action.enabled = true
             action.play()
