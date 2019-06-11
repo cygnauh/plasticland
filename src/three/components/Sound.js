@@ -115,16 +115,16 @@ export default class Sound {
       this.melodySoundPlaying = true
     }
   }
-  finalTwist () {
-    if (this.voiceOver.seek() > 75.07 && this.melodySound && this.melodySound.playing()) {
+  finalTwist () { // 90000
+    if (this.voiceOver.seek() > 75.07 && this.voiceOver.seek() < 89.9 && this.melodySound && this.melodySound.playing()) {
       this.melodySound.pause()
     }
-    if (this.voiceOver.seek() > 74.21 && this.currentSound && this.currentSound.sound.playing() && !this.isClimaxSoundPlaying) {
+    if (this.voiceOver.seek() > 74.21 && this.voiceOver.seek() < 89.9 && this.currentSound && this.currentSound.sound.playing() && !this.isClimaxSoundPlaying) {
       this.currentSound.sound.pause()
       this.climaxSound.play()
       this.isClimaxSoundPlaying = true
     }
-    if (this.voiceOver.seek() > 78.6 && this.climaxSound && this.climaxSound.playing() && !this.isClockPlaying) {
+    if (this.voiceOver.seek() > 78.6 && this.voiceOver.seek() < 89.9 && this.climaxSound && this.climaxSound.playing() && !this.isClockPlaying) {
       this.clockSound.play()
       this.isClockPlaying = true
     }

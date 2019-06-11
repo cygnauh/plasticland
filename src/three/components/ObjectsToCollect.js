@@ -90,6 +90,7 @@ export default class ObjectsToCollect {
   }
   mouseDownTest (obj, sound, intersect) {
     if (obj && !obj.found && !this.canContinue) {
+      store.default.commit('setCurrentSubtitle', '')
       this.currentInteractionSound = sound.voiceOver.play(obj.interactionSound)
       let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
       this.interactionTimer = setTimeout(() => {
@@ -104,7 +105,7 @@ export default class ObjectsToCollect {
     if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing()) {
       clearTimeout(this.interactionTimer)
       console.log('mouseUpTest')
-      sound.voiceOver.pause(this.currentInteractionSound)
+      sound.voiceOver.pause()
       // sound.voiceOver.pause(obj.interactionSound)
       this.interactionTimer = null
     }
