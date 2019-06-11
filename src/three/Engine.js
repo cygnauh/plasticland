@@ -43,7 +43,7 @@ export default class Engine {
     this.timeElapsed = 0
 
     // helpers
-    this.helpers = new Helpers(this.scene, this.camera, this.canvas)
+    // this.helpers = new Helpers(this.scene, this.camera, this.canvas)
 
     // fog
     this.scene.fog = new THREE.Fog(0xEAEAEA, 0.1, 708)
