@@ -65,7 +65,7 @@ export default class ObjectsToCollect {
     return y
   }
 
-  onClick (sound) {
+  checkIntersection (sound) {
     if (this.array.length > 0) {
       if (this.findSomething) this.findSomething = false // check every time if there is an intersect
       let intersects = this.raycaster.intersectObjects(this.scene.children)
@@ -83,7 +83,6 @@ export default class ObjectsToCollect {
         // }
       })
       if (!this.findSomething) {
-        // console.log('false')
         this.mouseUpTest(this.raycasteredObject, sound)
       }
     }
@@ -96,10 +95,10 @@ export default class ObjectsToCollect {
       let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
       this.interactionTimer = setTimeout(() => {
         this.canContinue = true
-        console.log('ok')
+        // console.log('ok')
         store.default.commit('showHoverAndHold', false)
         this.animateObject(this.raycasteredObject.id, intersect)
-        this.canContinue = false
+        setTimeout(() => { this.canContinue = false }, 1000)
       }, timeout)
     }
   }
@@ -107,7 +106,6 @@ export default class ObjectsToCollect {
     // if (!this.canContinue && obj && obj.interactionSound) {
     if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing() && this.currentInteractionSound) {
       clearTimeout(this.interactionTimer)
-      console.log('mouseUpTest')
       store.default.commit('showHoverAndHold', false)
       // sound.voiceOver.pause(obj.interactionSound)
       sound.voiceOver.pause()

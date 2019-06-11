@@ -23,7 +23,7 @@ export default class App extends Engine {
     this.soundPlayed = false
     window.addEventListener('mousemove', (e) => {
       this.onMouseMove(e)
-      this.objectsToCollect.onClick(this.sound)
+      this.objectsToCollect.checkIntersection(this.sound, e)
     })
   }
 

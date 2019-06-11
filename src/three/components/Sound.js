@@ -46,7 +46,6 @@ export default class Sound {
   }
   initClimaxSound () {
     let src = store.default.state.sounds.climax.src
-    console.log(src)
     this.climaxSound = new Howl({
       src: [src],
       loop: false,

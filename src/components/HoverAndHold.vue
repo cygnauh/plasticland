@@ -1,14 +1,20 @@
 <template>
   <div :class="{held:hoverAndHold}"
-       :style="[`transform: translateX(${posX}), translateY(${posY})`]"
+       :style="style"
        class="hover-and-hold">
     <div class="text">
-      Hold to Collect`
+      Hold to collect
     </div>
     <div :class="[place, {held:hoverAndHold}]"
          class="load">
-      <svg height="200" width="200">
-        <circle class="circle" cx="100" cy="100" r="95" stroke="#231f20" stroke-width="10" fill-opacity="0" />
+      <svg height="84" width="84">
+        <circle
+          class="circle"
+          cx="42"
+          cy="42"
+          r="40"
+          stroke-width="2"
+          fill-opacity="0" />
       </svg>
     </div>
 
@@ -43,16 +49,27 @@ export default {
     posX () {
       if (Vue.prototype.$engine) {
         console.log(Vue.prototype.$engine)
-        return Vue.prototype.$engine.clientX
+        return (Vue.prototype.$engine.clientX / 2) + 30
       }
-      return 100
+      return 500
     },
     posY () {
-      if (Vue.prototype.$engine && Vue.prototype.$engine.clientY) {
+      if (Vue.prototype.$engine) {
         console.log(Vue.prototype.$engine.clientY)
-        return Vue.prototype.$engine.clientY
+        return Vue.prototype.$engine.clientY / 2
       }
-      return 100
+      return 500
+    },
+    style () {
+      return { transform: 'translateX(' + this.posX + 'px) translateY(' + this.posY + 'px)' }
+    }
+  },
+  watch: {
+    posX (value) {
+      console.log(value)
+    },
+    posY (value) {
+      console.log(value)
     }
   }
 }
@@ -61,10 +78,11 @@ export default {
 <style lang="scss">
   @import '../assets/scss/index';
   .hover-and-hold{
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 127px;
     position: absolute;
     z-index: 10;
+    /*transform: translateX(500px) translateY(500px);*/
     &.held{
       z-index: 10;
       .text{
@@ -75,6 +93,10 @@ export default {
     .text{
       opacity: 0;
       will-change: opacity;
+      font-family: AveriaLibre, sans-serif;
+      color: $dark_blue;
+      margin-bottom: 5px;
+      /*color: #1d2535;*/
     }
     .load{
       &.starbucks{
@@ -104,14 +126,15 @@ export default {
       }
     }
     svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
+      position: relative;
     }
     .circle {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
+      stroke: $dark_blue;
+
+      /*animation: stroke ease-out forwards;*/
+      /*animation-duration: 4s;*/
     }
     &.held{
       .circle {

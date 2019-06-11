@@ -176,7 +176,6 @@ export default {
       }
       if (this.$store.state.objects.filter(item => item.found).length === 1 && !this.$store.state.didacticiels.filter(item => item.name === 'collection').show) {
         // show last didacticiel
-        console.log('close first')
         this.$store.commit('showCollectionDidacticiel')
       }
     },
