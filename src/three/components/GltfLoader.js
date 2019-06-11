@@ -7,6 +7,7 @@ export default class GltfLoader {
     this.name = name
     this.loader = new THREE.GLTFLoader(manager)
     this.gltf = null
+    this.mixer = null
 
     let flatMaterial = new THREE.MeshBasicMaterial({
       color: (0x3b3c55)
@@ -30,12 +31,13 @@ export default class GltfLoader {
         this.gltf.rotation.y = rotateY
         // this.gltf.castShadow = true
         if (gltf.animations && gltf.animations.length) {
+          console.log(gltf.animations)
           this.mixer = new THREE.AnimationMixer(gltf.scene)
           for (let i = 0; i < gltf.animations.length; i++) {
             let animation = gltf.animations[i]
             let action = this.mixer.clipAction(animation)
-            action.startAt(10)
-            action.setLoop(THREE.LoopOnce)
+            action.startAt(15) // delay of 15
+            action.setLoop(THREE.LoopRepeat) // LoopOnce
             action.clampWhenFinished = true
             action.enabled = true
             action.play()
@@ -59,7 +61,8 @@ export default class GltfLoader {
         meshes.push(this.gltf)
         resolve({
           geometries: geometries,
-          meshes: meshes
+          meshes: meshes,
+          animationMixer: this.mixer
         })
       },
       (xhr) => {
