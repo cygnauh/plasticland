@@ -48,9 +48,25 @@ export default {
     place () {
       if (this.hoverAndHold) {
         console.log(this.$store.state.currentPlace.name)
+        console.log(Vue.prototype.$engine.clientX)
+        console.log(Vue.prototype.$engine.clientY)
         return this.$store.state.currentPlace.name
       }
       return ''
+    },
+    posX () {
+      if (Vue.prototype.$engine) {
+        console.log(Vue.prototype.$engine)
+        return (Vue.prototype.$engine.clientX / 2) + 30
+      }
+      return 500
+    },
+    posY () {
+      if (Vue.prototype.$engine) {
+        console.log(Vue.prototype.$engine.clientY)
+        return Vue.prototype.$engine.clientY / 2
+      }
+      return 500
     },
     style () {
       return { transform: 'translateX(' + this.clientX + 'px) translateY(' + this.clientY + 'px)' }
@@ -77,6 +93,7 @@ export default {
     height: 127px;
     position: absolute;
     z-index: -10;
+    /*transform: translateX(500px) translateY(500px);*/
     &.held{
       z-index: 10;
       .text{
@@ -90,6 +107,7 @@ export default {
       font-family: AveriaLibre, sans-serif;
       color: $dark_blue;
       margin-bottom: 5px;
+      /*color: #1d2535;*/
     }
     .load{
       &.starbucks{
@@ -125,6 +143,9 @@ export default {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
       stroke: $dark_blue;
+
+      /*animation: stroke ease-out forwards;*/
+      /*animation-duration: 4s;*/
     }
     &.held{
       .circle {

@@ -72,10 +72,13 @@ export default class ObjectsToCollect {
       intersects.forEach((intersect) => {
         store.default.state.objects.forEach((element) => {
           if (intersect.object.name === element.name) { // good intersection
-            // console.log('true')
+            console.log('true')
             this.findSomething = true
             this.raycasteredObject = element
-            if (!this.interactionTimer) this.mouseDownTest(this.raycasteredObject, sound, intersect)
+            if (!this.interactionTimer) {
+              console.log('launch')
+              this.mouseDownTest(this.raycasteredObject, sound, intersect)
+            }
           }
         })
         // if (intersect.object.name) {
@@ -83,33 +86,46 @@ export default class ObjectsToCollect {
         // }
       })
       if (!this.findSomething) {
-        this.mouseUpTest(this.raycasteredObject, sound)
+        this.mouseUpTest(sound)
+        console.log('not found')
       }
     }
   }
   mouseDownTest (obj, sound, intersect) {
+    console.log(obj)
+    console.log(obj.found)
+    console.log(!this.canContinue)
     if (obj && !obj.found && !this.canContinue) {
       store.default.commit('showHoverAndHold', true)
-      store.default.commit('setCurrentSubtitle', '')
-      this.currentInteractionSound = sound.voiceOver.play(obj.interactionSound)
+      // store.default.commit('setCurrentSubtitle', '')
+      console.log('down')
+      // this.currentInteractionSound = sound.voiceOver.play(obj.interactionSound)
+    
       let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
+      console.log(timeout)
       this.interactionTimer = setTimeout(() => {
         this.canContinue = true
-        // console.log('ok')
+        console.log('ok')
         store.default.commit('showHoverAndHold', false)
         this.animateObject(this.raycasteredObject.id, intersect)
-        setTimeout(() => { this.canContinue = false }, 2000)
+        this.canContinue = false
       }, timeout)
     }
   }
-  mouseUpTest (obj, sound) {
+  mouseUpTest (sound) {
     // if (!this.canContinue && obj && obj.interactionSound) {
-    if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing() && this.currentInteractionSound) {
+    if (!this.canContinue && sound.voiceOver.playing() && this.interactionTimer) {
       clearTimeout(this.interactionTimer)
-      store.default.commit('showHoverAndHold', false)
+      if (store.default.state.hoverAndHold) {
+        store.default.commit('showHoverAndHold', false)
+        console.log('hoverAndHold')
+      }
       // sound.voiceOver.pause(obj.interactionSound)
-      sound.voiceOver.pause()
-      this.currentInteractionSound = null
+      if (sound.voiceOver.seek() > 90 && sound.voiceOver.seek() < 122.24) {
+        // sound.voiceOver.pause()
+        console.log('pause')
+      }
+      if (this.currentInteractionSound) this.currentInteractionSound = null
       this.interactionTimer = null
     }
   }
