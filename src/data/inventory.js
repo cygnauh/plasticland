@@ -70,7 +70,7 @@ export default
       'position': 0.90,
       'interactionSound': 'interactionNe',
       'ruptureSoundAt': 119.23,
-      'description': 'Au cours des cinq dern... coming soon'
+      'description': 'Au cours des cinq dernières années, NESTLE, c\'est 1,7 million de tonnes de plastique produits par an avec une augmentation de 5% dans le portefeuille d\'utilisation d\'emballage plastique. Aujourd\'hui près de 98 % des produits Nestlé sont vendus dans des emballages à usage unique. Pas étonnant qu\'il se retrouve en bonne place du top 10 des entreprises les plus responsables de la pollution plastique. Un classement réalisé en 2018 par la coalition Break Free Plastic dans le cadre d\'une vaste opération de collecte dans 42 pays à travers le monde et la participation de 10 000 volontaires. \n'
     },
     {
       'id': 6,
