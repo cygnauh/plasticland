@@ -21,6 +21,10 @@ export default class App extends Engine {
     this.initSound()
     this.animate()
     this.soundPlayed = false
+    window.addEventListener('mousemove', (e) => {
+      this.onMouseMove(e)
+      this.objectsToCollect.onClick(this.sound)
+    })
   }
 
   initSound () {
@@ -117,7 +121,7 @@ export default class App extends Engine {
         }, 500)
       }
     }
-    this.objectsToCollect.onClick(this.sound)
+    
     store.default.state.objects.forEach(element => {
       if (element.found) {
         this.collectable.changeMaterial(element.name, true)

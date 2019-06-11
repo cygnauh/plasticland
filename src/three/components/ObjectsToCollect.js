@@ -13,7 +13,8 @@ export default class ObjectsToCollect {
     this.cameraSpline = spline
     this.composer = composer
     this.mouse = mouse
-
+    this.interactionTimer = null
+    this.currentInteractionSound = null
     this.array = []
 
     // for the animation of the camera lookat
@@ -66,18 +67,46 @@ export default class ObjectsToCollect {
 
   onClick (sound) {
     if (this.array.length > 0) {
+      if (this.findSomething) this.findSomething = false // check every time if there is an intersect
       let intersects = this.raycaster.intersectObjects(this.scene.children)
       intersects.forEach((intersect) => {
         store.default.state.objects.forEach((element) => {
-          if (intersect.object.name === element.name) {
-            sound.voiceOver.play(element.interactionSound)
-            this.animateObject(element.id, intersect)
+          if (intersect.object.name === element.name) { // good intersection
+            // console.log('true')
+            this.findSomething = true
+            this.raycasteredObject = element
+            if (!this.interactionTimer) this.mouseDownTest(this.raycasteredObject, sound, intersect)
           }
         })
-        if (intersect.object.name) {
-          store.default.commit('setFoundObjectName', intersect.object.name)
-        }
+        // if (intersect.object.name) {
+        //   store.default.commit('setFoundObjectName', intersect.object.name)
+        // }
       })
+      if (!this.findSomething) {
+        // console.log('false')
+        this.mouseUpTest(this.raycasteredObject, sound)
+      }
+    }
+  }
+  mouseDownTest (obj, sound, intersect) {
+    if (obj && !obj.found && !this.canContinue) {
+      this.currentInteractionSound = sound.voiceOver.play(obj.interactionSound)
+      let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
+      this.interactionTimer = setTimeout(() => {
+        this.canContinue = true
+        console.log('ok')
+        this.animateObject(this.raycasteredObject.id, intersect)
+      }, timeout)
+    }
+  }
+  mouseUpTest (obj, sound) {
+    // if (!this.canContinue && obj && obj.interactionSound) {
+    if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing()) {
+      clearTimeout(this.interactionTimer)
+      console.log('mouseUpTest')
+      sound.voiceOver.pause(this.currentInteractionSound)
+      // sound.voiceOver.pause(obj.interactionSound)
+      this.interactionTimer = null
     }
   }
 
