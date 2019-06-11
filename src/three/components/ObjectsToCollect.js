@@ -68,28 +68,11 @@ export default class ObjectsToCollect {
     if (this.array.length > 0) {
       let intersects = this.raycaster.intersectObjects(this.scene.children)
       intersects.forEach((intersect) => {
-        switch (intersect.object.name) {
-          case 'starbucks':
-            this.animateObject(1, intersect)
-            break
-          case 'carrefour':
-            this.animateObject(2, intersect)
-            break
-          case 'cocacola':
-            this.animateObject(3, intersect)
-            break
-          case 'gestespropres':
-            this.animateObject(4, intersect)
-            break
-          case 'nestle':
-            this.animateObject(5, intersect)
-            break
-          case 'final':
-            this.animateObject(6, intersect)
-            break
-          default:
-            break
-        }
+        store.default.state.objects.forEach((element) => {
+          if (intersect.object.name === element.name) {
+            this.animateObject(element.id, intersect)
+          }
+        })
         if (intersect.object.name) {
           store.default.commit('setFoundObjectName', intersect.object.name)
         }
