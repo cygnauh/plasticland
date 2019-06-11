@@ -29,6 +29,18 @@ export default class GltfLoader {
         this.gltf.scale.z = scale
         this.gltf.rotation.y = rotateY
         // this.gltf.castShadow = true
+        if (gltf.animations && gltf.animations.length) {
+          this.mixer = new THREE.AnimationMixer(gltf.scene)
+          for (let i = 0; i < gltf.animations.length; i++) {
+            let animation = gltf.animations[i]
+            let action = this.mixer.clipAction(animation)
+            action.startAt(10)
+            action.setLoop(THREE.LoopOnce)
+            action.clampWhenFinished = true
+            action.enabled = true
+            action.play()
+          }
+        }
         if (addToScene) {
           this.scene.add(this.gltf)
         }
