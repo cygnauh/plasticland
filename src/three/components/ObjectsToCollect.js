@@ -64,12 +64,13 @@ export default class ObjectsToCollect {
     return y
   }
 
-  onClick () {
+  onClick (sound) {
     if (this.array.length > 0) {
       let intersects = this.raycaster.intersectObjects(this.scene.children)
       intersects.forEach((intersect) => {
         store.default.state.objects.forEach((element) => {
           if (intersect.object.name === element.name) {
+            sound.voiceOver.play(element.interactionSound)
             this.animateObject(element.id, intersect)
           }
         })

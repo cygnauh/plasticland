@@ -117,7 +117,7 @@ export default class App extends Engine {
         }, 500)
       }
     }
-    this.objectsToCollect.onClick()
+    this.objectsToCollect.onClick(this.sound)
     store.default.state.objects.forEach(element => {
       if (element.found) {
         this.collectable.changeMaterial(element.name, true)
