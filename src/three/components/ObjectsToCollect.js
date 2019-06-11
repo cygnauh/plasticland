@@ -102,11 +102,12 @@ export default class ObjectsToCollect {
   }
   mouseUpTest (obj, sound) {
     // if (!this.canContinue && obj && obj.interactionSound) {
-    if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing()) {
+    if (!this.canContinue && obj && obj.interactionSound && sound.voiceOver.playing() && this.currentInteractionSound) {
       clearTimeout(this.interactionTimer)
       console.log('mouseUpTest')
-      sound.voiceOver.pause()
       // sound.voiceOver.pause(obj.interactionSound)
+      sound.voiceOver.pause()
+      this.currentInteractionSound = null
       this.interactionTimer = null
     }
   }
