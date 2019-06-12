@@ -15,7 +15,7 @@
           <img
             :src="require('../assets/img/back.png')"
             alt="back">
-          <span>Retour</span>
+          <span>Back</span>
         </div>
       </router-link>
       <div
@@ -36,12 +36,12 @@
           class="menu">
           <router-link to="/plasticland/about">
             <span>
-              à propos
+              about
             </span>
           </router-link>
           <router-link to="/plasticland/credits">
             <span>
-              crédits
+              credits
             </span>
           </router-link>
           <img

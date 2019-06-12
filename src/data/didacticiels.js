@@ -6,7 +6,7 @@ export default {
       path: require('@/assets/img/svg/didacticiel-scroll.svg'),
       position: '0.001',
       seekPosition: 12.0,
-      message: 'Scrollez pour explorer PLASTICLAND',
+      message: 'Scroll to explore PLASTICLAND',
       active: false
     }, {
       id: 1,
@@ -14,14 +14,14 @@ export default {
       path: require('@/assets/img/svg/didacticiel-radar.svg'),
       position: '0.1',
       seekPosition: 28.21,
-      message: 'SUIVEZ le radar POUR VOIR LES OBJETS à collecter',
+      message: 'Follow the radar to find OBJECTS to collect',
       active: false
     }, {
       id: 2,
       name: 'collection',
       path: require('@/assets/img/svg/didacticiel-bottle.svg'),
       position: '0.15',
-      message: 'Cliquez pour voir votre collection',
+      message: 'Click to see your collection',
       active: false,
       show: false
     }
