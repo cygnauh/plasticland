@@ -49,7 +49,8 @@
             class="volume"
             alt="volume">
         </div>
-        <div v-if="!displayConclusion" class="timer">
+        <div :style="[!displayConclusion ? {opacity: 1} : {opacity: 0}]"
+             class="timer">
           <Timer :theme="$route.path !== '/plasticland' ? 'dark': ''"></Timer>
         </div>
       </div>
