@@ -99,8 +99,7 @@ export default class ObjectsToCollect {
       store.default.commit('showHoverAndHold', true)
       // store.default.commit('setCurrentSubtitle', '')
       console.log('down')
-      // this.currentInteractionSound = sound.voiceOver.play(obj.interactionSound)
-    
+      this.currentInteractionSound = sound.interactiveSound.play(obj.interactionSound)
       let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
       console.log(timeout)
       this.interactionTimer = setTimeout(() => {
@@ -122,10 +121,7 @@ export default class ObjectsToCollect {
         console.log('hoverAndHold')
       }
       // sound.voiceOver.pause(obj.interactionSound)
-      if (sound.voiceOver.seek() > 90 && sound.voiceOver.seek() < 122.24) {
-        // sound.voiceOver.pause()
-        console.log('pause')
-      }
+      sound.interactiveSound.pause()
       if (this.currentInteractionSound) this.currentInteractionSound = null
       this.interactionTimer = null
     }

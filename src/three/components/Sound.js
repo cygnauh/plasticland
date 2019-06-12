@@ -25,8 +25,17 @@ export default class Sound {
     this.initVoiceOver()
     this.initClimaxSound()
     this.initClockSound()
+    this.initInteractionSound()
   }
-
+  initInteractionSound () {
+    // create a global audio source
+    let assets = store.default.state.sounds.interaction
+    this.interactiveSound = new Howl({
+      src: [assets.src],
+      sprite: assets.sprites[0],
+      volume: 1
+    })
+  }
   initAmbiantSound () {
     // create a global audio source
     let src = store.default.state.sounds.ambiant.src
@@ -98,6 +107,7 @@ export default class Sound {
     this.firstPlay(this.ambiantSound)
     this.firstPlay(this.climaxSound)
     this.firstPlay(this.clockSound)
+    this.firstPlay(this.interactiveSound)
     this.placeSounds.forEach(element => {
       this.firstPlay(element.sound)
     })

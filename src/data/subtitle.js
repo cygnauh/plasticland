@@ -191,102 +191,119 @@ export default {
     },
     {
       'type': 'interactionSt',
+      'class': 'interaction',
       'text': 'Look at that!',
       'startAt': 91.05,
       'endAt': 92.01
     },
     {
       'type': 'interactionSt',
+      'class': 'interaction',
       'text': '',
       'startAt': 92.02,
       'endAt': 93.03
     },
     {
       'type': 'interactionSt',
+      'class': 'interaction',
       'text': 'Oh ! It’s starbucks cup.',
       'startAt': 93.04,
       'endAt': 94.20
     },
     {
       'type': 'interactionSt',
+      'class': 'interaction',
       'text': 'What was that doing there?',
       'startAt': 94.23,
       'endAt': 96.08
     },
     {
       'type': 'interactionCr',
+      'class': 'interaction',
       'text': 'Check this out!',
       'startAt': 100.18,
       'endAt': 101.19
     },
     {
       'type': 'interactionCr',
+      'class': 'interaction',
       'text': '',
       'startAt': 101.2,
       'endAt': 103.03
     },
     {
       'type': 'interactionCr',
+      'class': 'interaction',
       'text': 'What the hell is that?',
       'startAt': 103.04,
       'endAt': 104.11
     },
     {
       'type': 'interactionCc',
+      'class': 'interaction',
       'text': 'Do you know this ?',
       'startAt': 106.13,
       'endAt': 107.2
     },
     {
       'type': 'interactionCc',
+      'class': 'interaction',
       'text': '',
       'startAt': 107.3,
       'endAt': 109.03
     },
     {
       'type': 'interactionCc',
+      'class': 'interaction',
       'text': 'Is it a Coca-Cola?',
       'startAt': 109.05,
       'endAt': 110.13
     },
     {
       'type': 'interactionCc',
+      'class': 'interaction',
       'text': 'What was that doing there?',
       'startAt': 110.15,
       'endAt': 111.20
     },
     {
       'type': 'interactionLb',
+      'class': 'interaction',
       'text': 'Look at that',
       'startAt': 113.14,
       'endAt': 114.12
     },
     {
       'type': 'interactionLb',
+      'class': 'interaction',
       'text': '',
       'startAt': 114.13,
       'endAt': 115.12
     },
     {
       'type': 'interactionLb',
+      'class': 'interaction',
       'text': 'What the hell is that?',
       'startAt': 115.14,
       'endAt': 117.0
     },
     {
       'type': 'interactionNe',
+      'class': 'interaction',
       'text': 'Check this out!',
       'startAt': 118.21,
       'endAt': 119.23
     },
     {
       'type': 'interactionNe',
+      'class': 'interaction',
       'text': '',
       'startAt': 119.25,
       'endAt': 117.0
     },
     {
       'type': 'interactionNe',
+      'class': 'interaction',
       'text': 'I seem to know this brand.',
       'startAt': 121.25,
       'endAt': 122.12

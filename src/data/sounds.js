@@ -63,6 +63,25 @@ export default {
       'endAt': 1
     }
   ],
+  'interaction': {
+    'id': 300,
+    'name': 'interaction',
+    'src': './sounds/interactions.mp3',
+    'sprites': [
+      {
+        // interactionSt: [90000, 6170],
+        // interactionCr: [99190, 5030],
+        // interactionCc: [105150, 6840],
+        // interactionLb: [112180, 4930],
+        // interactionNe: [117230, 5010]
+        interactionSt: [0, 6170],
+        interactionCr: [9190, 5030],
+        interactionCc: [15150, 6840],
+        interactionLb: [22180, 4930],
+        interactionNe: [27230, 5010]
+      }
+    ]
+  },
   'voice': {
     'id': 30,
     'name': 'voice',
