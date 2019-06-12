@@ -47,7 +47,7 @@ export default {
       ellapsedMinutes: 0,
       ellapsedHours: 0,
       totalEllapsedSeconds: 0,
-      totalObject: this.$store.state.objects.length
+      totalObject: this.$store.state.objects.length - 1
     }
   },
   computed: {
