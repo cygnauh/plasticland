@@ -45,11 +45,12 @@
             <div
               :key="object.id"
               :class="[{'canHover' : object.found}, ( clickedElement  &&  clickedElement === object.name ) ? 'itemClicked' : clickedElement ? 'itemHide' : '' ]"
-              v-for="(object) in objects.slice(3)"
+              v-for="(object, idx) in objects.slice(3, 5)"
               class="obj">
               <div
                 :ref="object.name"
                 :id="object.name"
+                v-if="!(idx === 5)"
                 @click.capture="(e) => onObjectClicked(e, object)"
                 class="border">
                 <div

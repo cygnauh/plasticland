@@ -84,14 +84,17 @@
   }
 
   .radar-map-el {
-    width: 92px;
+    width: 662px;
     height: 396px;
+    //width: 92px;
+    //height: 396px;
     position: absolute;
     left: 50%;
+    //top: -400px;
     top: 0;
-    transform: translate(-50%, 0%);
+    transform: translate(-339px, -68%);
     transition: top 0.3s ease-in;
-    background-image: url('../../assets/img/svg/radar-map.svg');
+    background: url('../../assets/img/svg/radar-map.svg') no-repeat;
   }
 }
 

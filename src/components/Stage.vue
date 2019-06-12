@@ -117,7 +117,7 @@ export default {
     return {
       data: '',
       objectFound: this.$store.state.objects.filter(item => item.found).length,
-      totalObject: this.$store.state.objects.length,
+      totalObject: this.$store.state.objects.length - 1,
       displayReturn: false,
       displayNotif: false
     }

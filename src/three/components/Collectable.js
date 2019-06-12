@@ -19,9 +19,11 @@ export default class Collectable {
   }
 
   initCollectables () {
-    store.default.state.objects.forEach(element => {
-      let object = setupScene(element.name, element.model, this.manager, element.found, this.flatMaterial)
-      this.collectableArray.push(object)
+    store.default.state.objects.forEach((element, i) => {
+      if (i < 5) {
+        let object = setupScene(element.name, element.model, this.manager, element.found, this.flatMaterial)
+        this.collectableArray.push(object)
+      }
     })
     return this.collectableArray
   }
@@ -35,8 +37,8 @@ export default class Collectable {
   renderCollectables () {
     this.renderScissor()
     const containers = store.default.state.objectContainers
-    this.collectableArray.forEach(scene => {
-      if (scene && scene.name && containers[`${scene.name}`][0]) {
+    this.collectableArray.forEach((scene, i) => {
+      if (scene && scene.name && containers[`${scene.name}`][0] && i < 5) {
         rendenerSceneInfo(scene, containers[`${scene.name}`][0], this.renderer)
       }
     })

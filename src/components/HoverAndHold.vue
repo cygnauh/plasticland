@@ -1,5 +1,7 @@
 <template>
-  <div :class="{held:hoverAndHold}"
+  <div
+        v-if="$route.path === '/plasticland'"
+        :class="{held:hoverAndHold}"
        :style="style"
        class="hover-and-hold">
     <div class="text">
