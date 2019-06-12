@@ -2,7 +2,7 @@
 
 #loading-screen {
   position: absolute;
-  z-index: 4;
+  z-index: 20;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,6 +12,7 @@
   transition: 1s opacity;
   &.fade-out {
     opacity: 0;
+    z-index: -20;
   }
 }
 
