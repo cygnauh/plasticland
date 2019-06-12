@@ -81,7 +81,8 @@
       </div>
       <div class="right-side-content-bottom">
         <!--<Radar v-if="$route.path === '/plasticland' && !displayConclusion && showRadar"></Radar>-->
-        <Radar v-if="$route.path === '/plasticland' && !displayConclusion"></Radar>
+        <Radar :style="[showRadar ? {opacity: 1} : {opacity: 0}]" v-if="$route.path === '/plasticland'"
+        ></Radar>
       </div>
     </div>
     <div class="subtitle-container">

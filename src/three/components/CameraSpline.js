@@ -68,6 +68,7 @@ export default class CameraSpline {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && store.default.state.objects[4].found && this.percentageCamera.value + speed.mid >= 0) {
+      if (speed.mid + this.percentageCamera.value >= 1) return
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     }
