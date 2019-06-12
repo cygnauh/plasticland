@@ -3,7 +3,7 @@
     <Loader />
     <div class="Stage-border-top">
       <div
-        v-if="$route.path === '/plasticland'"
+        v-if="$route.path === '/plasticland' && !displayConclusion"
         class="title">
         {{ title }}
       </div>
@@ -49,7 +49,7 @@
             class="volume"
             alt="volume">
         </div>
-        <div class="timer">
+        <div v-if="!displayConclusion" class="timer">
           <Timer :theme="$route.path !== '/plasticland' ? 'dark': ''"></Timer>
         </div>
       </div>
@@ -60,7 +60,7 @@
         :show-last-didac="showInventoryCta"/>
       <div class="left-side-content-bottom">
         <router-link
-          v-if="$route.path === '/plasticland' && showInventoryCta"
+          v-if="$route.path === '/plasticland' && showInventoryCta && !displayConclusion"
           to="/plasticland/inventory">
           <div
             class="interface inventory-btn">
@@ -80,7 +80,8 @@
         </router-link>
       </div>
       <div class="right-side-content-bottom">
-        <Radar v-if="$route.path === '/plasticland' && showRadar"></Radar>
+        <!--<Radar v-if="$route.path === '/plasticland' && !displayConclusion && showRadar"></Radar>-->
+        <Radar v-if="$route.path === '/plasticland' && !displayConclusion"></Radar>
       </div>
     </div>
     <div class="subtitle-container">
@@ -117,7 +118,6 @@ export default {
       objectFound: this.$store.state.objects.filter(item => item.found).length,
       totalObject: this.$store.state.objects.length,
       displayReturn: false,
-      displayConclusion: this.$store.state.displayConclusion,
       displayNotif: false
     }
   },
@@ -142,6 +142,9 @@ export default {
     },
     showRadar () {
       return this.$store.state.didacticiels.filter(item => item.name === 'radar')[0].active
+    },
+    displayConclusion () {
+      return this.$store.state.displayConclusion
     }
   },
   watch: {

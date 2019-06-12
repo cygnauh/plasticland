@@ -54,8 +54,8 @@ export default {
     objectFound () {
       return this.$store.state.objects.filter(item => item.found).length
     },
-    splinePosition () {
-      return this.$store.state.splinePosition
+    currentVoiceOverSeek () {
+      return this.$store.state.currentVoiceOverSeek
     },
     firstTime () {
       return this.$store.state.time.firstTime
@@ -68,8 +68,8 @@ export default {
     }
   },
   watch: {
-    splinePosition () {
-      if (this.splinePosition >= 0.95) {
+    currentVoiceOverSeek () {
+      if (this.currentVoiceOverSeek >= 79 && this.currentVoiceOverSeek < 85) {
         this.openConclusion()
       }
     }

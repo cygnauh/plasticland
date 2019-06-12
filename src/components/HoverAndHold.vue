@@ -74,13 +74,13 @@ export default {
   },
   mounted () {
     window.addEventListener('mousemove', (e) => {
-      this.test(e)
+      this.getMouseValue(e)
     })
   },
   methods: {
-    test (e) {
-      this.clientX = e.clientX
-      this.clientY = e.clientY
+    getMouseValue (e) {
+      this.clientX = e.clientX * 0.96
+      this.clientY = e.clientY * 0.8
     }
   }
 }
@@ -104,9 +104,11 @@ export default {
     .text{
       opacity: 0;
       will-change: opacity;
-      font-family: AveriaLibre, sans-serif;
-      color: $dark_blue;
-      margin-bottom: 5px;
+      font-family: AxeHandel, sans-serif;
+      font-size: larger;
+      color: #1d2535;
+      text-transform: uppercase;
+      margin-bottom: 8px;
       /*color: #1d2535;*/
     }
     .load{
