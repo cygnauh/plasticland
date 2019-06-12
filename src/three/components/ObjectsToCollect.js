@@ -72,11 +72,11 @@ export default class ObjectsToCollect {
       intersects.forEach((intersect) => {
         store.default.state.objects.forEach((element) => {
           if (intersect.object.name === element.name) { // good intersection
-            console.log('true')
+            // console.log('true')
             this.findSomething = true
             this.raycasteredObject = element
             if (!this.interactionTimer) {
-              console.log('launch')
+              // console.log('launch')
               this.mouseDownTest(this.raycasteredObject, sound, intersect)
             }
           }
@@ -87,24 +87,24 @@ export default class ObjectsToCollect {
       })
       if (!this.findSomething) {
         this.mouseUpTest(sound)
-        console.log('not found')
+        // console.log('not found')
       }
     }
   }
   mouseDownTest (obj, sound, intersect) {
-    console.log(obj)
-    console.log(obj.found)
-    console.log(!this.canContinue)
+    // console.log(obj)
+    // console.log(obj.found)
+    // console.log(!this.canContinue)
     if (obj && !obj.found && !this.canContinue) {
       store.default.commit('showHoverAndHold', true)
       // store.default.commit('setCurrentSubtitle', '')
-      console.log('down')
+      // console.log('down')
       this.currentInteractionSound = sound.interactiveSound.play(obj.interactionSound)
       let timeout = obj.ruptureSoundAt * 1000 - sound.voiceOver._sprite[obj.interactionSound][0]
-      console.log(timeout)
+      // console.log(timeout)
       this.interactionTimer = setTimeout(() => {
         this.canContinue = true
-        console.log('ok')
+        // console.log('ok')
         store.default.commit('showHoverAndHold', false)
         this.animateObject(this.raycasteredObject.id, intersect)
         this.canContinue = false
@@ -118,7 +118,7 @@ export default class ObjectsToCollect {
       clearTimeout(this.interactionTimer)
       if (store.default.state.hoverAndHold) {
         store.default.commit('showHoverAndHold', false)
-        console.log('hoverAndHold')
+        // console.log('hoverAndHold')
       }
       // sound.voiceOver.pause(obj.interactionSound)
       sound.interactiveSound.pause()
@@ -224,8 +224,8 @@ export default class ObjectsToCollect {
 
     // if cinematic is open and lookat has changed you can look at the intersect position
     if (store.default.state.displayCinematicObject && this.cameraLookat.changed) {
-      // this.camera.lookAt(this.cameraLookat.objects)
-      this.camera.lookAt(this.intersect.object.position)
+      this.camera.lookAt(this.cameraLookat.mouseFinal)
+      // this.camera.lookAt(this.intersect.object.position)
     }
   }
 
