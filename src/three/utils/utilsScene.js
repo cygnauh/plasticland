@@ -30,7 +30,7 @@ const makeScene = () => {
   const spriteMaterial = new THREE.SpriteMaterial({
     map: spriteMap,
     transparent: true,
-    opacity: 0.3,
+    opacity: 0.2,
     alphaTest: 0
   })
   const sprite = new THREE.Sprite(spriteMaterial)
