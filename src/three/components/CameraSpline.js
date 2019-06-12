@@ -67,7 +67,7 @@ export default class CameraSpline {
     } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && this.percentageCamera.value + speed.mid <= store.default.state.objects[4].position) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
-    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && store.default.state.objects[4].found && this.percentageCamera.value + speed.mid >= store.default.state.objects[4].position) {
+    } else if (store.default.state.objects[0].found && store.default.state.objects[1].found && store.default.state.objects[2].found && store.default.state.objects[3].found && store.default.state.objects[4].found && this.percentageCamera.value + speed.mid >= 0) {
       this.tweenToScroll(speed.mid)
       this.moveRadar()
     }

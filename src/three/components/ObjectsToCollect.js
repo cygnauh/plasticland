@@ -114,7 +114,8 @@ export default class ObjectsToCollect {
   }
   mouseUpTest (sound) {
     // if (!this.canContinue && obj && obj.interactionSound) {
-    if (!this.canContinue && sound.voiceOver.playing() && this.interactionTimer) {
+    this.canContinue = false
+    if (!this.canContinue && this.interactionTimer) {
       clearTimeout(this.interactionTimer)
       if (store.default.state.hoverAndHold) {
         store.default.commit('showHoverAndHold', false)
