@@ -224,8 +224,8 @@ export default class ObjectsToCollect {
 
     // if cinematic is open and lookat has changed you can look at the intersect position
     if (store.default.state.displayCinematicObject && this.cameraLookat.changed) {
-      // this.camera.lookAt(this.cameraLookat.objects)
-      this.camera.lookAt(this.intersect.object.position)
+      this.camera.lookAt(this.cameraLookat.mouseFinal)
+      // this.camera.lookAt(this.intersect.object.position)
     }
   }
 
