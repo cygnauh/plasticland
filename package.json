@@ -28,7 +28,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "gsap": "^2.1.2",
+    "gsap": "^3.6.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "stats-js": "^1.0.0",
